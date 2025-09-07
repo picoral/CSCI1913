@@ -442,7 +442,7 @@
   <meta name="generator" content="quarto-1.6.39">
 
   <meta name="author" content="CSCI 1913 – Introduction to Algorithms, Data Structures, and Program DevelopmentAdriana Picoral">
-  <title>More Python</title>
+  <title>Python Loops</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -1051,7 +1051,7 @@ margin-right: 0; }
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">More Python</h1>
+  <h1 class="title">Python Loops</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -1062,160 +1062,246 @@ margin-right: 0; }
 </div>
 
 </section>
-<section id="python-boolean-expressions" class="slide level2">
-<h2>Python boolean expressions</h2>
-<p>Python has the same set of boolean operators you’re used to</p>
-<p>Exceptions:</p>
+<section id="while-vs-for-loops" class="slide level2">
+<h2><code>while</code> vs <code>for</code> loops</h2>
+<p>A <code>while</code> loop has a condition that needs to evaluate to <code>False</code> to get out of the loop:</p>
+<div id="ee067ebd" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a>n <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb1-2"><a href></a><span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb1-3"><a href></a>  <span class="bu">print</span>(n)</span>
+<span id="cb1-4"><a href></a>  n <span class="op">=</span> n <span class="op">-</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3
+2
+1</code></pre>
+</div>
+</div>
+<p>A <code>for</code> loop uses a variable:</p>
+<div id="95384483" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href></a><span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb3-2"><a href></a>  <span class="bu">print</span>(n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0
+1
+2</code></pre>
+</div>
+</div>
+</section>
+<section id="definite-vs.-indefinite-loops" class="slide level2">
+<h2>Definite vs. Indefinite loops</h2>
+<p>Definite loop: the number of iterations is known before the loop begins execution</p>
+<p>Which type of loop is always definite? <code>while</code> or <code>for</code> loops?</p>
+</section>
+<section id="while-and-for-loops" class="slide level2">
+<h2><code>while</code> and <code>for</code> loops</h2>
 <ul>
-<li>logical operators &amp;&amp;, ||, ! use the words and, or, not</li>
-<li>comparison chaining is allowed.
+<li>A while loop runs until its a return statement inside the loop or the while condition is evaluated as false</li>
+<li>For loops operate over an <a href="https://www.w3schools.com/python/python_iterators.asp">iterable object</a> (range, list, string, set, tuple)</li>
+<li>All for loops can be converted into while loops</li>
+<li>Not all while loops can become for loops (definite loops can be converted to a while loop)</li>
+<li>For loops are slightly faster</li>
+<li>Python does NOT have do while loops (code block inside while loops can run zero times)</li>
+</ul>
+</section>
+<section id="range" class="slide level2">
+<h2><code>range</code></h2>
+<p><code>range(start, stop, step)</code></p>
 <ul>
-<li><p><code>a &lt; b &lt; c</code> is run as <code>a &lt; b and b &lt; c</code></p></li>
-<li><p>you can do some weird stuff with this:</p>
-<p><code>a == b &lt; c &gt; d != q</code></p>
-<p><code>a == b and b &lt; c and c &gt; d and d != q</code></p></li>
+<li>range is both a function and an object</li>
+<li>range only works with integers</li>
+<li>a range object represents a sequence of integer numbers
+<ul>
+<li>range(5) is a sequence of the numbers 0,1,2,3,4</li>
+<li>it is not indexable in all versions of python (we will see indexing in a bit)</li>
 </ul></li>
-</ul>
-</section>
-<section id="python-control-flow" class="slide level2">
-<h2>Python control flow</h2>
-<ul>
-<li>conditionals (if statements)</li>
-<li>loops</li>
-</ul>
-</section>
-<section id="if-statements" class="slide level2">
-<h2><code>if</code> statements</h2>
-<div id="30d191cf" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a><span class="cf">if</span> num_cuts <span class="op">&gt;</span> <span class="dv">4</span>:</span>
-<span id="cb1-2"><a href></a>  <span class="bu">print</span>(<span class="st">&quot;That&#39;s a lot of cuts. Don&#39;t do it!&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>whitespace denotes code blocks</li>
-<li>don’t miss the colon which marks the beginning of a block</li>
-<li>whitespace characters must match exactly - careful with spaces and tabs</li>
-</ul>
-</section>
-<section id="if-elif-and-else-statements" class="slide level2">
-<h2><code>if</code>, <code>elif</code> and <code>else</code> statements</h2>
-<div id="9b26b9e4" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href></a><span class="cf">if</span> num_cuts <span class="op">&gt;</span> <span class="dv">4</span>:</span>
-<span id="cb2-2"><a href></a>  <span class="bu">print</span>(<span class="st">&quot;That&#39;s a lot of cuts. Don&#39;t do it!&quot;</span>)</span>
-<span id="cb2-3"><a href></a><span class="cf">elif</span> num_cuts <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb2-4"><a href></a>  <span class="bu">print</span>(<span class="st">&quot;Purrfectly safe&quot;</span>)</span>
-<span id="cb2-5"><a href></a><span class="cf">else</span>:</span>
-<span id="cb2-6"><a href></a>  <span class="bu">print</span>(<span class="st">&quot;your risk&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>multiple conditions can be checked with <code>if</code> .. <code>elif</code> .. <code>else</code></li>
-<li><code>elif</code> not “else if”</li>
 </ul>
 </section>
 <section id="exercise" class="slide level2">
 <h2>Exercise</h2>
-<p>Write a Python function called absolute that takes one numeric argument (integer or float) n and returns the absolute value of n: if n is positive, it results n, if n is negative, it returns n * -1</p>
-<p>Test cases:</p>
-<div id="a42f1437" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href></a><span class="cf">assert</span> absolute(<span class="dv">4</span>) <span class="op">==</span> <span class="dv">4</span></span>
-<span id="cb3-2"><a href></a><span class="cf">assert</span> absolute(<span class="op">-</span><span class="dv">4</span>) <span class="op">==</span> <span class="dv">4</span></span>
-<span id="cb3-3"><a href></a><span class="cf">assert</span> absolute(<span class="dv">0</span>) <span class="op">==</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Submit your solution (name your file <code>absolute.py</code>) to gradescope</p>
-</section>
-<section id="solution-1" class="slide level2">
-<h2>Solution 1</h2>
-<div id="219ca2b1" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href></a><span class="kw">def</span> absolute(n):</span>
-<span id="cb4-2"><a href></a>  <span class="cf">if</span> n <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb4-3"><a href></a>    <span class="cf">return</span> n <span class="op">*</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb4-4"><a href></a>  <span class="cf">return</span> n</span>
-<span id="cb4-5"><a href></a></span>
-<span id="cb4-6"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
-<span id="cb4-7"><a href></a>  <span class="cf">assert</span> absolute(<span class="dv">4</span>) <span class="op">==</span> <span class="dv">4</span></span>
-<span id="cb4-8"><a href></a>  <span class="cf">assert</span> absolute(<span class="op">-</span><span class="dv">4</span>) <span class="op">==</span> <span class="dv">4</span></span>
-<span id="cb4-9"><a href></a>  <span class="cf">assert</span> absolute(<span class="dv">0</span>) <span class="op">==</span> <span class="dv">0</span></span>
-<span id="cb4-10"><a href></a>  <span class="bu">print</span>(<span class="st">&quot;Passed all tests&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Write a python function called <code>factorial</code> that uses a loop (<code>for</code> or <code>while</code>, up to you) to calculate factorial of a non-negative integer <code>n</code> (n!)</p>
+<p>A factorial is the product of a given positive integer and all the positive integers smaller than it down to 1:</p>
+<p><span class="math inline">\(5! = 5 × 4 × 3 × 2 × 1 = 120\)</span></p>
+<p>The factorial of 0 (0!) is defined as 1.</p>
+<p>Submit your solution (name your file <code>loop_factorial.py</code>) to gradescope</p>
+<div id="76f08356" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href></a><span class="cf">assert</span> factorial(<span class="dv">0</span>) <span class="op">==</span> <span class="dv">1</span></span>
+<span id="cb5-2"><a href></a><span class="cf">assert</span> factorial(<span class="dv">5</span>) <span class="op">==</span> <span class="dv">120</span></span>
+<span id="cb5-3"><a href></a><span class="cf">assert</span> factorial(<span class="dv">7</span>) <span class="op">==</span> <span class="dv">5040</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="solution-2" class="slide level2">
-<h2>Solution 2</h2>
-<div id="fc13efa2" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href></a><span class="kw">def</span> absolute(n):</span>
-<span id="cb5-2"><a href></a>    <span class="cf">if</span> n <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
-<span id="cb5-3"><a href></a>        <span class="cf">return</span> n</span>
-<span id="cb5-4"><a href></a>    <span class="cf">else</span>:</span>
-<span id="cb5-5"><a href></a>        <span class="cf">return</span> n <span class="op">*</span> <span class="op">-</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="import-statements" class="slide level2">
-<h2><code>import</code> statements</h2>
-<p>You can import a module that already exists in base python:</p>
-<div id="80f7e3d3" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href></a><span class="im">import</span> random</span>
-<span id="cb6-2"><a href></a></span>
-<span id="cb6-3"><a href></a><span class="bu">print</span>(random.randint(<span class="dv">1</span>,<span class="dv">128</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>46</code></pre>
-</div>
-</div>
-<p>Or create a <code>.py</code> file and import that (overwrites the standard library if you create a <code>.py</code> file with its name)</p>
-</section>
-<section id="solution-of-circle-area-with-math.pi" class="slide level2">
-<h2>Solution of circle area with <code>math.pi</code></h2>
-<div id="b9215592" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href></a><span class="im">import</span> math</span>
-<span id="cb8-2"><a href></a></span>
-<span id="cb8-3"><a href></a><span class="kw">def</span> circle_area(r):</span>
-<span id="cb8-4"><a href></a>    <span class="co">&#39;&#39;&#39;</span></span>
-<span id="cb8-5"><a href></a><span class="co">    Given a radius r, this function calculates and returns the area of that circle</span></span>
-<span id="cb8-6"><a href></a><span class="co">    Arguments:</span></span>
-<span id="cb8-7"><a href></a><span class="co">        r (integer or float) -- radius of the circle</span></span>
-<span id="cb8-8"><a href></a><span class="co">    Returns:</span></span>
-<span id="cb8-9"><a href></a><span class="co">        And float (rounded at two decimals) representing the area of the circle of radius r</span></span>
-<span id="cb8-10"><a href></a><span class="co">    &#39;&#39;&#39;</span></span>
-<span id="cb8-11"><a href></a>    area <span class="op">=</span> math.pi <span class="op">*</span> r<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb8-12"><a href></a>    <span class="co"># return rounded area at two decimals</span></span>
-<span id="cb8-13"><a href></a>    <span class="cf">return</span> <span class="bu">round</span>(area, <span class="dv">2</span>)</span>
-<span id="cb8-14"><a href></a></span>
-<span id="cb8-15"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
-<span id="cb8-16"><a href></a>    <span class="cf">assert</span> circle_area(<span class="dv">1</span>) <span class="op">==</span> <span class="fl">3.14</span></span>
-<span id="cb8-17"><a href></a>    <span class="cf">assert</span> circle_area(<span class="dv">2</span>) <span class="op">==</span> <span class="fl">12.57</span> </span>
-<span id="cb8-18"><a href></a>    <span class="cf">assert</span> circle_area(<span class="dv">3</span>) <span class="op">==</span> <span class="fl">28.27</span></span>
-<span id="cb8-19"><a href></a>    <span class="cf">assert</span> circle_area(<span class="dv">4</span>) <span class="op">==</span> <span class="fl">50.27</span></span>
-<span id="cb8-20"><a href></a>    <span class="cf">assert</span> circle_area(<span class="dv">15</span>) <span class="op">==</span> <span class="fl">706.86</span></span>
-<span id="cb8-21"><a href></a></span>
-<span id="cb8-22"><a href></a>    <span class="bu">print</span>(<span class="st">&quot;Passed all tests&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="solution-1-for-loop" class="slide level2">
+<h2>Solution 1 – <code>for</code> loop</h2>
+<div id="e5484d94" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href></a><span class="kw">def</span> factorial(n):</span>
+<span id="cb6-2"><a href></a>  result <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb6-3"><a href></a>  <span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, n<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb6-4"><a href></a>    result <span class="op">*=</span> number</span>
+<span id="cb6-5"><a href></a>  <span class="cf">return</span> result</span>
+<span id="cb6-6"><a href></a></span>
+<span id="cb6-7"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb6-8"><a href></a>  <span class="cf">assert</span> factorial(<span class="dv">0</span>) <span class="op">==</span> <span class="dv">1</span></span>
+<span id="cb6-9"><a href></a>  <span class="cf">assert</span> factorial(<span class="dv">5</span>) <span class="op">==</span> <span class="dv">120</span></span>
+<span id="cb6-10"><a href></a>  <span class="cf">assert</span> factorial(<span class="dv">7</span>) <span class="op">==</span> <span class="dv">5040</span></span>
+<span id="cb6-11"><a href></a>  <span class="bu">print</span>(<span class="st">&quot;Passed all tests&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Passed all tests</code></pre>
 </div>
 </div>
-<p><small>Prompt for generative AI: Give me a list of circle radii and their corresponding area rounded to two decimals</small></p>
 </section>
-<section id="writing-code-for-future-importing" class="slide level2">
-<h2>Writing code for future importing</h2>
-<div id="a6215fe2" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href></a><span class="co"># Useful and general functions and variable definitions</span></span>
-<span id="cb10-2"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot; __main__ &quot;</span>:</span>
-<span id="cb10-3"><a href></a>  <span class="co"># This file has been run directly</span></span>
-<span id="cb10-4"><a href></a>  <span class="co"># interact with the user , call functions , etc.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="solution-2-for-loop" class="slide level2">
+<h2>Solution 2 – <code>for</code> loop</h2>
+<div id="0e554c77" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href></a><span class="kw">def</span> factorial(n):</span>
+<span id="cb8-2"><a href></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb8-3"><a href></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb8-4"><a href></a>    </span>
+<span id="cb8-5"><a href></a>    result <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb8-6"><a href></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb8-7"><a href></a>        result <span class="op">*=</span> i</span>
+<span id="cb8-8"><a href></a>    </span>
+<span id="cb8-9"><a href></a>    <span class="cf">return</span> result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="importing-your-own-modules" class="slide level2">
-<h2>Importing your own modules</h2>
-<p><code>test.py</code></p>
-<div id="c998f8a2" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href></a><span class="kw">def</span> square_root(n):</span>
-<span id="cb11-2"><a href></a>  <span class="co">&#39;&#39;&#39;Given an integer argument n, it returns square root of n&#39;&#39;&#39;</span></span>
-<span id="cb11-3"><a href></a>  <span class="cf">return</span> n <span class="op">**</span> <span class="fl">0.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="solution-3-while-loop" class="slide level2">
+<h2>Solution 3 – <code>while</code> loop</h2>
+<div id="297e88cc" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href></a><span class="kw">def</span> factorial(n):</span>
+<span id="cb9-2"><a href></a>  result <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb9-3"><a href></a>  <span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb9-4"><a href></a>    result <span class="op">*=</span> n</span>
+<span id="cb9-5"><a href></a>    n<span class="op">-=</span><span class="dv">1</span></span>
+<span id="cb9-6"><a href></a>  <span class="cf">return</span> result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><code>import_test.py</code></p>
-<div id="dd10b851" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href></a><span class="im">import</span> test</span>
-<span id="cb12-2"><a href></a></span>
-<span id="cb12-3"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
-<span id="cb12-4"><a href></a>  <span class="co"># print out to standard output the doc string for the square_root function</span></span>
-<span id="cb12-5"><a href></a>  <span class="bu">print</span>(test.square_root.__doc__)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="solution-4-while-loop" class="slide level2">
+<h2>Solution 4 – <code>while</code> loop</h2>
+<div id="6f7574ce" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href></a><span class="kw">def</span> factorial(n):</span>
+<span id="cb10-2"><a href></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb10-3"><a href></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb10-4"><a href></a>    </span>
+<span id="cb10-5"><a href></a>    result <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb10-6"><a href></a>    i <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb10-7"><a href></a>    <span class="cf">while</span> i <span class="op">&lt;=</span> n:</span>
+<span id="cb10-8"><a href></a>        result <span class="op">*=</span> i</span>
+<span id="cb10-9"><a href></a>        i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb10-10"><a href></a>    </span>
+<span id="cb10-11"><a href></a>    <span class="cf">return</span> result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="sequences" class="slide level2">
+<h2>Sequences</h2>
+<p>Sequence: an <strong>ordered</strong> collection of items</p>
+<ul>
+<li>strings, tuples, lists</li>
+<li>can hold duplicate values</li>
+<li>can be indexed (indexes start at zero)</li>
+<li>built-in <code>len()</code> function</li>
+<li>strings and tuples are <strong>immutable</strong> and lists are <strong>mutable</strong></li>
+</ul>
+</section>
+<section id="tuples" class="slide level2">
+<h2>Tuples</h2>
+<p>Tuple can hold repeated values</p>
+<div id="aabe628a" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href></a>my_tuple <span class="op">=</span> (<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>, <span class="st">&quot;banana&quot;</span>)</span>
+<span id="cb11-2"><a href></a>my_tuple[<span class="dv">1</span>] <span class="co"># item at index 1</span></span>
+<span id="cb11-3"><a href></a>my_tuple[<span class="dv">1</span>:<span class="dv">3</span>] <span class="co"># slice from second to third item</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>(&#39;banana&#39;, &#39;pear&#39;)</code></pre>
+</div>
+</div>
+<p>… can hold any type (including tuples, for nested tuples)</p>
+<div id="11acf455" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href></a>my_tuple <span class="op">=</span> ((<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>), (<span class="st">&quot;pear&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="dv">3</span>), <span class="dv">4</span>)</span>
+<span id="cb13-2"><a href></a>my_tuple[<span class="dv">1</span>] <span class="co"># item at index 1</span></span>
+<span id="cb13-3"><a href></a>my_tuple[<span class="dv">1</span>:<span class="dv">3</span>] <span class="co"># slice from second to third item</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>((&#39;pear&#39;, &#39;banana&#39;, 3), 4)</code></pre>
+</div>
+</div>
+</section>
+<section id="tuples-1" class="slide level2">
+<h2>Tuples</h2>
+<p>There are several edge cases for tuple literals</p>
+<ul>
+<li><p>Them empty tuple is just to parentheses containing nothing <code>()</code></p></li>
+<li><p>A tuple with only one item must have a trailing comma <code>tup_of_1 = (50,)</code></p></li>
+<li><p>You can always have a trailing comma <code>tup_t = (8, &quot;6&quot;, 7, 5, &quot;3&quot;, &quot;09&quot;, )</code></p></li>
+<li><p>If you have a bunch of comma separated values without parentheses they may also be interpreted as a tuple.</p>
+<p><code>vals = 4, 5, 6, 3.3, &quot;Tuple&quot;</code></p></li>
+</ul>
+</section>
+<section id="tuple-constructor" class="slide level2">
+<h2>Tuple constructor</h2>
+<div id="fda2bf09" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href></a>my_chars <span class="op">=</span> <span class="bu">tuple</span>(<span class="st">&quot;abcdef&quot;</span>)</span>
+<span id="cb15-2"><a href></a>my_chars[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>&#39;c&#39;</code></pre>
+</div>
+</div>
+</section>
+<section id="tuple-operators" class="slide level2">
+<h2>Tuple operators</h2>
+<ul>
+<li>Concatenation: <code>(2, 3) + (1, 2, 3)</code></li>
+<li>Multiplication: <code>(2,) * 3</code></li>
+</ul>
+</section>
+<section id="return-tuples-in-a-python-function" class="slide level2">
+<h2>Return tuples in a python function</h2>
+<div id="b0e7c45b" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href></a><span class="kw">def</span> min_max(numbers):</span>
+<span id="cb17-2"><a href></a>  <span class="cf">return</span> <span class="bu">min</span>(numbers), <span class="bu">max</span>(numbers)</span>
+<span id="cb17-3"><a href></a></span>
+<span id="cb17-4"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb17-5"><a href></a>  test_numbers <span class="op">=</span> (<span class="op">-</span><span class="dv">2</span>, <span class="dv">100</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">23</span>, <span class="dv">0</span>)</span>
+<span id="cb17-6"><a href></a>  <span class="bu">print</span>(min_max(test_numbers))</span>
+<span id="cb17-7"><a href></a>  </span>
+<span id="cb17-8"><a href></a>  <span class="co"># unpack tuples into multiple variables</span></span>
+<span id="cb17-9"><a href></a>  min_value, max_value <span class="op">=</span> min_max(test_numbers)</span>
+<span id="cb17-10"><a href></a>  <span class="bu">print</span>(min_value)</span>
+<span id="cb17-11"><a href></a>  <span class="bu">print</span>(max_value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(-23, 100)
+-23
+100</code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>Write a python function called <code>hex_to_rgb</code> that gets as argument a hex code in the string format <code>&quot;#F54927&quot;</code> and returns the equivalent RGB code in a tuple of integers format <code>(245, 73, 39)</code></p>
+<p>Hints:</p>
+<ul>
+<li>The base of a hexadecimal system is 16, we want to convert a two digit hex code to decimal</li>
+<li>You can convert <code>&quot;CF&quot;</code> to python using the int() built-in function like so <code>int(&quot;CF&quot;, 16)</code></li>
+</ul>
+</section>
+<section id="strings" class="slide level2">
+<h2>Strings</h2>
+<div id="7e6642e3" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href></a>my_string <span class="op">=</span> <span class="st">&quot;apple&quot;</span></span>
+<span id="cb19-2"><a href></a>my_string[<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<pre><code>&#39;l&#39;</code></pre>
+</div>
+</div>
+</section>
+<section id="keyword-in" class="slide level2">
+<h2>Keyword: <code>in</code></h2>
+<ul>
+<li>Determines whether an element is in a <strong>collection</strong>, returns <code>True</code> or <code>False</code></li>
+</ul>
+<div id="158cd5b5" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href></a><span class="co">&quot;nas&quot;</span> <span class="kw">in</span> <span class="st">&quot;Bananas&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-2" class="slide level2">
+<h2>Exercise</h2>
+<p>Write a python function that determines whether a whole number greater than one is prime. A prime is divisible only by itself and 1 (not a product of two smaller natural numbers).</p>
+<p>Test the remainder of the division with all primes up to the square root of the argument <code>n</code>.</p>
 
 </section>
     </div>
