@@ -442,7 +442,7 @@
   <meta name="generator" content="quarto-1.6.39">
 
   <meta name="author" content="CSCI 1913 – Introduction to Algorithms, Data Structures, and Program DevelopmentAdriana Picoral">
-  <title>Python Loops</title>
+  <title>Python Lists</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -1051,7 +1051,7 @@ margin-right: 0; }
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Python Loops</h1>
+  <h1 class="title">Python Lists</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -1062,332 +1062,81 @@ margin-right: 0; }
 </div>
 
 </section>
-<section id="warm-up" class="slide level2">
-<h2>Warm-up</h2>
-<p>What would the docstring for <code>digits</code> look like? (in other words, what does <code>digits</code> do?)</p>
-<div id="9a7bc35d" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a><span class="kw">def</span> digits(number):</span>
-<span id="cb1-2"><a href></a>    result <span class="op">=</span> []</span>
-<span id="cb1-3"><a href></a>    <span class="cf">while</span> number <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb1-4"><a href></a>        result.insert(<span class="dv">0</span>, number <span class="op">%</span> <span class="dv">10</span>)</span>
-<span id="cb1-5"><a href></a>        number <span class="op">=</span> number <span class="op">//</span> <span class="dv">10</span></span>
-<span id="cb1-6"><a href></a>    <span class="cf">return</span> result</span>
-<span id="cb1-7"><a href></a></span>
-<span id="cb1-8"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
-<span id="cb1-9"><a href></a>    <span class="cf">for</span> d <span class="kw">in</span> digits(<span class="dv">104231</span>):</span>
-<span id="cb1-10"><a href></a>        <span class="bu">print</span>(d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="quiz-01" class="slide level2">
-<h2>Quiz 01</h2>
-<center>
-<div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;">
-<a href="//24timezones.com/Tucson/time" style="text-decoration: none" class="clock24" id="tz24-1695057604-c1393-eyJob3VydHlwZSI6IjEyIiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIwIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2NTA4ODZjNDg0OWVlIiwidHlwZSI6ImRiIiwibGFuZyI6ImVuIn0=" title="World Time :: Tucson" target="_blank" rel="nofollow"></a>current time
-<div id="clock_block_cb650886c4849ee">
-
-</div>
-</div>
-<script src="data:text/plain; charset=utf-8;charset=utf-8,404%20page%20not%20found%0A" type="text/javascript" async></script>
-</center>
-<p>You have 10 minutes to complete the quiz</p>
+<section id="thinking-and-planning" class="slide level2">
+<h2>Thinking and planning</h2>
 <ul>
-<li>No need for comments or doc strings, no need to include the tests in your solution, no need for <code>if __name__</code></li>
-<li>Just write your function and what’s inside the function</li>
-<li>Raise your hand when you’re done, a TA will come and grab your completed quiz</li>
-</ul>
-<p>HINT: use the keyword <code>def</code> to define a function</p>
-</section>
-<section id="while-vs-for-loops" class="slide level2">
-<h2><code>while</code> vs <code>for</code> loops</h2>
-<p>A <code>while</code> loop has a condition that needs to evaluate to <code>False</code> to get out of the loop:</p>
-<div id="14172acd" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href></a>n <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb2-2"><a href></a><span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb2-3"><a href></a>  <span class="bu">print</span>(n)</span>
-<span id="cb2-4"><a href></a>  n <span class="op">=</span> n <span class="op">-</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>3
-2
-1</code></pre>
-</div>
-</div>
-<p>A <code>for</code> loop uses a variable:</p>
-<div id="90526ab7" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href></a><span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
-<span id="cb4-2"><a href></a>  <span class="bu">print</span>(n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>0
-1
-2</code></pre>
-</div>
-</div>
-</section>
-<section id="definite-vs.-indefinite-loops" class="slide level2">
-<h2>Definite vs. Indefinite loops</h2>
-<p>Definite loop: the number of iterations is known before the loop begins execution</p>
-<p>Which type of loop is always definite? <code>while</code> or <code>for</code> loops?</p>
-</section>
-<section id="while-and-for-loops" class="slide level2">
-<h2><code>while</code> and <code>for</code> loops</h2>
+<li>Planning and typing are separate
 <ul>
-<li>A while loop runs until its a return statement inside the loop or the while condition is evaluated as false</li>
-<li>For loops operate over an <a href="https://www.w3schools.com/python/python_iterators.asp">iterable object</a> (range, list, string, set, tuple)</li>
-<li>All for loops can be converted into while loops</li>
-<li>Not all while loops can become for loops (definite loops can be converted to a while loop)</li>
-<li>For loops are slightly faster</li>
-<li>Python does NOT have do while loops (code block inside while loops can run zero times)</li>
-</ul>
-</section>
-<section id="range" class="slide level2">
-<h2><code>range</code></h2>
-<p><code>range(start, stop, step)</code></p>
-<ul>
-<li>range is both a function and an object</li>
-<li>range only works with integers</li>
-<li>a range object represents a sequence of integer numbers
-<ul>
-<li>range(5) is a sequence of the numbers 0,1,2,3,4</li>
-<li>it is not indexable in all versions of python (we will see indexing in a bit)</li>
+<li>Plan first (this is the hard part!)</li>
+<li>Translate the plan into language of your choice</li>
 </ul></li>
+<li>Hard to read code is rarely necessary and always bad
+<ul>
+<li>If your peers can’t read it, it doesn’t matter if it works</li>
+<li>Code is Communication. prepare it and proofread it just like an essay</li>
+</ul></li>
+<li>Multiple solutions to every problem. Pick the best one</li>
 </ul>
+</section>
+<section id="lists" class="slide level2">
+<h2>Lists</h2>
+<p>Lists are similar to tuples, with one important difference: lists are <strong>mutable</strong></p>
+<p>Lists and tuples:</p>
+<ul>
+<li>store ordered items that can repeat</li>
+<li>can be indexed</li>
+<li>we can use built-in functions like <code>len()</code>, <code>max()</code>, <code>min()</code></li>
+</ul>
+</section>
+<section id="lists-1" class="slide level2">
+<h2>Lists</h2>
+<p>Lists are <strong>mutable</strong>, so we can modify a value using its index</p>
+<div id="63e48d38" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a>my_list <span class="op">=</span> [<span class="st">&quot;Peter&quot;</span>, <span class="dv">10</span>, <span class="fl">10.0</span>, <span class="st">&quot;apple&quot;</span>]</span>
+<span id="cb1-2"><a href></a><span class="bu">print</span>(my_list[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Peter</code></pre>
+</div>
+</div>
+<div id="44f6084a" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href></a>my_list[<span class="dv">0</span>] <span class="op">=</span> <span class="st">&quot;Mary&quot;</span></span>
+<span id="cb3-2"><a href></a><span class="bu">print</span>(my_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[&#39;Mary&#39;, 10, 10.0, &#39;apple&#39;]</code></pre>
+</div>
+</div>
+<p>While we can index a tuple, we cannot modify items in a tuple</p>
+</section>
+<section id="lists-2" class="slide level2">
+<h2>Lists</h2>
+<p>Lists are mutable, so we can modify lists with methods:</p>
+<ul>
+<li><code>.append(item)</code> adds an item to the end of the list</li>
+<li><code>.insert(index, item)</code> adds an item to index position (rest of list shifts right)</li>
+<li><code>.remove(item)</code> removes the first matching item</li>
+<li><code>.pop(index)</code> removes item at index (returns the removed value)</li>
+</ul>
+</section>
+<section id="keyword-in" class="slide level2">
+<h2>Keyword: <code>in</code></h2>
+<ul>
+<li>The keyword <code>in</code> determines whether an element is in a <strong>collection</strong>, returns <code>True</code> or <code>False</code></li>
+</ul>
+<div id="09291f64" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href></a><span class="co">&quot;nas&quot;</span> <span class="kw">in</span> <span class="st">&quot;Bananas&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="exercise" class="slide level2">
 <h2>Exercise</h2>
-<p>Write a python function called <code>factorial</code> that uses a loop (<code>for</code> or <code>while</code>, up to you) to calculate factorial of a non-negative integer <code>n</code> (n!)</p>
-<p>A factorial is the product of a given positive integer and all the positive integers smaller than it down to 1:</p>
-<p><span class="math inline">\(5! = 5 × 4 × 3 × 2 × 1 = 120\)</span></p>
-<p>The factorial of 0 (0!) is defined as 1.</p>
-<p>Submit your solution (name your file <code>loop_factorial.py</code>) to gradescope</p>
-<div id="918ce4fc" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href></a><span class="cf">assert</span> factorial(<span class="dv">0</span>) <span class="op">==</span> <span class="dv">1</span></span>
-<span id="cb6-2"><a href></a><span class="cf">assert</span> factorial(<span class="dv">5</span>) <span class="op">==</span> <span class="dv">120</span></span>
-<span id="cb6-3"><a href></a><span class="cf">assert</span> factorial(<span class="dv">7</span>) <span class="op">==</span> <span class="dv">5040</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="solution-1-for-loop" class="slide level2">
-<h2>Solution 1 – <code>for</code> loop</h2>
-<div id="89aa6ab6" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href></a><span class="kw">def</span> factorial(n):</span>
-<span id="cb7-2"><a href></a>  result <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb7-3"><a href></a>  <span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, n<span class="op">+</span><span class="dv">1</span>):</span>
-<span id="cb7-4"><a href></a>    result <span class="op">*=</span> number</span>
-<span id="cb7-5"><a href></a>  <span class="cf">return</span> result</span>
-<span id="cb7-6"><a href></a></span>
-<span id="cb7-7"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
-<span id="cb7-8"><a href></a>  <span class="cf">assert</span> factorial(<span class="dv">0</span>) <span class="op">==</span> <span class="dv">1</span></span>
-<span id="cb7-9"><a href></a>  <span class="cf">assert</span> factorial(<span class="dv">5</span>) <span class="op">==</span> <span class="dv">120</span></span>
-<span id="cb7-10"><a href></a>  <span class="cf">assert</span> factorial(<span class="dv">7</span>) <span class="op">==</span> <span class="dv">5040</span></span>
-<span id="cb7-11"><a href></a>  <span class="bu">print</span>(<span class="st">&quot;Passed all tests&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Passed all tests</code></pre>
-</div>
-</div>
-</section>
-<section id="solution-2-for-loop" class="slide level2">
-<h2>Solution 2 – <code>for</code> loop</h2>
-<div id="8c449010" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href></a><span class="kw">def</span> factorial(n):</span>
-<span id="cb9-2"><a href></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb9-3"><a href></a>        <span class="cf">return</span> <span class="dv">1</span></span>
-<span id="cb9-4"><a href></a>    </span>
-<span id="cb9-5"><a href></a>    result <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb9-6"><a href></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n <span class="op">+</span> <span class="dv">1</span>):</span>
-<span id="cb9-7"><a href></a>        result <span class="op">*=</span> i</span>
-<span id="cb9-8"><a href></a>    </span>
-<span id="cb9-9"><a href></a>    <span class="cf">return</span> result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="solution-3-while-loop" class="slide level2">
-<h2>Solution 3 – <code>while</code> loop</h2>
-<div id="9b668583" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href></a><span class="kw">def</span> factorial(n):</span>
-<span id="cb10-2"><a href></a>  result <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb10-3"><a href></a>  <span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb10-4"><a href></a>    result <span class="op">*=</span> n</span>
-<span id="cb10-5"><a href></a>    n<span class="op">-=</span><span class="dv">1</span></span>
-<span id="cb10-6"><a href></a>  <span class="cf">return</span> result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="solution-4-while-loop" class="slide level2">
-<h2>Solution 4 – <code>while</code> loop</h2>
-<div id="3a58a25b" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href></a><span class="kw">def</span> factorial(n):</span>
-<span id="cb11-2"><a href></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb11-3"><a href></a>        <span class="cf">return</span> <span class="dv">1</span></span>
-<span id="cb11-4"><a href></a>    </span>
-<span id="cb11-5"><a href></a>    result <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb11-6"><a href></a>    i <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb11-7"><a href></a>    <span class="cf">while</span> i <span class="op">&lt;=</span> n:</span>
-<span id="cb11-8"><a href></a>        result <span class="op">*=</span> i</span>
-<span id="cb11-9"><a href></a>        i <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb11-10"><a href></a>    </span>
-<span id="cb11-11"><a href></a>    <span class="cf">return</span> result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sequences" class="slide level2">
-<h2>Sequences</h2>
-<p>Sequence: an <strong>ordered</strong> collection of items</p>
-<ul>
-<li>strings, tuples, lists</li>
-<li>can hold duplicate values</li>
-<li>can be indexed (indexes start at zero)</li>
-<li>built-in <code>len()</code> function</li>
-<li>strings and tuples are <strong>immutable</strong> and lists are <strong>mutable</strong></li>
-</ul>
-</section>
-<section id="tuples" class="slide level2">
-<h2>Tuples</h2>
-<p>Tuple can hold repeated values</p>
-<div id="5e441256" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href></a>my_tuple <span class="op">=</span> (<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>, <span class="st">&quot;banana&quot;</span>)</span>
-<span id="cb12-2"><a href></a>my_tuple[<span class="dv">1</span>] <span class="co"># item at index 1</span></span>
-<span id="cb12-3"><a href></a>my_tuple[<span class="dv">1</span>:<span class="dv">3</span>] <span class="co"># slice from second to third item</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>(&#39;banana&#39;, &#39;pear&#39;)</code></pre>
-</div>
-</div>
-<p>… can hold any type (including tuples, for nested tuples)</p>
-<div id="bd4792b4" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href></a>my_tuple <span class="op">=</span> ((<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>), (<span class="st">&quot;pear&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="dv">3</span>), <span class="dv">4</span>)</span>
-<span id="cb14-2"><a href></a>my_tuple[<span class="dv">1</span>] <span class="co"># item at index 1</span></span>
-<span id="cb14-3"><a href></a>my_tuple[<span class="dv">1</span>:<span class="dv">3</span>] <span class="co"># slice from second to third item</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>((&#39;pear&#39;, &#39;banana&#39;, 3), 4)</code></pre>
-</div>
-</div>
-</section>
-<section id="tuples-1" class="slide level2">
-<h2>Tuples</h2>
-<p>There are several edge cases for tuple literals</p>
-<ul>
-<li><p>Them empty tuple is just to parentheses containing nothing <code>()</code></p></li>
-<li><p>A tuple with only one item must have a trailing comma <code>tup_of_1 = (50,)</code></p></li>
-<li><p>You can always have a trailing comma <code>tup_t = (8, &quot;6&quot;, 7, 5, &quot;3&quot;, &quot;09&quot;, )</code></p></li>
-<li><p>If you have a bunch of comma separated values without parentheses they may also be interpreted as a tuple.</p>
-<p><code>vals = 4, 5, 6, 3.3, &quot;Tuple&quot;</code></p></li>
-</ul>
-</section>
-<section id="tuple-constructor" class="slide level2">
-<h2>Tuple constructor</h2>
-<div id="c021ba00" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href></a>my_chars <span class="op">=</span> <span class="bu">tuple</span>(<span class="st">&quot;abcdef&quot;</span>)</span>
-<span id="cb16-2"><a href></a>my_chars[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>&#39;c&#39;</code></pre>
-</div>
-</div>
-</section>
-<section id="tuple-operators" class="slide level2">
-<h2>Tuple operators</h2>
-<ul>
-<li>Concatenation: <code>(2, 3) + (1, 2, 3)</code></li>
-<li>Multiplication: <code>(2,) * 3</code></li>
-</ul>
-</section>
-<section id="return-tuples-in-a-python-function" class="slide level2">
-<h2>Return tuples in a python function</h2>
-<div id="16b93dcf" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href></a><span class="kw">def</span> min_max(numbers):</span>
-<span id="cb18-2"><a href></a>  <span class="cf">return</span> <span class="bu">min</span>(numbers), <span class="bu">max</span>(numbers)</span>
-<span id="cb18-3"><a href></a></span>
-<span id="cb18-4"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
-<span id="cb18-5"><a href></a>  test_numbers <span class="op">=</span> (<span class="op">-</span><span class="dv">2</span>, <span class="dv">100</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">23</span>, <span class="dv">0</span>)</span>
-<span id="cb18-6"><a href></a>  <span class="bu">print</span>(min_max(test_numbers))</span>
-<span id="cb18-7"><a href></a>  </span>
-<span id="cb18-8"><a href></a>  <span class="co"># unpack tuples into multiple variables</span></span>
-<span id="cb18-9"><a href></a>  min_value, max_value <span class="op">=</span> min_max(test_numbers)</span>
-<span id="cb18-10"><a href></a>  <span class="bu">print</span>(min_value)</span>
-<span id="cb18-11"><a href></a>  <span class="bu">print</span>(max_value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>(-23, 100)
--23
-100</code></pre>
-</div>
-</div>
-</section>
-<section id="strings" class="slide level2">
-<h2>Strings</h2>
-<p>Same operators as tuples</p>
-<div id="6b5965fe" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href></a>my_string <span class="op">=</span> <span class="st">&quot;apple&quot;</span></span>
-<span id="cb20-2"><a href></a>my_string[<span class="dv">3</span>]</span>
-<span id="cb20-3"><a href></a>my_string[<span class="dv">1</span>:<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>&#39;ppl&#39;</code></pre>
-</div>
-</div>
-</section>
-<section id="for-each-loops-in-python" class="slide level2">
-<h2>for each loops in Python</h2>
-<p>Looping over a sequence with an index:</p>
-<div id="2bd9b7cc" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href></a>my_string <span class="op">=</span> <span class="st">&quot;apple&quot;</span></span>
-<span id="cb22-2"><a href></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(my_string)):</span>
-<span id="cb22-3"><a href></a>  <span class="bu">print</span>(my_string[i])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Looping over a sequence without an index:</p>
-<div id="0978da55" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href></a>my_string <span class="op">=</span> <span class="st">&quot;apple&quot;</span></span>
-<span id="cb23-2"><a href></a><span class="cf">for</span> char <span class="kw">in</span> my_string:</span>
-<span id="cb23-3"><a href></a>  <span class="bu">print</span>(char)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="exercise-1" class="slide level2">
-<h2>Exercise</h2>
-<p>Write a python function called <code>hex_to_rgb</code> that gets as argument a hex code in the string format <code>&quot;#F54927&quot;</code> and returns the equivalent RGB code in a tuple of integers format <code>(245, 73, 39)</code></p>
-<p>Hint: The base of a hexadecimal system is 16, we want to convert a two digit hex code to decimal integer. For example, you can convert <code>&quot;CF&quot;</code> to python using the int() built-in function like so <code>int(&quot;CF&quot;, 16)</code></p>
-<p>Submit your solution <code>colors.py</code> to the in-class exercise in gradescope.</p>
-</section>
-<section id="solution" class="slide level2">
-<h2>Solution</h2>
-<div id="f55e37a6" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href></a><span class="kw">def</span> hex_to_rgb(hex_string):</span>
-<span id="cb24-2"><a href></a>    red <span class="op">=</span> hex_string[<span class="dv">1</span>:<span class="dv">3</span>]</span>
-<span id="cb24-3"><a href></a>    blue <span class="op">=</span> hex_string[<span class="dv">3</span>:<span class="dv">5</span>]</span>
-<span id="cb24-4"><a href></a>    green <span class="op">=</span> hex_string[<span class="dv">5</span>:<span class="dv">7</span>]</span>
-<span id="cb24-5"><a href></a>    <span class="cf">return</span> <span class="bu">int</span>(red, <span class="dv">16</span>), <span class="bu">int</span>(blue, <span class="dv">16</span>), <span class="bu">int</span>(green, <span class="dv">16</span>)</span>
-<span id="cb24-6"><a href></a>  </span>
-<span id="cb24-7"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
-<span id="cb24-8"><a href></a>    <span class="cf">assert</span> hex_to_rgb(<span class="st">&quot;#F54927&quot;</span>) <span class="op">==</span> (<span class="dv">245</span>, <span class="dv">73</span>, <span class="dv">39</span>)</span>
-<span id="cb24-9"><a href></a>    <span class="cf">assert</span> hex_to_rgb(<span class="st">&quot;#000000&quot;</span>) <span class="op">==</span> (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb24-10"><a href></a>    <span class="cf">assert</span> hex_to_rgb(<span class="st">&quot;#FFFFFF&quot;</span>) <span class="op">==</span> (<span class="dv">255</span>, <span class="dv">255</span>, <span class="dv">255</span>)</span>
-<span id="cb24-11"><a href></a>    <span class="cf">assert</span> hex_to_rgb(<span class="st">&quot;#70B578&quot;</span>) <span class="op">==</span> (<span class="dv">112</span>, <span class="dv">181</span>, <span class="dv">120</span>)</span>
-<span id="cb24-12"><a href></a></span>
-<span id="cb24-13"><a href></a>    <span class="bu">print</span>(<span class="st">&quot;Passed all tests&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Passed all tests</code></pre>
-</div>
-</div>
-</section>
-<section id="exercise-2" class="slide level2">
-<h2>Exercise</h2>
-<p>Write a python function that determines whether a whole number greater than one is prime. A prime is divisible only by itself and 1 (not a product of two smaller natural numbers). Submit your python script <code>primes.py</code> to gradescope.</p>
-<p>Test the remainder of the division with all primes up to the square root of the argument <code>n</code>.</p>
+<p>Write a python function that given a string, it returns two lists: one with all vowels (a, e, i, o, u) and another with all consonants.</p>
 <p>Test cases:</p>
-<div id="1473b17e" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
-<span id="cb26-2"><a href></a>    <span class="cf">assert</span> is_prime(<span class="dv">2</span>) <span class="op">==</span> <span class="va">True</span></span>
-<span id="cb26-3"><a href></a>    <span class="cf">assert</span> is_prime(<span class="dv">4</span>) <span class="op">==</span> <span class="va">False</span></span>
-<span id="cb26-4"><a href></a>    <span class="cf">assert</span> is_prime(<span class="dv">29</span>) <span class="op">==</span> <span class="va">True</span></span>
-<span id="cb26-5"><a href></a>    <span class="cf">assert</span> is_prime(<span class="dv">53</span>) <span class="op">==</span> <span class="va">True</span></span>
-<span id="cb26-6"><a href></a>    <span class="cf">assert</span> is_prime(<span class="dv">54</span>) <span class="op">==</span> <span class="va">False</span></span>
-<span id="cb26-7"><a href></a></span>
-<span id="cb26-8"><a href></a>    <span class="bu">print</span>(<span class="st">&quot;Passed all tests&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="expansion" class="slide level2">
-<h2>Expansion</h2>
-<p>Add to your previous solution a python function called <code>get_primes</code> that takes a whole number greater than one as argument and returns a tuple with all integers that are prime up (and including) <code>n</code>.</p>
-<p>Test cases:</p>
-<div id="59ca9571" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
-<span id="cb27-2"><a href></a>    <span class="cf">assert</span> get_primes(<span class="dv">2</span>) <span class="op">==</span> (<span class="dv">2</span>)</span>
-<span id="cb27-3"><a href></a>    <span class="cf">assert</span> get_primes(<span class="dv">4</span>) <span class="op">==</span> (<span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb27-4"><a href></a>    <span class="cf">assert</span> get_primes(<span class="dv">29</span>) <span class="op">==</span> (<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">23</span>, <span class="dv">29</span>)</span>
-<span id="cb27-5"><a href></a>    <span class="cf">assert</span> get_primes(<span class="dv">53</span>) <span class="op">==</span> (<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">23</span>, <span class="dv">29</span>, <span class="dv">31</span>, <span class="dv">37</span>, <span class="dv">41</span>, <span class="dv">43</span>, <span class="dv">47</span>, <span class="dv">53</span>)</span>
-<span id="cb27-6"><a href></a>    <span class="cf">assert</span> get_primes(<span class="dv">54</span>) <span class="op">==</span> (<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">23</span>, <span class="dv">29</span>, <span class="dv">31</span>, <span class="dv">37</span>, <span class="dv">41</span>, <span class="dv">43</span>, <span class="dv">47</span>, <span class="dv">53</span>)</span>
-<span id="cb27-7"><a href></a></span>
-<span id="cb27-8"><a href></a>    <span class="bu">print</span>(<span class="st">&quot;Passed all tests&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="50fa3fa7" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb6-2"><a href></a>    <span class="cf">assert</span> vowels_consonants(<span class="st">&quot;&quot;</span>) <span class="op">==</span> [], []</span>
+<span id="cb6-3"><a href></a>    <span class="cf">assert</span> vowels_consonants(<span class="st">&quot;aeaAR&quot;</span>) <span class="op">==</span> [<span class="st">&quot;a&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;A&quot;</span>], [<span class="st">&quot;R&quot;</span>]</span>
+<span id="cb6-4"><a href></a>    <span class="cf">assert</span> vowels_consonants(<span class="st">&quot;abcd&quot;</span>) <span class="op">==</span> [<span class="st">&quot;a&quot;</span>], [<span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>]</span>
+<span id="cb6-5"><a href></a></span>
+<span id="cb6-6"><a href></a>    <span class="bu">print</span>(<span class="st">&quot;Passed all tests&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
