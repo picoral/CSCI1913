@@ -1068,7 +1068,7 @@ margin-right: 0; }
 <li>What would the standard output look like after the code below has finished running?</li>
 <li>What would the docstring for <code>digits</code> look like? (in other words, what does <code>digits</code> do?)</li>
 </ul>
-<div id="1136781e" class="cell" data-execution_count="1">
+<div id="451af487" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a><span class="kw">def</span> digits(number):</span>
 <span id="cb1-2"><a href></a>    result <span class="op">=</span> []</span>
 <span id="cb1-3"><a href></a>    <span class="cf">while</span> number <span class="op">&gt;</span> <span class="dv">0</span>:</span>
@@ -1083,15 +1083,6 @@ margin-right: 0; }
 </section>
 <section id="quiz-01" class="slide level2">
 <h2>Quiz 01</h2>
-<center>
-<div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;">
-<a href="//24timezones.com/Tucson/time" style="text-decoration: none" class="clock24" id="tz24-1695057604-c1393-eyJob3VydHlwZSI6IjEyIiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIwIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2NTA4ODZjNDg0OWVlIiwidHlwZSI6ImRiIiwibGFuZyI6ImVuIn0=" title="World Time :: Tucson" target="_blank" rel="nofollow"></a>current time
-<div id="clock_block_cb650886c4849ee">
-
-</div>
-</div>
-<script src="data:text/plain; charset=utf-8;charset=utf-8,404%20page%20not%20found%0A" type="text/javascript" async></script>
-</center>
 <p>You have 10 minutes to complete the quiz</p>
 <ul>
 <li>No need for comments or doc strings, no need to include the tests in your solution, no need for <code>if __name__</code></li>
@@ -1103,7 +1094,7 @@ margin-right: 0; }
 <section id="while-vs-for-loops" class="slide level2">
 <h2><code>while</code> vs <code>for</code> loops</h2>
 <p>A <code>while</code> loop has a condition that needs to evaluate to <code>False</code> to get out of the loop:</p>
-<div id="cd8f8b78" class="cell" data-execution_count="2">
+<div id="f19a6f1a" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href></a>n <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb2-2"><a href></a><span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb2-3"><a href></a>  <span class="bu">print</span>(n)</span>
@@ -1115,7 +1106,7 @@ margin-right: 0; }
 </div>
 </div>
 <p>A <code>for</code> loop uses a variable:</p>
-<div id="0709b97c" class="cell" data-execution_count="3">
+<div id="d171c0d8" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href></a><span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
 <span id="cb4-2"><a href></a>  <span class="bu">print</span>(n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1161,7 +1152,7 @@ margin-right: 0; }
 <p><span class="math inline">\(5! = 5 × 4 × 3 × 2 × 1 = 120\)</span></p>
 <p>The factorial of 0 (0!) is defined as 1.</p>
 <p>Submit your solution (name your file <code>loop_factorial.py</code>) to gradescope</p>
-<div id="1aa26406" class="cell" data-execution_count="4">
+<div id="fc988b96" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href></a><span class="cf">assert</span> factorial(<span class="dv">0</span>) <span class="op">==</span> <span class="dv">1</span></span>
 <span id="cb6-2"><a href></a><span class="cf">assert</span> factorial(<span class="dv">5</span>) <span class="op">==</span> <span class="dv">120</span></span>
 <span id="cb6-3"><a href></a><span class="cf">assert</span> factorial(<span class="dv">7</span>) <span class="op">==</span> <span class="dv">5040</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1169,7 +1160,7 @@ margin-right: 0; }
 </section>
 <section id="solution-1-for-loop" class="slide level2">
 <h2>Solution 1 – <code>for</code> loop</h2>
-<div id="c1e6875b" class="cell" data-execution_count="5">
+<div id="4556d899" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb7-2"><a href></a>  result <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb7-3"><a href></a>  <span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, n<span class="op">+</span><span class="dv">1</span>):</span>
@@ -1188,7 +1179,7 @@ margin-right: 0; }
 </section>
 <section id="solution-2-for-loop" class="slide level2">
 <h2>Solution 2 – <code>for</code> loop</h2>
-<div id="f966f7b6" class="cell" data-execution_count="6">
+<div id="e7cb1727" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb9-2"><a href></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb9-3"><a href></a>        <span class="cf">return</span> <span class="dv">1</span></span>
@@ -1202,7 +1193,7 @@ margin-right: 0; }
 </section>
 <section id="solution-3-while-loop" class="slide level2">
 <h2>Solution 3 – <code>while</code> loop</h2>
-<div id="b7c7a3d7" class="cell" data-execution_count="7">
+<div id="645271d1" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb10-2"><a href></a>  result <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb10-3"><a href></a>  <span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
@@ -1213,7 +1204,7 @@ margin-right: 0; }
 </section>
 <section id="solution-4-while-loop" class="slide level2">
 <h2>Solution 4 – <code>while</code> loop</h2>
-<div id="f6279fcd" class="cell" data-execution_count="8">
+<div id="9e30f5cb" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb11-2"><a href></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb11-3"><a href></a>        <span class="cf">return</span> <span class="dv">1</span></span>
@@ -1241,20 +1232,20 @@ margin-right: 0; }
 <section id="tuples" class="slide level2">
 <h2>Tuples</h2>
 <p>Tuple can hold repeated values</p>
-<div id="eeaefb88" class="cell" data-execution_count="9">
+<div id="e29cd7a9" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href></a>my_tuple <span class="op">=</span> (<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>, <span class="st">&quot;banana&quot;</span>)</span>
 <span id="cb12-2"><a href></a>my_tuple[<span class="dv">1</span>] <span class="co"># item at index 1</span></span>
 <span id="cb12-3"><a href></a>my_tuple[<span class="dv">1</span>:<span class="dv">3</span>] <span class="co"># slice from second to third item</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="43">
 <pre><code>(&#39;banana&#39;, &#39;pear&#39;)</code></pre>
 </div>
 </div>
 <p>… can hold any type (including tuples, for nested tuples)</p>
-<div id="081a03d3" class="cell" data-execution_count="10">
+<div id="e17768b1" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href></a>my_tuple <span class="op">=</span> ((<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>), (<span class="st">&quot;pear&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="dv">3</span>), <span class="dv">4</span>)</span>
 <span id="cb14-2"><a href></a>my_tuple[<span class="dv">1</span>] <span class="co"># item at index 1</span></span>
 <span id="cb14-3"><a href></a>my_tuple[<span class="dv">1</span>:<span class="dv">3</span>] <span class="co"># slice from second to third item</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="44">
 <pre><code>((&#39;pear&#39;, &#39;banana&#39;, 3), 4)</code></pre>
 </div>
 </div>
@@ -1272,10 +1263,10 @@ margin-right: 0; }
 </section>
 <section id="tuple-constructor" class="slide level2">
 <h2>Tuple constructor</h2>
-<div id="e8354f0e" class="cell" data-execution_count="11">
+<div id="cff609fc" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href></a>my_chars <span class="op">=</span> <span class="bu">tuple</span>(<span class="st">&quot;abcdef&quot;</span>)</span>
 <span id="cb16-2"><a href></a>my_chars[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="45">
 <pre><code>&#39;c&#39;</code></pre>
 </div>
 </div>
@@ -1289,7 +1280,7 @@ margin-right: 0; }
 </section>
 <section id="return-tuples-in-a-python-function" class="slide level2">
 <h2>Return tuples in a python function</h2>
-<div id="51534d16" class="cell" data-execution_count="12">
+<div id="c0a2f897" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href></a><span class="kw">def</span> min_max(numbers):</span>
 <span id="cb18-2"><a href></a>  <span class="cf">return</span> <span class="bu">min</span>(numbers), <span class="bu">max</span>(numbers)</span>
 <span id="cb18-3"><a href></a></span>
@@ -1311,11 +1302,11 @@ margin-right: 0; }
 <section id="strings" class="slide level2">
 <h2>Strings</h2>
 <p>Same operators as tuples</p>
-<div id="a1c5c412" class="cell" data-execution_count="13">
+<div id="452214cb" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href></a>my_string <span class="op">=</span> <span class="st">&quot;apple&quot;</span></span>
 <span id="cb20-2"><a href></a>my_string[<span class="dv">3</span>]</span>
 <span id="cb20-3"><a href></a>my_string[<span class="dv">1</span>:<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="47">
 <pre><code>&#39;ppl&#39;</code></pre>
 </div>
 </div>
@@ -1323,13 +1314,13 @@ margin-right: 0; }
 <section id="for-each-loops-in-python" class="slide level2">
 <h2>for each loops in Python</h2>
 <p>Looping over a sequence with an index:</p>
-<div id="99f87976" class="cell" data-execution_count="14">
+<div id="39567a13" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href></a>my_string <span class="op">=</span> <span class="st">&quot;apple&quot;</span></span>
 <span id="cb22-2"><a href></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(my_string)):</span>
 <span id="cb22-3"><a href></a>  <span class="bu">print</span>(my_string[i])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Looping over a sequence without an index:</p>
-<div id="5e7f7aab" class="cell" data-execution_count="15">
+<div id="31ee2baa" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href></a>my_string <span class="op">=</span> <span class="st">&quot;apple&quot;</span></span>
 <span id="cb23-2"><a href></a><span class="cf">for</span> char <span class="kw">in</span> my_string:</span>
 <span id="cb23-3"><a href></a>  <span class="bu">print</span>(char)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1343,7 +1334,7 @@ margin-right: 0; }
 </section>
 <section id="solution" class="slide level2">
 <h2>Solution</h2>
-<div id="d65a25d2" class="cell" data-execution_count="16">
+<div id="1eb0e2ce" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href></a><span class="kw">def</span> hex_to_rgb(hex_string):</span>
 <span id="cb24-2"><a href></a>    red <span class="op">=</span> hex_string[<span class="dv">1</span>:<span class="dv">3</span>]</span>
 <span id="cb24-3"><a href></a>    blue <span class="op">=</span> hex_string[<span class="dv">3</span>:<span class="dv">5</span>]</span>
@@ -1367,7 +1358,7 @@ margin-right: 0; }
 <p>Write a python function that determines whether a whole number greater than one is prime. A prime is divisible only by itself and 1 (not a product of two smaller natural numbers). Submit your python script <code>primes.py</code> to gradescope.</p>
 <p>Test the remainder of the division with all primes up to the square root of the argument <code>n</code>.</p>
 <p>Test cases:</p>
-<div id="9b03945d" class="cell" data-execution_count="17">
+<div id="f0f944e5" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
 <span id="cb26-2"><a href></a>    <span class="cf">assert</span> is_prime(<span class="dv">2</span>) <span class="op">==</span> <span class="va">True</span></span>
 <span id="cb26-3"><a href></a>    <span class="cf">assert</span> is_prime(<span class="dv">4</span>) <span class="op">==</span> <span class="va">False</span></span>
@@ -1382,7 +1373,7 @@ margin-right: 0; }
 <h2>Expansion</h2>
 <p>Add to your previous solution a python function called <code>get_primes</code> that takes a whole number greater than one as argument and returns a tuple with all integers that are prime up (and including) <code>n</code>.</p>
 <p>Test cases:</p>
-<div id="c6ea4fe9" class="cell" data-execution_count="18">
+<div id="6526e34a" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
 <span id="cb27-2"><a href></a>    <span class="cf">assert</span> get_primes(<span class="dv">2</span>) <span class="op">==</span> (<span class="dv">2</span>,)</span>
 <span id="cb27-3"><a href></a>    <span class="cf">assert</span> get_primes(<span class="dv">4</span>) <span class="op">==</span> (<span class="dv">2</span>, <span class="dv">3</span>)</span>
