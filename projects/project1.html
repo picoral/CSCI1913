@@ -3076,6 +3076,7 @@ vertical-align: -.125em;
   <li><a href="#human_playerboard-player" id="toc-human_playerboard-player" class="nav-link" data-scroll-target="#human_playerboard-player">human_player(board, player)</a></li>
   <li><a href="#random_playerboard-player" id="toc-random_playerboard-player" class="nav-link" data-scroll-target="#random_playerboard-player">random_player(board, player)</a></li>
   <li><a href="#ai_playerboard-player" id="toc-ai_playerboard-player" class="nav-link" data-scroll-target="#ai_playerboard-player">ai_player(board, player)</a></li>
+  <li><a href="#play_gameai_white-ai_black" id="toc-play_gameai_white-ai_black" class="nav-link" data-scroll-target="#play_gameai_white-ai_black">play_game(ai_white, ai_black)</a></li>
   </ul></li>
   <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a></li>
   </ul></li>
@@ -3280,6 +3281,10 @@ vertical-align: -.125em;
 <section id="ai_playerboard-player" class="level3">
 <h3 class="anchored" data-anchor-id="ai_playerboard-player">ai_player(board, player)</h3>
 <p>This function will accept a board and an integer (1 or 2). This function will return a valid move for that player. This AI can choose a valid move using any method except for completely random selection (like <code>random_player(board, player)</code> and it cannot require any interaction with a human. If there is no valid move the function should return an empty tuple.</p>
+</section>
+<section id="play_gameai_white-ai_black" class="level3">
+<h3 class="anchored" data-anchor-id="play_gameai_white-ai_black">play_game(ai_white, ai_black)</h3>
+<p>This function will play an entire game of Kōnane between the two given AI agents. It should play the game on a 10 by 10 board, the board should be preped with <code>prep_board_human(board)</code>. The “First” player should be randomly selected between the white and black AI. If the white AI wins the function should return 1. If the black AI wins the function should return 2.</p>
 </section>
 </section>
 <section id="documentation" class="level2">
