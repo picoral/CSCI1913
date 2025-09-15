@@ -3063,7 +3063,7 @@ vertical-align: -.125em;
   <li><a href="#create_game_statesize-token_max" id="toc-create_game_statesize-token_max" class="nav-link" data-scroll-target="#create_game_statesize-token_max">create_game_state(size, token_max)</a></li>
   <li><a href="#is_valid_movegame_state-row-takes" id="toc-is_valid_movegame_state-row-takes" class="nav-link" data-scroll-target="#is_valid_movegame_state-row-takes">is_valid_move(game_state, row, takes)</a></li>
   <li><a href="#updategame_state-row-takes" id="toc-updategame_state-row-takes" class="nav-link" data-scroll-target="#updategame_state-row-takes">update(game_state, row, takes)</a></li>
-  <li><a href="#draw_boardgame_state" id="toc-draw_boardgame_state" class="nav-link" data-scroll-target="#draw_boardgame_state">draw_board(game_state)</a></li>
+  <li><a href="#draw_game_stategame_state" id="toc-draw_game_stategame_state" class="nav-link" data-scroll-target="#draw_game_stategame_state">draw_game_state(game_state)</a></li>
   <li><a href="#is_overgame_state" id="toc-is_overgame_state" class="nav-link" data-scroll-target="#is_overgame_state">is_over(game_state)</a></li>
   </ul></li>
   <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
@@ -3279,9 +3279,9 @@ Game over, the last player lost!</code></pre>
 <li><p>This function is a bit hard to describe, and therefore it can be a bit hard to understand. Make sure you have a sense of what this is expected to do before you start coding.</p></li>
 </ul>
 </section>
-<section id="draw_boardgame_state" class="level2">
-<h2 class="anchored" data-anchor-id="draw_boardgame_state">draw_board(game_state)</h2>
-<p>The draw_board function takes one parameter, game_state is a list of numbers (similar to one that create_game_state might return) You can assume that the game_state list contains only non-negative numbers. The draw_board function has no return value, and should instead use print statements to produce an output directly to the terminal.</p>
+<section id="draw_game_stategame_state" class="level2">
+<h2 class="anchored" data-anchor-id="draw_game_stategame_state">draw_game_state(game_state)</h2>
+<p>The draw_game_statefunction takes one parameter, game_state is a list of numbers (similar to one that create_game_state might return) You can assume that the game_state list contains only non-negative numbers. The draw_game_state function has no return value, and should instead use print statements to produce an output directly to the terminal.</p>
 <p>The output of the function is a depiction of the state of the game, for instance, if given the list <code>[5,2,3,1]</code> The following should be printed:</p>
 <pre><code>====================
 1 #####
