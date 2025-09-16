@@ -1078,7 +1078,7 @@ margin-right: 0; }
 <li><code>input(&quot;prompt&quot;)</code>will print a prompt and then wait for user input return as a string</li>
 <li>Often combined with type-changing functions to type cast.</li>
 </ul>
-<div id="c4949ceb" class="cell" data-execution_count="1">
+<div id="91b47357" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a>user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Enter a number: &quot;</span>)</span>
 <span id="cb1-2"><a href></a>number <span class="op">=</span> <span class="bu">int</span>(user_input)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1099,7 +1099,7 @@ margin-right: 0; }
 <li><code>input</code> reads data from end-user, can’t be from elsewhere.</li>
 </ul>
 <p>This function is useless and I hate it:</p>
-<div id="db8bb17e" class="cell" data-execution_count="2">
+<div id="e49f9399" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href></a><span class="kw">def</span> isEven (x):</span>
 <span id="cb2-2"><a href></a>  <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb2-3"><a href></a>    <span class="bu">print</span>(<span class="st">&quot;even&quot;</span>)</span>
@@ -1110,7 +1110,7 @@ margin-right: 0; }
 <section id="exercise" class="slide level2">
 <h2>Exercise</h2>
 <p>Write a basic number guessing game. Here’s some code to get you started:</p>
-<div id="28ba9ff5" class="cell" data-execution_count="3">
+<div id="cb14615a" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href></a><span class="im">import</span> random</span>
 <span id="cb3-2"><a href></a></span>
 <span id="cb3-3"><a href></a>MIN <span class="op">=</span> <span class="dv">1</span></span>
@@ -1122,6 +1122,50 @@ margin-right: 0; }
 <li>if the user guesses too large report “smaller”</li>
 <li>if the user guesses too small report “larger”</li>
 <li>if the user guesses right, report “correct” and exit.</li>
+</ul>
+</section>
+<section id="a-possible-solution" class="slide level2">
+<h2>A possible solution</h2>
+<p>How do we add input validation to this solution? (to ensure <code>int()</code> won’t throw an error)</p>
+<div id="ae04ea46" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href></a><span class="im">import</span> random</span>
+<span id="cb4-2"><a href></a></span>
+<span id="cb4-3"><a href></a><span class="kw">def</span> guess(user_input, secret):</span>
+<span id="cb4-4"><a href></a>    user_input <span class="op">=</span> <span class="bu">int</span>(user_input)</span>
+<span id="cb4-5"><a href></a>    <span class="cf">if</span> user_input <span class="op">==</span> secret:</span>
+<span id="cb4-6"><a href></a>        <span class="bu">print</span>(<span class="st">&quot;correct&quot;</span>)</span>
+<span id="cb4-7"><a href></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb4-8"><a href></a>    <span class="cf">if</span> user_input <span class="op">&gt;</span> secret:</span>
+<span id="cb4-9"><a href></a>        <span class="bu">print</span>(<span class="st">&quot;smaller&quot;</span>)</span>
+<span id="cb4-10"><a href></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb4-11"><a href></a>    <span class="cf">if</span> user_input <span class="op">&lt;</span> secret:</span>
+<span id="cb4-12"><a href></a>        <span class="bu">print</span>(<span class="st">&quot;larger&quot;</span>)</span>
+<span id="cb4-13"><a href></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb4-14"><a href></a></span>
+<span id="cb4-15"><a href></a><span class="kw">def</span> play_game(secret):</span>
+<span id="cb4-16"><a href></a>    user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Guess the number: &quot;</span>)</span>
+<span id="cb4-17"><a href></a>    <span class="cf">while</span> <span class="kw">not</span> guess(user_input, secret):</span>
+<span id="cb4-18"><a href></a>        user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Guess the number: &quot;</span>)</span>
+<span id="cb4-19"><a href></a></span>
+<span id="cb4-20"><a href></a></span>
+<span id="cb4-21"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb4-22"><a href></a>    MIN <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb4-23"><a href></a>    MAX <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb4-24"><a href></a>    SECRET <span class="op">=</span> random.randint(MIN, MAX)</span>
+<span id="cb4-25"><a href></a>    play_game(SECRET)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="quiz-02" class="slide level2">
+<h2>Quiz 02</h2>
+<p>You have 10 minutes to complete the quiz</p>
+<ul>
+<li>No need for comments or doc strings, no need to include the tests in your solution, no need for <code>if __name__</code>. Just write your function and what’s inside the function</li>
+<li>Raise your hand when you’re done, a TA will come and grab your completed quiz</li>
+</ul>
+<p>HINTS:</p>
+<ul>
+<li>use the keyword <code>def</code> to define a function</li>
+<li>you can use <code>%</code> to determine if a number is odd (the remainder of the division by two is not zero)</li>
 </ul>
 
 </section>
