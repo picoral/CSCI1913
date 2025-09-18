@@ -1076,7 +1076,7 @@ margin-right: 0; }
 </section>
 <section id="dictionaries-1" class="slide level2">
 <h2>Dictionaries</h2>
-<div id="02861906" class="cell" data-execution_count="1">
+<div id="a14cc0e2" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a>players <span class="op">=</span> {<span class="st">&quot;Messi&quot;</span>: <span class="dv">10</span>, <span class="st">&quot;Ronaldinho&quot;</span>: <span class="dv">10</span>,</span>
 <span id="cb1-2"><a href></a>           <span class="st">&quot;Maradona&quot;</span>: <span class="dv">10</span>, <span class="st">&quot;Romario&quot;</span>: <span class="dv">11</span>, </span>
 <span id="cb1-3"><a href></a>           <span class="st">&quot;Cristiano Ronaldo&quot;</span>: <span class="dv">7</span>, <span class="st">&quot;Mbappé&quot;</span>: <span class="dv">10</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1093,7 +1093,7 @@ margin-right: 0; }
 <section id="dictionaries-2" class="slide level2">
 <h2>Dictionaries</h2>
 <p>Common use cases: store associations</p>
-<div id="3bf883af" class="cell" data-execution_count="2">
+<div id="ece56880" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href></a>vikings <span class="op">=</span> {<span class="dv">8</span>: <span class="st">&quot;Kirk Cousins&quot;</span>, <span class="dv">33</span>: <span class="st">&quot;Dalvin Cook&quot;</span>, <span class="dv">19</span>: <span class="st">&quot;Adam Thielen&quot;</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>JSON api requests: <a href="https://api.weather.gov/gridpoints/MPX/109,72/forecast" class="uri">https://api.weather.gov/gridpoints/MPX/109,72/forecast</a></p>
@@ -1128,7 +1128,7 @@ margin-right: 0; }
 <section id="dictionaries-and-loops" class="slide level2">
 <h2>Dictionaries and Loops</h2>
 <p>4 syntax, 3 options</p>
-<div id="723df6d7" class="cell" data-execution_count="3">
+<div id="662af04a" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href></a><span class="cf">for</span> key <span class="kw">in</span> <span class="bu">dict</span>: <span class="co"># Loop over keys: </span></span>
 <span id="cb3-2"><a href></a>  code using key here</span>
 <span id="cb3-3"><a href></a>  </span>
@@ -1157,7 +1157,7 @@ margin-right: 0; }
 <h2>Exercise (by Mario)</h2>
 <p>Submit your <code>count_coins.py</code> file to gradescope.</p>
 <p>Test case:</p>
-<div id="50ad2928" class="cell" data-execution_count="4">
+<div id="583fc984" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href></a>coins <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">25</span>, <span class="dv">1</span>, <span class="dv">25</span>, <span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">5</span>]  </span>
 <span id="cb4-2"><a href></a>counted_coins <span class="op">=</span> count_coins(coins) </span>
 <span id="cb4-3"><a href></a><span class="cf">assert</span> counted_coins <span class="op">==</span> {<span class="st">&quot;pennies&quot;</span>: <span class="dv">3</span>,</span>
@@ -1170,7 +1170,7 @@ margin-right: 0; }
 <section id="solution-1" class="slide level2">
 <h2>Solution 1</h2>
 <p>Start with a populated dictionary:</p>
-<div id="1526bc55" class="cell" data-execution_count="5">
+<div id="227073ce" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href></a><span class="kw">def</span> count_coins(coins):</span>
 <span id="cb5-2"><a href></a>    counts <span class="op">=</span> {<span class="st">&quot;pennies&quot;</span>: <span class="dv">0</span>,</span>
 <span id="cb5-3"><a href></a>              <span class="st">&quot;quarters&quot;</span>: <span class="dv">0</span>,</span>
@@ -1193,7 +1193,7 @@ margin-right: 0; }
 <section id="solution-2" class="slide level2">
 <h2>Solution 2</h2>
 <p>Start with an empty dictionary (will not pass all autograder tests):</p>
-<div id="739d0ffa" class="cell" data-execution_count="6">
+<div id="7c72e705" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href></a><span class="kw">def</span> count_coins(coins):</span>
 <span id="cb6-2"><a href></a>    counts <span class="op">=</span> {}</span>
 <span id="cb6-3"><a href></a>    </span>
@@ -1208,6 +1208,39 @@ margin-right: 0; }
 <span id="cb6-12"><a href></a>            counts[<span class="st">&quot;quarters&quot;</span>] <span class="op">=</span> counts.get(<span class="st">&quot;quarters&quot;</span>, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span></span>
 <span id="cb6-13"><a href></a></span>
 <span id="cb6-14"><a href></a>    <span class="cf">return</span> counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="solution-3" class="slide level2">
+<h2>Solution 3</h2>
+<p>Start with an empty dictionary (will not pass all autograder tests):</p>
+<div id="539e76d4" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href></a><span class="kw">def</span> count_coins(coins):</span>
+<span id="cb7-2"><a href></a>    counts <span class="op">=</span> {}</span>
+<span id="cb7-3"><a href></a>    </span>
+<span id="cb7-4"><a href></a>    <span class="cf">for</span> coin <span class="kw">in</span> coins:</span>
+<span id="cb7-5"><a href></a>        <span class="cf">match</span> coin:</span>
+<span id="cb7-6"><a href></a>          <span class="cf">case</span> <span class="dv">1</span>:</span>
+<span id="cb7-7"><a href></a>              counts[<span class="st">&quot;pennies&quot;</span>] <span class="op">=</span> counts.get(<span class="st">&quot;pennies&quot;</span>, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb7-8"><a href></a>          <span class="cf">case</span> <span class="dv">5</span>:</span>
+<span id="cb7-9"><a href></a>              counts[<span class="st">&quot;nickels&quot;</span>] <span class="op">=</span> counts.get(<span class="st">&quot;nickels&quot;</span>, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb7-10"><a href></a>          <span class="cf">case</span> <span class="dv">10</span>:</span>
+<span id="cb7-11"><a href></a>              counts[<span class="st">&quot;dimes&quot;</span>] <span class="op">=</span> counts.get(<span class="st">&quot;dimes&quot;</span>, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb7-12"><a href></a>          <span class="cf">case</span> <span class="dv">25</span>:</span>
+<span id="cb7-13"><a href></a>              counts[<span class="st">&quot;quarters&quot;</span>] <span class="op">=</span> counts.get(<span class="st">&quot;quarters&quot;</span>, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb7-14"><a href></a></span>
+<span id="cb7-15"><a href></a>    <span class="cf">return</span> counts</span>
+<span id="cb7-16"><a href></a>  </span>
+<span id="cb7-17"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb7-18"><a href></a>    coins <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">25</span>, <span class="dv">1</span>, <span class="dv">25</span>, <span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">5</span>]  </span>
+<span id="cb7-19"><a href></a>    counted_coins <span class="op">=</span> count_coins(coins) </span>
+<span id="cb7-20"><a href></a>    <span class="cf">assert</span> counted_coins <span class="op">==</span> {<span class="st">&quot;pennies&quot;</span>: <span class="dv">3</span>,</span>
+<span id="cb7-21"><a href></a>                             <span class="st">&quot;quarters&quot;</span>: <span class="dv">2</span>,</span>
+<span id="cb7-22"><a href></a>                             <span class="st">&quot;dimes&quot;</span>: <span class="dv">1</span>,</span>
+<span id="cb7-23"><a href></a>                             <span class="st">&quot;nickels&quot;</span>: <span class="dv">1</span>}</span>
+<span id="cb7-24"><a href></a>    <span class="bu">print</span>(counted_coins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{&#39;pennies&#39;: 3, &#39;quarters&#39;: 2, &#39;dimes&#39;: 1, &#39;nickels&#39;: 1}</code></pre>
+</div>
 </div>
 
 </section>
