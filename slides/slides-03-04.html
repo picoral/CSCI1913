@@ -1086,26 +1086,75 @@ margin-right: 0; }
 <section id="sets-1" class="slide level2">
 <h2>Sets</h2>
 <p>Items in a set are not ordered, and cannot repeat.</p>
-<div id="18cac326" class="cell" data-execution_count="1">
+<div id="6f9afdcc" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a>my_set <span class="op">=</span> {<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>, <span class="st">&quot;kiwi&quot;</span>, <span class="st">&quot;kiwi&quot;</span>}</span>
 <span id="cb1-2"><a href></a><span class="bu">print</span>(my_set)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{&#39;banana&#39;, &#39;kiwi&#39;, &#39;pear&#39;, &#39;apple&#39;}</code></pre>
+<pre><code>{&#39;pear&#39;, &#39;kiwi&#39;, &#39;banana&#39;, &#39;apple&#39;}</code></pre>
 </div>
 </div>
-<div id="f3ccf43c" class="cell" data-execution_count="2">
+<div id="06f0a559" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href></a>my_set.add(<span class="st">&quot;grape&quot;</span>)</span>
 <span id="cb3-2"><a href></a><span class="bu">print</span>(my_set)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{&#39;kiwi&#39;, &#39;pear&#39;, &#39;grape&#39;, &#39;apple&#39;, &#39;banana&#39;}</code></pre>
+<pre><code>{&#39;grape&#39;, &#39;apple&#39;, &#39;kiwi&#39;, &#39;banana&#39;, &#39;pear&#39;}</code></pre>
 </div>
 </div>
-<div id="e1f8b228" class="cell" data-execution_count="3">
+<div id="63e9651c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href></a>my_set.remove(<span class="st">&quot;banana&quot;</span>)</span>
 <span id="cb5-2"><a href></a><span class="bu">print</span>(my_set)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{&#39;kiwi&#39;, &#39;pear&#39;, &#39;grape&#39;, &#39;apple&#39;}</code></pre>
+<pre><code>{&#39;grape&#39;, &#39;apple&#39;, &#39;kiwi&#39;, &#39;pear&#39;}</code></pre>
 </div>
+</div>
+</section>
+<section id="set-methods" class="slide level2">
+<h2>Set methods</h2>
+<ul>
+<li><code>.add(value)</code> adds an item to the set, if the value is already there, nothing happens (it changes the set)</li>
+<li><code>.union(other_set)</code> returns <strong>a new set</strong> containing all unique elements from both sets</li>
+<li><code>.intersection(other_set)</code> returns <strong>a new set</strong> containing only the elements common to both sets</li>
+<li><code>.difference(other_set)</code> returns <strong>a new set</strong> containing elements present in one set but not in other_set</li>
+</ul>
+</section>
+<section id="exercise-by-mario" class="slide level2">
+<h2>Exercise (by Mario)</h2>
+<p><strong>Ecological Survey</strong></p>
+<p>You are working with a team of biologists, and each of you have split up to survey different areas of a rainforest. Each biologist makes a list of animals that they spotted during the survey. You have collected everyone’s list and you want to know which animals are common to all of the areas explored.</p>
+<p><strong>Task:</strong> Write a function called <code>commonality()</code> which takes any number of lists and returns a single set containing the animals that were found in all of the lists provided.</p>
+</section>
+<section id="exercise-by-mario-1" class="slide level2">
+<h2>Exercise (by Mario)</h2>
+<p>Your <code>commonality()</code> function takes any number (use <code>*</code> before parameter name) of lists and returns a single set containing the animals that were found in all of the lists provided. Submit your <code>commonality.py</code> solution to gradescope.</p>
+<p>Test case:</p>
+<div id="66d0ab42" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href></a>dense_forest <span class="op">=</span> [<span class="st">&quot;howler monkey&quot;</span>, <span class="st">&quot;sloth&quot;</span>, <span class="st">&quot;chipmunk&quot;</span>, <span class="st">&quot;toucan&quot;</span>, <span class="st">&quot;leafcutter ant&quot;</span>, <span class="st">&quot;sloth&quot;</span>, <span class="st">&quot;tarantula&quot;</span>, <span class="st">&quot;pit viper&quot;</span>]</span>
+<span id="cb7-2"><a href></a>cave <span class="op">=</span> [<span class="st">&quot;pit viper&quot;</span>, <span class="st">&quot;bat&quot;</span>, <span class="st">&quot;leafcutter ant&quot;</span>, <span class="st">&quot;pit viper&quot;</span>, <span class="st">&quot;tarantula&quot;</span>, <span class="st">&quot;tadpole&quot;</span>]</span>
+<span id="cb7-3"><a href></a>volcano <span class="op">=</span> [<span class="st">&quot;tarantula&quot;</span>, <span class="st">&quot;parrot&quot;</span>, <span class="st">&quot;pit viper&quot;</span>, <span class="st">&quot;leafcutter ant&quot;</span>, <span class="st">&quot;tarantula&quot;</span>, <span class="st">&quot;grasshopper&quot;</span>]</span>
+<span id="cb7-4"><a href></a></span>
+<span id="cb7-5"><a href></a>common_animals <span class="op">=</span> commonality(dense_forest, cave, volcano)</span>
+<span id="cb7-6"><a href></a></span>
+<span id="cb7-7"><a href></a><span class="cf">assert</span> common_animals <span class="op">==</span> {<span class="st">&#39;leafcutter ant&#39;</span>, <span class="st">&#39;tarantula&#39;</span>, <span class="st">&#39;pit viper&#39;</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Reflection: Why might sets be more useful than lists for this task?</p>
+</section>
+<section id="solution" class="slide level2">
+<h2>Solution</h2>
+<div id="da4ca152" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href></a><span class="kw">def</span> commonality(<span class="op">*</span>lists) <span class="op">-&gt;</span> <span class="bu">set</span>:</span>
+<span id="cb8-2"><a href></a>    <span class="co">&quot;&quot;&quot;Returns a set containing items that all list arguments have in common.&quot;&quot;&quot;</span></span>
+<span id="cb8-3"><a href></a>    <span class="cf">if</span> <span class="bu">len</span>(lists) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb8-4"><a href></a>        <span class="cf">return</span> <span class="bu">set</span>()</span>
+<span id="cb8-5"><a href></a>      </span>
+<span id="cb8-6"><a href></a>    <span class="co"># start with first set</span></span>
+<span id="cb8-7"><a href></a>    common <span class="op">=</span> <span class="bu">set</span>(lists[<span class="dv">0</span>])</span>
+<span id="cb8-8"><a href></a>    </span>
+<span id="cb8-9"><a href></a>    <span class="co"># for all other sets</span></span>
+<span id="cb8-10"><a href></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(lists)):</span>
+<span id="cb8-11"><a href></a>        set_i <span class="op">=</span> <span class="bu">set</span>(lists[i])</span>
+<span id="cb8-12"><a href></a>        <span class="co"># find the intersection of common set with current set</span></span>
+<span id="cb8-13"><a href></a>        common <span class="op">=</span> common.intersection(set_i)</span>
+<span id="cb8-14"><a href></a>    <span class="cf">return</span> common</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
