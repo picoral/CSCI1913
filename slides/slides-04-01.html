@@ -442,7 +442,7 @@
   <meta name="generator" content="quarto-1.6.39">
 
   <meta name="author" content="CSCI 1913 – Introduction to Algorithms, Data Structures, and Program DevelopmentAdriana Picoral">
-  <title>Sets</title>
+  <title>Algorithm analysis</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -1051,7 +1051,7 @@ margin-right: 0; }
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Sets</h1>
+  <h1 class="title">Algorithm analysis</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -1062,107 +1062,256 @@ margin-right: 0; }
 </div>
 
 </section>
-<section id="sets" class="slide level2">
-<h2>Sets</h2>
+<section id="whats-an-algorithm" class="slide level2">
+<h2>What’s an algorithm</h2>
+<p>The word “algorithm” is in the public vernacular (commonly spoken, informal language), but it has a specific meaning in computer science and mathematics.</p>
+<blockquote>
+<p>What is an algorithm?</p>
+</blockquote>
+</section>
+<section id="algorithm" class="slide level2">
+<h2>Algorithm</h2>
+<p>Finite sequence of instructions (not code yet), typically used to solve a class of specific problems (such as search and sorting) or to perform a computation.</p>
+<p>An algorithm can be expressed as a finite amount of space and time (worst case).</p>
+<p><small>Social media recommender systems are often refered as “the algorithm”, but these systes rely on heuristics (there’s no “correct” recommendation).</small></p>
+</section>
+<section id="why" class="slide level2">
+<h2>Why?</h2>
+<div id="37513bc3" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a><span class="im">import</span> time</span>
+<span id="cb1-2"><a href></a></span>
+<span id="cb1-3"><a href></a><span class="kw">def</span> run_big_list():</span>
+<span id="cb1-4"><a href></a>    evn <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">999999</span>, <span class="dv">2</span>))</span>
+<span id="cb1-5"><a href></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>):</span>
+<span id="cb1-6"><a href></a>        _ <span class="op">=</span> i <span class="kw">in</span> evn</span>
+<span id="cb1-7"><a href></a>    </span>
+<span id="cb1-8"><a href></a><span class="kw">def</span> run_big_set():</span>
+<span id="cb1-9"><a href></a>    evn <span class="op">=</span> <span class="bu">set</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">999999</span>, <span class="dv">2</span>))</span>
+<span id="cb1-10"><a href></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>):</span>
+<span id="cb1-11"><a href></a>        x <span class="op">=</span> i <span class="kw">in</span> evn</span>
+<span id="cb1-12"><a href></a></span>
+<span id="cb1-13"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb1-14"><a href></a>    start_time <span class="op">=</span> time.perf_counter()</span>
+<span id="cb1-15"><a href></a>    run_big_list()</span>
+<span id="cb1-16"><a href></a>    end_time <span class="op">=</span> time.perf_counter()</span>
+<span id="cb1-17"><a href></a>    elapsed_time <span class="op">=</span> end_time <span class="op">-</span> start_time</span>
+<span id="cb1-18"><a href></a>    <span class="bu">print</span>(<span class="ss">f&quot;Time to run_big_list(): </span><span class="sc">{</span>elapsed_time<span class="sc">:.4f}</span><span class="ss"> seconds&quot;</span>)</span>
+<span id="cb1-19"><a href></a>    </span>
+<span id="cb1-20"><a href></a>    start_time <span class="op">=</span> time.perf_counter()</span>
+<span id="cb1-21"><a href></a>    run_big_set()</span>
+<span id="cb1-22"><a href></a>    end_time <span class="op">=</span> time.perf_counter()</span>
+<span id="cb1-23"><a href></a>    elapsed_time <span class="op">=</span> end_time <span class="op">-</span> start_time</span>
+<span id="cb1-24"><a href></a>    <span class="bu">print</span>(<span class="ss">f&quot;Time to run_big_set(): </span><span class="sc">{</span>elapsed_time<span class="sc">:.4f}</span><span class="ss"> seconds&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Time to run_big_list(): 11.3826 seconds
+Time to run_big_set(): 0.0117 seconds</code></pre>
+</div>
+</div>
+</section>
+<section id="correct-vs-good" class="slide level2">
+<h2>“correct” vs “good”</h2>
 <ul>
-<li>A set is a <code>mutable</code> object</li>
-<li>Contains nonduplicate elements</li>
-<li><code>unordered</code> datastructure</li>
-<li>Type name <code>set</code></li>
-<li>literal uses curly braces (<code>{}</code>)</li>
-<li>Only contains immutable elements</li>
-<li>We can use built-in functions like <code>len()</code>, <code>min()</code>, <code>max()</code>, <code>sum()</code></li>
+<li>What does it mean when we say code is “correct”?</li>
+<li>How can code be correct but not good?</li>
+<li>How do we compare correct code?</li>
 </ul>
 </section>
-<section id="methods" class="slide level2">
-<h2>Methods</h2>
-<ul>
-<li><code>.add(value)</code> adds an value to the set</li>
-<li><code>.remove(value)</code> removes an value from the set (throws error if no matching value found)</li>
-<li><code>.discard(value)</code> removes an value from the set (no error if no matching value found)</li>
-</ul>
-<p>Since items in a set are not ordered, not sequential, there’s no index in sets.</p>
+<section id="software-development" class="slide level2">
+<h2>Software Development</h2>
+<p>Level 1: “direct translation”</p>
+<p>  </p>
+<center>
+<p>Specific Problem → Specific Code</p>
+</center>
 </section>
-<section id="sets-1" class="slide level2">
-<h2>Sets</h2>
-<p>Items in a set are not ordered, and cannot repeat.</p>
-<div id="af03a38e" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a>my_set <span class="op">=</span> {<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>, <span class="st">&quot;kiwi&quot;</span>, <span class="st">&quot;kiwi&quot;</span>}</span>
-<span id="cb1-2"><a href></a><span class="bu">print</span>(my_set)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{&#39;kiwi&#39;, &#39;banana&#39;, &#39;apple&#39;, &#39;pear&#39;}</code></pre>
-</div>
-</div>
-<div id="0e200861" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href></a>my_set.add(<span class="st">&quot;grape&quot;</span>)</span>
-<span id="cb3-2"><a href></a><span class="bu">print</span>(my_set)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{&#39;banana&#39;, &#39;kiwi&#39;, &#39;apple&#39;, &#39;pear&#39;, &#39;grape&#39;}</code></pre>
-</div>
-</div>
-<div id="ca24a9e4" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href></a>my_set.remove(<span class="st">&quot;banana&quot;</span>)</span>
-<span id="cb5-2"><a href></a><span class="bu">print</span>(my_set)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{&#39;kiwi&#39;, &#39;apple&#39;, &#39;pear&#39;, &#39;grape&#39;}</code></pre>
-</div>
-</div>
-</section>
-<section id="set-methods" class="slide level2">
-<h2>Set methods</h2>
+<section id="software-development-1" class="slide level2">
+<h2>Software Development</h2>
+<p>Level 2: “problem solving”</p>
+<p>  </p>
+<center>
+<p>Problem Description → Specific Problem → Pseudo-code → Specific Code</p>
+</center>
 <ul>
-<li><code>.add(value)</code> adds an item to the set, if the value is already there, nothing happens (it changes the set)</li>
-<li><code>.union(other_set)</code> returns <strong>a new set</strong> containing all unique elements from both sets</li>
-<li><code>.intersection(other_set)</code> returns <strong>a new set</strong> containing only the elements common to both sets</li>
-<li><code>.difference(other_set)</code> returns <strong>a new set</strong> containing elements present in one set but not in other_set</li>
+<li>Where I want you today</li>
+<li>Skills won through hard practice</li>
+<li>Starting to see connections and re-use tasks</li>
+<li>Language agnostic</li>
 </ul>
 </section>
-<section id="exercise-by-mario" class="slide level2">
-<h2>Exercise (by Mario)</h2>
-<p><strong>Ecological Survey</strong></p>
-<p>You are working with a team of biologists, and each of you have split up to survey different areas of a rainforest. Each biologist makes a list of animals that they spotted during the survey. You have collected everyone’s list and you want to know which animals are common to all of the areas explored.</p>
-<p><strong>Task:</strong> Write a function called <code>commonality()</code> which takes any number of lists and returns a single set containing the animals that were found in all of the lists provided.</p>
+<section id="software-development-2" class="slide level2">
+<h2>Software Development</h2>
+<p>Level 3: “generalization”</p>
+<p>  </p>
+<center>
+<p>Problem Description → Specific Problem → Generic Problem → General Algorithm → Pseudo-code → Specific Code</p>
+</center>
+<ul>
+<li>Where we’re going</li>
+<li>Many problems are old friends</li>
+<li>Big problems are made of little familiar problems</li>
+</ul>
 </section>
-<section id="exercise-by-mario-1" class="slide level2">
-<h2>Exercise (by Mario)</h2>
-<p>Your <code>commonality()</code> function takes any number (use <code>*</code> before parameter name) of lists and returns a single set containing the animals that were found in all of the lists provided. Submit your <code>commonality.py</code> solution to gradescope.</p>
-<p>Test case:</p>
-<div id="4107996a" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href></a>dense_forest <span class="op">=</span> [<span class="st">&quot;howler monkey&quot;</span>, <span class="st">&quot;sloth&quot;</span>, <span class="st">&quot;chipmunk&quot;</span>, <span class="st">&quot;toucan&quot;</span>, <span class="st">&quot;leafcutter ant&quot;</span>, <span class="st">&quot;sloth&quot;</span>, <span class="st">&quot;tarantula&quot;</span>, <span class="st">&quot;pit viper&quot;</span>]</span>
-<span id="cb7-2"><a href></a>cave <span class="op">=</span> [<span class="st">&quot;pit viper&quot;</span>, <span class="st">&quot;bat&quot;</span>, <span class="st">&quot;leafcutter ant&quot;</span>, <span class="st">&quot;pit viper&quot;</span>, <span class="st">&quot;tarantula&quot;</span>, <span class="st">&quot;tadpole&quot;</span>]</span>
-<span id="cb7-3"><a href></a>volcano <span class="op">=</span> [<span class="st">&quot;tarantula&quot;</span>, <span class="st">&quot;parrot&quot;</span>, <span class="st">&quot;pit viper&quot;</span>, <span class="st">&quot;leafcutter ant&quot;</span>, <span class="st">&quot;tarantula&quot;</span>, <span class="st">&quot;grasshopper&quot;</span>]</span>
-<span id="cb7-4"><a href></a></span>
-<span id="cb7-5"><a href></a>common_animals <span class="op">=</span> commonality(dense_forest, cave, volcano)</span>
-<span id="cb7-6"><a href></a></span>
-<span id="cb7-7"><a href></a><span class="cf">assert</span> common_animals <span class="op">==</span> {<span class="st">&#39;leafcutter ant&#39;</span>, <span class="st">&#39;tarantula&#39;</span>, <span class="st">&#39;pit viper&#39;</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="software-development-3" class="slide level2">
+<h2>Software Development</h2>
+<p>Level 1: add up all elements in an array</p>
+<p>Level 2: find the prime numbers in an array</p>
+<p>Level 3: sort an array, use fewer than <span class="math inline">\(n^2\)</span> comparisons</p>
+</section>
+<section id="algorithm-1" class="slide level2">
+<h2>Algorithm</h2>
+<p><strong>Generic Problem:</strong> A formally specified problem or task.</p>
+<p><strong>Algorithm:</strong> An ordered series of computations to accomplish a given task (This is purely a mental/conceptual thing.)</p>
+<p><strong>Code:</strong> A specific text file containing a specific realization of an algorithm in a specific programming language</p>
+</section>
+<section id="what-were-going-to-study" class="slide level2">
+<h2>What we’re going to study</h2>
+<p>CSCI 1913/1933 → CSCI 3041 → CSCI 4041 → CSCI 5421</p>
+<ul>
+<li>CSCI 1913/1933 - Introduction to Algorithms and Data</li>
+<li>CSCI 3041 Introduction to Discrete Structures and Algorithms</li>
+<li>CSCI 4041 Algorithms and Data Structures</li>
+<li>CSCI 5421 Advanced Algorithms and Data Structures</li>
+</ul>
+</section>
+<section id="our-focus" class="slide level2">
+<h2>Our Focus</h2>
+<ul>
+<li>Structures</li>
+<li>Searching</li>
+<li>Sorting</li>
+<li>“organization” – algorithms for data structures</li>
+<li>Sensitivity to speed</li>
+</ul>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Problem: find largest value in an unsorted collection</p>
+<p>Test cases in python</p>
+<div id="171f748c" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href></a><span class="im">import</span> math</span>
+<span id="cb3-2"><a href></a></span>
+<span id="cb3-3"><a href></a><span class="cf">assert</span> get_max(<span class="dv">2</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="dv">100</span></span>
+<span id="cb3-4"><a href></a><span class="cf">assert</span> get_max(<span class="dv">2</span>, <span class="dv">0</span>, math.inf, <span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">2</span>) <span class="op">==</span> inf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Reflection: Why might sets be more useful than lists for this task?</p>
 </section>
 <section id="solution" class="slide level2">
-<h2>Solution</h2>
-<div id="30f4b017" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href></a><span class="kw">def</span> commonality(<span class="op">*</span>lists) <span class="op">-&gt;</span> <span class="bu">set</span>:</span>
-<span id="cb8-2"><a href></a>    <span class="co">&quot;&quot;&quot;Returns a set containing items that all list arguments have in common.&quot;&quot;&quot;</span></span>
-<span id="cb8-3"><a href></a>    <span class="cf">if</span> <span class="bu">len</span>(lists) <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb8-4"><a href></a>        <span class="cf">return</span> <span class="bu">set</span>()</span>
-<span id="cb8-5"><a href></a>      </span>
-<span id="cb8-6"><a href></a>    <span class="co"># start with first set</span></span>
-<span id="cb8-7"><a href></a>    common <span class="op">=</span> <span class="bu">set</span>(lists[<span class="dv">0</span>])</span>
-<span id="cb8-8"><a href></a>    </span>
-<span id="cb8-9"><a href></a>    <span class="co"># for all other sets</span></span>
-<span id="cb8-10"><a href></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(lists)):</span>
-<span id="cb8-11"><a href></a>        set_i <span class="op">=</span> <span class="bu">set</span>(lists[i])</span>
-<span id="cb8-12"><a href></a>        <span class="co"># find the intersection of common set with current set</span></span>
-<span id="cb8-13"><a href></a>        common <span class="op">=</span> common.intersection(set_i)</span>
-<span id="cb8-14"><a href></a>    <span class="cf">return</span> common</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h2>Solution?</h2>
+<p>Can we easily modify this to get the smallest value instead?</p>
+<div id="6d220786" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href></a><span class="im">import</span> math</span>
+<span id="cb4-2"><a href></a></span>
+<span id="cb4-3"><a href></a><span class="kw">def</span> get_max(<span class="op">*</span>values):</span>
+<span id="cb4-4"><a href></a>  current_max <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb4-5"><a href></a>  <span class="cf">for</span> v <span class="kw">in</span> values:</span>
+<span id="cb4-6"><a href></a>    <span class="cf">if</span> current_max <span class="op">==</span> <span class="va">None</span> <span class="kw">or</span> v <span class="op">&gt;</span> current_max:</span>
+<span id="cb4-7"><a href></a>      current_max <span class="op">=</span> v</span>
+<span id="cb4-8"><a href></a>  <span class="cf">return</span> current_max</span>
+<span id="cb4-9"><a href></a></span>
+<span id="cb4-10"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb4-11"><a href></a>  <span class="cf">assert</span> get_max(<span class="dv">2</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="dv">100</span></span>
+<span id="cb4-12"><a href></a>  <span class="cf">assert</span> get_max(<span class="dv">2</span>, <span class="dv">0</span>, math.inf, <span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">2</span>) <span class="op">==</span> math.inf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><small>If you are curious, this is how <a href="https://github.com/python/cpython/blob/main/Python/bltinmodule.c#L1987">builtin max() is implemented in Python</a></small></p>
+</section>
+<section id="analysis" class="slide level2">
+<h2>Analysis</h2>
+<ul>
+<li>What’s the best case?</li>
+<li>What’s the worst case?</li>
+</ul>
+<div id="429a288f" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href></a><span class="kw">def</span> get_max(<span class="op">*</span>values):</span>
+<span id="cb5-2"><a href></a>  current_max <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb5-3"><a href></a>  <span class="cf">for</span> v <span class="kw">in</span> values:</span>
+<span id="cb5-4"><a href></a>    <span class="cf">if</span> current_max <span class="op">==</span> <span class="va">None</span> <span class="kw">or</span> v <span class="op">&gt;</span> current_max:</span>
+<span id="cb5-5"><a href></a>      current_max <span class="op">=</span> v</span>
+<span id="cb5-6"><a href></a>  <span class="cf">return</span> current_max</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="why-sets" class="slide level2">
-<h2>Why sets?</h2>
+<section id="analysis-1" class="slide level2">
+<h2>Analysis</h2>
 <ul>
-<li>Python sets are implemented using hash tables</li>
-<li>Faster membership check, faster insertion, faster deletion</li>
+<li>What’s the best case? Empty collection (constant time)</li>
+<li>What’s the worst case? N</li>
 </ul>
+<div id="d0f681a4" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href></a><span class="kw">def</span> get_max(<span class="op">*</span>values):</span>
+<span id="cb6-2"><a href></a>  current_max <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb6-3"><a href></a>  <span class="cf">for</span> v <span class="kw">in</span> values:</span>
+<span id="cb6-4"><a href></a>    <span class="cf">if</span> current_max <span class="op">==</span> <span class="va">None</span> <span class="kw">or</span> v <span class="op">&gt;</span> current_max:</span>
+<span id="cb6-5"><a href></a>      current_max <span class="op">=</span> v</span>
+<span id="cb6-6"><a href></a>  <span class="cf">return</span> current_max</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="runtime" class="slide level2">
+<h2>Runtime</h2>
+<div id="fad5f092" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href></a><span class="im">import</span> time</span>
+<span id="cb7-2"><a href></a></span>
+<span id="cb7-3"><a href></a><span class="kw">def</span> get_max_tuple(<span class="op">*</span>values):</span>
+<span id="cb7-4"><a href></a>  current_max <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb7-5"><a href></a>  <span class="cf">for</span> v <span class="kw">in</span> values:</span>
+<span id="cb7-6"><a href></a>    <span class="cf">if</span> current_max <span class="op">==</span> <span class="va">None</span> <span class="kw">or</span> v <span class="op">&gt;</span> current_max:</span>
+<span id="cb7-7"><a href></a>      current_max <span class="op">=</span> v</span>
+<span id="cb7-8"><a href></a>  <span class="cf">return</span> current_max</span>
+<span id="cb7-9"><a href></a></span>
+<span id="cb7-10"><a href></a><span class="kw">def</span> get_max(values):</span>
+<span id="cb7-11"><a href></a>  current_max <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb7-12"><a href></a>  <span class="cf">for</span> v <span class="kw">in</span> values:</span>
+<span id="cb7-13"><a href></a>    <span class="cf">if</span> current_max <span class="op">==</span> <span class="va">None</span> <span class="kw">or</span> v <span class="op">&gt;</span> current_max:</span>
+<span id="cb7-14"><a href></a>      current_max <span class="op">=</span> v</span>
+<span id="cb7-15"><a href></a>  <span class="cf">return</span> current_max</span>
+<span id="cb7-16"><a href></a></span>
+<span id="cb7-17"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb7-18"><a href></a>    values <span class="op">=</span> <span class="bu">range</span>(<span class="dv">99999999</span>)</span>
+<span id="cb7-19"><a href></a></span>
+<span id="cb7-20"><a href></a>    start_time <span class="op">=</span> time.perf_counter()</span>
+<span id="cb7-21"><a href></a>    get_max_tuple(<span class="bu">tuple</span>(values))</span>
+<span id="cb7-22"><a href></a>    end_time <span class="op">=</span> time.perf_counter()</span>
+<span id="cb7-23"><a href></a>    elapsed_time <span class="op">=</span> end_time <span class="op">-</span> start_time</span>
+<span id="cb7-24"><a href></a>    <span class="bu">print</span>(<span class="ss">f&quot;Time to get_max_tuple: </span><span class="sc">{</span>elapsed_time<span class="sc">:.4f}</span><span class="ss"> seconds&quot;</span>)</span>
+<span id="cb7-25"><a href></a></span>
+<span id="cb7-26"><a href></a>    start_time <span class="op">=</span> time.perf_counter()</span>
+<span id="cb7-27"><a href></a>    get_max(<span class="bu">list</span>(values))</span>
+<span id="cb7-28"><a href></a>    end_time <span class="op">=</span> time.perf_counter()</span>
+<span id="cb7-29"><a href></a>    elapsed_time <span class="op">=</span> end_time <span class="op">-</span> start_time</span>
+<span id="cb7-30"><a href></a>    <span class="bu">print</span>(<span class="ss">f&quot;Time to get_max list: </span><span class="sc">{</span>elapsed_time<span class="sc">:.4f}</span><span class="ss"> seconds&quot;</span>)</span>
+<span id="cb7-31"><a href></a></span>
+<span id="cb7-32"><a href></a>    start_time <span class="op">=</span> time.perf_counter()</span>
+<span id="cb7-33"><a href></a>    get_max(<span class="bu">set</span>(values))</span>
+<span id="cb7-34"><a href></a>    end_time <span class="op">=</span> time.perf_counter()</span>
+<span id="cb7-35"><a href></a>    elapsed_time <span class="op">=</span> end_time <span class="op">-</span> start_time</span>
+<span id="cb7-36"><a href></a>    <span class="bu">print</span>(<span class="ss">f&quot;Time to get_max set: </span><span class="sc">{</span>elapsed_time<span class="sc">:.4f}</span><span class="ss"> seconds&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Time to get_max_tuple: 1.4120 seconds
+Time to get_max list: 3.0299 seconds
+Time to get_max set: 5.6988 seconds</code></pre>
+</div>
+</div>
+</section>
+<section id="asymptotic-runtime" class="slide level2">
+<h2>Asymptotic Runtime</h2>
+<ul>
+<li>Computing runtime doesn’t make sense because there are too many variables like processor speed, assembly code efficiency, etc.</li>
+<li>We are dealing with approximations</li>
+<li>Usually if we care about runtime, we are interested in scalability: how much more time will it take if I double the input size?</li>
+</ul>
+</section>
+<section id="what-is-big-o" class="slide level2">
+<h2>What is Big-O?</h2>
+<p>Big-O notation is a way of quantifying the rate at which some quantity grows.</p>
+<ul>
+<li>A tool for comparing algorithms and predicting performance</li>
+<li><code>O</code> stands for <strong>order of</strong>, <code>n</code> is the input size</li>
+<li>We ignore constants and smaller terms because we care about what happens when n gets really large</li>
+<li>We calculate Big-O based on <strong>worst case</strong> scenario</li>
+</ul>
+</section>
+<section id="big-o" class="slide level2">
+<h2>Big O</h2>
+<p>An algorithm with O(n) complexity means its runtime grows linearly with the input size (n).</p>
+<p><em>How much more time will it take if I double the input size for a O(n) algorithm?</em></p>
+<p>Twice as long. Finding max value of an array of size 12 takes twice as long as finding max value of an array of size 6 (double the input, double the time complexity).</p>
 
 </section>
     </div>
