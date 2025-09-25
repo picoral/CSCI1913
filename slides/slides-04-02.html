@@ -1245,10 +1245,12 @@ margin-right: 0; }
 <p>Call your function <code>linear_search</code> – it should take a list and a value.</p>
 <p>It returns the index of the value, if value is in list, otherwise it returns -1.</p>
 <p>Do not use built-in methods.</p>
+<p>Submit your <code>linear_search.py</code> file to gradescope.</p>
 </section>
 <section id="solution" class="slide level2">
 <h2>Solution</h2>
-<div id="2a326833" class="cell" data-execution_count="1">
+<p>Note the <code>return</code> statement inside the loop:</p>
+<div id="66013b98" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a><span class="kw">def</span> linear_search(array, value):</span>
 <span id="cb1-2"><a href></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(array)):</span>
 <span id="cb1-3"><a href></a>    <span class="cf">if</span> array[i] <span class="op">==</span> value:</span>
@@ -1265,13 +1267,51 @@ margin-right: 0; }
 </div>
 </div>
 </section>
-<section id="algorithm-analysis" class="slide level2">
-<h2>Algorithm Analysis</h2>
+<section id="algorithm-analysis-linear-search" class="slide level2">
+<h2>Algorithm Analysis – Linear Search</h2>
 <ul>
 <li>What is the best case scenario?</li>
 <li>What is the worst case scenario?</li>
 <li>What is the Big-O for linear search?</li>
 </ul>
+<div id="df2d685b" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href></a><span class="kw">def</span> linear_search(array, value):</span>
+<span id="cb3-2"><a href></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(array)):</span>
+<span id="cb3-3"><a href></a>    <span class="cf">if</span> array[i] <span class="op">==</span> value:</span>
+<span id="cb3-4"><a href></a>      <span class="cf">return</span> i</span>
+<span id="cb3-5"><a href></a>  <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="algorithm-analysis-linear-search-1" class="slide level2">
+<h2>Algorithm Analysis – Linear Search</h2>
+<ul>
+<li>Let <code>N</code> be the length of the input list</li>
+<li>Assume the element is not found</li>
+<li>How many times do we need to access?</li>
+</ul>
+<div id="1bf448ca" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href></a><span class="kw">def</span> linear_search(array, value):</span>
+<span id="cb4-2"><a href></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(array)):</span>
+<span id="cb4-3"><a href></a>    <span class="cf">if</span> array[i] <span class="op">==</span> value:</span>
+<span id="cb4-4"><a href></a>      <span class="cf">return</span> i</span>
+<span id="cb4-5"><a href></a>  <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="algorithm-analysis-linear-search-2" class="slide level2">
+<h2>Algorithm Analysis – Linear Search</h2>
+<ul>
+<li>Let <code>N</code> be the length of the input list</li>
+<li>Assume the element is not found</li>
+<li>How many times do we need to access?</li>
+</ul>
+<div id="5e1fa0f2" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href></a><span class="kw">def</span> linear_search(array, value):</span>
+<span id="cb5-2"><a href></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(array)):</span>
+<span id="cb5-3"><a href></a>    <span class="cf">if</span> array[i] <span class="op">==</span> value:</span>
+<span id="cb5-4"><a href></a>      <span class="cf">return</span> i</span>
+<span id="cb5-5"><a href></a>  <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>N times – one to check each position, for all positions</p>
 </section>
 <section>
 <section id="binary-search" class="title-slide slide level1 center">
@@ -1428,32 +1468,32 @@ margin-right: 0; }
 <p>Implement binary search in python. Write a function called <code>binary_search</code> that takes in two arguments: a sorted list (increasing values) and a search value.</p>
 <p>Your function should return the index of the search value if found, -1 if value is not found.</p>
 <p>Test case:</p>
-<div id="fd7947b4" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href></a>numbers <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">23</span>, <span class="dv">41</span>, <span class="dv">43</span>, <span class="dv">44</span>, <span class="dv">60</span>, <span class="dv">99</span>, <span class="dv">120</span>, <span class="dv">343</span>]</span>
-<span id="cb3-2"><a href></a><span class="cf">assert</span> binary_search(numbers, <span class="dv">99</span>) <span class="op">==</span> <span class="dv">8</span></span>
-<span id="cb3-3"><a href></a><span class="cf">assert</span> binary_search(numbers, <span class="dv">9</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e74f7791" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href></a>numbers <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">23</span>, <span class="dv">41</span>, <span class="dv">43</span>, <span class="dv">44</span>, <span class="dv">60</span>, <span class="dv">99</span>, <span class="dv">120</span>, <span class="dv">343</span>]</span>
+<span id="cb6-2"><a href></a><span class="cf">assert</span> binary_search(numbers, <span class="dv">99</span>) <span class="op">==</span> <span class="dv">8</span></span>
+<span id="cb6-3"><a href></a><span class="cf">assert</span> binary_search(numbers, <span class="dv">9</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="binary-search-solution" class="slide level2">
 <h2>Binary Search – solution</h2>
-<div id="2c5ca5ae" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href></a><span class="kw">def</span> binary_search(arr, v):</span>
-<span id="cb4-2"><a href></a>  low <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb4-3"><a href></a>  high <span class="op">=</span> <span class="bu">len</span>(arr)<span class="op">-</span><span class="dv">1</span></span>
-<span id="cb4-4"><a href></a>  <span class="cf">while</span> low <span class="op">&lt;=</span> high:</span>
-<span id="cb4-5"><a href></a>    mid <span class="op">=</span> (low<span class="op">+</span>high) <span class="op">//</span> <span class="dv">2</span></span>
-<span id="cb4-6"><a href></a>    <span class="cf">if</span> v <span class="op">&gt;</span> arr[mid]: <span class="co"># update low</span></span>
-<span id="cb4-7"><a href></a>      low <span class="op">=</span> mid <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb4-8"><a href></a>    <span class="cf">elif</span> v <span class="op">&lt;</span> arr[mid]: <span class="co"># update high</span></span>
-<span id="cb4-9"><a href></a>      high <span class="op">=</span> mid <span class="op">-</span> <span class="dv">1</span></span>
-<span id="cb4-10"><a href></a>    <span class="cf">else</span>:</span>
-<span id="cb4-11"><a href></a>      <span class="cf">return</span> mid</span>
-<span id="cb4-12"><a href></a>  <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb4-13"><a href></a></span>
-<span id="cb4-14"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
-<span id="cb4-15"><a href></a>  numbers <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">23</span>, <span class="dv">41</span>, <span class="dv">43</span>, <span class="dv">44</span>, <span class="dv">60</span>, <span class="dv">99</span>, <span class="dv">120</span>, <span class="dv">343</span>]</span>
-<span id="cb4-16"><a href></a>  <span class="cf">assert</span> binary_search(numbers, <span class="dv">99</span>) <span class="op">==</span> <span class="dv">8</span></span>
-<span id="cb4-17"><a href></a>  <span class="cf">assert</span> binary_search(numbers, <span class="dv">9</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="6f4cf8ce" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href></a><span class="kw">def</span> binary_search(arr, v):</span>
+<span id="cb7-2"><a href></a>  low <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-3"><a href></a>  high <span class="op">=</span> <span class="bu">len</span>(arr)<span class="op">-</span><span class="dv">1</span></span>
+<span id="cb7-4"><a href></a>  <span class="cf">while</span> low <span class="op">&lt;=</span> high:</span>
+<span id="cb7-5"><a href></a>    mid <span class="op">=</span> (low<span class="op">+</span>high) <span class="op">//</span> <span class="dv">2</span></span>
+<span id="cb7-6"><a href></a>    <span class="cf">if</span> v <span class="op">&gt;</span> arr[mid]: <span class="co"># update low</span></span>
+<span id="cb7-7"><a href></a>      low <span class="op">=</span> mid <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb7-8"><a href></a>    <span class="cf">elif</span> v <span class="op">&lt;</span> arr[mid]: <span class="co"># update high</span></span>
+<span id="cb7-9"><a href></a>      high <span class="op">=</span> mid <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb7-10"><a href></a>    <span class="cf">else</span>:</span>
+<span id="cb7-11"><a href></a>      <span class="cf">return</span> mid</span>
+<span id="cb7-12"><a href></a>  <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb7-13"><a href></a></span>
+<span id="cb7-14"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb7-15"><a href></a>  numbers <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">23</span>, <span class="dv">41</span>, <span class="dv">43</span>, <span class="dv">44</span>, <span class="dv">60</span>, <span class="dv">99</span>, <span class="dv">120</span>, <span class="dv">343</span>]</span>
+<span id="cb7-16"><a href></a>  <span class="cf">assert</span> binary_search(numbers, <span class="dv">99</span>) <span class="op">==</span> <span class="dv">8</span></span>
+<span id="cb7-17"><a href></a>  <span class="cf">assert</span> binary_search(numbers, <span class="dv">9</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="binary-search-5" class="slide level2">
