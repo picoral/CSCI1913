@@ -1077,7 +1077,7 @@ margin-right: 0; }
 </section>
 <section id="why" class="slide level2">
 <h2>Why?</h2>
-<div id="aec9b1cb" class="cell" data-execution_count="1">
+<div id="abe4e0f2" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a><span class="im">import</span> time</span>
 <span id="cb1-2"><a href></a></span>
 <span id="cb1-3"><a href></a><span class="kw">def</span> run_big_list():</span>
@@ -1103,8 +1103,8 @@ margin-right: 0; }
 <span id="cb1-23"><a href></a>    elapsed_time <span class="op">=</span> end_time <span class="op">-</span> start_time</span>
 <span id="cb1-24"><a href></a>    <span class="bu">print</span>(<span class="ss">f&quot;Time to run_big_set(): </span><span class="sc">{</span>elapsed_time<span class="sc">:.4f}</span><span class="ss"> seconds&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time to run_big_list(): 11.2076 seconds
-Time to run_big_set(): 0.0107 seconds</code></pre>
+<pre><code>Time to run_big_list(): 11.4340 seconds
+Time to run_big_set(): 0.0102 seconds</code></pre>
 </div>
 </div>
 </section>
@@ -1198,7 +1198,7 @@ Time to run_big_set(): 0.0107 seconds</code></pre>
 <h2>Exercise</h2>
 <p>Problem: find largest value in an unsorted collection</p>
 <p>Test cases in python</p>
-<div id="75076865" class="cell" data-execution_count="2">
+<div id="425133da" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href></a><span class="cf">assert</span> get_max(<span class="dv">2</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="dv">100</span></span>
 <span id="cb3-2"><a href></a><span class="cf">assert</span> get_max(<span class="dv">2</span>, <span class="dv">0</span>, <span class="bu">float</span>(<span class="st">&quot;inf&quot;</span>), <span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="bu">float</span>(<span class="st">&quot;inf&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1207,7 +1207,7 @@ Time to run_big_set(): 0.0107 seconds</code></pre>
 <section id="solution" class="slide level2">
 <h2>Solution?</h2>
 <p>Can we easily modify this to get the smallest value instead?</p>
-<div id="0fe767d0" class="cell" data-execution_count="3">
+<div id="1f93dd67" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href></a><span class="kw">def</span> get_max(<span class="op">*</span>values):</span>
 <span id="cb4-2"><a href></a>  current_max <span class="op">=</span> <span class="va">None</span></span>
 <span id="cb4-3"><a href></a>  <span class="cf">for</span> v <span class="kw">in</span> values:</span>
@@ -1227,7 +1227,7 @@ Time to run_big_set(): 0.0107 seconds</code></pre>
 <li>What’s the best case?</li>
 <li>What’s the worst case?</li>
 </ul>
-<div id="4c635fa4" class="cell" data-execution_count="4">
+<div id="5411d2fd" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href></a><span class="kw">def</span> get_max(<span class="op">*</span>values):</span>
 <span id="cb5-2"><a href></a>  current_max <span class="op">=</span> <span class="va">None</span></span>
 <span id="cb5-3"><a href></a>  <span class="cf">for</span> v <span class="kw">in</span> values:</span>
@@ -1242,7 +1242,7 @@ Time to run_big_set(): 0.0107 seconds</code></pre>
 <li>What’s the best case? Empty collection (constant time)</li>
 <li>What’s the worst case? N</li>
 </ul>
-<div id="1a3b38f6" class="cell" data-execution_count="5">
+<div id="3331fa9d" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href></a><span class="kw">def</span> get_max(<span class="op">*</span>values):</span>
 <span id="cb6-2"><a href></a>  current_max <span class="op">=</span> <span class="va">None</span></span>
 <span id="cb6-3"><a href></a>  <span class="cf">for</span> v <span class="kw">in</span> values:</span>
@@ -1253,7 +1253,7 @@ Time to run_big_set(): 0.0107 seconds</code></pre>
 </section>
 <section id="runtime" class="slide level2">
 <h2>Runtime</h2>
-<div id="69ad69b1" class="cell" data-execution_count="6">
+<div id="061feff2" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href></a><span class="im">import</span> time</span>
 <span id="cb7-2"><a href></a></span>
 <span id="cb7-3"><a href></a><span class="kw">def</span> get_max_tuple(<span class="op">*</span>values):</span>
@@ -1291,16 +1291,25 @@ Time to run_big_set(): 0.0107 seconds</code></pre>
 <span id="cb7-35"><a href></a>    elapsed_time <span class="op">=</span> end_time <span class="op">-</span> start_time</span>
 <span id="cb7-36"><a href></a>    <span class="bu">print</span>(<span class="ss">f&quot;Time to get_max set: </span><span class="sc">{</span>elapsed_time<span class="sc">:.4f}</span><span class="ss"> seconds&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time to get_max_tuple: 1.7722 seconds
-Time to get_max list: 3.0851 seconds
-Time to get_max set: 5.9299 seconds</code></pre>
+<pre><code>Time to get_max_tuple: 1.1728 seconds
+Time to get_max list: 2.8842 seconds
+Time to get_max set: 5.4027 seconds</code></pre>
 </div>
 </div>
 </section>
 <section id="asymptotic-runtime" class="slide level2">
 <h2>Asymptotic Runtime</h2>
 <ul>
+<li>Asymptotic means “approaching a limit”</li>
 <li>It doesn’t make sense to use computing runtime to compare implementations/algorithms because there are too many variables like processor speed, assembly code efficiency, etc.</li>
+<li>Literal running time is NOT helpful.</li>
+<li>Goal IS NOT to predict wall clock (actual, elapsed real-world time)</li>
+<li>Goal IS NOT to evaluate implementations</li>
+</ul>
+</section>
+<section id="asymptotic-runtime-1" class="slide level2">
+<h2>Asymptotic Runtime</h2>
+<ul>
 <li>We deal with approximations for comparisons</li>
 <li>Usually if we care about runtime, we are interested in scalability: how much more time will it take if I double the input size?</li>
 </ul>
