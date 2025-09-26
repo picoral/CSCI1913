@@ -3232,12 +3232,22 @@ window.Quarto = {
   <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1"><span class="header-section-number">1.1</span> Question 1</a></li>
   <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2"><span class="header-section-number">1.2</span> Question 2</a></li>
   <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3"><span class="header-section-number">1.3</span> Question 3</a></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4"><span class="header-section-number">1.4</span> Question 4</a></li>
+  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5"><span class="header-section-number">1.5</span> Question 5</a></li>
+  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6"><span class="header-section-number">1.6</span> Question 6</a></li>
+  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7"><span class="header-section-number">1.7</span> Question 7</a></li>
+  <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8"><span class="header-section-number">1.8</span> Question 8</a></li>
   </ul></li>
   <li><a href="#key" id="toc-key" class="nav-link" data-scroll-target="#key"><span class="header-section-number">2</span> Key</a>
   <ul class="collapse">
   <li><a href="#big-o-question-1" id="toc-big-o-question-1" class="nav-link" data-scroll-target="#big-o-question-1"><span class="header-section-number">2.1</span> Big-O Question 1</a></li>
   <li><a href="#big-o-question-2" id="toc-big-o-question-2" class="nav-link" data-scroll-target="#big-o-question-2"><span class="header-section-number">2.2</span> Big-O Question 2</a></li>
   <li><a href="#big-o-question-3" id="toc-big-o-question-3" class="nav-link" data-scroll-target="#big-o-question-3"><span class="header-section-number">2.3</span> Big-O Question 3</a></li>
+  <li><a href="#big-o-question-4" id="toc-big-o-question-4" class="nav-link" data-scroll-target="#big-o-question-4"><span class="header-section-number">2.4</span> Big-O Question 4</a></li>
+  <li><a href="#big-o-question-5" id="toc-big-o-question-5" class="nav-link" data-scroll-target="#big-o-question-5"><span class="header-section-number">2.5</span> Big-O Question 5</a></li>
+  <li><a href="#big-o-question-6" id="toc-big-o-question-6" class="nav-link" data-scroll-target="#big-o-question-6"><span class="header-section-number">2.6</span> Big-O Question 6</a></li>
+  <li><a href="#big-o-question-7" id="toc-big-o-question-7" class="nav-link" data-scroll-target="#big-o-question-7"><span class="header-section-number">2.7</span> Big-O Question 7</a></li>
+  <li><a href="#big-o-question-8" id="toc-big-o-question-8" class="nav-link" data-scroll-target="#big-o-question-8"><span class="header-section-number">2.8</span> Big-O Question 8</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -3275,7 +3285,7 @@ window.Quarto = {
 <section id="question-1" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="question-1"><span class="header-section-number">1.1</span> Question 1</h2>
 <p>Consider the following function:</p>
-<div id="42b7f08d" class="cell" data-execution_count="1">
+<div id="07f647ae" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> crunchy(lst):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    forwards <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> num <span class="kw">in</span> lst:</span>
@@ -3301,18 +3311,18 @@ window.Quarto = {
 </div>
 <p>Where <span class="math inline">\(N=len(lst)\)</span>, what is the worst case big-O runtime of this function?</p>
 <p>▢ a) <span class="math inline">\(O(1)\)</span></p>
-<p>▢ b) <span class="math inline">\(O(\log n)\)</span></p>
-<p>▢ c) <span class="math inline">\(O(n)\)</span></p>
-<p>▢ d) <span class="math inline">\(O(n \log n)\)</span></p>
-<p>▢ e) <span class="math inline">\(O(n^2)\)</span></p>
-<p>▢ f) <span class="math inline">\((O(n^3)\)</span></p>
-<p>▢ g) <span class="math inline">\(O(n^4)\)</span></p>
-<p>▢ h) <span class="math inline">\(O(2^n)\)</span></p>
+<p>▢ b) <span class="math inline">\(O(\log N)\)</span></p>
+<p>▢ c) <span class="math inline">\(O(N)\)</span></p>
+<p>▢ d) <span class="math inline">\(O(N \log N)\)</span></p>
+<p>▢ e) <span class="math inline">\(O(N^2)\)</span></p>
+<p>▢ f) <span class="math inline">\((O(N^3)\)</span></p>
+<p>▢ g) <span class="math inline">\(O(N^4)\)</span></p>
+<p>▢ h) <span class="math inline">\(O(2^N)\)</span></p>
 </section>
 <section id="question-2" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="question-2"><span class="header-section-number">1.2</span> Question 2</h2>
 <p>Consider the following function:</p>
-<div id="b8561aae" class="cell" data-execution_count="2">
+<div id="8fc0a254" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> crunchy(lst):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  out <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  tracker <span class="op">=</span> []</span>
@@ -3324,18 +3334,18 @@ window.Quarto = {
 </div>
 <p>Where <span class="math inline">\(N=len(lst)\)</span>, what is the worst case big-O runtime of this function? (You may assume append is constant time and tuple literal creation is constant time.</p>
 <p>▢ a) <span class="math inline">\(O(1)\)</span></p>
-<p>▢ b) <span class="math inline">\(O(\log n)\)</span></p>
-<p>▢ c) <span class="math inline">\(O(n)\)</span></p>
-<p>▢ d) <span class="math inline">\(O(n \log n)\)</span></p>
-<p>▢ e) <span class="math inline">\(O(n^2)\)</span></p>
-<p>▢ f) <span class="math inline">\(O(n^3)\)</span></p>
-<p>▢ g) <span class="math inline">\(O(n^4)\)</span></p>
-<p>▢ h) <span class="math inline">\(O(2^n)\)</span></p>
+<p>▢ b) <span class="math inline">\(O(\log N)\)</span></p>
+<p>▢ c) <span class="math inline">\(O(N)\)</span></p>
+<p>▢ d) <span class="math inline">\(O(N \log N)\)</span></p>
+<p>▢ e) <span class="math inline">\(O(N^2)\)</span></p>
+<p>▢ f) <span class="math inline">\(O(N^3)\)</span></p>
+<p>▢ g) <span class="math inline">\(O(N^4)\)</span></p>
+<p>▢ h) <span class="math inline">\(O(2^N)\)</span></p>
 </section>
 <section id="question-3" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="question-3"><span class="header-section-number">1.3</span> Question 3</h2>
 <p>Consider the following function:</p>
-<div id="f7876771" class="cell" data-execution_count="3">
+<div id="48290d3c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mystery(data):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> []</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -3358,24 +3368,152 @@ window.Quarto = {
 </div>
 <p>Where <span class="math inline">\(N=len(lst)\)</span>, what is the worst case big-O runtime of this function? (You may assume append is constant time and tuple literal creation is constant time.</p>
 <p>▢ a) <span class="math inline">\(O(1)\)</span></p>
-<p>▢ b) <span class="math inline">\(O(\log n)\)</span></p>
-<p>▢ c) <span class="math inline">\(O(n)\)</span></p>
-<p>▢ d) <span class="math inline">\(O(n \log n)\)</span></p>
-<p>▢ e) <span class="math inline">\(O(n^2)\)</span></p>
-<p>▢ f) <span class="math inline">\(O(n^3)\)</span></p>
-<p>▢ g) <span class="math inline">\(O(n^4)\)</span></p>
-<p>▢ h) <span class="math inline">\(O(2^n)\)</span></p>
+<p>▢ b) <span class="math inline">\(O(\log N)\)</span></p>
+<p>▢ c) <span class="math inline">\(O(N)\)</span></p>
+<p>▢ d) <span class="math inline">\(O(N \log N)\)</span></p>
+<p>▢ e) <span class="math inline">\(O(N^2)\)</span></p>
+<p>▢ f) <span class="math inline">\(O(N^3)\)</span></p>
+<p>▢ g) <span class="math inline">\(O(N^4)\)</span></p>
+<p>▢ h) <span class="math inline">\(O(2^N)\)</span></p>
+</section>
+<section id="question-4" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="question-4"><span class="header-section-number">1.4</span> Question 4</h2>
+<p>Consider this function:</p>
+<div id="7940b641" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_max(numbers):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> numbers:</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    max_val <span class="op">=</span> numbers[<span class="dv">0</span>]</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> num <span class="kw">in</span> numbers:</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> num <span class="op">&gt;</span> max_val:</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>            max_val <span class="op">=</span> num</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> max_val</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Where N is the length of the argument list, what is the worst case big-O runtime of this function?</p>
+<p>▢ a) <span class="math inline">\(O(1)\)</span></p>
+<p>▢ b) <span class="math inline">\(O(\log N)\)</span></p>
+<p>▢ c) <span class="math inline">\(O(N)\)</span></p>
+<p>▢ d) <span class="math inline">\(O(N \log N)\)</span></p>
+<p>▢ e) <span class="math inline">\(O(N^2)\)</span></p>
+<p>▢ f) <span class="math inline">\(O(N^3)\)</span></p>
+<p>▢ g) <span class="math inline">\(O(N^4)\)</span></p>
+<p>▢ h) <span class="math inline">\(O(2^N)\)</span></p>
+</section>
+<section id="question-5" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="question-5"><span class="header-section-number">1.5</span> Question 5</h2>
+<p>Consider this function:</p>
+<div id="5bfc588c" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> has_duplicates(arr):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(arr)):</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(i <span class="op">+</span> <span class="dv">1</span>, <span class="bu">len</span>(arr)):</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> arr[i] <span class="op">==</span> arr[j]:</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Where N is the length of the argument list, what is the worst case big-O runtime of this function?</p>
+<p>▢ a) <span class="math inline">\(O(1)\)</span></p>
+<p>▢ b) <span class="math inline">\(O(\log N)\)</span></p>
+<p>▢ c) <span class="math inline">\(O(N)\)</span></p>
+<p>▢ d) <span class="math inline">\(O(N \log N)\)</span></p>
+<p>▢ e) <span class="math inline">\(O(N^2)\)</span></p>
+<p>▢ f) <span class="math inline">\(O(N^3)\)</span></p>
+<p>▢ g) <span class="math inline">\(O(N^4)\)</span></p>
+<p>▢ h) <span class="math inline">\(O(2^N)\)</span></p>
+</section>
+<section id="question-6" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="question-6"><span class="header-section-number">1.6</span> Question 6</h2>
+<p>Consider the following function:</p>
+<div id="fd73ac1c" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_pairs(arr):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(arr)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="ss">f&quot;(</span><span class="sc">{</span>arr[i]<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>arr[j]<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>arr[k]<span class="sc">}</span><span class="ss">)&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Where N is the length of the argument list, what is the worst case big-O runtime of this function?</p>
+<p>▢ a) <span class="math inline">\(O(1)\)</span></p>
+<p>▢ b) <span class="math inline">\(O(\log N)\)</span></p>
+<p>▢ c) <span class="math inline">\(O(N)\)</span></p>
+<p>▢ d) <span class="math inline">\(O(N \log N)\)</span></p>
+<p>▢ e) <span class="math inline">\(O(N^2)\)</span></p>
+<p>▢ f) <span class="math inline">\(O(N^3)\)</span></p>
+<p>▢ g) <span class="math inline">\(O(N^4)\)</span></p>
+<p>▢ h) <span class="math inline">\(O(2^N)\)</span></p>
+</section>
+<section id="question-7" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="question-7"><span class="header-section-number">1.7</span> Question 7</h2>
+<p>Consider the following function:</p>
+<div id="2b986b8f" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> foo(arr, target):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    left <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    right <span class="op">=</span> <span class="bu">len</span>(arr) <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    all_mid_values <span class="op">=</span> []</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> left <span class="op">&lt;=</span> right:</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        mid <span class="op">=</span> (left <span class="op">+</span> right) <span class="op">//</span> <span class="dv">2</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> arr[mid] <span class="op">==</span> target:</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> mid</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> arr[mid] <span class="op">&lt;</span> target:</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>            left <span class="op">=</span> mid <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>            all_mid_values.append(arr[mid])</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>            right <span class="op">=</span> mid <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>            all_mid_values.append(arr[mid])</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Where N is the length of the argument list, what is the worst case big-O runtime of this function?</p>
+<p>▢ a) <span class="math inline">\(O(1)\)</span></p>
+<p>▢ b) <span class="math inline">\(O(\log N)\)</span></p>
+<p>▢ c) <span class="math inline">\(O(N)\)</span></p>
+<p>▢ d) <span class="math inline">\(O(N \log N)\)</span></p>
+<p>▢ e) <span class="math inline">\(O(N^2)\)</span></p>
+<p>▢ f) <span class="math inline">\(O(N^3)\)</span></p>
+<p>▢ g) <span class="math inline">\(O(N^4)\)</span></p>
+<p>▢ h) <span class="math inline">\(O(2^N)\)</span></p>
+</section>
+<section id="question-8" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="question-8"><span class="header-section-number">1.8</span> Question 8</h2>
+<p>Consider the following functions:</p>
+<div id="9007c1b4" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> binary_search(arr, v):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  low <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  high <span class="op">=</span> <span class="bu">len</span>(arr)<span class="op">-</span><span class="dv">1</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> low <span class="op">&lt;=</span> high:</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    mid <span class="op">=</span> (low<span class="op">+</span>high)<span class="op">//</span><span class="dv">2</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> v <span class="op">&gt;</span> arr[mid]:</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>      low <span class="op">=</span> mid <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> v <span class="op">&lt;</span> arr[mid]:</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>      high <span class="op">=</span> mid <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> mid</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> foo(arr):</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  result <span class="op">=</span> []</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> value <span class="kw">in</span> arr:</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    index <span class="op">=</span> binary_search(arr, value)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    result.append(index)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Where N is the length of the argument list, what is the worst case big-O runtime of the <code>foo(arr)</code> function?</p>
+<p>▢ a) <span class="math inline">\(O(1)\)</span></p>
+<p>▢ b) <span class="math inline">\(O(\log N)\)</span></p>
+<p>▢ c) <span class="math inline">\(O(N)\)</span></p>
+<p>▢ d) <span class="math inline">\(O(N \log N)\)</span></p>
+<p>▢ e) <span class="math inline">\(O(N^2)\)</span></p>
+<p>▢ f) <span class="math inline">\(O(N^3)\)</span></p>
+<p>▢ g) <span class="math inline">\(O(N^4)\)</span></p>
+<p>▢ h) <span class="math inline">\(O(2^N)\)</span></p>
 </section>
 </section>
 <section id="key" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Key</h1>
 <section id="big-o-question-1" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="big-o-question-1"><span class="header-section-number">2.1</span> Big-O Question 1</h2>
-<p>The answer is <em>c) <span class="math inline">\(O(n)\)</span></em> because the four <code>for</code> loops are not nested. The total time complexity is: <span class="math inline">\(O(1) + O(N) + O(N) + O(N) + O(N) = O(N)\)</span></p>
+<p>The answer is <em>c) <span class="math inline">\(O(N)\)</span></em> because the four <code>for</code> loops are not nested. The total time complexity is: <span class="math inline">\(O(1) + O(N) + O(N) + O(N) + O(N) = O(N)\)</span></p>
 </section>
 <section id="big-o-question-2" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="big-o-question-2"><span class="header-section-number">2.2</span> Big-O Question 2</h2>
-<p>The answer is <em>e) <span class="math inline">\(O(n^2)\)</span></em></p>
+<p>The answer is <em>e) <span class="math inline">\(O(N^2)\)</span></em></p>
 <p>Outer loop runs runs N times.</p>
 <p>Inner loop runs 0 times for idx 0, 1 time for idx 1, 2 times for idx 2 – <span class="math inline">\(0 + 1 + 2 + ... + (N-2) = (N-2)(N-1)/2\)</span>.</p>
 <p><span class="math inline">\(\frac{(N-2)(N-1)}{2} = O(N^2)\)</span></p>
@@ -3384,10 +3522,47 @@ window.Quarto = {
 </section>
 <section id="big-o-question-3" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="big-o-question-3"><span class="header-section-number">2.3</span> Big-O Question 3</h2>
-<p>The answer is <em>e) <span class="math inline">\(O(n^2)\)</span></em></p>
-<p>First loop is <span class="math inline">\(O(n^2)\)</span>.</p>
-<p>Second loop is <span class="math inline">\(O(n^2)\)</span>.</p>
-<p>Third loops runs <span class="math inline">\(2N\)</span> for worst-case scenario, so <span class="math inline">\(O(n)\)</span>.</p>
+<p>The answer is <em>e) <span class="math inline">\(O(N^2)\)</span></em></p>
+<p>First loop is <span class="math inline">\(O(N^2)\)</span>.</p>
+<p>Second loop is <span class="math inline">\(O(N^2)\)</span>.</p>
+<p>Third loops runs <span class="math inline">\(2N\)</span> for worst-case scenario, so <span class="math inline">\(O(N)\)</span>.</p>
+</section>
+<section id="big-o-question-4" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="big-o-question-4"><span class="header-section-number">2.4</span> Big-O Question 4</h2>
+<p>The answer is <em>c) <span class="math inline">\(O(N)\)</span></em></p>
+<p>Best case is <span class="math inline">\(O(1)\)</span> (empty list), worst case is <span class="math inline">\(O(N)\)</span>. Loop checks every value in argument list.</p>
+</section>
+<section id="big-o-question-5" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="big-o-question-5"><span class="header-section-number">2.5</span> Big-O Question 5</h2>
+<p>The answer is <em>e) <span class="math inline">\(O(N^2)\)</span></em></p>
+<p>Because fo the nested loops comparing all pairs. For every item in list, it’s compared to every item in the (minus itself).</p>
+</section>
+<section id="big-o-question-6" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="big-o-question-6"><span class="header-section-number">2.6</span> Big-O Question 6</h2>
+<p>The answer is <em>f) <span class="math inline">\(O(N^3)\)</span></em></p>
+<p>Three nested loops.</p>
+</section>
+<section id="big-o-question-7" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="big-o-question-7"><span class="header-section-number">2.7</span> Big-O Question 7</h2>
+<p>The answer is <em>b) <span class="math inline">\(O(\log N)\)</span></em></p>
+<p>Boundaries of which values will be checked in the while loop change at every iteraction, halving the size of the sublist that is considered in each interaction.</p>
+<ul>
+<li>After 1 comparison: N/2 elements remain</li>
+<li>After 2 comparisons: N/4 elements remain</li>
+<li>After 3 comparisons: N/8 elements remain</li>
+<li>After 4 comparisons: N/16 elements remain</li>
+<li>After 5 comparisons: N/32 elements remain</li>
+<li>After <code>k</code> comparisons: <strong>N/2^k</strong> elements remain</li>
+</ul>
+<p>After k comparisons: <strong>N/2^k</strong> elements remain.</p>
+<p>What’s the value of <code>k</code>?</p>
+<p><span class="math inline">\(N = 2^k\)</span></p>
+<p><span class="math inline">\(k = log_2(N)\)</span></p>
+</section>
+<section id="big-o-question-8" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="big-o-question-8"><span class="header-section-number">2.8</span> Big-O Question 8</h2>
+<p>The answer is <em>d) <span class="math inline">\(O(N \log N)\)</span></em></p>
+<p>Binary Search is performed for every element in the array. Binary Search is <span class="math inline">\(O(\log N)\)</span> so running Binary Search for every array item is <span class="math inline">\(O(N \log N)\)</span></p>
 </section>
 </section>
 
