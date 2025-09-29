@@ -1129,11 +1129,16 @@ margin-right: 0; }
 <li>Can be up to <span class="math inline">\(O(N)\)</span> worst case (under the right conditions)</li>
 </ul>
 </section>
-<section id="bogo-sort" class="slide level2">
+<section>
+<section id="bogo-sort" class="title-slide slide level1 center">
+<h1>Bogo Sort</h1>
+
+</section>
+<section id="bogo-sort-1" class="slide level2">
 <h2>Bogo Sort</h2>
 <p>Bogo sort: Orders a list of values by repetitively shuﬀeling them and checking if they are sorted.</p>
 <p>Name comes from “bogus”</p>
-<div id="3eea65f0" class="cell" data-execution_count="1">
+<div id="ce18c165" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a><span class="im">import</span> random</span>
 <span id="cb1-2"><a href></a></span>
 <span id="cb1-3"><a href></a><span class="kw">def</span> is_sorted(lst):</span>
@@ -1180,11 +1185,108 @@ margin-right: 0; }
 <ul>
 <li>radix sort is not a comparison sort</li>
 </ul>
+</section></section>
+<section>
+<section id="selection-sort" class="title-slide slide level1 center">
+<h1>Selection sort</h1>
+
 </section>
-<section id="bubble-sort" class="slide level2">
+<section id="selection-sort-1" class="slide level2">
+<h2>Selection sort</h2>
+<p>Approach: “select” item for each location and swap:</p>
+<ul>
+<li>find smallest item, place in 1st position</li>
+<li>find second smallest, place in 2nd position</li>
+<li>find smallest from unsorted part, place where it belongs</li>
+</ul>
+<p><a href="https://visualgo.net/en/sorting">Animation of what Selection Sort looks like</a></p>
+</section>
+<section id="selection-sort-2" class="slide level2">
+<h2>Selection sort</h2>
+<p>Mid search snapshot:</p>
+<ul>
+<li>List has two “zones”</li>
+<li>Sorted Zone
+<ul>
+<li>is sorted</li>
+<li>contains the smaller part of the original list</li>
+</ul></li>
+<li>Unsorted Zone
+<ul>
+<li>is not sorted</li>
+<li>contains the larger part of the original list</li>
+</ul></li>
+</ul>
+</section>
+<section id="implement-selection-sort-strategies" class="slide level2">
+<h2>Implement Selection Sort – strategies</h2>
+<p>Nested loops:</p>
+<ul>
+<li>Outer loop repeats n-1 times, n being size of list</li>
+<li>Initialize a <code>small</code> variable in between the outer and the inner loop to hold the smallest value index</li>
+<li>Inner loop finds the index of the smallest value (compare each value at index <code>small</code> with the current index at inner iteration, updating <code>small</code> whenever a smaller value is found)</li>
+</ul>
+<p>Swapping in place:</p>
+<p><code>lst[j], lst[small] = lst[small], lst[j]</code></p>
+</section>
+<section id="selection-sort-implementation" class="slide level2">
+<h2>Selection Sort – implementation</h2>
+<div id="074a4487" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href></a><span class="kw">def</span> selection_sort(lst):</span>
+<span id="cb2-2"><a href></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(lst) <span class="op">-</span> <span class="dv">1</span>):</span>
+<span id="cb2-3"><a href></a>        <span class="co"># Find index of smallest</span></span>
+<span id="cb2-4"><a href></a>        small <span class="op">=</span> i</span>
+<span id="cb2-5"><a href></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(i <span class="op">+</span> <span class="dv">1</span>, <span class="bu">len</span>(lst)):</span>
+<span id="cb2-6"><a href></a>            <span class="cf">if</span> lst[j] <span class="op">&lt;</span> lst[small]:</span>
+<span id="cb2-7"><a href></a>                small <span class="op">=</span> j</span>
+<span id="cb2-8"><a href></a>        <span class="co"># Swap smallest into place</span></span>
+<span id="cb2-9"><a href></a>        lst[i],lst[small] <span class="op">=</span> lst[small],lst[i]</span>
+<span id="cb2-10"><a href></a>    </span>
+<span id="cb2-11"><a href></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb2-12"><a href></a>    fruit <span class="op">=</span> [<span class="st">&quot;blackberry&quot;</span>, <span class="st">&quot;apple&quot;</span>, <span class="st">&quot;papaya&quot;</span>,  <span class="st">&quot;cantaloupe&quot;</span>, <span class="st">&quot;apricot&quot;</span>,  <span class="st">&quot;banana&quot;</span>]</span>
+<span id="cb2-13"><a href></a>    selection_sort(fruit)</span>
+<span id="cb2-14"><a href></a>    <span class="bu">print</span>(fruit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[&#39;apple&#39;, &#39;apricot&#39;, &#39;banana&#39;, &#39;blackberry&#39;, &#39;cantaloupe&#39;, &#39;papaya&#39;]</code></pre>
+</div>
+</div>
+</section>
+<section id="selection-sort-runtime" class="slide level2">
+<h2>Selection Sort runtime</h2>
+<p>What’s Selection Sort’s runtime?</p>
+</section>
+<section id="selection-sort-runtime-1" class="slide level2">
+<h2>Selection Sort runtime</h2>
+<p>What’s Selection Sort’s runtime?</p>
+<p><span class="math inline">\(O(N^2)\)</span></p>
+</section></section>
+<section>
+<section id="bubble-sort" class="title-slide slide level1 center">
+<h1>Bubble sort</h1>
+
+</section>
+<section id="bubble-sort-1" class="slide level2">
 <h2>Bubble sort</h2>
 <p>Approach: While the list is not sorted, iterate through the list swaping adjacent pairs.</p>
 <p><a href="https://visualgo.net/en/sorting">Animation of what Bubble Sort looks like</a></p>
+<p>Called “bubble” sort because large numbers bubble to the “top” (end of the list)</p>
+</section>
+<section id="bubble-sort-2" class="slide level2">
+<h2>Bubble sort</h2>
+<p>Mid search snapshot:</p>
+<ul>
+<li>List has two “zones”</li>
+<li>Sorted Zone
+<ul>
+<li>is sorted</li>
+<li>contains the largest numbers of the original list sorted</li>
+</ul></li>
+<li>Unsorted Zone
+<ul>
+<li>is not sorted</li>
+<li>contains the smalles part of the original list</li>
+</ul></li>
+</ul>
 </section>
 <section id="implement-bubble-sort-strategies" class="slide level2">
 <h2>Implement Bubble Sort – strategies</h2>
@@ -1197,27 +1299,27 @@ margin-right: 0; }
 <p><code>lst[j], lst[j+1] = lst[j+1], lst[j]</code></p>
 <p>How do we know a list is sorted? If there were not swaps, the list is sorted.</p>
 </section>
-<section id="bubble-sort-solution-1" class="slide level2">
-<h2>Bubble Sort – solution 1</h2>
-<div id="feddb80e" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href></a><span class="kw">def</span> bubble_sort(lst):</span>
-<span id="cb2-2"><a href></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(lst)):</span>
-<span id="cb2-3"><a href></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(lst)<span class="op">-</span><span class="dv">1</span>):</span>
-<span id="cb2-4"><a href></a>            <span class="cf">if</span> lst[j]<span class="op">&gt;</span> lst[j<span class="op">+</span><span class="dv">1</span>]:</span>
-<span id="cb2-5"><a href></a>                lst[j], lst[j<span class="op">+</span><span class="dv">1</span>] <span class="op">=</span> lst[j<span class="op">+</span><span class="dv">1</span>], lst[j]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="bubble-sort-implementation-1" class="slide level2">
+<h2>Bubble Sort – implementation 1</h2>
+<div id="e4455296" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href></a><span class="kw">def</span> bubble_sort(lst):</span>
+<span id="cb4-2"><a href></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(lst)):</span>
+<span id="cb4-3"><a href></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(lst)<span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb4-4"><a href></a>            <span class="cf">if</span> lst[j]<span class="op">&gt;</span> lst[j<span class="op">+</span><span class="dv">1</span>]:</span>
+<span id="cb4-5"><a href></a>                lst[j], lst[j<span class="op">+</span><span class="dv">1</span>] <span class="op">=</span> lst[j<span class="op">+</span><span class="dv">1</span>], lst[j]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="bubble-sort-solution-2" class="slide level2">
-<h2>Bubble Sort – solution 2</h2>
-<div id="27a8a474" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href></a><span class="kw">def</span> bubble_sort(lst):</span>
-<span id="cb3-2"><a href></a>    list_sorted <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb3-3"><a href></a>    <span class="cf">while</span> <span class="kw">not</span> list_sorted:</span>
-<span id="cb3-4"><a href></a>        list_sorted <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb3-5"><a href></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(lst)<span class="op">-</span><span class="dv">1</span>):</span>
-<span id="cb3-6"><a href></a>            <span class="cf">if</span> lst[j] <span class="op">&gt;</span> lst[j<span class="op">+</span><span class="dv">1</span>]:</span>
-<span id="cb3-7"><a href></a>                lst[j], lst[j<span class="op">+</span><span class="dv">1</span>] <span class="op">=</span> lst[j<span class="op">+</span><span class="dv">1</span>], lst[j]</span>
-<span id="cb3-8"><a href></a>                list_sorted <span class="op">=</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="bubble-sort-implementation-2" class="slide level2">
+<h2>Bubble Sort – implementation 2</h2>
+<div id="d70e73e4" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href></a><span class="kw">def</span> bubble_sort(lst):</span>
+<span id="cb5-2"><a href></a>    list_sorted <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb5-3"><a href></a>    <span class="cf">while</span> <span class="kw">not</span> list_sorted:</span>
+<span id="cb5-4"><a href></a>        list_sorted <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb5-5"><a href></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(lst)<span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb5-6"><a href></a>            <span class="cf">if</span> lst[j] <span class="op">&gt;</span> lst[j<span class="op">+</span><span class="dv">1</span>]:</span>
+<span id="cb5-7"><a href></a>                lst[j], lst[j<span class="op">+</span><span class="dv">1</span>] <span class="op">=</span> lst[j<span class="op">+</span><span class="dv">1</span>], lst[j]</span>
+<span id="cb5-8"><a href></a>                list_sorted <span class="op">=</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="bubble-sort-runtime" class="slide level2">
@@ -1228,8 +1330,73 @@ margin-right: 0; }
 <h2>Bubble Sort runtime</h2>
 <p>What’s Bubble Sort’s runtime?</p>
 <p><span class="math inline">\(O(N^2)\)</span></p>
+</section></section>
+<section>
+<section id="insertion-sort" class="title-slide slide level1 center">
+<h1>Insertion Sort</h1>
 
 </section>
+<section id="insertion-sort-1" class="slide level2">
+<h2>Insertion Sort</h2>
+<p>Approach: Keep two zones, a sorted and unsorted zone. “Insert” next element into sorted zone</p>
+<ul>
+<li>keep left-side sorted</li>
+<li>each loop:
+<ul>
+<li>shift next element left until sorted</li>
+</ul></li>
+</ul>
+</section>
+<section id="insertion-sort-2" class="slide level2">
+<h2>Insertion Sort</h2>
+<p>Mid Search snapshot:</p>
+<ul>
+<li>List has two “zones”:
+<ul>
+<li>Sorted Zone
+<ul>
+<li>contains original elements</li>
+<li>re-ordered to be sorted</li>
+</ul></li>
+</ul></li>
+<li>Unsorted Zone
+<ul>
+<li>contains original elements</li>
+<li>has not been touched yet</li>
+</ul></li>
+</ul>
+</section>
+<section id="insertion-sort-strategies" class="slide level2">
+<h2>Insertion Sort – strategies</h2>
+<p>Nested loops:</p>
+<ul>
+<li>Outer loop repeats n-1 times, n being size of list (start at 1 because we are looking one index back)</li>
+<li>Inner loop starts at current index for outer loop and goes back, checking each current element with previous until the beginning of the list or until a smaller value is found.</li>
+</ul>
+<p>Swapping in place:</p>
+<p><code>lst[j], lst[j-1] = lst[j-1], lst[j]</code></p>
+</section>
+<section id="insertion-sort-implementation" class="slide level2">
+<h2>Insertion Sort – implementation</h2>
+<div id="13510e35" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href></a><span class="kw">def</span> insertion_sort(lst):</span>
+<span id="cb6-2"><a href></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(lst)):</span>
+<span id="cb6-3"><a href></a>    j <span class="op">=</span> i</span>
+<span id="cb6-4"><a href></a>    <span class="cf">while</span> j <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> lst[j] <span class="op">&lt;</span> lst[j<span class="op">-</span><span class="dv">1</span>]:</span>
+<span id="cb6-5"><a href></a>        lst[j], lst[j<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> lst[j<span class="op">-</span><span class="dv">1</span>], lst[j]</span>
+<span id="cb6-6"><a href></a>        j <span class="op">=</span> j <span class="op">-</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="insertion-sort-runtime" class="slide level2">
+<h2>Insertion Sort runtime</h2>
+<p>What’s Insertion Sort’s runtime?</p>
+</section>
+<section id="insertion-sort-runtime-1" class="slide level2">
+<h2>Insertion Sort runtime</h2>
+<p>What’s Insertion Sort’s runtime?</p>
+<p><span class="math inline">\(O(N^2)\)</span></p>
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
