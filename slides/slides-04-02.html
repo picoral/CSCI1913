@@ -1250,7 +1250,7 @@ margin-right: 0; }
 <section id="solution" class="slide level2">
 <h2>Solution</h2>
 <p>Note the <code>return</code> statement inside the loop:</p>
-<div id="49034ed8" class="cell" data-execution_count="1">
+<div id="1272254e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a><span class="kw">def</span> linear_search(array, value):</span>
 <span id="cb1-2"><a href></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(array)):</span>
 <span id="cb1-3"><a href></a>    <span class="cf">if</span> array[i] <span class="op">==</span> value:</span>
@@ -1274,7 +1274,7 @@ margin-right: 0; }
 <li>What is the worst case scenario?</li>
 <li>What is the Big-O for linear search?</li>
 </ul>
-<div id="29916b76" class="cell" data-execution_count="2">
+<div id="cd76c1b1" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href></a><span class="kw">def</span> linear_search(array, value):</span>
 <span id="cb3-2"><a href></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(array)):</span>
 <span id="cb3-3"><a href></a>    <span class="cf">if</span> array[i] <span class="op">==</span> value:</span>
@@ -1289,7 +1289,7 @@ margin-right: 0; }
 <li>Assume the element is not found</li>
 <li>How many times do we need to access?</li>
 </ul>
-<div id="b76215ea" class="cell" data-execution_count="3">
+<div id="32cc7276" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href></a><span class="kw">def</span> linear_search(array, value):</span>
 <span id="cb4-2"><a href></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(array)):</span>
 <span id="cb4-3"><a href></a>    <span class="cf">if</span> array[i] <span class="op">==</span> value:</span>
@@ -1304,7 +1304,7 @@ margin-right: 0; }
 <li>Assume the element is not found</li>
 <li>How many times do we need to access?</li>
 </ul>
-<div id="3038a739" class="cell" data-execution_count="4">
+<div id="0e404b09" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href></a><span class="kw">def</span> linear_search(array, value):</span>
 <span id="cb5-2"><a href></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(array)):</span>
 <span id="cb5-3"><a href></a>    <span class="cf">if</span> array[i] <span class="op">==</span> value:</span>
@@ -1469,7 +1469,7 @@ margin-right: 0; }
 <p>Implement binary search in python. Write a function called <code>binary_search</code> that takes in two arguments: a sorted list (increasing values) and a search value.</p>
 <p>Your function should return the index of the search value if found, -1 if value is not found.</p>
 <p>Test case:</p>
-<div id="7f14c4f8" class="cell" data-execution_count="5">
+<div id="e6ab222b" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href></a>numbers <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">23</span>, <span class="dv">41</span>, <span class="dv">43</span>, <span class="dv">44</span>, <span class="dv">60</span>, <span class="dv">99</span>, <span class="dv">120</span>, <span class="dv">343</span>]</span>
 <span id="cb6-2"><a href></a><span class="cf">assert</span> binary_search(numbers, <span class="dv">99</span>) <span class="op">==</span> <span class="dv">8</span></span>
 <span id="cb6-3"><a href></a><span class="cf">assert</span> binary_search(numbers, <span class="dv">9</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1478,7 +1478,7 @@ margin-right: 0; }
 </section>
 <section id="binary-search-solution" class="slide level2">
 <h2>Binary Search – solution</h2>
-<div id="6a6ea712" class="cell" data-execution_count="6">
+<div id="22f50bba" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href></a><span class="kw">def</span> binary_search(arr, v):</span>
 <span id="cb7-2"><a href></a>  low <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb7-3"><a href></a>  high <span class="op">=</span> <span class="bu">len</span>(arr)<span class="op">-</span><span class="dv">1</span></span>
@@ -1528,12 +1528,12 @@ margin-right: 0; }
 <li>After 3 comparisons: N/8 elements remain</li>
 <li>After 4 comparisons: N/16 elements remain</li>
 <li>After 5 comparisons: N/32 elements remain</li>
-<li>After <code>k</code> comparisons: <strong>N/2^k</strong> elements remain</li>
+<li>After <code>k</code> comparisons: <span class="math inline">\(**N/2^k**\)</span> elements remain</li>
 </ul>
 </section>
 <section id="binary-search-9" class="slide level2">
 <h2>Binary Search</h2>
-<p>After k comparisons: <strong>N/2^k</strong> elements remain.</p>
+<p>After k comparisons: <span class="math inline">\(**N/2^k**\)</span> elements remain.</p>
 <p>What’s the value of <code>k</code>?</p>
 <p><span class="math inline">\(N = 2^k\)</span></p>
 <p><span class="math inline">\(k = log_2(N)\)</span></p>
