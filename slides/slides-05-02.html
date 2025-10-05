@@ -260,7 +260,7 @@
 <section id="function-stacks-1" class="slide level2">
 <h2>Function Stacks</h2>
 <p>What will this print?</p>
-<div id="06d74a1b" class="cell" data-execution_count="1">
+<div id="439c87ce" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="kw">def</span> fun_a():</span>
 <span id="cb1-2"><a href=""></a>  <span class="bu">print</span>(<span class="st">"A"</span>)</span>
 <span id="cb1-3"><a href=""></a>  fun_b()</span>
@@ -286,7 +286,7 @@ C</code></pre>
 <section id="remember-factorial" class="slide level2">
 <h2>Remember factorial?</h2>
 <p>What’s the runtime?</p>
-<div id="b34ba20b" class="cell" data-execution_count="2">
+<div id="9a54bfca" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb3-2"><a href=""></a>  product <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb3-3"><a href=""></a>  <span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
@@ -303,7 +303,7 @@ C</code></pre>
 <section id="remember-factorial-1" class="slide level2">
 <h2>Remember factorial?</h2>
 <p>What’s the runtime? <span class="math inline">\(O(n)\)</span></p>
-<div id="9382c00d" class="cell" data-execution_count="3">
+<div id="172d6c46" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb4-2"><a href=""></a>  product <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb4-3"><a href=""></a>  <span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
@@ -322,7 +322,7 @@ C</code></pre>
 <blockquote>
 <p>“a recursive function calls itself”</p>
 </blockquote>
-<div id="65a34350" class="cell" data-execution_count="4">
+<div id="dc8b65a6" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb5-2"><a href=""></a>  factorial(n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -352,7 +352,7 @@ C</code></pre>
 <blockquote>
 <p>“a recursive function needs a base case”</p>
 </blockquote>
-<div id="a1f55e21" class="cell" data-execution_count="5">
+<div id="cf87d47f" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb6-2"><a href=""></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span>:</span>
 <span id="cb6-3"><a href=""></a>    <span class="cf">return</span> <span class="dv">1</span></span>
@@ -385,7 +385,7 @@ C</code></pre>
 <p>“recursive case(s) must always mode towards a base case”</p>
 </blockquote>
 <p>We need to get to <code>1</code></p>
-<div id="e180e52a" class="cell" data-execution_count="6">
+<div id="c93c9518" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb7-2"><a href=""></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span>:</span>
 <span id="cb7-3"><a href=""></a>    <span class="cf">return</span> <span class="dv">1</span></span>
@@ -404,7 +404,7 @@ C</code></pre>
 </section>
 <section id="recursive-factorial-6" class="slide level2">
 <h2>Recursive factorial</h2>
-<div id="8d125e61" class="cell" data-execution_count="7">
+<div id="f8bddd14" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb8-2"><a href=""></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span> <span class="kw">or</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb8-3"><a href=""></a>    <span class="cf">return</span> <span class="dv">1</span></span>
@@ -422,7 +422,7 @@ C</code></pre>
 <li>single recursive call <span class="math inline">\(T(n-1)\)</span></li>
 <li>one multiplication of the result <span class="math inline">\(O(1)\)</span></li>
 </ol>
-<div id="b4559d3e" class="cell" data-execution_count="8">
+<div id="1e6580f0" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb9-2"><a href=""></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span> <span class="kw">or</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb9-3"><a href=""></a>    <span class="cf">return</span> <span class="dv">1</span></span>
@@ -436,7 +436,7 @@ C</code></pre>
 <li>single recursive call <span class="math inline">\(T(n-1)\)</span></li>
 <li>one multiplication of the result <span class="math inline">\(O(1)\)</span></li>
 </ol>
-<div id="f51a80d1" class="cell" data-execution_count="9">
+<div id="f9eafd64" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb10-2"><a href=""></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span> <span class="kw">or</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb10-3"><a href=""></a>    <span class="cf">return</span> <span class="dv">1</span></span>
@@ -447,7 +447,7 @@ C</code></pre>
 <section id="recurrence-relations-2" class="slide level2">
 <h2>Recurrence relations</h2>
 <p><span class="math inline">\(T(N) = T(N-1) + 1\)</span></p>
-<div id="bfc8843a" class="cell" data-execution_count="10">
+<div id="146a30f3" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb11-2"><a href=""></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span> <span class="kw">or</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb11-3"><a href=""></a>    <span class="cf">return</span> <span class="dv">1</span></span>
@@ -492,6 +492,25 @@ C</code></pre>
 <section id="exercise-binary-search" class="slide level2">
 <h2>Exercise – Binary Search</h2>
 <p>Here’s our original Binary Search implementation:</p>
+<div id="281df854" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="kw">def</span> binary_search(arr, v):</span>
+<span id="cb12-2"><a href=""></a>  low <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb12-3"><a href=""></a>  high <span class="op">=</span> <span class="bu">len</span>(arr)<span class="op">-</span><span class="dv">1</span></span>
+<span id="cb12-4"><a href=""></a>  <span class="cf">while</span> low <span class="op">&lt;=</span> high:</span>
+<span id="cb12-5"><a href=""></a>    mid <span class="op">=</span> (low<span class="op">+</span>high) <span class="op">//</span> <span class="dv">2</span></span>
+<span id="cb12-6"><a href=""></a>    <span class="cf">if</span> v <span class="op">&gt;</span> arr[mid]: <span class="co"># update low</span></span>
+<span id="cb12-7"><a href=""></a>      low <span class="op">=</span> mid <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb12-8"><a href=""></a>    <span class="cf">elif</span> v <span class="op">&lt;</span> arr[mid]: <span class="co"># update high</span></span>
+<span id="cb12-9"><a href=""></a>      high <span class="op">=</span> mid <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb12-10"><a href=""></a>    <span class="cf">else</span>:</span>
+<span id="cb12-11"><a href=""></a>      <span class="cf">return</span> mid</span>
+<span id="cb12-12"><a href=""></a>  <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb12-13"><a href=""></a></span>
+<span id="cb12-14"><a href=""></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb12-15"><a href=""></a>  numbers <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">23</span>, <span class="dv">41</span>, <span class="dv">43</span>, <span class="dv">44</span>, <span class="dv">60</span>, <span class="dv">99</span>, <span class="dv">120</span>, <span class="dv">343</span>]</span>
+<span id="cb12-16"><a href=""></a>  <span class="cf">assert</span> binary_search(numbers, <span class="dv">99</span>) <span class="op">==</span> <span class="dv">8</span></span>
+<span id="cb12-17"><a href=""></a>  <span class="cf">assert</span> binary_search(numbers, <span class="dv">9</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="exercise-binary-search-1" class="slide level2">
 <h2>Exercise – Binary Search</h2>
@@ -511,33 +530,33 @@ C</code></pre>
 <h2>Exercise – Binary Search</h2>
 <p>Write binary search as a recursive function.</p>
 <ol type="1">
-<li>What are the base case? <span class="math inline">\(low &gt; high\)</span> and <span class="math inline">\(lst[mid] == target\)</span></li>
-<li>What’s the recursive case? <span class="math inline">\(n/2\)</span></li>
+<li>What are the base case? low &gt; high</li>
+<li>What’s the recursive case? n/2 – divide list by two or change either low or high</li>
 </ol>
 </section>
 <section id="exercise-binary-search-3" class="slide level2">
 <h2>Exercise – Binary Search</h2>
-<div id="a2cbeb44" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="kw">def</span> recursive_binary_search(lst, target, high, low):</span>
-<span id="cb12-2"><a href=""></a>  mid <span class="op">=</span> (low<span class="op">+</span>high)<span class="op">//</span><span class="dv">2</span></span>
-<span id="cb12-3"><a href=""></a>  </span>
-<span id="cb12-4"><a href=""></a>  <span class="cf">if</span> lst[mid] <span class="op">==</span> target:</span>
-<span id="cb12-5"><a href=""></a>    <span class="cf">return</span> mid</span>
-<span id="cb12-6"><a href=""></a>  </span>
-<span id="cb12-7"><a href=""></a>  <span class="cf">if</span> low <span class="op">&gt;</span> high:</span>
-<span id="cb12-8"><a href=""></a>    <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb12-9"><a href=""></a>  </span>
-<span id="cb12-10"><a href=""></a>  <span class="cf">if</span> target <span class="op">&lt;</span> lst[mid]:</span>
-<span id="cb12-11"><a href=""></a>    <span class="cf">return</span> recursive_binary_search(lst, target, mid<span class="op">-</span><span class="dv">1</span>, low)</span>
-<span id="cb12-12"><a href=""></a>  </span>
-<span id="cb12-13"><a href=""></a>  <span class="cf">if</span> target <span class="op">&gt;</span> lst[mid]:</span>
-<span id="cb12-14"><a href=""></a>    <span class="cf">return</span> recursive_binary_search(lst, target, high, mid<span class="op">+</span><span class="dv">2</span>)</span>
-<span id="cb12-15"><a href=""></a>  </span>
-<span id="cb12-16"><a href=""></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb12-17"><a href=""></a>  numbers <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">23</span>, <span class="dv">41</span>, <span class="dv">43</span>, <span class="dv">44</span>, <span class="dv">60</span>, <span class="dv">99</span>, <span class="dv">120</span>, <span class="dv">343</span>]</span>
-<span id="cb12-18"><a href=""></a>  <span class="cf">assert</span> binary_search(numbers, <span class="dv">99</span>) <span class="op">==</span> <span class="dv">8</span></span>
-<span id="cb12-19"><a href=""></a>  <span class="cf">assert</span> binary_search(numbers, <span class="dv">9</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb12-20"><a href=""></a>  <span class="bu">print</span>(<span class="st">"Passed tests"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="73749c2e" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="kw">def</span> recursive_binary_search(lst, target, high, low):</span>
+<span id="cb13-2"><a href=""></a>  mid <span class="op">=</span> (low<span class="op">+</span>high)<span class="op">//</span><span class="dv">2</span></span>
+<span id="cb13-3"><a href=""></a>  </span>
+<span id="cb13-4"><a href=""></a>  <span class="cf">if</span> lst[mid] <span class="op">==</span> target:</span>
+<span id="cb13-5"><a href=""></a>    <span class="cf">return</span> mid</span>
+<span id="cb13-6"><a href=""></a>  </span>
+<span id="cb13-7"><a href=""></a>  <span class="cf">if</span> low <span class="op">&gt;</span> high:</span>
+<span id="cb13-8"><a href=""></a>    <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb13-9"><a href=""></a>  </span>
+<span id="cb13-10"><a href=""></a>  <span class="cf">if</span> target <span class="op">&lt;</span> lst[mid]:</span>
+<span id="cb13-11"><a href=""></a>    <span class="cf">return</span> recursive_binary_search(lst, target, mid<span class="op">-</span><span class="dv">1</span>, low)</span>
+<span id="cb13-12"><a href=""></a>  </span>
+<span id="cb13-13"><a href=""></a>  <span class="cf">if</span> target <span class="op">&gt;</span> lst[mid]:</span>
+<span id="cb13-14"><a href=""></a>    <span class="cf">return</span> recursive_binary_search(lst, target, high, mid<span class="op">+</span><span class="dv">2</span>)</span>
+<span id="cb13-15"><a href=""></a>  </span>
+<span id="cb13-16"><a href=""></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb13-17"><a href=""></a>  numbers <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">23</span>, <span class="dv">41</span>, <span class="dv">43</span>, <span class="dv">44</span>, <span class="dv">60</span>, <span class="dv">99</span>, <span class="dv">120</span>, <span class="dv">343</span>]</span>
+<span id="cb13-18"><a href=""></a>  <span class="cf">assert</span> binary_search(numbers, <span class="dv">99</span>) <span class="op">==</span> <span class="dv">8</span></span>
+<span id="cb13-19"><a href=""></a>  <span class="cf">assert</span> binary_search(numbers, <span class="dv">9</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb13-20"><a href=""></a>  <span class="bu">print</span>(<span class="st">"Passed tests"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Passed tests</code></pre>
 </div>
@@ -546,21 +565,21 @@ C</code></pre>
 <section id="recurrence-relation-binary-search" class="slide level2">
 <h2>Recurrence relation – Binary Search</h2>
 <p>What’s the runtime for recursive binary search?</p>
-<div id="98ff6986" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="kw">def</span> recursive_binary_search(lst, target, high, low):</span>
-<span id="cb14-2"><a href=""></a>  mid <span class="op">=</span> (low<span class="op">+</span>high)<span class="op">//</span><span class="dv">2</span></span>
-<span id="cb14-3"><a href=""></a>  </span>
-<span id="cb14-4"><a href=""></a>  <span class="cf">if</span> lst[mid] <span class="op">==</span> target:</span>
-<span id="cb14-5"><a href=""></a>    <span class="cf">return</span> mid</span>
-<span id="cb14-6"><a href=""></a>  </span>
-<span id="cb14-7"><a href=""></a>  <span class="cf">if</span> low <span class="op">&gt;</span> high:</span>
-<span id="cb14-8"><a href=""></a>    <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb14-9"><a href=""></a>  </span>
-<span id="cb14-10"><a href=""></a>  <span class="cf">if</span> target <span class="op">&lt;</span> lst[mid]:</span>
-<span id="cb14-11"><a href=""></a>    <span class="cf">return</span> recursive_binary_search(lst, target, mid<span class="op">-</span><span class="dv">1</span>, low)</span>
-<span id="cb14-12"><a href=""></a>  </span>
-<span id="cb14-13"><a href=""></a>  <span class="cf">if</span> target <span class="op">&gt;</span> lst[mid]:</span>
-<span id="cb14-14"><a href=""></a>    <span class="cf">return</span> recursive_binary_search(lst, target, high, mid<span class="op">+</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="3f9a5b06" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href=""></a><span class="kw">def</span> recursive_binary_search(lst, target, high, low):</span>
+<span id="cb15-2"><a href=""></a>  mid <span class="op">=</span> (low<span class="op">+</span>high)<span class="op">//</span><span class="dv">2</span></span>
+<span id="cb15-3"><a href=""></a>  </span>
+<span id="cb15-4"><a href=""></a>  <span class="cf">if</span> lst[mid] <span class="op">==</span> target:</span>
+<span id="cb15-5"><a href=""></a>    <span class="cf">return</span> mid</span>
+<span id="cb15-6"><a href=""></a>  </span>
+<span id="cb15-7"><a href=""></a>  <span class="cf">if</span> low <span class="op">&gt;</span> high:</span>
+<span id="cb15-8"><a href=""></a>    <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb15-9"><a href=""></a>  </span>
+<span id="cb15-10"><a href=""></a>  <span class="cf">if</span> target <span class="op">&lt;</span> lst[mid]:</span>
+<span id="cb15-11"><a href=""></a>    <span class="cf">return</span> recursive_binary_search(lst, target, mid<span class="op">-</span><span class="dv">1</span>, low)</span>
+<span id="cb15-12"><a href=""></a>  </span>
+<span id="cb15-13"><a href=""></a>  <span class="cf">if</span> target <span class="op">&gt;</span> lst[mid]:</span>
+<span id="cb15-14"><a href=""></a>    <span class="cf">return</span> recursive_binary_search(lst, target, high, mid<span class="op">+</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="recurrence-relation-binary-search-1" class="slide level2">
@@ -627,51 +646,130 @@ C</code></pre>
 </section>
 <section id="exercise-power-function" class="slide level2">
 <h2>Exercise – Power function</h2>
-<p>Power Function: Computing <span class="math inline">\(x^n\)</span> can be defined as <span class="math inline">\(x^n = x × x^{(n-1)}\)</span>, with base case <span class="math inline">\(x^0 = 1\)</span>.</p>
-<div id="b5e98a7d" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href=""></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb15-2"><a href=""></a>  <span class="cf">assert</span> power(<span class="dv">2</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="dv">4</span></span>
-<span id="cb15-3"><a href=""></a>  <span class="cf">assert</span> power(<span class="dv">3</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="dv">9</span></span>
-<span id="cb15-4"><a href=""></a>  <span class="cf">assert</span> power(<span class="dv">2</span>, <span class="dv">4</span>) <span class="op">==</span> <span class="dv">16</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Power Function: Computing <span class="math inline">\(x^n\)</span> can be defined as <span class="math inline">\(x^n = x × x^{(n-1)}\)</span>, with base case <span class="math inline">\(x^0 = 1\)</span>. You can assume the exponent is zero or greater.</p>
+<div id="76868625" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb16-2"><a href=""></a>  <span class="cf">assert</span> power(<span class="dv">2</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="dv">4</span></span>
+<span id="cb16-3"><a href=""></a>  <span class="cf">assert</span> power(<span class="dv">3</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="dv">9</span></span>
+<span id="cb16-4"><a href=""></a>  <span class="cf">assert</span> power(<span class="dv">2</span>, <span class="dv">4</span>) <span class="op">==</span> <span class="dv">16</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="solution-power-function" class="slide level2">
 <h2>Solution – Power function</h2>
-<div id="7c0f540e" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a><span class="kw">def</span> power(base, exp):</span>
-<span id="cb16-2"><a href=""></a>  <span class="cf">if</span> exp <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb16-3"><a href=""></a>    <span class="cf">return</span> <span class="dv">1</span></span>
-<span id="cb16-4"><a href=""></a>  </span>
-<span id="cb16-5"><a href=""></a>  <span class="cf">return</span> base <span class="op">*</span> power(base, exp<span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb16-6"><a href=""></a></span>
-<span id="cb16-7"><a href=""></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb16-8"><a href=""></a>  <span class="cf">assert</span> power(<span class="dv">2</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="dv">4</span></span>
-<span id="cb16-9"><a href=""></a>  <span class="cf">assert</span> power(<span class="dv">3</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="dv">9</span></span>
-<span id="cb16-10"><a href=""></a>  <span class="cf">assert</span> power(<span class="dv">2</span>, <span class="dv">4</span>) <span class="op">==</span> <span class="dv">16</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="34399021" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="kw">def</span> power(base, exp):</span>
+<span id="cb17-2"><a href=""></a>  <span class="cf">if</span> exp <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb17-3"><a href=""></a>    <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb17-4"><a href=""></a>  </span>
+<span id="cb17-5"><a href=""></a>  <span class="cf">return</span> base <span class="op">*</span> power(base, exp<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb17-6"><a href=""></a></span>
+<span id="cb17-7"><a href=""></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb17-8"><a href=""></a>  <span class="cf">assert</span> power(<span class="dv">2</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="dv">4</span></span>
+<span id="cb17-9"><a href=""></a>  <span class="cf">assert</span> power(<span class="dv">3</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="dv">9</span></span>
+<span id="cb17-10"><a href=""></a>  <span class="cf">assert</span> power(<span class="dv">2</span>, <span class="dv">4</span>) <span class="op">==</span> <span class="dv">16</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="runtime-power-function" class="slide level2">
 <h2>Runtime – Power function</h2>
 <p>What’s the runtime?</p>
-<div id="2f351f4e" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="kw">def</span> power(base, exp):</span>
-<span id="cb17-2"><a href=""></a>  <span class="cf">if</span> exp <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb17-3"><a href=""></a>    <span class="cf">return</span> <span class="dv">1</span></span>
-<span id="cb17-4"><a href=""></a>  </span>
-<span id="cb17-5"><a href=""></a>  <span class="cf">return</span> base <span class="op">*</span> power(base, exp<span class="op">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="runtime-power-function-1" class="slide level2">
-<h2>Runtime – Power function</h2>
-<p>What’s the runtime? <span class="math inline">\(T(N) = T(N-1) + 1\)</span></p>
-<div id="9e99b8ef" class="cell" data-execution_count="17">
+<div id="c0e79ef2" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href=""></a><span class="kw">def</span> power(base, exp):</span>
 <span id="cb18-2"><a href=""></a>  <span class="cf">if</span> exp <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb18-3"><a href=""></a>    <span class="cf">return</span> <span class="dv">1</span></span>
 <span id="cb18-4"><a href=""></a>  </span>
 <span id="cb18-5"><a href=""></a>  <span class="cf">return</span> base <span class="op">*</span> power(base, exp<span class="op">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="runtime-power-function-1" class="slide level2">
+<h2>Runtime – Power function</h2>
+<p>What’s the runtime? <span class="math inline">\(T(N) = T(N-1) + 1\)</span></p>
+<div id="5059ed8d" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href=""></a><span class="kw">def</span> power(base, exp):</span>
+<span id="cb19-2"><a href=""></a>  <span class="cf">if</span> exp <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb19-3"><a href=""></a>    <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb19-4"><a href=""></a>  </span>
+<span id="cb19-5"><a href=""></a>  <span class="cf">return</span> base <span class="op">*</span> power(base, exp<span class="op">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><span class="math inline">\(O(N)\)</span></p>
+</section>
+<section id="exercise-two-to-x" class="slide level2">
+<h2>Exercise – Two to X</h2>
+<p>Two to X: Computing <span class="math inline">\(2^x\)</span> can be defined as <span class="math inline">\(2^x = 2^1 * 2^{x-1}\)</span> or <span class="math inline">\(2^x = 2^{x-1} + 2^{x-1}\)</span>, with base case <span class="math inline">\(2^0 = 1\)</span>. You can assume the exponent <code>x</code> is zero or greater.</p>
+<div id="04ebf536" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb20-2"><a href=""></a>    <span class="cf">assert</span> two_to(<span class="dv">0</span>) <span class="op">==</span> <span class="dv">1</span></span>
+<span id="cb20-3"><a href=""></a>    <span class="cf">assert</span> two_to(<span class="dv">1</span>) <span class="op">==</span> <span class="dv">2</span></span>
+<span id="cb20-4"><a href=""></a>    <span class="cf">assert</span> two_to(<span class="dv">2</span>) <span class="op">==</span> <span class="dv">4</span></span>
+<span id="cb20-5"><a href=""></a>    <span class="cf">assert</span> two_to(<span class="dv">3</span>) <span class="op">==</span> <span class="dv">8</span></span>
+<span id="cb20-6"><a href=""></a>    <span class="cf">assert</span> two_to(<span class="dv">4</span>) <span class="op">==</span> <span class="dv">16</span></span>
+<span id="cb20-7"><a href=""></a>    <span class="bu">print</span>(<span class="st">"Passed"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="two-to-x-solution-1" class="slide level2">
+<h2>Two to X – solution 1</h2>
+<div id="89dad3df" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href=""></a><span class="kw">def</span> two_to(exp):</span>
+<span id="cb21-2"><a href=""></a>    <span class="cf">if</span> exp <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb21-3"><a href=""></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb21-4"><a href=""></a>    </span>
+<span id="cb21-5"><a href=""></a>    <span class="cf">return</span> <span class="dv">2</span> <span class="op">*</span> two_to(exp<span class="op">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="two-to-x-solution-2" class="slide level2">
+<h2>Two to X – solution 2</h2>
+<div id="52829c7c" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href=""></a><span class="kw">def</span> two_to(exp):</span>
+<span id="cb22-2"><a href=""></a>    <span class="cf">if</span> exp <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb22-3"><a href=""></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb22-4"><a href=""></a>    </span>
+<span id="cb22-5"><a href=""></a>    <span class="cf">return</span> two_to(exp<span class="op">-</span><span class="dv">1</span>) <span class="op">+</span> two_to(exp<span class="op">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="runtime-two-to-x" class="slide level2">
+<h2>Runtime – Two to X</h2>
+<p>What’s the difference in runtime between the two solutions?</p>
+<p>For solution 1, the call stack is linear: two_to(4) → two_to(3) → two_to(2) → two_to(1) → two_to(0)</p>
+<p>For solution 2, each call branches out twice:</p>
+<pre><code>                     two_to(4)
+                   /          \
+              two_to(3)      two_to(3)
+              /      \        /      \
+         two_to(2) two_to(2) two_to(2) two_to(2)
+         /    \      /  \      /  \      /  \
+  two_to(1)  ...  ...  ...  ...  ...  ...  ...
+    /   \    / \  / \  / \  / \  / \  / \  / \
+two_to(0)  ...</code></pre>
+</section>
+<section id="runtime-two-to-x-1" class="slide level2">
+<h2>Runtime – Two to X</h2>
+<p>While the two solutions produce the same result, Solution 1 is far more efficient. Solution 2’s repeated computation of the same subproblems makes it extremely wasteful</p>
+</section>
+<section id="recurrence-relation-of-solution-1" class="slide level2">
+<h2>Recurrence Relation of Solution 1</h2>
+<ul>
+<li><span class="math inline">\(T(0) = O(1)\)</span> — base case</li>
+<li><span class="math inline">\(T(N) = T(N-1) + O(1)\)</span> — one recursive call plus constant work (multiplication)</li>
+</ul>
+<p>Solving the recurrence:</p>
+<ul>
+<li><span class="math inline">\(T(N) = T(N-1) + 1\)</span></li>
+<li><span class="math inline">\(T(N) = T(N-2) + 1 + 1 = T(N-2) + 2\)</span></li>
+<li><span class="math inline">\(T(N) = T(N-3) + 3\)</span> …</li>
+<li><span class="math inline">\(T(N) = T(0) + N = O(N)\)</span></li>
+</ul>
+<p>Big-O: O(N) where N = exp</p>
+</section>
+<section id="recurrence-relation-of-solution-2" class="slide level2">
+<h2>Recurrence Relation of Solution 2</h2>
+<ul>
+<li><p><span class="math inline">\(T(0) = O(1)\)</span> — base case</p></li>
+<li><p><span class="math inline">\(T(N) = 2 · T(N-1) + O(1)\)</span> — two recursive calls plus constant work (addition)</p></li>
+<li><p><span class="math inline">\(T(N) = 2 · T(N-1) + 1\)</span></p></li>
+<li><p><span class="math inline">\(T(N) = 2 · (2 · T(N-2) + 1) + 1 = 4 · T(N-2) + 2 + 1\)</span></p></li>
+<li><p><span class="math inline">\(T(N) = 4 · (2 · T(N-3) + 1) + 3 = 8 · T(N-3) + 7\)</span></p></li>
+<li><p><span class="math inline">\(T(N) = 2^k · T(N-k) + (2^k - 1)\)</span></p></li>
+</ul>
+<p>When <span class="math inline">\(k = N\)</span>: <span class="math inline">\(T(N) = 2^N · T(0) + (2^N - 1) = O(2^N)\)</span></p>
 </section>
 <section id="exercise-fibonacci-sequence" class="slide level2">
 <h2>Exercise – Fibonacci Sequence</h2>
@@ -679,41 +777,47 @@ C</code></pre>
 <p><span class="math inline">\(F(n) = F(n-1) + F(n-2)\)</span>, with base cases <span class="math inline">\(F(0) = 0\)</span> and <span class="math inline">\(F(1) = 1\)</span>.</p>
 <p>This generates the sequence 0, 1, 1, 2, 3, 5, 8, 13, 21, 32, …</p>
 <p>Test cases:</p>
-<div id="8143cdf6" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href=""></a><span class="cf">assert</span> fib(<span class="dv">0</span>) <span class="op">==</span> <span class="dv">0</span></span>
-<span id="cb19-2"><a href=""></a><span class="cf">assert</span> fib(<span class="dv">1</span>) <span class="op">==</span> <span class="dv">1</span></span>
-<span id="cb19-3"><a href=""></a><span class="cf">assert</span> fib(<span class="dv">2</span>) <span class="op">==</span> <span class="dv">1</span></span>
-<span id="cb19-4"><a href=""></a><span class="cf">assert</span> fib(<span class="dv">3</span>) <span class="op">==</span> <span class="dv">2</span></span>
-<span id="cb19-5"><a href=""></a><span class="cf">assert</span> fib(<span class="dv">4</span>) <span class="op">==</span> <span class="dv">3</span></span>
-<span id="cb19-6"><a href=""></a><span class="cf">assert</span> fit(<span class="dv">5</span>) <span class="op">==</span> <span class="dv">5</span></span>
-<span id="cb19-7"><a href=""></a><span class="cf">assert</span> fit(<span class="dv">11</span>) <span class="op">==</span> <span class="dv">89</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="878d0267" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href=""></a><span class="cf">assert</span> fib(<span class="dv">0</span>) <span class="op">==</span> <span class="dv">0</span></span>
+<span id="cb24-2"><a href=""></a><span class="cf">assert</span> fib(<span class="dv">1</span>) <span class="op">==</span> <span class="dv">1</span></span>
+<span id="cb24-3"><a href=""></a><span class="cf">assert</span> fib(<span class="dv">2</span>) <span class="op">==</span> <span class="dv">1</span></span>
+<span id="cb24-4"><a href=""></a><span class="cf">assert</span> fib(<span class="dv">3</span>) <span class="op">==</span> <span class="dv">2</span></span>
+<span id="cb24-5"><a href=""></a><span class="cf">assert</span> fib(<span class="dv">4</span>) <span class="op">==</span> <span class="dv">3</span></span>
+<span id="cb24-6"><a href=""></a><span class="cf">assert</span> fit(<span class="dv">5</span>) <span class="op">==</span> <span class="dv">5</span></span>
+<span id="cb24-7"><a href=""></a><span class="cf">assert</span> fit(<span class="dv">11</span>) <span class="op">==</span> <span class="dv">89</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="exercise-fibonacci-sequence-1" class="slide level2">
 <h2>Exercise – Fibonacci Sequence</h2>
-<div id="4fa2c8c7" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="kw">def</span> fib(n):</span>
-<span id="cb20-2"><a href=""></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb20-3"><a href=""></a>    <span class="cf">return</span> <span class="dv">0</span></span>
-<span id="cb20-4"><a href=""></a>  </span>
-<span id="cb20-5"><a href=""></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span>:</span>
-<span id="cb20-6"><a href=""></a>    <span class="cf">return</span> <span class="dv">1</span></span>
-<span id="cb20-7"><a href=""></a>  </span>
-<span id="cb20-8"><a href=""></a>  <span class="cf">return</span> fib(n<span class="op">-</span><span class="dv">1</span>) <span class="op">+</span> fib(n<span class="op">-</span><span class="dv">2</span>)</span>
-<span id="cb20-9"><a href=""></a></span>
-<span id="cb20-10"><a href=""></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb20-11"><a href=""></a>  <span class="cf">assert</span> fib(<span class="dv">0</span>) <span class="op">==</span> <span class="dv">0</span></span>
-<span id="cb20-12"><a href=""></a>  <span class="cf">assert</span> fib(<span class="dv">1</span>) <span class="op">==</span> <span class="dv">1</span></span>
-<span id="cb20-13"><a href=""></a>  <span class="cf">assert</span> fib(<span class="dv">2</span>) <span class="op">==</span> <span class="dv">1</span></span>
-<span id="cb20-14"><a href=""></a>  <span class="cf">assert</span> fib(<span class="dv">3</span>) <span class="op">==</span> <span class="dv">2</span></span>
-<span id="cb20-15"><a href=""></a>  <span class="cf">assert</span> fib(<span class="dv">4</span>) <span class="op">==</span> <span class="dv">3</span></span>
-<span id="cb20-16"><a href=""></a>  <span class="cf">assert</span> fib(<span class="dv">5</span>) <span class="op">==</span> <span class="dv">5</span></span>
-<span id="cb20-17"><a href=""></a>  <span class="cf">assert</span> fib(<span class="dv">11</span>) <span class="op">==</span> <span class="dv">89</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="a567124c" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href=""></a><span class="kw">def</span> fib(n):</span>
+<span id="cb25-2"><a href=""></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb25-3"><a href=""></a>    <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb25-4"><a href=""></a>  </span>
+<span id="cb25-5"><a href=""></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb25-6"><a href=""></a>    <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb25-7"><a href=""></a>  </span>
+<span id="cb25-8"><a href=""></a>  <span class="cf">return</span> fib(n<span class="op">-</span><span class="dv">1</span>) <span class="op">+</span> fib(n<span class="op">-</span><span class="dv">2</span>)</span>
+<span id="cb25-9"><a href=""></a></span>
+<span id="cb25-10"><a href=""></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb25-11"><a href=""></a>  <span class="cf">assert</span> fib(<span class="dv">0</span>) <span class="op">==</span> <span class="dv">0</span></span>
+<span id="cb25-12"><a href=""></a>  <span class="cf">assert</span> fib(<span class="dv">1</span>) <span class="op">==</span> <span class="dv">1</span></span>
+<span id="cb25-13"><a href=""></a>  <span class="cf">assert</span> fib(<span class="dv">2</span>) <span class="op">==</span> <span class="dv">1</span></span>
+<span id="cb25-14"><a href=""></a>  <span class="cf">assert</span> fib(<span class="dv">3</span>) <span class="op">==</span> <span class="dv">2</span></span>
+<span id="cb25-15"><a href=""></a>  <span class="cf">assert</span> fib(<span class="dv">4</span>) <span class="op">==</span> <span class="dv">3</span></span>
+<span id="cb25-16"><a href=""></a>  <span class="cf">assert</span> fib(<span class="dv">5</span>) <span class="op">==</span> <span class="dv">5</span></span>
+<span id="cb25-17"><a href=""></a>  <span class="cf">assert</span> fib(<span class="dv">11</span>) <span class="op">==</span> <span class="dv">89</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="runtime-fibonacci-sequence" class="slide level2">
 <h2>Runtime – Fibonacci Sequence</h2>
-<p><span class="math inline">\(T(N) = T(N-1) + T(N-2) + 1\)</span></p>
+<p>Recurrence Relation:</p>
+<ul>
+<li>T(0) = O(1) — base case</li>
+<li>T(1) = O(1) — base case</li>
+<li>T(n) = T(n-1) + T(n-2) + O(1) — two recursive calls plus constant work</li>
+</ul>
+<p><span class="math inline">\(O(2^n)\)</span></p>
 
 </section></section>
     </div>
