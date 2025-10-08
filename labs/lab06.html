@@ -3290,7 +3290,6 @@ window.Quarto = {
 <li>You can start the assignment before your lab period, although I recommend not getting too far – the lab TAs often have useful hints, and I don’t want you wasting too much time struggling with something that the TAs might announce during lab.</li>
 <li>For more rules see the lab rules document on canvas.</li>
 <li>It will be VERY HELPFUL to find your <code>Lab02</code> submission and have that ready to reference.</li>
-<li>The code you submit must have a package statement in it for <code>package student;</code>. (We have to do some weird things with package to get the code to compile correctly.)</li>
 </ul>
 </section>
 <section id="introduction" class="level1">
@@ -3337,7 +3336,6 @@ window.Quarto = {
 <p>Make sure your project has a name (“lab6” would be appropriate, but so would “NIM”) <strong>Make sure to check the project location.</strong> If necessary, update where the project is stored to keep your files well organized.</p>
 <p>If you are working on your own computer <strong>don’t forget to check the Project SDK</strong> settings. You shouldn’t need to be using an SDK version 11, like shown in the screenshot, so long as you are using 9 or above, you should be fine. (We will be grading on version 17)</p>
 <p>If no SDK is listed, click new and setup your JDK. Typically IntelliJ will automatically open to your JDK (Java Development Kit) location.</p>
-<p>Open <code>Advanced Settings</code> and type in <code>student</code> for your <code>Module name</code>.</p>
 <ul>
 <li>Click <code>create</code></li>
 </ul>
@@ -3666,7 +3664,7 @@ window.Quarto = {
 <p>Due to some strange things in the autograder, we have a few specific requirements for your code:</p>
 <ul>
 <li>The code you submit must be valid and compileable java code. (We cannot test code with syntax errors. If we can’t test it, we can’t give you autograder credit for it)</li>
-<li>The code you submit must have a package statement in it for <code>ackage student;</code>. (We have to do some weird things with package to get the code to compile correctly.) <strong>YOU WILL GET 0 points if your code has an incorrect package statement!</strong> Your IDE may have put one in without you noticing. If you see code like <code>package com.whatever;</code> at the top of your file you need to change it to <code>package student;</code>.</li>
+<li>The code you submit must NOT have a package statement in it. Your IDE may have put one in without you noticing. Please make sure to delete the package statement at the top of your code, if there’s one, before submitting to gradescope, otherwise your code will not compile. If you see code like <code>package com.whatever;</code> at the top of your file, delete it.</li>
 <li>The code you submit must match the provided function signature (name, parameter types, and modifiers) EXACTLY. Any mis-match, no matter how minor, may cause the test code to not compile, which would prevent testing.</li>
 </ul>
 <p>As a general rule, if you started with the template file on canvas and didn’t modify anything other than the function bodies you should be fine this time. Likewise, if your code can be run with the provided testing code (with no modifications to this testing code) you should be fine. If you do run into testing issues, do not hesitate to reach out to course staff to help with debugging.</p>
