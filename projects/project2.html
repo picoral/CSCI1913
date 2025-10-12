@@ -3408,7 +3408,7 @@ window.Quarto = {
 <li>Shuffle the deck of cards</li>
 <li>Deal two 5-card hands two player 1 and player 2</li>
 <li>Player 1 plays first in the first round</li>
-<li>While no player has won 10 rounds play one round:
+<li>While no player has won 10 rounds, play one round:
 <ul>
 <li>Deal a card to start the card pile in the middle</li>
 <li>Starting with player 1 in the first round, or whoever won the last round in all other rounds, players take turns picking who goes first.</li>
@@ -3472,11 +3472,12 @@ window.Quarto = {
 </section>
 <section id="public-string-tostring" class="level3">
 <h3 class="anchored" data-anchor-id="public-string-tostring"><code>public String toString()</code></h3>
-<p>Your Card should override the default <code>toString</code> method to one that prints a human readable name for the card. Once written this will help you when using print to debug since it provides a human readable description of the card. Examples of the type of output we are looking for can be found in the test files.</p>
+<p>Your <code>Card</code> should override the default <code>toString</code> method to one that prints a human readable name for the card. Once written this will help you when using print to debug since it provides a human readable description of the card. Examples of the type of output we are looking for can be found in the test files.</p>
 </section>
 <section id="public-boolean-equalsobject-obj" class="level3">
 <h3 class="anchored" data-anchor-id="public-boolean-equalsobject-obj"><code>public boolean equals(Object obj)</code></h3>
-<p>You card class should override the default <code>equals</code> method. A Card should only be equal to other instances of the Card class, and then only other cards that have the same rank and suit.</p>
+<p>You card class should override the default <code>equals</code> method.</p>
+<p>A <code>Card</code> should only be equal to other instances of the <code>Card</code> class, and then only other cards that have the same rank and suit.</p>
 <p><strong>NOTE</strong> This is not a typo – the parameter should be <code>Object</code>, not <code>Card</code> here. We will discuss this function, why it is the way it is, and how to program it, in lecture.</p>
 </section>
 </section>
@@ -3509,7 +3510,7 @@ window.Quarto = {
 <p>Do the following steps for the integer values of <span class="math inline">\(i\)</span> starting from the length of the array minus one, and ending with 1.</p>
 <ul>
 <li>Let <span class="math inline">\(j\)</span> be a random integer between 0 and <span class="math inline">\(i\)</span>, inclusive.</li>
-<li>Exchange the array elements at indexes <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>.</li>
+<li>Exchange the array elements at indices <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>.</li>
 </ul>
 <p>To generate random numbers, please use Java’s <code>Random</code> object, and in particular the Random class method <code>public int nextInt(int bound)</code> which generates a number between 0 and <span class="math inline">\(bound\)</span> (not including <span class="math inline">\(bound\)</span>)).</p>
 </section>
@@ -3603,13 +3604,14 @@ window.Quarto = {
 <p>The AI class should have two methods:</p>
 <section id="public-card-getplayhand-hand-cardpile-cardpile" class="level3">
 <h3 class="anchored" data-anchor-id="public-card-getplayhand-hand-cardpile-cardpile"><code>public Card getPlay(Hand hand, CardPile cardPile)</code></h3>
-<p>This method takes two parameters, the hand, full of cards the AI is allowed to play, and the cardPile that the AI is playing on. An AI (here we’re talking about any-subclass) should pick a card from the hand and return it to mark it as the card the AI intends to play.</p>
+<p>This method takes two parameters, the hand, full of cards the AI is allowed to play, and the cardPile that the AI is playing on.</p>
+<p>An AI (here we’re talking about any-subclass) should pick a card from the hand and return it to mark it as the card the AI intends to play.</p>
 <ul>
 <li>The AI can return null to indicate that they have no card that can be played on this card pile.</li>
 <li>The AI is not responsible for removing the card from the hand – this will be managed by another class – just choosing which card to play.</li>
 <li>The AI should not return a card that is not in the input hand.</li>
 </ul>
-<p>For this specific class (the AI class, not its subtypes) – this function should pick the first card in the hand that is valid processing from left-to-right. Since we don’t sort the cards in the hand – this is effectively random.</p>
+<p>For this specific class (the AI parent class, not its subtypes) – this function should pick the first card in the hand that is valid processing from left-to-right. Since we don’t sort the cards in the hand – this is effectively random.</p>
 <p>Other AI subclasses will work in other ways.</p>
 </section>
 <section id="public-string-tostring-1" class="level3">
@@ -3657,11 +3659,11 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="public-boolean-playgame"><code>public boolean playGame()</code></h3>
 <p>Play a single game of Uno War.</p>
 <p>This should play the UnoWar game as described earlier in the write-up until one of the AIs has won 10 rounds. The return value should be true if ai1 wins, and false if ai2 wins.</p>
-<p><strong>As a brief reminder:</strong> The basic flow of the game is done in rounds, with each round being worth one point. Each round the AIs take turns playing a card from their hand into the card pile. The round ends when one AI has no valid card in their hand, at which point the other AI gets a point, and plays first in the next round.</p>
+<p><strong>As a brief reminder: </strong> The basic flow of the game is done in rounds, with each round being worth one point. Each round the AIs take turns playing a card from their hand into the card pile. The round ends when one AI has no valid card in their hand, at which point the other AI gets a point, and plays first in the next round.</p>
 <p><strong>Before you start building this function I recommend re-reading the full-detail description of the UnoWar game rules</strong>. Most people work on this class towards the end of the project, and it would be easy to have forgotten some of the required details and design of the UnoWar game. Even <em>quite small</em> changes to the correct function of the game can lead to <em>quite large</em> differences in ultimate outcomes to this project.</p>
 <p>Some details on this method:</p>
 <ul>
-<li>This method should start by constructing a new deck, and hand objects – these are not reused game-to-game, but should stay the same for the entire process of one game.
+<li>This method should start by constructing a new deck, and hand objects – these are not reused game-to-game, but should stay the same for the entire process of one game (multiple rounds).
 <ul>
 <li>Remember that the CardPile should be created new each round of the game.</li>
 </ul></li>
@@ -3700,7 +3702,7 @@ Biggest Card AI vs. Random Card AI winRate: 0.156
 Biggest Card AI vs. Smallest Card AI winRate: 0.0
 Biggest Card AI vs. Biggest Card AI winRate: 0.491</code></pre>
 <ul>
-<li>Your code does not need to output this exactly (in fact, I would be surprised if it did, as estimated winRate is somewhat random) but it should contain all this information.</li>
+<li>Your code does not need to output this exactly (in fact, I would be surprised if it did, as estimated winRate is somewhat random) but it should contain all this information. However, in general, two of the same AI instances should be a <code>winRate</code> close to <code>0.5</code>.</li>
 <li>Make sure you clearly label which <code>winRate</code> goes with which pair of AIs, and test AIs in both <code>AI 1</code> and <code>AI 2</code> position (as the game may be effected by who goes first in the first round!)</li>
 </ul>
 <p>When calling the <code>winRate</code> method to compute win rates, I recommend using <code>nTrails</code> around 1000 or higher – less than that can be heavily subject to random chance. That said, while testing if your code works, you are free to test with smaller <code>nTrials</code> for speed.</p>
