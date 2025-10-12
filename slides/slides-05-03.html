@@ -262,7 +262,7 @@
 </section>
 <section id="merge" class="slide level2">
 <h2>Merge</h2>
-<div id="fbf2975b" class="cell" data-execution_count="1">
+<div id="53fc1595" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="kw">def</span> merge (left, right):</span>
 <span id="cb1-2"><a href=""></a>  center <span class="op">=</span> []</span>
 <span id="cb1-3"><a href=""></a>  l <span class="op">=</span> <span class="dv">0</span></span>
@@ -321,7 +321,7 @@
 <section id="merge-sort-2" class="slide level2">
 <h2>Merge sort</h2>
 <p>Class “divide and conquer” algorithm</p>
-<div id="b27b0b01" class="cell" data-execution_count="2">
+<div id="25c908ab" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="kw">def</span> merge_sort(lst):</span>
 <span id="cb2-2"><a href=""></a>    <span class="cf">if</span> <span class="bu">len</span>(lst) <span class="op">==</span> <span class="dv">1</span>:</span>
 <span id="cb2-3"><a href=""></a>        <span class="cf">return</span> lst</span>
@@ -355,9 +355,20 @@
 <section id="runtime-1" class="slide level2">
 <h2>Runtime</h2>
 <p><span class="math inline">\(O(N) work + recursion case\)</span></p>
+<p>At each level we have linear work across all subproblems combined, and there are only logarithmically many levels.</p>
 <ul>
 <li><code>merge</code> does O(N) work</li>
 <li>There are log(N) “layers”</li>
+</ul>
+<p>The array is divided in half <span class="math inline">\(\log N\)</span> times (the depth of the recursion tree). At each level, we do <span class="math inline">\(O(N)\)</span> work to merge all subarrays at that level.</p>
+<p>Total work is <span class="math inline">\(O(N) * \log N\)</span> = <span class="math inline">\(O(N \log N)\)</span></p>
+</section>
+<section id="runtime-2" class="slide level2">
+<h2>Runtime</h2>
+<p>The recurrence relation is <span class="math inline">\(T(N) = 2*T(\frac{N}{2}) + O(N)\)</span></p>
+<ul>
+<li><span class="math inline">\(2*T(\frac{N}{2})\)</span> represents recursively sorting two halves of the array</li>
+<li><span class="math inline">\(O(N)\)</span> is the time to merge the two sorted halves back together</li>
 </ul>
 <p>Total runtime is <span class="math inline">\(O(N \log N)\)</span></p>
 
