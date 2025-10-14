@@ -1222,6 +1222,94 @@ margin-right: 0; }
 <h2>Submit solution to gradescope</h2>
 <p>Submit your <code>HoursMinutesSeconds</code> class file to gradescope.</p>
 <p>Output needs to match exactly what is expected.</p>
+</section>
+<section id="practice-1" class="slide level2">
+<h2>Practice</h2>
+<p>Write a Java application to check if a year is leap or regular</p>
+<p>Leap years are those that are either:</p>
+<ul>
+<li>divisible by 4 and not 100</li>
+<li>divisible by 400</li>
+</ul>
+<p>Submit your <code>LeapYear</code> class to gradescope</p>
+</section>
+<section id="solution-1-1" class="slide level2">
+<h2>Solution 1</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href></a>import java.util.Scanner;</span>
+<span id="cb5-2"><a href></a></span>
+<span id="cb5-3"><a href></a>public class LeapYear {</span>
+<span id="cb5-4"><a href></a>    </span>
+<span id="cb5-5"><a href></a>    public static String isLeap(int year) {</span>
+<span id="cb5-6"><a href></a>        if ((year % 100 != 0) &amp;&amp; (year % 4 == 0)) return &quot;Leap Year&quot;;</span>
+<span id="cb5-7"><a href></a>        else if ((year % 400 == 0)) return &quot;Leap Year&quot;;</span>
+<span id="cb5-8"><a href></a>        else return &quot;Regular Year&quot;;</span>
+<span id="cb5-9"><a href></a></span>
+<span id="cb5-10"><a href></a>    }</span>
+<span id="cb5-11"><a href></a></span>
+<span id="cb5-12"><a href></a>    public static void main(String[] args) {</span>
+<span id="cb5-13"><a href></a>        Scanner userInput = new Scanner(System.in);</span>
+<span id="cb5-14"><a href></a>        </span>
+<span id="cb5-15"><a href></a>        // prints out message to user</span>
+<span id="cb5-16"><a href></a>        System.out.print(&quot;Enter a year: &quot;);</span>
+<span id="cb5-17"><a href></a>      </span>
+<span id="cb5-18"><a href></a>        // get integer from keyboard entry</span>
+<span id="cb5-19"><a href></a>        int year = userInput.nextInt();</span>
+<span id="cb5-20"><a href></a>        userInput.close();</span>
+<span id="cb5-21"><a href></a>        </span>
+<span id="cb5-22"><a href></a>        System.out.println(isLeap(year));</span>
+<span id="cb5-23"><a href></a>    }</span>
+<span id="cb5-24"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="solution-2" class="slide level2">
+<h2>Solution 2</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href></a>import java.util.Scanner;</span>
+<span id="cb6-2"><a href></a></span>
+<span id="cb6-3"><a href></a>public class LeapYear {</span>
+<span id="cb6-4"><a href></a>    </span>
+<span id="cb6-5"><a href></a>    public static String isLeap(int year) {</span>
+<span id="cb6-6"><a href></a>        boolean isLeapYear;</span>
+<span id="cb6-7"><a href></a>        </span>
+<span id="cb6-8"><a href></a>        isLeapYear = ((year % 100 != 0) &amp;&amp; (year % 4 == 0));</span>
+<span id="cb6-9"><a href></a>        isLeapYear = isLeapYear || ((year % 400 == 0));</span>
+<span id="cb6-10"><a href></a>        </span>
+<span id="cb6-11"><a href></a>        if (isLeapYear) return &quot;Leap Year&quot;;</span>
+<span id="cb6-12"><a href></a>        else return &quot;Regular Year&quot;;</span>
+<span id="cb6-13"><a href></a></span>
+<span id="cb6-14"><a href></a>    }</span>
+<span id="cb6-15"><a href></a></span>
+<span id="cb6-16"><a href></a>    public static void main(String[] args) {</span>
+<span id="cb6-17"><a href></a>        Scanner userInput = new Scanner(System.in);</span>
+<span id="cb6-18"><a href></a>        </span>
+<span id="cb6-19"><a href></a>        // prints out message to user</span>
+<span id="cb6-20"><a href></a>        System.out.print(&quot;Enter a year: &quot;);</span>
+<span id="cb6-21"><a href></a>      </span>
+<span id="cb6-22"><a href></a>        // get integer from keyboard entry</span>
+<span id="cb6-23"><a href></a>        int year = userInput.nextInt();</span>
+<span id="cb6-24"><a href></a>        userInput.close();</span>
+<span id="cb6-25"><a href></a>        </span>
+<span id="cb6-26"><a href></a>        System.out.println(isLeap(year));</span>
+<span id="cb6-27"><a href></a></span>
+<span id="cb6-28"><a href></a>    }</span>
+<span id="cb6-29"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="string" class="slide level2">
+<h2>String</h2>
+<p><code>String</code> is a class (title capitalization)</p>
+<p>We can construct strings two ways:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href></a>String str = new String(&quot;with new&quot;);</span>
+<span id="cb7-2"><a href></a>String str2 = &quot;Don&#39;t need new&quot;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Some string methods:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href></a>.equals(String otherString)</span>
+<span id="cb8-2"><a href></a>.length() // len() function in python</span>
+<span id="cb8-3"><a href></a>.charAt(int index) // [] indexing in python</span>
+<span id="cb8-4"><a href></a>.substring(int beginIndex, int endIndex) // [:] indexing in python</span>
+<span id="cb8-5"><a href></a>.indexOf(String str) // .find() method in python</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="java-type-casting" class="slide level2">
+<h2>Java type casting</h2>
+<p>Both <code>Double</code> and <code>Integer</code> classes have methods to cast a string into a double or int</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href></a>Double.valueOf(&quot;10&quot;);</span>
+<span id="cb9-2"><a href></a>Integer.valueOf(&quot;10&quot;);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </section>
     </div>
