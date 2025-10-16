@@ -3197,9 +3197,9 @@ window.Quarto = {
   <li><a href="#software-environment-setup" id="toc-software-environment-setup" class="nav-link" data-scroll-target="#software-environment-setup">Software environment setup</a></li>
   <li><a href="#files" id="toc-files" class="nav-link" data-scroll-target="#files">Files</a></li>
   <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
-  <li><a href="#formal-requirement-code-reading" id="toc-formal-requirement-code-reading" class="nav-link" data-scroll-target="#formal-requirement-code-reading">Formal Requirement: Code reading</a></li>
-  <li><a href="#formal-requirements" id="toc-formal-requirements" class="nav-link" data-scroll-target="#formal-requirements">Formal Requirements</a>
+  <li><a href="#formal-requirement" id="toc-formal-requirement" class="nav-link" data-scroll-target="#formal-requirement">Formal Requirement</a>
   <ul class="collapse">
+  <li><a href="#code-reading" id="toc-code-reading" class="nav-link" data-scroll-target="#code-reading">Code reading</a></li>
   <li><a href="#shapeutils" id="toc-shapeutils" class="nav-link" data-scroll-target="#shapeutils">ShapeUtils</a>
   <ul class="collapse">
   <li><a href="#distance" id="toc-distance" class="nav-link" data-scroll-target="#distance">distance</a></li>
@@ -3321,8 +3321,10 @@ window.Quarto = {
 </ul>
 <p>All of these steps <em>before</em> coding can reasonably be discussed with others (even those outside your group), but please solve the actual programming-parts of this problem collaborating only with your lab partner.</p>
 </section>
-<section id="formal-requirement-code-reading" class="level1">
-<h1>Formal Requirement: Code reading</h1>
+<section id="formal-requirement" class="level1">
+<h1>Formal Requirement</h1>
+<section id="code-reading" class="level2">
+<h2 class="anchored" data-anchor-id="code-reading">Code reading</h2>
 <p>The first required task here is to read the provided Java classes and make sure you know how to use them. The steps for this, as presented in class, are as follows:</p>
 <ul>
 <li>Open the file.</li>
@@ -3334,8 +3336,6 @@ window.Quarto = {
 <p>Be aware that code-reading is an IMPORTANT SKILL, and one that many consider harder than code writing! Even though this requirement has no formal “hand-in” – give it your best effort and practice just like the code-writing requirements! Many of the most common questions on this lab are directly answered in the Javadocs of provided classes.</p>
 <p><strong>NOTE:</strong> It is reasonable to go over this reading task with others in, or out-of your group. As you do so, however, make sure you’re not just having someone else read the code to you. Discuss questions and compare answers, don’t trust someone else to read code for you.</p>
 </section>
-<section id="formal-requirements" class="level1">
-<h1>Formal Requirements</h1>
 <section id="shapeutils" class="level2">
 <h2 class="anchored" data-anchor-id="shapeutils">ShapeUtils</h2>
 <p>The ShapeUtils class has five required functions. Many of these can be done in only a few lines with the right syntax. You can do these in any order – and you may not find that the provided order here is the “easiest” order to take things.</p>
@@ -3377,9 +3377,9 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="area-of-a-circle">Area of a Circle</h2>
 <p>This section is intended to give you exposure to the differences in how you write code in three different contexts by having you implement the same behavior (area of a circle) in three different functions.</p>
 <ul>
-<li>Instance method (private-access non-static) (Circle class method <code>public double getArea()</code>)</li>
-<li>Same-class function (private-access static) (Circle class function <code>public static double getArea(Circle c)</code></li>
-<li>Other-class function (public-access only, static) (ShapeUtils function) <code>public static double getArea(Circle c)</code></li>
+<li>Instance method (Circle class method <code>public double getArea()</code>)</li>
+<li>Same-class function (Circle class function <code>public static double getArea(Circle c)</code></li>
+<li>Other-class function (ShapeUtils function) <code>public static double getArea(Circle c)</code></li>
 </ul>
 <section id="getter-method" class="level3">
 <h3 class="anchored" data-anchor-id="getter-method">getter method</h3>
@@ -3392,7 +3392,7 @@ window.Quarto = {
 </section>
 <section id="same-class-static-method" class="level3">
 <h3 class="anchored" data-anchor-id="same-class-static-method">same-class static method</h3>
-<p>On the circle class fill-in the empty function `public static double getArea(Circle c)*</p>
+<p>On the circle class fill-in the empty function <code>public static double getArea(Circle c)</code></p>
 <p>The area equation is, of course, the same here. The only difference is how you access the radius variable. This method runs in a <em>static context</em>, this means that, unlike the previous function, it isn’t called like <code>someCircle.getArea()</code> it would have to be called on the class itself <code>Circle.getArea(someCircle)</code>. This also means that you only have <em>direct</em> access to static properties and cannot just write <code>radius</code> (since there isn’t a clear definition of what “radius” means in this case).</p>
 <p>To update your code for this context you will need to modify it to use the <code>c</code> circle variable to get the radius value. Note – since this is still in the Circle class you can still access the private variables. Make sure you understand <em>why</em> you need to make these changes when moving from an instance method to a static one.</p>
 <p>(An example for clarity)</p>
@@ -3400,7 +3400,7 @@ window.Quarto = {
 </section>
 <section id="other-class-static-method" class="level3">
 <h3 class="anchored" data-anchor-id="other-class-static-method">Other class static method</h3>
-<p>For our final function add a method <code>public static double getArea(Circle c)* to the ShapeUtils class. Like the last function this runs in a static context and must be given a triangle to operate on. Unlike the last function this is on a different class, so it can only use public properties. To access the points you will need to use the public getter methods (</code>getCenter()<code>,</code>getRadius()`) on the circle class.</p>
+<p>For our final function add a method <code>public static double getArea(Circle c)</code> to the ShapeUtils class. Like the last function this runs in a static context and must be given a triangle to operate on. Unlike the last function this is on a different class, so it can only use public properties. To access the points you will need to use the public getter methods (<code>getCenter()</code>, <code>getRadius()</code>) on the circle class.</p>
 <p>Again – make sure you understand <em>why</em> you need to make these changes when the function is in a different class.</p>
 <p>An example for clarity:</p>
 <pre><code>double centerX = c.getCenter().getX();</code></pre>
@@ -3408,7 +3408,12 @@ window.Quarto = {
 </section>
 <section id="draw-solar" class="level2">
 <h2 class="anchored" data-anchor-id="draw-solar">Draw Solar</h2>
-<p><img role="img" src="solar.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img role="img" src="data:image/png;base64,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" class="img-fluid figure-img"></p>
+<figcaption>solar system image created by the java code</figcaption>
+</figure>
+</div>
 <p>The DrawSolar class should have one method: <code>public static void main(String[] args)</code>.</p>
 <p>This program should use the <code>ShapeDrawer</code>, as well as the <code>Point</code>, <code>Ring</code> and <code>Circle</code> classes to draw a simple Solar System figure. This should be similar to the image above, but it does not need to be identical. The image file needs to be saved to the file “solar.png”. If you name the file something else (or forget to tell the shapeDrawer to draw it) the autograder will not accept it.</p>
 <p>Your solar system picture must:</p>
@@ -3421,12 +3426,12 @@ window.Quarto = {
 <li><p>The image itself should be at least 200 pixels wide by 200 pixels tall. You should seek to make a larger picture than this, but 200-by-200 is the minimum we’ll allow</p></li>
 <li><p>You will need to change colors from the default draw colors (you won’t need to use <em>our</em> colors, but you will need to use more than just the defaults)</p>
 <ul>
-<li>To do this you will need to use the Java.awt.color class, feel free to search that to see how to use it.</li>
+<li>To do this you will need to use the <code>Java.awt.color</code> class, feel free to search that to see how to use it.</li>
 <li>The built-in Java color class defines a few common/simple colors, but also allows you to create new colors using the RGB color space.</li>
 <li>Intellij has a tool built-in to help you pick numbers representing colors visually for RGB, as does google (if you google search “rgb color picker” you can find a tool to help find colors)</li>
 </ul></li>
 </ul>
-<p>Beyond these requirements you are free to do what you wish. Make sure this class runs correctly and submit your solar.png to demonstrate that you’ve run the code correctly.</p>
+<p>Beyond these requirements you are free to do what you wish. Make sure this class runs correctly and submit your <code>solar.png</code> to demonstrate that you’ve run the code correctly.</p>
 <p>If you find yourself finishing early, you are <em>encouraged</em> to explore a bit – a few ideas:</p>
 <ul>
 <li>Add more planets!</li>
