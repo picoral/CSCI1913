@@ -1098,8 +1098,46 @@ margin-right: 0; }
 </ul></li>
 </ul>
 </section>
-<section id="common-object-functions" class="slide level2">
-<h2>Common Object Functions</h2>
+<section id="practice" class="slide level2">
+<h2>Practice</h2>
+<p>Not a good way to do this:</p>
+<p><code>First.java</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href></a>public class First {</span>
+<span id="cb1-2"><a href></a>    public int x = 7; </span>
+<span id="cb1-3"><a href></a>    public int y = 3; </span>
+<span id="cb1-4"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>UseFirst.java</code></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href></a>public class UseFirst {</span>
+<span id="cb2-2"><a href></a>    public static void main(String[] args) {</span>
+<span id="cb2-3"><a href></a>        First firstOne = new First();</span>
+<span id="cb2-4"><a href></a>        System.out.println(firstOne.x);</span>
+<span id="cb2-5"><a href></a>        System.out.println(firstOne.y);</span>
+<span id="cb2-6"><a href></a>    }</span>
+<span id="cb2-7"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="practice-1" class="slide level2">
+<h2>Practice</h2>
+<p>Add static after public for one of the instance variable (to make it a class variable). What is the side effect?</p>
+<p><code>First.java</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href></a>public class First {</span>
+<span id="cb3-2"><a href></a>    public int x = 7; </span>
+<span id="cb3-3"><a href></a>    public int y = 3; </span>
+<span id="cb3-4"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>UseFirst.java</code></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href></a>public class UseFirst {</span>
+<span id="cb4-2"><a href></a>    public static void main(String[] args) {</span>
+<span id="cb4-3"><a href></a>        First firstOne = new First();</span>
+<span id="cb4-4"><a href></a>        firstOne.x = 0;</span>
+<span id="cb4-5"><a href></a>        First firstTwo = new First();</span>
+<span id="cb4-6"><a href></a>        System.out.println(firstOne.x);</span>
+<span id="cb4-7"><a href></a>        System.out.println(firstOne.y);</span>
+<span id="cb4-8"><a href></a>        System.out.println(firstTwo);</span>
+<span id="cb4-9"><a href></a>        System.out.println(firstTwo);</span>
+<span id="cb4-10"><a href></a>    }</span>
+<span id="cb4-11"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="common-object-methods" class="slide level2">
+<h2>Common Object Methods</h2>
 <p>We write these:</p>
 <ul>
 <li>getters get<something>()
@@ -1115,48 +1153,9 @@ margin-right: 0; }
 </ul></type></something></li>
 </ul>
 </section>
-<section id="common-object-functions-1" class="slide level2">
-<h2>Common Object Functions</h2>
-<p>We <strong>over</strong>write these:</p>
-<ul>
-<li>toString()
-<ul>
-<li>Guaranteed to exist</li>
-<li>Not Guaranteed to be good.</li>
-<li>Called automatically in many places</li>
-</ul></li>
-<li>equals(Object other)
-<ul>
-<li>Supposed to check “true” equality</li>
-<li>Guaranteed to exist</li>
-<li>Not Guaranteed to be good.</li>
-</ul></li>
-</ul>
-</section>
-<section id="practice" class="slide level2">
-<h2>Practice</h2>
-<p>Imagine you wanted to make a java class representing a date in the Gregorian calendar system (The current most common calendar)</p>
-<ul>
-<li>What information would you need to build a new date object?</li>
-<li>What information would a date object need to store internally?</li>
-<li>How should you be able to manipulate a date object?</li>
-<li>Does your answer depend on anything?</li>
-</ul>
-</section>
-<section id="key-idea" class="slide level2">
-<h2>Key idea</h2>
-<p>As a designer you have to live in two worlds:</p>
-<ul>
-<li>“Interface” (how do we use this object)</li>
-<li>“Implementation” (how do we build this object)</li>
-</ul>
-<p>It’s nice when they align, but this isn’t always true</p>
-<ul>
-<li>attributes are often not part of interface</li>
-<li>helper functions are often not part of interface</li>
-<li>many objects have “getter” methods for attributes that don’t exist</li>
-</ul>
-<p>Keeping these straight: privacy modifiers</p>
+<section id="constructors" class="slide level2">
+<h2>Constructors</h2>
+<p>Same name as the class, no return type</p>
 </section>
 <section id="access-modifiers" class="slide level2">
 <h2>Access modifiers</h2>
@@ -1185,10 +1184,6 @@ margin-right: 0; }
 </ul>
 <p>Note – the rules are enforced at a FILE level</p>
 </section>
-<section id="constructors" class="slide level2">
-<h2>Constructors</h2>
-<p>Same name as the class, no return type</p>
-</section>
 <section id="recommendations-for-writing-classes" class="slide level2">
 <h2>Recommendations for writing classes</h2>
 <p>Declare:</p>
@@ -1198,39 +1193,72 @@ margin-right: 0; }
 <li>most methods public (do not use static), but private helper methods are often useful</li>
 </ul>
 </section>
-<section id="practice-1" class="slide level2">
-<h2>Practice</h2>
-<p>Not a good way to do this:</p>
-<p><code>First.java</code></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href></a>public class First {</span>
-<span id="cb1-2"><a href></a>    public int x = 7; </span>
-<span id="cb1-3"><a href></a>    public int y = 3; </span>
-<span id="cb1-4"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code>UseFirst.java</code></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href></a>public class UseFirst {</span>
-<span id="cb2-2"><a href></a>    public static void main(String[] args) {</span>
-<span id="cb2-3"><a href></a>        First firstOne = new First();</span>
-<span id="cb2-4"><a href></a>        System.out.println(firstOne.x);</span>
-<span id="cb2-5"><a href></a>        System.out.println(firstOne.y);</span>
-<span id="cb2-6"><a href></a>    }</span>
-<span id="cb2-7"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="a-better-example" class="slide level2">
+<h2>A better example</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href></a>public class First {</span>
+<span id="cb5-2"><a href></a>    private int x = 7;</span>
+<span id="cb5-3"><a href></a>    private int y = 3;</span>
+<span id="cb5-4"><a href></a>    </span>
+<span id="cb5-5"><a href></a>    public void setX(int x) {</span>
+<span id="cb5-6"><a href></a>        this.x = x;</span>
+<span id="cb5-7"><a href></a>    }</span>
+<span id="cb5-8"><a href></a></span>
+<span id="cb5-9"><a href></a>    public void setY(int y) {</span>
+<span id="cb5-10"><a href></a>        this.y = y;</span>
+<span id="cb5-11"><a href></a>    }</span>
+<span id="cb5-12"><a href></a>    </span>
+<span id="cb5-13"><a href></a>    public int getX() {</span>
+<span id="cb5-14"><a href></a>        return x;</span>
+<span id="cb5-15"><a href></a>    }</span>
+<span id="cb5-16"><a href></a>    </span>
+<span id="cb5-17"><a href></a>    public int getY() {</span>
+<span id="cb5-18"><a href></a>        return y;</span>
+<span id="cb5-19"><a href></a>    }</span>
+<span id="cb5-20"><a href></a></span>
+<span id="cb5-21"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="common-object-methods-1" class="slide level2">
+<h2>Common Object Methods</h2>
+<p>We <strong>over</strong>write these:</p>
+<ul>
+<li>toString()
+<ul>
+<li>Guaranteed to exist</li>
+<li>Not Guaranteed to be good.</li>
+<li>Called automatically in many places</li>
+</ul></li>
+<li>equals(Object other)
+<ul>
+<li>Supposed to check “true” equality</li>
+<li>Guaranteed to exist</li>
+<li>Not Guaranteed to be good.</li>
+</ul></li>
+</ul>
 </section>
 <section id="practice-2" class="slide level2">
 <h2>Practice</h2>
-<p>Add static after public for one of the instance variable (to make it a class variable). What is the side effect?</p>
-<p><code>First.java</code></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href></a>public class First {</span>
-<span id="cb3-2"><a href></a>    public int x = 7; </span>
-<span id="cb3-3"><a href></a>    public int y = 3; </span>
-<span id="cb3-4"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code>UseFirst.java</code></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href></a>public class UseFirst {</span>
-<span id="cb4-2"><a href></a>    public static void main(String[] args) {</span>
-<span id="cb4-3"><a href></a>        First firstOne = new First();</span>
-<span id="cb4-4"><a href></a>        System.out.println(firstOne.x);</span>
-<span id="cb4-5"><a href></a>        System.out.println(firstOne.y);</span>
-<span id="cb4-6"><a href></a>    }</span>
-<span id="cb4-7"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Imagine you wanted to make a java class representing a date in the Gregorian calendar system (The current most common calendar)</p>
+<ul>
+<li>What information would you need to build a new date object?</li>
+<li>What information would a date object need to store internally?</li>
+<li>How should you be able to manipulate a date object?</li>
+<li>Does your answer depend on anything?</li>
+</ul>
+</section>
+<section id="key-idea" class="slide level2">
+<h2>Key idea</h2>
+<p>As a designer you have to live in two worlds:</p>
+<ul>
+<li>“Interface” (how do we use this object)</li>
+<li>“Implementation” (how do we build this object)</li>
+</ul>
+<p>It’s nice when they align, but this isn’t always true</p>
+<ul>
+<li>attributes are often not part of interface</li>
+<li>helper functions are often not part of interface</li>
+<li>many objects have “getter” methods for attributes that don’t exist</li>
+</ul>
+<p>Keeping these straight: access modifiers</p>
 
 </section>
     </div>
