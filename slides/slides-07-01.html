@@ -1088,6 +1088,19 @@ margin-right: 0; }
 </ul></li>
 </ul>
 </section>
+<section id="string" class="slide level2">
+<h2>String</h2>
+<p><code>String</code> is a class (title capitalization)</p>
+<p>We can construct strings two ways:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href></a>String str = new String(&quot;with new&quot;);</span>
+<span id="cb1-2"><a href></a>String str2 = &quot;Don&#39;t need new&quot;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Some string methods:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href></a>.equals(String otherString)</span>
+<span id="cb2-2"><a href></a>.length() // len() function in python</span>
+<span id="cb2-3"><a href></a>.charAt(int index) // [] indexing in python</span>
+<span id="cb2-4"><a href></a>.substring(int beginIndex, int endIndex) // [:] indexing in python</span>
+<span id="cb2-5"><a href></a>.indexOf(String str) // .find() method in python</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 <section id="objects-1" class="slide level2">
 <h2>Objects</h2>
 <p>These work like pointers:</p>
@@ -1096,14 +1109,14 @@ margin-right: 0; }
 <li>variable defaults to <code>null</code> (meaning “not pointing to object”)</li>
 </ul>
 <p>Comparison <code>==</code> not the same as <code>.equals()</code></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href></a>public static void main(String[] args) {</span>
-<span id="cb1-2"><a href></a>        String wordOne = new String(&quot;Hello&quot;);</span>
-<span id="cb1-3"><a href></a>        String wordTwo = new String(&quot;Hello&quot;);</span>
-<span id="cb1-4"><a href></a>        </span>
-<span id="cb1-5"><a href></a>        System.out.println(wordOne == wordTwo);</span>
-<span id="cb1-6"><a href></a>        System.out.println(wordOne.equals(wordTwo));</span>
-<span id="cb1-7"><a href></a></span>
-<span id="cb1-8"><a href></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href></a>public static void main(String[] args) {</span>
+<span id="cb3-2"><a href></a>        String wordOne = new String(&quot;Hello&quot;);</span>
+<span id="cb3-3"><a href></a>        String wordTwo = new String(&quot;Hello&quot;);</span>
+<span id="cb3-4"><a href></a>        </span>
+<span id="cb3-5"><a href></a>        System.out.println(wordOne == wordTwo);</span>
+<span id="cb3-6"><a href></a>        System.out.println(wordOne.equals(wordTwo));</span>
+<span id="cb3-7"><a href></a></span>
+<span id="cb3-8"><a href></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="practice" class="slide level2">
 <h2>Practice</h2>
@@ -1119,105 +1132,105 @@ margin-right: 0; }
 </section>
 <section id="solution" class="slide level2">
 <h2>Solution</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href></a>public class HoursMinutesSeconds {</span>
-<span id="cb2-2"><a href></a></span>
-<span id="cb2-3"><a href></a>    static int getHours(int seconds) {</span>
-<span id="cb2-4"><a href></a>        return seconds/3600;</span>
-<span id="cb2-5"><a href></a>    }</span>
-<span id="cb2-6"><a href></a></span>
-<span id="cb2-7"><a href></a>    static int getMinutes(int seconds) {</span>
-<span id="cb2-8"><a href></a>        return seconds/60;</span>
-<span id="cb2-9"><a href></a>    }</span>
-<span id="cb2-10"><a href></a></span>
-<span id="cb2-11"><a href></a>    static String getTime(int seconds) {</span>
-<span id="cb2-12"><a href></a>        // get full hours</span>
-<span id="cb2-13"><a href></a>        int hours = getHours(seconds);</span>
-<span id="cb2-14"><a href></a>        // update how many seconds are left</span>
-<span id="cb2-15"><a href></a>        int secondsLeft = seconds - (hours * 3600);</span>
-<span id="cb2-16"><a href></a>        // calculate full minutes</span>
-<span id="cb2-17"><a href></a>        int minutes = getMinutes(secondsLeft);</span>
-<span id="cb2-18"><a href></a>        // update how many seconds are left</span>
-<span id="cb2-19"><a href></a>        secondsLeft = secondsLeft - (minutes * 60);</span>
-<span id="cb2-20"><a href></a>        </span>
-<span id="cb2-21"><a href></a>        return hours + &quot;:&quot; + minutes + &quot;:&quot; + secondsLeft;</span>
-<span id="cb2-22"><a href></a>    }</span>
-<span id="cb2-23"><a href></a></span>
-<span id="cb2-24"><a href></a>    public static void main(String[] args) {</span>
-<span id="cb2-25"><a href></a>        int seconds = 119;</span>
-<span id="cb2-26"><a href></a>        String result = getTime(seconds);</span>
-<span id="cb2-27"><a href></a>        System.out.println(result);</span>
-<span id="cb2-28"><a href></a></span>
-<span id="cb2-29"><a href></a>    }</span>
-<span id="cb2-30"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href></a>public class HoursMinutesSeconds {</span>
+<span id="cb4-2"><a href></a></span>
+<span id="cb4-3"><a href></a>    static int getHours(int seconds) {</span>
+<span id="cb4-4"><a href></a>        return seconds/3600;</span>
+<span id="cb4-5"><a href></a>    }</span>
+<span id="cb4-6"><a href></a></span>
+<span id="cb4-7"><a href></a>    static int getMinutes(int seconds) {</span>
+<span id="cb4-8"><a href></a>        return seconds/60;</span>
+<span id="cb4-9"><a href></a>    }</span>
+<span id="cb4-10"><a href></a></span>
+<span id="cb4-11"><a href></a>    static String getTime(int seconds) {</span>
+<span id="cb4-12"><a href></a>        // get full hours</span>
+<span id="cb4-13"><a href></a>        int hours = getHours(seconds);</span>
+<span id="cb4-14"><a href></a>        // update how many seconds are left</span>
+<span id="cb4-15"><a href></a>        int secondsLeft = seconds - (hours * 3600);</span>
+<span id="cb4-16"><a href></a>        // calculate full minutes</span>
+<span id="cb4-17"><a href></a>        int minutes = getMinutes(secondsLeft);</span>
+<span id="cb4-18"><a href></a>        // update how many seconds are left</span>
+<span id="cb4-19"><a href></a>        secondsLeft = secondsLeft - (minutes * 60);</span>
+<span id="cb4-20"><a href></a>        </span>
+<span id="cb4-21"><a href></a>        return hours + &quot;:&quot; + minutes + &quot;:&quot; + secondsLeft;</span>
+<span id="cb4-22"><a href></a>    }</span>
+<span id="cb4-23"><a href></a></span>
+<span id="cb4-24"><a href></a>    public static void main(String[] args) {</span>
+<span id="cb4-25"><a href></a>        int seconds = 119;</span>
+<span id="cb4-26"><a href></a>        String result = getTime(seconds);</span>
+<span id="cb4-27"><a href></a>        System.out.println(result);</span>
+<span id="cb4-28"><a href></a></span>
+<span id="cb4-29"><a href></a>    }</span>
+<span id="cb4-30"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="scanner" class="slide level2">
 <h2>Scanner</h2>
 <p>The <code>Scanner</code> class (from <code>java.util</code>) is used to get different types of input</p>
 <p>We use <code>System.in</code> to read keyboard input:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href></a>Scanner myObj = new Scanner(System.in);  // Scanner object</span>
-<span id="cb3-2"><a href></a>String userInputString = myObj.nextLine();  // method to read user input</span>
-<span id="cb3-3"><a href></a>int userInputInt = myObj.nextInt(); // another method to read user input</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href></a>Scanner myObj = new Scanner(System.in);  // Scanner object</span>
+<span id="cb5-2"><a href></a>String userInputString = myObj.nextLine();  // method to read user input</span>
+<span id="cb5-3"><a href></a>int userInputInt = myObj.nextInt(); // another method to read user input</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="solution-1" class="slide level2">
 <h2>Solution</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href></a>import java.util.Scanner;</span>
-<span id="cb4-2"><a href></a></span>
-<span id="cb4-3"><a href></a>/**</span>
-<span id="cb4-4"><a href></a> * File: HoursMinutesSeconds.java</span>
-<span id="cb4-5"><a href></a> * Author: Adriana Picoral</span>
-<span id="cb4-6"><a href></a> * Description: Prompts the user to enter an integer representing seconds</span>
-<span id="cb4-7"><a href></a> * and prints out time in h:m:s format</span>
-<span id="cb4-8"><a href></a> */</span>
-<span id="cb4-9"><a href></a>public class HoursMinutesSeconds {</span>
-<span id="cb4-10"><a href></a>    </span>
-<span id="cb4-11"><a href></a>    /**</span>
-<span id="cb4-12"><a href></a>     * Calculates number of full hours in many seconds</span>
-<span id="cb4-13"><a href></a>     * @param seconds (integer)</span>
-<span id="cb4-14"><a href></a>     * @return an integer representing number of hours</span>
-<span id="cb4-15"><a href></a>     */</span>
-<span id="cb4-16"><a href></a>    public static int getHours(int seconds) {</span>
-<span id="cb4-17"><a href></a>        return seconds / 3600;</span>
-<span id="cb4-18"><a href></a>    }</span>
-<span id="cb4-19"><a href></a>    </span>
-<span id="cb4-20"><a href></a>    /**</span>
-<span id="cb4-21"><a href></a>     * Calculates number of full minutes left in many seconds</span>
-<span id="cb4-22"><a href></a>     * not considering the number of full hours</span>
-<span id="cb4-23"><a href></a>     * @param seconds (integer)</span>
-<span id="cb4-24"><a href></a>     * @return an integer representing number of minutes</span>
-<span id="cb4-25"><a href></a>     */</span>
-<span id="cb4-26"><a href></a>    </span>
-<span id="cb4-27"><a href></a>    public static int getMinutes(int seconds) {</span>
-<span id="cb4-28"><a href></a>        return seconds  % 3600 / 60;</span>
-<span id="cb4-29"><a href></a>    }</span>
-<span id="cb4-30"><a href></a>    </span>
-<span id="cb4-31"><a href></a>    /**</span>
-<span id="cb4-32"><a href></a>     * Calculates seconds left that are not in full minutes</span>
-<span id="cb4-33"><a href></a>     * @param seconds (integer)</span>
-<span id="cb4-34"><a href></a>     * @return an integer representing seconds</span>
-<span id="cb4-35"><a href></a>     */</span>
-<span id="cb4-36"><a href></a>    public static int getSeconds(int seconds) {</span>
-<span id="cb4-37"><a href></a>        return seconds % 60;</span>
-<span id="cb4-38"><a href></a>    }</span>
-<span id="cb4-39"><a href></a></span>
-<span id="cb4-40"><a href></a>    public static void main(String[] args) {</span>
-<span id="cb4-41"><a href></a>        Scanner userInput = new Scanner(System.in);</span>
-<span id="cb4-42"><a href></a>          </span>
-<span id="cb4-43"><a href></a>        // prints out message to user</span>
-<span id="cb4-44"><a href></a>      System.out.print(&quot;Enter number of seconds: &quot;);</span>
-<span id="cb4-45"><a href></a>      </span>
-<span id="cb4-46"><a href></a>        // get integer from keyboard entry</span>
-<span id="cb4-47"><a href></a>        int seconds = userInput.nextInt();</span>
-<span id="cb4-48"><a href></a>        userInput.close();</span>
-<span id="cb4-49"><a href></a>        </span>
-<span id="cb4-50"><a href></a>        // build up the message to print</span>
-<span id="cb4-51"><a href></a>        String message;</span>
-<span id="cb4-52"><a href></a>        message = getHours(seconds) + &quot;:&quot; + getMinutes(seconds);</span>
-<span id="cb4-53"><a href></a>        message += &quot;:&quot; + getSeconds(seconds);</span>
-<span id="cb4-54"><a href></a>        System.out.println(message);</span>
-<span id="cb4-55"><a href></a></span>
-<span id="cb4-56"><a href></a>    }</span>
-<span id="cb4-57"><a href></a></span>
-<span id="cb4-58"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href></a>import java.util.Scanner;</span>
+<span id="cb6-2"><a href></a></span>
+<span id="cb6-3"><a href></a>/**</span>
+<span id="cb6-4"><a href></a> * File: HoursMinutesSeconds.java</span>
+<span id="cb6-5"><a href></a> * Author: Adriana Picoral</span>
+<span id="cb6-6"><a href></a> * Description: Prompts the user to enter an integer representing seconds</span>
+<span id="cb6-7"><a href></a> * and prints out time in h:m:s format</span>
+<span id="cb6-8"><a href></a> */</span>
+<span id="cb6-9"><a href></a>public class HoursMinutesSeconds {</span>
+<span id="cb6-10"><a href></a>    </span>
+<span id="cb6-11"><a href></a>    /**</span>
+<span id="cb6-12"><a href></a>     * Calculates number of full hours in many seconds</span>
+<span id="cb6-13"><a href></a>     * @param seconds (integer)</span>
+<span id="cb6-14"><a href></a>     * @return an integer representing number of hours</span>
+<span id="cb6-15"><a href></a>     */</span>
+<span id="cb6-16"><a href></a>    public static int getHours(int seconds) {</span>
+<span id="cb6-17"><a href></a>        return seconds / 3600;</span>
+<span id="cb6-18"><a href></a>    }</span>
+<span id="cb6-19"><a href></a>    </span>
+<span id="cb6-20"><a href></a>    /**</span>
+<span id="cb6-21"><a href></a>     * Calculates number of full minutes left in many seconds</span>
+<span id="cb6-22"><a href></a>     * not considering the number of full hours</span>
+<span id="cb6-23"><a href></a>     * @param seconds (integer)</span>
+<span id="cb6-24"><a href></a>     * @return an integer representing number of minutes</span>
+<span id="cb6-25"><a href></a>     */</span>
+<span id="cb6-26"><a href></a>    </span>
+<span id="cb6-27"><a href></a>    public static int getMinutes(int seconds) {</span>
+<span id="cb6-28"><a href></a>        return seconds  % 3600 / 60;</span>
+<span id="cb6-29"><a href></a>    }</span>
+<span id="cb6-30"><a href></a>    </span>
+<span id="cb6-31"><a href></a>    /**</span>
+<span id="cb6-32"><a href></a>     * Calculates seconds left that are not in full minutes</span>
+<span id="cb6-33"><a href></a>     * @param seconds (integer)</span>
+<span id="cb6-34"><a href></a>     * @return an integer representing seconds</span>
+<span id="cb6-35"><a href></a>     */</span>
+<span id="cb6-36"><a href></a>    public static int getSeconds(int seconds) {</span>
+<span id="cb6-37"><a href></a>        return seconds % 60;</span>
+<span id="cb6-38"><a href></a>    }</span>
+<span id="cb6-39"><a href></a></span>
+<span id="cb6-40"><a href></a>    public static void main(String[] args) {</span>
+<span id="cb6-41"><a href></a>        Scanner userInput = new Scanner(System.in);</span>
+<span id="cb6-42"><a href></a>          </span>
+<span id="cb6-43"><a href></a>        // prints out message to user</span>
+<span id="cb6-44"><a href></a>      System.out.print(&quot;Enter number of seconds: &quot;);</span>
+<span id="cb6-45"><a href></a>      </span>
+<span id="cb6-46"><a href></a>        // get integer from keyboard entry</span>
+<span id="cb6-47"><a href></a>        int seconds = userInput.nextInt();</span>
+<span id="cb6-48"><a href></a>        userInput.close();</span>
+<span id="cb6-49"><a href></a>        </span>
+<span id="cb6-50"><a href></a>        // build up the message to print</span>
+<span id="cb6-51"><a href></a>        String message;</span>
+<span id="cb6-52"><a href></a>        message = getHours(seconds) + &quot;:&quot; + getMinutes(seconds);</span>
+<span id="cb6-53"><a href></a>        message += &quot;:&quot; + getSeconds(seconds);</span>
+<span id="cb6-54"><a href></a>        System.out.println(message);</span>
+<span id="cb6-55"><a href></a></span>
+<span id="cb6-56"><a href></a>    }</span>
+<span id="cb6-57"><a href></a></span>
+<span id="cb6-58"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="submit-solution-to-gradescope" class="slide level2">
 <h2>Submit solution to gradescope</h2>
@@ -1236,78 +1249,65 @@ margin-right: 0; }
 </section>
 <section id="solution-1-1" class="slide level2">
 <h2>Solution 1</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href></a>import java.util.Scanner;</span>
-<span id="cb5-2"><a href></a></span>
-<span id="cb5-3"><a href></a>public class LeapYear {</span>
-<span id="cb5-4"><a href></a>    </span>
-<span id="cb5-5"><a href></a>    public static String isLeap(int year) {</span>
-<span id="cb5-6"><a href></a>        if ((year % 100 != 0) &amp;&amp; (year % 4 == 0)) return &quot;Leap Year&quot;;</span>
-<span id="cb5-7"><a href></a>        else if ((year % 400 == 0)) return &quot;Leap Year&quot;;</span>
-<span id="cb5-8"><a href></a>        else return &quot;Regular Year&quot;;</span>
-<span id="cb5-9"><a href></a></span>
-<span id="cb5-10"><a href></a>    }</span>
-<span id="cb5-11"><a href></a></span>
-<span id="cb5-12"><a href></a>    public static void main(String[] args) {</span>
-<span id="cb5-13"><a href></a>        Scanner userInput = new Scanner(System.in);</span>
-<span id="cb5-14"><a href></a>        </span>
-<span id="cb5-15"><a href></a>        // prints out message to user</span>
-<span id="cb5-16"><a href></a>        System.out.print(&quot;Enter a year: &quot;);</span>
-<span id="cb5-17"><a href></a>      </span>
-<span id="cb5-18"><a href></a>        // get integer from keyboard entry</span>
-<span id="cb5-19"><a href></a>        int year = userInput.nextInt();</span>
-<span id="cb5-20"><a href></a>        userInput.close();</span>
-<span id="cb5-21"><a href></a>        </span>
-<span id="cb5-22"><a href></a>        System.out.println(isLeap(year));</span>
-<span id="cb5-23"><a href></a>    }</span>
-<span id="cb5-24"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href></a>import java.util.Scanner;</span>
+<span id="cb7-2"><a href></a></span>
+<span id="cb7-3"><a href></a>public class LeapYear {</span>
+<span id="cb7-4"><a href></a>    </span>
+<span id="cb7-5"><a href></a>    public static String isLeap(int year) {</span>
+<span id="cb7-6"><a href></a>        if ((year % 100 != 0) &amp;&amp; (year % 4 == 0)) return &quot;Leap Year&quot;;</span>
+<span id="cb7-7"><a href></a>        else if ((year % 400 == 0)) return &quot;Leap Year&quot;;</span>
+<span id="cb7-8"><a href></a>        else return &quot;Regular Year&quot;;</span>
+<span id="cb7-9"><a href></a></span>
+<span id="cb7-10"><a href></a>    }</span>
+<span id="cb7-11"><a href></a></span>
+<span id="cb7-12"><a href></a>    public static void main(String[] args) {</span>
+<span id="cb7-13"><a href></a>        Scanner userInput = new Scanner(System.in);</span>
+<span id="cb7-14"><a href></a>        </span>
+<span id="cb7-15"><a href></a>        // prints out message to user</span>
+<span id="cb7-16"><a href></a>        System.out.print(&quot;Enter a year: &quot;);</span>
+<span id="cb7-17"><a href></a>      </span>
+<span id="cb7-18"><a href></a>        // get integer from keyboard entry</span>
+<span id="cb7-19"><a href></a>        int year = userInput.nextInt();</span>
+<span id="cb7-20"><a href></a>        userInput.close();</span>
+<span id="cb7-21"><a href></a>        </span>
+<span id="cb7-22"><a href></a>        System.out.println(isLeap(year));</span>
+<span id="cb7-23"><a href></a>    }</span>
+<span id="cb7-24"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="solution-2" class="slide level2">
 <h2>Solution 2</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href></a>import java.util.Scanner;</span>
-<span id="cb6-2"><a href></a></span>
-<span id="cb6-3"><a href></a>public class LeapYear {</span>
-<span id="cb6-4"><a href></a>    </span>
-<span id="cb6-5"><a href></a>    public static String isLeap(int year) {</span>
-<span id="cb6-6"><a href></a>        boolean isLeapYear;</span>
-<span id="cb6-7"><a href></a>        </span>
-<span id="cb6-8"><a href></a>        isLeapYear = ((year % 100 != 0) &amp;&amp; (year % 4 == 0));</span>
-<span id="cb6-9"><a href></a>        isLeapYear = isLeapYear || ((year % 400 == 0));</span>
-<span id="cb6-10"><a href></a>        </span>
-<span id="cb6-11"><a href></a>        if (isLeapYear) return &quot;Leap Year&quot;;</span>
-<span id="cb6-12"><a href></a>        else return &quot;Regular Year&quot;;</span>
-<span id="cb6-13"><a href></a></span>
-<span id="cb6-14"><a href></a>    }</span>
-<span id="cb6-15"><a href></a></span>
-<span id="cb6-16"><a href></a>    public static void main(String[] args) {</span>
-<span id="cb6-17"><a href></a>        Scanner userInput = new Scanner(System.in);</span>
-<span id="cb6-18"><a href></a>        </span>
-<span id="cb6-19"><a href></a>        // prints out message to user</span>
-<span id="cb6-20"><a href></a>        System.out.print(&quot;Enter a year: &quot;);</span>
-<span id="cb6-21"><a href></a>      </span>
-<span id="cb6-22"><a href></a>        // get integer from keyboard entry</span>
-<span id="cb6-23"><a href></a>        int year = userInput.nextInt();</span>
-<span id="cb6-24"><a href></a>        userInput.close();</span>
-<span id="cb6-25"><a href></a>        </span>
-<span id="cb6-26"><a href></a>        System.out.println(isLeap(year));</span>
-<span id="cb6-27"><a href></a></span>
-<span id="cb6-28"><a href></a>    }</span>
-<span id="cb6-29"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href></a>import java.util.Scanner;</span>
+<span id="cb8-2"><a href></a></span>
+<span id="cb8-3"><a href></a>public class LeapYear {</span>
+<span id="cb8-4"><a href></a>    </span>
+<span id="cb8-5"><a href></a>    public static String isLeap(int year) {</span>
+<span id="cb8-6"><a href></a>        boolean isLeapYear;</span>
+<span id="cb8-7"><a href></a>        </span>
+<span id="cb8-8"><a href></a>        isLeapYear = ((year % 100 != 0) &amp;&amp; (year % 4 == 0));</span>
+<span id="cb8-9"><a href></a>        isLeapYear = isLeapYear || ((year % 400 == 0));</span>
+<span id="cb8-10"><a href></a>        </span>
+<span id="cb8-11"><a href></a>        if (isLeapYear) return &quot;Leap Year&quot;;</span>
+<span id="cb8-12"><a href></a>        else return &quot;Regular Year&quot;;</span>
+<span id="cb8-13"><a href></a></span>
+<span id="cb8-14"><a href></a>    }</span>
+<span id="cb8-15"><a href></a></span>
+<span id="cb8-16"><a href></a>    public static void main(String[] args) {</span>
+<span id="cb8-17"><a href></a>        Scanner userInput = new Scanner(System.in);</span>
+<span id="cb8-18"><a href></a>        </span>
+<span id="cb8-19"><a href></a>        // prints out message to user</span>
+<span id="cb8-20"><a href></a>        System.out.print(&quot;Enter a year: &quot;);</span>
+<span id="cb8-21"><a href></a>      </span>
+<span id="cb8-22"><a href></a>        // get integer from keyboard entry</span>
+<span id="cb8-23"><a href></a>        int year = userInput.nextInt();</span>
+<span id="cb8-24"><a href></a>        userInput.close();</span>
+<span id="cb8-25"><a href></a>        </span>
+<span id="cb8-26"><a href></a>        System.out.println(isLeap(year));</span>
+<span id="cb8-27"><a href></a></span>
+<span id="cb8-28"><a href></a>    }</span>
+<span id="cb8-29"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="string" class="slide level2">
-<h2>String</h2>
-<p><code>String</code> is a class (title capitalization)</p>
-<p>We can construct strings two ways:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href></a>String str = new String(&quot;with new&quot;);</span>
-<span id="cb7-2"><a href></a>String str2 = &quot;Don&#39;t need new&quot;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Some string methods:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href></a>.equals(String otherString)</span>
-<span id="cb8-2"><a href></a>.length() // len() function in python</span>
-<span id="cb8-3"><a href></a>.charAt(int index) // [] indexing in python</span>
-<span id="cb8-4"><a href></a>.substring(int beginIndex, int endIndex) // [:] indexing in python</span>
-<span id="cb8-5"><a href></a>.indexOf(String str) // .find() method in python</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="java-type-casting" class="slide level2">
-<h2>Java type casting</h2>
+<section id="other-useful-classes" class="slide level2">
+<h2>Other useful classes</h2>
 <p>Both <code>Double</code> and <code>Integer</code> classes have methods to cast a string into a double or int</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href></a>Double.valueOf(&quot;10&quot;);</span>
 <span id="cb9-2"><a href></a>Integer.valueOf(&quot;10&quot;);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

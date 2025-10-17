@@ -1140,12 +1140,12 @@ margin-right: 0; }
 <h2>Common Object Methods</h2>
 <p>We write these:</p>
 <ul>
-<li>getters get&lt;something&gt;( )
+<li>getters: <code>getSomething( )</code>
 <ul>
 <li>direct access to the state of the object</li>
 <li>(Not the same as direct access to instance-variables)</li>
 </ul></li>
-<li>setters set&lt;Something&gt;(&lt;type&gt; newVal)
+<li>setters: <code>setSomething(&lt;type&gt; newVal)</code>
 <ul>
 <li>request modification of state</li>
 <li>(no promise that modification will happen)</li>
@@ -1221,13 +1221,13 @@ margin-right: 0; }
 <h2>Common Object Methods</h2>
 <p>We <strong>over</strong>write these:</p>
 <ul>
-<li>toString()
+<li><code>toString()</code>
 <ul>
 <li>Guaranteed to exist</li>
 <li>Not Guaranteed to be good.</li>
 <li>Called automatically in many places</li>
 </ul></li>
-<li>equals(Object other)
+<li><code>equals(Object other)</code>
 <ul>
 <li>Supposed to check “true” equality</li>
 <li>Guaranteed to exist</li>
