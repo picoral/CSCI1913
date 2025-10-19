@@ -1259,6 +1259,65 @@ margin-right: 0; }
 <li>many objects have “getter” methods for attributes that don’t exist</li>
 </ul>
 <p>Keeping these straight: access modifiers</p>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Write a <code>GregorianDate</code> class with the following public methods:</p>
+<ul>
+<li><code>getYear()</code></li>
+<li><code>getMonth()</code></li>
+<li><code>getDay()</code></li>
+<li><code>.toString()</code> should return the following format <code>April 13, 1981</code></li>
+</ul>
+<p>Submit to gradescope</p>
+</section>
+<section id="solution" class="slide level2">
+<h2>Solution</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href></a>public class GregorianDate {</span>
+<span id="cb6-2"><a href></a>    private int year;</span>
+<span id="cb6-3"><a href></a>    private int month;</span>
+<span id="cb6-4"><a href></a>    private int day;</span>
+<span id="cb6-5"><a href></a>    private static final String[] MONTHS = new String[]{&quot;January&quot;, &quot;February&quot;,</span>
+<span id="cb6-6"><a href></a>                                                        &quot;March&quot;, &quot;April&quot;, &quot;May&quot;,</span>
+<span id="cb6-7"><a href></a>                                                        &quot;June&quot;, &quot;July&quot;, &quot;August&quot;,</span>
+<span id="cb6-8"><a href></a>                                                        &quot;September&quot;, &quot;October&quot;, &quot;November&quot;,</span>
+<span id="cb6-9"><a href></a>                                                        &quot;December&quot;};</span>
+<span id="cb6-10"><a href></a>    </span>
+<span id="cb6-11"><a href></a>    public GregorianDate(int year, int month, int day) {</span>
+<span id="cb6-12"><a href></a>        this.year = year;</span>
+<span id="cb6-13"><a href></a>        this.month = month;</span>
+<span id="cb6-14"><a href></a>        this.day = day;</span>
+<span id="cb6-15"><a href></a>    }</span>
+<span id="cb6-16"><a href></a></span>
+<span id="cb6-17"><a href></a>    public int getYear() {</span>
+<span id="cb6-18"><a href></a>        return year;</span>
+<span id="cb6-19"><a href></a>    }</span>
+<span id="cb6-20"><a href></a></span>
+<span id="cb6-21"><a href></a>    public int getMonth() {</span>
+<span id="cb6-22"><a href></a>        return month;</span>
+<span id="cb6-23"><a href></a>    }</span>
+<span id="cb6-24"><a href></a></span>
+<span id="cb6-25"><a href></a>    public int getDay() {</span>
+<span id="cb6-26"><a href></a>        return day;</span>
+<span id="cb6-27"><a href></a>    }</span>
+<span id="cb6-28"><a href></a></span>
+<span id="cb6-29"><a href></a>    private String getMonthName() {</span>
+<span id="cb6-30"><a href></a>        return MONTHS[month-1];</span>
+<span id="cb6-31"><a href></a>    }</span>
+<span id="cb6-32"><a href></a></span>
+<span id="cb6-33"><a href></a>    public String toString() {</span>
+<span id="cb6-34"><a href></a>        return getMonthName() + &quot; &quot; + day + &quot;, &quot; + year;</span>
+<span id="cb6-35"><a href></a>    }</span>
+<span id="cb6-36"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="encapsulation" class="slide level2">
+<h2>Encapsulation</h2>
+<p>An object should hide its internal details</p>
+<ul>
+<li>This is about debugging and changing</li>
+<li>The more code with access, the more code you need to check.</li>
+<li>The more code with access – the more ways to make bugs</li>
+</ul>
 
 </section>
     </div>
