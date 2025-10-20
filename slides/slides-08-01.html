@@ -1136,12 +1136,13 @@ margin-right: 0; }
 <span id="cb1-35"><a href></a>        return familyName;</span>
 <span id="cb1-36"><a href></a>    }</span>
 <span id="cb1-37"><a href></a>    </span>
-<span id="cb1-38"><a href></a>    public void print() {</span>
-<span id="cb1-39"><a href></a>        System.out.print(firstName + &quot; &quot; + familyName);</span>
-<span id="cb1-40"><a href></a>        System.out.println(&quot; born on &quot; + getBirthDate());</span>
-<span id="cb1-41"><a href></a>    }</span>
-<span id="cb1-42"><a href></a>    </span>
-<span id="cb1-43"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-38"><a href></a>    public String toString() {</span>
+<span id="cb1-39"><a href></a>        String message = firstName + &quot; &quot; + familyName;</span>
+<span id="cb1-40"><a href></a>        message += &quot; born on &quot; + getBirthDate();</span>
+<span id="cb1-41"><a href></a>        return message</span>
+<span id="cb1-42"><a href></a>    }</span>
+<span id="cb1-43"><a href></a>    </span>
+<span id="cb1-44"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="subclass" class="slide level2">
 <h2>Subclass</h2>
@@ -1175,10 +1176,10 @@ margin-right: 0; }
 <span id="cb2-16"><a href></a>        return admissionYear;</span>
 <span id="cb2-17"><a href></a>    }</span>
 <span id="cb2-18"><a href></a>    </span>
-<span id="cb2-19"><a href></a>    // override annotation</span>
-<span id="cb2-20"><a href></a>    @Override public void print() {</span>
-<span id="cb2-21"><a href></a>        super.print();</span>
-<span id="cb2-22"><a href></a>        System.out.println(&quot;Admitted in &quot; + admissionYear);</span>
+<span id="cb2-19"><a href></a>    public void print() {</span>
+<span id="cb2-20"><a href></a>        String message = super.toString();</span>
+<span id="cb2-21"><a href></a>        message += &quot;Admitted in &quot; + admissionYear;</span>
+<span id="cb2-22"><a href></a>        return message</span>
 <span id="cb2-23"><a href></a>    }</span>
 <span id="cb2-24"><a href></a></span>
 <span id="cb2-25"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
