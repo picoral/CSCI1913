@@ -1006,6 +1006,32 @@ margin-right: 0; }
 <li>Compile-time Polymorphism: Method overloading</li>
 <li>Runtime Polymorphism: Method overriding</li>
 </ul>
+</section>
+<section id="overriding-methods" class="slide level2">
+<h2>Overriding Methods</h2>
+<p>A sub-class is free to redefine (most) methods</p>
+<ul>
+<li>(exception final methods - but this is rare)</li>
+<li>This is called Overriding a method</li>
+<li>Common to make overridden methods <span class="citation" data-cites="Override">@Override</span>
+<ul>
+<li>Annotation syntax – more formal than comment, but not code</li>
+<li>Doesn’t effect behavior</li>
+<li>This one is a “hint” that we expect this to be on parent class too</li>
+</ul></li>
+</ul>
+</section>
+<section id="dynamic-binding" class="slide level2">
+<h2>Dynamic binding</h2>
+<ul>
+<li>Dynamic binding: when the specific code to call is determined at runtime</li>
+<li>static binding: when the specific code to call is determined at compiletime</li>
+</ul>
+<p>In java: Only static or final methods (and constructors) have static binding:</p>
+<ul>
+<li>static methods are not subject to inheritance/overriding</li>
+<li>final methods cannot be overridden.</li>
+</ul>
 
 </section>
     </div>
