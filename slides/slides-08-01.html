@@ -1156,34 +1156,6 @@ margin-right: 0; }
 <p>What public and private methods?</p>
 <p>Write a constructor method, invoke base-class constructor using super keyword</p>
 </section>
-<section id="subclass-solution" class="slide level2">
-<h2>Subclass solution</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href></a>import java.time.LocalDate;</span>
-<span id="cb2-2"><a href></a></span>
-<span id="cb2-3"><a href></a>public class Student extends Person {</span>
-<span id="cb2-4"><a href></a>    private int admissionYear;</span>
-<span id="cb2-5"><a href></a>    </span>
-<span id="cb2-6"><a href></a>    public Student(String first, String family,</span>
-<span id="cb2-7"><a href></a>                   int admissionYear) {</span>
-<span id="cb2-8"><a href></a>        // invoke base-class constructor</span>
-<span id="cb2-9"><a href></a>        super(first, family);</span>
-<span id="cb2-10"><a href></a>        LocalDate today = LocalDate.now(); </span>
-<span id="cb2-11"><a href></a>        if (admissionYear &gt; 1900 &amp;&amp; admissionYear &lt;= today.getYear()) </span>
-<span id="cb2-12"><a href></a>            this.admissionYear = admissionYear;</span>
-<span id="cb2-13"><a href></a>    }</span>
-<span id="cb2-14"><a href></a>    </span>
-<span id="cb2-15"><a href></a>    public int getAdmission() {</span>
-<span id="cb2-16"><a href></a>        return admissionYear;</span>
-<span id="cb2-17"><a href></a>    }</span>
-<span id="cb2-18"><a href></a>    </span>
-<span id="cb2-19"><a href></a>    public void print() {</span>
-<span id="cb2-20"><a href></a>        String message = super.toString();</span>
-<span id="cb2-21"><a href></a>        message += &quot;Admitted in &quot; + admissionYear;</span>
-<span id="cb2-22"><a href></a>        return message</span>
-<span id="cb2-23"><a href></a>    }</span>
-<span id="cb2-24"><a href></a></span>
-<span id="cb2-25"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
 <section id="constructor-inheritance" class="slide level2">
 <h2>Constructor inheritance</h2>
 <p>The constructor rule: Before any method in a class is run, one of the constructors of that class will run</p>
@@ -1208,25 +1180,147 @@ margin-right: 0; }
 <li><strong>Explicitly</strong> you have to call a specific constructor</li>
 </ul>
 <p>Constructor call syntax:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href></a>public ChildClass(&lt;params&gt;) {</span>
-<span id="cb3-2"><a href></a>   super(...)</span>
-<span id="cb3-3"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href></a>public ChildClass(&lt;params&gt;) {</span>
+<span id="cb2-2"><a href></a>   super(...)</span>
+<span id="cb2-3"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>This has to be first line of code (which sucks sometimes)</li>
 <li>parameters to <code>super(...)</code> match one of the parent class constructor</li>
 </ul>
 </section>
-<section id="abstract-superclass" class="slide level2">
-<h2><code>abstract</code> superclass</h2>
-<p>An <code>abstract</code> class cannot be instantiated (an error is thrown)</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href></a>Animal animal = new Animal(); // Error: Animal is abstract</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>An <code>abstract</code> class must be subclassed</p>
-<p>Methods in an <code>abstract</code> class can also be <code>abstract</code></p>
+<section id="subclass-solution" class="slide level2">
+<h2>Subclass solution</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href></a>import java.time.LocalDate;</span>
+<span id="cb3-2"><a href></a></span>
+<span id="cb3-3"><a href></a>public class Student extends Person {</span>
+<span id="cb3-4"><a href></a>    private int admissionYear;</span>
+<span id="cb3-5"><a href></a>    </span>
+<span id="cb3-6"><a href></a>    public Student(String first, String family,</span>
+<span id="cb3-7"><a href></a>                   int admissionYear) {</span>
+<span id="cb3-8"><a href></a>        // invoke base-class constructor</span>
+<span id="cb3-9"><a href></a>        super(first, family);</span>
+<span id="cb3-10"><a href></a>        LocalDate today = LocalDate.now(); </span>
+<span id="cb3-11"><a href></a>        if (admissionYear &gt; 1900 &amp;&amp; admissionYear &lt;= today.getYear()) </span>
+<span id="cb3-12"><a href></a>            this.admissionYear = admissionYear;</span>
+<span id="cb3-13"><a href></a>    }</span>
+<span id="cb3-14"><a href></a>    </span>
+<span id="cb3-15"><a href></a>    public int getAdmission() {</span>
+<span id="cb3-16"><a href></a>        return admissionYear;</span>
+<span id="cb3-17"><a href></a>    }</span>
+<span id="cb3-18"><a href></a>    </span>
+<span id="cb3-19"><a href></a>    public void print() {</span>
+<span id="cb3-20"><a href></a>        String message = super.toString();</span>
+<span id="cb3-21"><a href></a>        message += &quot;Admitted in &quot; + admissionYear;</span>
+<span id="cb3-22"><a href></a>        return message</span>
+<span id="cb3-23"><a href></a>    }</span>
+<span id="cb3-24"><a href></a></span>
+<span id="cb3-25"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="practice" class="slide level2">
+<h2>Practice</h2>
+<p>Implement two Java classes that simulate rolling dice — a <strong>fair die</strong> and a <strong>biased die</strong> — while practicing <strong>inheritance</strong>.</p>
+<p>What instance variables should <code>Dice.java</code> have?</p>
+<p>Methods:</p>
+<ul>
+<li>Constructor (with number of sides as a parameter)</li>
+<li>getter for number of sides</li>
+<li><code>.roll()</code> – returns an integer between <code>1</code> and <code>number of sides</code> (needs random module)</li>
+</ul>
+<pre><code>import java.util.Random;
+Random random = new Random();
+random.nextInt(sides+1);</code></pre>
+</section>
+<section id="super-class-solution" class="slide level2">
+<h2>Super class solution</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href></a>import java.util.Random;</span>
+<span id="cb5-2"><a href></a></span>
+<span id="cb5-3"><a href></a>public class Dice {</span>
+<span id="cb5-4"><a href></a>    private int sides = 6;</span>
+<span id="cb5-5"><a href></a>    private Random random = new Random();</span>
+<span id="cb5-6"><a href></a></span>
+<span id="cb5-7"><a href></a>    public Dice(int sides) {</span>
+<span id="cb5-8"><a href></a>        this.sides = sides;</span>
+<span id="cb5-9"><a href></a>    }</span>
+<span id="cb5-10"><a href></a></span>
+<span id="cb5-11"><a href></a>    public int getSides() {</span>
+<span id="cb5-12"><a href></a>        return sides;</span>
+<span id="cb5-13"><a href></a>    }</span>
+<span id="cb5-14"><a href></a></span>
+<span id="cb5-15"><a href></a>    public int roll() {</span>
+<span id="cb5-16"><a href></a>        return random.nextInt(sides) + 1;</span>
+<span id="cb5-17"><a href></a>    }</span>
+<span id="cb5-18"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="part-2-the-biaseddice-class" class="slide level2">
+<h2>Part 2: The <code>BiasedDice</code> Class</h2>
+<p>In a separate file (<code>BiasedDice.java</code>), create a subclass of <code>Dice</code> (use <code>extends</code> keyword) that favors one side with a specified probability. Methods:</p>
+<ul>
+<li>Constructor: <code>public BiasedDice(int sides)</code></li>
+<li><code>public void setFavoredSide(int favored, double bias)</code>
+<ul>
+<li><code>favored</code> must be in <code>[1, number of sides]</code><br>
+</li>
+<li><code>bias</code> must be in <code>[0.0, 1.0]</code></li>
+</ul></li>
+<li>getters for favored side and bias</li>
+</ul>
+</section>
+<section id="part-2-the-biaseddice-class-1" class="slide level2">
+<h2>Part 2: The <code>BiasedDice</code> Class</h2>
+<ul>
+<li>Override <code>roll()</code>:
+<ul>
+<li>With probability <code>bias</code>, return the favored side.</li>
+<li>Otherwise, choose uniformly among the remaining sides.</li>
+<li>e.g., if <code>favored</code> equals <code>3</code> and <code>bias</code> equals <code>0.5</code>, then a 6-sided die has a 50% chance of landing on 3 and a 10% chance of landing on 1, 2, 4, 5, and 6.</li>
+</ul></li>
+</ul>
 </section>
 <section id="protected-keyword" class="slide level2">
 <h2>protected keyword</h2>
 <p>The <code>private</code> access modifier specifies the variable can only be accessed in its own class</p>
 <p>The <code>protected</code> access modifier specifies that the variable can only be accessed by a subclass of its class</p>
+</section>
+<section id="part-2-the-biaseddice-class-2" class="slide level2">
+<h2>Part 2: The <code>BiasedDice</code> Class</h2>
+<p>You can use the random object from the super class (change access modifier to <code>protected</code>) and then use the <code>.nextDouble()</code> method to get a double between 0 and 1. If this double is within the <code>bias</code> treshold return <code>favored</code>, otherwise return one of the other sides (randomly).</p>
+<pre><code>if (random.nextDouble() &lt; bias) { return favored; }</code></pre>
+</section>
+<section id="biaseddice-class-solution" class="slide level2">
+<h2><code>BiasedDice</code> Class – solution</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href></a>public class BiasedDice extends Dice {</span>
+<span id="cb7-2"><a href></a>    private int favored = 1;</span>
+<span id="cb7-3"><a href></a>    private double bias = 0.1;</span>
+<span id="cb7-4"><a href></a></span>
+<span id="cb7-5"><a href></a>    public BiasedDice(int sides) {</span>
+<span id="cb7-6"><a href></a>        super(sides);</span>
+<span id="cb7-7"><a href></a>    }</span>
+<span id="cb7-8"><a href></a></span>
+<span id="cb7-9"><a href></a>    public void setFavored(int favored, double bias) {</span>
+<span id="cb7-10"><a href></a>        this.favored = favored;</span>
+<span id="cb7-11"><a href></a>        this.bias = bias;</span>
+<span id="cb7-12"><a href></a>    }</span>
+<span id="cb7-13"><a href></a></span>
+<span id="cb7-14"><a href></a>    public int getFavored() {</span>
+<span id="cb7-15"><a href></a>        return favored;</span>
+<span id="cb7-16"><a href></a>    }</span>
+<span id="cb7-17"><a href></a></span>
+<span id="cb7-18"><a href></a>    public double getBias() {</span>
+<span id="cb7-19"><a href></a>        return bias;</span>
+<span id="cb7-20"><a href></a>    }</span>
+<span id="cb7-21"><a href></a></span>
+<span id="cb7-22"><a href></a>    public int roll() {</span>
+<span id="cb7-23"><a href></a>        if (random.nextDouble() &lt; bias) {</span>
+<span id="cb7-24"><a href></a>            return favored;</span>
+<span id="cb7-25"><a href></a>        }</span>
+<span id="cb7-26"><a href></a></span>
+<span id="cb7-27"><a href></a>        int die = random.nextInt(getSides()) + 1;</span>
+<span id="cb7-28"><a href></a>        while (die == favored) {</span>
+<span id="cb7-29"><a href></a>            die = random.nextInt(getSides()) + 1;</span>
+<span id="cb7-30"><a href></a>        }</span>
+<span id="cb7-31"><a href></a>        return die;</span>
+<span id="cb7-32"><a href></a>    }</span>
+<span id="cb7-33"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </section>
     </div>
