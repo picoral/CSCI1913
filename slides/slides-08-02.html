@@ -1073,25 +1073,11 @@ margin-right: 0; }
 </ul>
 <p>We will also see polymorphism through generics in the near future</p>
 </section>
-<section id="overriding-methods" class="slide level2">
-<h2>Overriding Methods</h2>
-<p>A sub-class is free to redefine (most) methods</p>
+<section id="dynamic-vs-static-binding" class="slide level2">
+<h2>Dynamic vs Static binding</h2>
 <ul>
-<li>(exception final methods - but this is rare)</li>
-<li>This is called Overriding a method</li>
-<li>Common to make overridden methods <span class="citation" data-cites="Override">@Override</span>
-<ul>
-<li>Annotation syntax – more formal than comment, but not code</li>
-<li>Doesn’t effect behavior</li>
-<li>This one is a “hint” that we expect this to be on parent class too</li>
-</ul></li>
-</ul>
-</section>
-<section id="dynamic-binding" class="slide level2">
-<h2>Dynamic binding</h2>
-<ul>
-<li>Dynamic binding: when the specific code to call is determined at runtime</li>
-<li>static binding: when the specific code to call is determined at compiletime</li>
+<li>Dynamic (or late) binding: when the specific code to call is determined at runtime (overriding)</li>
+<li>Static (or early) binding: when the specific code to call is determined at compile-time (overloading)</li>
 </ul>
 <p>In java: Only static or final methods (and constructors) have static binding:</p>
 <ul>
@@ -1099,12 +1085,22 @@ margin-right: 0; }
 <li>final methods cannot be overridden</li>
 </ul>
 </section>
-<section id="method-overloading" class="slide level2">
-<h2>Method Overloading</h2>
-<p>Methods whose signatures differ are different methods. Using the same name for two methods whose signatures differ is known as overloading.</p>
+<section id="overriding-methods" class="slide level2">
+<h2>Overriding Methods</h2>
+<p>A sub-class is free to redefine (most) methods</p>
+<ul>
+<li>(exception final methods - but this is rare)</li>
+<li>This is called <strong>overriding</strong> a method</li>
+<li>Common to make overridden methods <code>@Override</code>
+<ul>
+<li>Annotation syntax – more formal than comment, but not code</li>
+<li>Doesn’t affect behavior</li>
+<li>This one is a “hint” that we expect this to be on parent class too</li>
+</ul></li>
+</ul>
 </section>
-<section id="implementation-example" class="slide level2">
-<h2>Implementation example</h2>
+<section id="overriding-example" class="slide level2">
+<h2>Overriding example</h2>
 <p><code>Animal.java</code></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href></a>public class Animal {</span>
 <span id="cb1-2"><a href></a>    private String species;</span>
@@ -1117,59 +1113,106 @@ margin-right: 0; }
 <span id="cb1-9"><a href></a>        family = f;</span>
 <span id="cb1-10"><a href></a>    }</span>
 <span id="cb1-11"><a href></a>    </span>
-<span id="cb1-12"><a href></a>    public String toString() {</span>
-<span id="cb1-13"><a href></a>        String message;</span>
-<span id="cb1-14"><a href></a>        message = &quot;The &quot; + species;</span>
-<span id="cb1-15"><a href></a>        message += &quot; of genus &quot; +  genus;</span>
-<span id="cb1-16"><a href></a>        message += &quot; and family &quot; + family;</span>
-<span id="cb1-17"><a href></a>        return message;</span>
-<span id="cb1-18"><a href></a>    }</span>
-<span id="cb1-19"><a href></a></span>
-<span id="cb1-20"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="implementation-example-1" class="slide level2">
-<h2>Implementation example</h2>
-<p><code>Cat.java</code></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href></a>public class Cat extends Animal {</span>
-<span id="cb2-2"><a href></a>    public Cat() {</span>
-<span id="cb2-3"><a href></a>        super(&quot;Cat&quot;, &quot;Felis&quot;, &quot;Felidae&quot;);</span>
-<span id="cb2-4"><a href></a>    }</span>
-<span id="cb2-5"><a href></a>    </span>
-<span id="cb2-6"><a href></a>    public String makesSound() {</span>
-<span id="cb2-7"><a href></a>        return &quot;meow&quot;;</span>
-<span id="cb2-8"><a href></a>    }</span>
-<span id="cb2-9"><a href></a></span>
-<span id="cb2-10"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="implementation-example-2" class="slide level2">
-<h2>Implementation example</h2>
-<p><code>CreateAnimals.java</code></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href></a>public class CreateAnimals {</span>
-<span id="cb3-2"><a href></a></span>
-<span id="cb3-3"><a href></a>    public static void main(String[] args) {</span>
-<span id="cb3-4"><a href></a>        Cat garfield = new Cat();</span>
-<span id="cb3-5"><a href></a>        System.out.println(garfield.toString());</span>
-<span id="cb3-6"><a href></a>    }</span>
-<span id="cb3-7"><a href></a></span>
-<span id="cb3-8"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-12"><a href></a>    @Override</span>
+<span id="cb1-13"><a href></a>    public String toString() {</span>
+<span id="cb1-14"><a href></a>        String message;</span>
+<span id="cb1-15"><a href></a>        message = &quot;The &quot; + species;</span>
+<span id="cb1-16"><a href></a>        message += &quot; of genus &quot; +  genus;</span>
+<span id="cb1-17"><a href></a>        message += &quot; and family &quot; + family;</span>
+<span id="cb1-18"><a href></a>        return message;</span>
+<span id="cb1-19"><a href></a>    }</span>
+<span id="cb1-20"><a href></a></span>
+<span id="cb1-21"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="overriding-creates-shadowing" class="slide level2">
 <h2>Overriding creates shadowing</h2>
 <p>Broadly Shadowing is when two things share a name.</p>
 <ul>
 <li>Scoping will block one name - making it inaccessible</li>
-<li>This can happen with variables in inheritance.</li>
+<li>This can happen with variables in inheritance</li>
 <li><code>super.&lt;name&gt;</code> syntax for disambiguation</li>
 </ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href></a>public class Cat extends Animal {</span>
+<span id="cb2-2"><a href></a>  </span>
+<span id="cb2-3"><a href></a>  ...</span>
+<span id="cb2-4"><a href></a>  </span>
+<span id="cb2-5"><a href></a>  @Override</span>
+<span id="cb2-6"><a href></a>  public String toString() {</span>
+<span id="cb2-7"><a href></a>    return super.toString() + &quot; this cat is &quot; + color;</span>
+<span id="cb2-8"><a href></a>  }</span>
+<span id="cb2-9"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="method-overloading" class="slide level2">
+<h2>Method Overloading</h2>
+<p>Methods whose signatures differ are different methods. Using the same name for two methods whose signatures differ is known as overloading.</p>
+</section>
+<section id="implementation-example" class="slide level2">
+<h2>Implementation example</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href></a>public class Animal {</span>
+<span id="cb3-2"><a href></a>    private String species;</span>
+<span id="cb3-3"><a href></a>    private String genus;</span>
+<span id="cb3-4"><a href></a>    private String family;</span>
+<span id="cb3-5"><a href></a>    </span>
+<span id="cb3-6"><a href></a>    public Animal(String s, String g, String f) {</span>
+<span id="cb3-7"><a href></a>        species = s;</span>
+<span id="cb3-8"><a href></a>        genus = g;</span>
+<span id="cb3-9"><a href></a>        family = f;</span>
+<span id="cb3-10"><a href></a>    }</span>
+<span id="cb3-11"><a href></a>    </span>
+<span id="cb3-12"><a href></a>    public Animal() {</span>
+<span id="cb3-13"><a href></a>      species = &quot;Feline&quot;;</span>
+<span id="cb3-14"><a href></a>      genus = &quot;Felis&quot;;</span>
+<span id="cb3-15"><a href></a>      family = &quot;Felidae&quot;;</span>
+<span id="cb3-16"><a href></a>    }</span>
+<span id="cb3-17"><a href></a></span>
+<span id="cb3-18"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="inheritance-example" class="slide level2">
+<h2>Inheritance example</h2>
+<p><code>Cat.java</code></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href></a>public class Cat extends Animal {</span>
-<span id="cb4-2"><a href></a>  </span>
-<span id="cb4-3"><a href></a>  ...</span>
-<span id="cb4-4"><a href></a>  </span>
-<span id="cb4-5"><a href></a>  @Override</span>
-<span id="cb4-6"><a href></a>  public String toString() {</span>
-<span id="cb4-7"><a href></a>    return super.toString() + &quot; this cat is &quot; + color;</span>
-<span id="cb4-8"><a href></a>  }</span>
-<span id="cb4-9"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href></a>    public Cat() {</span>
+<span id="cb4-3"><a href></a>        super(&quot;Feline&quot;, &quot;Felis&quot;, &quot;Felidae&quot;);</span>
+<span id="cb4-4"><a href></a>    }</span>
+<span id="cb4-5"><a href></a>    </span>
+<span id="cb4-6"><a href></a>    public String makesSound() {</span>
+<span id="cb4-7"><a href></a>        return &quot;meow&quot;;</span>
+<span id="cb4-8"><a href></a>    }</span>
+<span id="cb4-9"><a href></a></span>
+<span id="cb4-10"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="implementation-example-1" class="slide level2">
+<h2>Implementation example</h2>
+<p><code>CreateAnimals.java</code></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href></a>public class CreateAnimals {</span>
+<span id="cb5-2"><a href></a></span>
+<span id="cb5-3"><a href></a>    public static void main(String[] args) {</span>
+<span id="cb5-4"><a href></a>        Cat garfield = new Cat();</span>
+<span id="cb5-5"><a href></a>        System.out.println(garfield.toString());</span>
+<span id="cb5-6"><a href></a>    }</span>
+<span id="cb5-7"><a href></a></span>
+<span id="cb5-8"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="practice" class="slide level2">
+<h2>Practice</h2>
+<p>Lets say we want to make the following classes:</p>
+<ul>
+<li>Polygon</li>
+<li>Rectangle</li>
+<li>Square</li>
+<li>Triangle</li>
+</ul>
+<p>Note, these have a clear is-a relationship</p>
+</section>
+<section id="practice-1" class="slide level2">
+<h2>Practice</h2>
+<ul>
+<li>Polygon</li>
+<li>Rectangle is-a Polygon</li>
+<li>Square is-a Rectangle</li>
+<li>Triangle is-a Polygon</li>
+</ul>
+<p>What attributes and methods would we need?</p>
 
 </section>
     </div>
