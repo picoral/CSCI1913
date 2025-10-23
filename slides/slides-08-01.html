@@ -1282,8 +1282,42 @@ random.nextInt(sides+1);</code></pre>
 </section>
 <section id="protected-keyword" class="slide level2">
 <h2>protected keyword</h2>
-<p>The <code>private</code> access modifier specifies the variable can only be accessed in its own class</p>
-<p>The <code>protected</code> access modifier specifies that the variable can only be accessed by a subclass of its class</p>
+<p>The <code>public</code> access modifier specifies the variable can be accessed <strong>by any external class</strong></p>
+<p>The <code>private</code> access modifier specifies the variable can only be accessed <strong>in its own class</strong></p>
+<p>The <code>protected</code> access modifier specifies that the variable can <strong>only be accessed by a subclass of its class</strong></p>
+</section>
+<section id="access-modifiers" class="slide level2">
+<h2>access modifiers</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>Class</th>
+<th>Subclass</th>
+<th>World</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>public</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>protected</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>private</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="part-2-the-biaseddice-class-2" class="slide level2">
 <h2>Part 2: The <code>BiasedDice</code> Class</h2>
