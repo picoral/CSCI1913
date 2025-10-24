@@ -1226,13 +1226,13 @@ margin-right: 0; }
 <p>What instance variables should <code>Dice.java</code> have?</p>
 <p>Methods:</p>
 <ul>
-<li>Constructor (with number of sides as a parameter)</li>
-<li>getter for number of sides</li>
-<li><code>.roll()</code> – returns an integer between <code>1</code> and <code>number of sides</code> (needs random module)</li>
+<li>Constructor (with number of sides as a parameter) – <code>public Dice(int sides)</code></li>
+<li>getter for number of sides – <code>public int getSides()</code></li>
+<li><code>public int roll()</code> – returns an integer between <code>1</code> and <code>number of sides</code> (needs random module)</li>
 </ul>
 <pre><code>import java.util.Random;
 Random random = new Random();
-random.nextInt(sides+1);</code></pre>
+random.nextInt(sides) + 1;</code></pre>
 </section>
 <section id="super-class-solution" class="slide level2">
 <h2>Super class solution</h2>
@@ -1257,17 +1257,7 @@ random.nextInt(sides+1);</code></pre>
 </section>
 <section id="part-2-the-biaseddice-class" class="slide level2">
 <h2>Part 2: The <code>BiasedDice</code> Class</h2>
-<p>In a separate file (<code>BiasedDice.java</code>), create a subclass of <code>Dice</code> (use <code>extends</code> keyword) that favors one side with a specified probability. Methods:</p>
-<ul>
-<li>Constructor: <code>public BiasedDice(int sides)</code></li>
-<li><code>public void setFavoredSide(int favored, double bias)</code>
-<ul>
-<li><code>favored</code> must be in <code>[1, number of sides]</code><br>
-</li>
-<li><code>bias</code> must be in <code>[0.0, 1.0]</code></li>
-</ul></li>
-<li>getters for favored side and bias</li>
-</ul>
+<p>In a separate file (<code>BiasedDice.java</code>), create a subclass of <code>Dice</code> (use <code>extends</code> keyword) that favors one side with a specified probability. For example, if the <code>favored</code> sides equals <code>3</code> and <code>bias</code> equals <code>0.5</code>, then a 6-sided die has a 50% chance of landing on 3 and a 10% chance of landing on 1, 2, 4, 5, and 6.</p>
 </section>
 <section id="part-2-the-biaseddice-class-1" class="slide level2">
 <h2>Part 2: The <code>BiasedDice</code> Class</h2>
@@ -1323,6 +1313,20 @@ random.nextInt(sides+1);</code></pre>
 <h2>Part 2: The <code>BiasedDice</code> Class</h2>
 <p>You can use the random object from the super class (change access modifier to <code>protected</code>) and then use the <code>.nextDouble()</code> method to get a double between 0 and 1. If this double is within the <code>bias</code> treshold return <code>favored</code>, otherwise return one of the other sides (randomly).</p>
 <pre><code>if (random.nextDouble() &lt; bias) { return favored; }</code></pre>
+</section>
+<section id="part-2-the-biaseddice-class-3" class="slide level2">
+<h2>Part 2: The <code>BiasedDice</code> Class</h2>
+<p>In a separate file (<code>BiasedDice.java</code>), create a subclass of <code>Dice</code> (use <code>extends</code> keyword) that favors one side with a specified probability. Methods:</p>
+<ul>
+<li>Constructor: <code>public BiasedDice(int sides)</code></li>
+<li><code>public void setFavored(int favored, double bias)</code>
+<ul>
+<li><code>favored</code> must be in <code>[1, number of sides]</code><br>
+</li>
+<li><code>bias</code> must be in <code>[0.0, 1.0]</code></li>
+</ul></li>
+<li>getters for favored side and bias (<code>getFavored()</code> and <code>getBias()</code>)</li>
+</ul>
 </section>
 <section id="biaseddice-class-solution" class="slide level2">
 <h2><code>BiasedDice</code> Class – solution</h2>
