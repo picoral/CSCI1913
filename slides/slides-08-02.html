@@ -1283,97 +1283,114 @@ margin-right: 0; }
 <span id="cb9-39"><a href></a>        }</span>
 <span id="cb9-40"><a href></a>        return message;</span>
 <span id="cb9-41"><a href></a>    }</span>
-<span id="cb9-42"><a href></a></span>
-<span id="cb9-43"><a href></a>    public boolean equals(Object o) {</span>
-<span id="cb9-44"><a href></a>        // check if same object</span>
-<span id="cb9-45"><a href></a>        if (this == o) {</span>
-<span id="cb9-46"><a href></a>            return true;</span>
-<span id="cb9-47"><a href></a>        }</span>
-<span id="cb9-48"><a href></a></span>
-<span id="cb9-49"><a href></a>        // check if argument object is null</span>
-<span id="cb9-50"><a href></a>        if (o == null) {</span>
-<span id="cb9-51"><a href></a>            return false;</span>
-<span id="cb9-52"><a href></a>        }</span>
-<span id="cb9-53"><a href></a>      </span>
-<span id="cb9-54"><a href></a>        // check if same type of object</span>
-<span id="cb9-55"><a href></a>        if (!(o instanceof Polygon)) {</span>
-<span id="cb9-56"><a href></a>            return false;</span>
-<span id="cb9-57"><a href></a>        }</span>
-<span id="cb9-58"><a href></a>      </span>
-<span id="cb9-59"><a href></a>      </span>
-<span id="cb9-60"><a href></a>        // check sides, must be same number of sides</span>
-<span id="cb9-61"><a href></a>        if (((Polygon) o).getSides() != sides){</span>
-<span id="cb9-62"><a href></a>            return false;</span>
-<span id="cb9-63"><a href></a>        }</span>
-<span id="cb9-64"><a href></a>      </span>
-<span id="cb9-65"><a href></a>      </span>
-<span id="cb9-66"><a href></a>        // check individual measures</span>
-<span id="cb9-67"><a href></a>        for (int i = 0; i &lt; sides; i++) {</span>
-<span id="cb9-68"><a href></a>            if (((Polygon) o).getMeasures()[i] != measures[i]) {</span>
-<span id="cb9-69"><a href></a>                return false;</span>
-<span id="cb9-70"><a href></a>            }</span>
+<span id="cb9-42"><a href></a>    </span>
+<span id="cb9-43"><a href></a>    </span>
+<span id="cb9-44"><a href></a>    @Override</span>
+<span id="cb9-45"><a href></a>    public boolean equals(Object o) {</span>
+<span id="cb9-46"><a href></a>        // check if same object</span>
+<span id="cb9-47"><a href></a>        if (this == o) {</span>
+<span id="cb9-48"><a href></a>            return true;</span>
+<span id="cb9-49"><a href></a>        }</span>
+<span id="cb9-50"><a href></a>      </span>
+<span id="cb9-51"><a href></a>        // check if same type of object</span>
+<span id="cb9-52"><a href></a>        if (!(o instanceof Polygon)) {</span>
+<span id="cb9-53"><a href></a>            return false;</span>
+<span id="cb9-54"><a href></a>        }</span>
+<span id="cb9-55"><a href></a>      </span>
+<span id="cb9-56"><a href></a>        // check sides, must be same number of sides</span>
+<span id="cb9-57"><a href></a>        if (((Polygon) o).getSides() != sides){</span>
+<span id="cb9-58"><a href></a>            return false;</span>
+<span id="cb9-59"><a href></a>        }</span>
+<span id="cb9-60"><a href></a>      </span>
+<span id="cb9-61"><a href></a>        // check individual measures</span>
+<span id="cb9-62"><a href></a>        for (int i = 0; i &lt; sides; i++) {</span>
+<span id="cb9-63"><a href></a>            if (((Polygon) o).getMeasures()[i] != measures[i]) {</span>
+<span id="cb9-64"><a href></a>                return false;</span>
+<span id="cb9-65"><a href></a>            }</span>
+<span id="cb9-66"><a href></a>        }</span>
+<span id="cb9-67"><a href></a></span>
+<span id="cb9-68"><a href></a>        // check name</span>
+<span id="cb9-69"><a href></a>        if (!((Polygon) o).getName().equals(name)) {</span>
+<span id="cb9-70"><a href></a>            return false;</span>
 <span id="cb9-71"><a href></a>        }</span>
 <span id="cb9-72"><a href></a></span>
-<span id="cb9-73"><a href></a>        // check name</span>
-<span id="cb9-74"><a href></a>        if (((Polygon) o).getName() != name) {</span>
-<span id="cb9-75"><a href></a>            return false;</span>
-<span id="cb9-76"><a href></a>        }</span>
-<span id="cb9-77"><a href></a></span>
-<span id="cb9-78"><a href></a>        return true;</span>
-<span id="cb9-79"><a href></a>    }</span>
-<span id="cb9-80"><a href></a></span>
-<span id="cb9-81"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-73"><a href></a>        return true;</span>
+<span id="cb9-74"><a href></a>    }</span>
+<span id="cb9-75"><a href></a></span>
+<span id="cb9-76"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="another-equalsobject-o-solution" class="slide level2">
+<h2>another <code>equals(Object o)</code> solution</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href></a>    @Override</span>
+<span id="cb10-2"><a href></a>    public boolean equals(Object o) {</span>
+<span id="cb10-3"><a href></a>        if (this == o) {</span>
+<span id="cb10-4"><a href></a>            return true;</span>
+<span id="cb10-5"><a href></a>        }</span>
+<span id="cb10-6"><a href></a></span>
+<span id="cb10-7"><a href></a>        if (o instanceof Polygon aPolygon) {</span>
+<span id="cb10-8"><a href></a>            if (aPolygon.getSides() == sides &amp;&amp; aPolygon.getName().equals(name)) {</span>
+<span id="cb10-9"><a href></a>                for (int i = 0; i &lt; sides; i++) {</span>
+<span id="cb10-10"><a href></a>                    if (aPolygon.getMeasures()[i] != measures[i]) {</span>
+<span id="cb10-11"><a href></a>                        return false;</span>
+<span id="cb10-12"><a href></a>                    }</span>
+<span id="cb10-13"><a href></a>                }</span>
+<span id="cb10-14"><a href></a>                return true;</span>
+<span id="cb10-15"><a href></a>            }</span>
+<span id="cb10-16"><a href></a>        }</span>
+<span id="cb10-17"><a href></a></span>
+<span id="cb10-18"><a href></a>        return false;</span>
+<span id="cb10-19"><a href></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="solution-1" class="slide level2">
 <h2>Solution</h2>
 <p><code>Rectangle.java</code></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href></a>public class Rectangle extends Polygon {</span>
-<span id="cb10-2"><a href></a></span>
-<span id="cb10-3"><a href></a>    public Rectangle(double[] measures) {</span>
-<span id="cb10-4"><a href></a>        super(measures);</span>
-<span id="cb10-5"><a href></a>        super.sides = 4;</span>
-<span id="cb10-6"><a href></a>        super.name = &quot;Rectangle&quot;;</span>
-<span id="cb10-7"><a href></a>    }</span>
-<span id="cb10-8"><a href></a></span>
-<span id="cb10-9"><a href></a>    public Rectangle() {</span>
-<span id="cb10-10"><a href></a>        super.sides = 4;</span>
-<span id="cb10-11"><a href></a>        super.name = &quot;Rectangle&quot;;</span>
-<span id="cb10-12"><a href></a>    }</span>
-<span id="cb10-13"><a href></a></span>
-<span id="cb10-14"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href></a>public class Rectangle extends Polygon {</span>
+<span id="cb11-2"><a href></a></span>
+<span id="cb11-3"><a href></a>    public Rectangle(double[] measures) {</span>
+<span id="cb11-4"><a href></a>        super(measures);</span>
+<span id="cb11-5"><a href></a>        super.sides = 4;</span>
+<span id="cb11-6"><a href></a>        super.name = &quot;Rectangle&quot;;</span>
+<span id="cb11-7"><a href></a>    }</span>
+<span id="cb11-8"><a href></a></span>
+<span id="cb11-9"><a href></a>    public Rectangle() {</span>
+<span id="cb11-10"><a href></a>        super.sides = 4;</span>
+<span id="cb11-11"><a href></a>        super.name = &quot;Rectangle&quot;;</span>
+<span id="cb11-12"><a href></a>    }</span>
+<span id="cb11-13"><a href></a></span>
+<span id="cb11-14"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="solution-2" class="slide level2">
 <h2>Solution</h2>
 <p><code>Square.java</code></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href></a>public class Square extends Rectangle {</span>
-<span id="cb11-2"><a href></a></span>
-<span id="cb11-3"><a href></a>    public Square(double measure) {</span>
-<span id="cb11-4"><a href></a>        double[] measures = new double[4];</span>
-<span id="cb11-5"><a href></a>        for (int i = 0; i &lt; 4; i++ ) {</span>
-<span id="cb11-6"><a href></a>            measures[i] = measure;</span>
-<span id="cb11-7"><a href></a>        }</span>
-<span id="cb11-8"><a href></a>        super.setMeasures(measures);</span>
-<span id="cb11-9"><a href></a>        super.name = &quot;Square&quot;;</span>
-<span id="cb11-10"><a href></a>    }</span>
-<span id="cb11-11"><a href></a></span>
-<span id="cb11-12"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a href></a>public class Square extends Rectangle {</span>
+<span id="cb12-2"><a href></a></span>
+<span id="cb12-3"><a href></a>    public Square(double measure) {</span>
+<span id="cb12-4"><a href></a>        double[] measures = new double[4];</span>
+<span id="cb12-5"><a href></a>        for (int i = 0; i &lt; 4; i++ ) {</span>
+<span id="cb12-6"><a href></a>            measures[i] = measure;</span>
+<span id="cb12-7"><a href></a>        }</span>
+<span id="cb12-8"><a href></a>        super.setMeasures(measures);</span>
+<span id="cb12-9"><a href></a>        super.name = &quot;Square&quot;;</span>
+<span id="cb12-10"><a href></a>    }</span>
+<span id="cb12-11"><a href></a></span>
+<span id="cb12-12"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="solution-3" class="slide level2">
 <h2>Solution</h2>
 <p><code>Triangle.java</code></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a href></a>public class Triangle extends Polygon {</span>
-<span id="cb12-2"><a href></a></span>
-<span id="cb12-3"><a href></a>    public Triangle() {</span>
-<span id="cb12-4"><a href></a>        super.name = &quot;Triangle&quot;;</span>
-<span id="cb12-5"><a href></a>        super.sides = 3;</span>
-<span id="cb12-6"><a href></a>    }</span>
-<span id="cb12-7"><a href></a></span>
-<span id="cb12-8"><a href></a>    public Triangle(double[] measures) {</span>
-<span id="cb12-9"><a href></a>        super(measures);</span>
-<span id="cb12-10"><a href></a>        super.name = &quot;Triangle&quot;;</span>
-<span id="cb12-11"><a href></a>        super.sides = 3;</span>
-<span id="cb12-12"><a href></a>    }</span>
-<span id="cb12-13"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a href></a>public class Triangle extends Polygon {</span>
+<span id="cb13-2"><a href></a></span>
+<span id="cb13-3"><a href></a>    public Triangle() {</span>
+<span id="cb13-4"><a href></a>        super.name = &quot;Triangle&quot;;</span>
+<span id="cb13-5"><a href></a>        super.sides = 3;</span>
+<span id="cb13-6"><a href></a>    }</span>
+<span id="cb13-7"><a href></a></span>
+<span id="cb13-8"><a href></a>    public Triangle(double[] measures) {</span>
+<span id="cb13-9"><a href></a>        super(measures);</span>
+<span id="cb13-10"><a href></a>        super.name = &quot;Triangle&quot;;</span>
+<span id="cb13-11"><a href></a>        super.sides = 3;</span>
+<span id="cb13-12"><a href></a>    }</span>
+<span id="cb13-13"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </section>
     </div>
