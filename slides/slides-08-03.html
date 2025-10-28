@@ -1085,7 +1085,7 @@ margin-right: 0; }
 <li>subclass inherits instances and methods from super (parent) class</li>
 <li>subclass has a constructor obligation with parent class (parent constructor always runs)</li>
 <li>use <code>super(params)</code> in subclass constructor (needs to be first line) to satisfy parent class constructor requirements</li>
-<li>use <code>super.method</code> or <code>super.variableName</code> to access <code>public</code> or <code>protected</code> members of parent class</li>
+<li>use <code>super.method()</code> or <code>super.variableName</code> to access <code>public</code> or <code>protected</code> members of parent class</li>
 </ul>
 </section>
 <section id="a-good-parent-class" class="slide level2">
@@ -1103,8 +1103,12 @@ margin-right: 0; }
 <h2>Quiz 08</h2>
 <p>You have 10 minutes to complete the quiz.</p>
 <ul>
-<li><p>Question A: mark ALL that are <code>true</code> (how many to mark is up to you)</p></li>
-<li><p>Question B: write down what the code output is</p></li>
+<li>Question A:
+<ul>
+<li>mark ALL that are <code>true</code></li>
+<li>how many to check off is up to you</li>
+</ul></li>
+<li>Question B: write down what the code output is</li>
 </ul>
 </section>
 <section id="polymorphism" class="slide level2">
@@ -1145,15 +1149,81 @@ margin-right: 0; }
 <h2>Practice – Greeter Class</h2>
 <p>The greeter classes represent various ways to greet someone</p>
 <ul>
-<li>public: <code>getMyName</code>, <code>doGreeting</code></li>
-<li>protected: steps of greeting (to be changed in child class)</li>
-<li>private: <code>name</code> – should be handled well</li>
+<li>public: <code>getName</code>, <code>greet</code></li>
+<li>private: <code>name</code> – should be handled well (set in constructor)</li>
 </ul>
 <p>Things to note:</p>
 <ul>
 <li>Parent class provides structure to child classes</li>
 <li>in-class polymorphic methods</li>
 </ul>
+</section>
+<section id="practice-main-function" class="slide level2">
+<h2>Practice – main function</h2>
+<p><code>Greet.java</code></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href></a>public class Greet {</span>
+<span id="cb5-2"><a href></a></span>
+<span id="cb5-3"><a href></a>    public static void main(String[] args) {</span>
+<span id="cb5-4"><a href></a>        Greeter boss = new Formal(&quot;Ms.&quot;, &quot;Silva&quot;);</span>
+<span id="cb5-5"><a href></a>        boss.greet();</span>
+<span id="cb5-6"><a href></a></span>
+<span id="cb5-7"><a href></a>        Greeter friend = new Informal(&quot;Joe&quot;);</span>
+<span id="cb5-8"><a href></a>        friend.greet();</span>
+<span id="cb5-9"><a href></a></span>
+<span id="cb5-10"><a href></a>    }</span>
+<span id="cb5-11"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>Good day, Ms. Silva.
+What&#39;s up, Joe?</code></pre>
+</section>
+<section id="solution-greeter.java" class="slide level2">
+<h2>Solution <code>Greeter.java</code></h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href></a>public abstract class Greeter {</span>
+<span id="cb7-2"><a href></a>    private String name;</span>
+<span id="cb7-3"><a href></a></span>
+<span id="cb7-4"><a href></a>    public Greeter(String name) {</span>
+<span id="cb7-5"><a href></a>        this.name = name;</span>
+<span id="cb7-6"><a href></a>    }</span>
+<span id="cb7-7"><a href></a></span>
+<span id="cb7-8"><a href></a>    public String getName() {</span>
+<span id="cb7-9"><a href></a>        return name;</span>
+<span id="cb7-10"><a href></a>    }</span>
+<span id="cb7-11"><a href></a></span>
+<span id="cb7-12"><a href></a>    public abstract void greet();</span>
+<span id="cb7-13"><a href></a></span>
+<span id="cb7-14"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="solution-formal.java" class="slide level2">
+<h2>Solution <code>Formal.java</code></h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href></a>public class Formal extends Greeter {</span>
+<span id="cb8-2"><a href></a>    private String title;</span>
+<span id="cb8-3"><a href></a></span>
+<span id="cb8-4"><a href></a>    public Formal(String title, String name) {</span>
+<span id="cb8-5"><a href></a>        super(name);</span>
+<span id="cb8-6"><a href></a>        this.title = title;</span>
+<span id="cb8-7"><a href></a>    }</span>
+<span id="cb8-8"><a href></a></span>
+<span id="cb8-9"><a href></a>    @Override</span>
+<span id="cb8-10"><a href></a>    public String getName() {</span>
+<span id="cb8-11"><a href></a>        return this.title + &quot; &quot; + super.getName();</span>
+<span id="cb8-12"><a href></a>    }</span>
+<span id="cb8-13"><a href></a></span>
+<span id="cb8-14"><a href></a>    public void greet() {</span>
+<span id="cb8-15"><a href></a>        System.out.println(&quot;Good day, &quot; + getName() + &quot;.&quot;);</span>
+<span id="cb8-16"><a href></a>    }</span>
+<span id="cb8-17"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="solution-informal.java" class="slide level2">
+<h2>Solution <code>Informal.java</code></h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href></a>public class Informal extends Greeter {</span>
+<span id="cb9-2"><a href></a></span>
+<span id="cb9-3"><a href></a>    public Informal(String name) {</span>
+<span id="cb9-4"><a href></a>        super(name);</span>
+<span id="cb9-5"><a href></a>    }</span>
+<span id="cb9-6"><a href></a></span>
+<span id="cb9-7"><a href></a>    public void greet() {</span>
+<span id="cb9-8"><a href></a>        System.out.println(&quot;What&#39;s up, &quot; + super.getName() + &quot;?&quot;);</span>
+<span id="cb9-9"><a href></a>    }</span>
+<span id="cb9-10"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </section>
     </div>
