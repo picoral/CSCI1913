@@ -1225,15 +1225,30 @@ margin-right: 0; }
 </section>
 <section id="multiple-types-use" class="slide level2">
 <h2>Multiple types use</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href></a>MyType&lt;Object, Object&gt; name = new MyType&lt;&gt;(&quot;Adriana&quot;, 43);</span>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href></a>MyType&lt;String, Integer&gt; name = new MyType&lt;&gt;(&quot;Adriana&quot;, 43);</span>
 <span id="cb11-2"><a href></a>System.out.println(name.getOne());</span>
 <span id="cb11-3"><a href></a>System.out.println(name.getTwo());</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="practice" class="slide level2">
 <h2>Practice</h2>
-<p><strong>Goal:</strong> Implement a simple transit system using <strong>Java Generics</strong>.</p>
-<p>You’ll design a <code>Bus&lt;T&gt;</code> class that can board and disembark different kinds of objects (<code>Passenger</code>, <code>Bike</code>, and <code>ServiceAnimal</code>).</p>
-<p><a href="practice/practice-bus.html">Practice Instructions</a></p>
+<p><strong>Goal:</strong> Implement a produce class that can have different types of produce (Banana, Avocado, Spinach, Brocolli, etc.) and different types of unit (Double for weight, Integer for count).</p>
+<p><a href="practice/produce.zip">Download started code</a> – you will implement and submit to gradescope <code>ProduceQuantity</code>. Here’s how it’s used in the starter code:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a href></a>ProduceQuantity&lt;Banana, Integer&gt; itemOne = new ProduceQuantity&lt;&gt;(banana, count);</span>
+<span id="cb12-2"><a href></a>ProduceQuantity&lt;Spinach, Double&gt; itemThree = new ProduceQuantity&lt;&gt;(spinach, weight);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is what <code>UseShoppingCart.java</code> should print out:</p>
+<pre><code>Items in shopping cart:
+4 Bananas
+1 Avocado
+0.5 lbs Spinach
+1.0 lbs Brocolli</code></pre>
+</section>
+<section id="practice-1" class="slide level2">
+<h2>Practice</h2>
+<p><strong>Goal:</strong> Implement a produce class that can have different types of produce (Banana, Avocado, Spinach, Brocolli, etc.) and different types of unit (Double for weight, Integer for count).</p>
+<p><a href="practice/produce.zip">Download started code</a> – you will implement and submit to gradescope <code>ProduceQuantity</code>. Here’s how it’s used in the starter code:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a href></a>ProduceQuantity&lt;Banana, Integer&gt; itemOne = new ProduceQuantity&lt;&gt;(banana, count);</span>
+<span id="cb14-2"><a href></a>ProduceQuantity&lt;Spinach, Double&gt; itemThree = new ProduceQuantity&lt;&gt;(spinach, weight);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Public methods in <code>ProduceQuantity</code>: constructor that takes an item and a quantity, <code>getQuantity()</code> and <code>getItem()</code></p>
 
 </section>
     </div>
