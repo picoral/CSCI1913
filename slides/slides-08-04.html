@@ -1265,11 +1265,11 @@ margin-right: 0; }
 <ul>
 <li>Primitive types (int, boolean, double, char) not allowed – Java’s solution “Wraper Types” (Integer, Boolean, Double, Character)</li>
 <li>We are not allowed to create generic arrays (<code>T[]</code> not allowed)</li>
-<li>We cannot call generic constructors (no inheritance can enforce constructor parameter lists)
+<li>We can<strong>not</strong> call generic constructors <code>new T()</code> or <code>new T(arg)</code> (no inheritance can enforce constructor parameter lists)
 <ul>
 <li>The type variables are forgotten at runtime</li>
 </ul></li>
-<li>We cannot use <code>instanceof</code> on <code>T</code> (<code>T instanceof Double</code> not allowed)</li>
+<li>We cannot use <code>instanceof</code> on <code>T</code> (for example, <code>T instanceof Double</code> not allowed)</li>
 </ul>
 </section>
 <section id="setting-upperbound-class" class="slide level2">
