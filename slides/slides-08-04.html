@@ -1066,7 +1066,7 @@ margin-right: 0; }
 <h2>Polymorphisms in Java</h2>
 <ul>
 <li>Overloading – methods in with the same name (different parameters) in the same class</li>
-<li>Overwriting – methods with the same signature in super-sub classes</li>
+<li>Overriding – methods with the same signature in different (super-sub pair) classes</li>
 <li>Parametric polymorphism – Generics</li>
 </ul>
 <p>“Parametric” – flexible, in this case flexibility for <strong>type</strong></p>
@@ -1264,8 +1264,8 @@ margin-right: 0; }
 <h2>Java generics limitations</h2>
 <ul>
 <li>Primitive types (int, boolean, double, char) not allowed – Java’s solution “Wraper Types” (Integer, Boolean, Double, Character)</li>
-<li>We are not allowed to create generic arrays (<code>T[]</code> not allowed)</li>
-<li>We can<strong>not</strong> call generic constructors <code>new T()</code> or <code>new T(arg)</code> (no inheritance can enforce constructor parameter lists)
+<li>We are not allowed to create generic arrays (<code>T[]</code> not allowed) because:</li>
+<li>We can<strong>not</strong> call generic constructors <code>new T()</code> or <code>new T(arg)</code> (no inheritance can enforce constructor parameter lists) error: <em>Type parameter ‘T’ cannot be instantiated directly</em>
 <ul>
 <li>The type variables are forgotten at runtime</li>
 </ul></li>
