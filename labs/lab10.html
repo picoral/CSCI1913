@@ -3313,7 +3313,8 @@ window.Quarto = {
 <p>Your final task with this class is to make it <em>Comparable</em>. To begin, update the class declaration as follows:</p>
 <pre><code>    public class GameScore implements Comparable&lt;GameScore&gt;</code></pre>
 <p>This is required – and skipping it will not allow the class to work with other java code based on sorting. Normally we wouldn’t give you this exact code, but seeing as how this is your first time with both interfaces in general, and the Comparable interface specifically, we’ve given you this code directly.</p>
-<p>Secondly, implement the <code>r`` method. Remember, thismethod&#39;s job is to compare the current GameScore object (</code>this<code>) to the parameter object (</code>other`)</p>
+<p>Secondly, implement the <code>public int compareTo(GameScore other)</code> method.</p>
+<p>Remember, this method’s job is to compare the current GameScore object (<code>this</code>) to the parameter object (<code>other</code>).</p>
 <ul>
 <li>if <span class="math inline">\(this &gt; other\)</span> return any positive integer</li>
 <li>if <span class="math inline">\(this &lt; other\)</span> return any negative integer</li>
