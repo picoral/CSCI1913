@@ -1381,36 +1381,39 @@ margin-right: 0; }
 <span id="cb11-64"><a href></a>    }</span>
 <span id="cb11-65"><a href></a></span>
 <span id="cb11-66"><a href></a>    public void prepend(T value) {</span>
-<span id="cb11-67"><a href></a>        shiftRight(0);</span>
-<span id="cb11-68"><a href></a>        data[0] = value;</span>
-<span id="cb11-69"><a href></a>    }</span>
-<span id="cb11-70"><a href></a></span>
-<span id="cb11-71"><a href></a>    public void insert(int index, T value) {</span>
-<span id="cb11-72"><a href></a>        shiftRight(index);</span>
-<span id="cb11-73"><a href></a>        data[index] = value;</span>
-<span id="cb11-74"><a href></a>    }</span>
-<span id="cb11-75"><a href></a></span>
-<span id="cb11-76"><a href></a>    private void shiftLeft(int startIndex) {</span>
-<span id="cb11-77"><a href></a>        for (int i = startIndex; i &lt; length; i++) {</span>
-<span id="cb11-78"><a href></a>            data[i] = data[i+1];</span>
-<span id="cb11-79"><a href></a>        }</span>
-<span id="cb11-80"><a href></a>        length--;</span>
-<span id="cb11-81"><a href></a>    }</span>
-<span id="cb11-82"><a href></a></span>
-<span id="cb11-83"><a href></a>    public T pop() {</span>
-<span id="cb11-84"><a href></a>        T value = data[0];</span>
-<span id="cb11-85"><a href></a>        shiftLeft(0);</span>
-<span id="cb11-86"><a href></a>        return value;</span>
+<span id="cb11-67"><a href></a>        if (length == size) {</span>
+<span id="cb11-68"><a href></a>            expandArray();</span>
+<span id="cb11-69"><a href></a>        }</span>
+<span id="cb11-70"><a href></a>        shiftRight(0);</span>
+<span id="cb11-71"><a href></a>        data[0] = value;</span>
+<span id="cb11-72"><a href></a>    }</span>
+<span id="cb11-73"><a href></a></span>
+<span id="cb11-74"><a href></a>    public void insert(int index, T value) {</span>
+<span id="cb11-75"><a href></a>        if (length == size) {</span>
+<span id="cb11-76"><a href></a>            expandArray();</span>
+<span id="cb11-77"><a href></a>        }</span>
+<span id="cb11-78"><a href></a>        shiftRight(index);</span>
+<span id="cb11-79"><a href></a>        data[index] = value;</span>
+<span id="cb11-80"><a href></a>    }</span>
+<span id="cb11-81"><a href></a></span>
+<span id="cb11-82"><a href></a>    private void shiftLeft(int startIndex) {</span>
+<span id="cb11-83"><a href></a>        for (int i = startIndex; i &lt; length; i++) {</span>
+<span id="cb11-84"><a href></a>            data[i] = data[i+1];</span>
+<span id="cb11-85"><a href></a>        }</span>
+<span id="cb11-86"><a href></a>        length--;</span>
 <span id="cb11-87"><a href></a>    }</span>
 <span id="cb11-88"><a href></a></span>
-<span id="cb11-89"><a href></a>    public void remove(int index) {</span>
-<span id="cb11-90"><a href></a>        shiftLeft(index);</span>
-<span id="cb11-91"><a href></a>    }</span>
-<span id="cb11-92"><a href></a></span>
-<span id="cb11-93"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="comparable" class="slide level2">
-<h2>Comparable</h2>
+<span id="cb11-89"><a href></a>    public T pop() {</span>
+<span id="cb11-90"><a href></a>        T value = data[0];</span>
+<span id="cb11-91"><a href></a>        shiftLeft(0);</span>
+<span id="cb11-92"><a href></a>        return value;</span>
+<span id="cb11-93"><a href></a>    }</span>
+<span id="cb11-94"><a href></a></span>
+<span id="cb11-95"><a href></a>    public void remove(int index) {</span>
+<span id="cb11-96"><a href></a>        shiftLeft(index);</span>
+<span id="cb11-97"><a href></a>    }</span>
+<span id="cb11-98"><a href></a></span>
+<span id="cb11-99"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </section>
     </div>
