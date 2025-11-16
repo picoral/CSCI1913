@@ -3268,41 +3268,41 @@ margin-right: 0; }
 </section>
 <section id="tree.java" class="slide level2">
 <h2>Tree.java</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href></a>public class Node&lt;T&gt; {</span>
-<span id="cb2-2"><a href></a>    private T data;</span>
-<span id="cb2-3"><a href></a>    private Node&lt;T&gt; left;</span>
-<span id="cb2-4"><a href></a>    private Node&lt;T&gt; right;</span>
-<span id="cb2-5"><a href></a></span>
-<span id="cb2-6"><a href></a>    public Node(T data) {</span>
-<span id="cb2-7"><a href></a>        this.data = data;</span>
-<span id="cb2-8"><a href></a>        left = null;</span>
-<span id="cb2-9"><a href></a>        right = null;</span>
-<span id="cb2-10"><a href></a>    }</span>
-<span id="cb2-11"><a href></a></span>
-<span id="cb2-12"><a href></a>    public T getData() {</span>
-<span id="cb2-13"><a href></a>        return data;</span>
-<span id="cb2-14"><a href></a>    }</span>
-<span id="cb2-15"><a href></a></span>
-<span id="cb2-16"><a href></a>    public void setData(T value) {</span>
-<span id="cb2-17"><a href></a>        this.data = data;</span>
-<span id="cb2-18"><a href></a>    }</span>
-<span id="cb2-19"><a href></a></span>
-<span id="cb2-20"><a href></a>    public Node&lt;T&gt; getLeft() {</span>
-<span id="cb2-21"><a href></a>        return left;</span>
-<span id="cb2-22"><a href></a>    }</span>
-<span id="cb2-23"><a href></a></span>
-<span id="cb2-24"><a href></a>    public void setLeft(Node&lt;T&gt; node) {</span>
-<span id="cb2-25"><a href></a>        left = node;</span>
-<span id="cb2-26"><a href></a>    }</span>
-<span id="cb2-27"><a href></a></span>
-<span id="cb2-28"><a href></a>    public Node&lt;T&gt; getRight() {</span>
-<span id="cb2-29"><a href></a>        return right;</span>
-<span id="cb2-30"><a href></a>    }</span>
-<span id="cb2-31"><a href></a></span>
-<span id="cb2-32"><a href></a>    public void setRight(Node&lt;T&gt; node) {</span>
-<span id="cb2-33"><a href></a>        right = node;</span>
-<span id="cb2-34"><a href></a>    }</span>
-<span id="cb2-35"><a href></a></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href></a>public class Tree&lt;T&gt; {</span>
+<span id="cb2-2"><a href></a>    private Node&lt;T&gt; root;</span>
+<span id="cb2-3"><a href></a></span>
+<span id="cb2-4"><a href></a>    public Tree(Node&lt;T&gt; node) {</span>
+<span id="cb2-5"><a href></a>        root = node;</span>
+<span id="cb2-6"><a href></a>    }</span>
+<span id="cb2-7"><a href></a></span>
+<span id="cb2-8"><a href></a>    public void addNode(Node&lt;T&gt; root, Node&lt;T&gt; node) {</span>
+<span id="cb2-9"><a href></a>            if (root.getLeft() == null) {</span>
+<span id="cb2-10"><a href></a>                root.setLeft(node);</span>
+<span id="cb2-11"><a href></a>            } else if (root.getRight() == null) {</span>
+<span id="cb2-12"><a href></a>                root.setRight(node);</span>
+<span id="cb2-13"><a href></a>            } else {</span>
+<span id="cb2-14"><a href></a>                addNode(root.getLeft(), node); // this is not great</span>
+<span id="cb2-15"><a href></a>            }</span>
+<span id="cb2-16"><a href></a>    }</span>
+<span id="cb2-17"><a href></a></span>
+<span id="cb2-18"><a href></a>    public void addNode(Node&lt;T&gt; node) {</span>
+<span id="cb2-19"><a href></a>        addNode(root, node);</span>
+<span id="cb2-20"><a href></a>    }</span>
+<span id="cb2-21"><a href></a></span>
+<span id="cb2-22"><a href></a>    public String toString(Node&lt;T&gt; node) {</span>
+<span id="cb2-23"><a href></a>        String message = node.getData() + &quot; &quot;;</span>
+<span id="cb2-24"><a href></a>        if (node.getLeft() != null) {</span>
+<span id="cb2-25"><a href></a>            message += toString(node.getLeft());</span>
+<span id="cb2-26"><a href></a>        }</span>
+<span id="cb2-27"><a href></a>        if (node.getRight() != null) {</span>
+<span id="cb2-28"><a href></a>            message += toString(node.getRight());</span>
+<span id="cb2-29"><a href></a>        }</span>
+<span id="cb2-30"><a href></a>        return message;</span>
+<span id="cb2-31"><a href></a>    }</span>
+<span id="cb2-32"><a href></a></span>
+<span id="cb2-33"><a href></a>    public String toString() {</span>
+<span id="cb2-34"><a href></a>        return toString(root).trim();</span>
+<span id="cb2-35"><a href></a>    }</span>
 <span id="cb2-36"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </section>
