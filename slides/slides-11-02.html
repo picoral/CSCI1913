@@ -768,11 +768,10 @@
 <p>We will look at 6 functions (5 public and 1 private)</p>
 <ul>
 <li>add</li>
-<li>remove</li>
 <li>findMin</li>
 <li>findMax</li>
 <li>search</li>
-<li>translocate (private)</li>
+<li>remove</li>
 </ul>
 </section>
 <section id="add" class="slide level2">
@@ -2521,6 +2520,11 @@
 </div>
 </div>
 </section>
+<section id="quiz-9" class="slide level2">
+<h2>Quiz 9</h2>
+<p>You have 10 minutes to complete the quiz.</p>
+<p>Whether you check one or more options is up to you.</p>
+</section>
 <section>
 <section id="java-implementation" class="title-slide slide level1 center">
 <h1>Java implementation</h1>
@@ -2685,6 +2689,103 @@
 <span id="cb6-2"><a href=""></a>  return toString(root).trim();</span>
 <span id="cb6-3"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Implement a private <code>toString(Node)</code></p>
+</section>
+<section id="depth-first-traversal-dfs" class="slide level2">
+<h2>Depth-First Traversal (DFS)</h2>
+<p>These traverse as far down a branch as possible before backtracking:</p>
+<p>Inorder (Left → Root → Right)</p>
+<ul>
+<li>Visits left subtree, then root, then right subtree</li>
+<li>For binary search trees, this produces values in sorted order</li>
+</ul>
+<p>Preorder (Root → Left → Right)</p>
+<ul>
+<li>Visits root first, then left subtree, then right subtree</li>
+<li>Useful for creating a copy of the tree or getting prefix expressions</li>
+</ul>
+</section>
+<section id="depth-first-traversal-dfs-1" class="slide level2">
+<h2>Depth-First Traversal (DFS)</h2>
+<p>These traverse as far down a branch as possible before backtracking:</p>
+<p>Postorder (Left → Right → Root)</p>
+<ul>
+<li>Visits left subtree, then right subtree, then root last</li>
+<li>Useful for deleting trees or evaluating postfix expressions</li>
+</ul>
+</section>
+<section id="breadth-first-traversal-bfs" class="slide level2">
+<h2>Breadth-First Traversal (BFS)</h2>
+<p>Level-order</p>
+<ul>
+<li>Visits nodes level by level, from top to bottom and left to right</li>
+<li>Typically implemented using a queue (we will see more of this later)</li>
+<li>Useful for finding shortest paths or level-based operations</li>
+</ul>
+</section>
+<section id="tostring-1" class="slide level2">
+<h2>toString</h2>
+<p>One way to implement this that I find useful for debugging:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href=""></a>private String toString(Node&lt;T&gt; current) {</span>
+<span id="cb7-2"><a href=""></a>        if (current == null) {</span>
+<span id="cb7-3"><a href=""></a>            return "";</span>
+<span id="cb7-4"><a href=""></a>        }</span>
+<span id="cb7-5"><a href=""></a>        String message = "";</span>
+<span id="cb7-6"><a href=""></a></span>
+<span id="cb7-7"><a href=""></a>        if (current.getLeft() != null) {</span>
+<span id="cb7-8"><a href=""></a>            message += current.getData() + " left child is " + current.getLeft().getData() + "\n";</span>
+<span id="cb7-9"><a href=""></a>        }</span>
+<span id="cb7-10"><a href=""></a>        if (current.getRight() != null) {</span>
+<span id="cb7-11"><a href=""></a>            message += current.getData() + " right child is " + current.getRight().getData() + "\n";</span>
+<span id="cb7-12"><a href=""></a>        }</span>
+<span id="cb7-13"><a href=""></a></span>
+<span id="cb7-14"><a href=""></a>        if (current.getLeft() != null) {</span>
+<span id="cb7-15"><a href=""></a>            message += toString(current.getLeft());</span>
+<span id="cb7-16"><a href=""></a>        }</span>
+<span id="cb7-17"><a href=""></a>        if (current.getRight() != null) {</span>
+<span id="cb7-18"><a href=""></a>            message += toString(current.getRight());</span>
+<span id="cb7-19"><a href=""></a>        }</span>
+<span id="cb7-20"><a href=""></a>        return message;</span>
+<span id="cb7-21"><a href=""></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="other-methods" class="slide level2">
+<h2>Other methods</h2>
+<ul>
+<li>findMin</li>
+<li>findMax</li>
+</ul>
+<p>Before you start writing code, what is the strategy here?</p>
+</section>
+<section id="findmin" class="slide level2">
+<h2>findMin</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href=""></a>public Node&lt;T&gt; findMin() {</span>
+<span id="cb8-2"><a href=""></a>  return findMin(root);</span>
+<span id="cb8-3"><a href=""></a>}</span>
+<span id="cb8-4"><a href=""></a></span>
+<span id="cb8-5"><a href=""></a>private Node&lt;T&gt; findMin(Node&lt;T&gt; current) {</span>
+<span id="cb8-6"><a href=""></a>  if (current == null) return current;</span>
+<span id="cb8-7"><a href=""></a>  if (current.getLeft() == null) return current;</span>
+<span id="cb8-8"><a href=""></a>  return findMin(current.getLeft());</span>
+<span id="cb8-9"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="findmax" class="slide level2">
+<h2>findMax</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href=""></a>public Node&lt;T&gt; findMax() {</span>
+<span id="cb9-2"><a href=""></a>  return findMax(root);</span>
+<span id="cb9-3"><a href=""></a>}</span>
+<span id="cb9-4"><a href=""></a></span>
+<span id="cb9-5"><a href=""></a>private Node&lt;T&gt; findMax(Node&lt;T&gt; current) {</span>
+<span id="cb9-6"><a href=""></a>  if (current == null) return current;</span>
+<span id="cb9-7"><a href=""></a>  if (current.getRight() == null) return current;</span>
+<span id="cb9-8"><a href=""></a>  return findMax(current.getRight());</span>
+<span id="cb9-9"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="search" class="slide level2">
+<h2>Search</h2>
+<p>Before you start writing code, what is the strategy here?</p>
+</section>
+<section id="remove" class="slide level2">
+<h2>Remove</h2>
+<p>Before you start writing code, what is the strategy here?</p>
 
 </section></section>
     </div>
