@@ -2783,9 +2783,61 @@
 <h2>Search</h2>
 <p>Before you start writing code, what is the strategy here?</p>
 </section>
+<section id="search-1" class="slide level2">
+<h2>Search</h2>
+<p>What’s the runtime?</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href=""></a>public Node&lt;T&gt; search(T value) {</span>
+<span id="cb10-2"><a href=""></a>  return search(root, value);</span>
+<span id="cb10-3"><a href=""></a>}</span>
+<span id="cb10-4"><a href=""></a></span>
+<span id="cb10-5"><a href=""></a>private Node&lt;T&gt; search(Node&lt;T&gt; current, T value) {</span>
+<span id="cb10-6"><a href=""></a>  if (current == null) return null;</span>
+<span id="cb10-7"><a href=""></a>  if (current.getData().compareTo(value) == 0) return current;</span>
+<span id="cb10-8"><a href=""></a>  if (current.getData().compareTo(value) &gt; 0) {</span>
+<span id="cb10-9"><a href=""></a>    if (current.getLeft() == null) return null;</span>
+<span id="cb10-10"><a href=""></a>    return search(current.getLeft(), value);</span>
+<span id="cb10-11"><a href=""></a>  }</span>
+<span id="cb10-12"><a href=""></a>  if (current.getRight() == null) return null;</span>
+<span id="cb10-13"><a href=""></a>  return search(current.getRight(), value);</span>
+<span id="cb10-14"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="search-runtime" class="slide level2">
+<h2>Search runtime</h2>
+<p>Best/Average case: <span class="math inline">\(O(\log n)\)</span> when the tree is balanced</p>
+<ul>
+<li>In a balanced BST the number of iterations equals the height of the tree.</li>
+<li>The height of the tree is <span class="math inline">\(\log n\)</span></li>
+</ul>
+<p>Worst case: <span class="math inline">\(O(n)\)</span> (why?)</p>
+</section>
 <section id="remove" class="slide level2">
 <h2>Remove</h2>
 <p>Before you start writing code, what is the strategy here?</p>
+</section>
+<section id="remove-1" class="slide level2">
+<h2>Remove</h2>
+<p>General idea - search for node to remove and its parent.</p>
+</section>
+<section id="remove-2" class="slide level2">
+<h2>Remove</h2>
+<p>Leaf</p>
+<ul>
+<li>Can be removed without breaking tree</li>
+</ul>
+<p>One child (two cases really, left/right)</p>
+<ul>
+<li>Cannot be removed without breaking tree</li>
+<li>Can be removed with only locally available pointers</li>
+</ul>
+</section>
+<section id="remove-3" class="slide level2">
+<h2>Remove</h2>
+<p>Two children</p>
+<ul>
+<li>Cannot be removed without breaking tree</li>
+<li>Cannot be fixed with locally available pointers</li>
+<li>Costs an additional O(H) work to find a way to fix.</li>
+</ul>
 
 </section></section>
     </div>
