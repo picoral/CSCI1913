@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="slides-11-02_files/libs/revealjs/dist/theme/quarto-bbe7401fe57d4b791b917637bb662036.css">
   <link href="slides-11-02_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -702,19 +767,1926 @@
 <h2>Binary Search Trees</h2>
 <p>We will look at 6 functions (5 public and 1 private)</p>
 <ul>
+<li>add</li>
+<li>remove</li>
 <li>findMin</li>
 <li>findMax</li>
 <li>search</li>
-<li>add</li>
-<li>remove</li>
 <li>translocate (private)</li>
 </ul>
 </section>
+<section id="add" class="slide level2">
+<h2>Add</h2>
+<p>Data in Node that we want to add: <code>7</code></p>
+<p>What do we have to do to add Node <code>7</code> to the right spot?</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 494.00 332.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 328)">
+<title>BST</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-328 490,-328 490,4 -4,4"></polygon>
+<!-- 10 -->
+<g id="node1" class="node">
+<title>10</title>
+<ellipse fill="none" stroke="black" cx="261" cy="-306" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="261" y="-301.8" font-family="Times,serif" font-size="14.00">10</text>
+</g>
+<!-- 5 -->
+<g id="node2" class="node">
+<title>5</title>
+<ellipse fill="none" stroke="black" cx="207" cy="-234" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="207" y="-229.8" font-family="Times,serif" font-size="14.00">5</text>
+</g>
+<!-- 10&#45;&#45;5 -->
+<g id="edge1" class="edge">
+<title>10--5</title>
+<path fill="none" stroke="black" d="M249.02,-289.46C240.07,-277.86 227.89,-262.08 218.95,-250.49"></path>
+</g>
+<!-- 15 -->
+<g id="node3" class="node">
+<title>15</title>
+<ellipse fill="none" stroke="black" cx="315" cy="-234" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="315" y="-229.8" font-family="Times,serif" font-size="14.00">15</text>
+</g>
+<!-- 10&#45;&#45;15 -->
+<g id="edge2" class="edge">
+<title>10--15</title>
+<path fill="none" stroke="black" d="M272.98,-289.46C281.93,-277.86 294.11,-262.08 303.05,-250.49"></path>
+</g>
+<!-- 3 -->
+<g id="node4" class="node">
+<title>3</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="99" y="-157.8" font-family="Times,serif" font-size="14.00">3</text>
+</g>
+<!-- 5&#45;&#45;3 -->
+<g id="edge3" class="edge">
+<title>5--3</title>
+<path fill="none" stroke="black" d="M188.19,-220.81C168.37,-207.96 137.34,-187.85 117.6,-175.05"></path>
+</g>
+<!-- 8 -->
+<g id="node5" class="node">
+<title>8</title>
+<ellipse fill="none" stroke="black" cx="207" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="207" y="-157.8" font-family="Times,serif" font-size="14.00">8</text>
+</g>
+<!-- 5&#45;&#45;8 -->
+<g id="edge4" class="edge">
+<title>5--8</title>
+<path fill="none" stroke="black" d="M207,-215.7C207,-204.85 207,-190.92 207,-180.1"></path>
+</g>
+<!-- 12 -->
+<g id="node10" class="node">
+<title>12</title>
+<ellipse fill="none" stroke="black" cx="315" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="315" y="-157.8" font-family="Times,serif" font-size="14.00">12</text>
+</g>
+<!-- 15&#45;&#45;12 -->
+<g id="edge9" class="edge">
+<title>15--12</title>
+<path fill="none" stroke="black" d="M315,-215.7C315,-204.85 315,-190.92 315,-180.1"></path>
+</g>
+<!-- 20 -->
+<g id="node12" class="node">
+<title>20</title>
+<ellipse fill="none" stroke="black" cx="387" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="387" y="-157.8" font-family="Times,serif" font-size="14.00">20</text>
+</g>
+<!-- 15&#45;&#45;20 -->
+<g id="edge11" class="edge">
+<title>15--20</title>
+<path fill="none" stroke="black" d="M329.57,-218.83C341.98,-206.77 359.73,-189.51 372.2,-177.38"></path>
+</g>
+<!-- 1 -->
+<g id="node6" class="node">
+<title>1</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">1</text>
+</g>
+<!-- 3&#45;&#45;1 -->
+<g id="edge5" class="edge">
+<title>3--1</title>
+<path fill="none" stroke="black" d="M84.43,-146.83C72.02,-134.77 54.27,-117.51 41.8,-105.38"></path>
+</g>
+<!-- 4 -->
+<g id="node7" class="node">
+<title>4</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">4</text>
+</g>
+<!-- 3&#45;&#45;4 -->
+<g id="edge6" class="edge">
+<title>3--4</title>
+<path fill="none" stroke="black" d="M99,-143.7C99,-132.85 99,-118.92 99,-108.1"></path>
+</g>
+<!-- 6 -->
+<g id="node8" class="node">
+<title>6</title>
+<ellipse fill="none" stroke="black" cx="171" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="171" y="-85.8" font-family="Times,serif" font-size="14.00">6</text>
+</g>
+<!-- 8&#45;&#45;6 -->
+<g id="edge7" class="edge">
+<title>8--6</title>
+<path fill="none" stroke="black" d="M198.65,-144.76C192.83,-133.46 185.11,-118.44 179.3,-107.15"></path>
+</g>
+<!-- 9 -->
+<g id="node9" class="node">
+<title>9</title>
+<ellipse fill="none" stroke="black" cx="243" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="243" y="-85.8" font-family="Times,serif" font-size="14.00">9</text>
+</g>
+<!-- 8&#45;&#45;9 -->
+<g id="edge8" class="edge">
+<title>8--9</title>
+<path fill="none" stroke="black" d="M215.35,-144.76C221.17,-133.46 228.89,-118.44 234.7,-107.15"></path>
+</g>
+<!-- 11 -->
+<g id="node11" class="node">
+<title>11</title>
+<ellipse fill="none" stroke="black" cx="315" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="315" y="-85.8" font-family="Times,serif" font-size="14.00">11</text>
+</g>
+<!-- 12&#45;&#45;11 -->
+<g id="edge10" class="edge">
+<title>12--11</title>
+<path fill="none" stroke="black" d="M315,-143.7C315,-132.85 315,-118.92 315,-108.1"></path>
+</g>
+<!-- 16 -->
+<g id="node13" class="node">
+<title>16</title>
+<ellipse fill="none" stroke="black" cx="387" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="387" y="-85.8" font-family="Times,serif" font-size="14.00">16</text>
+</g>
+<!-- 20&#45;&#45;16 -->
+<g id="edge12" class="edge">
+<title>20--16</title>
+<path fill="none" stroke="black" d="M387,-143.7C387,-132.85 387,-118.92 387,-108.1"></path>
+</g>
+<!-- 25 -->
+<g id="node14" class="node">
+<title>25</title>
+<ellipse fill="none" stroke="black" cx="459" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="459" y="-85.8" font-family="Times,serif" font-size="14.00">25</text>
+</g>
+<!-- 20&#45;&#45;25 -->
+<g id="edge13" class="edge">
+<title>20--25</title>
+<path fill="none" stroke="black" d="M401.57,-146.83C413.98,-134.77 431.73,-117.51 444.2,-105.38"></path>
+</g>
+<!-- 28 -->
+<g id="node15" class="node">
+<title>28</title>
+<ellipse fill="none" stroke="black" cx="459" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="459" y="-13.8" font-family="Times,serif" font-size="14.00">28</text>
+</g>
+<!-- 25&#45;&#45;28 -->
+<g id="edge14" class="edge">
+<title>25--28</title>
+<path fill="none" stroke="black" d="M459,-71.7C459,-60.85 459,-46.92 459,-36.1"></path>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="add-1" class="slide level2">
+<h2>Add</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 494.00 332.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 328)">
+<title>BST</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-328 490,-328 490,4 -4,4"></polygon>
+<!-- 7 -->
+<g id="node1" class="node">
+<title>7</title>
+<ellipse fill="lightgrey" stroke="black" cx="189" cy="-306" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="189" y="-301.8" font-family="Times,serif" font-size="14.00">7</text>
+</g>
+<!-- 10 -->
+<g id="node2" class="node">
+<title>10</title>
+<ellipse fill="lightblue" stroke="black" cx="261" cy="-306" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="261" y="-301.8" font-family="Times,serif" font-size="14.00">10</text>
+</g>
+<!-- 5 -->
+<g id="node3" class="node">
+<title>5</title>
+<ellipse fill="none" stroke="black" cx="207" cy="-234" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="207" y="-229.8" font-family="Times,serif" font-size="14.00">5</text>
+</g>
+<!-- 10&#45;&#45;5 -->
+<g id="edge1" class="edge">
+<title>10--5</title>
+<path fill="none" stroke="black" d="M249.02,-289.46C240.07,-277.86 227.89,-262.08 218.95,-250.49"></path>
+</g>
+<!-- 15 -->
+<g id="node4" class="node">
+<title>15</title>
+<ellipse fill="none" stroke="black" cx="315" cy="-234" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="315" y="-229.8" font-family="Times,serif" font-size="14.00">15</text>
+</g>
+<!-- 10&#45;&#45;15 -->
+<g id="edge2" class="edge">
+<title>10--15</title>
+<path fill="none" stroke="black" d="M272.98,-289.46C281.93,-277.86 294.11,-262.08 303.05,-250.49"></path>
+</g>
+<!-- 3 -->
+<g id="node5" class="node">
+<title>3</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="99" y="-157.8" font-family="Times,serif" font-size="14.00">3</text>
+</g>
+<!-- 5&#45;&#45;3 -->
+<g id="edge3" class="edge">
+<title>5--3</title>
+<path fill="none" stroke="black" d="M188.19,-220.81C168.37,-207.96 137.34,-187.85 117.6,-175.05"></path>
+</g>
+<!-- 8 -->
+<g id="node6" class="node">
+<title>8</title>
+<ellipse fill="none" stroke="black" cx="207" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="207" y="-157.8" font-family="Times,serif" font-size="14.00">8</text>
+</g>
+<!-- 5&#45;&#45;8 -->
+<g id="edge4" class="edge">
+<title>5--8</title>
+<path fill="none" stroke="black" d="M207,-215.7C207,-204.85 207,-190.92 207,-180.1"></path>
+</g>
+<!-- 12 -->
+<g id="node11" class="node">
+<title>12</title>
+<ellipse fill="none" stroke="black" cx="315" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="315" y="-157.8" font-family="Times,serif" font-size="14.00">12</text>
+</g>
+<!-- 15&#45;&#45;12 -->
+<g id="edge9" class="edge">
+<title>15--12</title>
+<path fill="none" stroke="black" d="M315,-215.7C315,-204.85 315,-190.92 315,-180.1"></path>
+</g>
+<!-- 20 -->
+<g id="node13" class="node">
+<title>20</title>
+<ellipse fill="none" stroke="black" cx="387" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="387" y="-157.8" font-family="Times,serif" font-size="14.00">20</text>
+</g>
+<!-- 15&#45;&#45;20 -->
+<g id="edge11" class="edge">
+<title>15--20</title>
+<path fill="none" stroke="black" d="M329.57,-218.83C341.98,-206.77 359.73,-189.51 372.2,-177.38"></path>
+</g>
+<!-- 1 -->
+<g id="node7" class="node">
+<title>1</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">1</text>
+</g>
+<!-- 3&#45;&#45;1 -->
+<g id="edge5" class="edge">
+<title>3--1</title>
+<path fill="none" stroke="black" d="M84.43,-146.83C72.02,-134.77 54.27,-117.51 41.8,-105.38"></path>
+</g>
+<!-- 4 -->
+<g id="node8" class="node">
+<title>4</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">4</text>
+</g>
+<!-- 3&#45;&#45;4 -->
+<g id="edge6" class="edge">
+<title>3--4</title>
+<path fill="none" stroke="black" d="M99,-143.7C99,-132.85 99,-118.92 99,-108.1"></path>
+</g>
+<!-- 6 -->
+<g id="node9" class="node">
+<title>6</title>
+<ellipse fill="none" stroke="black" cx="171" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="171" y="-85.8" font-family="Times,serif" font-size="14.00">6</text>
+</g>
+<!-- 8&#45;&#45;6 -->
+<g id="edge7" class="edge">
+<title>8--6</title>
+<path fill="none" stroke="black" d="M198.65,-144.76C192.83,-133.46 185.11,-118.44 179.3,-107.15"></path>
+</g>
+<!-- 9 -->
+<g id="node10" class="node">
+<title>9</title>
+<ellipse fill="none" stroke="black" cx="243" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="243" y="-85.8" font-family="Times,serif" font-size="14.00">9</text>
+</g>
+<!-- 8&#45;&#45;9 -->
+<g id="edge8" class="edge">
+<title>8--9</title>
+<path fill="none" stroke="black" d="M215.35,-144.76C221.17,-133.46 228.89,-118.44 234.7,-107.15"></path>
+</g>
+<!-- 11 -->
+<g id="node12" class="node">
+<title>11</title>
+<ellipse fill="none" stroke="black" cx="315" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="315" y="-85.8" font-family="Times,serif" font-size="14.00">11</text>
+</g>
+<!-- 12&#45;&#45;11 -->
+<g id="edge10" class="edge">
+<title>12--11</title>
+<path fill="none" stroke="black" d="M315,-143.7C315,-132.85 315,-118.92 315,-108.1"></path>
+</g>
+<!-- 16 -->
+<g id="node14" class="node">
+<title>16</title>
+<ellipse fill="none" stroke="black" cx="387" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="387" y="-85.8" font-family="Times,serif" font-size="14.00">16</text>
+</g>
+<!-- 20&#45;&#45;16 -->
+<g id="edge12" class="edge">
+<title>20--16</title>
+<path fill="none" stroke="black" d="M387,-143.7C387,-132.85 387,-118.92 387,-108.1"></path>
+</g>
+<!-- 25 -->
+<g id="node15" class="node">
+<title>25</title>
+<ellipse fill="none" stroke="black" cx="459" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="459" y="-85.8" font-family="Times,serif" font-size="14.00">25</text>
+</g>
+<!-- 20&#45;&#45;25 -->
+<g id="edge13" class="edge">
+<title>20--25</title>
+<path fill="none" stroke="black" d="M401.57,-146.83C413.98,-134.77 431.73,-117.51 444.2,-105.38"></path>
+</g>
+<!-- 28 -->
+<g id="node16" class="node">
+<title>28</title>
+<ellipse fill="none" stroke="black" cx="459" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="459" y="-13.8" font-family="Times,serif" font-size="14.00">28</text>
+</g>
+<!-- 25&#45;&#45;28 -->
+<g id="edge14" class="edge">
+<title>25--28</title>
+<path fill="none" stroke="black" d="M459,-71.7C459,-60.85 459,-46.92 459,-36.1"></path>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="add-2" class="slide level2">
+<h2>Add</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 494.00 332.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 328)">
+<title>BST</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-328 490,-328 490,4 -4,4"></polygon>
+<!-- 7 -->
+<g id="node1" class="node">
+<title>7</title>
+<ellipse fill="lightgrey" stroke="black" cx="189" cy="-306" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="189" y="-301.8" font-family="Times,serif" font-size="14.00">7</text>
+</g>
+<!-- 10 -->
+<g id="node2" class="node">
+<title>10</title>
+<ellipse fill="none" stroke="black" cx="261" cy="-306" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="261" y="-301.8" font-family="Times,serif" font-size="14.00">10</text>
+</g>
+<!-- 5 -->
+<g id="node3" class="node">
+<title>5</title>
+<ellipse fill="lightblue" stroke="black" cx="207" cy="-234" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="207" y="-229.8" font-family="Times,serif" font-size="14.00">5</text>
+</g>
+<!-- 10&#45;&#45;5 -->
+<g id="edge1" class="edge">
+<title>10--5</title>
+<path fill="none" stroke="black" d="M249.02,-289.46C240.07,-277.86 227.89,-262.08 218.95,-250.49"></path>
+</g>
+<!-- 15 -->
+<g id="node4" class="node">
+<title>15</title>
+<ellipse fill="none" stroke="black" cx="315" cy="-234" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="315" y="-229.8" font-family="Times,serif" font-size="14.00">15</text>
+</g>
+<!-- 10&#45;&#45;15 -->
+<g id="edge2" class="edge">
+<title>10--15</title>
+<path fill="none" stroke="black" d="M272.98,-289.46C281.93,-277.86 294.11,-262.08 303.05,-250.49"></path>
+</g>
+<!-- 3 -->
+<g id="node5" class="node">
+<title>3</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="99" y="-157.8" font-family="Times,serif" font-size="14.00">3</text>
+</g>
+<!-- 5&#45;&#45;3 -->
+<g id="edge3" class="edge">
+<title>5--3</title>
+<path fill="none" stroke="black" d="M188.19,-220.81C168.37,-207.96 137.34,-187.85 117.6,-175.05"></path>
+</g>
+<!-- 8 -->
+<g id="node6" class="node">
+<title>8</title>
+<ellipse fill="none" stroke="black" cx="207" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="207" y="-157.8" font-family="Times,serif" font-size="14.00">8</text>
+</g>
+<!-- 5&#45;&#45;8 -->
+<g id="edge4" class="edge">
+<title>5--8</title>
+<path fill="none" stroke="black" d="M207,-215.7C207,-204.85 207,-190.92 207,-180.1"></path>
+</g>
+<!-- 12 -->
+<g id="node11" class="node">
+<title>12</title>
+<ellipse fill="none" stroke="black" cx="315" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="315" y="-157.8" font-family="Times,serif" font-size="14.00">12</text>
+</g>
+<!-- 15&#45;&#45;12 -->
+<g id="edge9" class="edge">
+<title>15--12</title>
+<path fill="none" stroke="black" d="M315,-215.7C315,-204.85 315,-190.92 315,-180.1"></path>
+</g>
+<!-- 20 -->
+<g id="node13" class="node">
+<title>20</title>
+<ellipse fill="none" stroke="black" cx="387" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="387" y="-157.8" font-family="Times,serif" font-size="14.00">20</text>
+</g>
+<!-- 15&#45;&#45;20 -->
+<g id="edge11" class="edge">
+<title>15--20</title>
+<path fill="none" stroke="black" d="M329.57,-218.83C341.98,-206.77 359.73,-189.51 372.2,-177.38"></path>
+</g>
+<!-- 1 -->
+<g id="node7" class="node">
+<title>1</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">1</text>
+</g>
+<!-- 3&#45;&#45;1 -->
+<g id="edge5" class="edge">
+<title>3--1</title>
+<path fill="none" stroke="black" d="M84.43,-146.83C72.02,-134.77 54.27,-117.51 41.8,-105.38"></path>
+</g>
+<!-- 4 -->
+<g id="node8" class="node">
+<title>4</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">4</text>
+</g>
+<!-- 3&#45;&#45;4 -->
+<g id="edge6" class="edge">
+<title>3--4</title>
+<path fill="none" stroke="black" d="M99,-143.7C99,-132.85 99,-118.92 99,-108.1"></path>
+</g>
+<!-- 6 -->
+<g id="node9" class="node">
+<title>6</title>
+<ellipse fill="none" stroke="black" cx="171" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="171" y="-85.8" font-family="Times,serif" font-size="14.00">6</text>
+</g>
+<!-- 8&#45;&#45;6 -->
+<g id="edge7" class="edge">
+<title>8--6</title>
+<path fill="none" stroke="black" d="M198.65,-144.76C192.83,-133.46 185.11,-118.44 179.3,-107.15"></path>
+</g>
+<!-- 9 -->
+<g id="node10" class="node">
+<title>9</title>
+<ellipse fill="none" stroke="black" cx="243" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="243" y="-85.8" font-family="Times,serif" font-size="14.00">9</text>
+</g>
+<!-- 8&#45;&#45;9 -->
+<g id="edge8" class="edge">
+<title>8--9</title>
+<path fill="none" stroke="black" d="M215.35,-144.76C221.17,-133.46 228.89,-118.44 234.7,-107.15"></path>
+</g>
+<!-- 11 -->
+<g id="node12" class="node">
+<title>11</title>
+<ellipse fill="none" stroke="black" cx="315" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="315" y="-85.8" font-family="Times,serif" font-size="14.00">11</text>
+</g>
+<!-- 12&#45;&#45;11 -->
+<g id="edge10" class="edge">
+<title>12--11</title>
+<path fill="none" stroke="black" d="M315,-143.7C315,-132.85 315,-118.92 315,-108.1"></path>
+</g>
+<!-- 16 -->
+<g id="node14" class="node">
+<title>16</title>
+<ellipse fill="none" stroke="black" cx="387" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="387" y="-85.8" font-family="Times,serif" font-size="14.00">16</text>
+</g>
+<!-- 20&#45;&#45;16 -->
+<g id="edge12" class="edge">
+<title>20--16</title>
+<path fill="none" stroke="black" d="M387,-143.7C387,-132.85 387,-118.92 387,-108.1"></path>
+</g>
+<!-- 25 -->
+<g id="node15" class="node">
+<title>25</title>
+<ellipse fill="none" stroke="black" cx="459" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="459" y="-85.8" font-family="Times,serif" font-size="14.00">25</text>
+</g>
+<!-- 20&#45;&#45;25 -->
+<g id="edge13" class="edge">
+<title>20--25</title>
+<path fill="none" stroke="black" d="M401.57,-146.83C413.98,-134.77 431.73,-117.51 444.2,-105.38"></path>
+</g>
+<!-- 28 -->
+<g id="node16" class="node">
+<title>28</title>
+<ellipse fill="none" stroke="black" cx="459" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="459" y="-13.8" font-family="Times,serif" font-size="14.00">28</text>
+</g>
+<!-- 25&#45;&#45;28 -->
+<g id="edge14" class="edge">
+<title>25--28</title>
+<path fill="none" stroke="black" d="M459,-71.7C459,-60.85 459,-46.92 459,-36.1"></path>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="add-3" class="slide level2">
+<h2>Add</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 494.00 332.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 328)">
+<title>BST</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-328 490,-328 490,4 -4,4"></polygon>
+<!-- 7 -->
+<g id="node1" class="node">
+<title>7</title>
+<ellipse fill="lightgrey" stroke="black" cx="189" cy="-306" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="189" y="-301.8" font-family="Times,serif" font-size="14.00">7</text>
+</g>
+<!-- 10 -->
+<g id="node2" class="node">
+<title>10</title>
+<ellipse fill="none" stroke="black" cx="261" cy="-306" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="261" y="-301.8" font-family="Times,serif" font-size="14.00">10</text>
+</g>
+<!-- 5 -->
+<g id="node3" class="node">
+<title>5</title>
+<ellipse fill="none" stroke="black" cx="207" cy="-234" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="207" y="-229.8" font-family="Times,serif" font-size="14.00">5</text>
+</g>
+<!-- 10&#45;&#45;5 -->
+<g id="edge1" class="edge">
+<title>10--5</title>
+<path fill="none" stroke="black" d="M249.02,-289.46C240.07,-277.86 227.89,-262.08 218.95,-250.49"></path>
+</g>
+<!-- 15 -->
+<g id="node4" class="node">
+<title>15</title>
+<ellipse fill="none" stroke="black" cx="315" cy="-234" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="315" y="-229.8" font-family="Times,serif" font-size="14.00">15</text>
+</g>
+<!-- 10&#45;&#45;15 -->
+<g id="edge2" class="edge">
+<title>10--15</title>
+<path fill="none" stroke="black" d="M272.98,-289.46C281.93,-277.86 294.11,-262.08 303.05,-250.49"></path>
+</g>
+<!-- 3 -->
+<g id="node5" class="node">
+<title>3</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="99" y="-157.8" font-family="Times,serif" font-size="14.00">3</text>
+</g>
+<!-- 5&#45;&#45;3 -->
+<g id="edge3" class="edge">
+<title>5--3</title>
+<path fill="none" stroke="black" d="M188.19,-220.81C168.37,-207.96 137.34,-187.85 117.6,-175.05"></path>
+</g>
+<!-- 8 -->
+<g id="node6" class="node">
+<title>8</title>
+<ellipse fill="lightblue" stroke="black" cx="207" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="207" y="-157.8" font-family="Times,serif" font-size="14.00">8</text>
+</g>
+<!-- 5&#45;&#45;8 -->
+<g id="edge4" class="edge">
+<title>5--8</title>
+<path fill="none" stroke="black" d="M207,-215.7C207,-204.85 207,-190.92 207,-180.1"></path>
+</g>
+<!-- 12 -->
+<g id="node11" class="node">
+<title>12</title>
+<ellipse fill="none" stroke="black" cx="315" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="315" y="-157.8" font-family="Times,serif" font-size="14.00">12</text>
+</g>
+<!-- 15&#45;&#45;12 -->
+<g id="edge9" class="edge">
+<title>15--12</title>
+<path fill="none" stroke="black" d="M315,-215.7C315,-204.85 315,-190.92 315,-180.1"></path>
+</g>
+<!-- 20 -->
+<g id="node13" class="node">
+<title>20</title>
+<ellipse fill="none" stroke="black" cx="387" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="387" y="-157.8" font-family="Times,serif" font-size="14.00">20</text>
+</g>
+<!-- 15&#45;&#45;20 -->
+<g id="edge11" class="edge">
+<title>15--20</title>
+<path fill="none" stroke="black" d="M329.57,-218.83C341.98,-206.77 359.73,-189.51 372.2,-177.38"></path>
+</g>
+<!-- 1 -->
+<g id="node7" class="node">
+<title>1</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">1</text>
+</g>
+<!-- 3&#45;&#45;1 -->
+<g id="edge5" class="edge">
+<title>3--1</title>
+<path fill="none" stroke="black" d="M84.43,-146.83C72.02,-134.77 54.27,-117.51 41.8,-105.38"></path>
+</g>
+<!-- 4 -->
+<g id="node8" class="node">
+<title>4</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">4</text>
+</g>
+<!-- 3&#45;&#45;4 -->
+<g id="edge6" class="edge">
+<title>3--4</title>
+<path fill="none" stroke="black" d="M99,-143.7C99,-132.85 99,-118.92 99,-108.1"></path>
+</g>
+<!-- 6 -->
+<g id="node9" class="node">
+<title>6</title>
+<ellipse fill="none" stroke="black" cx="171" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="171" y="-85.8" font-family="Times,serif" font-size="14.00">6</text>
+</g>
+<!-- 8&#45;&#45;6 -->
+<g id="edge7" class="edge">
+<title>8--6</title>
+<path fill="none" stroke="black" d="M198.65,-144.76C192.83,-133.46 185.11,-118.44 179.3,-107.15"></path>
+</g>
+<!-- 9 -->
+<g id="node10" class="node">
+<title>9</title>
+<ellipse fill="none" stroke="black" cx="243" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="243" y="-85.8" font-family="Times,serif" font-size="14.00">9</text>
+</g>
+<!-- 8&#45;&#45;9 -->
+<g id="edge8" class="edge">
+<title>8--9</title>
+<path fill="none" stroke="black" d="M215.35,-144.76C221.17,-133.46 228.89,-118.44 234.7,-107.15"></path>
+</g>
+<!-- 11 -->
+<g id="node12" class="node">
+<title>11</title>
+<ellipse fill="none" stroke="black" cx="315" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="315" y="-85.8" font-family="Times,serif" font-size="14.00">11</text>
+</g>
+<!-- 12&#45;&#45;11 -->
+<g id="edge10" class="edge">
+<title>12--11</title>
+<path fill="none" stroke="black" d="M315,-143.7C315,-132.85 315,-118.92 315,-108.1"></path>
+</g>
+<!-- 16 -->
+<g id="node14" class="node">
+<title>16</title>
+<ellipse fill="none" stroke="black" cx="387" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="387" y="-85.8" font-family="Times,serif" font-size="14.00">16</text>
+</g>
+<!-- 20&#45;&#45;16 -->
+<g id="edge12" class="edge">
+<title>20--16</title>
+<path fill="none" stroke="black" d="M387,-143.7C387,-132.85 387,-118.92 387,-108.1"></path>
+</g>
+<!-- 25 -->
+<g id="node15" class="node">
+<title>25</title>
+<ellipse fill="none" stroke="black" cx="459" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="459" y="-85.8" font-family="Times,serif" font-size="14.00">25</text>
+</g>
+<!-- 20&#45;&#45;25 -->
+<g id="edge13" class="edge">
+<title>20--25</title>
+<path fill="none" stroke="black" d="M401.57,-146.83C413.98,-134.77 431.73,-117.51 444.2,-105.38"></path>
+</g>
+<!-- 28 -->
+<g id="node16" class="node">
+<title>28</title>
+<ellipse fill="none" stroke="black" cx="459" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="459" y="-13.8" font-family="Times,serif" font-size="14.00">28</text>
+</g>
+<!-- 25&#45;&#45;28 -->
+<g id="edge14" class="edge">
+<title>25--28</title>
+<path fill="none" stroke="black" d="M459,-71.7C459,-60.85 459,-46.92 459,-36.1"></path>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="add-4" class="slide level2">
+<h2>Add</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 494.00 332.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 328)">
+<title>BST</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-328 490,-328 490,4 -4,4"></polygon>
+<!-- 7 -->
+<g id="node1" class="node">
+<title>7</title>
+<ellipse fill="lightgrey" stroke="black" cx="189" cy="-306" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="189" y="-301.8" font-family="Times,serif" font-size="14.00">7</text>
+</g>
+<!-- 10 -->
+<g id="node2" class="node">
+<title>10</title>
+<ellipse fill="none" stroke="black" cx="261" cy="-306" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="261" y="-301.8" font-family="Times,serif" font-size="14.00">10</text>
+</g>
+<!-- 5 -->
+<g id="node3" class="node">
+<title>5</title>
+<ellipse fill="none" stroke="black" cx="207" cy="-234" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="207" y="-229.8" font-family="Times,serif" font-size="14.00">5</text>
+</g>
+<!-- 10&#45;&#45;5 -->
+<g id="edge1" class="edge">
+<title>10--5</title>
+<path fill="none" stroke="black" d="M249.02,-289.46C240.07,-277.86 227.89,-262.08 218.95,-250.49"></path>
+</g>
+<!-- 15 -->
+<g id="node4" class="node">
+<title>15</title>
+<ellipse fill="none" stroke="black" cx="315" cy="-234" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="315" y="-229.8" font-family="Times,serif" font-size="14.00">15</text>
+</g>
+<!-- 10&#45;&#45;15 -->
+<g id="edge2" class="edge">
+<title>10--15</title>
+<path fill="none" stroke="black" d="M272.98,-289.46C281.93,-277.86 294.11,-262.08 303.05,-250.49"></path>
+</g>
+<!-- 3 -->
+<g id="node5" class="node">
+<title>3</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="99" y="-157.8" font-family="Times,serif" font-size="14.00">3</text>
+</g>
+<!-- 5&#45;&#45;3 -->
+<g id="edge3" class="edge">
+<title>5--3</title>
+<path fill="none" stroke="black" d="M188.19,-220.81C168.37,-207.96 137.34,-187.85 117.6,-175.05"></path>
+</g>
+<!-- 8 -->
+<g id="node6" class="node">
+<title>8</title>
+<ellipse fill="none" stroke="black" cx="207" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="207" y="-157.8" font-family="Times,serif" font-size="14.00">8</text>
+</g>
+<!-- 5&#45;&#45;8 -->
+<g id="edge4" class="edge">
+<title>5--8</title>
+<path fill="none" stroke="black" d="M207,-215.7C207,-204.85 207,-190.92 207,-180.1"></path>
+</g>
+<!-- 12 -->
+<g id="node11" class="node">
+<title>12</title>
+<ellipse fill="none" stroke="black" cx="315" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="315" y="-157.8" font-family="Times,serif" font-size="14.00">12</text>
+</g>
+<!-- 15&#45;&#45;12 -->
+<g id="edge9" class="edge">
+<title>15--12</title>
+<path fill="none" stroke="black" d="M315,-215.7C315,-204.85 315,-190.92 315,-180.1"></path>
+</g>
+<!-- 20 -->
+<g id="node13" class="node">
+<title>20</title>
+<ellipse fill="none" stroke="black" cx="387" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="387" y="-157.8" font-family="Times,serif" font-size="14.00">20</text>
+</g>
+<!-- 15&#45;&#45;20 -->
+<g id="edge11" class="edge">
+<title>15--20</title>
+<path fill="none" stroke="black" d="M329.57,-218.83C341.98,-206.77 359.73,-189.51 372.2,-177.38"></path>
+</g>
+<!-- 1 -->
+<g id="node7" class="node">
+<title>1</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">1</text>
+</g>
+<!-- 3&#45;&#45;1 -->
+<g id="edge5" class="edge">
+<title>3--1</title>
+<path fill="none" stroke="black" d="M84.43,-146.83C72.02,-134.77 54.27,-117.51 41.8,-105.38"></path>
+</g>
+<!-- 4 -->
+<g id="node8" class="node">
+<title>4</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">4</text>
+</g>
+<!-- 3&#45;&#45;4 -->
+<g id="edge6" class="edge">
+<title>3--4</title>
+<path fill="none" stroke="black" d="M99,-143.7C99,-132.85 99,-118.92 99,-108.1"></path>
+</g>
+<!-- 6 -->
+<g id="node9" class="node">
+<title>6</title>
+<ellipse fill="lightblue" stroke="black" cx="171" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="171" y="-85.8" font-family="Times,serif" font-size="14.00">6</text>
+</g>
+<!-- 8&#45;&#45;6 -->
+<g id="edge7" class="edge">
+<title>8--6</title>
+<path fill="none" stroke="black" d="M198.65,-144.76C192.83,-133.46 185.11,-118.44 179.3,-107.15"></path>
+</g>
+<!-- 9 -->
+<g id="node10" class="node">
+<title>9</title>
+<ellipse fill="none" stroke="black" cx="243" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="243" y="-85.8" font-family="Times,serif" font-size="14.00">9</text>
+</g>
+<!-- 8&#45;&#45;9 -->
+<g id="edge8" class="edge">
+<title>8--9</title>
+<path fill="none" stroke="black" d="M215.35,-144.76C221.17,-133.46 228.89,-118.44 234.7,-107.15"></path>
+</g>
+<!-- 11 -->
+<g id="node12" class="node">
+<title>11</title>
+<ellipse fill="none" stroke="black" cx="315" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="315" y="-85.8" font-family="Times,serif" font-size="14.00">11</text>
+</g>
+<!-- 12&#45;&#45;11 -->
+<g id="edge10" class="edge">
+<title>12--11</title>
+<path fill="none" stroke="black" d="M315,-143.7C315,-132.85 315,-118.92 315,-108.1"></path>
+</g>
+<!-- 16 -->
+<g id="node14" class="node">
+<title>16</title>
+<ellipse fill="none" stroke="black" cx="387" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="387" y="-85.8" font-family="Times,serif" font-size="14.00">16</text>
+</g>
+<!-- 20&#45;&#45;16 -->
+<g id="edge12" class="edge">
+<title>20--16</title>
+<path fill="none" stroke="black" d="M387,-143.7C387,-132.85 387,-118.92 387,-108.1"></path>
+</g>
+<!-- 25 -->
+<g id="node15" class="node">
+<title>25</title>
+<ellipse fill="none" stroke="black" cx="459" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="459" y="-85.8" font-family="Times,serif" font-size="14.00">25</text>
+</g>
+<!-- 20&#45;&#45;25 -->
+<g id="edge13" class="edge">
+<title>20--25</title>
+<path fill="none" stroke="black" d="M401.57,-146.83C413.98,-134.77 431.73,-117.51 444.2,-105.38"></path>
+</g>
+<!-- 28 -->
+<g id="node16" class="node">
+<title>28</title>
+<ellipse fill="none" stroke="black" cx="459" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="459" y="-13.8" font-family="Times,serif" font-size="14.00">28</text>
+</g>
+<!-- 25&#45;&#45;28 -->
+<g id="edge14" class="edge">
+<title>25--28</title>
+<path fill="none" stroke="black" d="M459,-71.7C459,-60.85 459,-46.92 459,-36.1"></path>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="add-5" class="slide level2">
+<h2>Add</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 494.00 332.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 328)">
+<title>BST</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-328 490,-328 490,4 -4,4"></polygon>
+<!-- 10 -->
+<g id="node1" class="node">
+<title>10</title>
+<ellipse fill="none" stroke="black" cx="261" cy="-306" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="261" y="-301.8" font-family="Times,serif" font-size="14.00">10</text>
+</g>
+<!-- 5 -->
+<g id="node2" class="node">
+<title>5</title>
+<ellipse fill="none" stroke="black" cx="207" cy="-234" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="207" y="-229.8" font-family="Times,serif" font-size="14.00">5</text>
+</g>
+<!-- 10&#45;&#45;5 -->
+<g id="edge1" class="edge">
+<title>10--5</title>
+<path fill="none" stroke="black" d="M249.02,-289.46C240.07,-277.86 227.89,-262.08 218.95,-250.49"></path>
+</g>
+<!-- 15 -->
+<g id="node3" class="node">
+<title>15</title>
+<ellipse fill="none" stroke="black" cx="315" cy="-234" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="315" y="-229.8" font-family="Times,serif" font-size="14.00">15</text>
+</g>
+<!-- 10&#45;&#45;15 -->
+<g id="edge2" class="edge">
+<title>10--15</title>
+<path fill="none" stroke="black" d="M272.98,-289.46C281.93,-277.86 294.11,-262.08 303.05,-250.49"></path>
+</g>
+<!-- 3 -->
+<g id="node4" class="node">
+<title>3</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="99" y="-157.8" font-family="Times,serif" font-size="14.00">3</text>
+</g>
+<!-- 5&#45;&#45;3 -->
+<g id="edge3" class="edge">
+<title>5--3</title>
+<path fill="none" stroke="black" d="M188.19,-220.81C168.37,-207.96 137.34,-187.85 117.6,-175.05"></path>
+</g>
+<!-- 8 -->
+<g id="node5" class="node">
+<title>8</title>
+<ellipse fill="none" stroke="black" cx="207" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="207" y="-157.8" font-family="Times,serif" font-size="14.00">8</text>
+</g>
+<!-- 5&#45;&#45;8 -->
+<g id="edge4" class="edge">
+<title>5--8</title>
+<path fill="none" stroke="black" d="M207,-215.7C207,-204.85 207,-190.92 207,-180.1"></path>
+</g>
+<!-- 12 -->
+<g id="node12" class="node">
+<title>12</title>
+<ellipse fill="none" stroke="black" cx="315" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="315" y="-157.8" font-family="Times,serif" font-size="14.00">12</text>
+</g>
+<!-- 15&#45;&#45;12 -->
+<g id="edge11" class="edge">
+<title>15--12</title>
+<path fill="none" stroke="black" d="M315,-215.7C315,-204.85 315,-190.92 315,-180.1"></path>
+</g>
+<!-- 20 -->
+<g id="node14" class="node">
+<title>20</title>
+<ellipse fill="none" stroke="black" cx="387" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="387" y="-157.8" font-family="Times,serif" font-size="14.00">20</text>
+</g>
+<!-- 15&#45;&#45;20 -->
+<g id="edge13" class="edge">
+<title>15--20</title>
+<path fill="none" stroke="black" d="M329.57,-218.83C341.98,-206.77 359.73,-189.51 372.2,-177.38"></path>
+</g>
+<!-- 1 -->
+<g id="node6" class="node">
+<title>1</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">1</text>
+</g>
+<!-- 3&#45;&#45;1 -->
+<g id="edge5" class="edge">
+<title>3--1</title>
+<path fill="none" stroke="black" d="M84.43,-146.83C72.02,-134.77 54.27,-117.51 41.8,-105.38"></path>
+</g>
+<!-- 4 -->
+<g id="node7" class="node">
+<title>4</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">4</text>
+</g>
+<!-- 3&#45;&#45;4 -->
+<g id="edge6" class="edge">
+<title>3--4</title>
+<path fill="none" stroke="black" d="M99,-143.7C99,-132.85 99,-118.92 99,-108.1"></path>
+</g>
+<!-- 6 -->
+<g id="node8" class="node">
+<title>6</title>
+<ellipse fill="lightblue" stroke="black" cx="171" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="171" y="-85.8" font-family="Times,serif" font-size="14.00">6</text>
+</g>
+<!-- 8&#45;&#45;6 -->
+<g id="edge7" class="edge">
+<title>8--6</title>
+<path fill="none" stroke="black" d="M198.65,-144.76C192.83,-133.46 185.11,-118.44 179.3,-107.15"></path>
+</g>
+<!-- 9 -->
+<g id="node9" class="node">
+<title>9</title>
+<ellipse fill="none" stroke="black" cx="243" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="243" y="-85.8" font-family="Times,serif" font-size="14.00">9</text>
+</g>
+<!-- 8&#45;&#45;9 -->
+<g id="edge8" class="edge">
+<title>8--9</title>
+<path fill="none" stroke="black" d="M215.35,-144.76C221.17,-133.46 228.89,-118.44 234.7,-107.15"></path>
+</g>
+<!-- null -->
+<g id="node10" class="node">
+<title>null</title>
+</g>
+<!-- 6&#45;&#45;null -->
+<g id="edge9" class="edge">
+<title>6--null</title>
+<path fill="none" stroke="black" d="M162.65,-72.76C156.83,-61.46 149.11,-46.44 143.3,-35.15"></path>
+</g>
+<!-- 7 -->
+<g id="node11" class="node">
+<title>7</title>
+<ellipse fill="lightgrey" stroke="black" cx="207" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="207" y="-13.8" font-family="Times,serif" font-size="14.00">7</text>
+</g>
+<!-- 6&#45;&#45;7 -->
+<g id="edge10" class="edge">
+<title>6--7</title>
+<path fill="none" stroke="black" d="M179.35,-72.76C185.17,-61.46 192.89,-46.44 198.7,-35.15"></path>
+</g>
+<!-- 11 -->
+<g id="node13" class="node">
+<title>11</title>
+<ellipse fill="none" stroke="black" cx="315" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="315" y="-85.8" font-family="Times,serif" font-size="14.00">11</text>
+</g>
+<!-- 12&#45;&#45;11 -->
+<g id="edge12" class="edge">
+<title>12--11</title>
+<path fill="none" stroke="black" d="M315,-143.7C315,-132.85 315,-118.92 315,-108.1"></path>
+</g>
+<!-- 16 -->
+<g id="node15" class="node">
+<title>16</title>
+<ellipse fill="none" stroke="black" cx="387" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="387" y="-85.8" font-family="Times,serif" font-size="14.00">16</text>
+</g>
+<!-- 20&#45;&#45;16 -->
+<g id="edge14" class="edge">
+<title>20--16</title>
+<path fill="none" stroke="black" d="M387,-143.7C387,-132.85 387,-118.92 387,-108.1"></path>
+</g>
+<!-- 25 -->
+<g id="node16" class="node">
+<title>25</title>
+<ellipse fill="none" stroke="black" cx="459" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="459" y="-85.8" font-family="Times,serif" font-size="14.00">25</text>
+</g>
+<!-- 20&#45;&#45;25 -->
+<g id="edge15" class="edge">
+<title>20--25</title>
+<path fill="none" stroke="black" d="M401.57,-146.83C413.98,-134.77 431.73,-117.51 444.2,-105.38"></path>
+</g>
+<!-- 28 -->
+<g id="node17" class="node">
+<title>28</title>
+<ellipse fill="none" stroke="black" cx="459" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="459" y="-13.8" font-family="Times,serif" font-size="14.00">28</text>
+</g>
+<!-- 25&#45;&#45;28 -->
+<g id="edge16" class="edge">
+<title>25--28</title>
+<path fill="none" stroke="black" d="M459,-71.7C459,-60.85 459,-46.92 459,-36.1"></path>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
 <section id="binary-search-trees-6" class="slide level2">
 <h2>Binary Search Trees</h2>
-<p>BSTs are only efficient when they’re balanced. In the worst case—if you insert sorted data—you get O(n) operations. That’s why later you’ll learn about self-balancing trees like AVL trees and Red-Black trees.</p>
+<p>BSTs are only efficient when they’re balanced.</p>
+<p>In the worst case you get O(n) operations – how?</p>
+<p>You will learn about self-balancing trees like AVL trees and Red-Black trees (later)</p>
+</section>
+<section id="binary-search-trees-7" class="slide level2">
+<h2>Binary Search Trees</h2>
+<p>In the worst case you get O(n) operations – how?</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 201.52 116.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>BST</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-112 197.52,-112 197.52,4 -4,4"></polygon>
+<!-- 100 -->
+<g id="node1" class="node">
+<title>100</title>
+<ellipse fill="none" stroke="black" cx="94.07" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="94.07" y="-85.8" font-family="Times,serif" font-size="14.00">100</text>
+</g>
+<!-- leftNull -->
+<g id="node2" class="node">
+<title>leftNull</title>
+</g>
+<!-- 100&#45;&#45;leftNull -->
+<g id="edge1" class="edge">
+<title>100--leftNull</title>
+<path fill="none" stroke="black" d="M82.31,-73.46C73.77,-62.19 62.24,-46.96 53.54,-35.47"></path>
+</g>
+<!-- rightNull -->
+<g id="node3" class="node">
+<title>rightNull</title>
+</g>
+<!-- 100&#45;&#45;rightNull -->
+<g id="edge2" class="edge">
+<title>100--rightNull</title>
+<path fill="none" stroke="black" d="M105.84,-73.46C114.37,-62.19 125.91,-46.96 134.6,-35.47"></path>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="binary-search-trees-8" class="slide level2">
+<h2>Binary Search Trees</h2>
+<p>In the worst case you get O(n) operations – how?</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 134.00 116.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>BST</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-112 130,-112 130,4 -4,4"></polygon>
+<!-- 100 -->
+<g id="node1" class="node">
+<title>100</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="63" y="-85.8" font-family="Times,serif" font-size="14.00">100</text>
+</g>
+<!-- 90 -->
+<g id="node2" class="node">
+<title>90</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">90</text>
+</g>
+<!-- 100&#45;&#45;90 -->
+<g id="edge1" class="edge">
+<title>100--90</title>
+<path fill="none" stroke="black" d="M54.65,-72.76C48.83,-61.46 41.11,-46.44 35.3,-35.15"></path>
+</g>
+<!-- null -->
+<g id="node3" class="node">
+<title>null</title>
+</g>
+<!-- 100&#45;&#45;null -->
+<g id="edge2" class="edge">
+<title>100--null</title>
+<path fill="none" stroke="black" d="M71.35,-72.76C77.17,-61.46 84.89,-46.44 90.7,-35.15"></path>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="binary-search-trees-9" class="slide level2">
+<h2>Binary Search Trees</h2>
+<p>In the worst case you get O(n) operations – how?</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 172.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>BST</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 168,-184 168,4 -4,4"></polygon>
+<!-- 100 -->
+<g id="node1" class="node">
+<title>100</title>
+<ellipse fill="none" stroke="black" cx="101" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="101" y="-157.8" font-family="Times,serif" font-size="14.00">100</text>
+</g>
+<!-- 90 -->
+<g id="node2" class="node">
+<title>90</title>
+<ellipse fill="none" stroke="black" cx="65" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="65" y="-85.8" font-family="Times,serif" font-size="14.00">90</text>
+</g>
+<!-- 100&#45;&#45;90 -->
+<g id="edge1" class="edge">
+<title>100--90</title>
+<path fill="none" stroke="black" d="M92.65,-144.76C86.83,-133.46 79.11,-118.44 73.3,-107.15"></path>
+</g>
+<!-- null -->
+<g id="node3" class="node">
+<title>null</title>
+</g>
+<!-- 100&#45;&#45;null -->
+<g id="edge2" class="edge">
+<title>100--null</title>
+<path fill="none" stroke="black" d="M109.35,-144.76C115.17,-133.46 122.89,-118.44 128.7,-107.15"></path>
+</g>
+<!-- 80 -->
+<g id="node4" class="node">
+<title>80</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">80</text>
+</g>
+<!-- 90&#45;&#45;80 -->
+<g id="edge3" class="edge">
+<title>90--80</title>
+<path fill="none" stroke="black" d="M56.19,-72.76C50.05,-61.46 41.89,-46.44 35.77,-35.15"></path>
+</g>
+<!-- null2 -->
+<g id="node5" class="node">
+<title>null2</title>
+</g>
+<!-- 90&#45;&#45;null2 -->
+<g id="edge4" class="edge">
+<title>90--null2</title>
+<path fill="none" stroke="black" d="M73.81,-72.76C79.86,-61.62 87.87,-46.87 93.97,-35.63"></path>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="binary-search-trees-10" class="slide level2">
+<h2>Binary Search Trees</h2>
+<p>In the worst case you get O(n) operations – how?</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 210.00 260.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
+<title>BST</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-256 206,-256 206,4 -4,4"></polygon>
+<!-- 100 -->
+<g id="node1" class="node">
+<title>100</title>
+<ellipse fill="none" stroke="black" cx="139" cy="-234" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="139" y="-229.8" font-family="Times,serif" font-size="14.00">100</text>
+</g>
+<!-- 90 -->
+<g id="node2" class="node">
+<title>90</title>
+<ellipse fill="none" stroke="black" cx="103" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="103" y="-157.8" font-family="Times,serif" font-size="14.00">90</text>
+</g>
+<!-- 100&#45;&#45;90 -->
+<g id="edge1" class="edge">
+<title>100--90</title>
+<path fill="none" stroke="black" d="M130.65,-216.76C124.83,-205.46 117.11,-190.44 111.3,-179.15"></path>
+</g>
+<!-- null -->
+<g id="node3" class="node">
+<title>null</title>
+</g>
+<!-- 100&#45;&#45;null -->
+<g id="edge2" class="edge">
+<title>100--null</title>
+<path fill="none" stroke="black" d="M147.35,-216.76C153.17,-205.46 160.89,-190.44 166.7,-179.15"></path>
+</g>
+<!-- 80 -->
+<g id="node4" class="node">
+<title>80</title>
+<ellipse fill="none" stroke="black" cx="65" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="65" y="-85.8" font-family="Times,serif" font-size="14.00">80</text>
+</g>
+<!-- 90&#45;&#45;80 -->
+<g id="edge3" class="edge">
+<title>90--80</title>
+<path fill="none" stroke="black" d="M94.19,-144.76C88.05,-133.46 79.89,-118.44 73.77,-107.15"></path>
+</g>
+<!-- null2 -->
+<g id="node5" class="node">
+<title>null2</title>
+</g>
+<!-- 90&#45;&#45;null2 -->
+<g id="edge4" class="edge">
+<title>90--null2</title>
+<path fill="none" stroke="black" d="M111.81,-144.76C117.86,-133.62 125.87,-118.87 131.97,-107.63"></path>
+</g>
+<!-- 79 -->
+<g id="node6" class="node">
+<title>79</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">79</text>
+</g>
+<!-- 80&#45;&#45;79 -->
+<g id="edge5" class="edge">
+<title>80--79</title>
+<path fill="none" stroke="black" d="M56.19,-72.76C50.05,-61.46 41.89,-46.44 35.77,-35.15"></path>
+</g>
+<!-- null3 -->
+<g id="node7" class="node">
+<title>null3</title>
+</g>
+<!-- 80&#45;&#45;null3 -->
+<g id="edge6" class="edge">
+<title>80--null3</title>
+<path fill="none" stroke="black" d="M73.81,-72.76C79.86,-61.62 87.87,-46.87 93.97,-35.63"></path>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="binary-search-trees-11" class="slide level2">
+<h2>Binary Search Trees</h2>
+<p>In the worst case you get O(n) operations – how?</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 248.00 332.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 328)">
+<title>BST</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-328 244,-328 244,4 -4,4"></polygon>
+<!-- 100 -->
+<g id="node1" class="node">
+<title>100</title>
+<ellipse fill="none" stroke="black" cx="177" cy="-306" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="177" y="-301.8" font-family="Times,serif" font-size="14.00">100</text>
+</g>
+<!-- 90 -->
+<g id="node2" class="node">
+<title>90</title>
+<ellipse fill="none" stroke="black" cx="141" cy="-234" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="141" y="-229.8" font-family="Times,serif" font-size="14.00">90</text>
+</g>
+<!-- 100&#45;&#45;90 -->
+<g id="edge1" class="edge">
+<title>100--90</title>
+<path fill="none" stroke="black" d="M168.65,-288.76C162.83,-277.46 155.11,-262.44 149.3,-251.15"></path>
+</g>
+<!-- null -->
+<g id="node3" class="node">
+<title>null</title>
+</g>
+<!-- 100&#45;&#45;null -->
+<g id="edge2" class="edge">
+<title>100--null</title>
+<path fill="none" stroke="black" d="M185.35,-288.76C191.17,-277.46 198.89,-262.44 204.7,-251.15"></path>
+</g>
+<!-- 80 -->
+<g id="node4" class="node">
+<title>80</title>
+<ellipse fill="none" stroke="black" cx="103" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="103" y="-157.8" font-family="Times,serif" font-size="14.00">80</text>
+</g>
+<!-- 90&#45;&#45;80 -->
+<g id="edge3" class="edge">
+<title>90--80</title>
+<path fill="none" stroke="black" d="M132.19,-216.76C126.05,-205.46 117.89,-190.44 111.77,-179.15"></path>
+</g>
+<!-- null2 -->
+<g id="node5" class="node">
+<title>null2</title>
+</g>
+<!-- 90&#45;&#45;null2 -->
+<g id="edge4" class="edge">
+<title>90--null2</title>
+<path fill="none" stroke="black" d="M149.81,-216.76C155.86,-205.62 163.87,-190.87 169.97,-179.63"></path>
+</g>
+<!-- 79 -->
+<g id="node6" class="node">
+<title>79</title>
+<ellipse fill="none" stroke="black" cx="65" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="65" y="-85.8" font-family="Times,serif" font-size="14.00">79</text>
+</g>
+<!-- 80&#45;&#45;79 -->
+<g id="edge5" class="edge">
+<title>80--79</title>
+<path fill="none" stroke="black" d="M94.19,-144.76C88.05,-133.46 79.89,-118.44 73.77,-107.15"></path>
+</g>
+<!-- null3 -->
+<g id="node7" class="node">
+<title>null3</title>
+</g>
+<!-- 80&#45;&#45;null3 -->
+<g id="edge6" class="edge">
+<title>80--null3</title>
+<path fill="none" stroke="black" d="M111.81,-144.76C117.86,-133.62 125.87,-118.87 131.97,-107.63"></path>
+</g>
+<!-- 65 -->
+<g id="node8" class="node">
+<title>65</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">65</text>
+</g>
+<!-- 79&#45;&#45;65 -->
+<g id="edge7" class="edge">
+<title>79--65</title>
+<path fill="none" stroke="black" d="M56.19,-72.76C50.05,-61.46 41.89,-46.44 35.77,-35.15"></path>
+</g>
+<!-- null4 -->
+<g id="node9" class="node">
+<title>null4</title>
+</g>
+<!-- 79&#45;&#45;null4 -->
+<g id="edge8" class="edge">
+<title>79--null4</title>
+<path fill="none" stroke="black" d="M73.81,-72.76C79.86,-61.62 87.87,-46.87 93.97,-35.63"></path>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="binary-search-trees-12" class="slide level2">
+<h2>Binary Search Trees</h2>
+<p>In the worst case you get O(n) operations – how?</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 286.00 404.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 400)">
+<title>BST</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-400 282,-400 282,4 -4,4"></polygon>
+<!-- 100 -->
+<g id="node1" class="node">
+<title>100</title>
+<ellipse fill="none" stroke="black" cx="215" cy="-378" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="215" y="-373.8" font-family="Times,serif" font-size="14.00">100</text>
+</g>
+<!-- 90 -->
+<g id="node2" class="node">
+<title>90</title>
+<ellipse fill="none" stroke="black" cx="179" cy="-306" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="179" y="-301.8" font-family="Times,serif" font-size="14.00">90</text>
+</g>
+<!-- 100&#45;&#45;90 -->
+<g id="edge1" class="edge">
+<title>100--90</title>
+<path fill="none" stroke="black" d="M206.65,-360.76C200.83,-349.46 193.11,-334.44 187.3,-323.15"></path>
+</g>
+<!-- null -->
+<g id="node3" class="node">
+<title>null</title>
+</g>
+<!-- 100&#45;&#45;null -->
+<g id="edge2" class="edge">
+<title>100--null</title>
+<path fill="none" stroke="black" d="M223.35,-360.76C229.17,-349.46 236.89,-334.44 242.7,-323.15"></path>
+</g>
+<!-- 80 -->
+<g id="node4" class="node">
+<title>80</title>
+<ellipse fill="none" stroke="black" cx="141" cy="-234" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="141" y="-229.8" font-family="Times,serif" font-size="14.00">80</text>
+</g>
+<!-- 90&#45;&#45;80 -->
+<g id="edge3" class="edge">
+<title>90--80</title>
+<path fill="none" stroke="black" d="M170.19,-288.76C164.05,-277.46 155.89,-262.44 149.77,-251.15"></path>
+</g>
+<!-- null2 -->
+<g id="node5" class="node">
+<title>null2</title>
+</g>
+<!-- 90&#45;&#45;null2 -->
+<g id="edge4" class="edge">
+<title>90--null2</title>
+<path fill="none" stroke="black" d="M187.81,-288.76C193.86,-277.62 201.87,-262.87 207.97,-251.63"></path>
+</g>
+<!-- 79 -->
+<g id="node6" class="node">
+<title>79</title>
+<ellipse fill="none" stroke="black" cx="103" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="103" y="-157.8" font-family="Times,serif" font-size="14.00">79</text>
+</g>
+<!-- 80&#45;&#45;79 -->
+<g id="edge5" class="edge">
+<title>80--79</title>
+<path fill="none" stroke="black" d="M132.19,-216.76C126.05,-205.46 117.89,-190.44 111.77,-179.15"></path>
+</g>
+<!-- null3 -->
+<g id="node7" class="node">
+<title>null3</title>
+</g>
+<!-- 80&#45;&#45;null3 -->
+<g id="edge6" class="edge">
+<title>80--null3</title>
+<path fill="none" stroke="black" d="M149.81,-216.76C155.86,-205.62 163.87,-190.87 169.97,-179.63"></path>
+</g>
+<!-- 65 -->
+<g id="node8" class="node">
+<title>65</title>
+<ellipse fill="none" stroke="black" cx="65" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="65" y="-85.8" font-family="Times,serif" font-size="14.00">65</text>
+</g>
+<!-- 79&#45;&#45;65 -->
+<g id="edge7" class="edge">
+<title>79--65</title>
+<path fill="none" stroke="black" d="M94.19,-144.76C88.05,-133.46 79.89,-118.44 73.77,-107.15"></path>
+</g>
+<!-- null4 -->
+<g id="node9" class="node">
+<title>null4</title>
+</g>
+<!-- 79&#45;&#45;null4 -->
+<g id="edge8" class="edge">
+<title>79--null4</title>
+<path fill="none" stroke="black" d="M111.81,-144.76C117.86,-133.62 125.87,-118.87 131.97,-107.63"></path>
+</g>
+<!-- 42 -->
+<g id="node10" class="node">
+<title>42</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">42</text>
+</g>
+<!-- 65&#45;&#45;42 -->
+<g id="edge9" class="edge">
+<title>65--42</title>
+<path fill="none" stroke="black" d="M56.19,-72.76C50.05,-61.46 41.89,-46.44 35.77,-35.15"></path>
+</g>
+<!-- null5 -->
+<g id="node11" class="node">
+<title>null5</title>
+</g>
+<!-- 65&#45;&#45;null5 -->
+<g id="edge10" class="edge">
+<title>65--null5</title>
+<path fill="none" stroke="black" d="M73.81,-72.76C79.86,-61.62 87.87,-46.87 93.97,-35.63"></path>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="binary-search-trees-13" class="slide level2">
+<h2>Binary Search Trees</h2>
+<p>In the worst case you get O(n) operations – how?</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 324.00 476.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 472)">
+<title>BST</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-472 320,-472 320,4 -4,4"></polygon>
+<!-- 100 -->
+<g id="node1" class="node">
+<title>100</title>
+<ellipse fill="none" stroke="black" cx="253" cy="-450" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="253" y="-445.8" font-family="Times,serif" font-size="14.00">100</text>
+</g>
+<!-- 90 -->
+<g id="node2" class="node">
+<title>90</title>
+<ellipse fill="none" stroke="black" cx="217" cy="-378" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="217" y="-373.8" font-family="Times,serif" font-size="14.00">90</text>
+</g>
+<!-- 100&#45;&#45;90 -->
+<g id="edge1" class="edge">
+<title>100--90</title>
+<path fill="none" stroke="black" d="M244.65,-432.76C238.83,-421.46 231.11,-406.44 225.3,-395.15"></path>
+</g>
+<!-- null -->
+<g id="node3" class="node">
+<title>null</title>
+</g>
+<!-- 100&#45;&#45;null -->
+<g id="edge2" class="edge">
+<title>100--null</title>
+<path fill="none" stroke="black" d="M261.35,-432.76C267.17,-421.46 274.89,-406.44 280.7,-395.15"></path>
+</g>
+<!-- 80 -->
+<g id="node4" class="node">
+<title>80</title>
+<ellipse fill="none" stroke="black" cx="179" cy="-306" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="179" y="-301.8" font-family="Times,serif" font-size="14.00">80</text>
+</g>
+<!-- 90&#45;&#45;80 -->
+<g id="edge3" class="edge">
+<title>90--80</title>
+<path fill="none" stroke="black" d="M208.19,-360.76C202.05,-349.46 193.89,-334.44 187.77,-323.15"></path>
+</g>
+<!-- null2 -->
+<g id="node5" class="node">
+<title>null2</title>
+</g>
+<!-- 90&#45;&#45;null2 -->
+<g id="edge4" class="edge">
+<title>90--null2</title>
+<path fill="none" stroke="black" d="M225.81,-360.76C231.86,-349.62 239.87,-334.87 245.97,-323.63"></path>
+</g>
+<!-- 79 -->
+<g id="node6" class="node">
+<title>79</title>
+<ellipse fill="none" stroke="black" cx="141" cy="-234" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="141" y="-229.8" font-family="Times,serif" font-size="14.00">79</text>
+</g>
+<!-- 80&#45;&#45;79 -->
+<g id="edge5" class="edge">
+<title>80--79</title>
+<path fill="none" stroke="black" d="M170.19,-288.76C164.05,-277.46 155.89,-262.44 149.77,-251.15"></path>
+</g>
+<!-- null3 -->
+<g id="node7" class="node">
+<title>null3</title>
+</g>
+<!-- 80&#45;&#45;null3 -->
+<g id="edge6" class="edge">
+<title>80--null3</title>
+<path fill="none" stroke="black" d="M187.81,-288.76C193.86,-277.62 201.87,-262.87 207.97,-251.63"></path>
+</g>
+<!-- 65 -->
+<g id="node8" class="node">
+<title>65</title>
+<ellipse fill="none" stroke="black" cx="103" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="103" y="-157.8" font-family="Times,serif" font-size="14.00">65</text>
+</g>
+<!-- 79&#45;&#45;65 -->
+<g id="edge7" class="edge">
+<title>79--65</title>
+<path fill="none" stroke="black" d="M132.19,-216.76C126.05,-205.46 117.89,-190.44 111.77,-179.15"></path>
+</g>
+<!-- null4 -->
+<g id="node9" class="node">
+<title>null4</title>
+</g>
+<!-- 79&#45;&#45;null4 -->
+<g id="edge8" class="edge">
+<title>79--null4</title>
+<path fill="none" stroke="black" d="M149.81,-216.76C155.86,-205.62 163.87,-190.87 169.97,-179.63"></path>
+</g>
+<!-- 42 -->
+<g id="node10" class="node">
+<title>42</title>
+<ellipse fill="none" stroke="black" cx="65" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="65" y="-85.8" font-family="Times,serif" font-size="14.00">42</text>
+</g>
+<!-- 65&#45;&#45;42 -->
+<g id="edge9" class="edge">
+<title>65--42</title>
+<path fill="none" stroke="black" d="M94.19,-144.76C88.05,-133.46 79.89,-118.44 73.77,-107.15"></path>
+</g>
+<!-- null5 -->
+<g id="node11" class="node">
+<title>null5</title>
+</g>
+<!-- 65&#45;&#45;null5 -->
+<g id="edge10" class="edge">
+<title>65--null5</title>
+<path fill="none" stroke="black" d="M111.81,-144.76C117.86,-133.62 125.87,-118.87 131.97,-107.63"></path>
+</g>
+<!-- 26 -->
+<g id="node12" class="node">
+<title>26</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">26</text>
+</g>
+<!-- 42&#45;&#45;26 -->
+<g id="edge11" class="edge">
+<title>42--26</title>
+<path fill="none" stroke="black" d="M56.19,-72.76C50.05,-61.46 41.89,-46.44 35.77,-35.15"></path>
+</g>
+<!-- null6 -->
+<g id="node13" class="node">
+<title>null6</title>
+</g>
+<!-- 42&#45;&#45;null6 -->
+<g id="edge12" class="edge">
+<title>42--null6</title>
+<path fill="none" stroke="black" d="M73.81,-72.76C79.86,-61.62 87.87,-46.87 93.97,-35.63"></path>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section>
+<section id="java-implementation" class="title-slide slide level1 center">
+<h1>Java implementation</h1>
 
 </section>
+<section id="node-implementation" class="slide level2">
+<h2>Node implementation</h2>
+<p>As a reminder, here’s what we had for our generic Node class:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href=""></a>public class Node&lt;T&gt; {</span>
+<span id="cb1-2"><a href=""></a>    private T data;</span>
+<span id="cb1-3"><a href=""></a>    private Node&lt;T&gt; left;</span>
+<span id="cb1-4"><a href=""></a>    private Node&lt;T&gt; right;</span>
+<span id="cb1-5"><a href=""></a></span>
+<span id="cb1-6"><a href=""></a>    // constructor with data as argument</span>
+<span id="cb1-7"><a href=""></a>    public Node(T data) {</span>
+<span id="cb1-8"><a href=""></a>        this.data = data;</span>
+<span id="cb1-9"><a href=""></a>        left = null;</span>
+<span id="cb1-10"><a href=""></a>        right = null;</span>
+<span id="cb1-11"><a href=""></a>    }</span>
+<span id="cb1-12"><a href=""></a></span>
+<span id="cb1-13"><a href=""></a>    // getters</span>
+<span id="cb1-14"><a href=""></a>    public T getData() {</span>
+<span id="cb1-15"><a href=""></a>        return data;</span>
+<span id="cb1-16"><a href=""></a>    }</span>
+<span id="cb1-17"><a href=""></a></span>
+<span id="cb1-18"><a href=""></a>    public Node&lt;T&gt; getLeft() {</span>
+<span id="cb1-19"><a href=""></a>        return left;</span>
+<span id="cb1-20"><a href=""></a>    }</span>
+<span id="cb1-21"><a href=""></a></span>
+<span id="cb1-22"><a href=""></a>    public Node&lt;T&gt; getRight() {</span>
+<span id="cb1-23"><a href=""></a>        return right;</span>
+<span id="cb1-24"><a href=""></a>    }</span>
+<span id="cb1-25"><a href=""></a></span>
+<span id="cb1-26"><a href=""></a>    // setters</span>
+<span id="cb1-27"><a href=""></a>    public void setData(T data) {</span>
+<span id="cb1-28"><a href=""></a>        this.data = data;</span>
+<span id="cb1-29"><a href=""></a>    }</span>
+<span id="cb1-30"><a href=""></a></span>
+<span id="cb1-31"><a href=""></a>    public void setLeft(Node&lt;T&gt; node) {</span>
+<span id="cb1-32"><a href=""></a>        left = node;</span>
+<span id="cb1-33"><a href=""></a>    }</span>
+<span id="cb1-34"><a href=""></a></span>
+<span id="cb1-35"><a href=""></a>    public void setRight(Node&lt;T&gt; node) {</span>
+<span id="cb1-36"><a href=""></a>        right = node;</span>
+<span id="cb1-37"><a href=""></a>    }</span>
+<span id="cb1-38"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="node-comparable-implementation" class="slide level2">
+<h2>Node Comparable implementation</h2>
+<p>We need to implement <code>compareTo</code> from <code>Comparable</code> to be able to go left or right</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href=""></a>public class Node&lt;T extends Comparable&lt;T&gt;&gt; implements Comparable&lt;Node&lt;T&gt;&gt; {</span>
+<span id="cb2-2"><a href=""></a>    private T data;</span>
+<span id="cb2-3"><a href=""></a>    private Node&lt;T&gt; left;</span>
+<span id="cb2-4"><a href=""></a>    private Node&lt;T&gt; right;</span>
+<span id="cb2-5"><a href=""></a></span>
+<span id="cb2-6"><a href=""></a>    // constructor with data as argument</span>
+<span id="cb2-7"><a href=""></a>    public Node(T data) {</span>
+<span id="cb2-8"><a href=""></a>        this.data = data;</span>
+<span id="cb2-9"><a href=""></a>        left = null;</span>
+<span id="cb2-10"><a href=""></a>        right = null;</span>
+<span id="cb2-11"><a href=""></a>    }</span>
+<span id="cb2-12"><a href=""></a></span>
+<span id="cb2-13"><a href=""></a>    // getters</span>
+<span id="cb2-14"><a href=""></a>    public T getData() {</span>
+<span id="cb2-15"><a href=""></a>        return data;</span>
+<span id="cb2-16"><a href=""></a>    }</span>
+<span id="cb2-17"><a href=""></a></span>
+<span id="cb2-18"><a href=""></a>    public Node&lt;T&gt; getLeft() {</span>
+<span id="cb2-19"><a href=""></a>        return left;</span>
+<span id="cb2-20"><a href=""></a>    }</span>
+<span id="cb2-21"><a href=""></a></span>
+<span id="cb2-22"><a href=""></a>    public Node&lt;T&gt; getRight() {</span>
+<span id="cb2-23"><a href=""></a>        return right;</span>
+<span id="cb2-24"><a href=""></a>    }</span>
+<span id="cb2-25"><a href=""></a></span>
+<span id="cb2-26"><a href=""></a>    // setters</span>
+<span id="cb2-27"><a href=""></a>    public void setData(T data) {</span>
+<span id="cb2-28"><a href=""></a>        this.data = data;</span>
+<span id="cb2-29"><a href=""></a>    }</span>
+<span id="cb2-30"><a href=""></a></span>
+<span id="cb2-31"><a href=""></a>    public void setLeft(Node&lt;T&gt; node) {</span>
+<span id="cb2-32"><a href=""></a>        left = node;</span>
+<span id="cb2-33"><a href=""></a>    }</span>
+<span id="cb2-34"><a href=""></a></span>
+<span id="cb2-35"><a href=""></a>    public void setRight(Node&lt;T&gt; node) {</span>
+<span id="cb2-36"><a href=""></a>        right = node;</span>
+<span id="cb2-37"><a href=""></a>    }</span>
+<span id="cb2-38"><a href=""></a></span>
+<span id="cb2-39"><a href=""></a>    public int compareTo(Node&lt;T&gt; otherNode) {</span>
+<span id="cb2-40"><a href=""></a>        if (this == otherNode) {</span>
+<span id="cb2-41"><a href=""></a>            return 0;</span>
+<span id="cb2-42"><a href=""></a>        }</span>
+<span id="cb2-43"><a href=""></a></span>
+<span id="cb2-44"><a href=""></a>        if (otherNode == null) {</span>
+<span id="cb2-45"><a href=""></a>            return 1;</span>
+<span id="cb2-46"><a href=""></a>        }</span>
+<span id="cb2-47"><a href=""></a></span>
+<span id="cb2-48"><a href=""></a>        Node&lt;T&gt; aNode = (Node&lt;T&gt;) otherNode;</span>
+<span id="cb2-49"><a href=""></a>        return this.data.compareTo(aNode.getData());</span>
+<span id="cb2-50"><a href=""></a>    }</span>
+<span id="cb2-51"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="tree-implementation-basics" class="slide level2">
+<h2>Tree implementation (basics)</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href=""></a>public class Tree&lt;T extends Comparable&lt;T&gt;&gt; {</span>
+<span id="cb3-2"><a href=""></a>    private Node&lt;T&gt; root;</span>
+<span id="cb3-3"><a href=""></a></span>
+<span id="cb3-4"><a href=""></a>    public Tree() {</span>
+<span id="cb3-5"><a href=""></a>        root = null;</span>
+<span id="cb3-6"><a href=""></a>    }</span>
+<span id="cb3-7"><a href=""></a>  </span>
+<span id="cb3-8"><a href=""></a>    public Node&lt;T&gt; getRoot() {</span>
+<span id="cb3-9"><a href=""></a>        return root;</span>
+<span id="cb3-10"><a href=""></a>    }</span>
+<span id="cb3-11"><a href=""></a>    </span>
+<span id="cb3-12"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="add-strategy" class="slide level2">
+<h2>Add – strategy</h2>
+<ul>
+<li>Check if tree is empty (is root null?), if so the node to add is the root</li>
+<li>If tree is not empty, find the spot to add (I’ll do that recursively)</li>
+</ul>
+</section>
+<section id="public-addnode" class="slide level2">
+<h2>public addNode</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href=""></a>public void addNode(Node&lt;T&gt; node) {</span>
+<span id="cb4-2"><a href=""></a>  if (root == null) {</span>
+<span id="cb4-3"><a href=""></a>    root = node;</span>
+<span id="cb4-4"><a href=""></a>  } else {</span>
+<span id="cb4-5"><a href=""></a>    addNode(root, node);</span>
+<span id="cb4-6"><a href=""></a>  }</span>
+<span id="cb4-7"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="private-addnode" class="slide level2">
+<h2>private addNode</h2>
+<p>This cursive method should be private.</p>
+<p><code>private void addNode(Node&lt;T&gt; current, Node&lt;T&gt; nodeToAdd)</code></p>
+<p>Strategy:</p>
+<ul>
+<li>Decide if you need to go left or right (use <code>compareTo</code>)</li>
+<li>Check if left/right (whatever path you need to take) child is null, if so, set current node child to nodeToAdd</li>
+<li>If left/right child is not null, call <code>addNode</code> recursively with left/right child as current node</li>
+</ul>
+</section>
+<section id="test-it" class="slide level2">
+<h2>Test it</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href=""></a>Tree&lt;Character&gt; tree = new Tree&lt;&gt;();</span>
+<span id="cb5-2"><a href=""></a></span>
+<span id="cb5-3"><a href=""></a>tree.addNode(new Node&lt;&gt;('M'));</span>
+<span id="cb5-4"><a href=""></a>System.out.println(tree.getRoot().getData());</span>
+<span id="cb5-5"><a href=""></a></span>
+<span id="cb5-6"><a href=""></a>tree.addNode(new Node&lt;&gt;('O'));</span>
+<span id="cb5-7"><a href=""></a>System.out.println(tree.getRoot().getLeft());</span>
+<span id="cb5-8"><a href=""></a>System.out.println(tree.getRoot().getRight().getData());</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="tostring" class="slide level2">
+<h2>toString</h2>
+<p>It’s going to be easy to test adding multiple nodes if we implement <code>toString</code></p>
+<p>Here’s the public <code>toString</code>:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href=""></a>public String toString() {</span>
+<span id="cb6-2"><a href=""></a>  return toString(root).trim();</span>
+<span id="cb6-3"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Implement a private <code>toString(Node)</code></p>
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
