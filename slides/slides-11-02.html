@@ -2838,6 +2838,957 @@
 <li>Cannot be fixed with locally available pointers</li>
 <li>Costs an additional O(H) work to find a way to fix.</li>
 </ul>
+</section>
+<section id="remove-4" class="slide level2">
+<h2>Remove</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 561.07 260.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
+<title>BST</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-256 557.07,-256 557.07,4 -4,4"></polygon>
+<!-- lemon -->
+<g id="node1" class="node">
+<title>lemon</title>
+<ellipse fill="none" stroke="black" cx="268.21" cy="-234" rx="35.35" ry="18"></ellipse>
+<text text-anchor="middle" x="268.21" y="-229.8" font-family="Times,serif" font-size="14.00">lemon</text>
+</g>
+<!-- guava -->
+<g id="node2" class="node">
+<title>guava</title>
+<ellipse fill="none" stroke="black" cx="218.21" cy="-162" rx="34.19" ry="18"></ellipse>
+<text text-anchor="middle" x="218.21" y="-157.8" font-family="Times,serif" font-size="14.00">guava</text>
+</g>
+<!-- lemon&#45;&#45;guava -->
+<g id="edge1" class="edge">
+<title>lemon--guava</title>
+<path fill="none" stroke="black" d="M256.61,-216.76C248.53,-205.46 237.81,-190.44 229.74,-179.15"></path>
+</g>
+<!-- raspberry -->
+<g id="node3" class="node">
+<title>raspberry</title>
+<ellipse fill="none" stroke="black" cx="318.21" cy="-162" rx="47.5" ry="18"></ellipse>
+<text text-anchor="middle" x="318.21" y="-157.8" font-family="Times,serif" font-size="14.00">raspberry</text>
+</g>
+<!-- lemon&#45;&#45;raspberry -->
+<g id="edge2" class="edge">
+<title>lemon--raspberry</title>
+<path fill="none" stroke="black" d="M279.81,-216.76C287.77,-205.62 298.31,-190.87 306.33,-179.63"></path>
+</g>
+<!-- coconut -->
+<g id="node4" class="node">
+<title>coconut</title>
+<ellipse fill="none" stroke="black" cx="135.21" cy="-90" rx="41.71" ry="18"></ellipse>
+<text text-anchor="middle" x="135.21" y="-85.8" font-family="Times,serif" font-size="14.00">coconut</text>
+</g>
+<!-- guava&#45;&#45;coconut -->
+<g id="edge3" class="edge">
+<title>guava--coconut</title>
+<path fill="none" stroke="black" d="M200.61,-146.15C186.71,-134.44 167.39,-118.14 153.36,-106.31"></path>
+</g>
+<!-- kiwi -->
+<g id="node5" class="node">
+<title>kiwi</title>
+<ellipse fill="none" stroke="black" cx="223.21" cy="-90" rx="28.41" ry="18"></ellipse>
+<text text-anchor="middle" x="223.21" y="-85.8" font-family="Times,serif" font-size="14.00">kiwi</text>
+</g>
+<!-- guava&#45;&#45;kiwi -->
+<g id="edge4" class="edge">
+<title>guava--kiwi</title>
+<path fill="none" stroke="black" d="M219.44,-143.7C220.22,-132.85 221.21,-118.92 221.99,-108.1"></path>
+</g>
+<!-- lychee -->
+<g id="node6" class="node">
+<title>lychee</title>
+<ellipse fill="none" stroke="black" cx="314.21" cy="-90" rx="36.47" ry="18"></ellipse>
+<text text-anchor="middle" x="314.21" y="-85.8" font-family="Times,serif" font-size="14.00">lychee</text>
+</g>
+<!-- raspberry&#45;&#45;lychee -->
+<g id="edge5" class="edge">
+<title>raspberry--lychee</title>
+<path fill="none" stroke="black" d="M317.22,-143.7C316.6,-132.85 315.8,-118.92 315.19,-108.1"></path>
+</g>
+<!-- strawberry -->
+<g id="node7" class="node">
+<title>strawberry</title>
+<ellipse fill="none" stroke="black" cx="421.21" cy="-90" rx="52.16" ry="18"></ellipse>
+<text text-anchor="middle" x="421.21" y="-85.8" font-family="Times,serif" font-size="14.00">strawberry</text>
+</g>
+<!-- raspberry&#45;&#45;strawberry -->
+<g id="edge6" class="edge">
+<title>raspberry--strawberry</title>
+<path fill="none" stroke="black" d="M340.31,-145.98C357.45,-134.33 381.13,-118.24 398.44,-106.48"></path>
+</g>
+<!-- avocado -->
+<g id="node14" class="node">
+<title>avocado</title>
+<ellipse fill="none" stroke="black" cx="43.21" cy="-18" rx="43.42" ry="18"></ellipse>
+<text text-anchor="middle" x="43.21" y="-13.8" font-family="Times,serif" font-size="14.00">avocado</text>
+</g>
+<!-- coconut&#45;&#45;avocado -->
+<g id="edge11" class="edge">
+<title>coconut--avocado</title>
+<path fill="none" stroke="black" d="M115.25,-73.81C99.81,-62.07 78.55,-45.89 63.13,-34.16"></path>
+</g>
+<!-- banana -->
+<g id="node15" class="node">
+<title>banana</title>
+<ellipse fill="none" stroke="black" cx="143.21" cy="-18" rx="38.26" ry="18"></ellipse>
+<text text-anchor="middle" x="143.21" y="-13.8" font-family="Times,serif" font-size="14.00">banana</text>
+</g>
+<!-- coconut&#45;&#45;banana -->
+<g id="edge12" class="edge">
+<title>coconut--banana</title>
+<path fill="none" stroke="black" d="M137.19,-71.7C138.43,-60.85 140.02,-46.92 141.25,-36.1"></path>
+</g>
+<!-- lime -->
+<g id="node9" class="node">
+<title>lime</title>
+<ellipse fill="none" stroke="black" cx="231.21" cy="-18" rx="28.4" ry="18"></ellipse>
+<text text-anchor="middle" x="231.21" y="-13.8" font-family="Times,serif" font-size="14.00">lime</text>
+</g>
+<!-- lychee&#45;&#45;lime -->
+<g id="edge7" class="edge">
+<title>lychee--lime</title>
+<path fill="none" stroke="black" d="M296.61,-74.15C282.14,-61.95 261.8,-44.8 247.66,-32.87"></path>
+</g>
+<!-- pomelo -->
+<g id="node10" class="node">
+<title>pomelo</title>
+<ellipse fill="none" stroke="black" cx="317.21" cy="-18" rx="40.01" ry="18"></ellipse>
+<text text-anchor="middle" x="317.21" y="-13.8" font-family="Times,serif" font-size="14.00">pomelo</text>
+</g>
+<!-- lychee&#45;&#45;pomelo -->
+<g id="edge8" class="edge">
+<title>lychee--pomelo</title>
+<path fill="none" stroke="black" d="M314.95,-71.7C315.42,-60.85 316.01,-46.92 316.48,-36.1"></path>
+</g>
+<!-- starfruit -->
+<g id="node12" class="node">
+<title>starfruit</title>
+<ellipse fill="none" stroke="black" cx="418.21" cy="-18" rx="41.71" ry="18"></ellipse>
+<text text-anchor="middle" x="418.21" y="-13.8" font-family="Times,serif" font-size="14.00">starfruit</text>
+</g>
+<!-- strawberry&#45;&#45;starfruit -->
+<g id="edge9" class="edge">
+<title>strawberry--starfruit</title>
+<path fill="none" stroke="black" d="M420.47,-71.7C420,-60.85 419.41,-46.92 418.94,-36.1"></path>
+</g>
+<!-- tomato -->
+<g id="node13" class="node">
+<title>tomato</title>
+<ellipse fill="none" stroke="black" cx="515.21" cy="-18" rx="37.71" ry="18"></ellipse>
+<text text-anchor="middle" x="515.21" y="-13.8" font-family="Times,serif" font-size="14.00">tomato</text>
+</g>
+<!-- strawberry&#45;&#45;tomato -->
+<g id="edge10" class="edge">
+<title>strawberry--tomato</title>
+<path fill="none" stroke="black" d="M442.07,-73.46C458.08,-61.54 480.02,-45.2 495.69,-33.54"></path>
+</g>
+<!-- null1 -->
+<g id="node8" class="node">
+<title>null1</title>
+</g>
+<!-- null2 -->
+<g id="node11" class="node">
+<title>null2</title>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="remove-5" class="slide level2">
+<h2>Remove</h2>
+<p>A leaf can be removed without breaking the tree</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 561.07 260.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
+<title>BST</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-256 557.07,-256 557.07,4 -4,4"></polygon>
+<!-- lemon -->
+<g id="node1" class="node">
+<title>lemon</title>
+<ellipse fill="none" stroke="black" cx="268.21" cy="-234" rx="35.35" ry="18"></ellipse>
+<text text-anchor="middle" x="268.21" y="-229.8" font-family="Times,serif" font-size="14.00">lemon</text>
+</g>
+<!-- guava -->
+<g id="node2" class="node">
+<title>guava</title>
+<ellipse fill="none" stroke="black" cx="218.21" cy="-162" rx="34.19" ry="18"></ellipse>
+<text text-anchor="middle" x="218.21" y="-157.8" font-family="Times,serif" font-size="14.00">guava</text>
+</g>
+<!-- lemon&#45;&#45;guava -->
+<g id="edge1" class="edge">
+<title>lemon--guava</title>
+<path fill="none" stroke="black" d="M256.61,-216.76C248.53,-205.46 237.81,-190.44 229.74,-179.15"></path>
+</g>
+<!-- raspberry -->
+<g id="node3" class="node">
+<title>raspberry</title>
+<ellipse fill="none" stroke="black" cx="318.21" cy="-162" rx="47.5" ry="18"></ellipse>
+<text text-anchor="middle" x="318.21" y="-157.8" font-family="Times,serif" font-size="14.00">raspberry</text>
+</g>
+<!-- lemon&#45;&#45;raspberry -->
+<g id="edge2" class="edge">
+<title>lemon--raspberry</title>
+<path fill="none" stroke="black" d="M279.81,-216.76C287.77,-205.62 298.31,-190.87 306.33,-179.63"></path>
+</g>
+<!-- coconut -->
+<g id="node4" class="node">
+<title>coconut</title>
+<ellipse fill="none" stroke="black" cx="135.21" cy="-90" rx="41.71" ry="18"></ellipse>
+<text text-anchor="middle" x="135.21" y="-85.8" font-family="Times,serif" font-size="14.00">coconut</text>
+</g>
+<!-- guava&#45;&#45;coconut -->
+<g id="edge3" class="edge">
+<title>guava--coconut</title>
+<path fill="none" stroke="black" d="M200.61,-146.15C186.71,-134.44 167.39,-118.14 153.36,-106.31"></path>
+</g>
+<!-- kiwi -->
+<g id="node5" class="node">
+<title>kiwi</title>
+<ellipse fill="lightgrey" stroke="black" cx="223.21" cy="-90" rx="28.41" ry="18"></ellipse>
+<text text-anchor="middle" x="223.21" y="-85.8" font-family="Times,serif" font-size="14.00">kiwi</text>
+</g>
+<!-- guava&#45;&#45;kiwi -->
+<g id="edge4" class="edge">
+<title>guava--kiwi</title>
+<path fill="none" stroke="black" d="M219.44,-143.7C220.22,-132.85 221.21,-118.92 221.99,-108.1"></path>
+</g>
+<!-- lychee -->
+<g id="node6" class="node">
+<title>lychee</title>
+<ellipse fill="none" stroke="black" cx="314.21" cy="-90" rx="36.47" ry="18"></ellipse>
+<text text-anchor="middle" x="314.21" y="-85.8" font-family="Times,serif" font-size="14.00">lychee</text>
+</g>
+<!-- raspberry&#45;&#45;lychee -->
+<g id="edge5" class="edge">
+<title>raspberry--lychee</title>
+<path fill="none" stroke="black" d="M317.22,-143.7C316.6,-132.85 315.8,-118.92 315.19,-108.1"></path>
+</g>
+<!-- strawberry -->
+<g id="node7" class="node">
+<title>strawberry</title>
+<ellipse fill="none" stroke="black" cx="421.21" cy="-90" rx="52.16" ry="18"></ellipse>
+<text text-anchor="middle" x="421.21" y="-85.8" font-family="Times,serif" font-size="14.00">strawberry</text>
+</g>
+<!-- raspberry&#45;&#45;strawberry -->
+<g id="edge6" class="edge">
+<title>raspberry--strawberry</title>
+<path fill="none" stroke="black" d="M340.31,-145.98C357.45,-134.33 381.13,-118.24 398.44,-106.48"></path>
+</g>
+<!-- avocado -->
+<g id="node14" class="node">
+<title>avocado</title>
+<ellipse fill="none" stroke="black" cx="43.21" cy="-18" rx="43.42" ry="18"></ellipse>
+<text text-anchor="middle" x="43.21" y="-13.8" font-family="Times,serif" font-size="14.00">avocado</text>
+</g>
+<!-- coconut&#45;&#45;avocado -->
+<g id="edge11" class="edge">
+<title>coconut--avocado</title>
+<path fill="none" stroke="black" d="M115.25,-73.81C99.81,-62.07 78.55,-45.89 63.13,-34.16"></path>
+</g>
+<!-- banana -->
+<g id="node15" class="node">
+<title>banana</title>
+<ellipse fill="none" stroke="black" cx="143.21" cy="-18" rx="38.26" ry="18"></ellipse>
+<text text-anchor="middle" x="143.21" y="-13.8" font-family="Times,serif" font-size="14.00">banana</text>
+</g>
+<!-- coconut&#45;&#45;banana -->
+<g id="edge12" class="edge">
+<title>coconut--banana</title>
+<path fill="none" stroke="black" d="M137.19,-71.7C138.43,-60.85 140.02,-46.92 141.25,-36.1"></path>
+</g>
+<!-- lime -->
+<g id="node9" class="node">
+<title>lime</title>
+<ellipse fill="none" stroke="black" cx="231.21" cy="-18" rx="28.4" ry="18"></ellipse>
+<text text-anchor="middle" x="231.21" y="-13.8" font-family="Times,serif" font-size="14.00">lime</text>
+</g>
+<!-- lychee&#45;&#45;lime -->
+<g id="edge7" class="edge">
+<title>lychee--lime</title>
+<path fill="none" stroke="black" d="M296.61,-74.15C282.14,-61.95 261.8,-44.8 247.66,-32.87"></path>
+</g>
+<!-- pomelo -->
+<g id="node10" class="node">
+<title>pomelo</title>
+<ellipse fill="none" stroke="black" cx="317.21" cy="-18" rx="40.01" ry="18"></ellipse>
+<text text-anchor="middle" x="317.21" y="-13.8" font-family="Times,serif" font-size="14.00">pomelo</text>
+</g>
+<!-- lychee&#45;&#45;pomelo -->
+<g id="edge8" class="edge">
+<title>lychee--pomelo</title>
+<path fill="none" stroke="black" d="M314.95,-71.7C315.42,-60.85 316.01,-46.92 316.48,-36.1"></path>
+</g>
+<!-- starfruit -->
+<g id="node12" class="node">
+<title>starfruit</title>
+<ellipse fill="none" stroke="black" cx="418.21" cy="-18" rx="41.71" ry="18"></ellipse>
+<text text-anchor="middle" x="418.21" y="-13.8" font-family="Times,serif" font-size="14.00">starfruit</text>
+</g>
+<!-- strawberry&#45;&#45;starfruit -->
+<g id="edge9" class="edge">
+<title>strawberry--starfruit</title>
+<path fill="none" stroke="black" d="M420.47,-71.7C420,-60.85 419.41,-46.92 418.94,-36.1"></path>
+</g>
+<!-- tomato -->
+<g id="node13" class="node">
+<title>tomato</title>
+<ellipse fill="none" stroke="black" cx="515.21" cy="-18" rx="37.71" ry="18"></ellipse>
+<text text-anchor="middle" x="515.21" y="-13.8" font-family="Times,serif" font-size="14.00">tomato</text>
+</g>
+<!-- strawberry&#45;&#45;tomato -->
+<g id="edge10" class="edge">
+<title>strawberry--tomato</title>
+<path fill="none" stroke="black" d="M442.07,-73.46C458.08,-61.54 480.02,-45.2 495.69,-33.54"></path>
+</g>
+<!-- null1 -->
+<g id="node8" class="node">
+<title>null1</title>
+</g>
+<!-- null2 -->
+<g id="node11" class="node">
+<title>null2</title>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="remove-6" class="slide level2">
+<h2>Remove</h2>
+<p>Node with one child can be removed with only locally available pointers</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 565.07 260.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
+<title>BST</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-256 561.07,-256 561.07,4 -4,4"></polygon>
+<!-- lemon -->
+<g id="node1" class="node">
+<title>lemon</title>
+<ellipse fill="none" stroke="black" cx="271.21" cy="-234" rx="35.35" ry="18"></ellipse>
+<text text-anchor="middle" x="271.21" y="-229.8" font-family="Times,serif" font-size="14.00">lemon</text>
+</g>
+<!-- guava -->
+<g id="node2" class="node">
+<title>guava</title>
+<ellipse fill="lightgrey" stroke="black" cx="221.21" cy="-162" rx="34.19" ry="18"></ellipse>
+<text text-anchor="middle" x="221.21" y="-157.8" font-family="Times,serif" font-size="14.00">guava</text>
+</g>
+<!-- lemon&#45;&#45;guava -->
+<g id="edge1" class="edge">
+<title>lemon--guava</title>
+<path fill="none" stroke="black" d="M259.61,-216.76C251.53,-205.46 240.81,-190.44 232.74,-179.15"></path>
+</g>
+<!-- raspberry -->
+<g id="node3" class="node">
+<title>raspberry</title>
+<ellipse fill="none" stroke="black" cx="321.21" cy="-162" rx="47.5" ry="18"></ellipse>
+<text text-anchor="middle" x="321.21" y="-157.8" font-family="Times,serif" font-size="14.00">raspberry</text>
+</g>
+<!-- lemon&#45;&#45;raspberry -->
+<g id="edge2" class="edge">
+<title>lemon--raspberry</title>
+<path fill="none" stroke="black" d="M282.81,-216.76C290.77,-205.62 301.31,-190.87 309.33,-179.63"></path>
+</g>
+<!-- coconut -->
+<g id="node4" class="node">
+<title>coconut</title>
+<ellipse fill="none" stroke="black" cx="135.21" cy="-90" rx="41.71" ry="18"></ellipse>
+<text text-anchor="middle" x="135.21" y="-85.8" font-family="Times,serif" font-size="14.00">coconut</text>
+</g>
+<!-- guava&#45;&#45;coconut -->
+<g id="edge3" class="edge">
+<title>guava--coconut</title>
+<path fill="none" stroke="black" d="M203.39,-146.5C188.93,-134.72 168.59,-118.17 153.9,-106.21"></path>
+</g>
+<!-- null0 -->
+<g id="node5" class="node">
+<title>null0</title>
+</g>
+<!-- guava&#45;&#45;null0 -->
+<g id="edge4" class="edge">
+<title>guava--null0</title>
+<path fill="none" stroke="black" d="M222.2,-143.7C222.82,-132.85 223.61,-118.92 224.23,-108.1"></path>
+</g>
+<!-- lychee -->
+<g id="node6" class="node">
+<title>lychee</title>
+<ellipse fill="none" stroke="black" cx="317.21" cy="-90" rx="36.47" ry="18"></ellipse>
+<text text-anchor="middle" x="317.21" y="-85.8" font-family="Times,serif" font-size="14.00">lychee</text>
+</g>
+<!-- raspberry&#45;&#45;lychee -->
+<g id="edge5" class="edge">
+<title>raspberry--lychee</title>
+<path fill="none" stroke="black" d="M320.22,-143.7C319.6,-132.85 318.8,-118.92 318.19,-108.1"></path>
+</g>
+<!-- strawberry -->
+<g id="node7" class="node">
+<title>strawberry</title>
+<ellipse fill="none" stroke="black" cx="424.21" cy="-90" rx="52.16" ry="18"></ellipse>
+<text text-anchor="middle" x="424.21" y="-85.8" font-family="Times,serif" font-size="14.00">strawberry</text>
+</g>
+<!-- raspberry&#45;&#45;strawberry -->
+<g id="edge6" class="edge">
+<title>raspberry--strawberry</title>
+<path fill="none" stroke="black" d="M343.31,-145.98C360.45,-134.33 384.13,-118.24 401.44,-106.48"></path>
+</g>
+<!-- avocado -->
+<g id="node14" class="node">
+<title>avocado</title>
+<ellipse fill="none" stroke="black" cx="43.21" cy="-18" rx="43.42" ry="18"></ellipse>
+<text text-anchor="middle" x="43.21" y="-13.8" font-family="Times,serif" font-size="14.00">avocado</text>
+</g>
+<!-- coconut&#45;&#45;avocado -->
+<g id="edge11" class="edge">
+<title>coconut--avocado</title>
+<path fill="none" stroke="black" d="M115.25,-73.81C99.81,-62.07 78.55,-45.89 63.13,-34.16"></path>
+</g>
+<!-- banana -->
+<g id="node15" class="node">
+<title>banana</title>
+<ellipse fill="none" stroke="black" cx="143.21" cy="-18" rx="38.26" ry="18"></ellipse>
+<text text-anchor="middle" x="143.21" y="-13.8" font-family="Times,serif" font-size="14.00">banana</text>
+</g>
+<!-- coconut&#45;&#45;banana -->
+<g id="edge12" class="edge">
+<title>coconut--banana</title>
+<path fill="none" stroke="black" d="M137.19,-71.7C138.43,-60.85 140.02,-46.92 141.25,-36.1"></path>
+</g>
+<!-- lime -->
+<g id="node9" class="node">
+<title>lime</title>
+<ellipse fill="none" stroke="black" cx="233.21" cy="-18" rx="28.4" ry="18"></ellipse>
+<text text-anchor="middle" x="233.21" y="-13.8" font-family="Times,serif" font-size="14.00">lime</text>
+</g>
+<!-- lychee&#45;&#45;lime -->
+<g id="edge7" class="edge">
+<title>lychee--lime</title>
+<path fill="none" stroke="black" d="M299.39,-74.15C284.75,-61.95 264.17,-44.8 249.85,-32.87"></path>
+</g>
+<!-- pomelo -->
+<g id="node10" class="node">
+<title>pomelo</title>
+<ellipse fill="none" stroke="black" cx="319.21" cy="-18" rx="40.01" ry="18"></ellipse>
+<text text-anchor="middle" x="319.21" y="-13.8" font-family="Times,serif" font-size="14.00">pomelo</text>
+</g>
+<!-- lychee&#45;&#45;pomelo -->
+<g id="edge8" class="edge">
+<title>lychee--pomelo</title>
+<path fill="none" stroke="black" d="M317.7,-71.7C318.01,-60.85 318.41,-46.92 318.72,-36.1"></path>
+</g>
+<!-- starfruit -->
+<g id="node12" class="node">
+<title>starfruit</title>
+<ellipse fill="none" stroke="black" cx="422.21" cy="-18" rx="41.71" ry="18"></ellipse>
+<text text-anchor="middle" x="422.21" y="-13.8" font-family="Times,serif" font-size="14.00">starfruit</text>
+</g>
+<!-- strawberry&#45;&#45;starfruit -->
+<g id="edge9" class="edge">
+<title>strawberry--starfruit</title>
+<path fill="none" stroke="black" d="M423.71,-71.7C423.4,-60.85 423.01,-46.92 422.7,-36.1"></path>
+</g>
+<!-- tomato -->
+<g id="node13" class="node">
+<title>tomato</title>
+<ellipse fill="none" stroke="black" cx="519.21" cy="-18" rx="37.71" ry="18"></ellipse>
+<text text-anchor="middle" x="519.21" y="-13.8" font-family="Times,serif" font-size="14.00">tomato</text>
+</g>
+<!-- strawberry&#45;&#45;tomato -->
+<g id="edge10" class="edge">
+<title>strawberry--tomato</title>
+<path fill="none" stroke="black" d="M445.29,-73.46C461.47,-61.54 483.65,-45.2 499.48,-33.54"></path>
+</g>
+<!-- null1 -->
+<g id="node8" class="node">
+<title>null1</title>
+</g>
+<!-- null2 -->
+<g id="node11" class="node">
+<title>null2</title>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="remove-7" class="slide level2">
+<h2>Remove</h2>
+<p>Node with one child can be removed with only locally available pointers</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 491.07 260.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
+<title>BST</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-256 487.07,-256 487.07,4 -4,4"></polygon>
+<!-- lemon -->
+<g id="node1" class="node">
+<title>lemon</title>
+<ellipse fill="none" stroke="black" cx="192.21" cy="-234" rx="35.35" ry="18"></ellipse>
+<text text-anchor="middle" x="192.21" y="-229.8" font-family="Times,serif" font-size="14.00">lemon</text>
+</g>
+<!-- coconut -->
+<g id="node2" class="node">
+<title>coconut</title>
+<ellipse fill="none" stroke="black" cx="139.21" cy="-162" rx="41.71" ry="18"></ellipse>
+<text text-anchor="middle" x="139.21" y="-157.8" font-family="Times,serif" font-size="14.00">coconut</text>
+</g>
+<!-- lemon&#45;&#45;coconut -->
+<g id="edge1" class="edge">
+<title>lemon--coconut</title>
+<path fill="none" stroke="black" d="M179.92,-216.76C171.48,-205.62 160.31,-190.87 151.8,-179.63"></path>
+</g>
+<!-- raspberry -->
+<g id="node3" class="node">
+<title>raspberry</title>
+<ellipse fill="none" stroke="black" cx="246.21" cy="-162" rx="47.5" ry="18"></ellipse>
+<text text-anchor="middle" x="246.21" y="-157.8" font-family="Times,serif" font-size="14.00">raspberry</text>
+</g>
+<!-- lemon&#45;&#45;raspberry -->
+<g id="edge2" class="edge">
+<title>lemon--raspberry</title>
+<path fill="none" stroke="black" d="M204.46,-217.12C213.05,-205.98 224.51,-191.13 233.25,-179.8"></path>
+</g>
+<!-- avocado -->
+<g id="node12" class="node">
+<title>avocado</title>
+<ellipse fill="none" stroke="black" cx="43.21" cy="-90" rx="43.42" ry="18"></ellipse>
+<text text-anchor="middle" x="43.21" y="-85.8" font-family="Times,serif" font-size="14.00">avocado</text>
+</g>
+<!-- coconut&#45;&#45;avocado -->
+<g id="edge9" class="edge">
+<title>coconut--avocado</title>
+<path fill="none" stroke="black" d="M118.85,-146.15C102.67,-134.36 80.13,-117.92 63.87,-106.07"></path>
+</g>
+<!-- banana -->
+<g id="node13" class="node">
+<title>banana</title>
+<ellipse fill="none" stroke="black" cx="143.21" cy="-90" rx="38.26" ry="18"></ellipse>
+<text text-anchor="middle" x="143.21" y="-85.8" font-family="Times,serif" font-size="14.00">banana</text>
+</g>
+<!-- coconut&#45;&#45;banana -->
+<g id="edge10" class="edge">
+<title>coconut--banana</title>
+<path fill="none" stroke="black" d="M140.2,-143.7C140.82,-132.85 141.61,-118.92 142.23,-108.1"></path>
+</g>
+<!-- lychee -->
+<g id="node4" class="node">
+<title>lychee</title>
+<ellipse fill="none" stroke="black" cx="243.21" cy="-90" rx="36.47" ry="18"></ellipse>
+<text text-anchor="middle" x="243.21" y="-85.8" font-family="Times,serif" font-size="14.00">lychee</text>
+</g>
+<!-- raspberry&#45;&#45;lychee -->
+<g id="edge3" class="edge">
+<title>raspberry--lychee</title>
+<path fill="none" stroke="black" d="M245.47,-143.7C245,-132.85 244.41,-118.92 243.94,-108.1"></path>
+</g>
+<!-- strawberry -->
+<g id="node5" class="node">
+<title>strawberry</title>
+<ellipse fill="none" stroke="black" cx="350.21" cy="-90" rx="52.16" ry="18"></ellipse>
+<text text-anchor="middle" x="350.21" y="-85.8" font-family="Times,serif" font-size="14.00">strawberry</text>
+</g>
+<!-- raspberry&#45;&#45;strawberry -->
+<g id="edge4" class="edge">
+<title>raspberry--strawberry</title>
+<path fill="none" stroke="black" d="M268.52,-145.98C285.95,-134.25 310.07,-118.02 327.58,-106.23"></path>
+</g>
+<!-- lime -->
+<g id="node7" class="node">
+<title>lime</title>
+<ellipse fill="none" stroke="black" cx="159.21" cy="-18" rx="28.4" ry="18"></ellipse>
+<text text-anchor="middle" x="159.21" y="-13.8" font-family="Times,serif" font-size="14.00">lime</text>
+</g>
+<!-- lychee&#45;&#45;lime -->
+<g id="edge5" class="edge">
+<title>lychee--lime</title>
+<path fill="none" stroke="black" d="M225.39,-74.15C210.75,-61.95 190.17,-44.8 175.85,-32.87"></path>
+</g>
+<!-- pomelo -->
+<g id="node8" class="node">
+<title>pomelo</title>
+<ellipse fill="none" stroke="black" cx="245.21" cy="-18" rx="40.01" ry="18"></ellipse>
+<text text-anchor="middle" x="245.21" y="-13.8" font-family="Times,serif" font-size="14.00">pomelo</text>
+</g>
+<!-- lychee&#45;&#45;pomelo -->
+<g id="edge6" class="edge">
+<title>lychee--pomelo</title>
+<path fill="none" stroke="black" d="M243.7,-71.7C244.01,-60.85 244.41,-46.92 244.72,-36.1"></path>
+</g>
+<!-- starfruit -->
+<g id="node10" class="node">
+<title>starfruit</title>
+<ellipse fill="none" stroke="black" cx="348.21" cy="-18" rx="41.71" ry="18"></ellipse>
+<text text-anchor="middle" x="348.21" y="-13.8" font-family="Times,serif" font-size="14.00">starfruit</text>
+</g>
+<!-- strawberry&#45;&#45;starfruit -->
+<g id="edge7" class="edge">
+<title>strawberry--starfruit</title>
+<path fill="none" stroke="black" d="M349.71,-71.7C349.4,-60.85 349.01,-46.92 348.7,-36.1"></path>
+</g>
+<!-- tomato -->
+<g id="node11" class="node">
+<title>tomato</title>
+<ellipse fill="none" stroke="black" cx="445.21" cy="-18" rx="37.71" ry="18"></ellipse>
+<text text-anchor="middle" x="445.21" y="-13.8" font-family="Times,serif" font-size="14.00">tomato</text>
+</g>
+<!-- strawberry&#45;&#45;tomato -->
+<g id="edge8" class="edge">
+<title>strawberry--tomato</title>
+<path fill="none" stroke="black" d="M371.29,-73.46C387.47,-61.54 409.65,-45.2 425.48,-33.54"></path>
+</g>
+<!-- null1 -->
+<g id="node6" class="node">
+<title>null1</title>
+</g>
+<!-- null2 -->
+<g id="node9" class="node">
+<title>null2</title>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="remove-8" class="slide level2">
+<h2>Remove</h2>
+<p>Node with two children</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 491.07 260.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
+<title>BST</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-256 487.07,-256 487.07,4 -4,4"></polygon>
+<!-- lemon -->
+<g id="node1" class="node">
+<title>lemon</title>
+<ellipse fill="none" stroke="black" cx="192.21" cy="-234" rx="35.35" ry="18"></ellipse>
+<text text-anchor="middle" x="192.21" y="-229.8" font-family="Times,serif" font-size="14.00">lemon</text>
+</g>
+<!-- coconut -->
+<g id="node2" class="node">
+<title>coconut</title>
+<ellipse fill="none" stroke="black" cx="139.21" cy="-162" rx="41.71" ry="18"></ellipse>
+<text text-anchor="middle" x="139.21" y="-157.8" font-family="Times,serif" font-size="14.00">coconut</text>
+</g>
+<!-- lemon&#45;&#45;coconut -->
+<g id="edge1" class="edge">
+<title>lemon--coconut</title>
+<path fill="none" stroke="black" d="M179.92,-216.76C171.48,-205.62 160.31,-190.87 151.8,-179.63"></path>
+</g>
+<!-- raspberry -->
+<g id="node3" class="node">
+<title>raspberry</title>
+<ellipse fill="lightgrey" stroke="black" cx="246.21" cy="-162" rx="47.5" ry="18"></ellipse>
+<text text-anchor="middle" x="246.21" y="-157.8" font-family="Times,serif" font-size="14.00">raspberry</text>
+</g>
+<!-- lemon&#45;&#45;raspberry -->
+<g id="edge2" class="edge">
+<title>lemon--raspberry</title>
+<path fill="none" stroke="black" d="M204.46,-217.12C213.05,-205.98 224.51,-191.13 233.25,-179.8"></path>
+</g>
+<!-- avocado -->
+<g id="node12" class="node">
+<title>avocado</title>
+<ellipse fill="none" stroke="black" cx="43.21" cy="-90" rx="43.42" ry="18"></ellipse>
+<text text-anchor="middle" x="43.21" y="-85.8" font-family="Times,serif" font-size="14.00">avocado</text>
+</g>
+<!-- coconut&#45;&#45;avocado -->
+<g id="edge9" class="edge">
+<title>coconut--avocado</title>
+<path fill="none" stroke="black" d="M118.85,-146.15C102.67,-134.36 80.13,-117.92 63.87,-106.07"></path>
+</g>
+<!-- banana -->
+<g id="node13" class="node">
+<title>banana</title>
+<ellipse fill="none" stroke="black" cx="143.21" cy="-90" rx="38.26" ry="18"></ellipse>
+<text text-anchor="middle" x="143.21" y="-85.8" font-family="Times,serif" font-size="14.00">banana</text>
+</g>
+<!-- coconut&#45;&#45;banana -->
+<g id="edge10" class="edge">
+<title>coconut--banana</title>
+<path fill="none" stroke="black" d="M140.2,-143.7C140.82,-132.85 141.61,-118.92 142.23,-108.1"></path>
+</g>
+<!-- lychee -->
+<g id="node4" class="node">
+<title>lychee</title>
+<ellipse fill="none" stroke="black" cx="243.21" cy="-90" rx="36.47" ry="18"></ellipse>
+<text text-anchor="middle" x="243.21" y="-85.8" font-family="Times,serif" font-size="14.00">lychee</text>
+</g>
+<!-- raspberry&#45;&#45;lychee -->
+<g id="edge3" class="edge">
+<title>raspberry--lychee</title>
+<path fill="none" stroke="black" d="M245.47,-143.7C245,-132.85 244.41,-118.92 243.94,-108.1"></path>
+</g>
+<!-- strawberry -->
+<g id="node5" class="node">
+<title>strawberry</title>
+<ellipse fill="none" stroke="black" cx="350.21" cy="-90" rx="52.16" ry="18"></ellipse>
+<text text-anchor="middle" x="350.21" y="-85.8" font-family="Times,serif" font-size="14.00">strawberry</text>
+</g>
+<!-- raspberry&#45;&#45;strawberry -->
+<g id="edge4" class="edge">
+<title>raspberry--strawberry</title>
+<path fill="none" stroke="black" d="M268.52,-145.98C285.95,-134.25 310.07,-118.02 327.58,-106.23"></path>
+</g>
+<!-- lime -->
+<g id="node7" class="node">
+<title>lime</title>
+<ellipse fill="none" stroke="black" cx="159.21" cy="-18" rx="28.4" ry="18"></ellipse>
+<text text-anchor="middle" x="159.21" y="-13.8" font-family="Times,serif" font-size="14.00">lime</text>
+</g>
+<!-- lychee&#45;&#45;lime -->
+<g id="edge5" class="edge">
+<title>lychee--lime</title>
+<path fill="none" stroke="black" d="M225.39,-74.15C210.75,-61.95 190.17,-44.8 175.85,-32.87"></path>
+</g>
+<!-- pomelo -->
+<g id="node8" class="node">
+<title>pomelo</title>
+<ellipse fill="none" stroke="black" cx="245.21" cy="-18" rx="40.01" ry="18"></ellipse>
+<text text-anchor="middle" x="245.21" y="-13.8" font-family="Times,serif" font-size="14.00">pomelo</text>
+</g>
+<!-- lychee&#45;&#45;pomelo -->
+<g id="edge6" class="edge">
+<title>lychee--pomelo</title>
+<path fill="none" stroke="black" d="M243.7,-71.7C244.01,-60.85 244.41,-46.92 244.72,-36.1"></path>
+</g>
+<!-- starfruit -->
+<g id="node10" class="node">
+<title>starfruit</title>
+<ellipse fill="none" stroke="black" cx="348.21" cy="-18" rx="41.71" ry="18"></ellipse>
+<text text-anchor="middle" x="348.21" y="-13.8" font-family="Times,serif" font-size="14.00">starfruit</text>
+</g>
+<!-- strawberry&#45;&#45;starfruit -->
+<g id="edge7" class="edge">
+<title>strawberry--starfruit</title>
+<path fill="none" stroke="black" d="M349.71,-71.7C349.4,-60.85 349.01,-46.92 348.7,-36.1"></path>
+</g>
+<!-- tomato -->
+<g id="node11" class="node">
+<title>tomato</title>
+<ellipse fill="none" stroke="black" cx="445.21" cy="-18" rx="37.71" ry="18"></ellipse>
+<text text-anchor="middle" x="445.21" y="-13.8" font-family="Times,serif" font-size="14.00">tomato</text>
+</g>
+<!-- strawberry&#45;&#45;tomato -->
+<g id="edge8" class="edge">
+<title>strawberry--tomato</title>
+<path fill="none" stroke="black" d="M371.29,-73.46C387.47,-61.54 409.65,-45.2 425.48,-33.54"></path>
+</g>
+<!-- null1 -->
+<g id="node6" class="node">
+<title>null1</title>
+</g>
+<!-- null2 -->
+<g id="node9" class="node">
+<title>null2</title>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="remove-9" class="slide level2">
+<h2>Remove</h2>
+<p>Node with two children</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 491.07 260.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
+<title>BST</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-256 487.07,-256 487.07,4 -4,4"></polygon>
+<!-- lemon -->
+<g id="node1" class="node">
+<title>lemon</title>
+<ellipse fill="none" stroke="black" cx="192.21" cy="-234" rx="35.35" ry="18"></ellipse>
+<text text-anchor="middle" x="192.21" y="-229.8" font-family="Times,serif" font-size="14.00">lemon</text>
+</g>
+<!-- coconut -->
+<g id="node2" class="node">
+<title>coconut</title>
+<ellipse fill="none" stroke="black" cx="139.21" cy="-162" rx="41.71" ry="18"></ellipse>
+<text text-anchor="middle" x="139.21" y="-157.8" font-family="Times,serif" font-size="14.00">coconut</text>
+</g>
+<!-- lemon&#45;&#45;coconut -->
+<g id="edge1" class="edge">
+<title>lemon--coconut</title>
+<path fill="none" stroke="black" d="M179.92,-216.76C171.48,-205.62 160.31,-190.87 151.8,-179.63"></path>
+</g>
+<!-- raspberry -->
+<g id="node3" class="node">
+<title>raspberry</title>
+<ellipse fill="lightgrey" stroke="black" cx="246.21" cy="-162" rx="47.5" ry="18"></ellipse>
+<text text-anchor="middle" x="246.21" y="-157.8" font-family="Times,serif" font-size="14.00">raspberry</text>
+</g>
+<!-- lemon&#45;&#45;raspberry -->
+<g id="edge2" class="edge">
+<title>lemon--raspberry</title>
+<path fill="none" stroke="black" d="M204.46,-217.12C213.05,-205.98 224.51,-191.13 233.25,-179.8"></path>
+</g>
+<!-- avocado -->
+<g id="node12" class="node">
+<title>avocado</title>
+<ellipse fill="none" stroke="black" cx="43.21" cy="-90" rx="43.42" ry="18"></ellipse>
+<text text-anchor="middle" x="43.21" y="-85.8" font-family="Times,serif" font-size="14.00">avocado</text>
+</g>
+<!-- coconut&#45;&#45;avocado -->
+<g id="edge9" class="edge">
+<title>coconut--avocado</title>
+<path fill="none" stroke="black" d="M118.85,-146.15C102.67,-134.36 80.13,-117.92 63.87,-106.07"></path>
+</g>
+<!-- banana -->
+<g id="node13" class="node">
+<title>banana</title>
+<ellipse fill="none" stroke="black" cx="143.21" cy="-90" rx="38.26" ry="18"></ellipse>
+<text text-anchor="middle" x="143.21" y="-85.8" font-family="Times,serif" font-size="14.00">banana</text>
+</g>
+<!-- coconut&#45;&#45;banana -->
+<g id="edge10" class="edge">
+<title>coconut--banana</title>
+<path fill="none" stroke="black" d="M140.2,-143.7C140.82,-132.85 141.61,-118.92 142.23,-108.1"></path>
+</g>
+<!-- lychee -->
+<g id="node4" class="node">
+<title>lychee</title>
+<ellipse fill="none" stroke="black" cx="243.21" cy="-90" rx="36.47" ry="18"></ellipse>
+<text text-anchor="middle" x="243.21" y="-85.8" font-family="Times,serif" font-size="14.00">lychee</text>
+</g>
+<!-- raspberry&#45;&#45;lychee -->
+<g id="edge3" class="edge">
+<title>raspberry--lychee</title>
+<path fill="none" stroke="black" d="M245.47,-143.7C245,-132.85 244.41,-118.92 243.94,-108.1"></path>
+</g>
+<!-- strawberry -->
+<g id="node5" class="node">
+<title>strawberry</title>
+<ellipse fill="none" stroke="black" cx="350.21" cy="-90" rx="52.16" ry="18"></ellipse>
+<text text-anchor="middle" x="350.21" y="-85.8" font-family="Times,serif" font-size="14.00">strawberry</text>
+</g>
+<!-- raspberry&#45;&#45;strawberry -->
+<g id="edge4" class="edge">
+<title>raspberry--strawberry</title>
+<path fill="none" stroke="black" d="M268.52,-145.98C285.95,-134.25 310.07,-118.02 327.58,-106.23"></path>
+</g>
+<!-- lime -->
+<g id="node7" class="node">
+<title>lime</title>
+<ellipse fill="none" stroke="black" cx="159.21" cy="-18" rx="28.4" ry="18"></ellipse>
+<text text-anchor="middle" x="159.21" y="-13.8" font-family="Times,serif" font-size="14.00">lime</text>
+</g>
+<!-- lychee&#45;&#45;lime -->
+<g id="edge5" class="edge">
+<title>lychee--lime</title>
+<path fill="none" stroke="black" d="M225.39,-74.15C210.75,-61.95 190.17,-44.8 175.85,-32.87"></path>
+</g>
+<!-- pomelo -->
+<g id="node8" class="node">
+<title>pomelo</title>
+<ellipse fill="lightblue" stroke="black" cx="245.21" cy="-18" rx="40.01" ry="18"></ellipse>
+<text text-anchor="middle" x="245.21" y="-13.8" font-family="Times,serif" font-size="14.00">pomelo</text>
+</g>
+<!-- lychee&#45;&#45;pomelo -->
+<g id="edge6" class="edge">
+<title>lychee--pomelo</title>
+<path fill="none" stroke="black" d="M243.7,-71.7C244.01,-60.85 244.41,-46.92 244.72,-36.1"></path>
+</g>
+<!-- starfruit -->
+<g id="node10" class="node">
+<title>starfruit</title>
+<ellipse fill="lightblue" stroke="black" cx="348.21" cy="-18" rx="41.71" ry="18"></ellipse>
+<text text-anchor="middle" x="348.21" y="-13.8" font-family="Times,serif" font-size="14.00">starfruit</text>
+</g>
+<!-- strawberry&#45;&#45;starfruit -->
+<g id="edge7" class="edge">
+<title>strawberry--starfruit</title>
+<path fill="none" stroke="black" d="M349.71,-71.7C349.4,-60.85 349.01,-46.92 348.7,-36.1"></path>
+</g>
+<!-- tomato -->
+<g id="node11" class="node">
+<title>tomato</title>
+<ellipse fill="none" stroke="black" cx="445.21" cy="-18" rx="37.71" ry="18"></ellipse>
+<text text-anchor="middle" x="445.21" y="-13.8" font-family="Times,serif" font-size="14.00">tomato</text>
+</g>
+<!-- strawberry&#45;&#45;tomato -->
+<g id="edge8" class="edge">
+<title>strawberry--tomato</title>
+<path fill="none" stroke="black" d="M371.29,-73.46C387.47,-61.54 409.65,-45.2 425.48,-33.54"></path>
+</g>
+<!-- null1 -->
+<g id="node6" class="node">
+<title>null1</title>
+</g>
+<!-- null2 -->
+<g id="node9" class="node">
+<title>null2</title>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="remove-steps" class="slide level2">
+<h2>Remove – steps</h2>
+<ul>
+<li><p>find parent of node to remove</p></li>
+<li><p>modify parent.left/right to not reference node to remove</p></li>
+<li><p>count how many children node to remove has</p>
+<ul>
+<li>0 children – modify parent.left/right to not reference node to remove</li>
+<li>1 child – the “orphan” child replaces the node to remove</li>
+<li>2 children – special node (we need to find it) replaces it (can’t just swap nodes because of references, switch data instead)</li>
+</ul></li>
+</ul>
+</section>
+<section id="recap" class="slide level2">
+<h2>Recap</h2>
+<ul>
+<li>What is a binary search tree?</li>
+<li>How do you loop over a binary search tree?</li>
+<li>How do you search a binary search tree?</li>
+<li>How do you add to a binary search tree?</li>
+<li>How do you remove from a binary search tree?</li>
+<li>What is the runtime of these operations?</li>
+</ul>
 
 </section></section>
     </div>
