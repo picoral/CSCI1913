@@ -2574,58 +2574,45 @@
 </section>
 <section id="node-comparable-implementation" class="slide level2">
 <h2>Node Comparable implementation</h2>
-<p>We need to implement <code>compareTo</code> from <code>Comparable</code> to be able to go left or right</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href=""></a>public class Node&lt;T extends Comparable&lt;T&gt;&gt; implements Comparable&lt;Node&lt;T&gt;&gt; {</span>
+<p>We need to implement extend <code>Comparable</code> to be able to go left or right (use <code>compareTo</code> from the data object)</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href=""></a>public class Node&lt;T extends Comparable&lt;T&gt;&gt; {</span>
 <span id="cb2-2"><a href=""></a>    private T data;</span>
 <span id="cb2-3"><a href=""></a>    private Node&lt;T&gt; left;</span>
 <span id="cb2-4"><a href=""></a>    private Node&lt;T&gt; right;</span>
 <span id="cb2-5"><a href=""></a></span>
-<span id="cb2-6"><a href=""></a>    // constructor with data as argument</span>
-<span id="cb2-7"><a href=""></a>    public Node(T data) {</span>
-<span id="cb2-8"><a href=""></a>        this.data = data;</span>
-<span id="cb2-9"><a href=""></a>        left = null;</span>
-<span id="cb2-10"><a href=""></a>        right = null;</span>
-<span id="cb2-11"><a href=""></a>    }</span>
-<span id="cb2-12"><a href=""></a></span>
-<span id="cb2-13"><a href=""></a>    // getters</span>
-<span id="cb2-14"><a href=""></a>    public T getData() {</span>
-<span id="cb2-15"><a href=""></a>        return data;</span>
-<span id="cb2-16"><a href=""></a>    }</span>
-<span id="cb2-17"><a href=""></a></span>
-<span id="cb2-18"><a href=""></a>    public Node&lt;T&gt; getLeft() {</span>
-<span id="cb2-19"><a href=""></a>        return left;</span>
-<span id="cb2-20"><a href=""></a>    }</span>
-<span id="cb2-21"><a href=""></a></span>
-<span id="cb2-22"><a href=""></a>    public Node&lt;T&gt; getRight() {</span>
-<span id="cb2-23"><a href=""></a>        return right;</span>
-<span id="cb2-24"><a href=""></a>    }</span>
-<span id="cb2-25"><a href=""></a></span>
-<span id="cb2-26"><a href=""></a>    // setters</span>
-<span id="cb2-27"><a href=""></a>    public void setData(T data) {</span>
-<span id="cb2-28"><a href=""></a>        this.data = data;</span>
-<span id="cb2-29"><a href=""></a>    }</span>
-<span id="cb2-30"><a href=""></a></span>
-<span id="cb2-31"><a href=""></a>    public void setLeft(Node&lt;T&gt; node) {</span>
-<span id="cb2-32"><a href=""></a>        left = node;</span>
-<span id="cb2-33"><a href=""></a>    }</span>
-<span id="cb2-34"><a href=""></a></span>
-<span id="cb2-35"><a href=""></a>    public void setRight(Node&lt;T&gt; node) {</span>
-<span id="cb2-36"><a href=""></a>        right = node;</span>
-<span id="cb2-37"><a href=""></a>    }</span>
-<span id="cb2-38"><a href=""></a></span>
-<span id="cb2-39"><a href=""></a>    public int compareTo(Node&lt;T&gt; otherNode) {</span>
-<span id="cb2-40"><a href=""></a>        if (this == otherNode) {</span>
-<span id="cb2-41"><a href=""></a>            return 0;</span>
-<span id="cb2-42"><a href=""></a>        }</span>
-<span id="cb2-43"><a href=""></a></span>
-<span id="cb2-44"><a href=""></a>        if (otherNode == null) {</span>
-<span id="cb2-45"><a href=""></a>            return 1;</span>
-<span id="cb2-46"><a href=""></a>        }</span>
-<span id="cb2-47"><a href=""></a></span>
-<span id="cb2-48"><a href=""></a>        Node&lt;T&gt; aNode = (Node&lt;T&gt;) otherNode;</span>
-<span id="cb2-49"><a href=""></a>        return this.data.compareTo(aNode.getData());</span>
-<span id="cb2-50"><a href=""></a>    }</span>
-<span id="cb2-51"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-6"><a href=""></a>    public Node(T data) {</span>
+<span id="cb2-7"><a href=""></a>        this.data = data;</span>
+<span id="cb2-8"><a href=""></a>        left = null;</span>
+<span id="cb2-9"><a href=""></a>        right = null;</span>
+<span id="cb2-10"><a href=""></a>    }</span>
+<span id="cb2-11"><a href=""></a></span>
+<span id="cb2-12"><a href=""></a>    public T getData() {</span>
+<span id="cb2-13"><a href=""></a>        return data;</span>
+<span id="cb2-14"><a href=""></a>    }</span>
+<span id="cb2-15"><a href=""></a></span>
+<span id="cb2-16"><a href=""></a>    public Node&lt;T&gt; getLeft() {</span>
+<span id="cb2-17"><a href=""></a>        return left;</span>
+<span id="cb2-18"><a href=""></a>    }</span>
+<span id="cb2-19"><a href=""></a></span>
+<span id="cb2-20"><a href=""></a>    public Node&lt;T&gt; getRight() {</span>
+<span id="cb2-21"><a href=""></a>        return right;</span>
+<span id="cb2-22"><a href=""></a>    }</span>
+<span id="cb2-23"><a href=""></a></span>
+<span id="cb2-24"><a href=""></a>    public void setData(T data) {</span>
+<span id="cb2-25"><a href=""></a>        this.data = data;</span>
+<span id="cb2-26"><a href=""></a>    }</span>
+<span id="cb2-27"><a href=""></a></span>
+<span id="cb2-28"><a href=""></a>    public void setLeft(Node&lt;T&gt; node) {</span>
+<span id="cb2-29"><a href=""></a>        left = node;</span>
+<span id="cb2-30"><a href=""></a>    }</span>
+<span id="cb2-31"><a href=""></a></span>
+<span id="cb2-32"><a href=""></a>    public void setRight(Node&lt;T&gt; node) {</span>
+<span id="cb2-33"><a href=""></a>        right = node;</span>
+<span id="cb2-34"><a href=""></a>    }</span>
+<span id="cb2-35"><a href=""></a></span>
+<span id="cb2-36"><a href=""></a>    public String toString() { return data.toString(); }</span>
+<span id="cb2-37"><a href=""></a></span>
+<span id="cb2-38"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tree-implementation-basics" class="slide level2">
 <h2>Tree implementation (basics)</h2>
@@ -2670,24 +2657,41 @@
 <li>If left/right child is not null, call <code>addNode</code> recursively with left/right child as current node</li>
 </ul>
 </section>
+<section id="addnode" class="slide level2">
+<h2>addNode</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href=""></a>private void addNode(Node&lt;T&gt; current, Node&lt;T&gt; nodeToAdd) {</span>
+<span id="cb5-2"><a href=""></a>  if (current.getData().compareTo(nodeToAdd.getData()) &gt; 0) {</span>
+<span id="cb5-3"><a href=""></a>    if (current.getLeft() == null) current.setLeft(nodeToAdd);</span>
+<span id="cb5-4"><a href=""></a>    else addNode(current.getLeft(), nodeToAdd);</span>
+<span id="cb5-5"><a href=""></a>  } else if(current.getData().compareTo(nodeToAdd.getData()) &lt; 0) {</span>
+<span id="cb5-6"><a href=""></a>    if (current.getRight() == null) current.setRight(nodeToAdd);</span>
+<span id="cb5-7"><a href=""></a>    else addNode(current.getRight(), nodeToAdd);</span>
+<span id="cb5-8"><a href=""></a>  }</span>
+<span id="cb5-9"><a href=""></a>}</span>
+<span id="cb5-10"><a href=""></a></span>
+<span id="cb5-11"><a href=""></a>public void addNode(Node&lt;T&gt; node) {</span>
+<span id="cb5-12"><a href=""></a>  if (root == null) root = node;</span>
+<span id="cb5-13"><a href=""></a>  else addNode(root, node);</span>
+<span id="cb5-14"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 <section id="test-it" class="slide level2">
 <h2>Test it</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href=""></a>Tree&lt;Character&gt; tree = new Tree&lt;&gt;();</span>
-<span id="cb5-2"><a href=""></a></span>
-<span id="cb5-3"><a href=""></a>tree.addNode(new Node&lt;&gt;('M'));</span>
-<span id="cb5-4"><a href=""></a>System.out.println(tree.getRoot().getData());</span>
-<span id="cb5-5"><a href=""></a></span>
-<span id="cb5-6"><a href=""></a>tree.addNode(new Node&lt;&gt;('O'));</span>
-<span id="cb5-7"><a href=""></a>System.out.println(tree.getRoot().getLeft());</span>
-<span id="cb5-8"><a href=""></a>System.out.println(tree.getRoot().getRight().getData());</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href=""></a>Tree&lt;Character&gt; tree = new Tree&lt;&gt;();</span>
+<span id="cb6-2"><a href=""></a></span>
+<span id="cb6-3"><a href=""></a>tree.addNode(new Node&lt;&gt;('M'));</span>
+<span id="cb6-4"><a href=""></a>System.out.println(tree.getRoot().getData());</span>
+<span id="cb6-5"><a href=""></a></span>
+<span id="cb6-6"><a href=""></a>tree.addNode(new Node&lt;&gt;('O'));</span>
+<span id="cb6-7"><a href=""></a>System.out.println(tree.getRoot().getLeft());</span>
+<span id="cb6-8"><a href=""></a>System.out.println(tree.getRoot().getRight().getData());</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tostring" class="slide level2">
 <h2>toString</h2>
 <p>It’s going to be easy to test adding multiple nodes if we implement <code>toString</code></p>
 <p>Here’s the public <code>toString</code>:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href=""></a>public String toString() {</span>
-<span id="cb6-2"><a href=""></a>  return toString(root).trim();</span>
-<span id="cb6-3"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href=""></a>public String toString() {</span>
+<span id="cb7-2"><a href=""></a>  return toString(root).trim();</span>
+<span id="cb7-3"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Implement a private <code>toString(Node)</code></p>
 </section>
 <section id="depth-first-traversal-dfs" class="slide level2">
@@ -2725,27 +2729,27 @@
 <section id="tostring-1" class="slide level2">
 <h2>toString</h2>
 <p>One way to implement this that I find useful for debugging:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href=""></a>private String toString(Node&lt;T&gt; current) {</span>
-<span id="cb7-2"><a href=""></a>        if (current == null) {</span>
-<span id="cb7-3"><a href=""></a>            return "";</span>
-<span id="cb7-4"><a href=""></a>        }</span>
-<span id="cb7-5"><a href=""></a>        String message = "";</span>
-<span id="cb7-6"><a href=""></a></span>
-<span id="cb7-7"><a href=""></a>        if (current.getLeft() != null) {</span>
-<span id="cb7-8"><a href=""></a>            message += current.getData() + " left child is " + current.getLeft().getData() + "\n";</span>
-<span id="cb7-9"><a href=""></a>        }</span>
-<span id="cb7-10"><a href=""></a>        if (current.getRight() != null) {</span>
-<span id="cb7-11"><a href=""></a>            message += current.getData() + " right child is " + current.getRight().getData() + "\n";</span>
-<span id="cb7-12"><a href=""></a>        }</span>
-<span id="cb7-13"><a href=""></a></span>
-<span id="cb7-14"><a href=""></a>        if (current.getLeft() != null) {</span>
-<span id="cb7-15"><a href=""></a>            message += toString(current.getLeft());</span>
-<span id="cb7-16"><a href=""></a>        }</span>
-<span id="cb7-17"><a href=""></a>        if (current.getRight() != null) {</span>
-<span id="cb7-18"><a href=""></a>            message += toString(current.getRight());</span>
-<span id="cb7-19"><a href=""></a>        }</span>
-<span id="cb7-20"><a href=""></a>        return message;</span>
-<span id="cb7-21"><a href=""></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href=""></a>private String toString(Node&lt;T&gt; current) {</span>
+<span id="cb8-2"><a href=""></a>        if (current == null) {</span>
+<span id="cb8-3"><a href=""></a>            return "";</span>
+<span id="cb8-4"><a href=""></a>        }</span>
+<span id="cb8-5"><a href=""></a>        String message = "";</span>
+<span id="cb8-6"><a href=""></a></span>
+<span id="cb8-7"><a href=""></a>        if (current.getLeft() != null) {</span>
+<span id="cb8-8"><a href=""></a>            message += current.getData() + " left child is " + current.getLeft().getData() + "\n";</span>
+<span id="cb8-9"><a href=""></a>        }</span>
+<span id="cb8-10"><a href=""></a>        if (current.getRight() != null) {</span>
+<span id="cb8-11"><a href=""></a>            message += current.getData() + " right child is " + current.getRight().getData() + "\n";</span>
+<span id="cb8-12"><a href=""></a>        }</span>
+<span id="cb8-13"><a href=""></a></span>
+<span id="cb8-14"><a href=""></a>        if (current.getLeft() != null) {</span>
+<span id="cb8-15"><a href=""></a>            message += toString(current.getLeft());</span>
+<span id="cb8-16"><a href=""></a>        }</span>
+<span id="cb8-17"><a href=""></a>        if (current.getRight() != null) {</span>
+<span id="cb8-18"><a href=""></a>            message += toString(current.getRight());</span>
+<span id="cb8-19"><a href=""></a>        }</span>
+<span id="cb8-20"><a href=""></a>        return message;</span>
+<span id="cb8-21"><a href=""></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="other-methods" class="slide level2">
 <h2>Other methods</h2>
@@ -2757,27 +2761,27 @@
 </section>
 <section id="findmin" class="slide level2">
 <h2>findMin</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href=""></a>public Node&lt;T&gt; findMin() {</span>
-<span id="cb8-2"><a href=""></a>  return findMin(root);</span>
-<span id="cb8-3"><a href=""></a>}</span>
-<span id="cb8-4"><a href=""></a></span>
-<span id="cb8-5"><a href=""></a>private Node&lt;T&gt; findMin(Node&lt;T&gt; current) {</span>
-<span id="cb8-6"><a href=""></a>  if (current == null) return current;</span>
-<span id="cb8-7"><a href=""></a>  if (current.getLeft() == null) return current;</span>
-<span id="cb8-8"><a href=""></a>  return findMin(current.getLeft());</span>
-<span id="cb8-9"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href=""></a>public Node&lt;T&gt; findMin() {</span>
+<span id="cb9-2"><a href=""></a>  return findMin(root);</span>
+<span id="cb9-3"><a href=""></a>}</span>
+<span id="cb9-4"><a href=""></a></span>
+<span id="cb9-5"><a href=""></a>private Node&lt;T&gt; findMin(Node&lt;T&gt; current) {</span>
+<span id="cb9-6"><a href=""></a>  if (current == null) return current;</span>
+<span id="cb9-7"><a href=""></a>  if (current.getLeft() == null) return current;</span>
+<span id="cb9-8"><a href=""></a>  return findMin(current.getLeft());</span>
+<span id="cb9-9"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="findmax" class="slide level2">
 <h2>findMax</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href=""></a>public Node&lt;T&gt; findMax() {</span>
-<span id="cb9-2"><a href=""></a>  return findMax(root);</span>
-<span id="cb9-3"><a href=""></a>}</span>
-<span id="cb9-4"><a href=""></a></span>
-<span id="cb9-5"><a href=""></a>private Node&lt;T&gt; findMax(Node&lt;T&gt; current) {</span>
-<span id="cb9-6"><a href=""></a>  if (current == null) return current;</span>
-<span id="cb9-7"><a href=""></a>  if (current.getRight() == null) return current;</span>
-<span id="cb9-8"><a href=""></a>  return findMax(current.getRight());</span>
-<span id="cb9-9"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href=""></a>public Node&lt;T&gt; findMax() {</span>
+<span id="cb10-2"><a href=""></a>  return findMax(root);</span>
+<span id="cb10-3"><a href=""></a>}</span>
+<span id="cb10-4"><a href=""></a></span>
+<span id="cb10-5"><a href=""></a>private Node&lt;T&gt; findMax(Node&lt;T&gt; current) {</span>
+<span id="cb10-6"><a href=""></a>  if (current == null) return current;</span>
+<span id="cb10-7"><a href=""></a>  if (current.getRight() == null) return current;</span>
+<span id="cb10-8"><a href=""></a>  return findMax(current.getRight());</span>
+<span id="cb10-9"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="search" class="slide level2">
 <h2>Search</h2>
@@ -2786,20 +2790,20 @@
 <section id="search-1" class="slide level2">
 <h2>Search</h2>
 <p>What’s the runtime?</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href=""></a>public Node&lt;T&gt; search(T value) {</span>
-<span id="cb10-2"><a href=""></a>  return search(root, value);</span>
-<span id="cb10-3"><a href=""></a>}</span>
-<span id="cb10-4"><a href=""></a></span>
-<span id="cb10-5"><a href=""></a>private Node&lt;T&gt; search(Node&lt;T&gt; current, T value) {</span>
-<span id="cb10-6"><a href=""></a>  if (current == null) return null;</span>
-<span id="cb10-7"><a href=""></a>  if (current.getData().compareTo(value) == 0) return current;</span>
-<span id="cb10-8"><a href=""></a>  if (current.getData().compareTo(value) &gt; 0) {</span>
-<span id="cb10-9"><a href=""></a>    if (current.getLeft() == null) return null;</span>
-<span id="cb10-10"><a href=""></a>    return search(current.getLeft(), value);</span>
-<span id="cb10-11"><a href=""></a>  }</span>
-<span id="cb10-12"><a href=""></a>  if (current.getRight() == null) return null;</span>
-<span id="cb10-13"><a href=""></a>  return search(current.getRight(), value);</span>
-<span id="cb10-14"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href=""></a>public Node&lt;T&gt; search(T value) {</span>
+<span id="cb11-2"><a href=""></a>  return search(root, value);</span>
+<span id="cb11-3"><a href=""></a>}</span>
+<span id="cb11-4"><a href=""></a></span>
+<span id="cb11-5"><a href=""></a>private Node&lt;T&gt; search(Node&lt;T&gt; current, T value) {</span>
+<span id="cb11-6"><a href=""></a>  if (current == null) return null;</span>
+<span id="cb11-7"><a href=""></a>  if (current.getData().compareTo(value) == 0) return current;</span>
+<span id="cb11-8"><a href=""></a>  if (current.getData().compareTo(value) &gt; 0) {</span>
+<span id="cb11-9"><a href=""></a>    if (current.getLeft() == null) return null;</span>
+<span id="cb11-10"><a href=""></a>    return search(current.getLeft(), value);</span>
+<span id="cb11-11"><a href=""></a>  }</span>
+<span id="cb11-12"><a href=""></a>  if (current.getRight() == null) return null;</span>
+<span id="cb11-13"><a href=""></a>  return search(current.getRight(), value);</span>
+<span id="cb11-14"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="search-runtime" class="slide level2">
 <h2>Search runtime</h2>
@@ -3624,7 +3628,7 @@
 </section>
 <section id="remove-9" class="slide level2">
 <h2>Remove</h2>
-<p>Node with two children</p>
+<p>Node with two children – replace node to remove data with min to the right data (or max to the left data)</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -3766,6 +3770,144 @@
 </div>
 </div>
 </section>
+<section id="remove-10" class="slide level2">
+<h2>Remove</h2>
+<p>Node with two children – replace node to remove data with min to the right data (or max to the left data)</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 475.07 260.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
+<title>BST</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-256 471.07,-256 471.07,4 -4,4"></polygon>
+<!-- lemon -->
+<g id="node1" class="node">
+<title>lemon</title>
+<ellipse fill="none" stroke="black" cx="191.21" cy="-234" rx="35.35" ry="18"></ellipse>
+<text text-anchor="middle" x="191.21" y="-229.8" font-family="Times,serif" font-size="14.00">lemon</text>
+</g>
+<!-- coconut -->
+<g id="node2" class="node">
+<title>coconut</title>
+<ellipse fill="none" stroke="black" cx="141.21" cy="-162" rx="41.71" ry="18"></ellipse>
+<text text-anchor="middle" x="141.21" y="-157.8" font-family="Times,serif" font-size="14.00">coconut</text>
+</g>
+<!-- lemon&#45;&#45;coconut -->
+<g id="edge1" class="edge">
+<title>lemon--coconut</title>
+<path fill="none" stroke="black" d="M179.61,-216.76C171.65,-205.62 161.11,-190.87 153.09,-179.63"></path>
+</g>
+<!-- starfruit -->
+<g id="node3" class="node">
+<title>starfruit</title>
+<ellipse fill="lightblue" stroke="black" cx="242.21" cy="-162" rx="41.71" ry="18"></ellipse>
+<text text-anchor="middle" x="242.21" y="-157.8" font-family="Times,serif" font-size="14.00">starfruit</text>
+</g>
+<!-- lemon&#45;&#45;starfruit -->
+<g id="edge2" class="edge">
+<title>lemon--starfruit</title>
+<path fill="none" stroke="black" d="M203.04,-216.76C211.16,-205.62 221.91,-190.87 230.09,-179.63"></path>
+</g>
+<!-- avocado -->
+<g id="node11" class="node">
+<title>avocado</title>
+<ellipse fill="none" stroke="black" cx="43.21" cy="-90" rx="43.42" ry="18"></ellipse>
+<text text-anchor="middle" x="43.21" y="-85.8" font-family="Times,serif" font-size="14.00">avocado</text>
+</g>
+<!-- coconut&#45;&#45;avocado -->
+<g id="edge9" class="edge">
+<title>coconut--avocado</title>
+<path fill="none" stroke="black" d="M120.43,-146.15C103.79,-134.28 80.59,-117.7 63.96,-105.82"></path>
+</g>
+<!-- banana -->
+<g id="node12" class="node">
+<title>banana</title>
+<ellipse fill="none" stroke="black" cx="143.21" cy="-90" rx="38.26" ry="18"></ellipse>
+<text text-anchor="middle" x="143.21" y="-85.8" font-family="Times,serif" font-size="14.00">banana</text>
+</g>
+<!-- coconut&#45;&#45;banana -->
+<g id="edge10" class="edge">
+<title>coconut--banana</title>
+<path fill="none" stroke="black" d="M141.7,-143.7C142.01,-132.85 142.41,-118.92 142.72,-108.1"></path>
+</g>
+<!-- lychee -->
+<g id="node4" class="node">
+<title>lychee</title>
+<ellipse fill="none" stroke="black" cx="240.21" cy="-90" rx="36.47" ry="18"></ellipse>
+<text text-anchor="middle" x="240.21" y="-85.8" font-family="Times,serif" font-size="14.00">lychee</text>
+</g>
+<!-- starfruit&#45;&#45;lychee -->
+<g id="edge3" class="edge">
+<title>starfruit--lychee</title>
+<path fill="none" stroke="black" d="M241.71,-143.7C241.4,-132.85 241.01,-118.92 240.7,-108.1"></path>
+</g>
+<!-- strawberry -->
+<g id="node5" class="node">
+<title>strawberry</title>
+<ellipse fill="none" stroke="black" cx="347.21" cy="-90" rx="52.16" ry="18"></ellipse>
+<text text-anchor="middle" x="347.21" y="-85.8" font-family="Times,serif" font-size="14.00">strawberry</text>
+</g>
+<!-- starfruit&#45;&#45;strawberry -->
+<g id="edge4" class="edge">
+<title>starfruit--strawberry</title>
+<path fill="none" stroke="black" d="M263.97,-146.5C281.63,-134.72 306.45,-118.17 324.39,-106.21"></path>
+</g>
+<!-- lime -->
+<g id="node7" class="node">
+<title>lime</title>
+<ellipse fill="none" stroke="black" cx="158.21" cy="-18" rx="28.4" ry="18"></ellipse>
+<text text-anchor="middle" x="158.21" y="-13.8" font-family="Times,serif" font-size="14.00">lime</text>
+</g>
+<!-- lychee&#45;&#45;lime -->
+<g id="edge5" class="edge">
+<title>lychee--lime</title>
+<path fill="none" stroke="black" d="M222.82,-74.15C208.53,-61.95 188.43,-44.8 174.46,-32.87"></path>
+</g>
+<!-- pomelo -->
+<g id="node8" class="node">
+<title>pomelo</title>
+<ellipse fill="none" stroke="black" cx="244.21" cy="-18" rx="40.01" ry="18"></ellipse>
+<text text-anchor="middle" x="244.21" y="-13.8" font-family="Times,serif" font-size="14.00">pomelo</text>
+</g>
+<!-- lychee&#45;&#45;pomelo -->
+<g id="edge6" class="edge">
+<title>lychee--pomelo</title>
+<path fill="none" stroke="black" d="M241.2,-71.7C241.82,-60.85 242.61,-46.92 243.23,-36.1"></path>
+</g>
+<!-- null2 -->
+<g id="node9" class="node">
+<title>null2</title>
+</g>
+<!-- strawberry&#45;&#45;null2 -->
+<g id="edge7" class="edge">
+<title>strawberry--null2</title>
+<path fill="none" stroke="black" d="M345.97,-71.7C345.2,-60.85 344.2,-46.92 343.43,-36.1"></path>
+</g>
+<!-- tomato -->
+<g id="node10" class="node">
+<title>tomato</title>
+<ellipse fill="none" stroke="black" cx="429.21" cy="-18" rx="37.71" ry="18"></ellipse>
+<text text-anchor="middle" x="429.21" y="-13.8" font-family="Times,serif" font-size="14.00">tomato</text>
+</g>
+<!-- strawberry&#45;&#45;tomato -->
+<g id="edge8" class="edge">
+<title>strawberry--tomato</title>
+<path fill="none" stroke="black" d="M365.82,-73.12C379.52,-61.42 398.04,-45.61 411.52,-34.1"></path>
+</g>
+<!-- null1 -->
+<g id="node6" class="node">
+<title>null1</title>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
 <section id="remove-steps" class="slide level2">
 <h2>Remove – steps</h2>
 <ul>
@@ -3779,15 +3921,254 @@
 </ul></li>
 </ul>
 </section>
+<section id="remove-implementation" class="slide level2">
+<h2>remove implementation</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a href=""></a>public void remove(T value) {</span>
+<span id="cb12-2"><a href=""></a>  // find node to remove and its parent</span>
+<span id="cb12-3"><a href=""></a>  Node&lt;T&gt; parent = null;</span>
+<span id="cb12-4"><a href=""></a>  Node&lt;T&gt; current = root;</span>
+<span id="cb12-5"><a href=""></a>  </span>
+<span id="cb12-6"><a href=""></a>  while (current != null &amp;&amp; current.getData().compareTo(value) != 0) {</span>
+<span id="cb12-7"><a href=""></a>    parent = current;</span>
+<span id="cb12-8"><a href=""></a>    if (current.getData().compareTo(value) &gt; 0) {</span>
+<span id="cb12-9"><a href=""></a>      current = current.getLeft();</span>
+<span id="cb12-10"><a href=""></a>    } else {</span>
+<span id="cb12-11"><a href=""></a>      current = current.getRight();</span>
+<span id="cb12-12"><a href=""></a>    }</span>
+<span id="cb12-13"><a href=""></a>  }</span>
+<span id="cb12-14"><a href=""></a>  if (current != null) {</span>
+<span id="cb12-15"><a href=""></a>    remove(parent, current);</span>
+<span id="cb12-16"><a href=""></a>  }</span>
+<span id="cb12-17"><a href=""></a>}</span>
+<span id="cb12-18"><a href=""></a></span>
+<span id="cb12-19"><a href=""></a>private void remove(Node&lt;T&gt; parent, Node&lt;T&gt; nodeToRemove) {</span>
+<span id="cb12-20"><a href=""></a>  // count number of children</span>
+<span id="cb12-21"><a href=""></a>  int children = 0;</span>
+<span id="cb12-22"><a href=""></a>  Node&lt;T&gt; child = null;</span>
+<span id="cb12-23"><a href=""></a>  </span>
+<span id="cb12-24"><a href=""></a>  if (nodeToRemove.getLeft() != null) {</span>
+<span id="cb12-25"><a href=""></a>    children++;</span>
+<span id="cb12-26"><a href=""></a>    child = nodeToRemove.getLeft();</span>
+<span id="cb12-27"><a href=""></a>  }</span>
+<span id="cb12-28"><a href=""></a>  if (nodeToRemove.getRight() != null) {</span>
+<span id="cb12-29"><a href=""></a>    children++;</span>
+<span id="cb12-30"><a href=""></a>    child = nodeToRemove.getRight();;</span>
+<span id="cb12-31"><a href=""></a>  }</span>
+<span id="cb12-32"><a href=""></a>  </span>
+<span id="cb12-33"><a href=""></a>  // address each case</span>
+<span id="cb12-34"><a href=""></a>  if (children &lt;= 1) {</span>
+<span id="cb12-35"><a href=""></a>    if (parent == null) root = child;</span>
+<span id="cb12-36"><a href=""></a>    else if (parent.getLeft() == nodeToRemove) parent.setLeft(child);</span>
+<span id="cb12-37"><a href=""></a>    else parent.setRight(child);</span>
+<span id="cb12-38"><a href=""></a>  }</span>
+<span id="cb12-39"><a href=""></a>  </span>
+<span id="cb12-40"><a href=""></a>  if (children == 2) {</span>
+<span id="cb12-41"><a href=""></a>    // find minimum to the right</span>
+<span id="cb12-42"><a href=""></a>    // or find max to the left</span>
+<span id="cb12-43"><a href=""></a>    Node&lt;T&gt; previous = nodeToRemove;</span>
+<span id="cb12-44"><a href=""></a>    Node&lt;T&gt; replacement = previous.getRight();</span>
+<span id="cb12-45"><a href=""></a>    while (replacement.getLeft() != null) {</span>
+<span id="cb12-46"><a href=""></a>      previous = replacement;</span>
+<span id="cb12-47"><a href=""></a>      replacement = replacement.getLeft();</span>
+<span id="cb12-48"><a href=""></a>    }</span>
+<span id="cb12-49"><a href=""></a>    nodeToRemove.setData(replacement.getData());</span>
+<span id="cb12-50"><a href=""></a>    if (previous == nodeToRemove) previous.setRight(null);</span>
+<span id="cb12-51"><a href=""></a>    else previous.setLeft(null);</span>
+<span id="cb12-52"><a href=""></a>    </span>
+<span id="cb12-53"><a href=""></a>  }</span>
+<span id="cb12-54"><a href=""></a>  </span>
+<span id="cb12-55"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 <section id="recap" class="slide level2">
 <h2>Recap</h2>
 <ul>
 <li>What is a binary search tree?</li>
-<li>How do you loop over a binary search tree?</li>
+<li>How do you traverse a binary search tree?</li>
 <li>How do you search a binary search tree?</li>
 <li>How do you add to a binary search tree?</li>
 <li>How do you remove from a binary search tree?</li>
 <li>What is the runtime of these operations?</li>
+</ul>
+</section>
+<section id="tree-implementation" class="slide level2">
+<h2>Tree Implementation</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a href=""></a>public class Tree&lt;T extends Comparable&lt;T&gt;&gt; {</span>
+<span id="cb13-2"><a href=""></a>    private Node&lt;T&gt; root;</span>
+<span id="cb13-3"><a href=""></a></span>
+<span id="cb13-4"><a href=""></a>    public Tree() { root = null; }</span>
+<span id="cb13-5"><a href=""></a></span>
+<span id="cb13-6"><a href=""></a>    private void addNode(Node&lt;T&gt; current, Node&lt;T&gt; nodeToAdd) {</span>
+<span id="cb13-7"><a href=""></a>        if (current.getData().compareTo(nodeToAdd.getData()) &gt; 0) {</span>
+<span id="cb13-8"><a href=""></a>            if (current.getLeft() == null) {</span>
+<span id="cb13-9"><a href=""></a>                current.setLeft(nodeToAdd);</span>
+<span id="cb13-10"><a href=""></a>            } else {</span>
+<span id="cb13-11"><a href=""></a>                addNode(current.getLeft(), nodeToAdd);</span>
+<span id="cb13-12"><a href=""></a>            }</span>
+<span id="cb13-13"><a href=""></a>        } else if(current.getData().compareTo(nodeToAdd.getData()) &lt; 0) {</span>
+<span id="cb13-14"><a href=""></a>            if (current.getRight() == null) {</span>
+<span id="cb13-15"><a href=""></a>                current.setRight(nodeToAdd);</span>
+<span id="cb13-16"><a href=""></a>            } else {</span>
+<span id="cb13-17"><a href=""></a>                addNode(current.getRight(), nodeToAdd);</span>
+<span id="cb13-18"><a href=""></a>            }</span>
+<span id="cb13-19"><a href=""></a>        }</span>
+<span id="cb13-20"><a href=""></a>    }</span>
+<span id="cb13-21"><a href=""></a></span>
+<span id="cb13-22"><a href=""></a>    public Node&lt;T&gt; getRoot() { return root; }</span>
+<span id="cb13-23"><a href=""></a></span>
+<span id="cb13-24"><a href=""></a>    public void addNode(Node&lt;T&gt; node) {</span>
+<span id="cb13-25"><a href=""></a>        if (root == null) root = node;</span>
+<span id="cb13-26"><a href=""></a>        else addNode(root, node);</span>
+<span id="cb13-27"><a href=""></a>    }</span>
+<span id="cb13-28"><a href=""></a></span>
+<span id="cb13-29"><a href=""></a>    private String toString(int level, Node&lt;T&gt; current) {</span>
+<span id="cb13-30"><a href=""></a>        if (current == null) return "";</span>
+<span id="cb13-31"><a href=""></a></span>
+<span id="cb13-32"><a href=""></a>        String retVal = toString(level + 1, current.getLeft());</span>
+<span id="cb13-33"><a href=""></a></span>
+<span id="cb13-34"><a href=""></a>        for (int i = 0; i &lt; level; i++) retVal += "\t";</span>
+<span id="cb13-35"><a href=""></a></span>
+<span id="cb13-36"><a href=""></a>        retVal += current.getData() + "&lt;";</span>
+<span id="cb13-37"><a href=""></a>        retVal += "\n";</span>
+<span id="cb13-38"><a href=""></a></span>
+<span id="cb13-39"><a href=""></a>        retVal += toString(level + 1, current.getRight());</span>
+<span id="cb13-40"><a href=""></a>        return retVal;</span>
+<span id="cb13-41"><a href=""></a>    }</span>
+<span id="cb13-42"><a href=""></a></span>
+<span id="cb13-43"><a href=""></a>    private String toString(Node&lt;T&gt; current) {</span>
+<span id="cb13-44"><a href=""></a>        if (current == null) return "";</span>
+<span id="cb13-45"><a href=""></a></span>
+<span id="cb13-46"><a href=""></a>        String message = "";</span>
+<span id="cb13-47"><a href=""></a></span>
+<span id="cb13-48"><a href=""></a>        if (current.getLeft() != null) {</span>
+<span id="cb13-49"><a href=""></a>            message += current.getData() + " left child is " + current.getLeft().getData() + "\n";</span>
+<span id="cb13-50"><a href=""></a>        }</span>
+<span id="cb13-51"><a href=""></a>        if (current.getRight() != null) {</span>
+<span id="cb13-52"><a href=""></a>            message += current.getData() + " right child is " + current.getRight().getData() + "\n";</span>
+<span id="cb13-53"><a href=""></a>        }</span>
+<span id="cb13-54"><a href=""></a></span>
+<span id="cb13-55"><a href=""></a>        if (current.getLeft() != null) {</span>
+<span id="cb13-56"><a href=""></a>            message += toString(current.getLeft());</span>
+<span id="cb13-57"><a href=""></a>        }</span>
+<span id="cb13-58"><a href=""></a>        if (current.getRight() != null) {</span>
+<span id="cb13-59"><a href=""></a>            message += toString(current.getRight());</span>
+<span id="cb13-60"><a href=""></a>        }</span>
+<span id="cb13-61"><a href=""></a>        return message;</span>
+<span id="cb13-62"><a href=""></a>    }</span>
+<span id="cb13-63"><a href=""></a></span>
+<span id="cb13-64"><a href=""></a></span>
+<span id="cb13-65"><a href=""></a>    public String toString() {</span>
+<span id="cb13-66"><a href=""></a>        return toString(0, root);</span>
+<span id="cb13-67"><a href=""></a>        //return root.getData() + " is the root\n" + toString(root).trim();</span>
+<span id="cb13-68"><a href=""></a>    }</span>
+<span id="cb13-69"><a href=""></a></span>
+<span id="cb13-70"><a href=""></a>    public Node&lt;T&gt; findMin() {</span>
+<span id="cb13-71"><a href=""></a>        return findMin(root);</span>
+<span id="cb13-72"><a href=""></a>    }</span>
+<span id="cb13-73"><a href=""></a></span>
+<span id="cb13-74"><a href=""></a>    private Node&lt;T&gt; findMin(Node&lt;T&gt; current) {</span>
+<span id="cb13-75"><a href=""></a>        if (current == null) return current;</span>
+<span id="cb13-76"><a href=""></a>        if (current.getLeft() == null) return current;</span>
+<span id="cb13-77"><a href=""></a>        return findMin(current.getLeft());</span>
+<span id="cb13-78"><a href=""></a>    }</span>
+<span id="cb13-79"><a href=""></a></span>
+<span id="cb13-80"><a href=""></a>    public Node&lt;T&gt; findMax() {</span>
+<span id="cb13-81"><a href=""></a>        return findMax(root);</span>
+<span id="cb13-82"><a href=""></a>    }</span>
+<span id="cb13-83"><a href=""></a></span>
+<span id="cb13-84"><a href=""></a>    private Node&lt;T&gt; findMax(Node&lt;T&gt; current) {</span>
+<span id="cb13-85"><a href=""></a>        if (current == null) return current;</span>
+<span id="cb13-86"><a href=""></a>        if (current.getRight() == null) return current;</span>
+<span id="cb13-87"><a href=""></a>        return findMax(current.getRight());</span>
+<span id="cb13-88"><a href=""></a>    }</span>
+<span id="cb13-89"><a href=""></a></span>
+<span id="cb13-90"><a href=""></a>    public Node&lt;T&gt; search(T value) {</span>
+<span id="cb13-91"><a href=""></a>        return search(root, value);</span>
+<span id="cb13-92"><a href=""></a>    }</span>
+<span id="cb13-93"><a href=""></a></span>
+<span id="cb13-94"><a href=""></a>    private Node&lt;T&gt; search(Node&lt;T&gt; current, T value) {</span>
+<span id="cb13-95"><a href=""></a>        if (current == null) return null;</span>
+<span id="cb13-96"><a href=""></a>        if (current.getData().compareTo(value) == 0) return current;</span>
+<span id="cb13-97"><a href=""></a>        if (current.getData().compareTo(value) &gt; 0) {</span>
+<span id="cb13-98"><a href=""></a>            if (current.getLeft() == null) return null;</span>
+<span id="cb13-99"><a href=""></a>            return search(current.getLeft(), value);</span>
+<span id="cb13-100"><a href=""></a>        }</span>
+<span id="cb13-101"><a href=""></a>        if (current.getRight() == null) return null;</span>
+<span id="cb13-102"><a href=""></a>        return search(current.getRight(), value);</span>
+<span id="cb13-103"><a href=""></a>    }</span>
+<span id="cb13-104"><a href=""></a></span>
+<span id="cb13-105"><a href=""></a>    private void remove(Node&lt;T&gt; parent, Node&lt;T&gt; nodeToRemove) {</span>
+<span id="cb13-106"><a href=""></a>        // count number of children</span>
+<span id="cb13-107"><a href=""></a>        int children = 0;</span>
+<span id="cb13-108"><a href=""></a>        Node&lt;T&gt; child = null;</span>
+<span id="cb13-109"><a href=""></a></span>
+<span id="cb13-110"><a href=""></a>        if (nodeToRemove.getLeft() != null) {</span>
+<span id="cb13-111"><a href=""></a>            children++;</span>
+<span id="cb13-112"><a href=""></a>            child = nodeToRemove.getLeft();</span>
+<span id="cb13-113"><a href=""></a>        }</span>
+<span id="cb13-114"><a href=""></a>        if (nodeToRemove.getRight() != null) {</span>
+<span id="cb13-115"><a href=""></a>            children++;</span>
+<span id="cb13-116"><a href=""></a>            child = nodeToRemove.getRight();;</span>
+<span id="cb13-117"><a href=""></a>        }</span>
+<span id="cb13-118"><a href=""></a></span>
+<span id="cb13-119"><a href=""></a>        // address each case</span>
+<span id="cb13-120"><a href=""></a>        if (children &lt;= 1) {</span>
+<span id="cb13-121"><a href=""></a>            if (parent == null) root = child;</span>
+<span id="cb13-122"><a href=""></a>            else if (parent.getLeft() == nodeToRemove) parent.setLeft(child);</span>
+<span id="cb13-123"><a href=""></a>            else parent.setRight(child);</span>
+<span id="cb13-124"><a href=""></a>        }</span>
+<span id="cb13-125"><a href=""></a></span>
+<span id="cb13-126"><a href=""></a>        if (children == 2) {</span>
+<span id="cb13-127"><a href=""></a>            // find minimum to the right</span>
+<span id="cb13-128"><a href=""></a>            // or find max to the left</span>
+<span id="cb13-129"><a href=""></a>            Node&lt;T&gt; previous = nodeToRemove;</span>
+<span id="cb13-130"><a href=""></a>            Node&lt;T&gt; replacement = previous.getRight();</span>
+<span id="cb13-131"><a href=""></a>            while (replacement.getLeft() != null) {</span>
+<span id="cb13-132"><a href=""></a>                previous = replacement;</span>
+<span id="cb13-133"><a href=""></a>                replacement = replacement.getLeft();</span>
+<span id="cb13-134"><a href=""></a>            }</span>
+<span id="cb13-135"><a href=""></a>            nodeToRemove.setData(replacement.getData());</span>
+<span id="cb13-136"><a href=""></a>            if (previous == nodeToRemove) previous.setRight(null);</span>
+<span id="cb13-137"><a href=""></a>            else previous.setLeft(null);</span>
+<span id="cb13-138"><a href=""></a></span>
+<span id="cb13-139"><a href=""></a>        }</span>
+<span id="cb13-140"><a href=""></a></span>
+<span id="cb13-141"><a href=""></a>    }</span>
+<span id="cb13-142"><a href=""></a></span>
+<span id="cb13-143"><a href=""></a>    public void remove(T value) {</span>
+<span id="cb13-144"><a href=""></a>        // find node to remove and its parent</span>
+<span id="cb13-145"><a href=""></a>        Node&lt;T&gt; parent = null;</span>
+<span id="cb13-146"><a href=""></a>        Node&lt;T&gt; current = root;</span>
+<span id="cb13-147"><a href=""></a></span>
+<span id="cb13-148"><a href=""></a>        while (current != null &amp;&amp; current.getData().compareTo(value) != 0) {</span>
+<span id="cb13-149"><a href=""></a>            parent = current;</span>
+<span id="cb13-150"><a href=""></a>            if (current.getData().compareTo(value) &gt; 0) {</span>
+<span id="cb13-151"><a href=""></a>                current = current.getLeft();</span>
+<span id="cb13-152"><a href=""></a>            } else {</span>
+<span id="cb13-153"><a href=""></a>                current = current.getRight();</span>
+<span id="cb13-154"><a href=""></a>            }</span>
+<span id="cb13-155"><a href=""></a>        }</span>
+<span id="cb13-156"><a href=""></a>        if (current != null) {</span>
+<span id="cb13-157"><a href=""></a>            remove(parent, current);</span>
+<span id="cb13-158"><a href=""></a>        }</span>
+<span id="cb13-159"><a href=""></a>    }</span>
+<span id="cb13-160"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="bst-operations-runtime" class="slide level2">
+<h2>BST operations runtime</h2>
+<p>Tree height <span class="math inline">\(h\)</span> is <span class="math inline">\(\log n\)</span> for balanced tree.</p>
+<p>Search, Insert, Delete:</p>
+<ul>
+<li>Average case: O(log n) - when the tree is reasonably balanced</li>
+<li>Worst case: O(n) - when the tree degenerates into a linked list (all nodes in a single chain)</li>
+</ul>
+<p>Find Minimum/Maximum:</p>
+<ul>
+<li>Average case: O(log n)</li>
+<li>Worst case: O(n)</li>
+</ul>
+<p>Traversal (inorder, preorder, postorder):</p>
+<ul>
+<li>Always O(n) - must visit every node</li>
 </ul>
 
 </section></section>
