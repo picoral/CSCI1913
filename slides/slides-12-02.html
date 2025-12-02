@@ -1224,6 +1224,84 @@ margin-right: 0; }
 <li>not minimal – hash values could be very-large or negative</li>
 <li>not perfect – collisions are possible</li>
 </ul>
+</section>
+<section id="simple-example" class="slide level2">
+<h2>Simple example</h2>
+<p>Here are the values that are to be stored in the hash table:</p>
+<pre><code>37, 7, 73, 77, 11, 68, 50, 66, 19, 4, 1, 18, 76, 71, 31, 45, 12, 25, 49, 53,
+69, 87, 41, 2, 43, 23, 62, 38, 47, 51, 55, 65, 58, 91, 17, 63, 27, 88, 48</code></pre>
+<ul>
+<li>What should be the size of the table?</li>
+<li>What would be a good hash function to store these numbers?</li>
+</ul>
+</section>
+<section id="simple-example-1" class="slide level2">
+<h2>Simple example</h2>
+<p>Here’s a hash function in java:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href></a>public class Hash {</span>
+<span id="cb5-2"><a href></a>    int tableSize;</span>
+<span id="cb5-3"><a href></a></span>
+<span id="cb5-4"><a href></a>    public Hash(int size) {</span>
+<span id="cb5-5"><a href></a>        tableSize = size;</span>
+<span id="cb5-6"><a href></a>    }</span>
+<span id="cb5-7"><a href></a></span>
+<span id="cb5-8"><a href></a>    public int getHash(int value) {</span>
+<span id="cb5-9"><a href></a>        return Math.abs(value % tableSize);</span>
+<span id="cb5-10"><a href></a>    }</span>
+<span id="cb5-11"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>How many collisions would we get?</li>
+</ul>
+<p>Table size: 10</p>
+<pre><code>0 - 1   1 - 7   2 - 3   3 - 5   4 - 1 
+5 - 4   6 - 2   7 - 7   8 - 6   9 - 3</code></pre>
+</section>
+<section id="simple-example-testing" class="slide level2">
+<h2>Simple example – testing</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href></a>int[] values = new int[]{37, 7, 73, 77, 11, 68, 50, 66, 19, 4, 1, 18, 76, 71,</span>
+<span id="cb7-2"><a href></a>  31, 45, 12, 25, 49, 53, 69, 87, 41, 2, 43, 23, 62, 38, 47, 51, 55, 65, 58, </span>
+<span id="cb7-3"><a href></a>  91, 17, 63, 27, 88, 48};</span>
+<span id="cb7-4"><a href></a></span>
+<span id="cb7-5"><a href></a>int size = 20;</span>
+<span id="cb7-6"><a href></a>Hash hash = new Hash(size);</span>
+<span id="cb7-7"><a href></a></span>
+<span id="cb7-8"><a href></a>int[] indices = new int[size];</span>
+<span id="cb7-9"><a href></a>for (int v : values) {</span>
+<span id="cb7-10"><a href></a>  indices[hash.getHash(v)] += 1;</span>
+<span id="cb7-11"><a href></a>}</span>
+<span id="cb7-12"><a href></a></span>
+<span id="cb7-13"><a href></a>for (int i=0; i&lt;size; i++) {</span>
+<span id="cb7-14"><a href></a>  System.out.println(i + &quot; - &quot; + indices[i] );</span>
+<span id="cb7-15"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="what-does-claude-say" class="slide level2">
+<h2>What does Claude say?</h2>
+<p>Simple and fast solution:</p>
+<ul>
+<li>h(k) = k mod m</li>
+<li>m = 53 (a prime number)
+<ul>
+<li>Prime numbers reduce clustering and collisions</li>
+<li>53 is larger than 39 (your data size) but not excessively so</li>
+<li>Gives a good load factor of about 0.74 (39/53)</li>
+</ul></li>
+</ul>
+</section>
+<section id="what-does-claude-say-1" class="slide level2">
+<h2>What does Claude say?</h2>
+<p>Works well for any table size:</p>
+<ul>
+<li>h(k) = ⌊m × (k × A mod 1)⌋</li>
+<li>Using A ≈ 0.6180339887 (golden ratio constant) with m = 64:</li>
+</ul>
+</section>
+<section id="imperfect-hash-functions-1" class="slide level2">
+<h2>Imperfect hash functions</h2>
+<p>Two main issues:</p>
+<ul>
+<li>not minimal – hash values could be very-large or negative</li>
+<li>not perfect – collisions are possible</li>
+</ul>
 <p>Two problems to solve: hash code range, collisions</p>
 </section>
 <section id="hash-code-range-problem" class="slide level2">
@@ -1251,8 +1329,127 @@ margin-right: 0; }
 <section id="the-collision-problem" class="slide level2">
 <h2>The collision problem</h2>
 <p>This one is hard. Two general approaches, both compromise efficiency:</p>
-<p><strong>Chaining</strong>: Each array slot holds a linked list of all items that hashed there. If there’s a collision, just add to the list.</p>
-<p><strong>Open Addressing</strong>: If a slot is taken, probe for the next empty one</p>
+<ul>
+<li><p><strong>Open Addressing</strong>: If a slot is taken, probe for the next empty one</p></li>
+<li><p><strong>Chaining</strong>: Each array slot holds a linked list of all items that hashed there. If there’s a collision, just add to the list.</p></li>
+</ul>
+</section>
+<section id="open-addressing" class="slide level2">
+<h2>Open Addressing</h2>
+<p>If space is full put it somewhere else</p>
+<ul>
+<li>linear probing - just go to next free space</li>
+<li>quadratic probing - use a more complicated strategy to pick next space</li>
+<li>double hashing - have “which try is this” be part of hash code computation</li>
+<li>easier to store to a disk (everything is in an array)</li>
+</ul>
+</section>
+<section id="chaining" class="slide level2">
+<h2>Chaining</h2>
+<p>Key compromise: hash table doesn’t actually “finish” the job - just sorts into buckets.</p>
+<ul>
+<li><code>put</code> → find “bucket”, search bucket, add or set</li>
+<li><code>get</code> → find “bucket”, search bucket</li>
+<li><code>contains</code> → find “bucket” search bucket</li>
+<li><code>remove</code> → find “bucket” search bucket</li>
+</ul>
+</section>
+<section id="chaining-1" class="slide level2">
+<h2>Chaining</h2>
+<ul>
+<li>Finding bucket → O(1)</li>
+<li>Buckets are often O(bucketN)</li>
+<li>Keep buckets small and all is good.</li>
+</ul>
+</section>
+<section id="bucket-choices" class="slide level2">
+<h2>Bucket Choices</h2>
+<ul>
+<li>parallel array map - most buckets have 0 to 1 element - waste of space</li>
+<li>association list (linked chain) - great memory savings on empty buckets</li>
+<li>binary search tree - faster search, more key requirements</li>
+</ul>
+</section>
+<section id="writing-a-good-hash-function" class="slide level2">
+<h2>Writing a good hash function</h2>
+<ul>
+<li>The same value must always produce the same hash code</li>
+<li>Hash codes should be spread evenly across the output space</li>
+<li>The hash function should be fast to compute</li>
+<li>A good hash function makes collisions rare</li>
+<li>(cryptographic) Given a hash, it should be computationally infeasible to find any input that produces it</li>
+</ul>
+</section>
+<section id="load-factor" class="slide level2">
+<h2>Load Factor</h2>
+<p>λ – the “load factor”, <em>n</em> current size of key set, <em>k</em> current size of table</p>
+<p>λ = n / k</p>
+<ul>
+<li>λ &lt; 1 array is sparse</li>
+<li>λ == 1 array probably still sparse</li>
+<li>λ &gt; 1 more items than array – buckets are getting full</li>
+</ul>
+</section>
+<section id="load-factor-exercise" class="slide level2">
+<h2>Load Factor – exercise</h2>
+<p>For one of our previous exercises, we had 39 values to store (<em>n</em>). What would be the load factor λ for different table sizes?</p>
+</section>
+<section id="load-factor-exercise-1" class="slide level2">
+<h2>Load Factor – exercise</h2>
+<p>For one of our previous exercises, we had 39 values to store (<em>n</em>). What would be the load factor λ for different table sizes?</p>
+<ul>
+<li>λ = 39/10 = 3.9</li>
+<li>λ = 39/20 = 1.95</li>
+<li>λ = 39/50 = 0.78</li>
+</ul>
+</section>
+<section id="rehashing-growing-the-table-size" class="slide level2">
+<h2>Rehashing – growing the table size</h2>
+<p>Why?</p>
+<ul>
+<li>Keep load factor small</li>
+<li>Keep performance fast</li>
+</ul>
+</section>
+<section id="rehashing-growing-the-table-size-1" class="slide level2">
+<h2>Rehashing – growing the table size</h2>
+<p>When?</p>
+<ul>
+<li>track load factor</li>
+<li>When too big – make array bigger</li>
+<li>(advanced feature) when too small make smaller</li>
+</ul>
+</section>
+<section id="rehashing-growing-the-table-size-2" class="slide level2">
+<h2>Rehashing – growing the table size</h2>
+<p>How?</p>
+<ul>
+<li>Make new bigger array
+<ul>
+<li>DO NOT: copy position to position</li>
+<li>re-compute index for each element:
+<ul>
+<li>index = hash % tableSize</li>
+<li>hash doesn’t change</li>
+<li>tablesize does</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="practice" class="slide level2">
+<h2>Practice</h2>
+<p>Design a Simple Spell Checker.</p>
+<p>You’re building a spell checker that needs to quickly determine if a word exists in a dictionary of 100,000 English words</p>
+<p>Implement a hash table to store the dictionary. Write a simple hash function for strings that takes a word as input and returns an integer index for an array.</p>
+</section>
+<section id="analyze-your-hash-function" class="slide level2">
+<h2>Analyze Your Hash Function</h2>
+<p>Test your hash function with a sample of words. Does it:</p>
+<ul>
+<li>Distribute words evenly across buckets?</li>
+<li>Handle similar words (like “cat” and “act”) differently?</li>
+<li>Produce many collisions?</li>
+</ul>
 
 </section>
     </div>
