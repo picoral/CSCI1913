@@ -1301,8 +1301,917 @@ margin-right: 0; }
 <p>Works well for any table size:</p>
 <ul>
 <li>h(k) = ⌊m × (k × A mod 1)⌋</li>
-<li>Using A ≈ 0.6180339887 (golden ratio constant) with m = 64:</li>
+<li>Using A ≈ 0.6180339887 (golden ratio constant) with m = 64</li>
 </ul>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Consider an initially empty hash table <span class="math inline">\(H\)</span> of size 15, designed to store integer keys. The hash function is defined as:</p>
+<p>hash(k) = ⌊k mod length(<span class="math inline">\(H\)</span>)⌋</p>
+<p>Insert the following sequence of keys in the given order: -524, 16, 322, -15, 78, -212</p>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>hash(k) = ⌊k mod length(<span class="math inline">\(H\)</span>)⌋</p>
+<p>Insert the following sequence of keys in the given order: -524, 16, 322, -15, 78, -212</p>
+<p><br><br></p>
+<style type="text/css">
+.tg {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:34px;
+overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg2 {border-collapse:collapse;border-spacing:0;}
+.tg2 td{border-color:black;border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:34px;
+overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg2 th{border-color:black;border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;
+font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg2 .tg2-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<center>
+<table class="tg2">
+<thead>
+<tr>
+<td class="tg2-0pky">
+ 0 
+</td>
+<td class="tg2-0pky">
+ 1 
+</td>
+<td class="tg2-0pky">
+ 2 
+</td>
+<td class="tg2-0pky">
+ 3 
+</td>
+<td class="tg2-0pky">
+ 4 
+</td>
+<td class="tg2-0pky">
+ 5 
+</td>
+<td class="tg2-0pky">
+ 6 
+</td>
+<td class="tg2-0pky">
+ 7 
+</td>
+<td class="tg2-0pky">
+ 8 
+</td>
+<td class="tg2-0pky">
+ 9 
+</td>
+<td class="tg2-0pky">
+ 10
+</td>
+<td class="tg2-0pky">
+11
+</td>
+<td class="tg2-0pky">
+ 12
+</td>
+<td class="tg2-0pky">
+13
+</td>
+<td class="tg2-0pky">
+14
+</td>
+</tr>
+</thead>
+</table>
+<table class="tg">
+<thead>
+<tr>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+</tr>
+</thead>
+</table>
+</center>
+</section>
+<section id="exercise-2" class="slide level2">
+<h2>Exercise</h2>
+<p>hash(k) = ⌊k mod length(<span class="math inline">\(H\)</span>)⌋</p>
+<p>Insert the following sequence of keys in the given order: -524, 16, 322, -15, 78, -212</p>
+<p><br></p>
+<p>-524 % 15 = -14 (Java doesn’t use the mathematical definition)</p>
+<p>⌊-14⌋ = 14</p>
+<center>
+<table class="tg2">
+<thead>
+<tr>
+<td class="tg2-0pky">
+ 0 
+</td>
+<td class="tg2-0pky">
+ 1 
+</td>
+<td class="tg2-0pky">
+ 2 
+</td>
+<td class="tg2-0pky">
+ 3 
+</td>
+<td class="tg2-0pky">
+ 4 
+</td>
+<td class="tg2-0pky">
+ 5 
+</td>
+<td class="tg2-0pky">
+ 6 
+</td>
+<td class="tg2-0pky">
+ 7 
+</td>
+<td class="tg2-0pky">
+ 8 
+</td>
+<td class="tg2-0pky">
+ 9 
+</td>
+<td class="tg2-0pky">
+ 10
+</td>
+<td class="tg2-0pky">
+11
+</td>
+<td class="tg2-0pky">
+ 12
+</td>
+<td class="tg2-0pky">
+ 13
+</td>
+<td class="tg2-0pky">
+ 14
+</td>
+</tr>
+</thead>
+</table>
+<table class="tg">
+<thead>
+<tr>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+-524
+</td>
+</tr>
+</thead>
+</table>
+</center>
+</section>
+<section id="exercise-3" class="slide level2">
+<h2>Exercise</h2>
+<p>hash(k) = ⌊k mod length(<span class="math inline">\(H\)</span>)⌋</p>
+<p>Insert the following sequence of keys in the given order: 16, 322, -15, 78, -212</p>
+<p><br></p>
+<p>16 % 15 = 1</p>
+<center>
+<table class="tg2">
+<thead>
+<tr>
+<td class="tg2-0pky">
+ 0 
+</td>
+<td class="tg2-0pky">
+ 1 
+</td>
+<td class="tg2-0pky">
+ 2 
+</td>
+<td class="tg2-0pky">
+ 3 
+</td>
+<td class="tg2-0pky">
+ 4 
+</td>
+<td class="tg2-0pky">
+ 5 
+</td>
+<td class="tg2-0pky">
+ 6 
+</td>
+<td class="tg2-0pky">
+ 7 
+</td>
+<td class="tg2-0pky">
+ 8 
+</td>
+<td class="tg2-0pky">
+ 9 
+</td>
+<td class="tg2-0pky">
+ 10
+</td>
+<td class="tg2-0pky">
+11
+</td>
+<td class="tg2-0pky">
+ 12
+</td>
+<td class="tg2-0pky">
+ 13
+</td>
+<td class="tg2-0pky">
+ 14
+</td>
+</tr>
+</thead>
+</table>
+<table class="tg">
+<thead>
+<tr>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+16
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+-524
+</td>
+</tr>
+</thead>
+</table>
+</center>
+</section>
+<section id="exercise-4" class="slide level2">
+<h2>Exercise</h2>
+<p>hash(k) = ⌊k mod length(<span class="math inline">\(H\)</span>)⌋</p>
+<p>Insert the following sequence of keys in the given order: 322, -15, 78, -212</p>
+<p><br></p>
+<p>322 % 15 = 7</p>
+<center>
+<table class="tg2">
+<thead>
+<tr>
+<td class="tg2-0pky">
+ 0 
+</td>
+<td class="tg2-0pky">
+ 1 
+</td>
+<td class="tg2-0pky">
+ 2 
+</td>
+<td class="tg2-0pky">
+ 3 
+</td>
+<td class="tg2-0pky">
+ 4 
+</td>
+<td class="tg2-0pky">
+ 5 
+</td>
+<td class="tg2-0pky">
+ 6 
+</td>
+<td class="tg2-0pky">
+  7 
+</td>
+<td class="tg2-0pky">
+ 8 
+</td>
+<td class="tg2-0pky">
+ 9 
+</td>
+<td class="tg2-0pky">
+ 10
+</td>
+<td class="tg2-0pky">
+ 11
+</td>
+<td class="tg2-0pky">
+ 12
+</td>
+<td class="tg2-0pky">
+ 13
+</td>
+<td class="tg2-0pky">
+ 14
+</td>
+</tr>
+</thead>
+</table>
+<table class="tg">
+<thead>
+<tr>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+16
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+322
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+-524
+</td>
+</tr>
+</thead>
+</table>
+</center>
+</section>
+<section id="exercise-5" class="slide level2">
+<h2>Exercise</h2>
+<p>hash(k) = ⌊k mod length(<span class="math inline">\(H\)</span>)⌋</p>
+<p>Insert the following sequence of keys in the given order: -15, 78, -212</p>
+<p><br></p>
+<p>-15 % 15 = 0</p>
+<center>
+<table class="tg2">
+<thead>
+<tr>
+<td class="tg2-0pky">
+ 0 
+</td>
+<td class="tg2-0pky">
+ 1 
+</td>
+<td class="tg2-0pky">
+ 2 
+</td>
+<td class="tg2-0pky">
+ 3 
+</td>
+<td class="tg2-0pky">
+ 4 
+</td>
+<td class="tg2-0pky">
+ 5 
+</td>
+<td class="tg2-0pky">
+ 6 
+</td>
+<td class="tg2-0pky">
+   7 
+</td>
+<td class="tg2-0pky">
+ 8 
+</td>
+<td class="tg2-0pky">
+ 9 
+</td>
+<td class="tg2-0pky">
+ 10
+</td>
+<td class="tg2-0pky">
+ 11
+</td>
+<td class="tg2-0pky">
+ 12
+</td>
+<td class="tg2-0pky">
+ 13
+</td>
+<td class="tg2-0pky">
+ 14
+</td>
+</tr>
+</thead>
+</table>
+<table class="tg">
+<thead>
+<tr>
+<td class="tg-0pky">
+-15
+</td>
+<td class="tg-0pky">
+16
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+322
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+-524
+</td>
+</tr>
+</thead>
+</table>
+</center>
+</section>
+<section id="exercise-6" class="slide level2">
+<h2>Exercise</h2>
+<p>hash(k) = ⌊k mod length(<span class="math inline">\(H\)</span>)⌋</p>
+<p>Insert the following sequence of keys in the given order: 78, -212</p>
+<p><br></p>
+<p>78 % 15 = 3</p>
+<center>
+<table class="tg2">
+<thead>
+<tr>
+<td class="tg2-0pky">
+ 0 
+</td>
+<td class="tg2-0pky">
+ 1 
+</td>
+<td class="tg2-0pky">
+ 2 
+</td>
+<td class="tg2-0pky">
+ 3 
+</td>
+<td class="tg2-0pky">
+ 4 
+</td>
+<td class="tg2-0pky">
+ 5 
+</td>
+<td class="tg2-0pky">
+ 6 
+</td>
+<td class="tg2-0pky">
+   7 
+</td>
+<td class="tg2-0pky">
+ 8 
+</td>
+<td class="tg2-0pky">
+ 9 
+</td>
+<td class="tg2-0pky">
+ 10
+</td>
+<td class="tg2-0pky">
+ 11
+</td>
+<td class="tg2-0pky">
+ 12
+</td>
+<td class="tg2-0pky">
+ 13
+</td>
+<td class="tg2-0pky">
+ 14
+</td>
+</tr>
+</thead>
+</table>
+<table class="tg">
+<thead>
+<tr>
+<td class="tg-0pky">
+-15
+</td>
+<td class="tg-0pky">
+16
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+78
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+322
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+-524
+</td>
+</tr>
+</thead>
+</table>
+</center>
+</section>
+<section id="exercise-7" class="slide level2">
+<h2>Exercise</h2>
+<p>hash(k) = ⌊k mod length(<span class="math inline">\(H\)</span>)⌋</p>
+<p>Insert the following sequence of keys in the given order: -212</p>
+<p><br></p>
+<p>⌊-212 % 15⌋ = 2</p>
+<center>
+<table class="tg2">
+<thead>
+<tr>
+<td class="tg2-0pky">
+ 0 
+</td>
+<td class="tg2-0pky">
+ 1 
+</td>
+<td class="tg2-0pky">
+   2 
+</td>
+<td class="tg2-0pky">
+ 3 
+</td>
+<td class="tg2-0pky">
+ 4 
+</td>
+<td class="tg2-0pky">
+ 5 
+</td>
+<td class="tg2-0pky">
+ 6 
+</td>
+<td class="tg2-0pky">
+   7 
+</td>
+<td class="tg2-0pky">
+ 8 
+</td>
+<td class="tg2-0pky">
+ 9 
+</td>
+<td class="tg2-0pky">
+ 10
+</td>
+<td class="tg2-0pky">
+ 11
+</td>
+<td class="tg2-0pky">
+ 12
+</td>
+<td class="tg2-0pky">
+ 13
+</td>
+<td class="tg2-0pky">
+ 14
+</td>
+</tr>
+</thead>
+</table>
+<table class="tg">
+<thead>
+<tr>
+<td class="tg-0pky">
+-15
+</td>
+<td class="tg-0pky">
+16
+</td>
+<td class="tg-0pky">
+212
+</td>
+<td class="tg-0pky">
+78
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+322
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+-524
+</td>
+</tr>
+</thead>
+</table>
+</center>
+</section>
+<section id="exercise-8" class="slide level2">
+<h2>Exercise</h2>
+<p>hash(k) = ⌊k mod length(<span class="math inline">\(H\)</span>)⌋</p>
+<p>Insert the following sequence of keys in the given order: -212</p>
+<p><br></p>
+<p>⌊-212 % 15⌋ = 2</p>
+<center>
+<table class="tg2">
+<thead>
+<tr>
+<td class="tg2-0pky">
+ 0 
+</td>
+<td class="tg2-0pky">
+ 1 
+</td>
+<td class="tg2-0pky">
+   2 
+</td>
+<td class="tg2-0pky">
+ 3 
+</td>
+<td class="tg2-0pky">
+ 4 
+</td>
+<td class="tg2-0pky">
+ 5 
+</td>
+<td class="tg2-0pky">
+ 6 
+</td>
+<td class="tg2-0pky">
+   7 
+</td>
+<td class="tg2-0pky">
+ 8 
+</td>
+<td class="tg2-0pky">
+ 9 
+</td>
+<td class="tg2-0pky">
+ 10
+</td>
+<td class="tg2-0pky">
+ 11
+</td>
+<td class="tg2-0pky">
+ 12
+</td>
+<td class="tg2-0pky">
+ 13
+</td>
+<td class="tg2-0pky">
+ 14
+</td>
+</tr>
+</thead>
+</table>
+<table class="tg">
+<thead>
+<tr>
+<td class="tg-0pky">
+-15
+</td>
+<td class="tg-0pky">
+16
+</td>
+<td class="tg-0pky">
+212
+</td>
+<td class="tg-0pky">
+78
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+322
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+    
+</td>
+<td class="tg-0pky">
+-524
+</td>
+</tr>
+</thead>
+</table>
+</center>
+<p>What if the next value to be stored is 120?</p>
 </section>
 <section id="imperfect-hash-functions-1" class="slide level2">
 <h2>Imperfect hash functions</h2>
