@@ -4181,7 +4181,7 @@ font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
 <section id="big-o" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Big-O</h1>
 <p>Consider the following python code.</p>
-<div id="f85f1ab8" class="cell" data-execution_count="1">
+<div id="602600e1" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> loreum(n):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  lst1 <span class="op">=</span> []</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
@@ -4208,7 +4208,7 @@ font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
 <li><p>Write a function which given the same argument as <code>loreum</code> will result in the same return result but has a better runtime. (You may use either python or java to solve this problem, the python set is <code>set</code> the java set you can assume is <code>Set</code> with a generic).</p></li>
 </ol>
 <p>A possible answer (remove the nested loops, make them happen one after the other, adding to set instead of a list first) – <span class="math inline">\(O(n)\)</span></p>
-<div id="2c5b72f9" class="cell" data-execution_count="2">
+<div id="530d62b4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> loreum(n):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  set2 <span class="op">=</span> <span class="bu">set</span>() </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
@@ -4221,7 +4221,7 @@ font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> val</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>It can be simplified as so because the while loop is adding repeated elements anyway:</p>
-<div id="1a009f37" class="cell" data-execution_count="3">
+<div id="945136f4" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> loreum(n):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  set2 <span class="op">=</span> <span class="bu">set</span>()</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
@@ -4230,7 +4230,7 @@ font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> set2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Simpler yet:</p>
-<div id="d934d5f9" class="cell" data-execution_count="4">
+<div id="d622ac0a" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> loreum(n):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">set</span>(<span class="bu">range</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -4303,26 +4303,32 @@ font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
     }
   
   public void add(T obj) {
-    Node&lt;T&gt; current = head;
-    Node&lt;T&gt; previous = null;
-    while (current != null &amp;&amp; current.compareTo(obj) != 0) {
-      previous = current;
-      current = current.getNext();
+    if (head == null) head = new Node(obj);
+    else {
+      Node&lt;T&gt; current = head;
+      Node&lt;T&gt; previous = null;
+      while (current != null &amp;&amp; current.compareTo(obj) != 0) {
+        previous = current;
+        current = current.getNext();
+      }
+    
+      if (current == null) previous.setNext(new Node(obj));
     }
-    
-    if (current == null) previous.setNext(new Node(obj));
-    
   }
   
   public void remove(T obj) { 
-    Node&lt;T&gt; current = head;
-    Node&lt;T&gt; previous = null;
-    while (current != null &amp;&amp; current.compareTo(obj) != 0) {
-      previous = current;
-      current = current.getNext();
-    }
+    if (head.getData().compareTo(obj) == 0) head = head.getNext();
+    else {
+      Node&lt;T&gt; current = head;
+      Node&lt;T&gt; previous = null;
+      while (current != null &amp;&amp; current.compareTo(obj) != 0) {
+        previous = current;
+        current = current.getNext();
+      }
     
-    if (current != null) previous.setNext(current.getNext());
+      if (current != null) previous.setNext(current.getNext());
+      
+    }
     
   }</code></pre>
 </section>
