@@ -2374,6 +2374,84 @@ font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
 <li>Handle similar words (like “cat” and “act”) differently?</li>
 <li>Produce many collisions?</li>
 </ul>
+</section>
+<section id="solution" class="slide level2">
+<h2>Solution</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href></a>public class WordHash {</span>
+<span id="cb8-2"><a href></a>    private String[] table;</span>
+<span id="cb8-3"><a href></a>    private int tableSize = 70000;</span>
+<span id="cb8-4"><a href></a>    private int count;</span>
+<span id="cb8-5"><a href></a></span>
+<span id="cb8-6"><a href></a>    public WordHash() {</span>
+<span id="cb8-7"><a href></a>        table = new String[tableSize];</span>
+<span id="cb8-8"><a href></a>        count = 0;</span>
+<span id="cb8-9"><a href></a>    }</span>
+<span id="cb8-10"><a href></a></span>
+<span id="cb8-11"><a href></a>    /**</span>
+<span id="cb8-12"><a href></a>     * Hash function</span>
+<span id="cb8-13"><a href></a>     * @param word is a string, a word in English</span>
+<span id="cb8-14"><a href></a>     * @return an index, which is an int between 0 and tableSize-1</span>
+<span id="cb8-15"><a href></a>     */</span>
+<span id="cb8-16"><a href></a>    private int getIndex(String word) {</span>
+<span id="cb8-17"><a href></a>        int total = 0;</span>
+<span id="cb8-18"><a href></a>        for (char c : word.toCharArray()) {</span>
+<span id="cb8-19"><a href></a>            total += (int) c;</span>
+<span id="cb8-20"><a href></a>        }</span>
+<span id="cb8-21"><a href></a>        return (total * 997) % tableSize;</span>
+<span id="cb8-22"><a href></a>    }</span>
+<span id="cb8-23"><a href></a></span>
+<span id="cb8-24"><a href></a>    public void put(String word) {</span>
+<span id="cb8-25"><a href></a>        int index = getIndex(word);</span>
+<span id="cb8-26"><a href></a>        while (table[index] != null) {</span>
+<span id="cb8-27"><a href></a>            index++;</span>
+<span id="cb8-28"><a href></a>            if (index == tableSize -1) index = 0;</span>
+<span id="cb8-29"><a href></a>        }</span>
+<span id="cb8-30"><a href></a>        table[index] = word;</span>
+<span id="cb8-31"><a href></a>        count++;</span>
+<span id="cb8-32"><a href></a>        if (load() &gt; 0.7) expandArray();</span>
+<span id="cb8-33"><a href></a>    }</span>
+<span id="cb8-34"><a href></a></span>
+<span id="cb8-35"><a href></a>    public boolean contains(String word) {</span>
+<span id="cb8-36"><a href></a>        int index = getIndex(word);</span>
+<span id="cb8-37"><a href></a>        while (table[index]!= null &amp;&amp; !table[index].equals(word)) {</span>
+<span id="cb8-38"><a href></a>            index++;</span>
+<span id="cb8-39"><a href></a>            if (index == tableSize-1) index = 0;</span>
+<span id="cb8-40"><a href></a>        }</span>
+<span id="cb8-41"><a href></a>        if (table[index] == null) return false;</span>
+<span id="cb8-42"><a href></a>        return true;</span>
+<span id="cb8-43"><a href></a>    }</span>
+<span id="cb8-44"><a href></a></span>
+<span id="cb8-45"><a href></a>    private int whereToPut(String word, String[] newTable) {</span>
+<span id="cb8-46"><a href></a>        int index = getIndex(word);</span>
+<span id="cb8-47"><a href></a>        while (newTable[index] != null) {</span>
+<span id="cb8-48"><a href></a>            index++;</span>
+<span id="cb8-49"><a href></a>            if (index == tableSize-1) index = 0;</span>
+<span id="cb8-50"><a href></a>        }</span>
+<span id="cb8-51"><a href></a>        return index;</span>
+<span id="cb8-52"><a href></a>    }</span>
+<span id="cb8-53"><a href></a></span>
+<span id="cb8-54"><a href></a>    private void expandArray() {</span>
+<span id="cb8-55"><a href></a>        tableSize *= 2;</span>
+<span id="cb8-56"><a href></a>        String[] newTable = new String[tableSize];</span>
+<span id="cb8-57"><a href></a>        for (String word : table) {</span>
+<span id="cb8-58"><a href></a>          newTable[whereToPut(word, newTable)] = word;</span>
+<span id="cb8-59"><a href></a>        }</span>
+<span id="cb8-60"><a href></a>        table = newTable;</span>
+<span id="cb8-61"><a href></a>    }</span>
+<span id="cb8-62"><a href></a></span>
+<span id="cb8-63"><a href></a>    public double load() {</span>
+<span id="cb8-64"><a href></a>        return (double) count / (double) tableSize;</span>
+<span id="cb8-65"><a href></a>    }</span>
+<span id="cb8-66"><a href></a></span>
+<span id="cb8-67"><a href></a>    @Override</span>
+<span id="cb8-68"><a href></a>    public String toString() {</span>
+<span id="cb8-69"><a href></a>        String retVal = &quot;&quot;;</span>
+<span id="cb8-70"><a href></a>        for (int i=0; i &lt; tableSize; i++) {</span>
+<span id="cb8-71"><a href></a>            if (table[i] != null) retVal += i + &quot; - &quot; + table[i] + &quot;\n&quot;;</span>
+<span id="cb8-72"><a href></a>        }</span>
+<span id="cb8-73"><a href></a>        return retVal.trim();</span>
+<span id="cb8-74"><a href></a>    }</span>
+<span id="cb8-75"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </section>
     </div>
