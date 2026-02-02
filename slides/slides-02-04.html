@@ -1078,7 +1078,7 @@ margin-right: 0; }
 <li><code>input(&quot;prompt&quot;)</code>will print a prompt and then wait for user input return as a string</li>
 <li>Often combined with type-changing functions to type cast.</li>
 </ul>
-<div id="95189ab5" class="cell" data-execution_count="1">
+<div id="10ee306f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a>user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Enter a number: &quot;</span>)</span>
 <span id="cb1-2"><a href></a>number <span class="op">=</span> <span class="bu">int</span>(user_input)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1099,7 +1099,7 @@ margin-right: 0; }
 <li><code>input</code> reads data from end-user, can’t be from elsewhere.</li>
 </ul>
 <p>This function is useless and I hate it:</p>
-<div id="8e953c46" class="cell" data-execution_count="2">
+<div id="1b5ab2af" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href></a><span class="kw">def</span> isEven (x):</span>
 <span id="cb2-2"><a href></a>  <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb2-3"><a href></a>    <span class="bu">print</span>(<span class="st">&quot;even&quot;</span>)</span>
@@ -1110,7 +1110,7 @@ margin-right: 0; }
 <section id="exercise" class="slide level2">
 <h2>Exercise</h2>
 <p>Write a basic number guessing game. Here’s some code to get you started:</p>
-<div id="9d6072f7" class="cell" data-execution_count="3">
+<div id="dedc4399" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href></a><span class="im">import</span> random</span>
 <span id="cb3-2"><a href></a></span>
 <span id="cb3-3"><a href></a>MIN <span class="op">=</span> <span class="dv">1</span></span>
@@ -1127,7 +1127,7 @@ margin-right: 0; }
 <section id="a-possible-solution" class="slide level2">
 <h2>A possible solution</h2>
 <p>How do we add input validation to this solution? (to ensure <code>int()</code> won’t throw an error)</p>
-<div id="b96c2a8d" class="cell" data-execution_count="4">
+<div id="44dcf597" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href></a><span class="im">import</span> random</span>
 <span id="cb4-2"><a href></a></span>
 <span id="cb4-3"><a href></a><span class="kw">def</span> guess(user_input, secret):</span>
@@ -1154,19 +1154,6 @@ margin-right: 0; }
 <span id="cb4-24"><a href></a>    SECRET <span class="op">=</span> random.randint(MIN, MAX)</span>
 <span id="cb4-25"><a href></a>    play_game(SECRET)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="quiz-02" class="slide level2">
-<h2>Quiz 02</h2>
-<p>You have 10 minutes to complete the quiz</p>
-<ul>
-<li>No need for comments or doc strings, no need to include the tests in your solution, no need for <code>if __name__</code>. Just write your function and what’s inside the function</li>
-<li>Raise your hand when you’re done, a TA will come and grab your completed quiz</li>
-</ul>
-<p>HINTS:</p>
-<ul>
-<li>use the keyword <code>def</code> to define a function</li>
-<li>you can use <code>%</code> to determine if a number is odd (the remainder of the division by two is not zero)</li>
-</ul>
 
 </section>
     </div>
