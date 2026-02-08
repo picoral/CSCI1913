@@ -1073,12 +1073,12 @@ margin-right: 0; }
 </section>
 <section id="understanding-loadfilename" class="slide level2">
 <h2>Understanding <code>load(filename)</code></h2>
-<p>The string doc for <code>load(filename)</code> says:</p>
+<p>The docstring for <code>load(filename)</code> says:</p>
 <blockquote>
 <p>“““load the CSV file by name, return list of dictionaries, each dictionary describes one row of the file”“”</p>
 </blockquote>
 <p>You have a few calls to <code>load(filename)</code> in <code>weather_tester.py</code>:</p>
-<div id="1216741d" class="cell" data-execution_count="1">
+<div id="5b5584b1" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a>test_file_list <span class="op">=</span> load(<span class="st">&quot;test_file.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
@@ -1088,7 +1088,7 @@ margin-right: 0; }
 </section>
 <section id="understanding-loadfilename-1" class="slide level2">
 <h2>Understanding <code>load(filename)</code></h2>
-<div id="98036a43" class="cell" data-execution_count="2">
+<div id="73e4b784" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href></a>test_file_list <span class="op">=</span> load(<span class="st">&quot;test_file.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
@@ -1106,12 +1106,12 @@ margin-right: 0; }
 <section id="retrieving-values" class="slide level2">
 <h2>Retrieving values</h2>
 <p>What does the following code print?</p>
-<div id="8a3b3457" class="cell" data-execution_count="3">
+<div id="25df4487" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href></a>messy_file_list <span class="op">=</span> load(<span class="st">&quot;messy_file.csv&quot;</span>)</span>
 <span id="cb4-2"><a href></a><span class="bu">print</span>(messy_file[<span class="dv">0</span>][<span class="st">&quot;Date&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>What does the following code print?</p>
-<div id="51b409cc" class="cell" data-execution_count="4">
+<div id="c098ad0c" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href></a>messy_file_list <span class="op">=</span> load(<span class="st">&quot;messy_file.csv&quot;</span>)</span>
 <span id="cb5-2"><a href></a><span class="bu">print</span>(messy_file[<span class="dv">0</span>][<span class="st">&quot;Date&quot;</span>][<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1119,13 +1119,13 @@ margin-right: 0; }
 <section id="retrieving-values-1" class="slide level2">
 <h2>Retrieving values</h2>
 <p>What does the following code print?</p>
-<div id="32c0331b" class="cell" data-execution_count="5">
+<div id="d5d58b06" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href></a>messy_file_list <span class="op">=</span> load(<span class="st">&quot;messy_file.csv&quot;</span>)</span>
 <span id="cb6-2"><a href></a><span class="bu">print</span>(messy_file[<span class="dv">0</span>][<span class="st">&quot;Date&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre><code>&quot;2010-01-01&quot;</code></pre>
 <p>What does the following code print?</p>
-<div id="b7e4b8e4" class="cell" data-execution_count="6">
+<div id="402c138f" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href></a>messy_file_list <span class="op">=</span> load(<span class="st">&quot;messy_file.csv&quot;</span>)</span>
 <span id="cb8-2"><a href></a><span class="bu">print</span>(messy_file[<span class="dv">0</span>][<span class="st">&quot;Date&quot;</span>][<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
