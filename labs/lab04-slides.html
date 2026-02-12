@@ -1073,10 +1073,22 @@ margin-right: 0; }
 </ul>
 <p>Download <a href="code/pricebook_tester.py">pricebook_tester.py</a></p>
 </section>
+<section id="big-o-requirements" class="slide level2">
+<h2>Big-O requirements</h2>
+<p>The six required functions are:</p>
+<ul>
+<li><code>is_sorted(pricebook)</code> <span class="math inline">\(O(N)\)</span></li>
+<li><code>price_average(pricebook)</code> <span class="math inline">\(O(N)\)</span></li>
+<li><code>unsorted_get(pricebook, name)</code> <span class="math inline">\(O(N)\)</span></li>
+<li><code>unsorted_put(pricebook, name, price)</code> <span class="math inline">\(O(N)\)</span></li>
+<li><code>sorted_get(pricebook, name)</code> <span class="math inline">\(O(\log N)\)</span></li>
+<li><code>sorted_put(pricebook, name, price)</code> <span class="math inline">\(O(N)\)</span></li>
+</ul>
+</section>
 <section id="data-structure" class="slide level2">
 <h2>Data Structure</h2>
 <p>Lists of Tuples: <em>pricebook</em> representation</p>
-<div id="dbc0f8aa" class="cell" data-execution_count="1">
+<div id="70d634bd" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a>prices <span class="op">=</span> [(<span class="fl">80.0</span>, <span class="st">&#39;Lego&#39;</span>),</span>
 <span id="cb1-2"><a href></a>          (<span class="fl">690.0</span>, <span class="st">&#39;Laptop&#39;</span>),</span>
 <span id="cb1-3"><a href></a>          (<span class="fl">300.0</span>, <span class="st">&#39;Camera&#39;</span>),</span>
@@ -1089,7 +1101,7 @@ margin-right: 0; }
 <h2>Avoid nested for loops</h2>
 <p>There’s no need for nested for loops when you know the first position of each tuple (index zero) is price and the second position (index one) is product name.</p>
 <p>You can index the tuple in a for loop to get each price or name:</p>
-<div id="c55275bf" class="cell" data-execution_count="2">
+<div id="c0087f7c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(pricebook)):</span>
 <span id="cb2-2"><a href></a>  <span class="co"># do something with pricebook[i][1] (each product name)</span></span>
 <span id="cb2-3"><a href></a>  </span>
@@ -1109,6 +1121,13 @@ margin-right: 0; }
 <ul>
 <li>Remember that tuples are not mutable (cannot change them)</li>
 <li>If your <code>unsorted_put</code> is asked to change a price of an existing product name, you need to remove the existing tuple from the list of products, and append a new tuple with the new price for that existing product name.</li>
+</ul>
+</section>
+<section id="document-your-code" class="slide level2">
+<h2>Document your Code!</h2>
+<ul>
+<li>Add docstrings to every function</li>
+<li>Add at least one in-line comment in each function</li>
 </ul>
 
 </section>
