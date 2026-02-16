@@ -1138,7 +1138,7 @@ margin-right: 0; }
 <h2>Bogo Sort</h2>
 <p>Bogo sort: Orders a list of values by repetitively shuﬀeling them and checking if they are sorted.</p>
 <p>Name comes from “bogus”</p>
-<div id="18d8057f" class="cell" data-execution_count="1">
+<div id="40edbcc7" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a><span class="im">import</span> random</span>
 <span id="cb1-2"><a href></a></span>
 <span id="cb1-3"><a href></a><span class="kw">def</span> is_sorted(lst):</span>
@@ -1158,7 +1158,7 @@ margin-right: 0; }
 <h2>Bogo sort runtime</h2>
 <ul>
 <li>Best: <span class="math inline">\(O(N)\)</span></li>
-<li>Average: <span class="math inline">\(O(N*N!)\)</span></li>
+<li>Average: <span class="math inline">\(Θ(N*N!)\)</span></li>
 <li>Worst: Unbounded, runs forever</li>
 </ul>
 </section>
@@ -1239,7 +1239,7 @@ margin-right: 0; }
 </section>
 <section id="selection-sort-implementation" class="slide level2">
 <h2>Selection Sort – implementation</h2>
-<div id="d83774f8" class="cell" data-execution_count="2">
+<div id="6b462469" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href></a><span class="kw">def</span> selection_sort(lst):</span>
 <span id="cb2-2"><a href></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(lst) <span class="op">-</span> <span class="dv">1</span>):</span>
 <span id="cb2-3"><a href></a>        <span class="co"># Find index of smallest</span></span>
@@ -1309,7 +1309,7 @@ margin-right: 0; }
 </section>
 <section id="bubble-sort-implementation-1" class="slide level2">
 <h2>Bubble Sort – implementation 1</h2>
-<div id="00a80f0c" class="cell" data-execution_count="3">
+<div id="8b0af6a7" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href></a><span class="kw">def</span> bubble_sort(lst):</span>
 <span id="cb4-2"><a href></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(lst)):</span>
 <span id="cb4-3"><a href></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(lst)<span class="op">-</span><span class="dv">1</span>):</span>
@@ -1319,7 +1319,7 @@ margin-right: 0; }
 </section>
 <section id="bubble-sort-implementation-2" class="slide level2">
 <h2>Bubble Sort – implementation 2</h2>
-<div id="0176a231" class="cell" data-execution_count="4">
+<div id="989010a8" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href></a><span class="kw">def</span> bubble_sort(lst):</span>
 <span id="cb5-2"><a href></a>    list_sorted <span class="op">=</span> <span class="va">False</span></span>
 <span id="cb5-3"><a href></a>    <span class="cf">while</span> <span class="kw">not</span> list_sorted:</span>
@@ -1386,7 +1386,7 @@ margin-right: 0; }
 </section>
 <section id="insertion-sort-implementation-1" class="slide level2">
 <h2>Insertion Sort – implementation 1</h2>
-<div id="373dc6c3" class="cell" data-execution_count="5">
+<div id="c25d6eee" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href></a><span class="kw">def</span> insertion_sort(lst):</span>
 <span id="cb6-2"><a href></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(lst)):</span>
 <span id="cb6-3"><a href></a>    j <span class="op">=</span> i</span>
@@ -1397,7 +1397,7 @@ margin-right: 0; }
 </section>
 <section id="insertion-sort-implementation-2" class="slide level2">
 <h2>Insertion Sort – implementation 2</h2>
-<div id="610413d4" class="cell" data-execution_count="6">
+<div id="af639221" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href></a><span class="kw">def</span> insertion_sort(lst):</span>
 <span id="cb7-2"><a href></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(lst)):</span>
 <span id="cb7-3"><a href></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(i, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>):</span>
