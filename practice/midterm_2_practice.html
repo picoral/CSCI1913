@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Adriana Picoral">
 
-<title>CSCI 1913 Spring 2026</title>
+<title>Spring 2026 Midterm 2 Practice Problems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3053,74 +3054,24 @@ vertical-align: -.125em;
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#documents" id="toc-documents" class="nav-link active" data-scroll-target="#documents">Documents</a></li>
-  <li><a href="#part-1-python-and-the-study-of-algorithms" id="toc-part-1-python-and-the-study-of-algorithms" class="nav-link" data-scroll-target="#part-1-python-and-the-study-of-algorithms">Part 1 – Python and the study of Algorithms</a>
+  <li><a href="#questions" id="toc-questions" class="nav-link active" data-scroll-target="#questions"><span class="header-section-number">1</span> Questions</a>
   <ul class="collapse">
-  <li><a href="#module-00---course-overview" id="toc-module-00---course-overview" class="nav-link" data-scroll-target="#module-00---course-overview">Module 00 - Course Overview</a>
+  <li><a href="#access-modifiers" id="toc-access-modifiers" class="nav-link" data-scroll-target="#access-modifiers"><span class="header-section-number">1.1</span> Access Modifiers</a></li>
+  <li><a href="#java-keywords" id="toc-java-keywords" class="nav-link" data-scroll-target="#java-keywords"><span class="header-section-number">1.2</span> Java keywords</a></li>
+  <li><a href="#output" id="toc-output" class="nav-link" data-scroll-target="#output"><span class="header-section-number">1.3</span> Output</a></li>
+  <li><a href="#errors" id="toc-errors" class="nav-link" data-scroll-target="#errors"><span class="header-section-number">1.4</span> Errors</a></li>
+  <li><a href="#complete-the-code" id="toc-complete-the-code" class="nav-link" data-scroll-target="#complete-the-code"><span class="header-section-number">1.5</span> Complete the code</a></li>
+  <li><a href="#write-code" id="toc-write-code" class="nav-link" data-scroll-target="#write-code"><span class="header-section-number">1.6</span> Write Code</a></li>
+  </ul></li>
+  <li><a href="#key" id="toc-key" class="nav-link" data-scroll-target="#key"><span class="header-section-number">2</span> Key</a>
   <ul class="collapse">
-  <li><a href="#documents-1" id="toc-documents-1" class="nav-link" data-scroll-target="#documents-1">Documents</a></li>
-  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
-  <li><a href="#attendance" id="toc-attendance" class="nav-link" data-scroll-target="#attendance">Attendance</a></li>
+  <li><a href="#access-modifiers-1" id="toc-access-modifiers-1" class="nav-link" data-scroll-target="#access-modifiers-1"><span class="header-section-number">2.1</span> Access Modifiers</a></li>
+  <li><a href="#java-keywords-1" id="toc-java-keywords-1" class="nav-link" data-scroll-target="#java-keywords-1"><span class="header-section-number">2.2</span> Java Keywords</a></li>
+  <li><a href="#output-1" id="toc-output-1" class="nav-link" data-scroll-target="#output-1"><span class="header-section-number">2.3</span> Output</a></li>
+  <li><a href="#errors-1" id="toc-errors-1" class="nav-link" data-scroll-target="#errors-1"><span class="header-section-number">2.4</span> Errors</a></li>
+  <li><a href="#complete-the-code-1" id="toc-complete-the-code-1" class="nav-link" data-scroll-target="#complete-the-code-1"><span class="header-section-number">2.5</span> Complete the code</a></li>
+  <li><a href="#write-code-1" id="toc-write-code-1" class="nav-link" data-scroll-target="#write-code-1"><span class="header-section-number">2.6</span> Write Code</a></li>
   </ul></li>
-  <li><a href="#module-01-intro-to-python" id="toc-module-01-intro-to-python" class="nav-link" data-scroll-target="#module-01-intro-to-python">Module 01 – Intro to Python</a>
-  <ul class="collapse">
-  <li><a href="#slides-1" id="toc-slides-1" class="nav-link" data-scroll-target="#slides-1">Slides</a></li>
-  <li><a href="#lecture-recording" id="toc-lecture-recording" class="nav-link" data-scroll-target="#lecture-recording">Lecture Recording</a></li>
-  <li><a href="#in-class-exercise" id="toc-in-class-exercise" class="nav-link" data-scroll-target="#in-class-exercise">In-class exercise</a></li>
-  </ul></li>
-  <li><a href="#module-02-python" id="toc-module-02-python" class="nav-link" data-scroll-target="#module-02-python">Module 02 – Python</a>
-  <ul class="collapse">
-  <li><a href="#slides-2" id="toc-slides-2" class="nav-link" data-scroll-target="#slides-2">Slides</a></li>
-  <li><a href="#in-class-exercises" id="toc-in-class-exercises" class="nav-link" data-scroll-target="#in-class-exercises">In-class exercises</a></li>
-  <li><a href="#lecture-recordings" id="toc-lecture-recordings" class="nav-link" data-scroll-target="#lecture-recordings">Lecture Recordings</a></li>
-  </ul></li>
-  <li><a href="#computer-lab-01" id="toc-computer-lab-01" class="nav-link" data-scroll-target="#computer-lab-01">Computer Lab 01</a></li>
-  <li><a href="#computer-lab-02" id="toc-computer-lab-02" class="nav-link" data-scroll-target="#computer-lab-02">Computer Lab 02</a></li>
-  <li><a href="#module-03-advanced-python" id="toc-module-03-advanced-python" class="nav-link" data-scroll-target="#module-03-advanced-python">Module 03 – Advanced Python</a>
-  <ul class="collapse">
-  <li><a href="#slides-3" id="toc-slides-3" class="nav-link" data-scroll-target="#slides-3">Slides</a></li>
-  <li><a href="#in-class-exercises-1" id="toc-in-class-exercises-1" class="nav-link" data-scroll-target="#in-class-exercises-1">In-class exercises</a></li>
-  <li><a href="#lecture-recordings-1" id="toc-lecture-recordings-1" class="nav-link" data-scroll-target="#lecture-recordings-1">Lecture Recordings</a></li>
-  </ul></li>
-  <li><a href="#computer-lab-03" id="toc-computer-lab-03" class="nav-link" data-scroll-target="#computer-lab-03">Computer Lab 03</a></li>
-  <li><a href="#module-04-big-o-notation-and-searching" id="toc-module-04-big-o-notation-and-searching" class="nav-link" data-scroll-target="#module-04-big-o-notation-and-searching">Module 04 – Big O notation, and searching</a>
-  <ul class="collapse">
-  <li><a href="#slides-4" id="toc-slides-4" class="nav-link" data-scroll-target="#slides-4">Slides</a></li>
-  <li><a href="#in-class-exercises-2" id="toc-in-class-exercises-2" class="nav-link" data-scroll-target="#in-class-exercises-2">In-class exercises</a></li>
-  </ul></li>
-  <li><a href="#computer-lab-04" id="toc-computer-lab-04" class="nav-link" data-scroll-target="#computer-lab-04">Computer Lab 04</a></li>
-  <li><a href="#module-05-sorting" id="toc-module-05-sorting" class="nav-link" data-scroll-target="#module-05-sorting">Module 05 – Sorting</a>
-  <ul class="collapse">
-  <li><a href="#slides-5" id="toc-slides-5" class="nav-link" data-scroll-target="#slides-5">Slides</a></li>
-  </ul></li>
-  <li><a href="#computer-lab-05" id="toc-computer-lab-05" class="nav-link" data-scroll-target="#computer-lab-05">Computer Lab 05</a></li>
-  <li><a href="#module-06-recursion" id="toc-module-06-recursion" class="nav-link" data-scroll-target="#module-06-recursion">Module 06 – Recursion</a>
-  <ul class="collapse">
-  <li><a href="#slides-6" id="toc-slides-6" class="nav-link" data-scroll-target="#slides-6">Slides</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#project-1" id="toc-project-1" class="nav-link" data-scroll-target="#project-1">Project 1</a></li>
-  <li><a href="#midterm-1" id="toc-midterm-1" class="nav-link" data-scroll-target="#midterm-1">Midterm 1</a></li>
-  <li><a href="#part-2-java-and-the-study-of-object-oriented-programing" id="toc-part-2-java-and-the-study-of-object-oriented-programing" class="nav-link" data-scroll-target="#part-2-java-and-the-study-of-object-oriented-programing">Part 2 – Java and the study of Object Oriented Programing</a>
-  <ul class="collapse">
-  <li><a href="#install-java-23-jdk23" id="toc-install-java-23-jdk23" class="nav-link" data-scroll-target="#install-java-23-jdk23">Install Java 23 (JDK23)</a></li>
-  <li><a href="#part-b-installing-intellij" id="toc-part-b-installing-intellij" class="nav-link" data-scroll-target="#part-b-installing-intellij">PART B: Installing Intellij</a></li>
-  <li><a href="#module-07" id="toc-module-07" class="nav-link" data-scroll-target="#module-07">Module 07</a>
-  <ul class="collapse">
-  <li><a href="#slides-7" id="toc-slides-7" class="nav-link" data-scroll-target="#slides-7">Slides</a></li>
-  <li><a href="#gradescope-exercises" id="toc-gradescope-exercises" class="nav-link" data-scroll-target="#gradescope-exercises">Gradescope Exercises</a></li>
-  </ul></li>
-  <li><a href="#computer-lab-06" id="toc-computer-lab-06" class="nav-link" data-scroll-target="#computer-lab-06">Computer Lab 06</a></li>
-  <li><a href="#module-08" id="toc-module-08" class="nav-link" data-scroll-target="#module-08">Module 08</a>
-  <ul class="collapse">
-  <li><a href="#slides-8" id="toc-slides-8" class="nav-link" data-scroll-target="#slides-8">Slides</a></li>
-  <li><a href="#gradescope" id="toc-gradescope" class="nav-link" data-scroll-target="#gradescope">Gradescope</a></li>
-  </ul></li>
-  <li><a href="#computer-lab-07" id="toc-computer-lab-07" class="nav-link" data-scroll-target="#computer-lab-07">Computer Lab 07</a></li>
-  </ul></li>
-  <li><a href="#project-2" id="toc-project-2" class="nav-link" data-scroll-target="#project-2">Project 2</a></li>
-  <li><a href="#midterm-2" id="toc-midterm-2" class="nav-link" data-scroll-target="#midterm-2">Midterm 2</a></li>
-  <li><a href="#part-3-the-design-and-implementation-of-data-structures" id="toc-part-3-the-design-and-implementation-of-data-structures" class="nav-link" data-scroll-target="#part-3-the-design-and-implementation-of-data-structures">Part 3 – The design and implementation of Data Structures</a></li>
   </ul>
 </nav>
 </div>
@@ -3128,13 +3079,20 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CSCI 1913 Spring 2026</h1>
+<h1 class="title"><em>Spring 2026 Midterm 2 Practice Problems</em></h1>
+<p class="subtitle lead">CSCI 1913 – Introduction to Algorithms, Data Structures, and Program Development</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Adriana Picoral </p>
+          </div>
+  </div>
     
   
     
@@ -3145,420 +3103,354 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="documents" class="level1">
-<h1>Documents</h1>
-<ul>
-<li><a href="syllabus.html">Syllabus</a></li>
-<li><a href="https://docs.google.com/spreadsheets/d/1tzRyQWKa6iu2kiKiyxVzQa9yL044K2-rKqBxOYQ-oR8/edit?usp=sharing">Office Hours</a></li>
-<li><a href="rules.html">Course Rules</a></li>
-<li><a href="integrity.html">Academic Integrity</a></li>
-<li><a href="technology.html">Technology</a></li>
-</ul>
-</section>
-<section id="part-1-python-and-the-study-of-algorithms" class="level1">
-<h1>Part 1 – Python and the study of Algorithms</h1>
-<section id="module-00---course-overview" class="level2">
-<h2 class="anchored" data-anchor-id="module-00---course-overview">Module 00 - Course Overview</h2>
-<p>For this module we will focus first-and-foremost on getting the class started. We’ll be seeing the basic class design, learning what are the parts of the class, and how they will help us learn.</p>
-<p>By the end of the week you should be able to:</p>
-<ul>
-<li>Decide whether CSCI1913 is a course for you (if you fit the audience)</li>
-<li>Prepare for what we will do to learn, and why.</li>
-</ul>
-<section id="documents-1" class="level3">
-<h3 class="anchored" data-anchor-id="documents-1">Documents</h3>
-<ul>
-<li><a href="syllabus.html">Syllabus</a></li>
-<li><a href="integrity.html">Academic Integrity</a></li>
-<li><a href="rules.html">Course Rules</a></li>
-<li><a href="technology.html">Technology</a></li>
-</ul>
-</section>
-<section id="slides" class="level3">
-<h3 class="anchored" data-anchor-id="slides">Slides</h3>
-<ul>
-<li><a href="slides/slides-00-00.html">Course Intro</a></li>
-<li><a href="slides/slides-00-01.html">LLMs</a></li>
-</ul>
-</section>
-<section id="attendance" class="level3">
-<h3 class="anchored" data-anchor-id="attendance">Attendance</h3>
-<ul>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7504938">Gradescope attendance question</a></li>
-</ul>
-</section>
-</section>
-<section id="module-01-intro-to-python" class="level2">
-<h2 class="anchored" data-anchor-id="module-01-intro-to-python">Module 01 – Intro to Python</h2>
-<p>In this module we’ll jump right into some practical python programming. By the end of this module you will be able to:</p>
-<ul>
-<li>Read basic python programs and predict their behavior</li>
-<li>Write basic python functions</li>
-</ul>
-<section id="slides-1" class="level3">
-<h3 class="anchored" data-anchor-id="slides-1">Slides</h3>
-<ul>
-<li><a href="slides/slides-01-00.html">Programming Languages Overview</a></li>
-<li><a href="slides/slides-01-01.html">Intro to Python</a></li>
-</ul>
-</section>
-<section id="lecture-recording" class="level3">
-<h3 class="anchored" data-anchor-id="lecture-recording">Lecture Recording</h3>
-<ul>
-<li><a href="https://umn.zoom.us/rec/share/XMrgLiSplvDDgy6VSI0V_ANJkMcUg-WtzFvcOv6l7uxp_LuA7YF4rhOAO1nA6vId.E7Fbb-gITC6OkD_L?startTime=1769200221000">Jan 23 lecture recording</a></li>
-</ul>
-</section>
-<section id="in-class-exercise" class="level3">
-<h3 class="anchored" data-anchor-id="in-class-exercise">In-class exercise</h3>
-<ul>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7531656">circle area on gradescope</a></li>
-</ul>
-</section>
-</section>
-<section id="module-02-python" class="level2">
-<h2 class="anchored" data-anchor-id="module-02-python">Module 02 – Python</h2>
-<p>We will continue working with Python. In this module we will finish discussing basic python features with a few final details of pyhton’s many scopes, in particular how you can import functions from other files – and some unique details about how this works in python.</p>
-<p>Then we will begin exploring Python’s advanced data representation tools: data structures. Data structures create a flexible way to represent many common forms of data in an ad-hoc way without creating specific classes, or writing tricky data-management code.</p>
-<p>We will be focusing on the List this week, which is python’s answer to the array. Towards the end of the week we will introduce the set and dictionary as well, with the plan to finish them next week.</p>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Read, write, run, test, and debug simple python programs</li>
-<li>Identify a list, tuple, and dictionary as represented in python code</li>
-<li>Create, and loop over python lists</li>
-</ul>
-<section id="slides-2" class="level3">
-<h3 class="anchored" data-anchor-id="slides-2">Slides</h3>
-<ul>
-<li><a href="slides/slides-02-01.html">More Python</a></li>
-<li><a href="slides/slides-02-02.html">Python Loops</a></li>
-<li><a href="slides/slides-02-03.html">Python Lists</a></li>
-<li><a href="slides/slides-02-04.html">Python IO</a></li>
-</ul>
-</section>
-<section id="in-class-exercises" class="level3">
-<h3 class="anchored" data-anchor-id="in-class-exercises">In-class exercises</h3>
-<ul>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7537955">absolute function on gradescope</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7537960/">loop factorial on gradescope</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7550019">colors on gradescope</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7550027">prime on gradescope</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7572337">prime expansion (tuples) on gradescope</a></li>
-</ul>
-</section>
-<section id="lecture-recordings" class="level3">
-<h3 class="anchored" data-anchor-id="lecture-recordings">Lecture Recordings</h3>
-<ul>
-<li><a href="https://umn.zoom.us/rec/share/bMzN0PG1b2W1vzZnn7_4M70-WrWim4hjjRwBQOiekfblrvr-KXv7EWaORN1RBcrR.dddoz1Vo3Gp5ml9H?startTime=1769459452000">Jan 26 lecture recording</a></li>
-<li><a href="https://umn.zoom.us/rec/share/5N8303R8WUahavG2UnDWYkFpkqXYDyNanX2PbDXzx3WLgye27k73cUddOa5UiVOZ.S_QqufxFI9ssnje8">Jan 28 lecture recording</a></li>
-<li><a href="https://youtu.be/oLyKIkPbiRM">Jan 30 video lecture – sequences and loops</a></li>
-<li><a href="https://umn.zoom.us/rec/share/QOPU2qUzjv1z1BUk8oBfUdPr5L7nYeR_jTrF4UYkOH8sjPRM4sDh7o-hgx5IQW2N.zIVbOibaijEx3Wi_?startTime=1770064224000">Feb 02 lecture recording</a></li>
-</ul>
-</section>
-</section>
-<section id="computer-lab-01" class="level2">
-<h2 class="anchored" data-anchor-id="computer-lab-01">Computer Lab 01</h2>
-<ul>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab01.html">Instructions for Computer Lab 01</a></li>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab01-slides.html">Slides for Computer Lab 01</a></li>
-<li><a href="https://canvas.umn.edu/courses/541118/modules/items/16288385">Tester code</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7529869">Gradescope link to Computer Lab 01</a></li>
-</ul>
-</section>
-<section id="computer-lab-02" class="level2">
-<h2 class="anchored" data-anchor-id="computer-lab-02">Computer Lab 02</h2>
-<ul>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab02.html">Instructions for Computer Lab 02</a></li>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab02-slides.html">Slides for Computer Lab 02</a></li>
-<li>Download <a href="labs/code/nim_tester.py">tester code</a></li>
-<li>Download <a href="labs/code/play_nim.py">code to play game</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7551292">Gradescope link to Computer Lab 02</a></li>
-</ul>
-</section>
-<section id="module-03-advanced-python" class="level2">
-<h2 class="anchored" data-anchor-id="module-03-advanced-python">Module 03 – Advanced Python</h2>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Explain the concept of mutability and distinguish between mutable and immutable data types in Python, providing examples of each and describing the implications for variable assignment and function parameters.</li>
-<li>Create and manipulate Python lists using various methods including indexing, slicing, appending, inserting, removing, and sorting elements, while understanding the performance characteristics of these operations.</li>
-<li>Analyze the behavior of list aliasing and copying, explaining the difference between shallow and deep copies and predicting how changes to one list reference will affect others.</li>
-<li>Create and manipulate dictionaries to store and retrieve key-value pairs, using appropriate methods for adding, updating, removing, and accessing elements.</li>
-<li>Iterate over dictionaries using various approaches (keys, values, items) and understand the implications of dictionary ordering in modern Python versions.</li>
-<li>Apply dictionaries to solve practical problems such as counting occurrences, grouping data, creating lookup tables, and representing structured information.</li>
-<li>Use sets for membership testing and duplicate elimination, understanding when sets are preferable to lists for specific operations and leveraging their O(1) average-case lookup performance.</li>
-<li>Perform set operations including union, intersection, difference, and symmetric difference to solve problems involving collections and relationships between groups.</li>
-<li>Select appropriate data structures (lists, dictionaries, or sets) based on the requirements of a given problem, justifying choices based on performance, functionality, and code clarity.</li>
-</ul>
-<section id="slides-3" class="level3">
-<h3 class="anchored" data-anchor-id="slides-3">Slides</h3>
-<ul>
-<li><a href="slides/slides-03-01.html">Mutability</a></li>
-<li><a href="slides/slides-03-02.html">Sequence Nesting</a></li>
-<li><a href="slides/slides-03-03.html">Dictionaries</a></li>
-<li><a href="slides/slides-03-04.html">Sets</a></li>
-</ul>
-</section>
-<section id="in-class-exercises-1" class="level3">
-<h3 class="anchored" data-anchor-id="in-class-exercises-1">In-class exercises</h3>
-<ul>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7593810">Submit lowercase_list.py to gradescope</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7593831">Submit list_multiplication.py to gradescope</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7593839">Submit grade_average.py to gradescope</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7610525">Submit count_coins.py to gradescope</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7627094">Submit commonality.py to gradescope</a></li>
-</ul>
-</section>
-<section id="lecture-recordings-1" class="level3">
-<h3 class="anchored" data-anchor-id="lecture-recordings-1">Lecture Recordings</h3>
-<ul>
-<li><a href="https://umn.zoom.us/rec/share/S3DkfLzxID65zPUGlZ1KU5YvGz3mQiSqLFvA77UlqKWQgh-y8PNQrdPSIEXK5Vau.m7ss-ztpWm7p6y2a">February 4</a></li>
-<li><a href="https://umn.zoom.us/rec/share/hQTUaJ6K3-3vif3DtAoeS5tzxgtBqpBjSQcDQCocwxQkubRscmg4eNagJO6fL4qD.FtWx8KjBLjwq5RUy">February 6</a></li>
-<li><a href="https://umn.zoom.us/rec/share/S7wisNc6LCFC0RK4Pf-W7YAwKQAsGtST34935vdkKwVNP40CL9BhBu7r9OkdQKyy.NUOEhmDgrAECUGpJ">February 9</a></li>
-</ul>
-</section>
-</section>
-<section id="computer-lab-03" class="level2">
-<h2 class="anchored" data-anchor-id="computer-lab-03">Computer Lab 03</h2>
-<ul>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab03.html">Instructions for Computer Lab 03</a></li>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab03-slides.html">Slides for Computer Lab 03</a></li>
-<li>Download <a href="labs/code/lab03files.zip">tester code</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7603312">Gradescope link to Computer Lab 02</a></li>
-</ul>
-</section>
-<section id="module-04-big-o-notation-and-searching" class="level2">
-<h2 class="anchored" data-anchor-id="module-04-big-o-notation-and-searching">Module 04 – Big O notation, and searching</h2>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Analyze the time complexity of simple algorithms by identifying the relationship between input size and running time.</li>
-<li>Express algorithm efficiency using Big-O notation and correctly classify common complexity classes including O(1), O(log n), O(n), O(n log n), O(n²), and O(2ⁿ).</li>
-<li>Compare algorithms based on their asymptotic behavior and determine which algorithm is more efficient for large inputs by analyzing their Big-O classifications.</li>
-<li>Distinguish between best-case, average-case, and worst-case time complexity and explain when each measure is most relevant.</li>
-<li>Implement linear search and binary search correctly in code and trace their execution on sample datasets.</li>
-<li>Analyze the time complexity of linear search as O(n) and binary search as O(log n) and explain why binary search is asymptotically faster.</li>
-<li>Explain why binary search requires sorted data as a precondition and demonstrate how the algorithm eliminates half of the remaining search space with each comparison.</li>
-</ul>
-<section id="slides-4" class="level3">
-<h3 class="anchored" data-anchor-id="slides-4">Slides</h3>
-<ul>
-<li><a href="slides/slides-04-01.html">Algorithm Analysis</a></li>
-<li><a href="slides/slides-04-02.html">Searching</a></li>
-<li><a href="slides/slides-04-03.html">Big-O Practice</a></li>
-</ul>
-</section>
-<section id="in-class-exercises-2" class="level3">
-<h3 class="anchored" data-anchor-id="in-class-exercises-2">In-class exercises</h3>
-<ul>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7640420">Submit get_max.py to gradescope</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7640449">Submit linear_search.py</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7640458">Submit binary_search.py</a></li>
-</ul>
-</section>
-</section>
-<section id="computer-lab-04" class="level2">
-<h2 class="anchored" data-anchor-id="computer-lab-04">Computer Lab 04</h2>
-<ul>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab04.html">Instructions for Computer Lab 04</a></li>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab04-slides.html">Slides for Computer Lab 04</a></li>
-<li>Download <a href="https://adrianapicoral.com/CSCI1913/labs/code/pricebook_tester.py">pricebook_tester.py</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7642750">Gradescope link to Computer Lab 04</a></li>
-</ul>
-</section>
-<section id="module-05-sorting" class="level2">
-<h2 class="anchored" data-anchor-id="module-05-sorting">Module 05 – Sorting</h2>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Implement selection sort, insertion sort, and bubble sort correctly in code and trace their execution on small datasets.</li>
-<li>Analyze and compare the time complexity of selection sort, insertion sort, and bubble sort in their best, average, and worst cases.</li>
-<li>Explain the underlying mechanism of each sorting algorithm including how elements are compared, swapped, and positioned during execution.</li>
-</ul>
-<section id="slides-5" class="level3">
-<h3 class="anchored" data-anchor-id="slides-5">Slides</h3>
-<ul>
-<li><a href="slides/slides-05-01.html">Sorting</a></li>
-</ul>
-</section>
-</section>
-<section id="computer-lab-05" class="level2">
-<h2 class="anchored" data-anchor-id="computer-lab-05">Computer Lab 05</h2>
-<ul>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab05.html">Instructions for Computer Lab 05</a></li>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab05-slides.html">Slides for Computer Lab 05</a></li>
-<li>Download <a href="labs/code/lab05files.zip">starter code</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7643149">Gradescope link to Computer Lab 05</a></li>
-</ul>
-</section>
-<section id="module-06-recursion" class="level2">
-<h2 class="anchored" data-anchor-id="module-06-recursion">Module 06 – Recursion</h2>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Define and explain recursion as a problem-solving technique where a function calls itself with modified parameters to solve progressively smaller subproblems.</li>
-<li>Identify the essential components of a recursive function, including the base case(s) that stop recursion and the recursive case(s) that break down the problem.</li>
-<li>Convert simple iterative solutions to recursive solutions and vice versa, recognizing when each approach is more appropriate.</li>
-<li>Apply recursion to solve problems involving naturally recursive data structures or definitions, such as computing powers, reversing strings, or processing nested lists.</li>
-<li>Debug recursive functions by identifying common errors such as missing base cases, incorrect recursive calls, or infinite recursion.</li>
-</ul>
-<section id="slides-6" class="level3">
-<h3 class="anchored" data-anchor-id="slides-6">Slides</h3>
-<ul>
-<li><a href="slides/slides-06-01.html">Recursion</a></li>
-<li><a href="slides/slides-06-02.html">Merge Sort</a></li>
-</ul>
-</section>
-</section>
-</section>
-<section id="project-1" class="level1">
-<h1>Project 1</h1>
-<ul>
-<li><a href="projects/project1.html">Instructions for Project 1</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7581121">Gradescope link to Projet 1</a></li>
-</ul>
-</section>
-<section id="midterm-1" class="level1">
-<h1>Midterm 1</h1>
-<ul>
-<li><a href="practice/midterm_1_practice.html">Practice Exercises for Midterm 1</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7641233">Practice Midterm 1 on Gradescope</a></li>
-</ul>
-</section>
-<section id="part-2-java-and-the-study-of-object-oriented-programing" class="level1">
-<h1>Part 2 – Java and the study of Object Oriented Programing</h1>
-<section id="install-java-23-jdk23" class="level2">
-<h2 class="anchored" data-anchor-id="install-java-23-jdk23">Install Java 23 (JDK23)</h2>
-<p>Steps to install Java:</p>
-<ul>
-<li>For Ubuntu: Install <a href="https://ubuntuhandbook.org/?s=java+23">Oracle Java JDK 21/23 on Ubuntu</a></li>
-<li>For Mac OSX: Install <a href="https://docs.oracle.com/en/java/javase/23/install/installation-jdk-macos.html#GUID-F575EB4A-70D3-4AB4-A20E-DBE95171AB5F">the JDK on macOS</a></li>
-</ul>
-<p>For Windows:</p>
+<section id="questions" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Questions</h1>
+<section id="access-modifiers" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="access-modifiers"><span class="header-section-number">1.1</span> Access Modifiers</h2>
 <ol type="1">
-<li>Download the file: <a href="https://www.oracle.com/java/technologies/downloads/#jdk23-windows">Java 23</a> (select JDK 23 and Windows)</li>
-<li>Double Click and Install.</li>
+<li>What access modifier allows an attribute or method to be accessed from any class? ______________</li>
+<li>What access modifier restricts access to only within the same class? ______________</li>
+<li>What access modifier allows an attribute or method to be access within the same class and a child class only (no access from any other class)? ______________</li>
+<li>Which of the following access modifiers provides the most restrictive access?</li>
 </ol>
-<p>For Linux:</p>
+<p>         ▢ a) public</p>
+<p>         ▢ b) protected</p>
+<p>         ▢ c) private</p>
+<ol start="5" type="1">
+<li>If a method is declared as protected in a parent class, can it be accessed by a subclass?</li>
+</ol>
+<p>         ▢ a) No, never</p>
+<p>         ▢ b) Yes, through inheritance</p>
+<p>         ▢ c) Only if explicitly imported</p>
+<ol start="6" type="1">
+<li>What happens if you try to access a private method from a subclass?</li>
+</ol>
+<p>         ▢ a) It works fine</p>
+<p>         ▢ b) Compilation error</p>
+<p>         ▢ c) Runtime error</p>
+<p>         ▢ d) The method becomes protected automatically</p>
+<ol start="7" type="1">
+<li>Which statement about access modifiers is TRUE?</li>
+</ol>
+<p>         ▢ a) protected is more restrictive than private</p>
+<p>         ▢ b) private allows access from any class</p>
+<p>         ▢ c) private methods cannot be access even within the same class</p>
+<p>         ▢ d) public is the least restrictive access modifier</p>
+</section>
+<section id="java-keywords" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="java-keywords"><span class="header-section-number">1.2</span> Java keywords</h2>
 <ol type="1">
-<li>Download the file: <a href="https://www.oracle.com/java/technologies/downloads/#jdk23-linux">Java 23</a> (select JDK 23 and Linux)</li>
-<li>Double Click and Install.</li>
+<li>What is the purpose of the <code>extends</code> keyword in Java?</li>
+</ol>
+<p>         ▢ a) To create an interface</p>
+<p>         ▢ b) To import packages</p>
+<p>         ▢ c) To establish inheritance between classes</p>
+<p>         ▢ d) To declare a method</p>
+<ol start="2" type="1">
+<li>Which statement about the <code>this</code> keyword is correct?</li>
+</ol>
+<p>         ▢ a) It refers to the current object instance</p>
+<p>         ▢ b) It refers to the parent class</p>
+<p>         ▢ c) It refers to a static variable</p>
+<p>         ▢ d) It refers to the main method</p>
+<ol start="3" type="1">
+<li>What does <code>super()</code> do when called in a constructor?</li>
+</ol>
+<p>         ▢ a) Calls a method in the current class</p>
+<p>         ▢ b) Creates a new object</p>
+<p>         ▢ c) Deletes the parent class</p>
+<p>         ▢ d) Calls the constructor of the parent class</p>
+<ol start="4" type="1">
+<li>How many classes can a Java class extend using the <code>extends</code> keyword?</li>
+</ol>
+<p>         ▢ a) None</p>
+<p>         ▢ b) One</p>
+<p>         ▢ c) Two</p>
+<p>         ▢ d) Unlimited</p>
+<ol start="5" type="1">
+<li>When must <code>super()</code> be called in a constructor?</li>
+</ol>
+<p>         ▢ a) At the end of the constructor</p>
+<p>         ▢ b) Anywhere in the constructor</p>
+<p>         ▢ c) As the first statement in the constructor</p>
+<p>         ▢ d) It’s optional and never required</p>
+<ol start="6" type="1">
+<li>Which keyword is used to differentiate between instance variables and parameters with the same name?</li>
+</ol>
+<p>         ▢ a) extends</p>
+<p>         ▢ b) super</p>
+<p>         ▢ c) this</p>
+<p>         ▢ d) static</p>
+<ol start="7" type="1">
+<li>What does <code>super.method()</code> do?</li>
+</ol>
+<p>         ▢ a) Calls an overridden method from the parent class</p>
+<p>         ▢ b) Calls a method from the current class</p>
+<p>         ▢ c) Creates a new method</p>
+<p>         ▢ d) Deletes a method</p>
+</section>
+<section id="output" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="output"><span class="header-section-number">1.3</span> Output</h2>
+<ol type="1">
+<li>What is the output of this code?</li>
+</ol>
+<pre class="{java}"><code>public class Parent {
+    protected int x = 10;
+}</code></pre>
+<pre class="{java}"><code>public class Child extends Parent {
+    int x = 20;
+    
+    public void display() {
+        System.out.println(super.x);
+    }
+}</code></pre>
+<pre class="{java}"><code>public class RunStuff {
+  
+  public static void main(String[] args) {
+    Child myChild = new Child();
+    myChild.display();
+  }
+  
+}</code></pre>
+<ol start="2" type="1">
+<li>What will this code output?</li>
+</ol>
+<pre class="{java}"><code>class Animal {
+    Animal() {
+        System.out.println(&quot;Animal created&quot;);
+    }
+}</code></pre>
+<pre class="{java}"><code>class Dog extends Animal {
+    Dog() {
+        System.out.println(&quot;Dog created&quot;);
+    }
+}</code></pre>
+<pre class="{java}"><code>public class Test {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+    }
+}</code></pre>
+<ol start="3" type="1">
+<li>Consider the following code:</li>
+</ol>
+<pre class="{java}"><code>public class Midterm {
+    public static int foo(int[] numbers) {
+        int n = numbers.length;
+        int a = 0;
+        int b = 0;
+        for (int i = 0; i &lt; n; i++) {
+            if ((numbers[i] % 10) == 0) {
+                // tens
+                a += numbers[i];
+            } else {
+                // not tens
+                b += numbers[i];
+            }
+        }
+        return b - a;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(foo(new int[]{1, 40, 2, 93, 70, 4, 1}));
+    }
+}</code></pre>
+<p>What would the code print? _____________________</p>
+</section>
+<section id="errors" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="errors"><span class="header-section-number">1.4</span> Errors</h2>
+<ol type="1">
+<li>Identify the error:</li>
+</ol>
+<pre class="{java}"><code>class Parent {
+    Parent(int x) {
+        System.out.println(x);
+    }
+}</code></pre>
+<pre class="{java}"><code>class Child extends Parent {
+    Child() {
+        System.out.println(&quot;Child&quot;);
+    }
+}</code></pre>
+<p>         ▢ a) No error</p>
+<p>         ▢ b) extends keyword is wrong</p>
+<p>         ▢ c) Missing <code>super()</code> call with argument in Child constructor</p>
+<p>         ▢ d) Parent class cannot have a parameterized constructor</p>
+</section>
+<section id="complete-the-code" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="complete-the-code"><span class="header-section-number">1.5</span> Complete the code</h2>
+<pre class="{java}"><code>public class Fruit {
+    /**
+     * Create a new fruit. The boolean parameter
+     * indicates if this fruit would go well in a
+     * fruit salad (true) or would best be left out (false).
+     */
+    public Fruit(boolean goesInFruitSalad) {
+      // unimportant code here.
+    }
+}
+
+public class Tomato extends Fruit {
+    /**
+     * Create a new Tomato. As a general rule -- no tomato (ripe
+     * or not) should ever go in a fruit salad. The boolean
+     * parameter indicates if the tomato is ripe or not.
+     */
+    public Tomato(boolean ripe) {
+        // SOMETHING is required here
+    }
+}</code></pre>
+<p>A line of code is needed to replace the <code>// SOMETHING is required here</code> and make the code compile. Pick the CORRECT line from below. Note – more than one line below will make the code compile, but only one matches the intent of the author as indicated by the comments on <code>Tomato</code> and <code>Fruit</code> classes.</p>
+<p>         ▢ a) Fruit(true);</p>
+<p>         ▢ b) new Fruit(false);</p>
+<p>         ▢ c) new Fruit(true);</p>
+<p>         ▢ d) super(false);</p>
+<p>         ▢ e) super(true);</p>
+</section>
+<section id="write-code" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="write-code"><span class="header-section-number">1.6</span> Write Code</h2>
+<p>Write a class called <code>Employee</code> with the following instance variables:</p>
+<ul>
+<li>A string for <code>firstName</code></li>
+<li>A string for <code>surname</code></li>
+<li>An integer for <code>ID</code></li>
+<li>A double variable for <code>yearlySalary</code></li>
+</ul>
+<p>Here are the methods you should include in your solution:</p>
+<ul>
+<li>Getters and setters for at least two instance variables</li>
+<li>A constructor that takes as argument values for the four instance variables listed</li>
+<li>A method that returns the employee’s full name</li>
+<li>A method that returns the employee’s monthly salary</li>
+<li>A method that returns the employee earning bracket based their yearly salary – below 150k returns “low”, 150k and above “high”</li>
+<li>toString() method that returns a message with the employee’s full name and its earning bracket</li>
+</ul>
+<p>In addition to correctness (the right value is returned for each method), your solution will also be assessed based on whether you do not repeat code unnecessarily – in other words: Do Not Repeat Yourself. Your methods should call other methods when appropriate; you should not write code to calculate the same thing more than once.</p>
+</section>
+</section>
+<section id="key" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Key</h1>
+<section id="access-modifiers-1" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="access-modifiers-1"><span class="header-section-number">2.1</span> Access Modifiers</h2>
+<ol type="1">
+<li>public</li>
+<li>private</li>
+<li>protected</li>
+<li><ol start="3" type="a">
+<li>private</li>
+</ol></li>
+<li><ol start="2" type="a">
+<li>Yes, through inheritance</li>
+</ol></li>
+<li><ol start="2" type="a">
+<li>Compilation error</li>
+</ol></li>
+<li><ol start="4" type="a">
+<li>public is the least restrictive access modifier</li>
+</ol></li>
 </ol>
 </section>
-<section id="part-b-installing-intellij" class="level2">
-<h2 class="anchored" data-anchor-id="part-b-installing-intellij">PART B: Installing Intellij</h2>
-<p>Jetbrains provides <a href="https://www.jetbrains.com/idea/help/installing-and-launching.html">comprehensive instructions for installing Intellij</a>. If you are still having trouble, ask a TA during lab or office hours for help. Download the <a href="https://www.jetbrains.com/idea/download/other.html">community edition</a> (you will have to scroll down to find a <code>community edition</code> option).</p>
+<section id="java-keywords-1" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="java-keywords-1"><span class="header-section-number">2.2</span> Java Keywords</h2>
+<ol type="1">
+<li><ol start="3" type="a">
+<li>To establish inheritance between classes</li>
+</ol></li>
+<li><ol type="a">
+<li>It refers to the current object instance</li>
+</ol></li>
+<li><ol start="4" type="a">
+<li>Calls the constructor of the parent class</li>
+</ol></li>
+<li><ol start="2" type="a">
+<li>One</li>
+</ol></li>
+<li><ol start="3" type="a">
+<li>As the first statement in the constructor</li>
+</ol></li>
+<li><ol start="3" type="a">
+<li>this</li>
+</ol></li>
+<li><ol type="a">
+<li>Calls an overridden method from the parent class</li>
+</ol></li>
+</ol>
 </section>
-<section id="module-07" class="level2">
-<h2 class="anchored" data-anchor-id="module-07">Module 07</h2>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Identify the role of each component in a Java program, including class definition, main method, variable declarations, and method signatures</li>
-<li>Distinguish between primitive types (int, double, boolean, char) and reference types (objects) in a given program</li>
-<li>Write a complete, compilable Java program with a main method</li>
-<li>Declare and initialize variables of appropriate types</li>
-<li>Write conditional statements and loops to control program flow</li>
-<li>Define and call methods with parameters and return values</li>
-<li>Instantiate objects from existing classes using constructors</li>
-<li>Call instance methods on objects and use the returned values</li>
-<li>Explain the difference between a class and an object</li>
-<li>Access and interpret the state of an object through its methods</li>
-<li>Use objects from the Java standard library (e.g., String, Scanner)</li>
-</ul>
-<section id="slides-7" class="level3">
-<h3 class="anchored" data-anchor-id="slides-7">Slides</h3>
-<ul>
-<li><a href="slides/slides-07-01.html">Java Basics</a></li>
-<li><a href="slides/slides-07-02.html">Java Objects</a></li>
-<li><a href="slides/slides-07-03.html">OOP</a></li>
-</ul>
+<section id="output-1" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="output-1"><span class="header-section-number">2.3</span> Output</h2>
+<ol type="1">
+<li></li>
+</ol>
+<pre><code>        10</code></pre>
+<ol start="2" type="1">
+<li></li>
+</ol>
+<pre><code>        Animal Created
+        Dog created</code></pre>
+<ol start="3" type="1">
+<li></li>
+</ol>
+<pre><code>        -9</code></pre>
 </section>
-<section id="gradescope-exercises" class="level3">
-<h3 class="anchored" data-anchor-id="gradescope-exercises">Gradescope Exercises</h3>
-<ul>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7761992">Java Errors</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7761993">OddEven</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7762025">Average</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7774021">HoursMinutesSeconds</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7788090">MyTime</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7788159/">GregorianDate</a></li>
-</ul>
+<section id="errors-1" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="errors-1"><span class="header-section-number">2.4</span> Errors</h2>
+<ol type="1">
+<li><ol start="3" type="a">
+<li>Missing <code>super()</code> call with argument in Child constructor</li>
+</ol></li>
+</ol>
 </section>
+<section id="complete-the-code-1" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="complete-the-code-1"><span class="header-section-number">2.5</span> Complete the code</h2>
+<ol type="1">
+<li><ol start="4" type="a">
+<li>super(false);</li>
+</ol></li>
+</ol>
 </section>
-<section id="computer-lab-06" class="level2">
-<h2 class="anchored" data-anchor-id="computer-lab-06">Computer Lab 06</h2>
-<ul>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab06.html">Instructions for Computer Lab 06</a></li>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab06-slides.html">Slides for Computer Lab 06</a></li>
-<li>Download <a href="labs/code/lab06files.zip">starter code</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7747387">Gradescope link to Computer Lab 05</a></li>
-</ul>
+<section id="write-code-1" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="write-code-1"><span class="header-section-number">2.6</span> Write Code</h2>
+<pre class="{java}"><code>public class Employee {       
+      private String firstName;
+      private String surname;                                                          
+      private int ID;
+      private double yearlySalary;       
+                  
+      public Employee(String firstName, String surname, int ID, double yearlySalary) {
+          this.firstName = firstName;
+          this.surname = surname;
+          this.ID = ID;
+          this.yearlySalary = yearlySalary;
+      }
+
+      public String getFirstName() { return firstName; }
+      public void setFirstName(String firstName) { this.firstName = firstName; }
+
+      public String getSurname() { return surname; }
+      public void setSurname(String surname) { this.surname = surname; }
+
+      public double getYearlySalary() { return yearlySalary; }
+      public void setYearlySalary(double yearlySalary) { this.yearlySalary = yearlySalary; }
+
+      public String getFullName() {
+          return firstName + &quot; &quot; + surname;
+      }
+
+      public double monthlySalary() {
+          return yearlySalary / 12;
+      }
+
+      public String earningBracket() {
+          if (yearlySalary &lt; 150000) return &quot;low&quot;;
+          return &quot;high&quot;;
+      }
+
+      @Override
+      public String toString() {
+          return getFullName() + &quot; is in the &quot; + earningBracket() + &quot; earning bracket&quot;;
+      }
+  }
+</code></pre>
 </section>
-<section id="module-08" class="level2">
-<h2 class="anchored" data-anchor-id="module-08">Module 08</h2>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Explain what inheritance is and why it is useful for organizing and reusing code</li>
-<li>Identify the relationship between a superclass and a subclass in a class hierarchy</li>
-<li>Use the <code>extends</code> keyword to create a subclass that inherits fields and methods from a superclass</li>
-<li>Use the <code>super</code> keyword to call a superclass constructor or to access a super instance variable</li>
-<li>Determine which fields and methods a subclass inherits, overrides, or adds</li>
-<li>Override a method in a subclass and explain how Java determines which version of the method to call at runtime</li>
-<li>Override <code>toString</code> in a subclass to return a meaningful string representation of an object</li>
-<li>Override <code>equals</code> in a subclass to compare two objects based on their field values rather than reference</li>
-<li>Distinguish between abstract classes and concrete classes and explain when to use each</li>
-<li>Define method overloading and distinguish it from method overriding</li>
-<li>Write multiple versions of a method with the same name but different parameters</li>
-<li>Identify which overloaded method Java will call given a specific set of arguments</li>
-<li>Define an abstract class with abstract and concrete methods</li>
-<li>Implement a concrete subclass that provides implementations for all abstract methods</li>
-<li>Explain why abstract classes cannot be instantiated directly</li>
-<li>Design a class hierarchy using abstract and concrete classes to model a real-world problem</li>
-<li>Explain what parametric polymorphism is and why generics are useful for writing flexible, reusable code</li>
-<li>Read and interpret generic class and method declarations that use type parameters (e.g., <t>)</t></li>
-<li>Instantiate generic classes with specific type arguments (e.g., MyClass<string>)</string></li>
-<li>Implement a simple generic class or method that works correctly for multiple data types</li>
-<li>Explain the benefit of generics over using <code>Object</code> as a universal type, particularly with respect to type safety</li>
-</ul>
-<section id="slides-8" class="level3">
-<h3 class="anchored" data-anchor-id="slides-8">Slides</h3>
-<ul>
-<li><a href="slides/slides-08-01.html">Inheritance</a></li>
-<li><a href="slides/slides-08-02.html">Polymorphism</a></li>
-<li><a href="slides/slides-08-03.html">Abstract Classes</a></li>
-<li><a href="slides/slides-08-04.html">Generics</a></li>
-</ul>
-</section>
-<section id="gradescope" class="level3">
-<h3 class="anchored" data-anchor-id="gradescope">Gradescope</h3>
-<ul>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7823150">Dice</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7823201">Shapes</a></li>
-</ul>
-</section>
-</section>
-<section id="computer-lab-07" class="level2">
-<h2 class="anchored" data-anchor-id="computer-lab-07">Computer Lab 07</h2>
-<ul>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab07.html">Instructions for Computer Lab 07</a></li>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab07-slides.html">Slides for Computer Lab 07</a></li>
-<li>Download <a href="labs/code/lab07files.zip">starter code</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7788546">Gradescope link to Computer Lab 05</a></li>
-</ul>
-</section>
-</section>
-<section id="project-2" class="level1">
-<h1>Project 2</h1>
-<ul>
-<li><a href="projects/project2.html">Instructions for Project 2</a></li>
-<li><a href="projects/code/project2files.zip">Project 2 testing files</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7765633">Gradescope – Project 2</a></li>
-</ul>
-</section>
-<section id="midterm-2" class="level1">
-<h1>Midterm 2</h1>
-<ul>
-<li><a href="practice/midterm_2_practice.html">Practice Exercises for Midterm 2</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7841437/submissions">Practice Midterm 2 on Gradescope</a> opens Friday, March 20 at 8am (timed: 30 minutes)</li>
-</ul>
-</section>
-<section id="part-3-the-design-and-implementation-of-data-structures" class="level1">
-<h1>Part 3 – The design and implementation of Data Structures</h1>
 </section>
 
 </main>
