@@ -444,7 +444,7 @@
   <meta name="generator" content="quarto-1.4.451">
 
   <meta name="author" content="CSCI 1913 – Introduction to Algorithms, Data Structures, and Program DevelopmentAdriana Picoral">
-  <title>Recap</title>
+  <title>Generics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -1208,7 +1208,7 @@ margin-right: 0; }
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Recap</h1>
+  <h1 class="title">Generics</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -1219,57 +1219,258 @@ margin-right: 0; }
 </div>
 
 </section>
-<section id="encapsulation" class="slide level2">
-<h2>Encapsulation</h2>
+<section id="polymorphisms-in-java" class="slide level2">
+<h2>Polymorphisms in Java</h2>
 <ul>
-<li>Core principle of Object-Oriented Programming (OOP)</li>
-<li>Objects are instances of a class, and an object is a unit with its data (variables) and the methods that operate on that data</li>
-<li>Encapsulation restricts direct access to an object’s internal state and provides controlled access through well-defined methods</li>
+<li>Overloading – methods in with the same name (different parameters) in the same class</li>
+<li>Overriding – methods with the same signature in different (super-sub pair) classes</li>
+<li>Parametric polymorphism – Generics</li>
+</ul>
+<p>“Parametric” – flexible, in this case flexibility for <strong>type</strong></p>
+</section>
+<section id="the-problem-to-be-solved" class="slide level2">
+<h2>The problem to be solved</h2>
+<p>Imagine we want to write a class called <code>Box</code> that holds one item of <strong>any type</strong>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>public class BoxString {</span>
+<span id="cb1-2"><a href="#cb1-2"></a>    private String item;</span>
+<span id="cb1-3"><a href="#cb1-3"></a>    </span>
+<span id="cb1-4"><a href="#cb1-4"></a>    public void set(String item) {</span>
+<span id="cb1-5"><a href="#cb1-5"></a>        this.item = item;</span>
+<span id="cb1-6"><a href="#cb1-6"></a>    }</span>
+<span id="cb1-7"><a href="#cb1-7"></a>    </span>
+<span id="cb1-8"><a href="#cb1-8"></a>    public String get() {</span>
+<span id="cb1-9"><a href="#cb1-9"></a>        return item;</span>
+<span id="cb1-10"><a href="#cb1-10"></a>    }</span>
+<span id="cb1-11"><a href="#cb1-11"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="the-problem-to-be-solved-1" class="slide level2">
+<h2>The problem to be solved</h2>
+<p>Imagine we want to write a class called <code>Box</code> that holds one item of <strong>any type</strong>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>public class BoxPolygon {</span>
+<span id="cb2-2"><a href="#cb2-2"></a>    private Polygon item;</span>
+<span id="cb2-3"><a href="#cb2-3"></a>    </span>
+<span id="cb2-4"><a href="#cb2-4"></a>    public void set(Polygon item) {</span>
+<span id="cb2-5"><a href="#cb2-5"></a>        this.item = item;</span>
+<span id="cb2-6"><a href="#cb2-6"></a>    }</span>
+<span id="cb2-7"><a href="#cb2-7"></a>    </span>
+<span id="cb2-8"><a href="#cb2-8"></a>    public Polygon get() {</span>
+<span id="cb2-9"><a href="#cb2-9"></a>        return item;</span>
+<span id="cb2-10"><a href="#cb2-10"></a>    }</span>
+<span id="cb2-11"><a href="#cb2-11"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="the-problem-to-be-solved-2" class="slide level2">
+<h2>The problem to be solved</h2>
+<p>Imagine we want to write a class called <code>Box</code> that holds one item of <strong>any type</strong>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>public class BoxCard {</span>
+<span id="cb3-2"><a href="#cb3-2"></a>    private Card item;</span>
+<span id="cb3-3"><a href="#cb3-3"></a>    </span>
+<span id="cb3-4"><a href="#cb3-4"></a>    public void set(Card item) {</span>
+<span id="cb3-5"><a href="#cb3-5"></a>        this.item = item;</span>
+<span id="cb3-6"><a href="#cb3-6"></a>    }</span>
+<span id="cb3-7"><a href="#cb3-7"></a>    </span>
+<span id="cb3-8"><a href="#cb3-8"></a>    public Card get() {</span>
+<span id="cb3-9"><a href="#cb3-9"></a>        return item;</span>
+<span id="cb3-10"><a href="#cb3-10"></a>    }</span>
+<span id="cb3-11"><a href="#cb3-11"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="flawed-solution" class="slide level2">
+<h2>Flawed solution</h2>
+<p>We can use the <code>Object</code> class as type:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>public class Box {</span>
+<span id="cb4-2"><a href="#cb4-2"></a>    private Object item;</span>
+<span id="cb4-3"><a href="#cb4-3"></a>    </span>
+<span id="cb4-4"><a href="#cb4-4"></a>    public void set(Object item) {</span>
+<span id="cb4-5"><a href="#cb4-5"></a>        this.item = item;</span>
+<span id="cb4-6"><a href="#cb4-6"></a>    }</span>
+<span id="cb4-7"><a href="#cb4-7"></a>    </span>
+<span id="cb4-8"><a href="#cb4-8"></a>    public Object get() {</span>
+<span id="cb4-9"><a href="#cb4-9"></a>        return item;</span>
+<span id="cb4-10"><a href="#cb4-10"></a>    }</span>
+<span id="cb4-11"><a href="#cb4-11"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="flawed-solution-1" class="slide level2">
+<h2>Flawed solution</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>Box box = new Box();</span>
+<span id="cb5-2"><a href="#cb5-2"></a>box.set(&quot;Hello&quot;);</span>
+<span id="cb5-3"><a href="#cb5-3"></a>String str = (String) box.get();  // need to cast - annoying!</span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a>box.set(42);</span>
+<span id="cb5-6"><a href="#cb5-6"></a>String oops = (String) box.get();  // compiles fine, crashes at runtime!</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Type casting every time we retrieve something</li>
+<li>Compiler can’t catch type errors - code crashes at runtime</li>
+<li>No type safety</li>
 </ul>
 </section>
-<section id="encapsulation-1" class="slide level2">
-<h2>Encapsulation</h2>
+<section id="generics" class="slide level2">
+<h2>Generics</h2>
 <ul>
-<li>private instance variables (data hiding)</li>
-<li>Getters and Setters (controlled access)</li>
+<li>Enables code reuse and flexibility</li>
+<li>Code works independently of the types of values it operates on</li>
 </ul>
-<p>Benefits: modularity, easier to test and maintain, data integrity and validation, flexibility in refactoring</p>
-</section>
-<section id="inheritance" class="slide level2">
-<h2>Inheritance</h2>
-<p>Use keyword <code>extends</code> to extend a parent class and create a subclass</p>
+<p>Generics allow us to write code that works with multiple types while maintaining type safety.</p>
 <ul>
-<li>subclass inherits instances and methods from super (parent) class</li>
-<li>subclass has a constructor obligation with parent class (parent constructor always runs)</li>
-<li>use <code>super(params)</code> in subclass constructor (needs to be first line) to satisfy parent class constructor requirements</li>
-<li>use <code>super.method()</code> or <code>super.variableName</code> to access <code>public</code> or <code>protected</code> members of parent class</li>
+<li>Parametrically polymorphic methods are called <strong>generic methods</strong></li>
+<li>Parametrically polymorphic data types are called <strong>generic data types</strong></li>
 </ul>
 </section>
-<section id="a-good-parent-class" class="slide level2">
-<h2>A good parent class</h2>
-<p>careful use of privacy:</p>
-<ul>
-<li><code>public</code> “how outsiders use my family”</li>
-<li><code>protected</code> “provided to my children”</li>
-<li><code>private</code> “I’ll handle this myself”</li>
-</ul>
-<p>Gives structure and design to children</p>
-<p>Designed with polymorphism in-mind</p>
+<section id="box-with-generics" class="slide level2">
+<h2>Box with generics</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>public class Box&lt;T&gt; {</span>
+<span id="cb6-2"><a href="#cb6-2"></a>    private T item;</span>
+<span id="cb6-3"><a href="#cb6-3"></a>    </span>
+<span id="cb6-4"><a href="#cb6-4"></a>    public void set(T item) {</span>
+<span id="cb6-5"><a href="#cb6-5"></a>        this.item = item;</span>
+<span id="cb6-6"><a href="#cb6-6"></a>    }</span>
+<span id="cb6-7"><a href="#cb6-7"></a>    </span>
+<span id="cb6-8"><a href="#cb6-8"></a>    public T get() {</span>
+<span id="cb6-9"><a href="#cb6-9"></a>        return item;</span>
+<span id="cb6-10"><a href="#cb6-10"></a>    }</span>
+<span id="cb6-11"><a href="#cb6-11"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="polymorphism" class="slide level2">
-<h2>Polymorphism</h2>
+<section id="box-with-generics-1" class="slide level2">
+<h2>Box with generics</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href="#cb7-1"></a>Box&lt;String&gt; stringBox = new Box&lt;&gt;();</span>
+<span id="cb7-2"><a href="#cb7-2"></a>stringBox.set(&quot;Hello&quot;);</span>
+<span id="cb7-3"><a href="#cb7-3"></a>String str = stringBox.get();  // no cast needed!</span>
+<span id="cb7-4"><a href="#cb7-4"></a></span>
+<span id="cb7-5"><a href="#cb7-5"></a>Box&lt;Integer&gt; intBox = new Box&lt;&gt;();</span>
+<span id="cb7-6"><a href="#cb7-6"></a>intBox.set(42);</span>
+<span id="cb7-7"><a href="#cb7-7"></a>// intBox.set(&quot;Hello&quot;);  // compiler error - caught at compile time!</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="writing-a-class-with-generic-type" class="slide level2">
+<h2>Writing a class with generic type</h2>
+<p>add <code>&lt;Name&gt;</code> after your class <code>Name</code> with whatever name you want (camel case) , convention is to use <code>Type</code> or <code>T</code> – then use that name when creating instance variables and as return types</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>public class MyType&lt;Type&gt; {</span>
+<span id="cb8-2"><a href="#cb8-2"></a>    private Type data;</span>
+<span id="cb8-3"><a href="#cb8-3"></a>    </span>
+<span id="cb8-4"><a href="#cb8-4"></a>    public MyType(Type d) {</span>
+<span id="cb8-5"><a href="#cb8-5"></a>        data = d;</span>
+<span id="cb8-6"><a href="#cb8-6"></a>    }</span>
+<span id="cb8-7"><a href="#cb8-7"></a>    </span>
+<span id="cb8-8"><a href="#cb8-8"></a>    public Type getData() {</span>
+<span id="cb8-9"><a href="#cb8-9"></a>        return data;</span>
+<span id="cb8-10"><a href="#cb8-10"></a>    }</span>
+<span id="cb8-11"><a href="#cb8-11"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="using-our-generic-data-type" class="slide level2">
+<h2>Using our generic data type</h2>
+<p>Now, when calling our class we need to specify the actual type inside the <code>&lt;&gt;</code></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href="#cb9-1"></a>MyType&lt;String&gt; name = new MyType&lt;String&gt;(&quot;Adriana&quot;);</span>
+<span id="cb9-2"><a href="#cb9-2"></a>System.out.println(name.getData());</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="multiple-types" class="slide level2">
+<h2>Multiple types</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href="#cb10-1"></a>public class MyType&lt;O, T&gt; {</span>
+<span id="cb10-2"><a href="#cb10-2"></a>    private O one;</span>
+<span id="cb10-3"><a href="#cb10-3"></a>    private T two;</span>
+<span id="cb10-4"><a href="#cb10-4"></a>    </span>
+<span id="cb10-5"><a href="#cb10-5"></a>    public MyType(O one, T two) {</span>
+<span id="cb10-6"><a href="#cb10-6"></a>        this.one = one;</span>
+<span id="cb10-7"><a href="#cb10-7"></a>        this.two = two;</span>
+<span id="cb10-8"><a href="#cb10-8"></a>    }</span>
+<span id="cb10-9"><a href="#cb10-9"></a>    </span>
+<span id="cb10-10"><a href="#cb10-10"></a>    public O getOne() {</span>
+<span id="cb10-11"><a href="#cb10-11"></a>        return one;</span>
+<span id="cb10-12"><a href="#cb10-12"></a>    }</span>
+<span id="cb10-13"><a href="#cb10-13"></a>    </span>
+<span id="cb10-14"><a href="#cb10-14"></a>    public T getTwo() {</span>
+<span id="cb10-15"><a href="#cb10-15"></a>        return two;</span>
+<span id="cb10-16"><a href="#cb10-16"></a>    }</span>
+<span id="cb10-17"><a href="#cb10-17"></a></span>
+<span id="cb10-18"><a href="#cb10-18"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="multiple-types-use" class="slide level2">
+<h2>Multiple types use</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href="#cb11-1"></a>MyType&lt;String, Integer&gt; name = new MyType&lt;&gt;(&quot;Adriana&quot;, 43);</span>
+<span id="cb11-2"><a href="#cb11-2"></a>System.out.println(name.getOne());</span>
+<span id="cb11-3"><a href="#cb11-3"></a>System.out.println(name.getTwo());</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="practice" class="slide level2">
+<h2>Practice</h2>
+<p><strong>Goal:</strong> Implement a produce class that can have different types of produce (Banana, Avocado, Spinach, Brocolli, etc.) and different types of unit (Double for weight, Integer for count).</p>
+<p><a href="practice/produce.zip">Download started code</a> – you will implement and submit to gradescope <code>ProduceQuantity</code>. Here’s how it’s used in the starter code:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a href="#cb12-1"></a>ProduceQuantity&lt;Banana, Integer&gt; itemOne = new ProduceQuantity&lt;&gt;(banana, count);</span>
+<span id="cb12-2"><a href="#cb12-2"></a>ProduceQuantity&lt;Spinach, Double&gt; itemThree = new ProduceQuantity&lt;&gt;(spinach, weight);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is what <code>UseShoppingCart.java</code> should print out:</p>
+<pre><code>Items in shopping cart:
+4 Bananas
+1 Avocado
+0.5 lbs Spinach
+1.0 lbs Brocolli</code></pre>
+</section>
+<section id="practice-1" class="slide level2">
+<h2>Practice</h2>
+<p><strong>Goal:</strong> Implement a produce class that can have different types of produce (Banana, Avocado, Spinach, Brocolli, etc.) and different types of unit (Double for weight, Integer for count).</p>
+<p><a href="practice/produce.zip">Download started code</a> – you will implement and submit to gradescope <code>ProduceQuantity</code>. Here’s how it’s used in the starter code:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a href="#cb14-1"></a>ProduceQuantity&lt;Banana, Integer&gt; itemOne = new ProduceQuantity&lt;&gt;(banana, count);</span>
+<span id="cb14-2"><a href="#cb14-2"></a>ProduceQuantity&lt;Spinach, Double&gt; itemThree = new ProduceQuantity&lt;&gt;(spinach, weight);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Public methods in <code>ProduceQuantity</code>: constructor that takes an item and a quantity, <code>getQuantity()</code> and <code>getItem()</code></p>
+</section>
+<section id="generics-implementation-in-java" class="slide level2">
+<h2>Generics Implementation in Java</h2>
 <ul>
-<li>Method overloading – methods with same name but different signatures in the same class</li>
-<li>Method overriding – methods with the same name and signature in parent-child classes (we often override <code>toString()</code> and <code>equals(Object obj)</code>)</li>
+<li>Java does all checking for correctness at <em>compile</em>-time</li>
+</ul>
+<p><strong>Type Erasure</strong>: During compilation, the generic type information (like T in Box<t>) is “erased” and replaced with its upperbound class (usually <code>Object</code> if no explicit bound is given).</t></p>
+<ul>
+<li>At runtime, the JVM does not retain information about the specific type arguments used with a generic class</li>
 </ul>
 </section>
-<section id="important-syntax" class="slide level2">
-<h2>Important syntax</h2>
-<p><code>instanceof</code> – evaluates to <code>true</code> if and only if reference is a member of <code>Type</code></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>variableName instanceOf Type</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>We use <code>instanceof</code> together with type casting</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>(SubClass) parClassVariableName</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Converts a parent-class-reference (storing a child class) to a child-class reference (no actual conversion) – purpose is to call methods in subclass</p>
+<section id="java-generics-limitations" class="slide level2">
+<h2>Java generics limitations</h2>
+<ul>
+<li>Primitive types (int, boolean, double, char) not allowed – Java’s solution “Wraper Types” (Integer, Boolean, Double, Character)</li>
+<li>We are not allowed to create generic arrays (<code>T[]</code> not allowed) because:</li>
+<li>We can<strong>not</strong> call generic constructors <code>new T()</code> or <code>new T(arg)</code> (no inheritance can enforce constructor parameter lists) error: <em>Type parameter ‘T’ cannot be instantiated directly</em>
+<ul>
+<li>The type variables are forgotten at runtime</li>
+</ul></li>
+<li>We cannot use <code>instanceof</code> on <code>T</code> (for example, <code>T instanceof Double</code> not allowed)</li>
+</ul>
+</section>
+<section id="setting-upperbound-class" class="slide level2">
+<h2>Setting upperbound class</h2>
+<p>A generic type can extend a class:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1"><a href="#cb15-1"></a>public class ProduceQuantity&lt;T extends Produce, U&gt; {</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We can then use methods in <code>Produce</code></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb16-1"><a href="#cb16-1"></a>return item.isWeighted();</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="example-abstract-produce" class="slide level2">
+<h2>Example – abstract Produce</h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb17-1"><a href="#cb17-1"></a>public abstract class Produce {</span>
+<span id="cb17-2"><a href="#cb17-2"></a>    private double price;</span>
+<span id="cb17-3"><a href="#cb17-3"></a></span>
+<span id="cb17-4"><a href="#cb17-4"></a>    public Produce(double price) {</span>
+<span id="cb17-5"><a href="#cb17-5"></a>        this.price = price;</span>
+<span id="cb17-6"><a href="#cb17-6"></a>    }</span>
+<span id="cb17-7"><a href="#cb17-7"></a></span>
+<span id="cb17-8"><a href="#cb17-8"></a>    public abstract boolean isWeighted();</span>
+<span id="cb17-9"><a href="#cb17-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="example-generic-class-with-extends" class="slide level2">
+<h2>Example – generic class with extends</h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb18-1"><a href="#cb18-1"></a>public class ProduceQuantity&lt;T extends Produce, U&gt; {</span>
+<span id="cb18-2"><a href="#cb18-2"></a>    private T item;</span>
+<span id="cb18-3"><a href="#cb18-3"></a>    private U unit;</span>
+<span id="cb18-4"><a href="#cb18-4"></a></span>
+<span id="cb18-5"><a href="#cb18-5"></a>    public ProduceQuantity(T item, U unit) {</span>
+<span id="cb18-6"><a href="#cb18-6"></a>        this.item = item;</span>
+<span id="cb18-7"><a href="#cb18-7"></a>        this.unit = unit;</span>
+<span id="cb18-8"><a href="#cb18-8"></a>    }</span>
+<span id="cb18-9"><a href="#cb18-9"></a></span>
+<span id="cb18-10"><a href="#cb18-10"></a>    public T getItem() {</span>
+<span id="cb18-11"><a href="#cb18-11"></a>        return item;</span>
+<span id="cb18-12"><a href="#cb18-12"></a>    }</span>
+<span id="cb18-13"><a href="#cb18-13"></a>    public U getQuantity() {</span>
+<span id="cb18-14"><a href="#cb18-14"></a>        return unit;</span>
+<span id="cb18-15"><a href="#cb18-15"></a>    }</span>
+<span id="cb18-16"><a href="#cb18-16"></a></span>
+<span id="cb18-17"><a href="#cb18-17"></a>    public boolean getInfo() {</span>
+<span id="cb18-18"><a href="#cb18-18"></a>        return item.isWeighted();</span>
+<span id="cb18-19"><a href="#cb18-19"></a>    }</span>
+<span id="cb18-20"><a href="#cb18-20"></a></span>
+<span id="cb18-21"><a href="#cb18-21"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer footer-default">
 <p><a href="../index.html">go back to course home</a></p>
 </div>
