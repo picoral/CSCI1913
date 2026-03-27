@@ -442,7 +442,7 @@
   <meta name="generator" content="quarto-1.6.39">
 
   <meta name="author" content="CSCI 1913 – Introduction to Algorithms, Data Structures, and Program DevelopmentAdriana Picoral">
-  <title>Java Interface</title>
+  <title>List</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -1051,7 +1051,7 @@ margin-right: 0; }
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Java Interface</h1>
+  <h1 class="title">List</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -1062,60 +1062,323 @@ margin-right: 0; }
 </div>
 
 </section>
-<section id="interface" class="slide level2">
-<h2>Interface</h2>
-<p>An interface class is a class that is 100% abstract (no concrete members).</p>
-<p>There’s special keyword for it: <code>interface</code></p>
+<section id="list" class="slide level2">
+<h2>List</h2>
+<p>An ordered, finite, mutable data structure</p>
 <ul>
-<li>Like abstract methods in an abstract class, interface method signatures form a contract with the classes that implement that interface (another keyword: <code>implements</code>)</li>
+<li>Plan out, in the abstract, the “object nature” and what behaviors you need to support</li>
+<li>Write some example/test code</li>
 </ul>
 </section>
-<section id="interface-1" class="slide level2">
-<h2>Interface</h2>
+<section id="list-1" class="slide level2">
+<h2>List</h2>
 <ul>
-<li>Non-instantiable (cannot use <code>new</code>)</li>
-<li>Contain method signatures (and nothing else)</li>
-<li>Use <code>implements</code> keyword to implement</li>
-<li>A class may implement multiple interfaces</li>
-<li>Each interface signature must be implemented</li>
-<li>Interfaces specify what, not how</li>
+<li>What is a list?</li>
+<li>How do we use lists?</li>
+<li>What methods do we need?</li>
 </ul>
 </section>
-<section id="interface-2" class="slide level2">
-<h2>Interface</h2>
-<p>When a class implements an interface, it has an “is-a” relationship with the interface</p>
-</section>
-<section id="why-have-interfaces" class="slide level2">
-<h2>Why Have Interfaces?</h2>
+<section id="list-2" class="slide level2">
+<h2>List</h2>
 <ul>
-<li>Code development and abstraction: Define “what” before the “how” is implemented</li>
-<li>Faster design</li>
-<li>Program maintenance: Easier maintenance and resilience to change</li>
-<li>Flexibility</li>
-<li>ensure compatibility across changes</li>
+<li>An ordered, finite, mutable data structure</li>
+<li>We manipulate it (create list, add, append, remove, insert, get length, set an individual value)</li>
+<li>append, prepend, insert, getLength, set, search</li>
+</ul>
+<p>What about sort?</p>
+</section>
+<section id="list-methods" class="slide level2">
+<h2>List methods</h2>
+<p>How do we do lists?</p>
+<p>create list of a specific size, append, prepend, remove, insert, getLength, search, sort</p>
+</section>
+<section id="list-interface" class="slide level2">
+<h2>List interface</h2>
+<p>Let’s implement a list interface.</p>
+<ul>
+<li>Remember that an interface only contains method signatures.</li>
 </ul>
 </section>
-<section id="comparable-interface" class="slide level2">
-<h2>Comparable Interface</h2>
-<blockquote>
-<p>“This interface imposes a total ordering on the objects of each class that implements it. This ordering is referred to as the class’s natural ordering, and the class’s compareTo method is referred to as its natural comparison method.”</p>
-</blockquote>
-<p>Here’s what the <code>Comparable</code> interface looks like:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href></a>public interface Comparable&lt;T&gt; {</span>
-<span id="cb1-2"><a href></a>    int compareTo(T obj);</span>
+<section id="list-interface-1" class="slide level2">
+<h2>List interface</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href></a>public interface List {</span>
+<span id="cb1-2"><a href></a>  </span>
 <span id="cb1-3"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="example-of-compareto-use" class="slide level2">
-<h2>Example of compareTo use</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href></a>import java.util.Arrays;</span>
-<span id="cb2-2"><a href></a></span>
-<span id="cb2-3"><a href></a>public class Example {</span>
-<span id="cb2-4"><a href></a>    public static void main(String[] args) {</span>
-<span id="cb2-5"><a href></a>        String a = &quot;A&quot;;</span>
-<span id="cb2-6"><a href></a>        String b = &quot;B&quot;;</span>
-<span id="cb2-7"><a href></a>        System.out.println(a.compareTo(b));</span>
-<span id="cb2-8"><a href></a>    }</span>
-<span id="cb2-9"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="list-implementation" class="slide level2">
+<h2>List Implementation</h2>
+<ul>
+<li>Data structures, or abstract data types (ADTs) can be implemented using different approaches</li>
+<li>We have our <code>List</code> interface, we will start by implementing our <code>List</code> with an array</li>
+<li>We will call our class <code>ArrayList</code></li>
+</ul>
+</section>
+<section id="list-lets-start-with-the-basics" class="slide level2">
+<h2>List – let’s start with the basics</h2>
+<p>Here’s how we are setting up the private instance variable: <code>private T[] data;</code></p>
+<p>Constructor:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href></a>public ArrayList() {</span>
+<span id="cb2-2"><a href></a>  data = (T[]) new Object[size]; // define an arbitraty size</span>
+<span id="cb2-3"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="list-lets-start-with-the-basics-1" class="slide level2">
+<h2>List – let’s start with the basics</h2>
+<p>Methods:</p>
+<ul>
+<li>getter <code>get(int index)</code> – throw an error if out of range</li>
+<li><code>length()</code> returns how many items in the list</li>
+<li><code>set(int index, T value)</code> – changes the value of item at index (return a bollean if value was set successfully)</li>
+<li>override <code>toString()</code> for testing purposes</li>
+</ul>
+</section>
+<section id="changing-size-of-the-list-adding-to-list" class="slide level2">
+<h2>Changing size of the list – adding to list</h2>
+<p>Methods:</p>
+<ul>
+<li>append</li>
+<li>prepend</li>
+<li>insert</li>
+</ul>
+</section>
+<section id="append" class="slide level2">
+<h2>append</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href></a>public void append(T value) {</span>
+<span id="cb3-2"><a href></a>  if (length &lt; size) {</span>
+<span id="cb3-3"><a href></a>    data[length] = value;</span>
+<span id="cb3-4"><a href></a>    length++;</span>
+<span id="cb3-5"><a href></a>  }</span>
+<span id="cb3-6"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>What happens when length is the same as size?</p>
+</section>
+<section id="expand-the-size-of-our-array" class="slide level2">
+<h2>Expand the size of our array</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href></a>private void expandArray() {</span>
+<span id="cb4-2"><a href></a>  size *= 2;</span>
+<span id="cb4-3"><a href></a>  T[] newData = (T[]) new Object[size];</span>
+<span id="cb4-4"><a href></a>  for (int i = 0; i &lt; length; i++) {</span>
+<span id="cb4-5"><a href></a>    newData[i] = data[i];</span>
+<span id="cb4-6"><a href></a>  }</span>
+<span id="cb4-7"><a href></a>  data = newData;</span>
+<span id="cb4-8"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="append-implementation" class="slide level2">
+<h2>append implementation</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href></a>public void append(T value) {</span>
+<span id="cb5-2"><a href></a>  if (length == size) {</span>
+<span id="cb5-3"><a href></a>    expandArray();</span>
+<span id="cb5-4"><a href></a>  }</span>
+<span id="cb5-5"><a href></a>  data[length] = value;</span>
+<span id="cb5-6"><a href></a>  length++;</span>
+<span id="cb5-7"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="runtime-of-array-expand" class="slide level2">
+<h2>Runtime of array Expand</h2>
+<p>The <code>arrayExpand</code> process is <span class="math inline">\(O(n)\)</span> (gotta copy the array!) BUT it doesn’t run every time, so how do we handle the aﬀect on append?</p>
+<p>Best case: <span class="math inline">\(O(1)\)</span> Worst case: <span class="math inline">\(O(n)\)</span></p>
+</section>
+<section id="runtime-of-array-expand-1" class="slide level2">
+<h2>Runtime of array Expand</h2>
+<p>What we often care about is not the runtime of <code>myList.append(4);</code> but instead:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href></a>for (int i = 0; i &lt; N; i++) {</span>
+<span id="cb6-2"><a href></a>  myList.append(i);</span>
+<span id="cb6-3"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="runtime-of-array-expand-2" class="slide level2">
+<h2>Runtime of array Expand</h2>
+
+<img role="img" data-src="images/expand_1.png" class="r-stretch quarto-figure-center"><p class="caption">double array vs. increase array size by 10 plots</p></section>
+<section id="why-does-it-work-this-way" class="slide level2">
+<h2>Why does it work this way</h2>
+<p>One way to think about it:</p>
+<ul>
+<li>After an expand that costs N operations:</li>
+<li>We get N “free” appends</li>
+<li>Then we do 2N operations for next expand. (and so forth)</li>
+</ul>
+</section>
+<section id="runtime-of-array-expand-3" class="slide level2">
+<h2>Runtime of array Expand</h2>
+<ul>
+<li>It is not technically true that append is <span class="math inline">\(O(1)\)</span></li>
+<li>It IS true that <span class="math inline">\(O(n)\)</span> appends costs <span class="math inline">\(O(n)\)</span> time</li>
+<li>We can divide that through and call append <span class="math inline">\(O(\frac{n}{n}) = O(1)\)</span></li>
+<li>We can say “amortized runtime” <span class="math inline">\(O(1)\)</span> instead of “runtime <span class="math inline">\(O(n)\)</span>”</li>
+</ul>
+</section>
+<section id="prepend" class="slide level2">
+<h2>prepend</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href></a>public void prepend(T value) {</span>
+<span id="cb7-2"><a href></a>  shiftRight(0); // need to shift all the other values</span>
+<span id="cb7-3"><a href></a>  data[0] = value;</span>
+<span id="cb7-4"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="insert" class="slide level2">
+<h2>insert</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href></a>public void insert(int index, T value) {</span>
+<span id="cb8-2"><a href></a>  shiftRight(index);</span>
+<span id="cb8-3"><a href></a>  data[index] = value;</span>
+<span id="cb8-4"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="changing-size-of-the-list-removing-from-list" class="slide level2">
+<h2>Changing size of the list – removing from list</h2>
+<ul>
+<li>pop</li>
+<li>remove</li>
+</ul>
+</section>
+<section id="solution" class="slide level2">
+<h2>Solution</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href></a>public class ArrayList&lt;T&gt; {</span>
+<span id="cb9-2"><a href></a>    private T[] data;</span>
+<span id="cb9-3"><a href></a>    private int size = 50;</span>
+<span id="cb9-4"><a href></a>    private int length = 0;</span>
+<span id="cb9-5"><a href></a></span>
+<span id="cb9-6"><a href></a>    public List() {</span>
+<span id="cb9-7"><a href></a>        data = (T[]) new Object[size];</span>
+<span id="cb9-8"><a href></a>    }</span>
+<span id="cb9-9"><a href></a></span>
+<span id="cb9-10"><a href></a>    public T get(int index) {</span>
+<span id="cb9-11"><a href></a>        if (index &lt; length) {</span>
+<span id="cb9-12"><a href></a>            return data[index];</span>
+<span id="cb9-13"><a href></a>        }</span>
+<span id="cb9-14"><a href></a>        throw new RuntimeException(&quot;index out of range&quot;);</span>
+<span id="cb9-15"><a href></a>    }</span>
+<span id="cb9-16"><a href></a></span>
+<span id="cb9-17"><a href></a>    public int length() {</span>
+<span id="cb9-18"><a href></a>        return length;</span>
+<span id="cb9-19"><a href></a>    }</span>
+<span id="cb9-20"><a href></a></span>
+<span id="cb9-21"><a href></a>    public boolean set(int index, T value) {</span>
+<span id="cb9-22"><a href></a>        if (index &lt; length) {</span>
+<span id="cb9-23"><a href></a>            data[index] = value;</span>
+<span id="cb9-24"><a href></a>            return true;</span>
+<span id="cb9-25"><a href></a>        }</span>
+<span id="cb9-26"><a href></a>        return false;</span>
+<span id="cb9-27"><a href></a>    }</span>
+<span id="cb9-28"><a href></a></span>
+<span id="cb9-29"><a href></a>    @Override</span>
+<span id="cb9-30"><a href></a>    public String toString() {</span>
+<span id="cb9-31"><a href></a>        String message = &quot;&quot;;</span>
+<span id="cb9-32"><a href></a>        for (int i = 0; i &lt; length; i++) {</span>
+<span id="cb9-33"><a href></a>            message += data[i] + &quot; &quot;;</span>
+<span id="cb9-34"><a href></a>        }</span>
+<span id="cb9-35"><a href></a>        return message.trim();</span>
+<span id="cb9-36"><a href></a>    }</span>
+<span id="cb9-37"><a href></a></span>
+<span id="cb9-38"><a href></a>    public void append(T value) {</span>
+<span id="cb9-39"><a href></a>        if (length == size) {</span>
+<span id="cb9-40"><a href></a>            expandArray();</span>
+<span id="cb9-41"><a href></a>        }</span>
+<span id="cb9-42"><a href></a>        data[length] = value;</span>
+<span id="cb9-43"><a href></a>        length++;</span>
+<span id="cb9-44"><a href></a>    }</span>
+<span id="cb9-45"><a href></a></span>
+<span id="cb9-46"><a href></a>    private void expandArray() {</span>
+<span id="cb9-47"><a href></a>        size *= 2;</span>
+<span id="cb9-48"><a href></a>        T[] newData = (T[]) new Object[size];</span>
+<span id="cb9-49"><a href></a>        for (int i = 0; i &lt; length; i++) {</span>
+<span id="cb9-50"><a href></a>            newData[i] = data[i];</span>
+<span id="cb9-51"><a href></a>        }</span>
+<span id="cb9-52"><a href></a>        data = newData;</span>
+<span id="cb9-53"><a href></a>    }</span>
+<span id="cb9-54"><a href></a></span>
+<span id="cb9-55"><a href></a>    private void shiftRight(int startIndex) {</span>
+<span id="cb9-56"><a href></a>        length++;</span>
+<span id="cb9-57"><a href></a>        if (length == size) {</span>
+<span id="cb9-58"><a href></a>            expandArray();</span>
+<span id="cb9-59"><a href></a>        }</span>
+<span id="cb9-60"><a href></a></span>
+<span id="cb9-61"><a href></a>        for (int i = length-1; i &gt; startIndex; i--) {</span>
+<span id="cb9-62"><a href></a>            data[i] = data[i-1];</span>
+<span id="cb9-63"><a href></a>        }</span>
+<span id="cb9-64"><a href></a>    }</span>
+<span id="cb9-65"><a href></a></span>
+<span id="cb9-66"><a href></a>    public void prepend(T value) {</span>
+<span id="cb9-67"><a href></a>        if (length == size) {</span>
+<span id="cb9-68"><a href></a>            expandArray();</span>
+<span id="cb9-69"><a href></a>        }</span>
+<span id="cb9-70"><a href></a>        shiftRight(0);</span>
+<span id="cb9-71"><a href></a>        data[0] = value;</span>
+<span id="cb9-72"><a href></a>    }</span>
+<span id="cb9-73"><a href></a></span>
+<span id="cb9-74"><a href></a>    public void insert(int index, T value) {</span>
+<span id="cb9-75"><a href></a>        if (length == size) {</span>
+<span id="cb9-76"><a href></a>            expandArray();</span>
+<span id="cb9-77"><a href></a>        }</span>
+<span id="cb9-78"><a href></a>        shiftRight(index);</span>
+<span id="cb9-79"><a href></a>        data[index] = value;</span>
+<span id="cb9-80"><a href></a>    }</span>
+<span id="cb9-81"><a href></a></span>
+<span id="cb9-82"><a href></a>    private void shiftLeft(int startIndex) {</span>
+<span id="cb9-83"><a href></a>        for (int i = startIndex; i &lt; length; i++) {</span>
+<span id="cb9-84"><a href></a>            data[i] = data[i+1];</span>
+<span id="cb9-85"><a href></a>        }</span>
+<span id="cb9-86"><a href></a>        length--;</span>
+<span id="cb9-87"><a href></a>    }</span>
+<span id="cb9-88"><a href></a></span>
+<span id="cb9-89"><a href></a>    public T pop() {</span>
+<span id="cb9-90"><a href></a>        T value = data[0];</span>
+<span id="cb9-91"><a href></a>        shiftLeft(0);</span>
+<span id="cb9-92"><a href></a>        return value;</span>
+<span id="cb9-93"><a href></a>    }</span>
+<span id="cb9-94"><a href></a></span>
+<span id="cb9-95"><a href></a>    public void remove(int index) {</span>
+<span id="cb9-96"><a href></a>        shiftLeft(index);</span>
+<span id="cb9-97"><a href></a>    }</span>
+<span id="cb9-98"><a href></a></span>
+<span id="cb9-99"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="array-based-list-runtime-summary" class="slide level2">
+<h2>Array-based list Runtime Summary</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>Front of List</th>
+<th>Middle of List</th>
+<th>End of List</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>get</td>
+<td>O(1)</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr class="even">
+<td>set</td>
+<td>O(1)</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr class="odd">
+<td>insert</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+</tr>
+<tr class="even">
+<td>append</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>O(1)</td>
+</tr>
+<tr class="odd">
+<td>prepend</td>
+<td>O(n)</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="even">
+<td>pop</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table>
+<p>What happens when we try to append to a list/array that is already full?</p>
 
 </section>
     </div>

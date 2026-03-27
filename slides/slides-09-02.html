@@ -442,7 +442,7 @@
   <meta name="generator" content="quarto-1.6.39">
 
   <meta name="author" content="CSCI 1913 – Introduction to Algorithms, Data Structures, and Program DevelopmentAdriana Picoral">
-  <title>Java Interface</title>
+  <title>Generics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -1051,7 +1051,7 @@ margin-right: 0; }
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Java Interface</h1>
+  <h1 class="title">Generics</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -1062,60 +1062,124 @@ margin-right: 0; }
 </div>
 
 </section>
-<section id="interface" class="slide level2">
-<h2>Interface</h2>
-<p>An interface class is a class that is 100% abstract (no concrete members).</p>
-<p>There’s special keyword for it: <code>interface</code></p>
+<section id="polymorphisms-in-java" class="slide level2">
+<h2>Polymorphisms in Java</h2>
 <ul>
-<li>Like abstract methods in an abstract class, interface method signatures form a contract with the classes that implement that interface (another keyword: <code>implements</code>)</li>
+<li>Overloading – methods in with the same name (different parameters) in the same class</li>
+<li>Overriding – methods with the same signature in different (super-sub pair) classes</li>
+<li>Parametric polymorphism – Generics</li>
+</ul>
+<p>“Parametric” – flexible, in this case flexibility for <strong>type</strong></p>
+</section>
+<section id="the-problem-to-be-solved" class="slide level2">
+<h2>The problem to be solved</h2>
+<p>Imagine we want to write a class called <code>Box</code> that holds one item of <strong>any type</strong>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href></a>public class BoxString {</span>
+<span id="cb1-2"><a href></a>    private String item;</span>
+<span id="cb1-3"><a href></a>    </span>
+<span id="cb1-4"><a href></a>    public void set(String item) {</span>
+<span id="cb1-5"><a href></a>        this.item = item;</span>
+<span id="cb1-6"><a href></a>    }</span>
+<span id="cb1-7"><a href></a>    </span>
+<span id="cb1-8"><a href></a>    public String get() {</span>
+<span id="cb1-9"><a href></a>        return item;</span>
+<span id="cb1-10"><a href></a>    }</span>
+<span id="cb1-11"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="the-problem-to-be-solved-1" class="slide level2">
+<h2>The problem to be solved</h2>
+<p>Imagine we want to write a class called <code>Box</code> that holds one item of <strong>any type</strong>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href></a>public class BoxPolygon {</span>
+<span id="cb2-2"><a href></a>    private Polygon item;</span>
+<span id="cb2-3"><a href></a>    </span>
+<span id="cb2-4"><a href></a>    public void set(Polygon item) {</span>
+<span id="cb2-5"><a href></a>        this.item = item;</span>
+<span id="cb2-6"><a href></a>    }</span>
+<span id="cb2-7"><a href></a>    </span>
+<span id="cb2-8"><a href></a>    public Polygon get() {</span>
+<span id="cb2-9"><a href></a>        return item;</span>
+<span id="cb2-10"><a href></a>    }</span>
+<span id="cb2-11"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="the-problem-to-be-solved-2" class="slide level2">
+<h2>The problem to be solved</h2>
+<p>Imagine we want to write a class called <code>Box</code> that holds one item of <strong>any type</strong>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href></a>public class BoxCard {</span>
+<span id="cb3-2"><a href></a>    private Card item;</span>
+<span id="cb3-3"><a href></a>    </span>
+<span id="cb3-4"><a href></a>    public void set(Card item) {</span>
+<span id="cb3-5"><a href></a>        this.item = item;</span>
+<span id="cb3-6"><a href></a>    }</span>
+<span id="cb3-7"><a href></a>    </span>
+<span id="cb3-8"><a href></a>    public Card get() {</span>
+<span id="cb3-9"><a href></a>        return item;</span>
+<span id="cb3-10"><a href></a>    }</span>
+<span id="cb3-11"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="flawed-solution" class="slide level2">
+<h2>Flawed solution</h2>
+<p>We can use the <code>Object</code> class as type:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href></a>public class Box {</span>
+<span id="cb4-2"><a href></a>    private Object item;</span>
+<span id="cb4-3"><a href></a>    </span>
+<span id="cb4-4"><a href></a>    public void set(Object item) {</span>
+<span id="cb4-5"><a href></a>        this.item = item;</span>
+<span id="cb4-6"><a href></a>    }</span>
+<span id="cb4-7"><a href></a>    </span>
+<span id="cb4-8"><a href></a>    public Object get() {</span>
+<span id="cb4-9"><a href></a>        return item;</span>
+<span id="cb4-10"><a href></a>    }</span>
+<span id="cb4-11"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="flawed-solution-1" class="slide level2">
+<h2>Flawed solution</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href></a>Box box = new Box();</span>
+<span id="cb5-2"><a href></a>box.set(&quot;Hello&quot;);</span>
+<span id="cb5-3"><a href></a>String str = (String) box.get();  // need to cast - annoying!</span>
+<span id="cb5-4"><a href></a></span>
+<span id="cb5-5"><a href></a>box.set(42);</span>
+<span id="cb5-6"><a href></a>String oops = (String) box.get();  // compiles fine, crashes at runtime!</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Type casting every time we retrieve something</li>
+<li>Compiler can’t catch type errors - code crashes at runtime</li>
+<li>No type safety</li>
 </ul>
 </section>
-<section id="interface-1" class="slide level2">
-<h2>Interface</h2>
+<section id="generics" class="slide level2">
+<h2>Generics</h2>
 <ul>
-<li>Non-instantiable (cannot use <code>new</code>)</li>
-<li>Contain method signatures (and nothing else)</li>
-<li>Use <code>implements</code> keyword to implement</li>
-<li>A class may implement multiple interfaces</li>
-<li>Each interface signature must be implemented</li>
-<li>Interfaces specify what, not how</li>
+<li>Enables code reuse and flexibility</li>
+<li>Code works independently of the types of values it operates on</li>
+</ul>
+<p>Generics allow us to write code that works with multiple types while maintaining type safety.</p>
+<ul>
+<li>Parametrically polymorphic methods are called <strong>generic methods</strong></li>
+<li>Parametrically polymorphic data types are called <strong>generic data types</strong></li>
 </ul>
 </section>
-<section id="interface-2" class="slide level2">
-<h2>Interface</h2>
-<p>When a class implements an interface, it has an “is-a” relationship with the interface</p>
+<section id="box-with-generics" class="slide level2">
+<h2>Box with generics</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href></a>public class Box&lt;T&gt; {</span>
+<span id="cb6-2"><a href></a>    private T item;</span>
+<span id="cb6-3"><a href></a>    </span>
+<span id="cb6-4"><a href></a>    public void set(T item) {</span>
+<span id="cb6-5"><a href></a>        this.item = item;</span>
+<span id="cb6-6"><a href></a>    }</span>
+<span id="cb6-7"><a href></a>    </span>
+<span id="cb6-8"><a href></a>    public T get() {</span>
+<span id="cb6-9"><a href></a>        return item;</span>
+<span id="cb6-10"><a href></a>    }</span>
+<span id="cb6-11"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="why-have-interfaces" class="slide level2">
-<h2>Why Have Interfaces?</h2>
-<ul>
-<li>Code development and abstraction: Define “what” before the “how” is implemented</li>
-<li>Faster design</li>
-<li>Program maintenance: Easier maintenance and resilience to change</li>
-<li>Flexibility</li>
-<li>ensure compatibility across changes</li>
-</ul>
-</section>
-<section id="comparable-interface" class="slide level2">
-<h2>Comparable Interface</h2>
-<blockquote>
-<p>“This interface imposes a total ordering on the objects of each class that implements it. This ordering is referred to as the class’s natural ordering, and the class’s compareTo method is referred to as its natural comparison method.”</p>
-</blockquote>
-<p>Here’s what the <code>Comparable</code> interface looks like:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href></a>public interface Comparable&lt;T&gt; {</span>
-<span id="cb1-2"><a href></a>    int compareTo(T obj);</span>
-<span id="cb1-3"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="example-of-compareto-use" class="slide level2">
-<h2>Example of compareTo use</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href></a>import java.util.Arrays;</span>
-<span id="cb2-2"><a href></a></span>
-<span id="cb2-3"><a href></a>public class Example {</span>
-<span id="cb2-4"><a href></a>    public static void main(String[] args) {</span>
-<span id="cb2-5"><a href></a>        String a = &quot;A&quot;;</span>
-<span id="cb2-6"><a href></a>        String b = &quot;B&quot;;</span>
-<span id="cb2-7"><a href></a>        System.out.println(a.compareTo(b));</span>
-<span id="cb2-8"><a href></a>    }</span>
-<span id="cb2-9"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="box-with-generics-1" class="slide level2">
+<h2>Box with generics</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href></a>Box&lt;String&gt; stringBox = new Box&lt;&gt;();</span>
+<span id="cb7-2"><a href></a>stringBox.set(&quot;Hello&quot;);</span>
+<span id="cb7-3"><a href></a>String str = stringBox.get();  // no cast needed!</span>
+<span id="cb7-4"><a href></a></span>
+<span id="cb7-5"><a href></a>Box&lt;Integer&gt; intBox = new Box&lt;&gt;();</span>
+<span id="cb7-6"><a href></a>intBox.set(42);</span>
+<span id="cb7-7"><a href></a>// intBox.set(&quot;Hello&quot;);  // compiler error - caught at compile time!</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </section>
     </div>
