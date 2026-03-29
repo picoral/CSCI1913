@@ -1120,47 +1120,11 @@ margin-right: 0; }
 <ul>
 <li>Data structures, or abstract data types (ADTs) can be implemented using different approaches</li>
 <li>We have our <code>List</code> interface, we will start by implementing our <code>List</code> with an array</li>
-<li>We will call our class <code>ArrayList</code></li>
+<li>We will call our class <code>ArrayList</code> and we will use the <code>implements</code> keyword:</li>
 </ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href></a>public class ArrayList&lt;T&gt; implements List&lt;T&gt; {}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="arraylist" class="slide level2">
-<h2>ArrayList</h2>
-<p>We will create a generic <code>ArrayList</code> that implements <code>List</code></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href></a>public class ArrayList&lt;T&gt; implements List&lt;T&gt; {</span>
-<span id="cb2-2"><a href></a>    private T[] data;</span>
-<span id="cb2-3"><a href></a>    private int size = 10;</span>
-<span id="cb2-4"><a href></a>    private int length  = 0;</span>
-<span id="cb2-5"><a href></a></span>
-<span id="cb2-6"><a href></a></span>
-<span id="cb2-7"><a href></a>    @SuppressWarnings(&quot;unchecked&quot;)</span>
-<span id="cb2-8"><a href></a>    public ArrayList() {</span>
-<span id="cb2-9"><a href></a>        data = (T[]) new Object[size];</span>
-<span id="cb2-10"><a href></a>    }</span>
-<span id="cb2-11"><a href></a></span>
-<span id="cb2-12"><a href></a>    @Override</span>
-<span id="cb2-13"><a href></a>    public int length() {</span>
-<span id="cb2-14"><a href></a>        return length;</span>
-<span id="cb2-15"><a href></a>    }</span>
-<span id="cb2-16"><a href></a></span>
-<span id="cb2-17"><a href></a>    @Override</span>
-<span id="cb2-18"><a href></a>    public void append(T value) {</span>
-<span id="cb2-19"><a href></a>      // TODO: implement</span>
-<span id="cb2-20"><a href></a>    }</span>
-<span id="cb2-21"><a href></a></span>
-<span id="cb2-22"><a href></a>    @Override</span>
-<span id="cb2-23"><a href></a>    public T get(int index) {</span>
-<span id="cb2-24"><a href></a>        // TODO: implement</span>
-<span id="cb2-25"><a href></a>    }</span>
-<span id="cb2-26"><a href></a></span>
-<span id="cb2-27"><a href></a>    @Override</span>
-<span id="cb2-28"><a href></a>    public void set(int index, T value) {</span>
-<span id="cb2-29"><a href></a>        // TODO: implement</span>
-<span id="cb2-30"><a href></a>    }</span>
-<span id="cb2-31"><a href></a></span>
-<span id="cb2-32"><a href></a></span>
-<span id="cb2-33"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="arraylist-1" class="slide level2">
 <h2>ArrayList</h2>
 <p>Here’s how we are setting up the private instance variable: <code>private T[] data;</code></p>
 <p>Constructor:</p>
@@ -1168,49 +1132,91 @@ margin-right: 0; }
 <span id="cb3-2"><a href></a>  data = (T[]) new Object[size]; // define an arbitraty size</span>
 <span id="cb3-3"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<section id="arraylist-1" class="slide level2">
+<h2>ArrayList</h2>
+<p>We will create a generic <code>ArrayList</code> that implements <code>List</code></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href></a>public class ArrayList&lt;T&gt; implements List&lt;T&gt; {</span>
+<span id="cb4-2"><a href></a>    private T[] data;</span>
+<span id="cb4-3"><a href></a>    private int size = 10;</span>
+<span id="cb4-4"><a href></a>    private int length  = 0;</span>
+<span id="cb4-5"><a href></a></span>
+<span id="cb4-6"><a href></a></span>
+<span id="cb4-7"><a href></a>    @SuppressWarnings(&quot;unchecked&quot;)</span>
+<span id="cb4-8"><a href></a>    public ArrayList() {</span>
+<span id="cb4-9"><a href></a>        data = (T[]) new Object[size];</span>
+<span id="cb4-10"><a href></a>    }</span>
+<span id="cb4-11"><a href></a></span>
+<span id="cb4-12"><a href></a>    @Override</span>
+<span id="cb4-13"><a href></a>    public int length() {</span>
+<span id="cb4-14"><a href></a>        return length;</span>
+<span id="cb4-15"><a href></a>    }</span>
+<span id="cb4-16"><a href></a></span>
+<span id="cb4-17"><a href></a>    @Override</span>
+<span id="cb4-18"><a href></a>    public void append(T value) {</span>
+<span id="cb4-19"><a href></a>      // TODO: implement</span>
+<span id="cb4-20"><a href></a>    }</span>
+<span id="cb4-21"><a href></a></span>
+<span id="cb4-22"><a href></a>    @Override</span>
+<span id="cb4-23"><a href></a>    public T get(int index) {</span>
+<span id="cb4-24"><a href></a>        // TODO: implement</span>
+<span id="cb4-25"><a href></a>    }</span>
+<span id="cb4-26"><a href></a></span>
+<span id="cb4-27"><a href></a>    @Override</span>
+<span id="cb4-28"><a href></a>    public void set(int index, T value) {</span>
+<span id="cb4-29"><a href></a>        // TODO: implement</span>
+<span id="cb4-30"><a href></a>    }</span>
+<span id="cb4-31"><a href></a></span>
+<span id="cb4-32"><a href></a></span>
+<span id="cb4-33"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 <section id="finish-implementation" class="slide level2">
 <h2>Finish implementation</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href></a>public class UseList {</span>
-<span id="cb4-2"><a href></a>    public static void main(String[] args) {</span>
-<span id="cb4-3"><a href></a>        List&lt;String&gt; fruitList = new ArrayList&lt;&gt;();</span>
-<span id="cb4-4"><a href></a>        System.out.println(fruitList.length()); // 0</span>
-<span id="cb4-5"><a href></a>        System.out.println(fruitList); </span>
-<span id="cb4-6"><a href></a></span>
-<span id="cb4-7"><a href></a>        fruitList.append(&quot;apple&quot;);</span>
-<span id="cb4-8"><a href></a>        fruitList.append(&quot;pear&quot;);</span>
-<span id="cb4-9"><a href></a>        fruitList.append(&quot;banana&quot;);</span>
-<span id="cb4-10"><a href></a></span>
-<span id="cb4-11"><a href></a>        System.out.println(fruitList);</span>
-<span id="cb4-12"><a href></a>    }</span>
-<span id="cb4-13"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Submit your <code>List.java</code> and <code>ArrayList.java</code> files to <a href="https://www.gradescope.com/courses/1233898/assignments/7897949/">gradescope</a>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href></a>public class UseList {</span>
+<span id="cb5-2"><a href></a>    public static void main(String[] args) {</span>
+<span id="cb5-3"><a href></a>        List&lt;String&gt; fruitList = new ArrayList&lt;&gt;();</span>
+<span id="cb5-4"><a href></a>        System.out.println(fruitList.length()); // 0</span>
+<span id="cb5-5"><a href></a>        System.out.println(fruitList); </span>
+<span id="cb5-6"><a href></a></span>
+<span id="cb5-7"><a href></a>        fruitList.append(&quot;apple&quot;);</span>
+<span id="cb5-8"><a href></a>        fruitList.append(&quot;pear&quot;);</span>
+<span id="cb5-9"><a href></a>        fruitList.append(&quot;banana&quot;);</span>
+<span id="cb5-10"><a href></a></span>
+<span id="cb5-11"><a href></a>        System.out.println(fruitList);</span>
+<span id="cb5-12"><a href></a>    }</span>
+<span id="cb5-13"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="arraylist-append" class="slide level2">
 <h2>ArrayList append</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href></a>@Override</span>
-<span id="cb5-2"><a href></a>public void append(T value) {</span>
-<span id="cb5-3"><a href></a>  data[length] = value;</span>
-<span id="cb5-4"><a href></a>  length++;</span>
-<span id="cb5-5"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href></a>@Override</span>
+<span id="cb6-2"><a href></a>public void append(T value) {</span>
+<span id="cb6-3"><a href></a>  data[length] = value;</span>
+<span id="cb6-4"><a href></a>  length++;</span>
+<span id="cb6-5"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>What happens when length is the same as size?</p>
 </section>
 <section id="expand-the-size-of-our-array" class="slide level2">
 <h2>Expand the size of our array</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href></a>@SuppressWarnings(&quot;unchecked&quot;)</span>
-<span id="cb6-2"><a href></a>private void expandArray() {</span>
-<span id="cb6-3"><a href></a>  size *= 2;</span>
-<span id="cb6-4"><a href></a>  T[] newData = (T[]) new Object[size];</span>
-<span id="cb6-5"><a href></a>  for (int i = 0; i &lt; length; i++) newData[i] = data[i];</span>
-<span id="cb6-6"><a href></a>  data = newData;</span>
-<span id="cb6-7"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href></a>@SuppressWarnings(&quot;unchecked&quot;)</span>
+<span id="cb7-2"><a href></a>private void expandArray() {</span>
+<span id="cb7-3"><a href></a>  size *= 2;</span>
+<span id="cb7-4"><a href></a>  T[] newData = (T[]) new Object[size];</span>
+<span id="cb7-5"><a href></a>  for (int i = 0; i &lt; length; i++) newData[i] = data[i];</span>
+<span id="cb7-6"><a href></a>  data = newData;</span>
+<span id="cb7-7"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="append-implementation" class="slide level2">
 <h2>append implementation</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href></a>@Override</span>
-<span id="cb7-2"><a href></a>public void append(T value) {</span>
-<span id="cb7-3"><a href></a>  if (length == size) expandArray();</span>
-<span id="cb7-4"><a href></a>  data[length] = value;</span>
-<span id="cb7-5"><a href></a>  length++;</span>
-<span id="cb7-6"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href></a>@Override</span>
+<span id="cb8-2"><a href></a>public void append(T value) {</span>
+<span id="cb8-3"><a href></a>  if (length == size) expandArray();</span>
+<span id="cb8-4"><a href></a>  data[length] = value;</span>
+<span id="cb8-5"><a href></a>  length++;</span>
+<span id="cb8-6"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="submit-to-gradescope-with-array-expand" class="slide level2">
+<h2>Submit to gradescope with array Expand</h2>
+<p>Submit your <code>List.java</code> and <code>ArrayList.java</code> files to <a href="https://www.gradescope.com/courses/1233898/assignments/7898743/">gradescope</a> making sure your array implementation can do multiple append calls (your implementation deals with array expansion)</p>
 </section>
 <section id="runtime-of-array-expand" class="slide level2">
 <h2>Runtime of array Expand</h2>
@@ -1220,9 +1226,9 @@ margin-right: 0; }
 <section id="runtime-of-array-expand-1" class="slide level2">
 <h2>Runtime of array Expand</h2>
 <p>What we often care about is not the runtime of <code>myList.append(4);</code> but instead:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href></a>for (int i = 0; i &lt; N; i++) {</span>
-<span id="cb8-2"><a href></a>  myList.append(i);</span>
-<span id="cb8-3"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href></a>for (int i = 0; i &lt; N; i++) {</span>
+<span id="cb9-2"><a href></a>  myList.append(i);</span>
+<span id="cb9-3"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="runtime-of-array-expand-2" class="slide level2">
 <h2>Runtime of array Expand</h2>
@@ -1249,31 +1255,36 @@ margin-right: 0; }
 <section id="updated-list-interface" class="slide level2">
 <h2>Updated List interface</h2>
 <p>Let’s add <code>prepend</code> and <code>insert</code> to our interface.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href></a>void insert(int index, T value);</span>
-<span id="cb9-2"><a href></a>void prepend(T value);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href></a>void insert(int index, T value);</span>
+<span id="cb10-2"><a href></a>void prepend(T value);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>When implementing ArrayList <code>insert</code> and <code>prepend</code>, we need to shift values in our array to the right</p>
 </section>
 <section id="shiftright" class="slide level2">
 <h2><code>shiftRight</code></h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href></a>private void shiftRight(int startIndex) {</span>
-<span id="cb10-2"><a href></a>  length++;</span>
-<span id="cb10-3"><a href></a>  if (length == size) expandArray();</span>
-<span id="cb10-4"><a href></a>  for (int i = length-1; i &gt; startIndex; i--) data[i] = data[i-1];</span>
-<span id="cb10-5"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href></a>private void shiftRight(int startIndex) {</span>
+<span id="cb11-2"><a href></a>  length++;</span>
+<span id="cb11-3"><a href></a>  if (length == size) expandArray();</span>
+<span id="cb11-4"><a href></a>  for (int i = length-1; i &gt; startIndex; i--) data[i] = data[i-1];</span>
+<span id="cb11-5"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="insert" class="slide level2">
 <h2>insert</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href></a>public void insert(int index, T value) {</span>
-<span id="cb11-2"><a href></a>  shiftRight(index);</span>
-<span id="cb11-3"><a href></a>  data[index] = value;</span>
-<span id="cb11-4"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a href></a>public void insert(int index, T value) {</span>
+<span id="cb12-2"><a href></a>  if (index &lt; 0 || index &gt; length) throw new </span>
+<span id="cb12-3"><a href></a>  shiftRight(index);</span>
+<span id="cb12-4"><a href></a>  data[index] = value;</span>
+<span id="cb12-5"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="prepend" class="slide level2">
 <h2>prepend</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a href></a>public void prepend(T value) {</span>
-<span id="cb12-2"><a href></a>  shiftRight(0); // need to shift all the other values</span>
-<span id="cb12-3"><a href></a>  data[0] = value;</span>
-<span id="cb12-4"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a href></a>public void prepend(T value) {</span>
+<span id="cb13-2"><a href></a>  shiftRight(0); // need to shift all the other values</span>
+<span id="cb13-3"><a href></a>  data[0] = value;</span>
+<span id="cb13-4"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="submit-to-gradescope" class="slide level2">
+<h2>Submit to gradescope</h2>
+<p>Submit your <code>List.java</code> and <code>ArrayList.java</code> files to <a href="https://www.gradescope.com/courses/1233898/assignments/7898904/">gradescope</a> making sure your array implementation contains methods <code>prepend</code> and <code>insert</code>.</p>
 </section>
 <section id="changing-size-of-the-list-removing-from-list" class="slide level2">
 <h2>Changing size of the list – removing from list</h2>
@@ -1284,111 +1295,117 @@ margin-right: 0; }
 </section>
 <section id="test-your-arraylist-implementation" class="slide level2">
 <h2>Test your ArrayList implementation</h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a href></a>public class UseList {</span>
-<span id="cb13-2"><a href></a>    public static void main(String[] args) {</span>
-<span id="cb13-3"><a href></a>        List&lt;String&gt; fruitList = new ArrayList&lt;&gt;();</span>
-<span id="cb13-4"><a href></a>        System.out.println(fruitList.length()); // 0</span>
-<span id="cb13-5"><a href></a>        System.out.println(fruitList);</span>
-<span id="cb13-6"><a href></a></span>
-<span id="cb13-7"><a href></a>        fruitList.append(&quot;apple&quot;);</span>
-<span id="cb13-8"><a href></a>        fruitList.append(&quot;pear&quot;);</span>
-<span id="cb13-9"><a href></a>        fruitList.append(&quot;banana&quot;);</span>
-<span id="cb13-10"><a href></a>        fruitList.prepend(&quot;kiwi&quot;);</span>
-<span id="cb13-11"><a href></a>        fruitList.prepend(&quot;tomato&quot;);</span>
-<span id="cb13-12"><a href></a>        fruitList.insert(2, &quot;pineapple&quot;);</span>
-<span id="cb13-13"><a href></a></span>
-<span id="cb13-14"><a href></a>        System.out.println(fruitList);</span>
-<span id="cb13-15"><a href></a>        System.out.println(fruitList.pop(1));</span>
-<span id="cb13-16"><a href></a>        System.out.println(fruitList);</span>
-<span id="cb13-17"><a href></a>    }</span>
-<span id="cb13-18"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a href></a>public class UseList {</span>
+<span id="cb14-2"><a href></a>    public static void main(String[] args) {</span>
+<span id="cb14-3"><a href></a>        List&lt;String&gt; fruitList = new ArrayList&lt;&gt;();</span>
+<span id="cb14-4"><a href></a>        System.out.println(fruitList.length()); // 0</span>
+<span id="cb14-5"><a href></a>        System.out.println(fruitList);</span>
+<span id="cb14-6"><a href></a></span>
+<span id="cb14-7"><a href></a>        fruitList.append(&quot;apple&quot;);</span>
+<span id="cb14-8"><a href></a>        fruitList.append(&quot;pear&quot;);</span>
+<span id="cb14-9"><a href></a>        fruitList.append(&quot;banana&quot;);</span>
+<span id="cb14-10"><a href></a>        fruitList.prepend(&quot;kiwi&quot;);</span>
+<span id="cb14-11"><a href></a>        fruitList.prepend(&quot;tomato&quot;);</span>
+<span id="cb14-12"><a href></a>        fruitList.insert(2, &quot;pineapple&quot;);</span>
+<span id="cb14-13"><a href></a></span>
+<span id="cb14-14"><a href></a>        System.out.println(fruitList);</span>
+<span id="cb14-15"><a href></a>        System.out.println(fruitList.pop(1));</span>
+<span id="cb14-16"><a href></a>        System.out.println(fruitList);</span>
+<span id="cb14-17"><a href></a>    }</span>
+<span id="cb14-18"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="submit-to-gradescope-1" class="slide level2">
+<h2>Submit to gradescope</h2>
+<p>Submit your <code>List.java</code> and <code>ArrayList.java</code> files to <a href="https://www.gradescope.com/courses/1233898/assignments/7898927">gradescope</a> making sure your array implementation contains the <code>pop</code> method.</p>
 </section>
 <section id="arraylist-implementation" class="slide level2">
 <h2><code>ArrayList</code> implementation</h2>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a href></a>public class ArrayList&lt;T&gt; implements List&lt;T&gt; {</span>
-<span id="cb14-2"><a href></a>    private T[] data;</span>
-<span id="cb14-3"><a href></a>    private int size = 10;</span>
-<span id="cb14-4"><a href></a>    private int length  = 0;</span>
-<span id="cb14-5"><a href></a></span>
-<span id="cb14-6"><a href></a>    @SuppressWarnings(&quot;unchecked&quot;)</span>
-<span id="cb14-7"><a href></a>    public ArrayList() {</span>
-<span id="cb14-8"><a href></a>        data = (T[]) new Object[size];</span>
-<span id="cb14-9"><a href></a>    }</span>
-<span id="cb14-10"><a href></a></span>
-<span id="cb14-11"><a href></a>    @Override</span>
-<span id="cb14-12"><a href></a>    public int length() {</span>
-<span id="cb14-13"><a href></a>        return length;</span>
-<span id="cb14-14"><a href></a>    }</span>
-<span id="cb14-15"><a href></a></span>
-<span id="cb14-16"><a href></a>    @Override</span>
-<span id="cb14-17"><a href></a>    public void append(T value) {</span>
-<span id="cb14-18"><a href></a>        if (length == size) {</span>
-<span id="cb14-19"><a href></a>            expandArray();</span>
-<span id="cb14-20"><a href></a>        }</span>
-<span id="cb14-21"><a href></a>        data[length] = value;</span>
-<span id="cb14-22"><a href></a>        length++;</span>
-<span id="cb14-23"><a href></a>    }</span>
-<span id="cb14-24"><a href></a></span>
-<span id="cb14-25"><a href></a>    @Override</span>
-<span id="cb14-26"><a href></a>    public void insert(int index, T value) {</span>
-<span id="cb14-27"><a href></a>        shiftRight(index);</span>
-<span id="cb14-28"><a href></a>        data[index] = value;</span>
-<span id="cb14-29"><a href></a>    }</span>
-<span id="cb14-30"><a href></a></span>
-<span id="cb14-31"><a href></a>    @Override</span>
-<span id="cb14-32"><a href></a>    public void prepend(T value) {</span>
-<span id="cb14-33"><a href></a>        shiftRight(0); // need to shift all the other values</span>
-<span id="cb14-34"><a href></a>        data[0] = value;</span>
-<span id="cb14-35"><a href></a>    }</span>
-<span id="cb14-36"><a href></a></span>
-<span id="cb14-37"><a href></a>    @Override</span>
-<span id="cb14-38"><a href></a>    public T pop(int index) {</span>
-<span id="cb14-39"><a href></a>        if (index &lt; 0 || index &gt;= length) throw new RuntimeException(&quot;index out of range&quot;);</span>
-<span id="cb14-40"><a href></a>        T out = data[index];</span>
-<span id="cb14-41"><a href></a>        shiftLeft(index);</span>
-<span id="cb14-42"><a href></a>        return out;</span>
-<span id="cb14-43"><a href></a>    }</span>
-<span id="cb14-44"><a href></a></span>
-<span id="cb14-45"><a href></a>    private void shiftRight(int startIndex) {</span>
-<span id="cb14-46"><a href></a>        length++;</span>
-<span id="cb14-47"><a href></a>        if (length == size) expandArray();</span>
-<span id="cb14-48"><a href></a>        for (int i = length-1; i &gt; startIndex; i--) data[i] = data[i-1];</span>
-<span id="cb14-49"><a href></a>    }</span>
-<span id="cb14-50"><a href></a></span>
-<span id="cb14-51"><a href></a>    private void shiftLeft(int startIndex) {</span>
-<span id="cb14-52"><a href></a>        for (int i = startIndex; i &lt; length; i++) data[i] = data[i+1];</span>
-<span id="cb14-53"><a href></a>        length--;</span>
-<span id="cb14-54"><a href></a>    }</span>
-<span id="cb14-55"><a href></a></span>
-<span id="cb14-56"><a href></a>    @SuppressWarnings(&quot;unchecked&quot;)</span>
-<span id="cb14-57"><a href></a>    private void expandArray() {</span>
-<span id="cb14-58"><a href></a>        size *= 2;</span>
-<span id="cb14-59"><a href></a>        T[] newData = (T[]) new Object[size];</span>
-<span id="cb14-60"><a href></a>        for (int i = 0; i &lt; length; i++) newData[i] = data[i];</span>
-<span id="cb14-61"><a href></a>        data = newData;</span>
-<span id="cb14-62"><a href></a>    }</span>
-<span id="cb14-63"><a href></a></span>
-<span id="cb14-64"><a href></a>    @Override</span>
-<span id="cb14-65"><a href></a>    public T get(int index) {</span>
-<span id="cb14-66"><a href></a>        if (index &lt; 0 || index &gt;= length) throw new RuntimeException(&quot;index out of range&quot;);</span>
-<span id="cb14-67"><a href></a>        return data[index];</span>
-<span id="cb14-68"><a href></a>    }</span>
-<span id="cb14-69"><a href></a></span>
-<span id="cb14-70"><a href></a>    @Override</span>
-<span id="cb14-71"><a href></a>    public void set(int index, T value) {</span>
-<span id="cb14-72"><a href></a>        if (index &lt; 0 || index &gt;= length) throw new RuntimeException(&quot;index out of range&quot;);</span>
-<span id="cb14-73"><a href></a>        data[length] = value;</span>
-<span id="cb14-74"><a href></a>    }</span>
-<span id="cb14-75"><a href></a></span>
-<span id="cb14-76"><a href></a>    @Override</span>
-<span id="cb14-77"><a href></a>    public String toString() {</span>
-<span id="cb14-78"><a href></a>        String out = &quot;&quot;;</span>
-<span id="cb14-79"><a href></a>        for (int i=0; i &lt; length; i++) out += data[i] + &quot; &quot;;</span>
-<span id="cb14-80"><a href></a>        return out.trim();</span>
-<span id="cb14-81"><a href></a>    }</span>
-<span id="cb14-82"><a href></a></span>
-<span id="cb14-83"><a href></a></span>
-<span id="cb14-84"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1"><a href></a>public class ArrayList&lt;T&gt; implements List&lt;T&gt; {</span>
+<span id="cb15-2"><a href></a>    private T[] data;</span>
+<span id="cb15-3"><a href></a>    private int size = 10;</span>
+<span id="cb15-4"><a href></a>    private int length  = 0;</span>
+<span id="cb15-5"><a href></a></span>
+<span id="cb15-6"><a href></a>    @SuppressWarnings(&quot;unchecked&quot;)</span>
+<span id="cb15-7"><a href></a>    public ArrayList() {</span>
+<span id="cb15-8"><a href></a>        data = (T[]) new Object[size];</span>
+<span id="cb15-9"><a href></a>    }</span>
+<span id="cb15-10"><a href></a></span>
+<span id="cb15-11"><a href></a>    @Override</span>
+<span id="cb15-12"><a href></a>    public int length() {</span>
+<span id="cb15-13"><a href></a>        return length;</span>
+<span id="cb15-14"><a href></a>    }</span>
+<span id="cb15-15"><a href></a></span>
+<span id="cb15-16"><a href></a>    @Override</span>
+<span id="cb15-17"><a href></a>    public void append(T value) {</span>
+<span id="cb15-18"><a href></a>        if (length == size) {</span>
+<span id="cb15-19"><a href></a>            expandArray();</span>
+<span id="cb15-20"><a href></a>        }</span>
+<span id="cb15-21"><a href></a>        data[length] = value;</span>
+<span id="cb15-22"><a href></a>        length++;</span>
+<span id="cb15-23"><a href></a>    }</span>
+<span id="cb15-24"><a href></a></span>
+<span id="cb15-25"><a href></a>    @Override</span>
+<span id="cb15-26"><a href></a>    public void insert(int index, T value) {</span>
+<span id="cb15-27"><a href></a>        if (index &lt; 0 || index &gt; length) throw new RuntimeException(&quot;index our of range&quot;);</span>
+<span id="cb15-28"><a href></a>        shiftRight(index);</span>
+<span id="cb15-29"><a href></a>        data[index] = value;</span>
+<span id="cb15-30"><a href></a>    }</span>
+<span id="cb15-31"><a href></a></span>
+<span id="cb15-32"><a href></a>    @Override</span>
+<span id="cb15-33"><a href></a>    public void prepend(T value) {</span>
+<span id="cb15-34"><a href></a>        shiftRight(0); // need to shift all the other values</span>
+<span id="cb15-35"><a href></a>        data[0] = value;</span>
+<span id="cb15-36"><a href></a>    }</span>
+<span id="cb15-37"><a href></a></span>
+<span id="cb15-38"><a href></a>    @Override</span>
+<span id="cb15-39"><a href></a>    public T pop(int index) {</span>
+<span id="cb15-40"><a href></a>        if (index &lt; 0 || index &gt;= length) throw new RuntimeException(&quot;index out of range&quot;);</span>
+<span id="cb15-41"><a href></a>        T out = data[index];</span>
+<span id="cb15-42"><a href></a>        shiftLeft(index);</span>
+<span id="cb15-43"><a href></a>        return out;</span>
+<span id="cb15-44"><a href></a>    }</span>
+<span id="cb15-45"><a href></a></span>
+<span id="cb15-46"><a href></a>    private void shiftRight(int startIndex) {</span>
+<span id="cb15-47"><a href></a>        length++;</span>
+<span id="cb15-48"><a href></a>        if (length == size) expandArray();</span>
+<span id="cb15-49"><a href></a>        for (int i = length-1; i &gt; startIndex; i--) data[i] = data[i-1];</span>
+<span id="cb15-50"><a href></a>    }</span>
+<span id="cb15-51"><a href></a></span>
+<span id="cb15-52"><a href></a>    private void shiftLeft(int startIndex) {</span>
+<span id="cb15-53"><a href></a>        for (int i = startIndex; i &lt; length; i++) data[i] = data[i+1];</span>
+<span id="cb15-54"><a href></a>        length--;</span>
+<span id="cb15-55"><a href></a>    }</span>
+<span id="cb15-56"><a href></a></span>
+<span id="cb15-57"><a href></a>    @SuppressWarnings(&quot;unchecked&quot;)</span>
+<span id="cb15-58"><a href></a>    private void expandArray() {</span>
+<span id="cb15-59"><a href></a>        size *= 2;</span>
+<span id="cb15-60"><a href></a>        T[] newData = (T[]) new Object[size];</span>
+<span id="cb15-61"><a href></a>        for (int i = 0; i &lt; length; i++) newData[i] = data[i];</span>
+<span id="cb15-62"><a href></a>        data = newData;</span>
+<span id="cb15-63"><a href></a>    }</span>
+<span id="cb15-64"><a href></a></span>
+<span id="cb15-65"><a href></a>    @Override</span>
+<span id="cb15-66"><a href></a>    public T get(int index) {</span>
+<span id="cb15-67"><a href></a>        if (index &lt; 0 || index &gt;= length) throw new RuntimeException(&quot;index out of range&quot;);</span>
+<span id="cb15-68"><a href></a>        return data[index];</span>
+<span id="cb15-69"><a href></a>    }</span>
+<span id="cb15-70"><a href></a></span>
+<span id="cb15-71"><a href></a>    @Override</span>
+<span id="cb15-72"><a href></a>    public void set(int index, T value) {</span>
+<span id="cb15-73"><a href></a>        if (index &lt; 0 || index &gt;= length) throw new RuntimeException(&quot;index out of range&quot;);</span>
+<span id="cb15-74"><a href></a>        data[length] = value;</span>
+<span id="cb15-75"><a href></a>    }</span>
+<span id="cb15-76"><a href></a></span>
+<span id="cb15-77"><a href></a>    @Override</span>
+<span id="cb15-78"><a href></a>    public String toString() {</span>
+<span id="cb15-79"><a href></a>        String out = &quot;&quot;;</span>
+<span id="cb15-80"><a href></a>        for (int i=0; i &lt; length; i++) out += data[i] + &quot; &quot;;</span>
+<span id="cb15-81"><a href></a>        return out.trim();</span>
+<span id="cb15-82"><a href></a>    }</span>
+<span id="cb15-83"><a href></a></span>
+<span id="cb15-84"><a href></a></span>
+<span id="cb15-85"><a href></a>}</span>
+<span id="cb15-86"><a href></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="array-based-list-runtime-summary" class="slide level2">
 <h2>Array-based List Runtime Summary</h2>
