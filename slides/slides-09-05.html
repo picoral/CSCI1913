@@ -1198,36 +1198,59 @@ margin-right: 0; }
 <ul>
 <li>What methods do you need to implement?</li>
 </ul>
-<p>Here’s our initial generic interface we used to implement our array-based list:</p>
+<p>Here’s our generic interface we used to implement our <code>ArrayList</code>:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href></a>public interface List&lt;T&gt; {</span>
 <span id="cb3-2"><a href></a>    void append(T value);</span>
-<span id="cb3-3"><a href></a>    int length();</span>
-<span id="cb3-4"><a href></a>    T get(int index);</span>
-<span id="cb3-5"><a href></a>    void set(int index, T value);</span>
-<span id="cb3-6"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>A <code>toString()</code> method to test our code</p>
+<span id="cb3-3"><a href></a>    void prepend(T value);</span>
+<span id="cb3-4"><a href></a>    void insert(int index, T value);</span>
+<span id="cb3-5"><a href></a>    int length();</span>
+<span id="cb3-6"><a href></a>    T get(int index);</span>
+<span id="cb3-7"><a href></a>    void set(int index, T value);</span>
+<span id="cb3-8"><a href></a>    T pop(int index);</span>
+<span id="cb3-9"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Implement <code>append</code>, <code>prepend</code> and <code>length</code> in your <code>LinkedList&lt;T&gt;</code> class + a <code>toString()</code> method to test your code. Submit your <code>List.java</code>, <code>Node.java</code> and <code>LinkedList.java</code> files to <a href="https://www.gradescope.com/courses/1233898/assignments/7922480/">gradescope</a>.</p>
 </section>
-<section id="appendnode-method" class="slide level2">
-<h2><code>append(Node)</code> method</h2>
-<p>Write a <code>append(Node)</code></p>
-<ul>
-<li>What are the options of implementation for insertion?</li>
-<li>What are the advantages and disadvantages of each?</li>
-</ul>
-</section>
-<section id="insert-at-end-of-list" class="slide level2">
-<h2>Insert at end of list</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href></a>public void append(T value) {</span>
-<span id="cb4-2"><a href></a>  Node&lt;T&gt; nodeToAdd = new Node&lt;T&gt;(value)</span>
-<span id="cb4-3"><a href></a>  if (head == null) head = nodeToAdd;</span>
-<span id="cb4-4"><a href></a>  else {</span>
-<span id="cb4-5"><a href></a>    Node&lt;T&gt; currNode = head;</span>
-<span id="cb4-6"><a href></a>    while (currNode.getNext() != null) {</span>
-<span id="cb4-7"><a href></a>      currNode = currNode.getNext();</span>
-<span id="cb4-8"><a href></a>    }</span>
-<span id="cb4-9"><a href></a>    currNode.setNext(nodeToAdd);</span>
-<span id="cb4-10"><a href></a>  }</span>
+<section id="prepend-o1" class="slide level2">
+<h2>prepend – O(1)</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href></a>public void prepend(T value) {</span>
+<span id="cb4-2"><a href></a>  Node&lt;T&gt; nodeToAdd = new Node&lt;&gt;(value);</span>
+<span id="cb4-3"><a href></a>  if (head == null) {</span>
+<span id="cb4-4"><a href></a>    head = nodeToAdd;</span>
+<span id="cb4-5"><a href></a>    tail = nodeToAdd;</span>
+<span id="cb4-6"><a href></a>  } else {</span>
+<span id="cb4-7"><a href></a>    head.setNext(nodeToAdd);</span>
+<span id="cb4-8"><a href></a>    head = nodeToAdd;</span>
+<span id="cb4-9"><a href></a>  }</span>
+<span id="cb4-10"><a href></a>  length++;</span>
 <span id="cb4-11"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="append-on" class="slide level2">
+<h2>append – O(n)</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href></a>public void append(T value) {</span>
+<span id="cb5-2"><a href></a>  Node&lt;T&gt; nodeToAdd = new Node&lt;T&gt;(value)</span>
+<span id="cb5-3"><a href></a>  if (head == null) head = nodeToAdd;</span>
+<span id="cb5-4"><a href></a>  else {</span>
+<span id="cb5-5"><a href></a>    Node&lt;T&gt; currNode = head;</span>
+<span id="cb5-6"><a href></a>    while (currNode.getNext() != null) {</span>
+<span id="cb5-7"><a href></a>      currNode = currNode.getNext();</span>
+<span id="cb5-8"><a href></a>    }</span>
+<span id="cb5-9"><a href></a>    currNode.setNext(nodeToAdd);</span>
+<span id="cb5-10"><a href></a>  }</span>
+<span id="cb5-11"><a href></a>  length++;</span>
+<span id="cb5-12"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="append-o1" class="slide level2">
+<h2>append – O(1)</h2>
+<p>Keep a tail instance variable.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href></a>public void append(T value) {</span>
+<span id="cb6-2"><a href></a>  Node&lt;T&gt; nodeToAdd = new Node&lt;T&gt;(value)</span>
+<span id="cb6-3"><a href></a>  if (head == null) head = nodeToAdd;</span>
+<span id="cb6-4"><a href></a>  else {</span>
+<span id="cb6-5"><a href></a>    tail.setNext(nodeToAdd);</span>
+<span id="cb6-6"><a href></a>    tail = nodeToAdd;</span>
+<span id="cb6-7"><a href></a>  }</span>
+<span id="cb6-8"><a href></a>  length++;</span>
+<span id="cb6-9"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tostring-method" class="slide level2">
 <h2><code>toString()</code> method</h2>
@@ -1239,41 +1262,37 @@ margin-right: 0; }
 </section>
 <section id="tostring-solution" class="slide level2">
 <h2><code>toString()</code> solution</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href></a>  @Override</span>
-<span id="cb5-2"><a href></a>  public String toString() {</span>
-<span id="cb5-3"><a href></a>  String result = &quot;&quot;;</span>
-<span id="cb5-4"><a href></a>  Node&lt;T&gt; currNode = head;</span>
-<span id="cb5-5"><a href></a>  while (currNode != null) {</span>
-<span id="cb5-6"><a href></a>    result += currNode.getData() + &quot; &quot;;</span>
-<span id="cb5-7"><a href></a>    currNode = currNode.getNext();</span>
-<span id="cb5-8"><a href></a>  }</span>
-<span id="cb5-9"><a href></a>  return result;</span>
-<span id="cb5-10"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="submit-to-gradescope" class="slide level2">
-<h2>Submit to gradescope</h2>
-<p>Submit your <code>List.java</code>, <code>Node.java</code> and <code>LinkedList.java</code> with <code>append</code> and <code>toString</code> methods to gradescope.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href></a>  @Override</span>
+<span id="cb7-2"><a href></a>  public String toString() {</span>
+<span id="cb7-3"><a href></a>  String result = &quot;&quot;;</span>
+<span id="cb7-4"><a href></a>  Node&lt;T&gt; currNode = head;</span>
+<span id="cb7-5"><a href></a>  while (currNode != null) {</span>
+<span id="cb7-6"><a href></a>    result += currNode.getData() + &quot; &quot;;</span>
+<span id="cb7-7"><a href></a>    currNode = currNode.getNext();</span>
+<span id="cb7-8"><a href></a>  }</span>
+<span id="cb7-9"><a href></a>  return result;</span>
+<span id="cb7-10"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="search-method" class="slide level2">
 <h2><code>search()</code> method</h2>
-<p>Write a <code>search()</code> method that traverses the entire list trying to find a node that matches the argument value – if found, return the node, if not, return <code>null</code></p>
+<p>Write a <code>search()</code> method that traverses the entire list trying to find a node that matches the argument value – if found, return the true, otherwise return false. Add <code>boolean search(T data)</code> signature the the <code>List.java</code> interface.</p>
 <ul>
-<li>Similar to <code>toString()</code></li>
+<li>Implementation of <code>search()</code> is similar to <code>toString()</code> (write a while loop)</li>
 </ul>
-<p>Submit your <code>List.java</code>, <code>Node.java</code> and <code>LinkedList.java</code> with the <code>search()</code> method to gradescope.</p>
+<p>Submit your <code>List.java</code>, <code>Node.java</code> and <code>LinkedList.java</code> with the <code>search()</code> method to <a href="https://www.gradescope.com/courses/1233898/assignments/7922592">gradescope</a>.</p>
 </section>
 <section id="search-solution" class="slide level2">
 <h2><code>search()</code> solution</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href></a>public boolean search(T data) {</span>
-<span id="cb6-2"><a href></a>  Node&lt;T&gt; currNode = head;</span>
-<span id="cb6-3"><a href></a>  while (currNode != null) {</span>
-<span id="cb6-4"><a href></a>    if (currNode.getData().equals(data)) {</span>
-<span id="cb6-5"><a href></a>      return true;</span>
-<span id="cb6-6"><a href></a>    }</span>
-<span id="cb6-7"><a href></a>    currNode = currNode.getNext();</span>
-<span id="cb6-8"><a href></a>  }</span>
-<span id="cb6-9"><a href></a>  return false;</span>
-<span id="cb6-10"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href></a>public boolean search(T data) {</span>
+<span id="cb8-2"><a href></a>  Node&lt;T&gt; currNode = head;</span>
+<span id="cb8-3"><a href></a>  while (currNode != null) {</span>
+<span id="cb8-4"><a href></a>    if (currNode.getData().equals(data)) {</span>
+<span id="cb8-5"><a href></a>      return true;</span>
+<span id="cb8-6"><a href></a>    }</span>
+<span id="cb8-7"><a href></a>    currNode = currNode.getNext();</span>
+<span id="cb8-8"><a href></a>  }</span>
+<span id="cb8-9"><a href></a>  return false;</span>
+<span id="cb8-10"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="linear-search-complexity" class="slide level2">
 <h2>Linear search – complexity</h2>
@@ -1291,54 +1310,54 @@ margin-right: 0; }
 <img role="img" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABLgAAAFQCAYAAAC8isceAAAMPmlDQ1BJQ0MgUHJvZmlsZQAASImVVwdYU8kWnltSSWgBBKSE3gQRKQGkhNACSC+CjZAECCXGQFCxo4sKrl1EwIauiih2QOyInUWx98WCgrIuFuzKmxTQdV/53vm+ufe//5z5z5lz55YBQOMETyLJQTUByBXnS2NDAphjklOYpC6AADKgAU2gw+PnSdjR0REA2sD57/buBvSGdtVRrvXP/v9qWgJhHh8AJBriNEEePxfiAwDgVXyJNB8Aopy3mJIvkWPYgI4UJgjxQjnOUOIqOU5T4j0Kn/hYDsQtAJBpPJ40AwD1y5BnFvAzoIZ6L8TOYoFIDIAGE2Lf3NxJAohTIbaFPhKI5fqstB90Mv6mmTaoyeNlDGLlXBRGDhTlSXJ40/7Pcvxvy82RDcSwho2WKQ2Nlc8Z1u1W9qRwOaZB3CNOi4yCWBviDyKBwh9ilJopC01Q+qNG/DwOrBnQg9hZwAsMh9gI4mBxTmSEik9LFwVzIYYrBJ0qyufGQ6wP8UJhXlCcymejdFKsKhZany7lsFX8OZ5UEVce64EsO4Gt0n+dKeSq9DH1wsz4JIipEFsWiBIjIVaH2CkvOy5c5TOqMJMTOeAjlcXK87eEOFYoDglQ6mMF6dLgWJV/SW7ewHyxjZkibqQK78vPjA9V1gdr4fMU+cO5YJeFYnbCgI4wb0zEwFwEwsAg5dyxLqE4IU6l80GSHxCrHItTJTnRKn/cXJgTIufNIXbNK4hTjcUT8+GCVOrj6ZL86HhlnnhhFi8sWpkPvgxEAA4IBEwggy0NTAJZQNTW09ADr5Q9wYAHpCADCIGjihkYkaToEcNjHCgEf0IkBHmD4wIUvUJQAPmvg6zy6AjSFb0FihHZ4CnEuSAc5MBrmWKUeDBaIngCGdE/ovNg48N8c2CT9/97foD9zrAhE6FiZAMRmRoDnsQgYiAxlBhMtMMNcV/cG4+AR3/YXHAW7jkwj+/+hKeEdsIjwnVCB+H2RFGR9KcsR4MOqB+sqkXaj7XAraGmGx6A+0B1qIzr4YbAEXeFcdi4H4zsBlmOKm95VZg/af9tBj/cDZUfxZmCUoZQ/Cm2P49Ut1d3G1SR1/rH+ihzTRusN2ew5+f4nB+qL4Dn8J89sYXYfuwsdhI7jx3BGgATO441Yq3YUTkeXF1PFKtrIFqsIp9sqCP6R7yBOyuvZJ5zrXO38xdlX75wqvwdDTiTJNOkoozMfCYbfhGETK6Y7zSM6eLs4gqA/PuifH29iVF8NxC91u/cvD8A8Dne399/+DsXdhyAvR7w8T/0nbNlwU+HGgDnDvFl0gIlh8sPBPiW0IBPmgEwARbAFs7HBbgDb+APgkAYiALxIBlMgNlnwnUuBVPADDAXFINSsAysBhVgA9gMtoNdYB9oAEfASXAGXASXwXVwF66eTvAC9IJ34DOCICSEjjAQA8QUsUIcEBeEhfgiQUgEEoskI6lIBiJGZMgMZB5SiqxAKpBNSA2yFzmEnETOI+3IbeQh0o28Rj6hGEpDdVBj1BodjrJQNhqOxqPj0Qx0MlqIzkeXoOVoNboTrUdPohfR62gH+gLtwwCmhulhZpgjxsI4WBSWgqVjUmwWVoKVYdVYHdYE7/NVrAPrwT7iRJyBM3FHuIJD8QScj0/GZ+GL8Qp8O16Pt+BX8Yd4L/6NQCcYERwIXgQuYQwhgzCFUEwoI2wlHCSchs9SJ+EdkUjUI9oQPeCzmEzMIk4nLiauI+4mniC2Ex8T+0gkkgHJgeRDiiLxSPmkYtJa0k7ScdIVUifpA1mNbEp2IQeTU8hichG5jLyDfIx8hfyM/JmiSbGieFGiKALKNMpSyhZKE+USpZPymapFtaH6UOOpWdS51HJqHfU09R71jZqamrmap1qMmkhtjlq52h61c2oP1T7StGn2NA5tHE1GW0LbRjtBu017Q6fTren+9BR6Pn0JvYZ+iv6A/kGdoe6kzlUXqM9Wr1SvV7+i/lKDomGlwdaYoFGoUaaxX+OSRo8mRdNak6PJ05ylWal5SPOmZp8WQ2uEVpRWrtZirR1a57W6tEna1tpB2gLt+dqbtU9pP2ZgDAsGh8FnzGNsYZxmdOoQdWx0uDpZOqU6u3TadHp1tXVddRN1p+pW6h7V7dDD9Kz1uHo5ekv19und0Ps0xHgIe4hwyKIhdUOuDHmvP1TfX1+oX6K/W/+6/icDpkGQQbbBcoMGg/uGuKG9YYzhFMP1hqcNe4bqDPUeyh9aMnTf0DtGqJG9UazRdKPNRq1GfcYmxiHGEuO1xqeMe0z0TPxNskxWmRwz6TZlmPqaikxXmR43fc7UZbKZOcxyZguz18zILNRMZrbJrM3ss7mNeYJ5kflu8/sWVAuWRbrFKotmi15LU8vRljMsay3vWFGsWFaZVmuszlq9t7axTrJeYN1g3WWjb8O1KbSptblnS7f1s51sW217zY5ox7LLtltnd9ketXezz7SvtL/kgDq4O4gc1jm0DyMM8xwmHlY97KYjzZHtWOBY6/jQSc8pwqnIqcHp5XDL4SnDlw8/O/ybs5tzjvMW57sjtEeEjSga0TTitYu9C9+l0uXaSPrI4JGzRzaOfOXq4Cp0Xe96y43hNtptgVuz21d3D3epe517t4elR6pHlcdNlg4rmrWYdc6T4BngOdvziOdHL3evfK99Xn95O3pne+/w7hplM0o4asuoxz7mPjyfTT4dvkzfVN+Nvh1+Zn48v2q/R/4W/gL/rf7P2HbsLPZO9ssA5wBpwMGA9xwvzkzOiUAsMCSwJLAtSDsoIagi6EGweXBGcG1wb4hbyPSQE6GE0PDQ5aE3ucZcPreG2xvmETYzrCWcFh4XXhH+KMI+QhrRNBodHTZ65eh7kVaR4siGKBDFjVoZdT/aJnpy9OEYYkx0TGXM09gRsTNiz8Yx4ibG7Yh7Fx8QvzT+boJtgiyhOVEjcVxiTeL7pMCkFUkdY4aPmTnmYrJhsii5MYWUkpiyNaVvbNDY1WM7x7mNKx53Y7zN+Knjz08wnJAz4ehEjYm8iftTCalJqTtSv/CieNW8vjRuWlVaL5/DX8N/IfAXrBJ0C32EK4TP0n3SV6R3ZfhkrMzozvTLLMvsEXFEFaJXWaFZG7LeZ0dlb8vuz0nK2Z1Lzk3NPSTWFmeLWyaZTJo6qV3iICmWdEz2mrx6cq80XLo1D8kbn9eYrwN/5FtltrJfZA8LfAsqCz5MSZyyf6rWVPHU1mn20xZNe1YYXPjbdHw6f3rzDLMZc2c8nMmeuWkWMittVvNsi9nzZ3fOCZmzfS51bvbc34uci1YUvZ2XNK9pvvH8OfMf/xLyS22xerG0+OYC7wUbFuILRQvbFo1ctHbRtxJByYVS59Ky0i+L+Ysv/Dri1/Jf+5ekL2lb6r50/TLiMvGyG8v9lm9fobWicMXjlaNX1q9iripZ9Xb1xNXny1zLNqyhrpGt6SiPKG9ca7l22dovFZkV1ysDKndXGVUtqnq/TrDuynr/9XUbjDeUbvi0UbTx1qaQTfXV1tVlm4mbCzY/3ZK45exvrN9qthpuLd36dZt4W8f22O0tNR41NTuMdiytRWtltd07x+28vCtwV2OdY92m3Xq7S/eAPbI9z/em7r2xL3xf837W/roDVgeqDjIOltQj9dPqexsyGzoakxvbD4Udam7ybjp42OnwtiNmRyqP6h5deox6bP6x/uOFx/tOSE70nMw4+bh5YvPdU2NOXWuJaWk7HX763JngM6fOss8eP+dz7sh5r/OHLrAuNFx0v1jf6tZ68He33w+2ubfVX/K41HjZ83JT+6j2Y1f8rpy8Gnj1zDXutYvXI6+330i4cevmuJsdtwS3um7n3H51p+DO57tz7hHuldzXvF/2wOhB9R92f+zucO84+jDwYeujuEd3H/Mfv3iS9+RL5/yn9Kdlz0yf1XS5dB3pDu6+/Hzs884Xkhefe4r/1Pqz6qXtywN/+f/V2jumt/OV9FX/68VvDN5se+v6trkvuu/Bu9x3n9+XfDD4sP0j6+PZT0mfnn2e8oX0pfyr3demb+Hf7vXn9vdLeFKe4lcAgw1NTwfg9TYA6MkAMOD+jDpWuf9TGKLcsyoQ+E9YuUdUmDsAdfD/PaYH/t3cBGDPFrj9gvoa4wCIpgMQ7wnQkSMH28BeTbGvlBsR7gM2Rn1Ny00D/8aUe84f8v75DOSqruDn878ABwx8RP9Q0y4AAACKZVhJZk1NACoAAAAIAAQBGgAFAAAAAQAAAD4BGwAFAAAAAQAAAEYBKAADAAAAAQACAACHaQAEAAAAAQAAAE4AAAAAAAAAkAAAAAEAAACQAAAAAQADkoYABwAAABIAAAB4oAIABAAAAAEAAAS4oAMABAAAAAEAAAFQAAAAAEFTQ0lJAAAAU2NyZWVuc2hvdGipPz0AAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHXaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJYTVAgQ29yZSA2LjAuMCI+CiAgIDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgICAgIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICAgICAgICAgIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIj4KICAgICAgICAgPGV4aWY6UGl4ZWxZRGltZW5zaW9uPjMzNjwvZXhpZjpQaXhlbFlEaW1lbnNpb24+CiAgICAgICAgIDxleGlmOlBpeGVsWERpbWVuc2lvbj4xMjA4PC9leGlmOlBpeGVsWERpbWVuc2lvbj4KICAgICAgICAgPGV4aWY6VXNlckNvbW1lbnQ+U2NyZWVuc2hvdDwvZXhpZjpVc2VyQ29tbWVudD4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+Cj5I7j0AAAAcaURPVAAAAAIAAAAAAAAAqAAAACgAAACoAAAAqAAAY8n6cbdKAABAAElEQVR4AeydB7wlRZX/6w1DHNIMyTDAIAjmQBpAYEgiK5JGYUFBkN2/BMVVcHdxFd4b0V1UEPcjDKgoA6ggu+KuCCKgJIFFFMkSFMmISBzihPf+51fVp/p0uPfdd9/N/auZdyudqur+1rl9u05XVQ+NiXN0JEACJEACJEACJEACJEACJEACJEACJEACJNCnBIZo4OrTnuNhkwAJkAAJkAAJkAAJkAAJkAAJkAAJkAAJeAI0cFERSIAESIAESIAESIAESIAESIAESIAESIAE+poADVx93X08eBIgARIgARIgARIgARIgARIgARIgARIgARq4qAMkQAIkQAIkQAIkQAIkQAIkQAIkQAIkQAJ9TYAGrr7uPh48CZAACZAACZAACZAACZAACZAACZAACZAADVzUARIgARIgARIgARIgARIgARIgARIgARIggb4mQANXX3cfD54ESIAESIAESIAESIAESIAESIAESIAESIAGLuoACZAACZAACZAACZAACZAACZAACZAACZBAXxOggauvu48HTwIkQAIkQAIkQAIkQAIkQAIkQAIkQAIkQAMXdYAESIAESIAESIAESIAESIAESIAESIAESKCvCdDA1dfdx4MnARIgARIgARIgARIgARIgARIgARIgARKggYs6QAIkQAIkQAIkQAIkQAIkQAIkQAIkQAIk0NcEaODq6+7jwZMACZAACZAACZAACZAACZAACZAACZAACdDARR0gARIgARIgARIgARIgARIgARIgARIgARLoawKVM3A98sgj7tJLL3VXX321u+uuu9yDDz7oFi5c6DtxlVVWceuvv757y1ve4ubMmeN22203N3PmzL7uYB48CZAACZAACZAACZAACZAACZAACZAACQw6gcoYuC6++GJ3yimnuCuvvNKNjo421K9TpkxxO+64o/vMZz7jdt9994bKUIgESIAESIAESIAESIAESIAESIAESIAESKCzBAbewHXzzTe7I4880t14442TIjt79mw3f/58t+mmm06qHhYmARIgARIgARIgARIgARIgARIgARIgARJoLYGBNXCNjY25E0880R133HFu6dKlLaG2zDLLuBNOOMEde+yxbmhoqCV1shISIAESIAESIAESIAESIAESIAESIAESIIHJERhIA9eiRYvcQQcd5C644ILJ0alRer/99nPnnnuuW2655WpIMJkESIAESIAESIAESIAESIAESIAESIAESKBTBAbOwLVkyRI3d+5cd9FFF7WV4R577OEuvPBCN3Xq1La2w8pJgARIgARIgARIgARIgARIgARIgARIgATqExg4A9cRRxzhzjjjjPpn3aLcww8/3J1++uktqo3VkAAJkAAJkAAJkAAJkAAJkAAJkAAJkAAJNENgoAxc559/vjvggAOa4dB0mfPOO8/tv//+TZdnQRIgARIgARIgARIgARIgARIgARIgARIggckRGBgD1zPPPOM22WQT9+STT06OyARLr7XWWu6ee+5x06dPn2BJipMACZAACZAACZAACZAACZAACZAACZAACbSCwMAYuI455hj39a9/vRVMJlzH0Ucf7U4++eQJl2MBEiABEiABEiABEiABEiABEiABEiABEiCByRMYCAPX008/7dZbbz334osvTp5IEzVMmzbNPfTQQ27GjBlNlGYREiABEiABEiABEiABEiABEiABEiABEiCByRAYCAPXqaee6o466qjJcJh02W9+85vuk5/85KTrYQUkQAIkQAIkQAIkQAIkQAIkQAIkQAIkQAITIzAQBq7tt9/eXXvttRM78xZLb7fddu6aa65pca2sjgRIgARIgARIgARIgARIgARIgARIgARIYDwCfW/gwrJEbPC+ePHi8c61rfnLLrusw0b3WK5IRwIkQAIkQAIkQAIkQAIkQAIkQAIkQAIk0DkCfW/guuGGG9w222zTOWJ1Wrr++uvd1ltvXUeCWSRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAq0m0PcGrrPPPtsdcsghrebSVH0LFixwBx98cFNlWYgESIAESIAESIAESIAESIAESIAESIAESKA5An1v4Dr55JPdZz/72ebOvsWlTjrpJHfMMce0uFZWRwIkQAIkQAIkQAIkQAIkQAIkQAIkQAIkUI9A3xu4vvSlL7njjjuu3jl2LO+EE05wX/jCFzrWHhsiARIgARIgARIgARIgARIgARIgARIgARJwru8NXJzBRTUmARIgARIgARIgARIgARIgARIgARIggWoT6HsDF/fgqrYC8+xJgARIgARIgARIgARIgARIgARIgARIoO8NXHyLIpWYBEiABEiABEiABEiABEiABEiABEiABKpNoO8NXC+++KKbPn26W7x4cVd7ctlll3XPPPOMmzZtWlePg42TAAmQAAmQAAmQAAmQAAmQAAmQAAmQQNUI9L2BCx22/fbbu2uvvbarfbfddtu5a665pqvHwMZJgARIgARIgARIgARIgARIgARIgARIoIoEBsLAdeqpp7qjjjqqq/2HY/jEJz7R1WNg4yRAAiRAAiRAAiRAAiRAAiRAAiRAAiRQRQIDYeB6+umn3XrrreewXLEbDssSH3roITdjxoxuNM82SYAESIAESIAESIAESIAESIAESIAESKDSBAbCwIUePOaYY9zXv/71rnQm2j7ppJO60jYbJQESIAESIAESIAESIAESIAESIAESIIGqExgYAxc2eN9kk03ck08+2dE+XWuttdw999zjN7rvaMNsjARIgARIgARIgARIgARIgARIgARIgARIwBMYGAMXzub88893BxxwQEe79rzzznP7779/R9tkYyRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAimBgTJw4bSOOOIId8YZZ6Rn2MbQ4Ycf7k4//fQ2tsCqSYAESIAESIAESIAESIAESIAESIAESIAExiMwcAauJUuWuLlz57qLLrpovHOfVP4ee+zhLrzwQjd16tRJ1cPCJEACJEACJEACJEACJEACJEACJEACJEACkyMwcAYu4Fi0aJE76KCD3AUXXDA5OjVK77fffu7cc891yy23XA0JJpMACZAACZAACZAACZAACZAACZAACZAACXSKwEAauABvbGzMnXjiie64445zS5cubQnPZZZZxp1wwgnu2GOPdUNDQy2pk5WQAAmQAAmQAAmQAAmQAAmQAAmQAAmQAAlMjsDAGrgUy8033+yOPPJId+ONN2pSU/7s2bPd/Pnz3aabbtpUeRYiARIgARIgARIgARIgARIgARIgARIgARJoD4GBN3Aptosvvtidcsop7sorr3Sjo6OaXNefMmWK23HHHd1nPvMZt/vuu9eVZSYJkAAJkAAJkAAJkAAJkAAJkAAJkAAJkEB3CFTGwKV4H3nkEbfuuutqtK7/8MMPu5kzZ9aVYSYJkAAJkAAJkAAJkAAJkAAJkAAJkAAJkEB3CVTOwAXcje6fhX286EiABEiABEiABEiABEiABEiABEiABEiABHqbAA1cdfqHBq46cJhFAiRAAiRAAiRAAiRAAiRAAiRAAiRAAj1CgAauOh1BA1cdOMwiARIgARIgARIgARIgARIgARIgARIggR4hQANXnY6ggasOHGaRAAmQAAmQAAmQAAmQAAmQAAmQAAmQQI8QoIGrTkfQwFUHDrNIgARIgARIgARIgARIgARIgARIgARIoEcI0MBVpyNo4KoDh1kkQAIkQAIkQAIkQAIkQAIkQAIkQAIk0CMEaOCq0xE0cNWBwywSIAESIAESIAESIAESIAESIAESIAES6BECNHDV6QgauOrAYRYJkAAJkAAJkAAJkAAJkAAJkAAJkAAJ9AgBGrjqdAQNXHXgMIsESIAESIAESIAESIAESIAESIAESIAEeoQADVx1OoIGrjpwmEUCJEACJEACJEACJEACJEACJEACJEACPUKgLw1cO+ywg7v66qt7BGH5YcyZM8ddddVV5ZlMJQESIAESIAESIAESIAESIAESIAESIAESaBmBvjRwwXC04447tgxCOyq68sorHQxxdCRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAu0l0JcGLiDp5VlcnL3VXqVl7SRAAiRAAiRAAiRAAiRAAiRAAiRAAiRgCfStgauXZ3Fx9pZVMYZJgARIgARIgARIgARIgARIgARIgARIoL0E+tbABSy9OIuLs7faq7CsnQRIgARIgARIgARIgARIgARIgARIgATyBPrawNWLs7g4eyuvYoyTAAmQAAmQAAmQAAmQAAmQAAmQAAmQQHsJ9LWBC2h6aRYXZ2+1V1lZOwmQAAmQAAmQAAmQAAmQAAmQAAmQAAmUEeh7A1cvzeLi7K0yFWMaCZAACZAACZAACZAACZAACZAACZAACbSXQN8buICnF2ZxcfZWexWVtZMACZAACZAACZAACZAACZAACZAACZBALQIDYeDqhVlcnL1VS8WYTgIkQAIkQAIkQAIkQAIkQAIkQAIkQALtJTAQBi4g6uYsLs7eaq+SsnYSIAESIAESIAESIAESIAESIAESIAESqEdgYAxc3ZzFxdlb9VSMeSRAAiRAAiRAAiRAAiRAAiRAAiRAAiTQXgIDY+ACpm7M4uLsrfYqKGsnARIgARIgARIgARIgARIgARIgARIggfEIDJSBqxuzuDh7azwVYz4JkAAJkAAJkAAJkAAJkAAJkAAJkAAJtJfAQBm4gKqTs7g4e6u9ysnaSYAESIAESIAESIAESIAESIAESIAESKARAgNn4OrkLC7O3mpExShDAiRAAiRAAiRAAiRAAiRAAiRAAiRAAu0lMHAGLuDqxCwuzt5qr2KydhIgARIgARIgARIgARIgARIgARIgARJolMBAGrg6MYuLs7caVTHKkQAJkAAJkAAJkAAJkAAJkAAJkAAJkEB7CQykgQvI2jmLi7O32quUrJ0ESIAESIAESIAESIAESIAESIAESIAEJkJgYA1c7ZzFxdlbE1ExypIACZAACZAACZAACZAACZAACZAACZBAewkMrIEL2Noxi4uzt9qrkKydBEiABEiABEiABEiABEiABEiABEiABCZKYKANXO2YxcXZWxNVMcqTAAmQAAmQAAmQAAmQAAmQAAmQAAmQQHsJDLSBC+haOYuLs7faq4ysnQRIgARIgARIgARIgARIgARIgARIgASaITDwBq5WzuLi7K1mVIxlSIAESIAESIAESIAESIAESIAESIAESKC9BAbewAV8rZjFxdlb7VVE1k4CJEACJEACJEACJEACJEACJEACJEACzRKohIGrFbO4OHurWRVjORIgARIgARIgARIgARIgARIgARIgARJoL4FKGLiAcDKzuDh7q71KyNpJgARIgARIgARIgARIgARIgARIgARIYDIEKmPgmswsLs7emoyKsSwJkAAJkAAJkAAJkAAJkAAJkAAJkAAJtJdAZQxcwNjMLC7O3mqvArJ2EiABEiABEiABEiABEiABEiABEiABEpgsgUoZuJqZxcXZW5NVMZYnARIgARIgARIgARIgARIgARIgARIggfYSqJSBCygnMouLs7faq3ysnQRIgARIgARIgARIgARIgARIgARIgARaQaByBq6JzOLi7K1WqBjrIAESIAESIAESIAESIAES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" class="r-stretch"></section>
 <section id="search-matching-data-and-remove" class="slide level2">
 <h2>Search matching data and remove</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href></a>public Node&lt;T&gt; remove(T data) {</span>
-<span id="cb7-2"><a href></a>  Node&lt;T&gt; currNode = head;</span>
-<span id="cb7-3"><a href></a>  Node&lt;T&gt; previous = null;</span>
-<span id="cb7-4"><a href></a>  while (currNode != null) {</span>
-<span id="cb7-5"><a href></a>    if (currNode.getData().equals(data)) {</span>
-<span id="cb7-6"><a href></a>      if (previous != null) {</span>
-<span id="cb7-7"><a href></a>        previous.setNext(currNode.getNext());</span>
-<span id="cb7-8"><a href></a>      } else {</span>
-<span id="cb7-9"><a href></a>        head = head.getNext();</span>
-<span id="cb7-10"><a href></a>      }</span>
-<span id="cb7-11"><a href></a>      return currNode;</span>
-<span id="cb7-12"><a href></a>    } else {</span>
-<span id="cb7-13"><a href></a>      previous = currNode;</span>
-<span id="cb7-14"><a href></a>      currNode = currNode.getNext();</span>
-<span id="cb7-15"><a href></a>    }</span>
-<span id="cb7-16"><a href></a>  }</span>
-<span id="cb7-17"><a href></a>  return null;</span>
-<span id="cb7-18"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href></a>public Node&lt;T&gt; remove(T data) {</span>
+<span id="cb9-2"><a href></a>  Node&lt;T&gt; currNode = head;</span>
+<span id="cb9-3"><a href></a>  Node&lt;T&gt; previous = null;</span>
+<span id="cb9-4"><a href></a>  while (currNode != null) {</span>
+<span id="cb9-5"><a href></a>    if (currNode.getData().equals(data)) {</span>
+<span id="cb9-6"><a href></a>      if (previous != null) {</span>
+<span id="cb9-7"><a href></a>        previous.setNext(currNode.getNext());</span>
+<span id="cb9-8"><a href></a>      } else {</span>
+<span id="cb9-9"><a href></a>        head = head.getNext();</span>
+<span id="cb9-10"><a href></a>      }</span>
+<span id="cb9-11"><a href></a>      return currNode;</span>
+<span id="cb9-12"><a href></a>    } else {</span>
+<span id="cb9-13"><a href></a>      previous = currNode;</span>
+<span id="cb9-14"><a href></a>      currNode = currNode.getNext();</span>
+<span id="cb9-15"><a href></a>    }</span>
+<span id="cb9-16"><a href></a>  }</span>
+<span id="cb9-17"><a href></a>  return null;</span>
+<span id="cb9-18"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="remove-first-element-of-the-list" class="slide level2">
 <h2>Remove first element of the list</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href></a>public Node&lt;T&gt; pop() {</span>
-<span id="cb8-2"><a href></a>  Node&lt;T&gt; node = null;</span>
-<span id="cb8-3"><a href></a>  if (head != null) {</span>
-<span id="cb8-4"><a href></a>    node = head;</span>
-<span id="cb8-5"><a href></a>    head = head.getNext();</span>
-<span id="cb8-6"><a href></a>  }</span>
-<span id="cb8-7"><a href></a>  return node;</span>
-<span id="cb8-8"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href></a>public Node&lt;T&gt; pop() {</span>
+<span id="cb10-2"><a href></a>  Node&lt;T&gt; node = null;</span>
+<span id="cb10-3"><a href></a>  if (head != null) {</span>
+<span id="cb10-4"><a href></a>    node = head;</span>
+<span id="cb10-5"><a href></a>    head = head.getNext();</span>
+<span id="cb10-6"><a href></a>  }</span>
+<span id="cb10-7"><a href></a>  return node;</span>
+<span id="cb10-8"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="remove-nth-node" class="slide level2">
 <h2>Remove Nth node</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href></a>public Node&lt;T&gt; pop(int n) {</span>
-<span id="cb9-2"><a href></a>  if (n &gt;= 0 &amp;&amp; n &lt; length) {</span>
-<span id="cb9-3"><a href></a>    Node&lt;T&gt; current = head;</span>
-<span id="cb9-4"><a href></a>    Node&lt;T&gt; previous = null;</span>
-<span id="cb9-5"><a href></a>    for (int i = 0; i &lt; n; i++) {</span>
-<span id="cb9-6"><a href></a>      previous = current;</span>
-<span id="cb9-7"><a href></a>      current = current.getNext();</span>
-<span id="cb9-8"><a href></a>    }</span>
-<span id="cb9-9"><a href></a>    if (previous == null) return pop();</span>
-<span id="cb9-10"><a href></a>    else previous.setNext(current.getNext());</span>
-<span id="cb9-11"><a href></a>    length--;</span>
-<span id="cb9-12"><a href></a>    return current;</span>
-<span id="cb9-13"><a href></a>  }</span>
-<span id="cb9-14"><a href></a>  return null;</span>
-<span id="cb9-15"><a href></a>  </span>
-<span id="cb9-16"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href></a>public Node&lt;T&gt; pop(int n) {</span>
+<span id="cb11-2"><a href></a>  if (n &gt;= 0 &amp;&amp; n &lt; length) {</span>
+<span id="cb11-3"><a href></a>    Node&lt;T&gt; current = head;</span>
+<span id="cb11-4"><a href></a>    Node&lt;T&gt; previous = null;</span>
+<span id="cb11-5"><a href></a>    for (int i = 0; i &lt; n; i++) {</span>
+<span id="cb11-6"><a href></a>      previous = current;</span>
+<span id="cb11-7"><a href></a>      current = current.getNext();</span>
+<span id="cb11-8"><a href></a>    }</span>
+<span id="cb11-9"><a href></a>    if (previous == null) return pop();</span>
+<span id="cb11-10"><a href></a>    else previous.setNext(current.getNext());</span>
+<span id="cb11-11"><a href></a>    length--;</span>
+<span id="cb11-12"><a href></a>    return current;</span>
+<span id="cb11-13"><a href></a>  }</span>
+<span id="cb11-14"><a href></a>  return null;</span>
+<span id="cb11-15"><a href></a>  </span>
+<span id="cb11-16"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="runtime-of-linkedlist" class="slide level2">
 <h2>Runtime of LinkedList</h2>
@@ -1394,221 +1413,221 @@ margin-right: 0; }
 <section id="recursion" class="slide level2">
 <h2>Recursion</h2>
 <p>Many linked list functions can be nicely implemented with recursion.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href></a>public Node&lt;T&gt; search(Node&lt;T&gt; node, T value) {</span>
-<span id="cb10-2"><a href></a>  if (node == null) { // base case</span>
-<span id="cb10-3"><a href></a>    return null;</span>
-<span id="cb10-4"><a href></a>  }</span>
-<span id="cb10-5"><a href></a>  if (node.getData().equals(value)) {</span>
-<span id="cb10-6"><a href></a>    return node; // found node with matching value</span>
-<span id="cb10-7"><a href></a>  }</span>
-<span id="cb10-8"><a href></a>  // search next</span>
-<span id="cb10-9"><a href></a>  return search(node.getNext(), value);</span>
-<span id="cb10-10"><a href></a>  </span>
-<span id="cb10-11"><a href></a>}</span>
-<span id="cb10-12"><a href></a></span>
-<span id="cb10-13"><a href></a>public Node&lt;T&gt; search(T value) {</span>
-<span id="cb10-14"><a href></a>  // traverse all nodes, return the first</span>
-<span id="cb10-15"><a href></a>  // node that data equals value argument</span>
-<span id="cb10-16"><a href></a>  return search(head, value);</span>
-<span id="cb10-17"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a href></a>public Node&lt;T&gt; search(Node&lt;T&gt; node, T value) {</span>
+<span id="cb12-2"><a href></a>  if (node == null) { // base case</span>
+<span id="cb12-3"><a href></a>    return null;</span>
+<span id="cb12-4"><a href></a>  }</span>
+<span id="cb12-5"><a href></a>  if (node.getData().equals(value)) {</span>
+<span id="cb12-6"><a href></a>    return node; // found node with matching value</span>
+<span id="cb12-7"><a href></a>  }</span>
+<span id="cb12-8"><a href></a>  // search next</span>
+<span id="cb12-9"><a href></a>  return search(node.getNext(), value);</span>
+<span id="cb12-10"><a href></a>  </span>
+<span id="cb12-11"><a href></a>}</span>
+<span id="cb12-12"><a href></a></span>
+<span id="cb12-13"><a href></a>public Node&lt;T&gt; search(T value) {</span>
+<span id="cb12-14"><a href></a>  // traverse all nodes, return the first</span>
+<span id="cb12-15"><a href></a>  // node that data equals value argument</span>
+<span id="cb12-16"><a href></a>  return search(head, value);</span>
+<span id="cb12-17"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="comparable" class="slide level2">
 <h2>Comparable</h2>
 <p>Node.java</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href></a>public class Node&lt;T extends Comparable&lt;T&gt;&gt; implements Comparable&lt;Node&lt;T&gt;&gt; {</span>
-<span id="cb11-2"><a href></a>    private T data;</span>
-<span id="cb11-3"><a href></a>    private Node&lt;T&gt; next;</span>
-<span id="cb11-4"><a href></a></span>
-<span id="cb11-5"><a href></a>    public Node(T data) {</span>
-<span id="cb11-6"><a href></a>        this.data = data;</span>
-<span id="cb11-7"><a href></a>        next = null;</span>
-<span id="cb11-8"><a href></a>    }</span>
-<span id="cb11-9"><a href></a></span>
-<span id="cb11-10"><a href></a>    public T getData() {</span>
-<span id="cb11-11"><a href></a>        return data;</span>
-<span id="cb11-12"><a href></a>    }</span>
-<span id="cb11-13"><a href></a></span>
-<span id="cb11-14"><a href></a>    public Node&lt;T&gt; getNext() {</span>
-<span id="cb11-15"><a href></a>        return next;</span>
-<span id="cb11-16"><a href></a>    }</span>
-<span id="cb11-17"><a href></a></span>
-<span id="cb11-18"><a href></a>    public void setData(T data) {</span>
-<span id="cb11-19"><a href></a>        this.data = data;</span>
-<span id="cb11-20"><a href></a>    }</span>
-<span id="cb11-21"><a href></a></span>
-<span id="cb11-22"><a href></a>    public void setNext(Node&lt;T&gt; next) {</span>
-<span id="cb11-23"><a href></a>        this.next = next;</span>
-<span id="cb11-24"><a href></a>    }</span>
-<span id="cb11-25"><a href></a></span>
-<span id="cb11-26"><a href></a></span>
-<span id="cb11-27"><a href></a>    public int compareTo(Node&lt;T&gt; o) {</span>
-<span id="cb11-28"><a href></a>        if (this == o) {</span>
-<span id="cb11-29"><a href></a>            return 0;</span>
-<span id="cb11-30"><a href></a>        }</span>
-<span id="cb11-31"><a href></a></span>
-<span id="cb11-32"><a href></a>        if (o == null) {</span>
-<span id="cb11-33"><a href></a>            return -1;</span>
-<span id="cb11-34"><a href></a>        }</span>
-<span id="cb11-35"><a href></a></span>
-<span id="cb11-36"><a href></a>        Node&lt;T&gt; aNode = (Node&lt;T&gt;) o;</span>
-<span id="cb11-37"><a href></a>        return this.data.compareTo(aNode.getData());</span>
-<span id="cb11-38"><a href></a>    }</span>
-<span id="cb11-39"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a href></a>public class Node&lt;T extends Comparable&lt;T&gt;&gt; implements Comparable&lt;Node&lt;T&gt;&gt; {</span>
+<span id="cb13-2"><a href></a>    private T data;</span>
+<span id="cb13-3"><a href></a>    private Node&lt;T&gt; next;</span>
+<span id="cb13-4"><a href></a></span>
+<span id="cb13-5"><a href></a>    public Node(T data) {</span>
+<span id="cb13-6"><a href></a>        this.data = data;</span>
+<span id="cb13-7"><a href></a>        next = null;</span>
+<span id="cb13-8"><a href></a>    }</span>
+<span id="cb13-9"><a href></a></span>
+<span id="cb13-10"><a href></a>    public T getData() {</span>
+<span id="cb13-11"><a href></a>        return data;</span>
+<span id="cb13-12"><a href></a>    }</span>
+<span id="cb13-13"><a href></a></span>
+<span id="cb13-14"><a href></a>    public Node&lt;T&gt; getNext() {</span>
+<span id="cb13-15"><a href></a>        return next;</span>
+<span id="cb13-16"><a href></a>    }</span>
+<span id="cb13-17"><a href></a></span>
+<span id="cb13-18"><a href></a>    public void setData(T data) {</span>
+<span id="cb13-19"><a href></a>        this.data = data;</span>
+<span id="cb13-20"><a href></a>    }</span>
+<span id="cb13-21"><a href></a></span>
+<span id="cb13-22"><a href></a>    public void setNext(Node&lt;T&gt; next) {</span>
+<span id="cb13-23"><a href></a>        this.next = next;</span>
+<span id="cb13-24"><a href></a>    }</span>
+<span id="cb13-25"><a href></a></span>
+<span id="cb13-26"><a href></a></span>
+<span id="cb13-27"><a href></a>    public int compareTo(Node&lt;T&gt; o) {</span>
+<span id="cb13-28"><a href></a>        if (this == o) {</span>
+<span id="cb13-29"><a href></a>            return 0;</span>
+<span id="cb13-30"><a href></a>        }</span>
+<span id="cb13-31"><a href></a></span>
+<span id="cb13-32"><a href></a>        if (o == null) {</span>
+<span id="cb13-33"><a href></a>            return -1;</span>
+<span id="cb13-34"><a href></a>        }</span>
+<span id="cb13-35"><a href></a></span>
+<span id="cb13-36"><a href></a>        Node&lt;T&gt; aNode = (Node&lt;T&gt;) o;</span>
+<span id="cb13-37"><a href></a>        return this.data.compareTo(aNode.getData());</span>
+<span id="cb13-38"><a href></a>    }</span>
+<span id="cb13-39"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="comparable-1" class="slide level2">
 <h2>Comparable</h2>
 <p>LinkedList.java</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a href></a>public class LinkedList&lt;T extends Comparable&lt;T&gt;&gt; {</span>
-<span id="cb12-2"><a href></a>    public Node&lt;T&gt; head;</span>
-<span id="cb12-3"><a href></a>    public Node&lt;T&gt; tail;</span>
-<span id="cb12-4"><a href></a>    private int length;</span>
-<span id="cb12-5"><a href></a></span>
-<span id="cb12-6"><a href></a>    public LinkedList(Node&lt;T&gt; node) {</span>
-<span id="cb12-7"><a href></a>        head = node;</span>
-<span id="cb12-8"><a href></a>        tail = node;</span>
-<span id="cb12-9"><a href></a>        length++;</span>
-<span id="cb12-10"><a href></a>    }</span>
-<span id="cb12-11"><a href></a></span>
-<span id="cb12-12"><a href></a>    public void addNode(Node&lt;T&gt; node) {</span>
-<span id="cb12-13"><a href></a>        tail.setNext(node);</span>
-<span id="cb12-14"><a href></a>        tail = node;</span>
-<span id="cb12-15"><a href></a>        length++;</span>
-<span id="cb12-16"><a href></a>    }</span>
-<span id="cb12-17"><a href></a></span>
-<span id="cb12-18"><a href></a>    public int length() {</span>
-<span id="cb12-19"><a href></a>        return length;</span>
-<span id="cb12-20"><a href></a>    }</span>
-<span id="cb12-21"><a href></a></span>
-<span id="cb12-22"><a href></a>    public String toString() {</span>
-<span id="cb12-23"><a href></a>        String message = &quot;&quot;;</span>
-<span id="cb12-24"><a href></a>        Node&lt;T&gt; current = head;</span>
-<span id="cb12-25"><a href></a>        while (current != null) {</span>
-<span id="cb12-26"><a href></a>            message += current.getData() + &quot; &quot;;</span>
-<span id="cb12-27"><a href></a>            current = current.getNext();</span>
-<span id="cb12-28"><a href></a>        }</span>
-<span id="cb12-29"><a href></a>        return message;</span>
-<span id="cb12-30"><a href></a>    }</span>
-<span id="cb12-31"><a href></a></span>
-<span id="cb12-32"><a href></a>    public Node&lt;T&gt; search(T value) {</span>
-<span id="cb12-33"><a href></a>        // traverse all nodes, return the first</span>
-<span id="cb12-34"><a href></a>        // node that data equals value argument</span>
-<span id="cb12-35"><a href></a>        Node&lt;T&gt; current = head;</span>
-<span id="cb12-36"><a href></a>        while (current != null) {</span>
-<span id="cb12-37"><a href></a>            if (current.getData().equals(value)) {</span>
-<span id="cb12-38"><a href></a>                return current;</span>
-<span id="cb12-39"><a href></a>            }</span>
-<span id="cb12-40"><a href></a>            current = current.getNext();</span>
-<span id="cb12-41"><a href></a>        }</span>
-<span id="cb12-42"><a href></a>        // no node with value T, return null</span>
-<span id="cb12-43"><a href></a>        return null;</span>
-<span id="cb12-44"><a href></a>    }</span>
-<span id="cb12-45"><a href></a></span>
-<span id="cb12-46"><a href></a>    public void remove(Node&lt;T&gt; node) {</span>
-<span id="cb12-47"><a href></a>        // remove head?</span>
-<span id="cb12-48"><a href></a>        if (head == node) {</span>
-<span id="cb12-49"><a href></a>            head = head.getNext();</span>
-<span id="cb12-50"><a href></a>        }</span>
-<span id="cb12-51"><a href></a>        // remove matching object</span>
-<span id="cb12-52"><a href></a>        Node&lt;T&gt; current = head;</span>
-<span id="cb12-53"><a href></a>        Node&lt;T&gt; previous = null;</span>
-<span id="cb12-54"><a href></a>        while (current != null) {</span>
-<span id="cb12-55"><a href></a>            // check if objects are the same</span>
-<span id="cb12-56"><a href></a>            if (current == node) {</span>
-<span id="cb12-57"><a href></a>                previous.setNext(current.getNext());</span>
-<span id="cb12-58"><a href></a>                length--;</span>
-<span id="cb12-59"><a href></a>            }</span>
-<span id="cb12-60"><a href></a>            previous = current;</span>
-<span id="cb12-61"><a href></a>            current = current.getNext();</span>
-<span id="cb12-62"><a href></a>        }</span>
-<span id="cb12-63"><a href></a></span>
-<span id="cb12-64"><a href></a>    }</span>
-<span id="cb12-65"><a href></a></span>
-<span id="cb12-66"><a href></a>    public void remove(T value) {</span>
-<span id="cb12-67"><a href></a>        // remove first node with data equals value</span>
-<span id="cb12-68"><a href></a>        // remove head?</span>
-<span id="cb12-69"><a href></a>        if (head.getData().equals(value)) {</span>
-<span id="cb12-70"><a href></a>            head = head.getNext();</span>
-<span id="cb12-71"><a href></a>        }</span>
-<span id="cb12-72"><a href></a>        // remove matching object</span>
-<span id="cb12-73"><a href></a>        Node&lt;T&gt; current = head;</span>
-<span id="cb12-74"><a href></a>        Node&lt;T&gt; previous = null;</span>
-<span id="cb12-75"><a href></a>        while (current != null) {</span>
-<span id="cb12-76"><a href></a>            // check if objects are the same</span>
-<span id="cb12-77"><a href></a>            if (current.getData().equals(value)) {</span>
-<span id="cb12-78"><a href></a>                previous.setNext(current.getNext());</span>
-<span id="cb12-79"><a href></a>                length--;</span>
-<span id="cb12-80"><a href></a>            }</span>
-<span id="cb12-81"><a href></a>            previous = current;</span>
-<span id="cb12-82"><a href></a>            current = current.getNext();</span>
-<span id="cb12-83"><a href></a>        }</span>
-<span id="cb12-84"><a href></a>    }</span>
-<span id="cb12-85"><a href></a></span>
-<span id="cb12-86"><a href></a>    public void remove(int position) {</span>
-<span id="cb12-87"><a href></a>        // remove node at Nth position</span>
-<span id="cb12-88"><a href></a>        // remove first node with data equals value</span>
-<span id="cb12-89"><a href></a>        // remove head?</span>
-<span id="cb12-90"><a href></a>        if (position == 0) {</span>
-<span id="cb12-91"><a href></a>            head = head.getNext();</span>
-<span id="cb12-92"><a href></a>        }</span>
-<span id="cb12-93"><a href></a>        // remove matching object</span>
-<span id="cb12-94"><a href></a>        Node&lt;T&gt; current = head;</span>
-<span id="cb12-95"><a href></a>        Node&lt;T&gt; previous = null;</span>
-<span id="cb12-96"><a href></a>        int counter = 1;</span>
-<span id="cb12-97"><a href></a>        while (current != null) {</span>
-<span id="cb12-98"><a href></a>            // check if objects are the same</span>
-<span id="cb12-99"><a href></a>            if (counter == position) {</span>
-<span id="cb12-100"><a href></a>                previous.setNext(current.getNext());</span>
-<span id="cb12-101"><a href></a>                length--;</span>
-<span id="cb12-102"><a href></a>            }</span>
-<span id="cb12-103"><a href></a>            previous = current;</span>
-<span id="cb12-104"><a href></a>            current = current.getNext();</span>
-<span id="cb12-105"><a href></a>            counter++;</span>
-<span id="cb12-106"><a href></a>        }</span>
-<span id="cb12-107"><a href></a>    }</span>
-<span id="cb12-108"><a href></a></span>
-<span id="cb12-109"><a href></a>    public void sort() {</span>
-<span id="cb12-110"><a href></a>        // lazy bubble sort</span>
-<span id="cb12-111"><a href></a>        for (int i=0; i &lt; length; i++) {</span>
-<span id="cb12-112"><a href></a>            Node&lt;T&gt; current = head;</span>
-<span id="cb12-113"><a href></a>            while (current != null) {</span>
-<span id="cb12-114"><a href></a>                //System.out.println(current.getData() + &quot; &quot; + current.getNext().getData() + &quot; &quot; + current.compareTo(current.getNext()));</span>
-<span id="cb12-115"><a href></a>                if (current.compareTo(current.getNext()) &gt; 0) {</span>
-<span id="cb12-116"><a href></a>                    T temp = current.getData();</span>
-<span id="cb12-117"><a href></a>                    current.setData(current.getNext().getData());</span>
-<span id="cb12-118"><a href></a>                    current.getNext().setData(temp);</span>
-<span id="cb12-119"><a href></a>                }</span>
-<span id="cb12-120"><a href></a>                current = current.getNext();</span>
-<span id="cb12-121"><a href></a>            }</span>
-<span id="cb12-122"><a href></a>        }</span>
-<span id="cb12-123"><a href></a>    }</span>
-<span id="cb12-124"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a href></a>public class LinkedList&lt;T extends Comparable&lt;T&gt;&gt; {</span>
+<span id="cb14-2"><a href></a>    public Node&lt;T&gt; head;</span>
+<span id="cb14-3"><a href></a>    public Node&lt;T&gt; tail;</span>
+<span id="cb14-4"><a href></a>    private int length;</span>
+<span id="cb14-5"><a href></a></span>
+<span id="cb14-6"><a href></a>    public LinkedList(Node&lt;T&gt; node) {</span>
+<span id="cb14-7"><a href></a>        head = node;</span>
+<span id="cb14-8"><a href></a>        tail = node;</span>
+<span id="cb14-9"><a href></a>        length++;</span>
+<span id="cb14-10"><a href></a>    }</span>
+<span id="cb14-11"><a href></a></span>
+<span id="cb14-12"><a href></a>    public void addNode(Node&lt;T&gt; node) {</span>
+<span id="cb14-13"><a href></a>        tail.setNext(node);</span>
+<span id="cb14-14"><a href></a>        tail = node;</span>
+<span id="cb14-15"><a href></a>        length++;</span>
+<span id="cb14-16"><a href></a>    }</span>
+<span id="cb14-17"><a href></a></span>
+<span id="cb14-18"><a href></a>    public int length() {</span>
+<span id="cb14-19"><a href></a>        return length;</span>
+<span id="cb14-20"><a href></a>    }</span>
+<span id="cb14-21"><a href></a></span>
+<span id="cb14-22"><a href></a>    public String toString() {</span>
+<span id="cb14-23"><a href></a>        String message = &quot;&quot;;</span>
+<span id="cb14-24"><a href></a>        Node&lt;T&gt; current = head;</span>
+<span id="cb14-25"><a href></a>        while (current != null) {</span>
+<span id="cb14-26"><a href></a>            message += current.getData() + &quot; &quot;;</span>
+<span id="cb14-27"><a href></a>            current = current.getNext();</span>
+<span id="cb14-28"><a href></a>        }</span>
+<span id="cb14-29"><a href></a>        return message;</span>
+<span id="cb14-30"><a href></a>    }</span>
+<span id="cb14-31"><a href></a></span>
+<span id="cb14-32"><a href></a>    public Node&lt;T&gt; search(T value) {</span>
+<span id="cb14-33"><a href></a>        // traverse all nodes, return the first</span>
+<span id="cb14-34"><a href></a>        // node that data equals value argument</span>
+<span id="cb14-35"><a href></a>        Node&lt;T&gt; current = head;</span>
+<span id="cb14-36"><a href></a>        while (current != null) {</span>
+<span id="cb14-37"><a href></a>            if (current.getData().equals(value)) {</span>
+<span id="cb14-38"><a href></a>                return current;</span>
+<span id="cb14-39"><a href></a>            }</span>
+<span id="cb14-40"><a href></a>            current = current.getNext();</span>
+<span id="cb14-41"><a href></a>        }</span>
+<span id="cb14-42"><a href></a>        // no node with value T, return null</span>
+<span id="cb14-43"><a href></a>        return null;</span>
+<span id="cb14-44"><a href></a>    }</span>
+<span id="cb14-45"><a href></a></span>
+<span id="cb14-46"><a href></a>    public void remove(Node&lt;T&gt; node) {</span>
+<span id="cb14-47"><a href></a>        // remove head?</span>
+<span id="cb14-48"><a href></a>        if (head == node) {</span>
+<span id="cb14-49"><a href></a>            head = head.getNext();</span>
+<span id="cb14-50"><a href></a>        }</span>
+<span id="cb14-51"><a href></a>        // remove matching object</span>
+<span id="cb14-52"><a href></a>        Node&lt;T&gt; current = head;</span>
+<span id="cb14-53"><a href></a>        Node&lt;T&gt; previous = null;</span>
+<span id="cb14-54"><a href></a>        while (current != null) {</span>
+<span id="cb14-55"><a href></a>            // check if objects are the same</span>
+<span id="cb14-56"><a href></a>            if (current == node) {</span>
+<span id="cb14-57"><a href></a>                previous.setNext(current.getNext());</span>
+<span id="cb14-58"><a href></a>                length--;</span>
+<span id="cb14-59"><a href></a>            }</span>
+<span id="cb14-60"><a href></a>            previous = current;</span>
+<span id="cb14-61"><a href></a>            current = current.getNext();</span>
+<span id="cb14-62"><a href></a>        }</span>
+<span id="cb14-63"><a href></a></span>
+<span id="cb14-64"><a href></a>    }</span>
+<span id="cb14-65"><a href></a></span>
+<span id="cb14-66"><a href></a>    public void remove(T value) {</span>
+<span id="cb14-67"><a href></a>        // remove first node with data equals value</span>
+<span id="cb14-68"><a href></a>        // remove head?</span>
+<span id="cb14-69"><a href></a>        if (head.getData().equals(value)) {</span>
+<span id="cb14-70"><a href></a>            head = head.getNext();</span>
+<span id="cb14-71"><a href></a>        }</span>
+<span id="cb14-72"><a href></a>        // remove matching object</span>
+<span id="cb14-73"><a href></a>        Node&lt;T&gt; current = head;</span>
+<span id="cb14-74"><a href></a>        Node&lt;T&gt; previous = null;</span>
+<span id="cb14-75"><a href></a>        while (current != null) {</span>
+<span id="cb14-76"><a href></a>            // check if objects are the same</span>
+<span id="cb14-77"><a href></a>            if (current.getData().equals(value)) {</span>
+<span id="cb14-78"><a href></a>                previous.setNext(current.getNext());</span>
+<span id="cb14-79"><a href></a>                length--;</span>
+<span id="cb14-80"><a href></a>            }</span>
+<span id="cb14-81"><a href></a>            previous = current;</span>
+<span id="cb14-82"><a href></a>            current = current.getNext();</span>
+<span id="cb14-83"><a href></a>        }</span>
+<span id="cb14-84"><a href></a>    }</span>
+<span id="cb14-85"><a href></a></span>
+<span id="cb14-86"><a href></a>    public void remove(int position) {</span>
+<span id="cb14-87"><a href></a>        // remove node at Nth position</span>
+<span id="cb14-88"><a href></a>        // remove first node with data equals value</span>
+<span id="cb14-89"><a href></a>        // remove head?</span>
+<span id="cb14-90"><a href></a>        if (position == 0) {</span>
+<span id="cb14-91"><a href></a>            head = head.getNext();</span>
+<span id="cb14-92"><a href></a>        }</span>
+<span id="cb14-93"><a href></a>        // remove matching object</span>
+<span id="cb14-94"><a href></a>        Node&lt;T&gt; current = head;</span>
+<span id="cb14-95"><a href></a>        Node&lt;T&gt; previous = null;</span>
+<span id="cb14-96"><a href></a>        int counter = 1;</span>
+<span id="cb14-97"><a href></a>        while (current != null) {</span>
+<span id="cb14-98"><a href></a>            // check if objects are the same</span>
+<span id="cb14-99"><a href></a>            if (counter == position) {</span>
+<span id="cb14-100"><a href></a>                previous.setNext(current.getNext());</span>
+<span id="cb14-101"><a href></a>                length--;</span>
+<span id="cb14-102"><a href></a>            }</span>
+<span id="cb14-103"><a href></a>            previous = current;</span>
+<span id="cb14-104"><a href></a>            current = current.getNext();</span>
+<span id="cb14-105"><a href></a>            counter++;</span>
+<span id="cb14-106"><a href></a>        }</span>
+<span id="cb14-107"><a href></a>    }</span>
+<span id="cb14-108"><a href></a></span>
+<span id="cb14-109"><a href></a>    public void sort() {</span>
+<span id="cb14-110"><a href></a>        // lazy bubble sort</span>
+<span id="cb14-111"><a href></a>        for (int i=0; i &lt; length; i++) {</span>
+<span id="cb14-112"><a href></a>            Node&lt;T&gt; current = head;</span>
+<span id="cb14-113"><a href></a>            while (current != null) {</span>
+<span id="cb14-114"><a href></a>                //System.out.println(current.getData() + &quot; &quot; + current.getNext().getData() + &quot; &quot; + current.compareTo(current.getNext()));</span>
+<span id="cb14-115"><a href></a>                if (current.compareTo(current.getNext()) &gt; 0) {</span>
+<span id="cb14-116"><a href></a>                    T temp = current.getData();</span>
+<span id="cb14-117"><a href></a>                    current.setData(current.getNext().getData());</span>
+<span id="cb14-118"><a href></a>                    current.getNext().setData(temp);</span>
+<span id="cb14-119"><a href></a>                }</span>
+<span id="cb14-120"><a href></a>                current = current.getNext();</span>
+<span id="cb14-121"><a href></a>            }</span>
+<span id="cb14-122"><a href></a>        }</span>
+<span id="cb14-123"><a href></a>    }</span>
+<span id="cb14-124"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="use-and-test-linkedlist" class="slide level2">
 <h2>Use and test LinkedList</h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a href></a>public class UseList {</span>
-<span id="cb13-2"><a href></a>    public static void main(String[] args) {</span>
-<span id="cb13-3"><a href></a>        Node&lt;String&gt; node = new Node&lt;&gt;(&quot;tomato&quot;);</span>
-<span id="cb13-4"><a href></a>        LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(new Node&lt;&gt;(&quot;apple&quot;));</span>
-<span id="cb13-5"><a href></a>        list.addNode(new Node&lt;&gt;(&quot;kiwi&quot;));</span>
-<span id="cb13-6"><a href></a>        list.addNode(node);</span>
-<span id="cb13-7"><a href></a>        list.addNode(new Node&lt;&gt;(&quot;banana&quot;));</span>
-<span id="cb13-8"><a href></a>        list.addNode(new Node&lt;&gt;(&quot;pineapple&quot;));</span>
-<span id="cb13-9"><a href></a>        System.out.println(list.length());</span>
-<span id="cb13-10"><a href></a>        System.out.println(list);</span>
-<span id="cb13-11"><a href></a>        System.out.println(list.search(&quot;pear&quot;));</span>
-<span id="cb13-12"><a href></a>        list.remove(node);</span>
-<span id="cb13-13"><a href></a></span>
-<span id="cb13-14"><a href></a>        list.addNode(new Node&lt;&gt;(&quot;pear&quot;));</span>
-<span id="cb13-15"><a href></a>        list.addNode(new Node&lt;&gt;(&quot;orange&quot;));</span>
-<span id="cb13-16"><a href></a>        list.addNode(new Node&lt;&gt;(&quot;plum&quot;));</span>
-<span id="cb13-17"><a href></a>        list.addNode(new Node&lt;&gt;(&quot;tomato&quot;));</span>
-<span id="cb13-18"><a href></a>        list.addNode(new Node&lt;&gt;(&quot;lychee&quot;));</span>
-<span id="cb13-19"><a href></a></span>
-<span id="cb13-20"><a href></a>        System.out.println(list);</span>
-<span id="cb13-21"><a href></a>        list.sort();</span>
-<span id="cb13-22"><a href></a>        System.out.println(list);</span>
-<span id="cb13-23"><a href></a>    }</span>
-<span id="cb13-24"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1"><a href></a>public class UseList {</span>
+<span id="cb15-2"><a href></a>    public static void main(String[] args) {</span>
+<span id="cb15-3"><a href></a>        Node&lt;String&gt; node = new Node&lt;&gt;(&quot;tomato&quot;);</span>
+<span id="cb15-4"><a href></a>        LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(new Node&lt;&gt;(&quot;apple&quot;));</span>
+<span id="cb15-5"><a href></a>        list.addNode(new Node&lt;&gt;(&quot;kiwi&quot;));</span>
+<span id="cb15-6"><a href></a>        list.addNode(node);</span>
+<span id="cb15-7"><a href></a>        list.addNode(new Node&lt;&gt;(&quot;banana&quot;));</span>
+<span id="cb15-8"><a href></a>        list.addNode(new Node&lt;&gt;(&quot;pineapple&quot;));</span>
+<span id="cb15-9"><a href></a>        System.out.println(list.length());</span>
+<span id="cb15-10"><a href></a>        System.out.println(list);</span>
+<span id="cb15-11"><a href></a>        System.out.println(list.search(&quot;pear&quot;));</span>
+<span id="cb15-12"><a href></a>        list.remove(node);</span>
+<span id="cb15-13"><a href></a></span>
+<span id="cb15-14"><a href></a>        list.addNode(new Node&lt;&gt;(&quot;pear&quot;));</span>
+<span id="cb15-15"><a href></a>        list.addNode(new Node&lt;&gt;(&quot;orange&quot;));</span>
+<span id="cb15-16"><a href></a>        list.addNode(new Node&lt;&gt;(&quot;plum&quot;));</span>
+<span id="cb15-17"><a href></a>        list.addNode(new Node&lt;&gt;(&quot;tomato&quot;));</span>
+<span id="cb15-18"><a href></a>        list.addNode(new Node&lt;&gt;(&quot;lychee&quot;));</span>
+<span id="cb15-19"><a href></a></span>
+<span id="cb15-20"><a href></a>        System.out.println(list);</span>
+<span id="cb15-21"><a href></a>        list.sort();</span>
+<span id="cb15-22"><a href></a>        System.out.println(list);</span>
+<span id="cb15-23"><a href></a>    }</span>
+<span id="cb15-24"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </section>
     </div>
