@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Adriana Picoral">
 
-<title>CSCI 1913 Spring 2026</title>
+<title>Fall 2025 Final Exam Practice Problems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -18,6 +19,40 @@ ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
 width: 0.8em;
 margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
+}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+}
+pre.numberSource { margin-left: 3em; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -3192,98 +3227,16 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#documents" id="toc-documents" class="nav-link active" data-scroll-target="#documents">Documents</a></li>
-  <li><a href="#part-1-python-and-the-study-of-algorithms" id="toc-part-1-python-and-the-study-of-algorithms" class="nav-link" data-scroll-target="#part-1-python-and-the-study-of-algorithms">Part 1 – Python and the study of Algorithms</a>
-  <ul class="collapse">
-  <li><a href="#module-00---course-overview" id="toc-module-00---course-overview" class="nav-link" data-scroll-target="#module-00---course-overview">Module 00 - Course Overview</a>
-  <ul class="collapse">
-  <li><a href="#documents-1" id="toc-documents-1" class="nav-link" data-scroll-target="#documents-1">Documents</a></li>
-  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
-  <li><a href="#attendance" id="toc-attendance" class="nav-link" data-scroll-target="#attendance">Attendance</a></li>
-  </ul></li>
-  <li><a href="#module-01-intro-to-python" id="toc-module-01-intro-to-python" class="nav-link" data-scroll-target="#module-01-intro-to-python">Module 01 – Intro to Python</a>
-  <ul class="collapse">
-  <li><a href="#slides-1" id="toc-slides-1" class="nav-link" data-scroll-target="#slides-1">Slides</a></li>
-  <li><a href="#in-class-exercise" id="toc-in-class-exercise" class="nav-link" data-scroll-target="#in-class-exercise">In-class exercise</a></li>
-  </ul></li>
-  <li><a href="#module-02-python" id="toc-module-02-python" class="nav-link" data-scroll-target="#module-02-python">Module 02 – Python</a>
-  <ul class="collapse">
-  <li><a href="#slides-2" id="toc-slides-2" class="nav-link" data-scroll-target="#slides-2">Slides</a></li>
-  <li><a href="#in-class-exercises" id="toc-in-class-exercises" class="nav-link" data-scroll-target="#in-class-exercises">In-class exercises</a></li>
-  </ul></li>
-  <li><a href="#computer-lab-01" id="toc-computer-lab-01" class="nav-link" data-scroll-target="#computer-lab-01">Computer Lab 01</a></li>
-  <li><a href="#computer-lab-02" id="toc-computer-lab-02" class="nav-link" data-scroll-target="#computer-lab-02">Computer Lab 02</a></li>
-  <li><a href="#module-03-advanced-python" id="toc-module-03-advanced-python" class="nav-link" data-scroll-target="#module-03-advanced-python">Module 03 – Advanced Python</a>
-  <ul class="collapse">
-  <li><a href="#slides-3" id="toc-slides-3" class="nav-link" data-scroll-target="#slides-3">Slides</a></li>
-  <li><a href="#in-class-exercises-1" id="toc-in-class-exercises-1" class="nav-link" data-scroll-target="#in-class-exercises-1">In-class exercises</a></li>
-  </ul></li>
-  <li><a href="#computer-lab-03" id="toc-computer-lab-03" class="nav-link" data-scroll-target="#computer-lab-03">Computer Lab 03</a></li>
-  <li><a href="#module-04-big-o-notation-and-searching" id="toc-module-04-big-o-notation-and-searching" class="nav-link" data-scroll-target="#module-04-big-o-notation-and-searching">Module 04 – Big O notation, and searching</a>
-  <ul class="collapse">
-  <li><a href="#slides-4" id="toc-slides-4" class="nav-link" data-scroll-target="#slides-4">Slides</a></li>
-  <li><a href="#in-class-exercises-2" id="toc-in-class-exercises-2" class="nav-link" data-scroll-target="#in-class-exercises-2">In-class exercises</a></li>
-  </ul></li>
-  <li><a href="#computer-lab-04" id="toc-computer-lab-04" class="nav-link" data-scroll-target="#computer-lab-04">Computer Lab 04</a></li>
-  <li><a href="#module-05-sorting" id="toc-module-05-sorting" class="nav-link" data-scroll-target="#module-05-sorting">Module 05 – Sorting</a>
-  <ul class="collapse">
-  <li><a href="#slides-5" id="toc-slides-5" class="nav-link" data-scroll-target="#slides-5">Slides</a></li>
-  </ul></li>
-  <li><a href="#computer-lab-05" id="toc-computer-lab-05" class="nav-link" data-scroll-target="#computer-lab-05">Computer Lab 05</a></li>
-  <li><a href="#module-06-recursion" id="toc-module-06-recursion" class="nav-link" data-scroll-target="#module-06-recursion">Module 06 – Recursion</a>
-  <ul class="collapse">
-  <li><a href="#slides-6" id="toc-slides-6" class="nav-link" data-scroll-target="#slides-6">Slides</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#project-1" id="toc-project-1" class="nav-link" data-scroll-target="#project-1">Project 1</a></li>
-  <li><a href="#midterm-1" id="toc-midterm-1" class="nav-link" data-scroll-target="#midterm-1">Midterm 1</a></li>
-  <li><a href="#part-2-java-and-the-study-of-object-oriented-programing" id="toc-part-2-java-and-the-study-of-object-oriented-programing" class="nav-link" data-scroll-target="#part-2-java-and-the-study-of-object-oriented-programing">Part 2 – Java and the study of Object Oriented Programing</a>
-  <ul class="collapse">
-  <li><a href="#install-java-23-jdk23" id="toc-install-java-23-jdk23" class="nav-link" data-scroll-target="#install-java-23-jdk23">Install Java 23 (JDK23)</a></li>
-  <li><a href="#part-b-installing-intellij" id="toc-part-b-installing-intellij" class="nav-link" data-scroll-target="#part-b-installing-intellij">PART B: Installing Intellij</a></li>
-  <li><a href="#module-07" id="toc-module-07" class="nav-link" data-scroll-target="#module-07">Module 07</a>
-  <ul class="collapse">
-  <li><a href="#slides-7" id="toc-slides-7" class="nav-link" data-scroll-target="#slides-7">Slides</a></li>
-  <li><a href="#gradescope-exercises" id="toc-gradescope-exercises" class="nav-link" data-scroll-target="#gradescope-exercises">Gradescope Exercises</a></li>
-  </ul></li>
-  <li><a href="#computer-lab-06" id="toc-computer-lab-06" class="nav-link" data-scroll-target="#computer-lab-06">Computer Lab 06</a></li>
-  <li><a href="#module-08" id="toc-module-08" class="nav-link" data-scroll-target="#module-08">Module 08</a>
-  <ul class="collapse">
-  <li><a href="#slides-8" id="toc-slides-8" class="nav-link" data-scroll-target="#slides-8">Slides</a></li>
-  <li><a href="#gradescope" id="toc-gradescope" class="nav-link" data-scroll-target="#gradescope">Gradescope</a></li>
-  </ul></li>
-  <li><a href="#computer-lab-07" id="toc-computer-lab-07" class="nav-link" data-scroll-target="#computer-lab-07">Computer Lab 07</a></li>
-  <li><a href="#computer-lab-08" id="toc-computer-lab-08" class="nav-link" data-scroll-target="#computer-lab-08">Computer Lab 08</a></li>
-  </ul></li>
-  <li><a href="#project-2" id="toc-project-2" class="nav-link" data-scroll-target="#project-2">Project 2</a></li>
-  <li><a href="#midterm-2" id="toc-midterm-2" class="nav-link" data-scroll-target="#midterm-2">Midterm 2</a></li>
-  <li><a href="#part-3-the-design-and-implementation-of-data-structures" id="toc-part-3-the-design-and-implementation-of-data-structures" class="nav-link" data-scroll-target="#part-3-the-design-and-implementation-of-data-structures">Part 3 – The design and implementation of Data Structures</a>
-  <ul class="collapse">
-  <li><a href="#module-09" id="toc-module-09" class="nav-link" data-scroll-target="#module-09">Module 09</a>
-  <ul class="collapse">
-  <li><a href="#slides-9" id="toc-slides-9" class="nav-link" data-scroll-target="#slides-9">Slides</a></li>
-  <li><a href="#gradescope-1" id="toc-gradescope-1" class="nav-link" data-scroll-target="#gradescope-1">Gradescope</a></li>
-  </ul></li>
-  <li><a href="#computer-lab-09" id="toc-computer-lab-09" class="nav-link" data-scroll-target="#computer-lab-09">Computer Lab 09</a></li>
-  <li><a href="#computer-lab-10" id="toc-computer-lab-10" class="nav-link" data-scroll-target="#computer-lab-10">Computer Lab 10</a></li>
-  <li><a href="#module-10" id="toc-module-10" class="nav-link" data-scroll-target="#module-10">Module 10</a>
-  <ul class="collapse">
-  <li><a href="#slides-10" id="toc-slides-10" class="nav-link" data-scroll-target="#slides-10">Slides</a></li>
-  <li><a href="#in-class-exercises-3" id="toc-in-class-exercises-3" class="nav-link" data-scroll-target="#in-class-exercises-3">In-class exercises</a></li>
-  </ul></li>
-  <li><a href="#module-11" id="toc-module-11" class="nav-link" data-scroll-target="#module-11">Module 11</a></li>
-  <li><a href="#slides-11" id="toc-slides-11" class="nav-link" data-scroll-target="#slides-11">Slides</a></li>
-  <li><a href="#in-class-exercises-4" id="toc-in-class-exercises-4" class="nav-link" data-scroll-target="#in-class-exercises-4">In-class exercises</a></li>
-  <li><a href="#computer-lab-11" id="toc-computer-lab-11" class="nav-link" data-scroll-target="#computer-lab-11">Computer Lab 11</a></li>
-  </ul></li>
-  <li><a href="#module-12" id="toc-module-12" class="nav-link" data-scroll-target="#module-12">Module 12</a>
-  <ul class="collapse">
-  <li><a href="#slides-12" id="toc-slides-12" class="nav-link" data-scroll-target="#slides-12">Slides</a></li>
-  <li><a href="#in-class-exercises-5" id="toc-in-class-exercises-5" class="nav-link" data-scroll-target="#in-class-exercises-5">In-class exercises</a></li>
-  <li><a href="#computer-lab-12" id="toc-computer-lab-12" class="nav-link" data-scroll-target="#computer-lab-12">Computer Lab 12</a></li>
-  </ul></li>
-  <li><a href="#project-3" id="toc-project-3" class="nav-link" data-scroll-target="#project-3">Project 3</a></li>
-  <li><a href="#final-exam" id="toc-final-exam" class="nav-link" data-scroll-target="#final-exam">Final Exam</a></li>
+  <li><a href="#data-structures" id="toc-data-structures" class="nav-link active" data-scroll-target="#data-structures"><span class="header-section-number">1</span> Data Structures</a></li>
+  <li><a href="#array-based-lists" id="toc-array-based-lists" class="nav-link" data-scroll-target="#array-based-lists"><span class="header-section-number">2</span> Array-based lists</a></li>
+  <li><a href="#linked-list" id="toc-linked-list" class="nav-link" data-scroll-target="#linked-list"><span class="header-section-number">3</span> Linked-list</a></li>
+  <li><a href="#binary-search-tree" id="toc-binary-search-tree" class="nav-link" data-scroll-target="#binary-search-tree"><span class="header-section-number">4</span> Binary Search Tree</a></li>
+  <li><a href="#heap" id="toc-heap" class="nav-link" data-scroll-target="#heap"><span class="header-section-number">5</span> Heap</a></li>
+  <li><a href="#hash-table" id="toc-hash-table" class="nav-link" data-scroll-target="#hash-table"><span class="header-section-number">6</span> Hash Table</a></li>
+  <li><a href="#big-o" id="toc-big-o" class="nav-link" data-scroll-target="#big-o"><span class="header-section-number">7</span> Big-O</a></li>
+  <li><a href="#sorting" id="toc-sorting" class="nav-link" data-scroll-target="#sorting"><span class="header-section-number">8</span> Sorting</a></li>
+  <li><a href="#java-writing" id="toc-java-writing" class="nav-link" data-scroll-target="#java-writing"><span class="header-section-number">9</span> Java Writing</a></li>
+  <li><a href="#key" id="toc-key" class="nav-link" data-scroll-target="#key"><span class="header-section-number">10</span> Key</a></li>
   </ul>
 </nav>
 </div>
@@ -3291,13 +3244,20 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CSCI 1913 Spring 2026</h1>
+<h1 class="title"><em>Fall 2025 Final Exam Practice Problems</em></h1>
+<p class="subtitle lead">CSCI 1913 – Introduction to Algorithms, Data Structures, and Program Development</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Adriana Picoral </p>
+          </div>
+  </div>
     
   
     
@@ -3308,595 +3268,270 @@ window.Quarto = {
 </header>
 
 
-<section id="documents" class="level1">
-<h1>Documents</h1>
-<ul>
-<li><a href="syllabus.html">Syllabus</a></li>
-<li><a href="https://docs.google.com/spreadsheets/d/1tzRyQWKa6iu2kiKiyxVzQa9yL044K2-rKqBxOYQ-oR8/edit?usp=sharing">Office Hours</a></li>
-<li><a href="rules.html">Course Rules</a></li>
-<li><a href="integrity.html">Academic Integrity</a></li>
-<li><a href="technology.html">Technology</a></li>
-</ul>
-</section>
-<section id="part-1-python-and-the-study-of-algorithms" class="level1">
-<h1>Part 1 – Python and the study of Algorithms</h1>
-<section id="module-00---course-overview" class="level2">
-<h2 class="anchored" data-anchor-id="module-00---course-overview">Module 00 - Course Overview</h2>
-<p>For this module we will focus first-and-foremost on getting the class started. We’ll be seeing the basic class design, learning what are the parts of the class, and how they will help us learn.</p>
-<p>By the end of the week you should be able to:</p>
-<ul>
-<li>Decide whether CSCI1913 is a course for you (if you fit the audience)</li>
-<li>Prepare for what we will do to learn, and why.</li>
-</ul>
-<section id="documents-1" class="level3">
-<h3 class="anchored" data-anchor-id="documents-1">Documents</h3>
-<ul>
-<li><a href="syllabus.html">Syllabus</a></li>
-<li><a href="integrity.html">Academic Integrity</a></li>
-<li><a href="rules.html">Course Rules</a></li>
-<li><a href="technology.html">Technology</a></li>
-</ul>
-</section>
-<section id="slides" class="level3">
-<h3 class="anchored" data-anchor-id="slides">Slides</h3>
-<ul>
-<li><a href="slides/slides-00-00.html">Course Intro</a></li>
-<li><a href="slides/slides-00-01.html">LLMs</a></li>
-</ul>
-</section>
-<section id="attendance" class="level3">
-<h3 class="anchored" data-anchor-id="attendance">Attendance</h3>
-<ul>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7504938">Gradescope attendance question</a></li>
-</ul>
-</section>
-</section>
-<section id="module-01-intro-to-python" class="level2">
-<h2 class="anchored" data-anchor-id="module-01-intro-to-python">Module 01 – Intro to Python</h2>
-<p>In this module we’ll jump right into some practical python programming. By the end of this module you will be able to:</p>
-<ul>
-<li>Read basic python programs and predict their behavior</li>
-<li>Write basic python functions</li>
-</ul>
-<section id="slides-1" class="level3">
-<h3 class="anchored" data-anchor-id="slides-1">Slides</h3>
-<ul>
-<li><a href="slides/slides-01-00.html">Programming Languages Overview</a></li>
-<li><a href="slides/slides-01-01.html">Intro to Python</a></li>
-</ul>
-</section>
-<section id="in-class-exercise" class="level3">
-<h3 class="anchored" data-anchor-id="in-class-exercise">In-class exercise</h3>
-<ul>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7531656">circle area on gradescope</a></li>
-</ul>
-</section>
-</section>
-<section id="module-02-python" class="level2">
-<h2 class="anchored" data-anchor-id="module-02-python">Module 02 – Python</h2>
-<p>We will continue working with Python. In this module we will finish discussing basic python features with a few final details of pyhton’s many scopes, in particular how you can import functions from other files – and some unique details about how this works in python.</p>
-<p>Then we will begin exploring Python’s advanced data representation tools: data structures. Data structures create a flexible way to represent many common forms of data in an ad-hoc way without creating specific classes, or writing tricky data-management code.</p>
-<p>We will be focusing on the List this week, which is python’s answer to the array. Towards the end of the week we will introduce the set and dictionary as well, with the plan to finish them next week.</p>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Read, write, run, test, and debug simple python programs</li>
-<li>Identify a list, tuple, and dictionary as represented in python code</li>
-<li>Create, and loop over python lists</li>
-</ul>
-<section id="slides-2" class="level3">
-<h3 class="anchored" data-anchor-id="slides-2">Slides</h3>
-<ul>
-<li><a href="slides/slides-02-01.html">More Python</a></li>
-<li><a href="slides/slides-02-02.html">Python Loops</a></li>
-<li><a href="slides/slides-02-03.html">Python Lists</a></li>
-<li><a href="slides/slides-02-04.html">Python IO</a></li>
-</ul>
-</section>
-<section id="in-class-exercises" class="level3">
-<h3 class="anchored" data-anchor-id="in-class-exercises">In-class exercises</h3>
-<ul>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7537955">absolute function on gradescope</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7537960/">loop factorial on gradescope</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7550019">colors on gradescope</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7550027">prime on gradescope</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7572337">prime expansion (tuples) on gradescope</a></li>
-</ul>
-</section>
-</section>
-<section id="computer-lab-01" class="level2">
-<h2 class="anchored" data-anchor-id="computer-lab-01">Computer Lab 01</h2>
-<ul>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab01.html">Instructions for Computer Lab 01</a></li>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab01-slides.html">Slides for Computer Lab 01</a></li>
-<li><a href="https://canvas.umn.edu/courses/541118/modules/items/16288385">Tester code</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7529869">Gradescope link to Computer Lab 01</a></li>
-</ul>
-</section>
-<section id="computer-lab-02" class="level2">
-<h2 class="anchored" data-anchor-id="computer-lab-02">Computer Lab 02</h2>
-<ul>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab02.html">Instructions for Computer Lab 02</a></li>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab02-slides.html">Slides for Computer Lab 02</a></li>
-<li>Download <a href="labs/code/nim_tester.py">tester code</a></li>
-<li>Download <a href="labs/code/play_nim.py">code to play game</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7551292">Gradescope link to Computer Lab 02</a></li>
-</ul>
-</section>
-<section id="module-03-advanced-python" class="level2">
-<h2 class="anchored" data-anchor-id="module-03-advanced-python">Module 03 – Advanced Python</h2>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Explain the concept of mutability and distinguish between mutable and immutable data types in Python, providing examples of each and describing the implications for variable assignment and function parameters.</li>
-<li>Create and manipulate Python lists using various methods including indexing, slicing, appending, inserting, removing, and sorting elements, while understanding the performance characteristics of these operations.</li>
-<li>Analyze the behavior of list aliasing and copying, explaining the difference between shallow and deep copies and predicting how changes to one list reference will affect others.</li>
-<li>Create and manipulate dictionaries to store and retrieve key-value pairs, using appropriate methods for adding, updating, removing, and accessing elements.</li>
-<li>Iterate over dictionaries using various approaches (keys, values, items) and understand the implications of dictionary ordering in modern Python versions.</li>
-<li>Apply dictionaries to solve practical problems such as counting occurrences, grouping data, creating lookup tables, and representing structured information.</li>
-<li>Use sets for membership testing and duplicate elimination, understanding when sets are preferable to lists for specific operations and leveraging their O(1) average-case lookup performance.</li>
-<li>Perform set operations including union, intersection, difference, and symmetric difference to solve problems involving collections and relationships between groups.</li>
-<li>Select appropriate data structures (lists, dictionaries, or sets) based on the requirements of a given problem, justifying choices based on performance, functionality, and code clarity.</li>
-</ul>
-<section id="slides-3" class="level3">
-<h3 class="anchored" data-anchor-id="slides-3">Slides</h3>
-<ul>
-<li><a href="slides/slides-03-01.html">Mutability</a></li>
-<li><a href="slides/slides-03-02.html">Sequence Nesting</a></li>
-<li><a href="slides/slides-03-03.html">Dictionaries</a></li>
-<li><a href="slides/slides-03-04.html">Sets</a></li>
-</ul>
-</section>
-<section id="in-class-exercises-1" class="level3">
-<h3 class="anchored" data-anchor-id="in-class-exercises-1">In-class exercises</h3>
-<ul>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7593810">Submit lowercase_list.py to gradescope</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7593831">Submit list_multiplication.py to gradescope</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7593839">Submit grade_average.py to gradescope</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7610525">Submit count_coins.py to gradescope</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7627094">Submit commonality.py to gradescope</a></li>
-</ul>
-</section>
-</section>
-<section id="computer-lab-03" class="level2">
-<h2 class="anchored" data-anchor-id="computer-lab-03">Computer Lab 03</h2>
-<ul>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab03.html">Instructions for Computer Lab 03</a></li>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab03-slides.html">Slides for Computer Lab 03</a></li>
-<li>Download <a href="labs/code/lab03files.zip">tester code</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7603312">Gradescope link to Computer Lab 02</a></li>
-</ul>
-</section>
-<section id="module-04-big-o-notation-and-searching" class="level2">
-<h2 class="anchored" data-anchor-id="module-04-big-o-notation-and-searching">Module 04 – Big O notation, and searching</h2>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Analyze the time complexity of simple algorithms by identifying the relationship between input size and running time.</li>
-<li>Express algorithm efficiency using Big-O notation and correctly classify common complexity classes including O(1), O(log n), O(n), O(n log n), O(n²), and O(2ⁿ).</li>
-<li>Compare algorithms based on their asymptotic behavior and determine which algorithm is more efficient for large inputs by analyzing their Big-O classifications.</li>
-<li>Distinguish between best-case, average-case, and worst-case time complexity and explain when each measure is most relevant.</li>
-<li>Implement linear search and binary search correctly in code and trace their execution on sample datasets.</li>
-<li>Analyze the time complexity of linear search as O(n) and binary search as O(log n) and explain why binary search is asymptotically faster.</li>
-<li>Explain why binary search requires sorted data as a precondition and demonstrate how the algorithm eliminates half of the remaining search space with each comparison.</li>
-</ul>
-<section id="slides-4" class="level3">
-<h3 class="anchored" data-anchor-id="slides-4">Slides</h3>
-<ul>
-<li><a href="slides/slides-04-01.html">Algorithm Analysis</a></li>
-<li><a href="slides/slides-04-02.html">Searching</a></li>
-<li><a href="slides/slides-04-03.html">Big-O Practice</a></li>
-</ul>
-</section>
-<section id="in-class-exercises-2" class="level3">
-<h3 class="anchored" data-anchor-id="in-class-exercises-2">In-class exercises</h3>
-<ul>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7640420">Submit get_max.py to gradescope</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7640449">Submit linear_search.py</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7640458">Submit binary_search.py</a></li>
-</ul>
-</section>
-</section>
-<section id="computer-lab-04" class="level2">
-<h2 class="anchored" data-anchor-id="computer-lab-04">Computer Lab 04</h2>
-<ul>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab04.html">Instructions for Computer Lab 04</a></li>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab04-slides.html">Slides for Computer Lab 04</a></li>
-<li>Download <a href="https://adrianapicoral.com/CSCI1913/labs/code/pricebook_tester.py">pricebook_tester.py</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7642750">Gradescope link to Computer Lab 04</a></li>
-</ul>
-</section>
-<section id="module-05-sorting" class="level2">
-<h2 class="anchored" data-anchor-id="module-05-sorting">Module 05 – Sorting</h2>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Implement selection sort, insertion sort, and bubble sort correctly in code and trace their execution on small datasets.</li>
-<li>Analyze and compare the time complexity of selection sort, insertion sort, and bubble sort in their best, average, and worst cases.</li>
-<li>Explain the underlying mechanism of each sorting algorithm including how elements are compared, swapped, and positioned during execution.</li>
-</ul>
-<section id="slides-5" class="level3">
-<h3 class="anchored" data-anchor-id="slides-5">Slides</h3>
-<ul>
-<li><a href="slides/slides-05-01.html">Sorting</a></li>
-</ul>
-</section>
-</section>
-<section id="computer-lab-05" class="level2">
-<h2 class="anchored" data-anchor-id="computer-lab-05">Computer Lab 05</h2>
-<ul>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab05.html">Instructions for Computer Lab 05</a></li>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab05-slides.html">Slides for Computer Lab 05</a></li>
-<li>Download <a href="labs/code/lab05files.zip">starter code</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7643149">Gradescope link to Computer Lab 05</a></li>
-</ul>
-</section>
-<section id="module-06-recursion" class="level2">
-<h2 class="anchored" data-anchor-id="module-06-recursion">Module 06 – Recursion</h2>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Define and explain recursion as a problem-solving technique where a function calls itself with modified parameters to solve progressively smaller subproblems.</li>
-<li>Identify the essential components of a recursive function, including the base case(s) that stop recursion and the recursive case(s) that break down the problem.</li>
-<li>Convert simple iterative solutions to recursive solutions and vice versa, recognizing when each approach is more appropriate.</li>
-<li>Apply recursion to solve problems involving naturally recursive data structures or definitions, such as computing powers, reversing strings, or processing nested lists.</li>
-<li>Debug recursive functions by identifying common errors such as missing base cases, incorrect recursive calls, or infinite recursion.</li>
-</ul>
-<section id="slides-6" class="level3">
-<h3 class="anchored" data-anchor-id="slides-6">Slides</h3>
-<ul>
-<li><a href="slides/slides-06-01.html">Recursion</a></li>
-<li><a href="slides/slides-06-02.html">Merge Sort</a></li>
-</ul>
-</section>
-</section>
-</section>
-<section id="project-1" class="level1">
-<h1>Project 1</h1>
-<ul>
-<li><a href="projects/project1.html">Instructions for Project 1</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7581121">Gradescope link to Projet 1</a></li>
-</ul>
-</section>
-<section id="midterm-1" class="level1">
-<h1>Midterm 1</h1>
-<ul>
-<li><a href="practice/midterm_1_practice.html">Practice Exercises for Midterm 1</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7641233">Practice Midterm 1 on Gradescope</a></li>
-</ul>
-</section>
-<section id="part-2-java-and-the-study-of-object-oriented-programing" class="level1">
-<h1>Part 2 – Java and the study of Object Oriented Programing</h1>
-<section id="install-java-23-jdk23" class="level2">
-<h2 class="anchored" data-anchor-id="install-java-23-jdk23">Install Java 23 (JDK23)</h2>
-<p>Steps to install Java:</p>
-<ul>
-<li>For Ubuntu: Install <a href="https://ubuntuhandbook.org/?s=java+23">Oracle Java JDK 21/23 on Ubuntu</a></li>
-<li>For Mac OSX: Install <a href="https://docs.oracle.com/en/java/javase/23/install/installation-jdk-macos.html#GUID-F575EB4A-70D3-4AB4-A20E-DBE95171AB5F">the JDK on macOS</a></li>
-</ul>
-<p>For Windows:</p>
+<section id="data-structures" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Data Structures</h1>
 <ol type="1">
-<li>Download the file: <a href="https://www.oracle.com/java/technologies/downloads/#jdk23-windows">Java 23</a> (select JDK 23 and Windows)</li>
-<li>Double Click and Install.</li>
+<li>You need to repeatedly find and remove the minimum element from a collection of integers. Which data structure is most efficient for this operation?</li>
 </ol>
-<p>For Linux:</p>
-<ol type="1">
-<li>Download the file: <a href="https://www.oracle.com/java/technologies/downloads/#jdk23-linux">Java 23</a> (select JDK 23 and Linux)</li>
-<li>Double Click and Install.</li>
+<p>         ▢ A) Array-based list</p>
+<p>         ▢ B) Linked-list</p>
+<p>         ▢ C) Binary search tree</p>
+<p>         ▢ D) Heap</p>
+<p>         ▢ E) Hash Table</p>
+<ol start="2" type="1">
+<li>You are implementing a spell checker that needs to quickly determine whether a word exists in a dictionary of 100,000 words. Which data structure supports the fastest lookup?</li>
+</ol>
+<p>         ▢ A) Array-based list</p>
+<p>         ▢ B) Linked-list</p>
+<p>         ▢ C) Binary search tree</p>
+<p>         ▢ D) Heap</p>
+<p>         ▢ E) Hash Table</p>
+<ol start="3" type="1">
+<li>A hospital triage system assigns patients a priority score upon arrival. The doctor always treats the highest-priority patient next, and new patients can arrive at any time. Which data structure best supports this workflow?</li>
+</ol>
+<p>         ▢ A) Array-based list</p>
+<p>         ▢ B) Linked-list</p>
+<p>         ▢ C) Binary search tree</p>
+<p>         ▢ D) Heap</p>
+<p>         ▢ E) Hash Table</p>
+<ol start="4" type="1">
+<li>You need to store a collection of integers and frequently need to find all values within a given range (e.g., all values between 50 and 100). Which data structure makes range queries most efficient?</li>
+</ol>
+<p>         ▢ A) Array-based list</p>
+<p>         ▢ B) Linked-list</p>
+<p>         ▢ C) Binary search tree</p>
+<p>         ▢ D) Heap</p>
+<p>         ▢ E) Hash Table</p>
+<ol start="5" type="1">
+<li>You need to store exactly 200 integers and will access them frequently by index (e.g., “give me the element at position 42”). Insertion and deletion never take place. Which data structure is most appropriate?</li>
+</ol>
+<p>         ▢ A) Array-based list</p>
+<p>         ▢ B) Linked-list</p>
+<p>         ▢ C) Binary search tree</p>
+<p>         ▢ D) Heap</p>
+<p>         ▢ E) Hash Table</p>
+<ol start="6" type="1">
+<li>You are implementing a task scheduler that always executes the task that was first added to the scheduler. Tasks are added and removed continuously. Which data structure best supports this?</li>
+</ol>
+<p>         ▢ A) Array-based list</p>
+<p>         ▢ B) Linked-list</p>
+<p>         ▢ C) Binary search tree</p>
+<p>         ▢ D) Heap</p>
+<p>         ▢ E) Hash Table</p>
+<ol start="7" type="1">
+<li>You need to maintain a dynamic sorted collection where you frequently need to find the predecessor and successor of a given value. Which data structure is most efficient?</li>
+</ol>
+<p>         ▢ A) Array-based list</p>
+<p>         ▢ B) Linked-list</p>
+<p>         ▢ C) Binary search tree</p>
+<p>         ▢ D) Heap</p>
+<p>         ▢ E) Hash Table</p>
+<ol start="8" type="1">
+<li>You need to repeatedly extract the largest element from a dynamic collection of integers, while also supporting efficient insertion of new elements. Which data structure is most appropriate?</li>
+</ol>
+<p>         ▢ A) Array-based list</p>
+<p>         ▢ B) Linked-list</p>
+<p>         ▢ C) Binary search tree</p>
+<p>         ▢ D) Heap</p>
+<p>         ▢ E) Hash Table</p>
+<ol start="9" type="1">
+<li>You need to store a collection of student GPAs and frequently search for whether a specific GPA exists, insert new GPAs, and delete old ones — all efficiently. Which data structure is best?</li>
+</ol>
+<p>         ▢ A) Array-based list</p>
+<p>         ▢ B) Linked-list</p>
+<p>         ▢ C) Binary search tree</p>
+<p>         ▢ D) Heap</p>
+<p>         ▢ E) Hash Table</p>
+<ol start="10" type="1">
+<li>An emergency room assigns each patient a severity score. Doctors always treat the most severe patient next, and new patients arrive continuously. Which data structure best supports this system?</li>
+</ol>
+<p>         ▢ A) Array-based list</p>
+<p>         ▢ B) Linked-list</p>
+<p>         ▢ C) Binary search tree</p>
+<p>         ▢ D) Heap</p>
+<p>         ▢ E) Hash Table</p>
+<ol start="11" type="1">
+<li>You need to store 500 sensor readings and frequently access them by index (e.g., “get reading number 200”). The data does not change after it is stored. Which data structure is most efficient?</li>
+</ol>
+<p>         ▢ A) Array-based list</p>
+<p>         ▢ B) Linked-list</p>
+<p>         ▢ C) Binary search tree</p>
+<p>         ▢ D) Heap</p>
+<p>         ▢ E) Hash Table</p>
+<ol start="12" type="1">
+<li>A CPU scheduler processes tasks in the order they arrive, but tasks can also be added to the front of the line when re-queued after a time slice. Which data structure best supports efficient insertion at both ends?</li>
+</ol>
+<p>         ▢ A) Array-based list</p>
+<p>         ▢ B) Linked-list</p>
+<p>         ▢ C) Binary search tree</p>
+<p>         ▢ D) Heap</p>
+<p>         ▢ E) Hash Table</p>
+<ol start="13" type="1">
+<li>You need to maintain a sorted collection of words and frequently need to retrieve all words that fall alphabetically between “mango” and “peach”. Which data structure makes this most efficient?</li>
+</ol>
+<p>         ▢ A) Array-based list</p>
+<p>         ▢ B) Linked-list</p>
+<p>         ▢ C) Binary search tree</p>
+<p>         ▢ D) Heap</p>
+<p>         ▢ E) Hash Table</p>
+</section>
+<section id="array-based-lists" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Array-based lists</h1>
+<ol type="a">
+<li><p>Draw an array of size 5, which has the following values appended in the following order: 32, 15, 6, 50</p></li>
+<li><p>Draw the array from part (a) with value 15 deleted</p></li>
+<li><p>Draw the array from part (b) with the value 44 inserted at index 1</p></li>
 </ol>
 </section>
-<section id="part-b-installing-intellij" class="level2">
-<h2 class="anchored" data-anchor-id="part-b-installing-intellij">PART B: Installing Intellij</h2>
-<p>Jetbrains provides <a href="https://www.jetbrains.com/idea/help/installing-and-launching.html">comprehensive instructions for installing Intellij</a>. If you are still having trouble, ask a TA during lab or office hours for help. Download the <a href="https://www.jetbrains.com/idea/download/other.html">community edition</a> (you will have to scroll down to find a <code>community edition</code> option).</p>
+<section id="linked-list" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Linked-list</h1>
+<ol type="a">
+<li><p>Draw an empty linked list with a <code>head</code> and a <code>tail</code> references</p></li>
+<li><p>Draw the linked list from part (a) with the following values added in this order: 32, 15, 6, 50</p></li>
+<li><p>Draw the linked list from part (b) with the node of value 15 deleted</p></li>
+</ol>
 </section>
-<section id="module-07" class="level2">
-<h2 class="anchored" data-anchor-id="module-07">Module 07</h2>
-<p>By the end of this module you will be able to:</p>
+<section id="binary-search-tree" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Binary Search Tree</h1>
+<ol type="a">
+<li><p>Draw a binary search tree which has the following values inserted in the following order: 32, 15, 6, 50, 25, 21, 43, 73, 36, 37, 68, 23, 75, 34</p></li>
+<li><p>Draw the binary search tree from part (a) with value 25 deleted, and the value 44 inserted</p></li>
+<li><p>Draw the binary search tree from part (b) with value 43 deleted, and the value 29 inserted</p></li>
+</ol>
+</section>
+<section id="heap" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Heap</h1>
+<p>For the questions below, you are to draw the max-heap tree and the corresponding array.</p>
+<ol type="a">
+<li><p>Draw a max-heap (tree and array) which has the following values inserted in the following order: 32, 15, 6, 25, 21, 31, 7, 18, 35</p></li>
+<li><p>What would the max-heap from part (a) look like after <code>pop()</code>?</p></li>
+<li><p>What would the max-heap from part (b) look like after <code>pop()</code>?</p></li>
+<li><p>What would the max-heap from part (c) look like after value 29 is inserted?</p></li>
+</ol>
+</section>
+<section id="hash-table" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Hash Table</h1>
+<p>Consider an initially empty hash table <span class="math inline">\(H\)</span> of size 6, designed to store integer keys with linear probing. The hash function is defined as:</p>
+<p><span class="math inline">\(hash(k) = k \mod length(H)\)</span></p>
+<p>When the load factor (λ) exceeds 0.7, the table size is doubled.</p>
+<p>Insert the following sequence of keys in the given order: 12, 18, 21, 2, 26, 17, 34 and show the final hash table configuration.</p>
+</section>
+<section id="big-o" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Big-O</h1>
+<p>Consider the following python code.</p>
+<div id="17da9ecc" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> loreum(n):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  lst1 <span class="op">=</span> []</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    j <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> j <span class="op">&lt;</span> n:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      lst1.append(i)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>      lst1.append(j)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      j <span class="op">*=</span> <span class="dv">2</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  set2 <span class="op">=</span> <span class="bu">set</span>() <span class="co"># A python set, add is O(1)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> val <span class="kw">in</span> lst1:</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    set2.add(val)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> set2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="1">
+<li><p>Identify the Big O notation for this function:</p>
+<p>▢ a) <span class="math inline">\(O(1)\)</span></p>
+<p>▢ b) <span class="math inline">\(O(\log n)\)</span></p>
+<p>▢ c) <span class="math inline">\(O(n)\)</span></p>
+<p>▢ d) <span class="math inline">\(O(n \log n)\)</span></p>
+<p>▢ e) <span class="math inline">\(O(n^2)\)</span></p>
+<p>▢ f) <span class="math inline">\(O(n^3)\)</span></p>
+<p>▢ g) <span class="math inline">\(O(n^4)\)</span></p>
+<p>▢ h) <span class="math inline">\(O(2^n)\)</span></p></li>
+<li><p>Write a function which given the same argument as <code>loreum</code> will result in the same return result but has a better runtime. (You may use either python or java to solve this problem, the python set is <code>set</code> the java set you can assume is <code>Set</code> with a generic).</p></li>
+</ol>
+</section>
+<section id="sorting" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Sorting</h1>
+<ol type="1">
+<li><p>Given the array [8, 3, 5, 11, 2, 9], show what the array would be after each pass of insertion sort. (insertion sort has two nested loops, a pass in this case is one iteration of the outer loop).</p></li>
+<li><p>Given the array [8, 3, 5, 11, 2, 9], show what the array would be after each pass of bubble sort. (bubble sort has two nested loops, a pass in this case is one iteration of the outer loop).</p></li>
+<li><p>Given the array [8, 3, 5, 11, 2, 9], show what the array would be after each pass of selection sort. (selection sort has two nested loops, a pass in this case is one iteration of the outer loop).</p></li>
+</ol>
+</section>
+<section id="java-writing" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Java Writing</h1>
+<ol type="1">
+<li>Write a java class named <code>Shelf</code>. The class must implement the <code>Comparable</code> interface to allow comparison between <code>Shelf</code> objects based on the items they contain. Follow these requirements:</li>
+</ol>
+<p>The class should have two instance variables which are generics of the same comparable type. The <code>Shelf</code> class should also be comparable.</p>
 <ul>
-<li>Identify the role of each component in a Java program, including class definition, main method, variable declarations, and method signatures</li>
-<li>Distinguish between primitive types (int, double, boolean, char) and reference types (objects) in a given program</li>
-<li>Write a complete, compilable Java program with a main method</li>
-<li>Declare and initialize variables of appropriate types</li>
-<li>Write conditional statements and loops to control program flow</li>
-<li>Define and call methods with parameters and return values</li>
-<li>Instantiate objects from existing classes using constructors</li>
-<li>Call instance methods on objects and use the returned values</li>
-<li>Explain the difference between a class and an object</li>
-<li>Access and interpret the state of an object through its methods</li>
-<li>Use objects from the Java standard library (e.g., String, Scanner)</li>
+<li>a constructor that accepts two arguments to be assigned to instance variables <code>one</code> and <code>two</code>.</li>
+<li>a <code>compareTo</code> method which returns the <code>compareTo</code> of the argument with the value in <code>one</code> and <code>two</code>. If argument is <strong>not</strong> equal to <code>one</code> than it returns the comparison of argument and <code>one</code>, and if they are equal returns the comparison of two.</li>
 </ul>
-<section id="slides-7" class="level3">
-<h3 class="anchored" data-anchor-id="slides-7">Slides</h3>
-<ul>
-<li><a href="slides/slides-07-01.html">Java Basics</a></li>
-<li><a href="slides/slides-07-02.html">Java Objects</a></li>
-<li><a href="slides/slides-07-03.html">OOP</a></li>
-</ul>
+<ol start="2" type="1">
+<li>The <code>LinkedSet</code> class represents a set of distinct elements (no duplicates) implemented using a linked data structure (the code for <code>Node.java</code> can be found below). These elements are stored as the data values of a linked list, <strong>arranged in increasing order</strong>. Implement the <code>size</code>, <code>add</code>, and <code>remove</code> methods.</li>
+</ol>
+<pre class="{java}"><code>public LinkedSet &lt;T extends Comparable&lt;T&gt;&gt;{
+  private Node&lt;T&gt; head;
+  
+  public int size()
+  { /* to be implemented */ }
+  
+  public void add(T obj)
+  { /* to be implemented */ }
+  
+  public void remove(T obj)
+  { /* to be implemented */ }</code></pre>
+<p><code>Node.java</code></p>
+<pre class="{java}"><code>class Node &lt;T extends Comparable&lt;T&gt;&gt; implements Comparable&lt;Node&lt;T&gt;&gt;{
+  private T data;
+  private Node&lt;T&gt; next; 
+
+  public Node(T data) {
+    this.data = data;
+    this.next = null;
+  }
+
+  public Node(T data, Node next) {
+    this.data = data;
+    this.next = next;
+  }
+
+  public Node(){
+    this.data = null;
+    this.next = null;
+  }
+
+  public T getData() {
+    return data;
+  }
+
+  public void setData(T data) {
+    this.data = data;
+  }
+
+  public Node&lt;T&gt; getNext() {
+    return next;
+  }
+
+  public void setNext(Node&lt;T&gt; next) {
+    this.next = next;
+  }
+
+  public int compareTo(Node&lt;T&gt; other) {
+    if (other == null) {
+      throw new NullPointerException(&quot;The other node is null.&quot;);
+    }
+    return this.data.compareTo(other.getData());
+  }
+
+  @Override
+  public String toString() {
+    return &quot;Node{&quot; +
+      &quot;data=&quot; + data +
+      &#39;}&#39;;
+  }
+}</code></pre>
 </section>
-<section id="gradescope-exercises" class="level3">
-<h3 class="anchored" data-anchor-id="gradescope-exercises">Gradescope Exercises</h3>
-<ul>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7761992">Java Errors</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7761993">OddEven</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7762025">Average</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7774021">HoursMinutesSeconds</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7788090">MyTime</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7788159/">GregorianDate</a></li>
-</ul>
-</section>
-</section>
-<section id="computer-lab-06" class="level2">
-<h2 class="anchored" data-anchor-id="computer-lab-06">Computer Lab 06</h2>
-<ul>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab06.html">Instructions for Computer Lab 06</a></li>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab06-slides.html">Slides for Computer Lab 06</a></li>
-<li>Download <a href="labs/code/lab06files.zip">starter code</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7747387">Gradescope link to Computer Lab 07</a></li>
-</ul>
-</section>
-<section id="module-08" class="level2">
-<h2 class="anchored" data-anchor-id="module-08">Module 08</h2>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Explain what inheritance is and why it is useful for organizing and reusing code</li>
-<li>Identify the relationship between a superclass and a subclass in a class hierarchy</li>
-<li>Use the <code>extends</code> keyword to create a subclass that inherits fields and methods from a superclass</li>
-<li>Use the <code>super</code> keyword to call a superclass constructor or to access a super instance variable</li>
-<li>Determine which fields and methods a subclass inherits, overrides, or adds</li>
-<li>Override a method in a subclass and explain how Java determines which version of the method to call at runtime</li>
-<li>Override <code>toString</code> in a subclass to return a meaningful string representation of an object</li>
-<li>Override <code>equals</code> in a subclass to compare two objects based on their field values rather than reference</li>
-<li>Distinguish between abstract classes and concrete classes and explain when to use each</li>
-<li>Define method overloading and distinguish it from method overriding</li>
-<li>Write multiple versions of a method with the same name but different parameters</li>
-<li>Identify which overloaded method Java will call given a specific set of arguments</li>
-<li>Define an abstract class with abstract and concrete methods</li>
-<li>Implement a concrete subclass that provides implementations for all abstract methods</li>
-<li>Explain why abstract classes cannot be instantiated directly</li>
-<li>Design a class hierarchy using abstract and concrete classes to model a real-world problem</li>
-</ul>
-<section id="slides-8" class="level3">
-<h3 class="anchored" data-anchor-id="slides-8">Slides</h3>
-<ul>
-<li><a href="slides/slides-08-01.html">Inheritance</a></li>
-<li><a href="slides/slides-08-02.html">Polymorphism</a></li>
-<li><a href="slides/slides-08-03.html">Abstract Classes</a></li>
-<li><a href="slides/slides-08-04.html">Recap</a></li>
-</ul>
-</section>
-<section id="gradescope" class="level3">
-<h3 class="anchored" data-anchor-id="gradescope">Gradescope</h3>
-<ul>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7823150">Dice</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7823201">Shapes</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7870416">Greeter</a></li>
-</ul>
-</section>
-</section>
-<section id="computer-lab-07" class="level2">
-<h2 class="anchored" data-anchor-id="computer-lab-07">Computer Lab 07</h2>
-<ul>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab07.html">Instructions for Computer Lab 07</a></li>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab07-slides.html">Slides for Computer Lab 07</a></li>
-<li>Download <a href="labs/code/lab07files.zip">starter code</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7788546">Gradescope link to Computer Lab 07</a></li>
-</ul>
-</section>
-<section id="computer-lab-08" class="level2">
-<h2 class="anchored" data-anchor-id="computer-lab-08">Computer Lab 08</h2>
-<ul>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab08.html">Instructions for Computer Lab 08</a></li>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab08-slides.html">Slides for Computer Lab 08</a></li>
-<li>Download <a href="labs/code/lab08files.zip">starter code</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7865262">Gradescope link to Computer Lab 08</a></li>
-</ul>
-</section>
-</section>
-<section id="project-2" class="level1">
-<h1>Project 2</h1>
-<ul>
-<li><a href="projects/project2.html">Instructions for Project 2</a></li>
-<li><a href="projects/code/project2files.zip">Project 2 testing files</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7765633">Gradescope – Project 2</a></li>
-</ul>
-</section>
-<section id="midterm-2" class="level1">
-<h1>Midterm 2</h1>
-<ul>
-<li><a href="https://adrianapicoral.com/CSCI1913/practice/midterm_2_practice.html">Midterm 2 practice</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7841437/review_grades">Midterm 2 – extra credit on gradescope</a></li>
-</ul>
-</section>
-<section id="part-3-the-design-and-implementation-of-data-structures" class="level1">
-<h1>Part 3 – The design and implementation of Data Structures</h1>
-<section id="module-09" class="level2">
-<h2 class="anchored" data-anchor-id="module-09">Module 09</h2>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Define the concept of an abstract data type (ADT) and explain how it separates interface from implementation.</li>
-<li>Use Java interfaces to specify the contract for a data structure without prescribing its implementation.</li>
-<li>Explain what parametric polymorphism is and why generics are useful for writing flexible, reusable code</li>
-<li>Read and interpret generic class and method declarations that use type parameters (e.g., <t>)</t></li>
-<li>Instantiate generic classes with specific type arguments (e.g., MyClass<string>)</string></li>
-<li>Implement a simple generic class or method that works correctly for multiple data types</li>
-<li>Explain the benefit of generics over using <code>Object</code> as a universal type, particularly with respect to type safety</li>
-<li>Design and write a generic List interface in Java that includes core operations (e.g., add, remove, get, size, isEmpty).<br>
-</li>
-<li>Implement the List interface using an array-backed structure, managing resizing and index-based access.<br>
-</li>
-<li>Describe the structure of a singly linked list, including the role of nodes, data fields, and next pointers.a</li>
-<li>Trace the state of a linked list (drawing boxes and arrows) after a<br>
-sequence of insertions and deletions.</li>
-<li>Implement the List interface using a singly linked list, managing node creation, pointer manipulation, and traversal.<br>
-</li>
-<li>Compare the array-based and linked-list implementations with respect to time complexity for common operations (e.g., access, insertion, deletion at head/tail/middle).</li>
-<li>Explain why linked lists have <span class="math inline">\(O(1)\)</span> insertion/deletion at the head but <span class="math inline">\(O(n)\)</span> access by index, and contrast this with arrays.</li>
-<li>Select an appropriate List implementation for a given use case based on its performance trade-offs.</li>
-</ul>
-<section id="slides-9" class="level3">
-<h3 class="anchored" data-anchor-id="slides-9">Slides</h3>
-<ul>
-<li><a href="slides/slides-09-01.html">Data Structures</a></li>
-<li><a href="slides/slides-09-02.html">Generics</a></li>
-<li><a href="slides/slides-09-03.html">Java Interface</a></li>
-<li><a href="slides/slides-09-04.html">List</a></li>
-</ul>
-</section>
-<section id="gradescope-1" class="level3">
-<h3 class="anchored" data-anchor-id="gradescope-1">Gradescope</h3>
-<ul>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7897949/">List and ArrayList</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7898743/">List and ArrayList with expandArray</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7898904/">List and ArrayList with insert and prepend methods</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7898927">List and ArrayList with pop method</a></li>
-</ul>
-</section>
-</section>
-<section id="computer-lab-09" class="level2">
-<h2 class="anchored" data-anchor-id="computer-lab-09">Computer Lab 09</h2>
-<ul>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab09.html">Instructions for Computer Lab 09</a></li>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab09-slides.html">Slides for Computer Lab 09</a></li>
-<li>Download <a href="labs/code/lab09files.zip">starter code</a></li>
-<li>Download <a href="labs/sourceImages.zip">source images</a></li>
-<li>Download <a href="expectedImages.zip">expected images</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7865336">Gradescope link to Computer Lab 09</a></li>
-</ul>
-</section>
-<section id="computer-lab-10" class="level2">
-<h2 class="anchored" data-anchor-id="computer-lab-10">Computer Lab 10</h2>
-<ul>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab10.html">Instructions for Computer Lab 10</a></li>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab10-slides.html">Slides for Computer Lab 10</a></li>
-<li>Download <a href="labs/code/lab10files.zip">starter code</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7865408">Gradescope link to Computer Lab 10</a></li>
-</ul>
-</section>
-<section id="module-10" class="level2">
-<h2 class="anchored" data-anchor-id="module-10">Module 10</h2>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Define a binary search tree (BST) and describe the properties that distinguish it from a general binary tree</li>
-<li>Explain the relationship between a node’s value and the values in its left and right subtrees</li>
-<li>Trace the structure of a BST after a sequence of insertions and deletions by drawing diagrams</li>
-<li>Identify whether a given binary tree satisfies the BST property</li>
-<li>Implement in Java a Node class with a data field and left and right child references</li>
-<li>Implement a BST class in Java that maintains a reference to the root node</li>
-<li>Identify and handle edge cases such as an empty tree, a single-node tree, and deleting the root node</li>
-<li>Write a recursive method in Java to insert a new value into a BST while maintaining the BST property</li>
-<li>Write a recursive method in Java to search a BST for a target value, returning a boolean or the node</li>
-<li>Define and distinguish between the following tree traversals and predict the output of each for a given BST: In-order, Pre-order, Post-order</li>
-<li>Write a <code>toString</code> method that returns the elements of the BST in a meaningful order using traversal</li>
-<li>Write a recursive method to delete a node from a BST, correctly handling all three cases: Node has no children (leaf), Node has one child, Node has two children (replace with in-order successor or predecessor)</li>
-<li>Explain why the efficiency of BST operations depends on the height of the tree
-<ul>
-<li>Compare the best case (<span class="math inline">\(O(\log N)\)</span>) and worst case (<span class="math inline">\(O(N)\)</span>) time complexity for search, insert, and delete</li>
-<li>Describe what a degenerate (unbalanced) BST looks like and explain how it arises from sorted input</li>
-</ul></li>
-</ul>
-<section id="slides-10" class="level3">
-<h3 class="anchored" data-anchor-id="slides-10">Slides</h3>
-<ul>
-<li><a href="slides/slides-10-01.html">Trees</a></li>
-<li><a href="slides/slides-10-02.html">Binary Search Trees</a></li>
-</ul>
-</section>
-<section id="in-class-exercises-3" class="level3">
-<h3 class="anchored" data-anchor-id="in-class-exercises-3">In-class exercises</h3>
-<ul>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7929390">Trees</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7929385">BST operations</a></li>
-</ul>
-</section>
-</section>
-<section id="module-11" class="level2">
-<h2 class="anchored" data-anchor-id="module-11">Module 11</h2>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Define the heap property and distinguish between a min-heap and a max-heap.</li>
-<li>Explain why a heap is used instead of a BST when the only required operation is repeated access to the minimum or maximum element.</li>
-<li>Describe the complete binary tree shape invariant and explain why it enables array-based implementation without pointers.</li>
-<li>Derive the index formulas for a node’s parent, left child, and right child in an array-backed heap.</li>
-<li>Trace the insert operation (bubble up) and the remove-min/max operation (bubble down) step by step on a given heap, identifying each swap.</li>
-<li>Analyze the time complexity of insert and remove operations as O(log n) by connecting the complete tree shape to guaranteed height bounds.</li>
-<li>Compare heaps and BSTs across the dimensions of supported operations, time complexity, shape guarantees, and typical implementation strategy.</li>
-<li>Identify scenarios where a priority queue — and by extension a heap — is the appropriate data structure choice.</li>
-</ul>
-</section>
-<section id="slides-11" class="level2">
-<h2 class="anchored" data-anchor-id="slides-11">Slides</h2>
-<ul>
-<li><a href="slides/slides-11-01.html">Heap</a></li>
-</ul>
-</section>
-<section id="in-class-exercises-4" class="level2">
-<h2 class="anchored" data-anchor-id="in-class-exercises-4">In-class exercises</h2>
-<ul>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7951505/">Heap or Not Heap</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7969653/">Heap.java and MinHeap.java with insert and toString</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7969658">Heap.java and MinHeap.java with peek and pop</a></li>
-</ul>
-</section>
-<section id="computer-lab-11" class="level2">
-<h2 class="anchored" data-anchor-id="computer-lab-11">Computer Lab 11</h2>
-<ul>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab11.html">Instructions for Computer Lab 11</a></li>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab11-slides.html">Slides for Computer Lab 11</a></li>
-<li>Download <a href="labs/code/lab11files.zip">starter code</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7865423">Gradescope link to Computer Lab 11</a></li>
-</ul>
-</section>
-</section>
-<section id="module-12" class="level1">
-<h1>Module 12</h1>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Define the <strong>Map</strong> Abstract Data Type and describe its key-value pair semantics, distinguishing it from List ADTs.</li>
-<li>Explain what a hash function is and describe the properties of a good hash function (deterministic, uniform distribution, efficient to compute).<br>
-</li>
-<li>Identify and use core <strong>Map</strong> operations — put, get, remove, containsKey, size — and analyze their expected time complexity.<br>
-</li>
-<li>Explain why collisions are unavoidable and describe two strategies for handling them: chaining and open addressing (linear probing).</li>
-<li>Trace the state of a hash table after a sequence of insertions, lookups, and deletions under both collision strategies.</li>
-<li>Define load factor and explain how it affects performance; determine when resizing (rehashing) is necessary.</li>
-<li>Explain the reason time complexity for hash table operations is for average-case <span class="math inline">\(O(1)\)</span>, and worst-case <span class="math inline">\(O(n)\)</span></li>
-<li>Compare hash table performance against BST-based maps and articulate the tradeoffs between <span class="math inline">\(O(1)\)</span> average vs. <span class="math inline">\(O(\log n)\)</span> guaranteed.</li>
-<li>Recognize scenarios where a hash map is the appropriate data structure choice and justify that choice in terms of time and space tradeoffs.</li>
-</ul>
-<section id="slides-12" class="level2">
-<h2 class="anchored" data-anchor-id="slides-12">Slides</h2>
-<ul>
-<li><a href="slides/slides-12-01.html">Map</a></li>
-<li><a href="slides/slides-12-02.html">Hash Tables</a></li>
-</ul>
-</section>
-<section id="in-class-exercises-5" class="level2">
-<h2 class="anchored" data-anchor-id="in-class-exercises-5">In-class exercises</h2>
-<ul>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7975573/">Hash interface and CharHash implementation</a></li>
-</ul>
-</section>
-<section id="computer-lab-12" class="level2">
-<h2 class="anchored" data-anchor-id="computer-lab-12">Computer Lab 12</h2>
-<ul>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab12.html">Instructions for Computer Lab 12</a></li>
-<li><a href="https://adrianapicoral.com/CSCI1913/labs/lab12-slides.html">Slides for Computer Lab 12</a></li>
-<li>Download <a href="labs/code/lab12files.zip">starter code</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7865456">Gradescope link to Computer Lab 12</a></li>
-</ul>
-</section>
-</section>
-<section id="project-3" class="level1">
-<h1>Project 3</h1>
-<ul>
-<li><a href="projects/project3.html">Instructions for Project 3</a></li>
-<li><a href="projects/code/project3files.zip">Project 3 testing files</a></li>
-<li><a href="https://www.gradescope.com/courses/1233898/assignments/7908186">Gradescope – Project 3</a></li>
-</ul>
-</section>
-<section id="final-exam" class="level1">
-<h1>Final Exam</h1>
-<ul>
-<li><p>Date/time: Saturday May 9, 2026 - 1:30pm to 3:30pm.</p></li>
-<li><p>Room: 230 Bruininks Hall (our regular lecture room)</p></li>
-<li><p><a href="practice/final-exam-practice.html">Practice Exercises for Final Exam</a></p></li>
-<li><p><a href="practice/final-exam-practice-key.html">Practice Exercises for Final Exam – key</a></p></li>
-</ul>
+<section id="key" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Key</h1>
+<p><a href="final-exam-practice-key.html">Access the answers on this other page</a>.</p>
 </section>
 
 </main>
