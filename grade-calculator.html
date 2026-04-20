@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSCI 1913 Grade Simulator</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f5f5;
+      color: #222;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .subtitle {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-header h2 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      background: #e8f0fe;
+      color: #1a56db;
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+
+    .note {
+      font-size: 0.78rem;
+      color: #888;
+      margin-bottom: 0.9rem;
+    }
+
+    .inputs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 0.6rem;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    label {
+      font-size: 0.8rem;
+      color: #555;
+      font-weight: 500;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 0.45rem 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      transition: border-color 0.15s;
+    }
+
+    input[type="number"]:focus {
+      outline: none;
+      border-color: #1a56db;
+    }
+
+    input.dropped {
+      background: #fff8e1;
+      border-color: #f0c040;
+      color: #999;
+    }
+
+    .add-btn {
+      margin-top: 0.75rem;
+      background: none;
+      border: 1px dashed #aaa;
+      color: #666;
+      padding: 0.4rem 0.9rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.15s;
+    }
+
+    .add-btn:hover {
+      border-color: #1a56db;
+      color: #1a56db;
+    }
+
+    .remove-btn {
+      background: none;
+      border: none;
+      color: #bbb;
+      cursor: pointer;
+      font-size: 1rem;
+      line-height: 1;
+      padding: 0 0.2rem;
+      align-self: flex-end;
+    }
+
+    .remove-btn:hover { color: #e53e3e; }
+
+    #result-card {
+      background: #1a56db;
+      color: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    #result-card .final-label {
+      font-size: 0.9rem;
+      opacity: 0.85;
+      margin-bottom: 0.4rem;
+    }
+
+    #result-card .final-percent {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    #result-card .final-letter {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+      opacity: 0.9;
+    }
+
+    .breakdown {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+      text-align: left;
+    }
+
+    .breakdown-item {
+      background: rgba(255,255,255,0.15);
+      border-radius: 5px;
+      padding: 0.45rem 0.7rem;
+      font-size: 0.8rem;
+    }
+
+    .breakdown-item .bi-label { opacity: 0.75; }
+    .breakdown-item .bi-value { font-weight: 600; }
+
+    .scale-note {
+      margin-top: 0.9rem;
+      font-size: 0.75rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+<h1>CSCI 1913 Grade Simulator</h1>
+<p class="subtitle">Spring 2026 &mdash; enter grades as percentages (0&ndash;100)</p>
+<p class="subtitle">This grade simulator is INFORMATIONAL only, the rounding of grades in this page might be different than the rounding that the canvas gradebook does.</p>
+
+<!-- Quizzes -->
+<div class="card">
+  <div class="card-header">
+    <h2>Quizzes</h2>
+    <span class="badge">20%</span>
+  </div>
+  <p class="note">10 quizzes &mdash; 2 lowest grades dropped automatically</p>
+  <div class="inputs-grid" id="quiz-inputs">
+    <div class="input-group"><label>Quiz 1</label><input type="number" min="0" max="100" placeholder="—" oninput="calculate()"></div>
+    <div class="input-group"><label>Quiz 2</label><input type="number" min="0" max="100" placeholder="—" oninput="calculate()"></div>
+    <div class="input-group"><label>Quiz 3</label><input type="number" min="0" max="100" placeholder="—" oninput="calculate()"></div>
+    <div class="input-group"><label>Quiz 4</label><input type="number" min="0" max="100" placeholder="—" oninput="calculate()"></div>
+    <div class="input-group"><label>Quiz 5</label><input type="number" min="0" max="100" placeholder="—" oninput="calculate()"></div>
+    <div class="input-group"><label>Quiz 6</label><input type="number" min="0" max="100" placeholder="—" oninput="calculate()"></div>
+    <div class="input-group"><label>Quiz 7</label><input type="number" min="0" max="100" placeholder="—" oninput="calculate()"></div>
+    <div class="input-group"><label>Quiz 8</label><input type="number" min="0" max="100" placeholder="—" oninput="calculate()"></div>
+    <div class="input-group"><label>Quiz 9</label><input type="number" min="0" max="100" placeholder="—" oninput="calculate()"></div>
+    <div class="input-group"><label>Quiz 10</label><input type="number" min="0" max="100" placeholder="—" oninput="calculate()"></div>
+  </div>
+</div>
+
+<!-- Projects -->
+<div class="card" id="project-card">
+  <div class="card-header">
+    <h2>Projects</h2>
+    <span class="badge">20%</span>
+  </div>
+  <p class="note">3 programming projects &mdash; no drops</p>
+  <div class="inputs-grid" id="project-inputs">
+    <div class="input-group"><label>Project 1</label><input type="number" min="0" max="100" placeholder="—" oninput="calculate()"></div>
+    <div class="input-group"><label>Project 2</label><input type="number" min="0" max="100" placeholder="—" oninput="calculate()"></div>
+    <div class="input-group"><label>Project 3</label><input type="number" min="0" max="100" placeholder="—" oninput="calculate()"></div>
+  </div>
+</div>
+
+<!-- Labs -->
+<div class="card">
+  <div class="card-header">
+    <h2>Labs</h2>
+    <span class="badge">15%</span>
+  </div>
+  <p class="note">12 labs &mdash; 2 lowest lab grades dropped automatically</p>
+  <div class="inputs-grid" id="lab-inputs"></div>
+  <button class="add-btn" onclick="addLab()">+ Add lab</button>
+</div>
+
+<!-- Reading Assignments -->
+<div class="card">
+  <div class="card-header">
+    <h2>Reading Assignments</h2>
+    <span class="badge">5%</span>
+  </div>
+  <div class="inputs-grid">
+    <div class="input-group">
+      <label>Overall %</label>
+      <input type="number" min="0" max="100" placeholder="—" id="reading-input" oninput="calculate()">
+    </div>
+  </div>
+</div>
+
+<!-- Midterm 1 -->
+<div class="card">
+  <div class="card-header">
+    <h2>Midterm 1</h2>
+    <span class="badge">10%</span>
+  </div>
+  <div class="inputs-grid">
+    <div class="input-group">
+      <label>Grade %</label>
+      <input type="number" min="0" max="100" placeholder="—" id="midterm1-input" oninput="calculate()">
+    </div>
+  </div>
+</div>
+
+<!-- Midterm 2 -->
+<div class="card">
+  <div class="card-header">
+    <h2>Midterm 2</h2>
+    <span class="badge">14%</span>
+  </div>
+  <div class="inputs-grid">
+    <div class="input-group">
+      <label>Grade %</label>
+      <input type="number" min="0" max="100" placeholder="—" id="midterm2-input" oninput="calculate()">
+    </div>
+  </div>
+</div>
+
+<!-- Final Exam -->
+<div class="card">
+  <div class="card-header">
+    <h2>Final Exam</h2>
+    <span class="badge">16%</span>
+  </div>
+  <div class="inputs-grid">
+    <div class="input-group">
+      <label>Grade %</label>
+      <input type="number" min="0" max="100" placeholder="—" id="final-input" oninput="calculate()">
+    </div>
+  </div>
+</div>
+
+<!-- Result -->
+<div id="result-card">
+  <div class="final-label">Estimated Final Grade</div>
+  <div class="final-percent" id="final-percent">—</div>
+  <div class="final-letter" id="final-letter"></div>
+  <div class="breakdown">
+    <div class="breakdown-item">
+      <div class="bi-label">Quizzes (20%)</div>
+      <div class="bi-value" id="bd-quiz">—</div>
+    </div>
+    <div class="breakdown-item">
+      <div class="bi-label">Projects (20%)</div>
+      <div class="bi-value" id="bd-proj">—</div>
+    </div>
+    <div class="breakdown-item">
+      <div class="bi-label">Labs (15%)</div>
+      <div class="bi-value" id="bd-labs">—</div>
+    </div>
+    <div class="breakdown-item">
+      <div class="bi-label">Reading (5%)</div>
+      <div class="bi-value" id="bd-read">—</div>
+    </div>
+    <div class="breakdown-item">
+      <div class="bi-label">Midterm 1 (10%)</div>
+      <div class="bi-value" id="bd-mid1">—</div>
+    </div>
+    <div class="breakdown-item">
+      <div class="bi-label">Midterm 2 (14%)</div>
+      <div class="bi-value" id="bd-mid2">—</div>
+    </div>
+    <div class="breakdown-item">
+      <div class="bi-label">Final Exam (16%)</div>
+      <div class="bi-value" id="bd-final">—</div>
+    </div>
+  </div>
+  <div class="scale-note">A &ge;93 &nbsp;|&nbsp; A- &ge;90 &nbsp;|&nbsp; B+ &ge;87 &nbsp;|&nbsp; B &ge;83 &nbsp;|&nbsp; B- &ge;80 &nbsp;|&nbsp; C+ &ge;77 &nbsp;|&nbsp; C &ge;73 &nbsp;|&nbsp; C- &ge;70 &nbsp;|&nbsp; D+ &ge;67 &nbsp;|&nbsp; D &ge;60 &nbsp;|&nbsp; F &lt;60</div>
+</div>
+
+<script>
+  let labCount = 0;
+
+  function addLab() {
+    labCount++;
+    const container = document.getElementById('lab-inputs');
+    const div = document.createElement('div');
+    div.className = 'input-group';
+    div.dataset.labId = labCount;
+    div.innerHTML = `
+      <label>Lab ${labCount} <button class="remove-btn" onclick="removeLab(${labCount})" title="Remove">&#x2715;</button></label>
+      <input type="number" min="0" max="100" placeholder="—" oninput="calculate()">
+    `;
+    container.appendChild(div);
+    calculate();
+  }
+
+  function removeLab(id) {
+    const div = document.querySelector(`[data-lab-id="${id}"]`);
+    if (div) { div.remove(); renumberLabs(); calculate(); }
+  }
+
+  function renumberLabs() {
+    const groups = document.querySelectorAll('#lab-inputs .input-group');
+    groups.forEach((g, i) => {
+      const lbl = g.querySelector('label');
+      lbl.childNodes[0].textContent = `Lab ${i + 1} `;
+    });
+  }
+
+  function avg(values) {
+    if (!values.length) return null;
+    return values.reduce((a, b) => a + b, 0) / values.length;
+  }
+
+  function getFilledValues(inputs) {
+    return Array.from(inputs)
+      .map(i => i.value.trim())
+      .filter(v => v !== '')
+      .map(Number);
+  }
+
+  function dropLowest(vals, n) {
+    if (vals.length === 0) return { kept: [], dropped: [] };
+    const numDrop = Math.min(n, vals.length - 1);
+    const sorted = [...vals].sort((a, b) => a - b);
+    const toDrop = sorted.slice(0, numDrop);
+    let dropCopy = [...toDrop];
+    const kept = vals.filter(v => {
+      const i = dropCopy.indexOf(v);
+      if (i !== -1) { dropCopy.splice(i, 1); return false; }
+      return true;
+    });
+    return { kept, dropped: toDrop };
+  }
+
+  function markDropped(inputs, droppedVals) {
+    let markCopy = [...droppedVals];
+    for (const inp of inputs) {
+      if (inp.value === '') continue;
+      const v = Number(inp.value);
+      const i = markCopy.indexOf(v);
+      if (i !== -1) { inp.classList.add('dropped'); markCopy.splice(i, 1); }
+    }
+  }
+
+  function letterGrade(pct) {
+    if (pct >= 93) return 'A';
+    if (pct >= 90) return 'A-';
+    if (pct >= 87) return 'B+';
+    if (pct >= 83) return 'B';
+    if (pct >= 80) return 'B-';
+    if (pct >= 77) return 'C+';
+    if (pct >= 73) return 'C';
+    if (pct >= 70) return 'C-';
+    if (pct >= 67) return 'D+';
+    if (pct >= 60) return 'D';
+    return 'F';
+  }
+
+  function calculate() {
+    const fmt = v => (v !== null && !isNaN(v)) ? v.toFixed(1) + '%' : '—';
+
+    // --- Quizzes (20%, drop 2 lowest of 10) ---
+    const quizInputs = document.querySelectorAll('#quiz-inputs input');
+    quizInputs.forEach(i => i.classList.remove('dropped'));
+    const quizVals = getFilledValues(quizInputs);
+    let quizAvg = null;
+    if (quizVals.length > 0) {
+      const { kept, dropped } = dropLowest(quizVals, 2);
+      quizAvg = avg(kept.length ? kept : quizVals);
+      markDropped(quizInputs, dropped);
+    }
+
+    // --- Projects (20%, 3 projects, no drops) ---
+    const projVals = getFilledValues(document.querySelectorAll('#project-inputs input'));
+    const projAvg = projVals.length > 0 ? avg(projVals) : null;
+
+    // --- Labs (15%, drop 2 lowest of 12) ---
+    const labInputs = document.querySelectorAll('#lab-inputs input');
+    labInputs.forEach(i => i.classList.remove('dropped'));
+    const labVals = getFilledValues(labInputs);
+    let labAvg = null;
+    if (labVals.length > 0) {
+      const { kept, dropped } = dropLowest(labVals, 2);
+      labAvg = avg(kept.length ? kept : labVals);
+      markDropped(labInputs, dropped);
+    }
+
+    // --- Reading (5%) ---
+    const readingRaw = document.getElementById('reading-input').value.trim();
+    const readingAvg = readingRaw !== '' ? Number(readingRaw) : null;
+
+    // --- Midterm 1 (10%) ---
+    const mid1Raw = document.getElementById('midterm1-input').value.trim();
+    const mid1Avg = mid1Raw !== '' ? Number(mid1Raw) : null;
+
+    // --- Midterm 2 (14%) ---
+    const mid2Raw = document.getElementById('midterm2-input').value.trim();
+    const mid2Avg = mid2Raw !== '' ? Number(mid2Raw) : null;
+
+    // --- Final Exam (16%) ---
+    const finalRaw = document.getElementById('final-input').value.trim();
+    const finalAvg = finalRaw !== '' ? Number(finalRaw) : null;
+
+    // --- Update breakdown panel ---
+    document.getElementById('bd-quiz').textContent = fmt(quizAvg);
+    document.getElementById('bd-proj').textContent = fmt(projAvg);
+    document.getElementById('bd-labs').textContent = fmt(labAvg);
+    document.getElementById('bd-read').textContent = fmt(readingAvg);
+    document.getElementById('bd-mid1').textContent = fmt(mid1Avg);
+    document.getElementById('bd-mid2').textContent = fmt(mid2Avg);
+    document.getElementById('bd-final').textContent = fmt(finalAvg);
+
+    // --- Final weighted grade ---
+    const components = [
+      [quizAvg,    0.20],
+      [projAvg,    0.20],
+      [labAvg,     0.15],
+      [readingAvg, 0.05],
+      [mid1Avg,    0.10],
+      [mid2Avg,    0.14],
+      [finalAvg,   0.16]
+    ];
+    let totalWeight = 0, totalPoints = 0;
+    for (const [val, weight] of components) {
+      if (val !== null && !isNaN(val)) { totalPoints += val * weight; totalWeight += weight; }
+    }
+
+    if (totalWeight === 0) {
+      document.getElementById('final-percent').textContent = '—';
+      document.getElementById('final-letter').textContent = '';
+      return;
+    }
+
+    const finalPct = totalPoints / totalWeight;
+    document.getElementById('final-percent').textContent = finalPct.toFixed(1) + '%';
+    document.getElementById('final-letter').textContent = letterGrade(finalPct);
+  }
+
+  // Start with 12 labs
+  for (let i = 0; i < 12; i++) addLab();
+</script>
+</body>
+</html>
