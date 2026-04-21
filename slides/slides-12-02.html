@@ -2595,7 +2595,7 @@ font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
 <span id="cb9-15"><a href="#cb9-15"></a>     */</span>
 <span id="cb9-16"><a href="#cb9-16"></a>    private int getIndex(String word) {</span>
 <span id="cb9-17"><a href="#cb9-17"></a>        int total = 0;</span>
-<span id="cb9-18"><a href="#cb9-18"></a>        for (char c : word.toCharArray()) {</span>
+<span id="cb9-18"><a href="#cb9-18"></a>        for (char c : word.toCharArray()) { // is this still O(1)?</span>
 <span id="cb9-19"><a href="#cb9-19"></a>            total += (int) c;</span>
 <span id="cb9-20"><a href="#cb9-20"></a>        }</span>
 <span id="cb9-21"><a href="#cb9-21"></a>        return (total * 997) % tableSize;</span>
