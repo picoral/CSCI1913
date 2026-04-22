@@ -442,7 +442,7 @@
   <meta name="generator" content="quarto-1.6.39">
 
   <meta name="author" content="CSCI 1913 – Introduction to Algorithms, Data Structures, and Program DevelopmentAdriana Picoral">
-  <title>Hash Table</title>
+  <title>Stacks and Queues</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -1051,7 +1051,7 @@ margin-right: 0; }
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Hash Table</h1>
+  <h1 class="title">Stacks and Queues</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -1062,1453 +1062,342 @@ margin-right: 0; }
 </div>
 
 </section>
-<section id="hash-intro" class="slide level2">
-<h2>Hash – Intro</h2>
+<section id="stacks-and-queues" class="slide level2">
+<h2>Stacks and Queues</h2>
 <ul>
-<li>Map – maps a key to a value</li>
-<li>Key – unique, so that when retrieving a value with a key we get the same value</li>
-<li>Key Transformation – hash function</li>
-<li>Hash function – maps N unique keys onto 0..M-1 (index)</li>
+<li>intentionally restrictive</li>
+<li>limit where you can add and remove elements</li>
+</ul>
+<p><strong>Stacks:</strong> Last-In, First-Out (LIFO)</p>
+<p><strong>Queues:</strong> First-In, First-Out (FIFO)</p>
+</section>
+<section id="stacks" class="slide level2">
+<h2>Stacks</h2>
+<ul>
+<li>add to the top (push)</li>
+<li>remove from the top (pop)</li>
 </ul>
 </section>
-<section id="hash-definition" class="slide level2">
-<h2>Hash – definition</h2>
+<section id="stacks-1" class="slide level2">
+<h2>Stacks</h2>
+<pre><code>│         │
+│         │
+│         │  
+├─────────┤    
+│    D    │    ← top
+├─────────┤   
+│    C    │  
+├─────────┤  
+│    B    │ 
+├─────────┤  
+│    A    │  
+└─────────┘  </code></pre>
+</section>
+<section id="stacks-2" class="slide level2">
+<h2>Stacks</h2>
+<pre><code>│    ↓    │
+├─────────┤   
+│    E    │    ← top
+├─────────┤    
+│    D    │
+├─────────┤   
+│    C    │  
+├─────────┤  
+│    B    │ 
+├─────────┤  
+│    A    │  
+└─────────┘       </code></pre>
+<p>push(E)</p>
+</section>
+<section id="stacks-3" class="slide level2">
+<h2>Stacks</h2>
+<pre><code>│    F    │    ← top
+├─────────┤   
+│    E    │
+├─────────┤    
+│    D    │
+├─────────┤   
+│    C    │  
+├─────────┤  
+│    B    │ 
+├─────────┤  
+│    A    │  
+└─────────┘       </code></pre>
+<p>push(F)</p>
+</section>
+<section id="stacks-4" class="slide level2">
+<h2>Stacks</h2>
+<pre><code>│         │
+├─────────┤   
+│    E    │    ← top
+├─────────┤    
+│    D    │
+├─────────┤   
+│    C    │  
+├─────────┤  
+│    B    │ 
+├─────────┤  
+│    A    │  
+└─────────┘   </code></pre>
+<p>pop() → returns F<br>
+returns top and updates it (removes top)</p>
+</section>
+<section id="stacks-5" class="slide level2">
+<h2>Stacks</h2>
+<pre><code>│         │
+│         │
+│         │  
+├─────────┤    
+│    D    │    ← top
+├─────────┤   
+│    C    │  
+├─────────┤  
+│    B    │ 
+├─────────┤  
+│    A    │  
+└─────────┘  </code></pre>
+<p>pop() → returns E returns top and updates it (removes top)</p>
+</section>
+<section id="stacks-6" class="slide level2">
+<h2>Stacks</h2>
 <ul>
-<li>to “hash” something is to summarize it</li>
-<li>a <em>hash function</em> calculates a key (which indicates where the value is)</li>
-<li>it always calculates the same key for the same value</li>
-<li>O(1) average-case performance</li>
+<li>Can be implemented as arrays or linked lists</li>
+<li>Features – <code>push()</code> and <code>pop()</code>, others?</li>
+<li>LIFO – Last In, First Out</li>
 </ul>
-</section>
-<section id="rules-of-hashing" class="slide level2">
-<h2>Rules of hashing</h2>
-<ul>
-<li>Hashing something should be pretty fast</li>
-<li>The “hash” does not need to be reversible</li>
-<li>The “hash” should be repeatable/reliable</li>
-<li>The “hash” should avoid repeated keys (collisions)</li>
-</ul>
-</section>
-<section id="types-of-hashes" class="slide level2">
-<h2>Types of hashes</h2>
-<ul>
-<li>hasmaps
-<ul>
-<li>numbers should look like they were assigned randomly</li>
-</ul></li>
-<li>cryptography
-<ul>
-<li>should be really hard to use backwards</li>
-<li>should be really hard to make collisions</li>
-</ul></li>
-</ul>
-</section>
-<section id="the-hash-function" class="slide level2">
-<h2>The hash function</h2>
-<ul>
-<li>The hash function is our “organizer” (it tells us where things go)</li>
-</ul>
-<p>Simple example:</p>
-<blockquote>
-<p>Write a function to compute a hash code for lowercase alphabetic English caracters (a-z). The function returns integers from 0 to 25, with each char getting a different int. The function returns a wild card for not lowercase alphabetic English chars.</p>
-</blockquote>
-</section>
-<section id="minimal-perfect-hash-function" class="slide level2">
-<h2>Minimal Perfect Hash function</h2>
-<ul>
-<li>hash function maps a specific set of <span class="math inline">\(n\)</span> keys to exactly <span class="math inline">\(n\)</span> consecutive integer values</li>
-<li>integer values are typically 0 to n-1</li>
-<li>no collisions (perfect hash functions are collision free)</li>
-<li>no unused slots (no gaps, key can be used directly as index in array)</li>
-</ul>
-</section>
-<section id="minimal-perfect-hash-function-1" class="slide level2">
-<h2>Minimal Perfect Hash function</h2>
-<ul>
-<li><strong>hash</strong> – if <span class="math inline">\(x == y\)</span> then <span class="math inline">\(h(x) == h(y)\)</span></li>
-<li><strong>perfect</strong> – if <span class="math inline">\(h(x) == h(y)\)</span> then <span class="math inline">\(x == y\)</span></li>
-<li><strong>minimal</strong> – only uses numbers <span class="math inline">\(0\)</span> to <span class="math inline">\((n−1)\)</span></li>
-</ul>
-</section>
-<section id="minimal-perfect-hash-function-2" class="slide level2">
-<h2>Minimal Perfect Hash function</h2>
-<blockquote>
-<p>Write a function to compute a hash code for lowercase alphabetic English caracters (a-z). The function returns integers from 0 to 25, with each char getting a different <strong>int</strong>. The function returns a wild card for not lowercase alphabetic English chars.</p>
-</blockquote>
-</section>
-<section id="general-algorithm" class="slide level2">
-<h2>General algorithm</h2>
-<p>Minimal Perfect Hash function <span class="math inline">\(h(key)\)</span></p>
-<ul>
-<li>Data: store an array (of appropriate length) named <code>values</code></li>
-<li><code>void put(key, value)</code> – values[<span class="math inline">\(h(key)\)</span>] = value</li>
-<li><code>boolean contains(key)</code> – return values[<span class="math inline">\(h(key)\)</span>] != null</li>
-<li><code>int get(key)</code> – return values[<span class="math inline">\(h(key)\)</span>]</li>
-<li><code>void remove(key)</code> – values[<span class="math inline">\(h(key)\)</span>] = null</li>
-</ul>
-</section>
-<section id="hash-generic-interface" class="slide level2">
-<h2>Hash Generic Interface</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href></a>public interface Hash&lt;K, V&gt; {</span>
-<span id="cb1-2"><a href></a>    void put(K key, V value);</span>
-<span id="cb1-3"><a href></a>    boolean contains(K key);</span>
-<span id="cb1-4"><a href></a>    V get(K key);</span>
-<span id="cb1-5"><a href></a>    void remove(K key);</span>
-<span id="cb1-6"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="charhash" class="slide level2">
-<h2>CharHash</h2>
-<p>Here’s the skeleton code for CharHash:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href></a>public class CharHash implements Hash&lt;Character, Integer&gt;{</span>
-<span id="cb2-2"><a href></a>    public void put(Character key, Integer value) {}</span>
-<span id="cb2-3"><a href></a>    public boolean contains(Character key) {return false;}</span>
-<span id="cb2-4"><a href></a>    public Integer get(Character key) {return 0;}</span>
-<span id="cb2-5"><a href></a>    public void remove(Character key){}</span>
-<span id="cb2-6"><a href></a>} </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>What instance variables and helper methods do we need?</p>
-<ul>
-<li>Our hash table is an array of integers, size of 25</li>
-<li>Method to get an index from a character</li>
-</ul>
-</section>
-<section id="the-hash-function-1" class="slide level2">
-<h2>The hash function</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href></a>public int getIndex(char c) {</span>
-<span id="cb3-2"><a href></a>  c = Character.toLowerCase(c);</span>
-<span id="cb3-3"><a href></a>  int hash = (int) c - 97;</span>
-<span id="cb3-4"><a href></a>  if (hash &lt; 0 || hash &gt; 25) return -1;</span>
-<span id="cb3-5"><a href></a>  return hash;</span>
-<span id="cb3-6"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="gradescope-submission" class="slide level2">
-<h2>Gradescope Submission</h2>
-<p>Test your code and submit <code>Hash.java</code> and <code>CharHash.java</code> to <a href="https://www.gradescope.com/courses/1233898/assignments/7975573/">gradescope</a>.</p>
-</section>
-<section id="implementation" class="slide level2">
-<h2>Implementation</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href></a>public class CharHash implements Hash&lt;Character, Integer&gt;{</span>
-<span id="cb4-2"><a href></a>    private Integer[] table = new Integer[26]; // initial values are null</span>
-<span id="cb4-3"><a href></a></span>
-<span id="cb4-4"><a href></a>    private int getIndex(char c) {</span>
-<span id="cb4-5"><a href></a>        c = Character.toLowerCase(c);</span>
-<span id="cb4-6"><a href></a>        int hash = (int) c - 97;</span>
-<span id="cb4-7"><a href></a>        if (hash &lt; 0 || hash &gt; 25) return -1;</span>
-<span id="cb4-8"><a href></a>        return hash;</span>
-<span id="cb4-9"><a href></a>    }</span>
-<span id="cb4-10"><a href></a></span>
-<span id="cb4-11"><a href></a>    public void put(Character key, Integer value) {</span>
-<span id="cb4-12"><a href></a>        int index = getIndex(key);</span>
-<span id="cb4-13"><a href></a>        if (index &gt;= 0) table[index] = value;</span>
-<span id="cb4-14"><a href></a>    }</span>
-<span id="cb4-15"><a href></a></span>
-<span id="cb4-16"><a href></a>    public boolean contains(Character key) {</span>
-<span id="cb4-17"><a href></a>        int index = getIndex(key);</span>
-<span id="cb4-18"><a href></a>        if (index &gt;= 0) return table[index] != null;</span>
-<span id="cb4-19"><a href></a>        return false;</span>
-<span id="cb4-20"><a href></a>    }</span>
-<span id="cb4-21"><a href></a></span>
-<span id="cb4-22"><a href></a>    public Integer get(Character key) {</span>
-<span id="cb4-23"><a href></a>        int index = getIndex(key);</span>
-<span id="cb4-24"><a href></a>        if (index &gt;= 0) return table[index];</span>
-<span id="cb4-25"><a href></a>        return null;</span>
-<span id="cb4-26"><a href></a>    }</span>
-<span id="cb4-27"><a href></a></span>
-<span id="cb4-28"><a href></a>    public void remove(Character key){</span>
-<span id="cb4-29"><a href></a>        int index = getIndex(key);</span>
-<span id="cb4-30"><a href></a>        if (index &gt;= 0) table[index] = null;</span>
-<span id="cb4-31"><a href></a>    }</span>
-<span id="cb4-32"><a href></a></span>
-<span id="cb4-33"><a href></a>    public String toString() {</span>
-<span id="cb4-34"><a href></a>        String out = &quot;&quot;;</span>
-<span id="cb4-35"><a href></a>        for (int i=0;i&lt;26;i++)</span>
-<span id="cb4-36"><a href></a>            if (table[i] != null) {</span>
-<span id="cb4-37"><a href></a>                char c = (char) (97+i);</span>
-<span id="cb4-38"><a href></a>                out += c + &quot; -- &quot; + table[i] + &quot;\n&quot;;</span>
-<span id="cb4-39"><a href></a>            }</span>
-<span id="cb4-40"><a href></a>        return out.trim();</span>
-<span id="cb4-41"><a href></a>    }</span>
-<span id="cb4-42"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="minimal-perfect-hash-function-3" class="slide level2">
-<h2>Minimal Perfect Hash function</h2>
-<p>Advantages:</p>
-<ul>
-<li>simple code</li>
-<li>fast</li>
-</ul>
-<p>Disadvantages:</p>
-<ul>
-<li>hard to find a set of values that works</li>
-<li>inflexible (item set is fixed)</li>
-<li>large item sets may be wasteful
-<ul>
-<li>Example: As of Unicode version 18.0, there are 394,194 assigned characters</li>
-</ul></li>
-</ul>
-</section>
-<section id="hash-functions" class="slide level2">
-<h2>Hash functions</h2>
-<p>Constraints:</p>
-<ul>
-<li>hash function needs to return same key for the same value
-<ul>
-<li><code>if X.equals(y) then X.hashCode() == Y.hashCode()</code></li>
-<li>object doesn’t change - hashCode doesn’t change</li>
-</ul></li>
-<li>to be fast, hash collisions need to be avoided (hard to mathematically formalize this in general case)</li>
-<li>(As much as possible) <code>if !X.equals(y) then X.hashCode() != Y.hashCode()</code></li>
-</ul>
-</section>
-<section id="imperfect-hash-functions" class="slide level2">
-<h2>Imperfect hash functions</h2>
-<p>Two main issues:</p>
-<ul>
-<li>not minimal – hash values could be very-large or negative</li>
-<li>not perfect – collisions are possible</li>
-</ul>
-</section>
-<section id="simple-example" class="slide level2">
-<h2>Simple example</h2>
-<p>Here are the values that are to be stored in the hash table:</p>
-<pre><code>37, 7, 73, 77, 11, 68, 50, 66, 19, 4, 1, 18, 76, 71, 31, 45, 12, 25, 49, 53,
-69, 87, 41, 2, 43, 23, 62, 38, 47, 51, 55, 65, 58, 91, 17, 63, 27, 88, 48</code></pre>
-<ul>
-<li>What should the size of the table be?</li>
-<li>What would be a good hash function to store these numbers?</li>
-</ul>
-</section>
-<section id="simple-example-1" class="slide level2">
-<h2>Simple example</h2>
-<p>Here’s a hash function in java:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href></a>public class Hash {</span>
-<span id="cb6-2"><a href></a>    int tableSize;</span>
-<span id="cb6-3"><a href></a></span>
-<span id="cb6-4"><a href></a>    public Hash(int size) {</span>
-<span id="cb6-5"><a href></a>        tableSize = size;</span>
-<span id="cb6-6"><a href></a>    }</span>
-<span id="cb6-7"><a href></a></span>
-<span id="cb6-8"><a href></a>    public int getHash(int value) {</span>
-<span id="cb6-9"><a href></a>        return Math.abs(value % tableSize);</span>
-<span id="cb6-10"><a href></a>    }</span>
-<span id="cb6-11"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>How many collisions would we get?</li>
-</ul>
-<p>Table size: 10</p>
-<pre><code>0 - 1   1 - 7   2 - 3   3 - 5   4 - 1 
-5 - 4   6 - 2   7 - 7   8 - 6   9 - 3</code></pre>
-</section>
-<section id="simple-example-testing" class="slide level2">
-<h2>Simple example – testing</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href></a>int[] values = new int[]{37, 7, 73, 77, 11, 68, 50, 66, 19, 4, 1, 18, 76, 71,</span>
-<span id="cb8-2"><a href></a>  31, 45, 12, 25, 49, 53, 69, 87, 41, 2, 43, 23, 62, 38, 47, 51, 55, 65, 58, </span>
-<span id="cb8-3"><a href></a>  91, 17, 63, 27, 88, 48};</span>
-<span id="cb8-4"><a href></a></span>
-<span id="cb8-5"><a href></a>int size = 20;</span>
-<span id="cb8-6"><a href></a>Hash hash = new Hash(size);</span>
-<span id="cb8-7"><a href></a></span>
-<span id="cb8-8"><a href></a>int[] indices = new int[size];</span>
-<span id="cb8-9"><a href></a>for (int v : values) {</span>
-<span id="cb8-10"><a href></a>  indices[hash.getHash(v)] += 1;</span>
-<span id="cb8-11"><a href></a>}</span>
-<span id="cb8-12"><a href></a></span>
-<span id="cb8-13"><a href></a>for (int i=0; i&lt;size; i++) {</span>
-<span id="cb8-14"><a href></a>  System.out.println(i + &quot; - &quot; + indices[i] );</span>
-<span id="cb8-15"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="what-does-claude-say" class="slide level2">
-<h2>What does Claude say?</h2>
-<p>Simple and fast solution:</p>
-<ul>
-<li>h(k) = k mod m</li>
-<li>m = 53 (a prime number)
-<ul>
-<li>Prime numbers reduce clustering and collisions</li>
-<li>53 is larger than 39 (your data size) but not excessively so</li>
-<li>Gives a good load factor of about 0.74 (39/53)</li>
-</ul></li>
-</ul>
-</section>
-<section id="what-does-claude-say-1" class="slide level2">
-<h2>What does Claude say?</h2>
-<p>Claude claims this works well for any table size:</p>
-<ul>
-<li>h(k) = ⌊m × (k × A mod 1)⌋</li>
-<li>Using A ≈ 0.6180339887 (golden ratio constant) with m = 64</li>
-</ul>
-<blockquote>
-<p>Does this work well?</p>
-</blockquote>
-</section>
-<section id="exercise" class="slide level2">
-<h2>Exercise</h2>
-<p>Consider an initially empty hash table <span class="math inline">\(H\)</span> of size 15, designed to store integer keys. The hash function is defined as:</p>
-<p>hash(k) = ⌊k mod length(<span class="math inline">\(H\)</span>)⌋</p>
-<p>Insert the following sequence of keys in the given order: -524, 16, 322, -15, 78, -212</p>
-</section>
-<section id="exercise-1" class="slide level2">
-<h2>Exercise</h2>
-<p>hash(k) = ⌊k mod length(<span class="math inline">\(H\)</span>)⌋</p>
-<p>Insert the following sequence of keys in the given order: -524, 16, 322, -15, 78, -212</p>
-<p><br><br></p>
-<style type="text/css">
-.tg {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:34px;
-overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-.tg2 {border-collapse:collapse;border-spacing:0;}
-.tg2 td{border-color:black;border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:34px;
-overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg2 th{border-color:black;border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;
-font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg2 .tg2-0pky{border-color:inherit;text-align:left;vertical-align:top}
-</style>
-<center>
-<table class="tg2">
-<thead>
-<tr>
-<td class="tg2-0pky">
- 0 
-</td>
-<td class="tg2-0pky">
- 1 
-</td>
-<td class="tg2-0pky">
- 2 
-</td>
-<td class="tg2-0pky">
- 3 
-</td>
-<td class="tg2-0pky">
- 4 
-</td>
-<td class="tg2-0pky">
- 5 
-</td>
-<td class="tg2-0pky">
- 6 
-</td>
-<td class="tg2-0pky">
- 7 
-</td>
-<td class="tg2-0pky">
- 8 
-</td>
-<td class="tg2-0pky">
- 9 
-</td>
-<td class="tg2-0pky">
- 10
-</td>
-<td class="tg2-0pky">
-11
-</td>
-<td class="tg2-0pky">
- 12
-</td>
-<td class="tg2-0pky">
-13
-</td>
-<td class="tg2-0pky">
-14
-</td>
-</tr>
-</thead>
-</table>
-<table class="tg">
-<thead>
-<tr>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-</tr>
-</thead>
-</table>
-</center>
-</section>
-<section id="exercise-2" class="slide level2">
-<h2>Exercise</h2>
-<p>hash(k) = ⌊k mod length(<span class="math inline">\(H\)</span>)⌋</p>
-<p>Insert the following sequence of keys in the given order: -524, 16, 322, -15, 78, -212</p>
-<p><br></p>
-<p>-524 % 15 = -14 (Java doesn’t use the mathematical definition)</p>
-<p>⌊-14⌋ = 14</p>
-<center>
-<table class="tg2">
-<thead>
-<tr>
-<td class="tg2-0pky">
- 0 
-</td>
-<td class="tg2-0pky">
- 1 
-</td>
-<td class="tg2-0pky">
- 2 
-</td>
-<td class="tg2-0pky">
- 3 
-</td>
-<td class="tg2-0pky">
- 4 
-</td>
-<td class="tg2-0pky">
- 5 
-</td>
-<td class="tg2-0pky">
- 6 
-</td>
-<td class="tg2-0pky">
- 7 
-</td>
-<td class="tg2-0pky">
- 8 
-</td>
-<td class="tg2-0pky">
- 9 
-</td>
-<td class="tg2-0pky">
- 10
-</td>
-<td class="tg2-0pky">
-11
-</td>
-<td class="tg2-0pky">
- 12
-</td>
-<td class="tg2-0pky">
- 13
-</td>
-<td class="tg2-0pky">
- 14
-</td>
-</tr>
-</thead>
-</table>
-<table class="tg">
-<thead>
-<tr>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
--524
-</td>
-</tr>
-</thead>
-</table>
-</center>
-</section>
-<section id="exercise-3" class="slide level2">
-<h2>Exercise</h2>
-<p>hash(k) = ⌊k mod length(<span class="math inline">\(H\)</span>)⌋</p>
-<p>Insert the following sequence of keys in the given order: 16, 322, -15, 78, -212</p>
-<p><br></p>
-<p>16 % 15 = 1</p>
-<center>
-<table class="tg2">
-<thead>
-<tr>
-<td class="tg2-0pky">
- 0 
-</td>
-<td class="tg2-0pky">
- 1 
-</td>
-<td class="tg2-0pky">
- 2 
-</td>
-<td class="tg2-0pky">
- 3 
-</td>
-<td class="tg2-0pky">
- 4 
-</td>
-<td class="tg2-0pky">
- 5 
-</td>
-<td class="tg2-0pky">
- 6 
-</td>
-<td class="tg2-0pky">
- 7 
-</td>
-<td class="tg2-0pky">
- 8 
-</td>
-<td class="tg2-0pky">
- 9 
-</td>
-<td class="tg2-0pky">
- 10
-</td>
-<td class="tg2-0pky">
-11
-</td>
-<td class="tg2-0pky">
- 12
-</td>
-<td class="tg2-0pky">
- 13
-</td>
-<td class="tg2-0pky">
- 14
-</td>
-</tr>
-</thead>
-</table>
-<table class="tg">
-<thead>
-<tr>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-16
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
--524
-</td>
-</tr>
-</thead>
-</table>
-</center>
-</section>
-<section id="exercise-4" class="slide level2">
-<h2>Exercise</h2>
-<p>hash(k) = ⌊k mod length(<span class="math inline">\(H\)</span>)⌋</p>
-<p>Insert the following sequence of keys in the given order: 322, -15, 78, -212</p>
-<p><br></p>
-<p>322 % 15 = 7</p>
-<center>
-<table class="tg2">
-<thead>
-<tr>
-<td class="tg2-0pky">
- 0 
-</td>
-<td class="tg2-0pky">
- 1 
-</td>
-<td class="tg2-0pky">
- 2 
-</td>
-<td class="tg2-0pky">
- 3 
-</td>
-<td class="tg2-0pky">
- 4 
-</td>
-<td class="tg2-0pky">
- 5 
-</td>
-<td class="tg2-0pky">
- 6 
-</td>
-<td class="tg2-0pky">
-  7 
-</td>
-<td class="tg2-0pky">
- 8 
-</td>
-<td class="tg2-0pky">
- 9 
-</td>
-<td class="tg2-0pky">
- 10
-</td>
-<td class="tg2-0pky">
- 11
-</td>
-<td class="tg2-0pky">
- 12
-</td>
-<td class="tg2-0pky">
- 13
-</td>
-<td class="tg2-0pky">
- 14
-</td>
-</tr>
-</thead>
-</table>
-<table class="tg">
-<thead>
-<tr>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-16
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-322
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
--524
-</td>
-</tr>
-</thead>
-</table>
-</center>
-</section>
-<section id="exercise-5" class="slide level2">
-<h2>Exercise</h2>
-<p>hash(k) = ⌊k mod length(<span class="math inline">\(H\)</span>)⌋</p>
-<p>Insert the following sequence of keys in the given order: -15, 78, -212</p>
-<p><br></p>
-<p>-15 % 15 = 0</p>
-<center>
-<table class="tg2">
-<thead>
-<tr>
-<td class="tg2-0pky">
- 0 
-</td>
-<td class="tg2-0pky">
- 1 
-</td>
-<td class="tg2-0pky">
- 2 
-</td>
-<td class="tg2-0pky">
- 3 
-</td>
-<td class="tg2-0pky">
- 4 
-</td>
-<td class="tg2-0pky">
- 5 
-</td>
-<td class="tg2-0pky">
- 6 
-</td>
-<td class="tg2-0pky">
-   7 
-</td>
-<td class="tg2-0pky">
- 8 
-</td>
-<td class="tg2-0pky">
- 9 
-</td>
-<td class="tg2-0pky">
- 10
-</td>
-<td class="tg2-0pky">
- 11
-</td>
-<td class="tg2-0pky">
- 12
-</td>
-<td class="tg2-0pky">
- 13
-</td>
-<td class="tg2-0pky">
- 14
-</td>
-</tr>
-</thead>
-</table>
-<table class="tg">
-<thead>
-<tr>
-<td class="tg-0pky">
--15
-</td>
-<td class="tg-0pky">
-16
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-322
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
--524
-</td>
-</tr>
-</thead>
-</table>
-</center>
-</section>
-<section id="exercise-6" class="slide level2">
-<h2>Exercise</h2>
-<p>hash(k) = ⌊k mod length(<span class="math inline">\(H\)</span>)⌋</p>
-<p>Insert the following sequence of keys in the given order: 78, -212</p>
-<p><br></p>
-<p>78 % 15 = 3</p>
-<center>
-<table class="tg2">
-<thead>
-<tr>
-<td class="tg2-0pky">
- 0 
-</td>
-<td class="tg2-0pky">
- 1 
-</td>
-<td class="tg2-0pky">
- 2 
-</td>
-<td class="tg2-0pky">
- 3 
-</td>
-<td class="tg2-0pky">
- 4 
-</td>
-<td class="tg2-0pky">
- 5 
-</td>
-<td class="tg2-0pky">
- 6 
-</td>
-<td class="tg2-0pky">
-   7 
-</td>
-<td class="tg2-0pky">
- 8 
-</td>
-<td class="tg2-0pky">
- 9 
-</td>
-<td class="tg2-0pky">
- 10
-</td>
-<td class="tg2-0pky">
- 11
-</td>
-<td class="tg2-0pky">
- 12
-</td>
-<td class="tg2-0pky">
- 13
-</td>
-<td class="tg2-0pky">
- 14
-</td>
-</tr>
-</thead>
-</table>
-<table class="tg">
-<thead>
-<tr>
-<td class="tg-0pky">
--15
-</td>
-<td class="tg-0pky">
-16
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-78
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-322
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
--524
-</td>
-</tr>
-</thead>
-</table>
-</center>
-</section>
-<section id="exercise-7" class="slide level2">
-<h2>Exercise</h2>
-<p>hash(k) = ⌊k mod length(<span class="math inline">\(H\)</span>)⌋</p>
-<p>Insert the following sequence of keys in the given order: -212</p>
-<p><br></p>
-<p>⌊-212 % 15⌋ = 2</p>
-<center>
-<table class="tg2">
-<thead>
-<tr>
-<td class="tg2-0pky">
- 0 
-</td>
-<td class="tg2-0pky">
- 1 
-</td>
-<td class="tg2-0pky">
-   2 
-</td>
-<td class="tg2-0pky">
- 3 
-</td>
-<td class="tg2-0pky">
- 4 
-</td>
-<td class="tg2-0pky">
- 5 
-</td>
-<td class="tg2-0pky">
- 6 
-</td>
-<td class="tg2-0pky">
-   7 
-</td>
-<td class="tg2-0pky">
- 8 
-</td>
-<td class="tg2-0pky">
- 9 
-</td>
-<td class="tg2-0pky">
- 10
-</td>
-<td class="tg2-0pky">
- 11
-</td>
-<td class="tg2-0pky">
- 12
-</td>
-<td class="tg2-0pky">
- 13
-</td>
-<td class="tg2-0pky">
- 14
-</td>
-</tr>
-</thead>
-</table>
-<table class="tg">
-<thead>
-<tr>
-<td class="tg-0pky">
--15
-</td>
-<td class="tg-0pky">
-16
-</td>
-<td class="tg-0pky">
-212
-</td>
-<td class="tg-0pky">
-78
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-322
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
--524
-</td>
-</tr>
-</thead>
-</table>
-</center>
-</section>
-<section id="exercise-8" class="slide level2">
-<h2>Exercise</h2>
-<p>hash(k) = ⌊k mod length(<span class="math inline">\(H\)</span>)⌋</p>
-<p>Insert the following sequence of keys in the given order: -212</p>
-<p><br></p>
-<p>⌊-212 % 15⌋ = 2</p>
-<center>
-<table class="tg2">
-<thead>
-<tr>
-<td class="tg2-0pky">
- 0 
-</td>
-<td class="tg2-0pky">
- 1 
-</td>
-<td class="tg2-0pky">
-   2 
-</td>
-<td class="tg2-0pky">
- 3 
-</td>
-<td class="tg2-0pky">
- 4 
-</td>
-<td class="tg2-0pky">
- 5 
-</td>
-<td class="tg2-0pky">
- 6 
-</td>
-<td class="tg2-0pky">
-   7 
-</td>
-<td class="tg2-0pky">
- 8 
-</td>
-<td class="tg2-0pky">
- 9 
-</td>
-<td class="tg2-0pky">
- 10
-</td>
-<td class="tg2-0pky">
- 11
-</td>
-<td class="tg2-0pky">
- 12
-</td>
-<td class="tg2-0pky">
- 13
-</td>
-<td class="tg2-0pky">
- 14
-</td>
-</tr>
-</thead>
-</table>
-<table class="tg">
-<thead>
-<tr>
-<td class="tg-0pky">
--15
-</td>
-<td class="tg-0pky">
-16
-</td>
-<td class="tg-0pky">
-212
-</td>
-<td class="tg-0pky">
-78
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-322
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
-    
-</td>
-<td class="tg-0pky">
--524
-</td>
-</tr>
-</thead>
-</table>
-</center>
-<p>What if the next value to be stored is 120?</p>
-</section>
-<section id="imperfect-hash-functions-1" class="slide level2">
-<h2>Imperfect hash functions</h2>
-<p>Two main issues:</p>
-<ul>
-<li>not minimal – hash values could be very-large or negative</li>
-<li>not perfect – collisions are possible</li>
-</ul>
-<p>Two problems to solve: hash code range, collisions</p>
-</section>
-<section id="hash-code-range-problem" class="slide level2">
-<h2>Hash code range problem</h2>
-<p>We compute index from hashcode as follows:</p>
-<p><code>int index = abs(hashCode % tableSize)</code></p>
-<ul>
-<li>modulo will re-map the code to 0 to tableSize-1 range</li>
-<li>if <code>hashCode</code> is negative - modulo is negative - use absolute value to fix</li>
-</ul>
-</section>
-<section id="hash-code-range-problem-1" class="slide level2">
-<h2>Hash code range problem</h2>
-<p>We compute index from hashcode as follows:</p>
-<p><code>int index = abs(hashCode % tableSize)</code></p>
-<p>Consequences:</p>
-<ul>
-<li>Index is based on table size and data:
-<ul>
-<li>Any time we change table size, everything gets a new index</li>
-</ul></li>
-<li>This may cause collisions in an otherwise perfect hash code</li>
-</ul>
-</section>
-<section id="the-collision-problem" class="slide level2">
-<h2>The collision problem</h2>
-<p>This one is hard. Two general approaches, both compromise efficiency:</p>
-<ul>
-<li><p><strong>Open Addressing</strong>: If a slot is taken, probe for the next empty one</p></li>
-<li><p><strong>Chaining</strong>: Each array slot holds a linked list of all items that hashed there. If there’s a collision, just add to the list.</p></li>
-</ul>
-</section>
-<section id="open-addressing" class="slide level2">
-<h2>Open Addressing</h2>
-<p>If space is full put it somewhere else</p>
-<ul>
-<li>linear probing - just go to next free space</li>
-<li>quadratic probing - use a more complicated strategy to pick next space</li>
-<li>double hashing - have “which try is this” be part of hash code computation</li>
-<li>easier to store to a disk (everything is in an array)</li>
-</ul>
-</section>
-<section id="open-addressing-exercise" class="slide level2">
-<h2>Open Addressing exercise</h2>
-<p>Consider an initially empty hash table <span class="math inline">\(H\)</span> of size 5, designed to store integer keys with linear probing. The hash function is defined as:</p>
-<p>hash(k) = k mod length(<span class="math inline">\(H\)</span>)</p>
-<p>Insert the following sequence of keys in the given order: 5, 7, 10</p>
-</section>
-<section id="chaining" class="slide level2">
-<h2>Chaining</h2>
-<p>Key compromise: hash table doesn’t actually “finish” the job - just sorts into buckets.</p>
-<ul>
-<li><code>put</code> → find “bucket”, search bucket, add or set</li>
-<li><code>get</code> → find “bucket”, search bucket</li>
-<li><code>contains</code> → find “bucket” search bucket</li>
-<li><code>remove</code> → find “bucket” search bucket</li>
-</ul>
-</section>
-<section id="chaining-1" class="slide level2">
-<h2>Chaining</h2>
-<ul>
-<li>Finding bucket → O(1)</li>
-<li>Buckets are often O(bucketN)</li>
-<li>Keep buckets small and all is good.</li>
-</ul>
-</section>
-<section id="bucket-choices" class="slide level2">
-<h2>Bucket Choices</h2>
-<ul>
-<li>parallel array map - most buckets have 0 to 1 element - waste of space</li>
-<li>association list (linked chain) - great memory savings on empty buckets</li>
-<li>binary search tree - faster search, more key requirements</li>
-</ul>
-</section>
-<section id="writing-a-good-hash-function" class="slide level2">
-<h2>Writing a good hash function</h2>
-<ul>
-<li>The same value must always produce the same hash code</li>
-<li>Hash codes should be spread evenly across the output space</li>
-<li>The hash function should be fast to compute</li>
-<li>A good hash function makes collisions rare</li>
-<li>(cryptographic) Given a hash, it should be computationally infeasible to find any input that produces it</li>
-</ul>
-</section>
-<section id="load-factor" class="slide level2">
-<h2>Load Factor</h2>
-<p>λ – the “load factor”, <em>n</em> current size of key set, <em>k</em> current size of table</p>
-<p>λ = n / k</p>
-<ul>
-<li>λ &lt; 1 array is sparse</li>
-<li>λ == 1 array probably still sparse</li>
-<li>λ &gt; 1 more items than array – buckets are getting full</li>
-</ul>
-</section>
-<section id="load-factor-exercise" class="slide level2">
-<h2>Load Factor – exercise</h2>
-<p>For one of our previous exercises, we had 39 values to store (<em>n</em>). What would be the load factor λ for different table sizes?</p>
-</section>
-<section id="load-factor-exercise-1" class="slide level2">
-<h2>Load Factor – exercise</h2>
-<p>For one of our previous exercises, we had 39 values to store (<em>n</em>). What would be the load factor λ for different table sizes?</p>
-<ul>
-<li>λ = 39/10 = 3.9</li>
-<li>λ = 39/20 = 1.95</li>
-<li>λ = 39/50 = 0.78</li>
-</ul>
-</section>
-<section id="rehashing-growing-the-table-size" class="slide level2">
-<h2>Rehashing – growing the table size</h2>
-<p>Why?</p>
-<ul>
-<li>Keep load factor small</li>
-<li>Keep performance fast</li>
-</ul>
-</section>
-<section id="rehashing-growing-the-table-size-1" class="slide level2">
-<h2>Rehashing – growing the table size</h2>
-<p>When?</p>
-<ul>
-<li>track load factor</li>
-<li>When too big – make array bigger</li>
-<li>(advanced feature) when too small make smaller</li>
-</ul>
-</section>
-<section id="rehashing-growing-the-table-size-2" class="slide level2">
-<h2>Rehashing – growing the table size</h2>
-<p>How?</p>
-<ul>
-<li>Make new bigger array
-<ul>
-<li>DO NOT: copy position to position</li>
-<li>re-compute index for each element:
-<ul>
-<li>index = hash % tableSize</li>
-<li>hash doesn’t change</li>
-<li>tablesize does</li>
-</ul></li>
-</ul></li>
-</ul>
-</section>
-<section id="hashing-load-factor-rehashing" class="slide level2">
-<h2>Hashing, load factor, rehashing</h2>
-<p>In-class exercise on <a href="https://www.gradescope.com/courses/1233898/assignments/8011604">gradescope</a></p>
-</section>
-<section id="student-rating-of-teaching" class="slide level2">
-<h2>Student Rating of Teaching</h2>
-<p>Go to canvas, on the menu on the left you will see a “Student Rating of Teaching” option.</p>
-<p>Please complete the survey: it’s anonymous, I don’t get the results until summer break, results are used for improving my teaching (and providing feedback to my boss)</p>
-</section>
-<section id="quiz-10" class="slide level2">
-<h2>Quiz 10</h2>
-<p>You have 10 minutes to complete the quiz.</p>
-<p>You should provide both the array and the binary tree for each of the two questions.</p>
-</section>
-<section id="practice" class="slide level2">
-<h2>Practice</h2>
-<p>Design a Simple Spell Checker.</p>
-<p>You’re building a spell checker that needs to quickly determine if a word exists in a dictionary of 100,000 English words</p>
-<p>Implement a hash table to store the dictionary. Write a simple hash function for strings that takes a word as input and returns an integer index for an array.</p>
-</section>
-<section id="analyze-your-hash-function" class="slide level2">
-<h2>Analyze Your Hash Function</h2>
-<p>Test your hash function with a sample of words. Does it:</p>
-<ul>
-<li>Distribute words evenly across buckets?</li>
-<li>Handle similar words (like “cat” and “act”) differently?</li>
-<li>Produce many collisions?</li>
-</ul>
-<p>Implement <code>.put(String key)</code> and <code>.contains(String key)</code></p>
-</section>
-<section id="gradescope" class="slide level2">
-<h2>Gradescope</h2>
-<p>Submit your <code>WordHash.java</code> file to <a href="https://www.gradescope.com/courses/1233898/assignments/8011840">gradescope</a></p>
+<p>Write up a generic stack interface</p>
 </section>
 <section id="solution" class="slide level2">
 <h2>Solution</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href></a>public class WordHash {</span>
-<span id="cb9-2"><a href></a>    private String[] table;</span>
-<span id="cb9-3"><a href></a>    private int tableSize = 70000;</span>
-<span id="cb9-4"><a href></a>    private int count;</span>
-<span id="cb9-5"><a href></a></span>
-<span id="cb9-6"><a href></a>    public WordHash() {</span>
-<span id="cb9-7"><a href></a>        table = new String[tableSize];</span>
-<span id="cb9-8"><a href></a>        count = 0;</span>
-<span id="cb9-9"><a href></a>    }</span>
-<span id="cb9-10"><a href></a></span>
-<span id="cb9-11"><a href></a>    /**</span>
-<span id="cb9-12"><a href></a>     * Hash function</span>
-<span id="cb9-13"><a href></a>     * @param word is a string, a word in English</span>
-<span id="cb9-14"><a href></a>     * @return an index, which is an int between 0 and tableSize-1</span>
-<span id="cb9-15"><a href></a>     */</span>
-<span id="cb9-16"><a href></a>    private int getIndex(String word) {</span>
-<span id="cb9-17"><a href></a>        int total = 0;</span>
-<span id="cb9-18"><a href></a>        for (char c : word.toCharArray()) { // is this still O(1)?</span>
-<span id="cb9-19"><a href></a>            total += (int) c;</span>
-<span id="cb9-20"><a href></a>        }</span>
-<span id="cb9-21"><a href></a>        return (total * 997) % tableSize;</span>
-<span id="cb9-22"><a href></a>    }</span>
-<span id="cb9-23"><a href></a></span>
-<span id="cb9-24"><a href></a>    public void put(String word) {</span>
-<span id="cb9-25"><a href></a>        int index = getIndex(word);</span>
-<span id="cb9-26"><a href></a>        while (table[index] != null) {</span>
-<span id="cb9-27"><a href></a>            index++;</span>
-<span id="cb9-28"><a href></a>            if (index == tableSize -1) index = 0;</span>
-<span id="cb9-29"><a href></a>        }</span>
-<span id="cb9-30"><a href></a>        table[index] = word;</span>
-<span id="cb9-31"><a href></a>        count++;</span>
-<span id="cb9-32"><a href></a>        if (load() &gt; 0.7) expandArray();</span>
-<span id="cb9-33"><a href></a>    }</span>
-<span id="cb9-34"><a href></a></span>
-<span id="cb9-35"><a href></a>    public boolean contains(String word) {</span>
-<span id="cb9-36"><a href></a>        int index = getIndex(word);</span>
-<span id="cb9-37"><a href></a>        while (table[index]!= null &amp;&amp; !table[index].equals(word)) {</span>
-<span id="cb9-38"><a href></a>            index++;</span>
-<span id="cb9-39"><a href></a>            if (index == tableSize-1) index = 0;</span>
-<span id="cb9-40"><a href></a>        }</span>
-<span id="cb9-41"><a href></a>        if (table[index] == null) return false;</span>
-<span id="cb9-42"><a href></a>        return true;</span>
-<span id="cb9-43"><a href></a>    }</span>
-<span id="cb9-44"><a href></a></span>
-<span id="cb9-45"><a href></a>    private int whereToPut(String word, String[] newTable) {</span>
-<span id="cb9-46"><a href></a>        int index = getIndex(word);</span>
-<span id="cb9-47"><a href></a>        while (newTable[index] != null) {</span>
-<span id="cb9-48"><a href></a>            index++;</span>
-<span id="cb9-49"><a href></a>            if (index == tableSize-1) index = 0;</span>
-<span id="cb9-50"><a href></a>        }</span>
-<span id="cb9-51"><a href></a>        return index;</span>
-<span id="cb9-52"><a href></a>    }</span>
-<span id="cb9-53"><a href></a></span>
-<span id="cb9-54"><a href></a>    private void expandArray() {</span>
-<span id="cb9-55"><a href></a>        tableSize *= 2;</span>
-<span id="cb9-56"><a href></a>        String[] newTable = new String[tableSize];</span>
-<span id="cb9-57"><a href></a>        for (String word : table) {</span>
-<span id="cb9-58"><a href></a>          newTable[whereToPut(word, newTable)] = word;</span>
-<span id="cb9-59"><a href></a>        }</span>
-<span id="cb9-60"><a href></a>        table = newTable;</span>
-<span id="cb9-61"><a href></a>    }</span>
-<span id="cb9-62"><a href></a></span>
-<span id="cb9-63"><a href></a>    public double load() {</span>
-<span id="cb9-64"><a href></a>        return (double) count / (double) tableSize;</span>
-<span id="cb9-65"><a href></a>    }</span>
-<span id="cb9-66"><a href></a></span>
-<span id="cb9-67"><a href></a>    @Override</span>
-<span id="cb9-68"><a href></a>    public String toString() {</span>
-<span id="cb9-69"><a href></a>        String retVal = &quot;&quot;;</span>
-<span id="cb9-70"><a href></a>        for (int i=0; i &lt; tableSize; i++) {</span>
-<span id="cb9-71"><a href></a>            if (table[i] != null) retVal += i + &quot; - &quot; + table[i] + &quot;\n&quot;;</span>
-<span id="cb9-72"><a href></a>        }</span>
-<span id="cb9-73"><a href></a>        return retVal.trim();</span>
-<span id="cb9-74"><a href></a>    }</span>
-<span id="cb9-75"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href></a>public interface Stack&lt;T&gt; {</span>
+<span id="cb6-2"><a href></a></span>
+<span id="cb6-3"><a href></a>    /**</span>
+<span id="cb6-4"><a href></a>     * Stack is LIFO – Last In, First Ou</span>
+<span id="cb6-5"><a href></a>     * add a new value (with T data) to the top of the stack</span>
+<span id="cb6-6"><a href></a>     * @param data of generic type T</span>
+<span id="cb6-7"><a href></a>     */</span>
+<span id="cb6-8"><a href></a>    void push(T data);</span>
+<span id="cb6-9"><a href></a></span>
+<span id="cb6-10"><a href></a>    /**</span>
+<span id="cb6-11"><a href></a>     * Removes and returns the value at the top of the stack</span>
+<span id="cb6-12"><a href></a>     * @return the value stored in the node at the top of the stack</span>
+<span id="cb6-13"><a href></a>     */</span>
+<span id="cb6-14"><a href></a>    T pop();</span>
+<span id="cb6-15"><a href></a></span>
+<span id="cb6-16"><a href></a>    /**</span>
+<span id="cb6-17"><a href></a>     * Looks at the value at the top of the stack without removing it</span>
+<span id="cb6-18"><a href></a>     * @return the value stored in the node at the top of the stack</span>
+<span id="cb6-19"><a href></a>     */</span>
+<span id="cb6-20"><a href></a>    T top();</span>
+<span id="cb6-21"><a href></a>  </span>
+<span id="cb6-22"><a href></a>   /**</span>
+<span id="cb6-23"><a href></a>     * @return true if Stack is empty, false otherwise</span>
+<span id="cb6-24"><a href></a>     */</span>
+<span id="cb6-25"><a href></a>    boolean isEmpty();</span>
+<span id="cb6-26"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="implementation-of-the-stack-interface" class="slide level2">
+<h2>Implementation of the Stack Interface</h2>
+<ul>
+<li>Stack as a linked list vs. array implementation
+<ul>
+<li>remember that stacks grow and shrink from only one end</li>
+</ul></li>
+<li>Complexity – how does runtime compare?</li>
+<li>Which is better (array or linked list)?</li>
+</ul>
+</section>
+<section id="stack-applications" class="slide level2">
+<h2>Stack Applications</h2>
+<ul>
+<li>Traversing a maze, a graph, or a tree</li>
+<li>Expression evaluation (infix &lt;–&gt; postfix)</li>
+<li>Implementing a recursive process using iteration (and a stack)</li>
+</ul>
+</section>
+<section id="balanced-parentheses-checker" class="slide level2">
+<h2>Balanced Parentheses Checker</h2>
+<p>Problem: Write a program that checks if parentheses, brackets, and braces are properly balanced in a string.</p>
+<p>Examples:</p>
+<ul>
+<li><span class="math inline">\(()\)</span> → valid</li>
+<li><span class="math inline">\(()[]{}\)</span> → valid</li>
+<li><span class="math inline">\(([{}])\)</span> → valid</li>
+<li><span class="math inline">\((]\)</span> → invalid</li>
+<li><span class="math inline">\(([)]\)</span> → invalid</li>
+<li><span class="math inline">\((((\)</span> → invalid</li>
+</ul>
+</section>
+<section>
+<section id="queues" class="title-slide slide level1 center">
+<h1>Queues</h1>
 
 </section>
+<section id="queues-1" class="slide level2">
+<h2>Queues</h2>
+<ul>
+<li>add to the back (enqueue)</li>
+<li>remove from the front (dequeue)</li>
+</ul>
+</section></section>
+<section>
+<section id="queues-2" class="title-slide slide level1 center">
+<h1>Queues</h1>
+<pre><code>First In First Out                                                                                                                   
+
+back  ┌───┬───┬───┬───┐ front
+─────▶│ D │ C │ B │ A │──────▶
+      └───┴───┴───┴───┘</code></pre>
+</section>
+<section id="queues-3" class="slide level2">
+<h2>Queues</h2>
+<pre><code>  enqueue(E)                             
+  adds to back  
+       
+       
+back  ┌───┬───┬───┬───┬───┐  front
+─────▶│ E │ D │ C │ B │ A │──────▶
+      └───┴───┴───┴───┴───┘</code></pre>
+</section>
+<section id="queues-4" class="slide level2">
+<h2>Queues</h2>
+<pre><code>dequeue()
+removes from front
+
+
+back  ┌───┬───┬───┬───┐  front    returns A
+─────▶│ D │ C │ B │ A │──────▶
+      └───┴───┴───┴───┘
+      
+            │
+            ▼  after dequeue
+back  ┌───┬───┬───┐  front
+─────▶│ D │ C │ B │──────▶
+      └───┴───┴───┘</code></pre>
+</section>
+<section id="queues-5" class="slide level2">
+<h2>Queues</h2>
+<pre><code>peek()                       
+returns front, no removal
+
+ back  ┌───┬───┬───┬───┐  front   
+ ─────▶│ D │ C │ B │ A │──────▶    
+       └───┴───┴───┴───┘      
+                  
+              returns A      
+              does NOT          
+              remove it             </code></pre>
+</section>
+<section id="queues-6" class="slide level2">
+<h2>Queues</h2>
+<ul>
+<li>FIFO – First In, First Out</li>
+<li>Queue basics:
+<ul>
+<li><code>enqueue()</code> (adds to the end of the queue)</li>
+<li><code>dequeue()</code> (removes from the beginning of the queue)</li>
+</ul></li>
+</ul>
+<p>Write up a generic queue interface</p>
+</section>
+<section id="solution-1" class="slide level2">
+<h2>Solution</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href></a>public interface Queue&lt;T&gt; {</span>
+<span id="cb11-2"><a href></a>    /**</span>
+<span id="cb11-3"><a href></a>     * Queue is First In, First Out</span>
+<span id="cb11-4"><a href></a>     * @param data is the value to be added to the end of the queue</span>
+<span id="cb11-5"><a href></a>     */</span>
+<span id="cb11-6"><a href></a>    void enqueue(T data);</span>
+<span id="cb11-7"><a href></a></span>
+<span id="cb11-8"><a href></a>    /**</span>
+<span id="cb11-9"><a href></a>     * Removes the value from the beginning of the queue and returns it</span>
+<span id="cb11-10"><a href></a>     * @return the value of type T at the beginning of the queue</span>
+<span id="cb11-11"><a href></a>     */</span>
+<span id="cb11-12"><a href></a>    T dequeue();</span>
+<span id="cb11-13"><a href></a></span>
+<span id="cb11-14"><a href></a>    /**</span>
+<span id="cb11-15"><a href></a>     * @return true if Queue is empty, false otherwise</span>
+<span id="cb11-16"><a href></a>     */</span>
+<span id="cb11-17"><a href></a>    boolean isEmpty();</span>
+<span id="cb11-18"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="implementation-of-the-queue-interface" class="slide level2">
+<h2>Implementation of the Queue Interface</h2>
+<p>Queue as a linked list vs. array implementation</p>
+<ul>
+<li>Linked List implementation – keep <code>head</code> and <code>tail</code> like we did for our first Linked List implementation</li>
+<li>Array queue implementation requires some creativity because the “filled” portion of the array will tend to “move” upwards in the array with potential for lots of wasted space</li>
+</ul>
+</section>
+<section id="circular-array" class="slide level2">
+<h2>Circular Array</h2>
+<ul>
+<li>Keep track of two array indices: front, rear</li>
+<li>Front index is not necessarily &lt; rear index</li>
+<li>Use <code>%</code> operator to “wrap” around the array
+<ul>
+<li>enqueue: back = (back + 1) % capacity</li>
+<li>dequeue: front = (front + 1) % capacity</li>
+</ul></li>
+<li>This allows for the utilization of the entire array</li>
+<li>Array is ful if number of <code>count = array.length</code></li>
+</ul>
+<p>Resizing?</p>
+</section>
+<section id="circular-array-1" class="slide level2">
+<h2>Circular Array</h2>
+<pre><code>   0   1   2   3   4
+ ┌───┬───┬───┬───┬───┐  
+ │   │   │ A │ B │   │
+ └───┴───┴───┴───┴───┘
+ 
+ front index: 2
+ back index: 3
+ </code></pre>
+</section>
+<section id="circular-array-2" class="slide level2">
+<h2>Circular Array</h2>
+<pre><code>   0   1   2   3   4
+ ┌───┬───┬───┬───┬───┐  
+ │   │   │ A │ B │ C │
+ └───┴───┴───┴───┴───┘
+ 
+ front index: 2
+ back index: 4
+ </code></pre>
+</section>
+<section id="circular-array-3" class="slide level2">
+<h2>Circular Array</h2>
+<pre><code>   0   1   2   3   4
+ ┌───┬───┬───┬───┬───┐  
+ │ D │   │ A │ B │ C │
+ └───┴───┴───┴───┴───┘
+ 
+ front index: 2
+ back index: 0</code></pre>
+</section>
+<section id="circular-array-4" class="slide level2">
+<h2>Circular Array</h2>
+<pre><code>   0   1   2   3   4
+ ┌───┬───┬───┬───┬───┐  
+ │ D │   │   │ B │ C │
+ └───┴───┴───┴───┴───┘
+ 
+ front index: 3
+ back index: 0
+ </code></pre>
+</section>
+<section id="circular-array-5" class="slide level2">
+<h2>Circular Array</h2>
+<pre><code>   0   1   2   3   4
+ ┌───┬───┬───┬───┬───┐  
+ │ D │ E │   │ B │ C │
+ └───┴───┴───┴───┴───┘
+ 
+ front index: 3
+ back index: 1</code></pre>
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
