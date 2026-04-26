@@ -1207,6 +1207,15 @@ returns top and updates it (removes top)</p>
 <li>Which is better (array or linked list)?</li>
 </ul>
 </section>
+<section id="implementation-of-the-stack-interface-1" class="slide level2">
+<h2>Implementation of the Stack Interface</h2>
+<ul>
+<li>Stack as a linked list vs. array implementation</li>
+<li>Download <a href="code/Node.java">Node.java</a> to use with your <code>LinkedStack</code> implementation.</li>
+<li>Download <a href="code/UseStack.java">UseStack.java</a> to test your implementations.</li>
+</ul>
+<p>Submit your <code>Stack.java</code> interface, along with <code>ArrayStack.java</code> and <code>LinkedStack.java</code> implementations to <a href="https://www.gradescope.com/courses/1233898/assignments/8047815">gradescope</a></p>
+</section>
 <section id="stack-applications" class="slide level2">
 <h2>Stack Applications</h2>
 <ul>
@@ -1227,6 +1236,11 @@ returns top and updates it (removes top)</p>
 <li><span class="math inline">\(([)]\)</span> → invalid</li>
 <li><span class="math inline">\((((\)</span> → invalid</li>
 </ul>
+</section>
+<section id="balanced-parentheses-checker-1" class="slide level2">
+<h2>Balanced Parentheses Checker</h2>
+<p>Submit your <code>Balanced.java</code> to <a href="https://www.gradescope.com/courses/1233898/assignments/8052486/">gradescope</a> – your implementation should have the following method signature:</p>
+<p><code>public static boolean isBalanced(String input)</code></p>
 </section>
 <section>
 <section id="queues" class="title-slide slide level1 center">
@@ -1396,6 +1410,60 @@ returns front, no removal
  
  front index: 3
  back index: 1</code></pre>
+</section>
+<section id="array-interface-and-arrayqueue-implementation" class="slide level2">
+<h2>Array interface and ArrayQueue implementation</h2>
+<p>Submit your <code>Array.java</code> and <code>ArrayQueue.java</code> files to <a href="https://www.gradescope.com/courses/1233898/assignments/8052473/">gradescope</a>)</p>
+</section>
+<section id="arrayqueue" class="slide level2">
+<h2>ArrayQueue</h2>
+<p>Problem: this is not dealing with what happens when <code>count = array.length</code></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb17-1"><a href></a>public class ArrayQueue&lt;T&gt; implements Queue&lt;T&gt;{</span>
+<span id="cb17-2"><a href></a>    private T[] queue;</span>
+<span id="cb17-3"><a href></a>    private int count;</span>
+<span id="cb17-4"><a href></a>    private int front;</span>
+<span id="cb17-5"><a href></a>    private int rear;</span>
+<span id="cb17-6"><a href></a>    private int size;</span>
+<span id="cb17-7"><a href></a></span>
+<span id="cb17-8"><a href></a>    public ArrayQueue(int size) {</span>
+<span id="cb17-9"><a href></a>        queue = (T[]) new Object[size];</span>
+<span id="cb17-10"><a href></a>        count = 0;</span>
+<span id="cb17-11"><a href></a>        front = 0;</span>
+<span id="cb17-12"><a href></a>        rear = 0;</span>
+<span id="cb17-13"><a href></a>        this.size = size;</span>
+<span id="cb17-14"><a href></a>    }</span>
+<span id="cb17-15"><a href></a></span>
+<span id="cb17-16"><a href></a>    @Override</span>
+<span id="cb17-17"><a href></a>    public T dequeue() {</span>
+<span id="cb17-18"><a href></a>        T out = queue[front];</span>
+<span id="cb17-19"><a href></a>        queue[front] = null;</span>
+<span id="cb17-20"><a href></a>        front = (front + 1) % size;</span>
+<span id="cb17-21"><a href></a>        count--;</span>
+<span id="cb17-22"><a href></a>        return out;</span>
+<span id="cb17-23"><a href></a>    }</span>
+<span id="cb17-24"><a href></a></span>
+<span id="cb17-25"><a href></a>    @Override</span>
+<span id="cb17-26"><a href></a>    public void enqueue(T data) {</span>
+<span id="cb17-27"><a href></a>        queue[rear] = data;</span>
+<span id="cb17-28"><a href></a>        count++;</span>
+<span id="cb17-29"><a href></a>        rear = (rear + 1) % size;</span>
+<span id="cb17-30"><a href></a>    }</span>
+<span id="cb17-31"><a href></a></span>
+<span id="cb17-32"><a href></a>    @Override</span>
+<span id="cb17-33"><a href></a>    public boolean isEmpty() {</span>
+<span id="cb17-34"><a href></a>        return count == 0;</span>
+<span id="cb17-35"><a href></a>    }</span>
+<span id="cb17-36"><a href></a></span>
+<span id="cb17-37"><a href></a>    @Override</span>
+<span id="cb17-38"><a href></a>    public String toString() {</span>
+<span id="cb17-39"><a href></a>        String out = &quot;&quot;;</span>
+<span id="cb17-40"><a href></a>        for (int i=front;i&lt;front+count;i++) {</span>
+<span id="cb17-41"><a href></a>            if (queue[i%size] != null) out += i%size + &quot; - &quot; + queue[i%size] + &quot; &quot;;</span>
+<span id="cb17-42"><a href></a>        }</span>
+<span id="cb17-43"><a href></a></span>
+<span id="cb17-44"><a href></a>        return out.trim();</span>
+<span id="cb17-45"><a href></a>    }</span>
+<span id="cb17-46"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </section></section>
     </div>
