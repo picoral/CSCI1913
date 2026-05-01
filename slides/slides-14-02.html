@@ -444,7 +444,7 @@
   <meta name="generator" content="quarto-1.4.451">
 
   <meta name="author" content="CSCI 1913 – Introduction to Algorithms, Data Structures, and Program DevelopmentAdriana Picoral">
-  <title>Java Collections Framework</title>
+  <title>Python OOP</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -1208,7 +1208,7 @@ margin-right: 0; }
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Java Collections Framework</h1>
+  <h1 class="title">Python OOP</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -1219,95 +1219,179 @@ margin-right: 0; }
 </div>
 
 </section>
-<section id="collections-framework" class="slide level2">
-<h2>Collections Framework</h2>
-<p>The <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/collections/index.html">collections framework</a> is a unified architecture for representing and manipulating collections, enabling them to be manipulated independently of the details of their representation. It reduces programming effort while increasing performance.</p>
-<p>The framework is based on more than a dozen collection interfaces. It includes implementations of these interfaces and algorithms to manipulate them.</p>
-</section>
-<section id="list" class="slide level2">
-<h2>List</h2>
+<section id="oop-in-python" class="slide level2">
+<h2>OOP in Python</h2>
 <ul>
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a>: Resizable-array implementation of the List interface.</li>
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html">LinkedList</a>: Doubly-linked list implementation of the List and Deque interfaces.</li>
+<li>Python’s OOP shares many concepts with Java</li>
+<li>Key Principles: Inheritance, Encapsulation, Polymorphism, Abstraction
+<ul>
+<li>Dynamic typing means some of those aspects diﬀer from Java’s strongly typed model</li>
+<li>Weaker Encapsulation</li>
+<li>No explicit interface or abstract keywords, but similar functionality can be achieved</li>
+</ul></li>
 </ul>
 </section>
-<section id="map" class="slide level2">
-<h2>Map</h2>
+<section id="classes-and-objects" class="slide level2">
+<h2>Classes and Objects</h2>
+<p>No primitives in python, everything is an object and everything has a class.</p>
+<p>Use the class keyword to write your own classes</p>
+<div id="c35ff0ae" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">class</span> MyClass:</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="co"># code for class goes here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To create an object:</p>
+<div id="49d2eabb" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>obj <span class="op">=</span> MyClass()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="init-method-and-instance-variables" class="slide level2">
+<h2><strong>init</strong> method and Instance Variables</h2>
 <ul>
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap</a>: Hash table based implementation of the Map interface. This implementation provides constant-time performance for the basic operations (get and put), assuming the hash function disperses the elements properly among the buckets.</li>
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html">TreeMap</a>: A Red-Black tree. This implementation provides guaranteed log(n) time cost for the containsKey, get, put and remove operations.</li>
+<li>Similar to Java constructors
+<ul>
+<li>not the only initialization hook, but the only one we use</li>
+</ul></li>
+<li>Called automatically when creating an instance of an object</li>
+</ul>
+<div id="1f699309" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">class</span> Point:</span>
+<span id="cb3-2"><a href="#cb3-2"></a>  </span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x, y):</span>
+<span id="cb3-4"><a href="#cb3-4"></a>    <span class="va">self</span>.x <span class="op">=</span> x</span>
+<span id="cb3-5"><a href="#cb3-5"></a>    <span class="va">self</span>.y <span class="op">=</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="self-and-methods" class="slide level2">
+<h2>self and methods</h2>
+<ul>
+<li>The first parameter to every method should be <code>self</code></li>
+<li>This is a pointer to the object for which the method is being called, and can be used to access instance variables, or other methods.</li>
+<li>When you call a method on an object, or construct a new object python passes self automatically</li>
+</ul>
+<div id="4e8e033d" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">class</span> Dog:</span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
+<span id="cb4-3"><a href="#cb4-3"></a>    <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb4-4"><a href="#cb4-4"></a>  </span>
+<span id="cb4-5"><a href="#cb4-5"></a>  <span class="kw">def</span> bark(<span class="va">self</span>):</span>
+<span id="cb4-6"><a href="#cb4-6"></a>    <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> says Woof!&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="use" class="slide level2">
+<h2>Use</h2>
+<div id="5233a203" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">import</span> dog</span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb5-4"><a href="#cb5-4"></a>    myDog <span class="op">=</span> dog.Dog(<span class="st">&quot;Daisy&quot;</span>)</span>
+<span id="cb5-5"><a href="#cb5-5"></a>    myDog.bark()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="static-methods-and-class-variables" class="slide level2">
+<h2>Static methods and class variables</h2>
+<div id="dae6b83a" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">class</span> Circle:</span>
+<span id="cb6-2"><a href="#cb6-2"></a>  pi <span class="op">=</span> <span class="fl">3.14159</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>  </span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="at">@classmethod</span> </span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="kw">def</span> circumference(<span class="va">self</span>, radius):</span>
+<span id="cb6-6"><a href="#cb6-6"></a>    <span class="cf">return</span> <span class="dv">2</span> <span class="op">*</span> <span class="va">self</span>.pi <span class="op">*</span> radius</span>
+<span id="cb6-7"><a href="#cb6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb6-9"><a href="#cb6-9"></a>    circ1 <span class="op">=</span> Circle.circumference(<span class="dv">5</span>)</span>
+<span id="cb6-10"><a href="#cb6-10"></a>    <span class="bu">print</span>(circ1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>31.4159</code></pre>
+</div>
+</div>
+</section>
+<section id="inheritance-in-python" class="slide level2">
+<h2>Inheritance in Python</h2>
+<p>Syntax: `class Childclass(Parentclass):``</p>
+<p>Supports single and multiple inheritance</p>
+<div id="0546cecf" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">class</span> Animal:</span>
+<span id="cb8-2"><a href="#cb8-2"></a>  </span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="kw">def</span> eat(<span class="va">self</span>):</span>
+<span id="cb8-4"><a href="#cb8-4"></a>    <span class="bu">print</span>(<span class="st">&quot;Eating...&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Subclass:</p>
+<div id="608653a4" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">class</span> Cat(Animal):</span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="kw">def</span> meow(<span class="va">self</span>):</span>
+<span id="cb9-3"><a href="#cb9-3"></a>    <span class="bu">print</span>(<span class="st">&quot;Meow!&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Subclass inherits methods from parent classes automatically (not instance variables though)</p>
+</section>
+<section id="use-1" class="slide level2">
+<h2>Use</h2>
+<div id="8bb4b12f" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">class</span> Dog(Animal):</span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
+<span id="cb10-3"><a href="#cb10-3"></a>    <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb10-4"><a href="#cb10-4"></a>  </span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="kw">def</span> bark(<span class="va">self</span>):</span>
+<span id="cb10-6"><a href="#cb10-6"></a>    <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> says Woof!&quot;</span>)</span>
+<span id="cb10-7"><a href="#cb10-7"></a></span>
+<span id="cb10-8"><a href="#cb10-8"></a></span>
+<span id="cb10-9"><a href="#cb10-9"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb10-10"><a href="#cb10-10"></a>  myDog <span class="op">=</span> Dog(<span class="st">&quot;Daisy&quot;</span>)</span>
+<span id="cb10-11"><a href="#cb10-11"></a>  myDog.eat()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Eating...</code></pre>
+</div>
+</div>
+</section>
+<section id="method-overriding" class="slide level2">
+<h2>Method Overriding</h2>
+<ul>
+<li>you can do method overriding, but not method overloading</li>
+<li>use <code>super().</code> or your parent class name (for example <code>Animal.</code>) to access parent things</li>
+</ul>
+<p>Override <code>def __str__(self):</code> to return a string, and is called when the object is argument in <code>print()</code></p>
+</section>
+<section id="encapsulation-and-access-modifiers" class="slide level2">
+<h2>Encapsulation and Access Modifiers</h2>
+<ul>
+<li>Python relies on conventions rather than enforcement for encapsulation (boo)</li>
+<li>“Private” attributes indicated by a leading underscore (e.g., _attr)</li>
+<li>Double underscores (__attr) trigger name mangling (Python automatically renames it internally) to reduce accidental overrides</li>
+<li>No strict private/public keywords as in Java</li>
+<li>These conventions are for both attributes and methods</li>
 </ul>
 </section>
-<section id="set" class="slide level2">
-<h2>Set</h2>
-<ul>
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html">HashSet</a>: This class implements the Set interface, backed by a hash table (actually a HashMap instance). This class offers constant time performance for the basic operations (add, remove, contains and size), assuming the hash function disperses the elements properly among the buckets.</li>
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeSet.html">TreeSet</a>: Implementation based on a TreeMap. This implementation provides guaranteed log(n) time cost for the basic operations (add, remove and contains).</li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>TreeSet&lt;String&gt; reverseStrings = new TreeSet&lt;&gt;();</span>
-<span id="cb1-2"><a href="#cb1-2"></a>TreeSet&lt;String&gt; reverseStrings = new TreeSet&lt;&gt;(Comparator.reverseOrder());</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="encapsulation-and-access-modifiers-1" class="slide level2">
+<h2>Encapsulation and Access Modifiers</h2>
+<div id="ba3a25bf" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">class</span> MyClass:</span>
+<span id="cb12-2"><a href="#cb12-2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb12-3"><a href="#cb12-3"></a>        <span class="va">self</span>.public_attribute <span class="op">=</span> <span class="st">&quot;I am public&quot;</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a>        <span class="va">self</span>._protected_attribute <span class="op">=</span> <span class="st">&quot;I am protected (by convention)&quot;</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>        <span class="va">self</span>.__private_attribute <span class="op">=</span> <span class="st">&quot;I am private (mangled)&quot;</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a></span>
+<span id="cb12-7"><a href="#cb12-7"></a>    <span class="kw">def</span> get_private(<span class="va">self</span>):</span>
+<span id="cb12-8"><a href="#cb12-8"></a>        <span class="cf">return</span> <span class="va">self</span>.__private_attribute</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="queue" class="slide level2">
-<h2>Queue</h2>
-<ul>
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/PriorityQueue.html">PriorityQueue</a>: An unbounded priority queue based on a priority heap.</li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>import java.util.Comparator;</span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a>PriorityQueue&lt;Integer&gt; minHeap = new PriorityQueue&lt;&gt;();</span>
-<span id="cb2-4"><a href="#cb2-4"></a>PriorityQueue&lt;Integer&gt; maxHeap = new PriorityQueue&lt;&gt;(Comparator.reverseOrder());</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="stack" class="slide level2">
-<h2>Stack</h2>
-<ul>
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html">Stack</a>: The usual push and pop operations are provided, as well as a method to peek at the top item on the stack, a method to test for whether the stack is empty, and a method to search the stack for an item and discover how far it is from the top. When a stack is first created, it contains no items.</li>
-</ul>
-</section>
-<section id="challenge-1-gradebook" class="slide level2">
-<h2>Challenge 1 – gradebook</h2>
-<p>Data (this code should be in GradeBook’s main):</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>Student alice = new Student(&quot;Alice&quot;, new double[]{100, 80, 95, 85, 92});</span>
-<span id="cb3-2"><a href="#cb3-2"></a>Student peter = new Student(&quot;Peter&quot;, new double[]{98, 88, 92, 83, 87});</span>
-<span id="cb3-3"><a href="#cb3-3"></a>Student joan = new Student(&quot;Joan&quot;, new double[]{75, 80, 78, 82, 72});</span>
-<span id="cb3-4"><a href="#cb3-4"></a>Student alex = new Student(&quot;Alex&quot;, new double[]{100, 98, 95, 96, 93});</span>
-<span id="cb3-5"><a href="#cb3-5"></a>Student julienne = new Student(&quot;Julienne&quot;, new double[]{100, 100, 98, 95, 92});</span>
-<span id="cb3-6"><a href="#cb3-6"></a>Student philip = new Student(&quot;Philip&quot;, new double[]{88, 82, 85, 85, 82});</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Output:</p>
-<pre><code>1. Julienne: 97.0
-2. Alex: 96.4
-3. Alice: 90.4
-4. Peter: 89.6
-5. Philip: 84.4
-6. Joan: 77.4</code></pre>
-<p>Submit your <code>Student.java</code> and <code>GradeBook.java</code> (GradeBook has main with the print statements) to <a href="https://www.gradescope.com/courses/1233898/assignments/8061628/">gradescope</a></p>
-</section>
-<section id="challenge-2-phone-book" class="slide level2">
-<h2>Challenge 2 – phone book</h2>
-<p>Create a <code>PhoneBook</code> class that stores contact information (Name + Phone Number). Phone number should be exactly 10 digits.</p>
-<ul>
-<li>You can use <code>String.valueOf(phoneNumber).length() == 10</code> for validation of the <code>Long</code> variable</li>
-<li><code>.add(String, Long)</code> and <code>.get(String)</code> should be constant time for runtime</li>
-<li>Submit your <code>PhoneBook.java</code> to <a href="https://www.gradescope.com/courses/1233898/assignments/8061632/">gradescope</a></li>
-</ul>
-</section>
-<section id="challenge-2-phone-book-1" class="slide level2">
-<h2>Challenge 2 – phone book</h2>
-<p>Test code:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>public static void main(String[] args) {</span>
-<span id="cb5-2"><a href="#cb5-2"></a>  PhoneBook contacts = new PhoneBook();</span>
-<span id="cb5-3"><a href="#cb5-3"></a>  </span>
-<span id="cb5-4"><a href="#cb5-4"></a>  // each of these add calls should be constant time</span>
-<span id="cb5-5"><a href="#cb5-5"></a>  contacts.add(&quot;Wali&quot;, 5553428631L);</span>
-<span id="cb5-6"><a href="#cb5-6"></a>  contacts.add(&quot;Emilia&quot;, 573147373L); // Invalid phone number</span>
-<span id="cb5-7"><a href="#cb5-7"></a>  contacts.add(&quot;Seo-yun&quot;, 5552574665L);</span>
-<span id="cb5-8"><a href="#cb5-8"></a>  contacts.add(&quot;Flor&quot;, 5559083456L);</span>
-<span id="cb5-9"><a href="#cb5-9"></a>  System.out.println(contacts.length()); // 3</span>
-<span id="cb5-10"><a href="#cb5-10"></a>  </span>
-<span id="cb5-11"><a href="#cb5-11"></a>  // each of these get calls should be constant time</span>
-<span id="cb5-12"><a href="#cb5-12"></a>  System.out.println(contacts.get(&quot;Flor&quot;)); // 5559083456</span>
-<span id="cb5-13"><a href="#cb5-13"></a>  System.out.println(contacts.get(&quot;Emilia&quot;)); // Contact not in PhoneBook</span>
-<span id="cb5-14"><a href="#cb5-14"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Submit your <code>PhoneBook.java</code> to <a href="https://www.gradescope.com/courses/1233898/assignments/8061632/">gradescope</a></p>
+<section id="polymorphism-in-python" class="slide level2">
+<h2>Polymorphism in Python</h2>
+<p>Duck class</p>
+<div id="52be6178" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">class</span> Duck:</span>
+<span id="cb13-2"><a href="#cb13-2"></a>  <span class="kw">def</span> quack(<span class="va">self</span>):</span>
+<span id="cb13-3"><a href="#cb13-3"></a>    <span class="bu">print</span>(<span class="st">&quot;Quack!&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Person</p>
+<div id="59f6e025" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">class</span> Person:</span>
+<span id="cb14-2"><a href="#cb14-2"></a>  <span class="kw">def</span> quack(<span class="va">self</span>):</span>
+<span id="cb14-3"><a href="#cb14-3"></a>    <span class="bu">print</span>(<span class="st">&quot;I can mimic a duck sound.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Function definition with object as argument:</p>
+<div id="a5b2f868" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">def</span> make_it_quack(quacker):</span>
+<span id="cb15-2"><a href="#cb15-2"></a>  quacker.quack() <span class="co"># works for both Duck and Person</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="footer footer-default">
 <p><a href="../index.html">go back to course home</a></p>
 </div>
