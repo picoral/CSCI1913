@@ -1,0 +1,36 @@
+/* css styles */
+
+:root {
+  --umn-maroon: #7a0019;
+  --umn-gold: #ffcc33;
+  --umn-dark-gray: #333333;
+  --umn-light-bg: #f7f7f7;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--umn-dark-gray);
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: var(--umn-maroon);
+  color: #ffffff;
+  border-bottom: 4px solid var(--umn-gold);
+  padding: 1rem 2rem;
+}
+
+button.umn-primary {
+  background-color: var(--umn-maroon);
+  color: #ffffff;
+  border: 2px solid var(--umn-maroon);
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button.umn-primary:hover {
+  background-color: #5e0013;
+}

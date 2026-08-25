@@ -1,0 +1,464 @@
+[
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "This syllabus is subject to change. If the syllabus needs to be changed after the 1st day of the semester those changes will be reflected here."
+  },
+  {
+    "objectID": "syllabus.html#lecture",
+    "href": "syllabus.html#lecture",
+    "title": "Syllabus",
+    "section": "Lecture",
+    "text": "Lecture\n\nMWF 02:30 PM – 03:20 PM (50 minutes) at Smith Hall 331"
+  },
+  {
+    "objectID": "syllabus.html#computer-labs",
+    "href": "syllabus.html#computer-labs",
+    "title": "Syllabus",
+    "section": "Computer Labs",
+    "text": "Computer Labs\nAll labs are at Walter Library 106\n\nLaboratory (004) T 02:30 PM - 04:25 PM\n\nLaboratory (005) T 04:40 PM - 06:35 PM\n\nLaboratory (006) W 08:00 AM - 09:55 AM\n\nLaboratory (007) W 10:10 AM - 12:05 PM"
+  },
+  {
+    "objectID": "syllabus.html#instructor",
+    "href": "syllabus.html#instructor",
+    "title": "Syllabus",
+    "section": "Instructor",
+    "text": "Instructor\n\nAdriana Picoral (PhD, she/her)\nDepartment of Computer Science\nOffice: 300A Lind Hall\n\noffice hours (drop in):\n\nMonday 12pm to 2pm\nTuesday 1pm to 3pm\n\n\napicoral@umn.edu\n\nCome to student drop-in hours if you have questions, want to discuss the material, or feel free to tell me more about yourself and your interests and activities outside of class.\nContacting me by email: At some points in the term, my inbox gets quite full, but I do want to hear from you. If you email me and don’t hear back from me within two business days, please send a follow up email. I will appreciate the gentle reminder."
+  },
+  {
+    "objectID": "syllabus.html#teaching-assistants",
+    "href": "syllabus.html#teaching-assistants",
+    "title": "Syllabus",
+    "section": "Teaching Assistants",
+    "text": "Teaching Assistants\nI care about the success of each student, even if I cannot meet with all of you individually due to the size of this class. When you have questions about the course material, questions about the subject more broadly, concerns to discuss, accommodations you need, or thoughts you want to share, please start by going to office hours. Me and my staff care about students’ success and we all have expertise to share.\nTAs can review the course material, exams and assignments with you, and suggest study strategies. They can also give you tips about the resources that the campus offers, and can provide insights into how to succeed in college more broadly.\nGraduate TA:\n\nVille Cantory\n\nUndergraduate TAs:\n\nColin Abe\nDaniel Budiman\nEthan Danner\nOmkar Fulsundar\nConnor Justin\nHuy Vo\n\n\nContacting Course Staff\nThe best way to contact course staff depends on your question:\n\nGeneral knowledge Questions (applies to students other than you, and has no private data) should be directed to our discussion tool. Join our discussion using your UMN email address)\n\nThe discussion tool be our primary form of communication for asking questions pertaining to course content. The reason for this policy is because if one student has a question about course materials or assignment, that question is usually shared by their peers. The chat feature archives all communication and allows everyone in the course to benefit from each others’ questions. The TAs and myself will be checking the chat several times throughout the week to respond to questions. If you see a question in the chat that has not been answered yet, and you know the answer, please share that knowledge with your classmates. Be mindful that chat messages are not private, and will be viewable to everyone in the course. If you need to discuss something with myself or your TA one-on-one, please reach out by email.\n\nQuestions whose answer applies only to you (homework help, specific situations, etc.) should generally be directed to the all staff email: &lt;csci1913fa26-staff@umn.edu&gt;\nQuestions pertaining to specific special accommodations that you wish to discuss with Instructor Picoral directly can be directed to her at her official U of M email address: &lt;apicoral@umn.edu&gt;\n\n\n\nOffice Hours\nWe are offering 3 different types of office hours this semester.\n\nOnline Office Hours (time-limited 1-on-1 zoom meetings on zoom)\nIn person Office Hours (ad-hoc in-person meeting time with a course staff scheduled in advance with some reserved space)\nBy Appointment (pre-scheduled appointments with (usually) the professor. Useful for longer conversations or maximum privacy. Rules for all of these can be found in the course rules document. you will be expected to know these rules Some important top-level rules:\n\nGeneral Rules:\n\nYou can attend anyone’s office hour – it doesn’t have to be one of your specific lab TAs.\nCheck the office hours calendar in advance – office hours might shift over time, be moved online, or otherwise change in response to staff availability and health. Changes will typically be announced on Canvas, and updated in the office hours calendar. Check these places for changes in schedule."
+  },
+  {
+    "objectID": "syllabus.html#topics-per-week",
+    "href": "syllabus.html#topics-per-week",
+    "title": "Syllabus",
+    "section": "Topics per week",
+    "text": "Topics per week\n\n\n\n\n\n\nWeek\nLecture Topics (approx)\n\n\n\n\nWeek 1\nWelcome and Basic Python\n\n\nWeek 2\nMore Python\n\n\nWeek 3\nAdvanced Python\n\n\nWeek 4\nBig O notation, and searching\n\n\nWeek 5\nSorting\n\n\nWeek 6\nBasic Java\n\n\nWeek 7\nJava Objects\n\n\nWeek 8\nInheritance, Polymorhism, and Generics\n\n\nWeek 9\nLists\n\n\nWeek 10\nLists\n\n\nWeek 11\nLists & Tree Based Data Structures\n\n\nWeek 12\nBinary Search Tree\n\n\nWeek 13\nBinary Search Tree\n\n\nWeek 14\nHashing and Hashing Based Structures\n\n\nWeek 15\nStacks and Queues"
+  },
+  {
+    "objectID": "syllabus.html#reading",
+    "href": "syllabus.html#reading",
+    "title": "Syllabus",
+    "section": "Reading",
+    "text": "Reading\nYour first introduction to course material will be the assigned readings. Readings will normally be about a week to a day ahead of lecture (depending on when you do the readings) and will generally be due on Monday before class. As noted above readings will be done through the online zybook textbook and are both required and graded.\n\n\n\n\n\n\nDate\nReadings\n\n\n\n\nMon, Sep 14, 2026\nReading 1 Due\n\n\nMon, Sep 21, 2026\nReading 2 Due\n\n\nMon, Sep 28, 2026\nReading 3 Due\n\n\nMon, Oct 5, 2026\nReading 4 Due\n\n\nMon, Oct 12, 2026\nReading 5 Due\n\n\nMon, Oct 19, 2026\nReading 6 Due\n\n\nMon, Oct 26, 2026\nReading 7 Due\n\n\nMon, Nov 2, 2026\nReading 8 Due\n\n\nMon, Nov 9, 2026\nReading 9 Due\n\n\nMon, Nov 16, 2026\nReading 10 Due\n\n\nMon, Nov 23, 2026\nReading 11 Due\n\n\nMon, Dec 7, 2026\nReading 12 Due\n\n\nMon, Dec 14, 2026\nReading 13 Due"
+  },
+  {
+    "objectID": "syllabus.html#computer-lab",
+    "href": "syllabus.html#computer-lab",
+    "title": "Syllabus",
+    "section": "Computer Lab",
+    "text": "Computer Lab\nThere will be a two-hour computing lab every week (starting at week 2). In these students will work with a lab partner to begin a practical programming problem. These lab assignments will be submitted and graded similarly to homework assignments in previous programming classes you may have taken. Labs are always due at 11:59pm on Wednesday. While the labs overall might add up to a fair number of points, remember that there will be roughly 11 labs – with any one lab with very few points in the end. Therefore you should not let a desire for “perfection” get in the way of exploring the lecture material and viewing labs as low-stakes learning opportunities.\n\nLab submissions will be primarily evaluated automatically to validate expected behavior.\nAny lab may be subject to manual review, and some labs may explicitly have manually graded components.\nAttendance of the lab section itself is expected unless you have an excused absence. Historically, students who skip labs, fail labs (and we don’t want this for you).\n\n\n\n\n\n\n\nDate\nLabs\n\n\n\n\nWed, Sep 16, 2026\nLab 1 Due\n\n\nWed, Sep 23, 2026\nLab 2 Due\n\n\nWed, Sep 30, 2026\nLab 3 Due\n\n\nWed, Oct 7, 2026\nLab 4 Due\n\n\nWed, Oct 21, 2026\nLab 5 Due\n\n\nWed, Oct 28, 2026\nLab 06 Due\n\n\nWed, Nov 4, 2026\nLab 07 Due\n\n\nWed, Nov 18, 2026\nLab 08 Due\n\n\nWed, Dec 2, 2026\nLab 09 Due\n\n\nThu, Dec 10, 2026\nLab 10 Due\n\n\nWed, Dec 16, 2026\nLab 11 Due"
+  },
+  {
+    "objectID": "syllabus.html#projects",
+    "href": "syllabus.html#projects",
+    "title": "Syllabus",
+    "section": "Projects",
+    "text": "Projects\nThere will be three independent/individual programming projects one for each module of the course. You will have roughly three weeks to do each project. The first project will be in python, the second and third will be in Java. Projects must be done individually, although you may discuss them with others in a general way (I.E. you can discuss the problem but not the solution). These projects will allow you a chance to incorporate new programming techniques we’re discussing into a bigger, broader program. These will often challenge all of your programming skills, including ones we might not have explicitly trained in this course, as they are designed to help you experience the blend of challenges seen in more realistic large-scale programming problems.\nProjects will always feature substantial manual review. Make sure you write your code first, and foremost, to be human readable. On a project, it will not be enough for the code to “work” – we cannot read and understand the code, you will lose points.\nProject assignments are not collaborative efforts, and you must complete each without the assistance of anyone else other than your instructor or TAs (unless the problem description explicitly says you may work in a pair or group.)\nProject assignments will be posted on Canvas, so make sure you check Canvas regularly. Due dates and times will be stated clearly and late work will result in penalties.\nUnless otherwise mentioned, project assignments are to be done individually. You are welcome to discuss what the problems mean, general problem solving strategies, etc., but are not allowed to share solutions in any way. This means you cannot copy others’ work, supply answers in part or whole to others, or make substantial enough use of others’ work that (even if you do not copy verbatim) the answer you submit is not your own work. Do not “research” the problem and try to find solutions on the Internet. This is cheating and if caught, you will be turned into the college. We do run similarity checkers and they are very, very good at catching students who cheat. We regularly look at websites such as Chegg, CourseHero, etc and ensure that students are not posting questions and asking for solutions.\n\n\n\n\n\n\nDate\nProjects\n\n\n\n\nMon, Sep 21, 2026\nProject 1 Assigned\n\n\nFri, Oct 16, 2026\nProject 1 Due\n\n\nMon, Oct 19, 2026\nProject 2 Assigned\n\n\nFri, Nov 13, 2026\nProject 2 Due\n\n\nMon, Nov 16, 2026\nProject 3 Assigned\n\n\nMon, Dec 14, 2026\nProject 3 Due"
+  },
+  {
+    "objectID": "syllabus.html#quizzes",
+    "href": "syllabus.html#quizzes",
+    "title": "Syllabus",
+    "section": "Quizzes",
+    "text": "Quizzes\nThere will be weekly in-class on-paper quizzes. These will primarily test your understanding of what we’re studying, and will be very similar to the reading and lab exercises. These will be closed notes, but very short and simple. Quizzes will be generally held during class on Wednesday (if you need accommodations, talk to me). These quizzes are meant to help you prepare for the exams.\nIf you do all of your homework and understand the material, there is no reason for you not to do well on the quizzes. I assign these quizzes for two reasons. One reason is to show me how well students are understanding the material, whether there are some students who are not there yet, and whether I need to review certain concepts with the class. The other reason is to let you assess how well you are understanding the concepts and where you need to focus more of your efforts to learn the course material. If you are struggling on the quizzes, it means that you need to seek help from me, one of the TAs, the Department resources listed below, or your peers, so that we can help you learn the material."
+  },
+  {
+    "objectID": "syllabus.html#exam-dates",
+    "href": "syllabus.html#exam-dates",
+    "title": "Syllabus",
+    "section": "Exam Dates",
+    "text": "Exam Dates\n\n\n\n\n\n\nDate\nExams\n\n\n\n\nWed, Oct 14, 2026\nMidterm 1\n\n\nWed, Nov 11, 2026\nMidterm 2"
+  },
+  {
+    "objectID": "syllabus.html#other-important-dates",
+    "href": "syllabus.html#other-important-dates",
+    "title": "Syllabus",
+    "section": "Other important dates",
+    "text": "Other important dates\nAccess the full university academic calendar for other important dates"
+  },
+  {
+    "objectID": "syllabus.html#attendance",
+    "href": "syllabus.html#attendance",
+    "title": "Syllabus",
+    "section": "Attendance",
+    "text": "Attendance\nWhile there are problems and challenges we will be working and submitting to gradescope in class, I do not take attendance. You are adults and I expect you to be motivated to grow your knowledge and abilities by engaging in assignments and course lectures. I recommend that all students attend lectures if possible, because I believe attending lectures is the best way to learn the concepts and improve your computing skills. If you must miss a lecture, it is your responsibility to access the lecture materials on canvas."
+  },
+  {
+    "objectID": "syllabus.html#grading-policy",
+    "href": "syllabus.html#grading-policy",
+    "title": "Syllabus",
+    "section": "Grading policy",
+    "text": "Grading policy\nI provide multiple opportunities for students to receive feedback on their performance throughout the course to give students opportunities to see how they are doing and so that they can identify places they need to apply more effort or new strategies along the way, seek help if they are struggling and improve throughout the semester. My hope is that all students will develop the knowledge they need to do well in this course and that all students–even those who perform well early in the semester—will improve and develop greater knowledge and skills through practice on the quizzes and exams. Students earn the grades they receive; I do not curve grades or add extra points or extra credit in this course because I do not believe students grades should be tied to other students’ grades (on a curve) and because there are plenty of opportunities for students to improve their grades throughout the semester with the labs, projects, quizzes and exams."
+  },
+  {
+    "objectID": "syllabus.html#preferred-names",
+    "href": "syllabus.html#preferred-names",
+    "title": "Syllabus",
+    "section": "Preferred Names",
+    "text": "Preferred Names\nIf your preferred name is not the same as the name that appears on the university provided roster for the course, please let me know so that I can use your preferred name."
+  },
+  {
+    "objectID": "syllabus.html#a-respectful-learning-environment-for-all",
+    "href": "syllabus.html#a-respectful-learning-environment-for-all",
+    "title": "Syllabus",
+    "section": "A respectful learning environment for all",
+    "text": "A respectful learning environment for all\nEveryone living, learning, and working at this college is expected to contribute to creating a respectful environment free from harassment and discrimination.\nIf you are experiencing school-life conflicts or unforeseen difficulties that impact your ability to meet a deadline, please contact me immediately. We want to work together to form a plan for your academic success."
+  },
+  {
+    "objectID": "syllabus.html#caregiver-responsibilities-policy",
+    "href": "syllabus.html#caregiver-responsibilities-policy",
+    "title": "Syllabus",
+    "section": "Caregiver Responsibilities Policy",
+    "text": "Caregiver Responsibilities Policy\nI have great respect for students who are balancing their pursuit of education with the responsibilities of caring for children or other family members. If you run into challenges that require you to miss a class, or if your caregiving responsibilities are interfering with your ability to engage in remote learning, please contact me. There may be some instances of flexibility we can offer to support your learning."
+  },
+  {
+    "objectID": "syllabus.html#use-of-electronic-technology-in-class",
+    "href": "syllabus.html#use-of-electronic-technology-in-class",
+    "title": "Syllabus",
+    "section": "Use of electronic technology in class",
+    "text": "Use of electronic technology in class\nFor CSCI 1913, it is not only allowed, but recommended to use personal electronic devices such as a laptop in-lecture. You may find it useful to bring a personal device able to do programming to class so you can “program along” with in-class examples.\nIf you choose to bring personal electronic devices into lecture, please use them responsibility. If you are disrupting other students’ ability to learn I will ask you mute or put away your electronic device."
+  },
+  {
+    "objectID": "syllabus.html#scholastic-conduct-specific-to-this-course",
+    "href": "syllabus.html#scholastic-conduct-specific-to-this-course",
+    "title": "Syllabus",
+    "section": "Scholastic Conduct (specific to this course)",
+    "text": "Scholastic Conduct (specific to this course)\nThe amount of collaboration allowed on assignments will be explained in the assignment rules document, and often summarized on each assignment. In general, you are free to discuss the assignment itself with other student, but you must create and program own solutions. This means that you should not discuss even your general approaches to solving assignments with other students (developing these approaches is often the exact purpose of the assignment). Naturally, coping others’ answers (either in-part or as a whole), letting another person see or copy your answers, or using online resources not expressly permitted in the course are also not allowed. These are serious breaches of conduct that can result in failing the course, and additional college level consequences. Additional explanation of academic conduct is in the academic conduct file that is posted to the class website. If you have any questions about what is and is not allowable in this class, please ask the course instructor in advance. This is not an “act first ask questions later” type of issue, the consequences for unintentional breaches of this policy are the same as the consequences for knowing breaches.\nYou are capable of meeting my expectations for this course. If you are concerned about how well you are doing in this course, please come speak with me instead of considering academic misconduct.\nThe specific consequences of cheating will be determined on a case-by-case basis by the professor. As a general guideline all related assignments will be given a score of 0, which cannot be dropped (you will retain your drops, you just won’t get to drop this assignment). Secondly, one letter grade will be dropped from your final grade (if a grade of A- a grade of B- will be entered). The consequence for repeated incidents will be more severe, including failing the course.\nAll incidents will be reported to the office of community standards which may lead to further university-level consequences outside of scope of our course. This is not subject to debate or compromise. It is recommended you review the Office of community standards documentation to better understand the consequences available at the university level.\n\nOn LLMs\nThe Board of Regents Student Conduct Code states the following in Section IV, Subd.1: Scholastic Dishonesty:\n“Scholastic dishonesty means plagiarism; cheating on assignments or examinations, including the unauthorized use of online learning support and testing platforms; engaging in unauthorized collaboration on academic work, including the posting of student-generated coursework on online learning support and testing platforms not approved for the specific course in question; taking, acquiring, or using course materials without faculty permission, including the posting of faculty-provided course materials on online learning and testing platforms; …”\nArtificial intelligence (AI) language models, such as ChatGPT, and online assignment help tools, such as Chegg®, are examples of online learning support platforms: they can not be used for course assignments except as explicitly authorized by the instructor. The following actions are prohibited in this course:\n\nSubmitting all or any part of an assignment statement to an online learning support platform;\nIncorporating any part of an AI generated response in an assignment;\nUsing AI to brainstorm, formulate arguments, or template ideas for assignments;\nUsing AI to summarize or contextualize source materials;\nUsing AI to debug your code\nSubmitting your own work for this class to an online learning support platform for iteration or improvement.\n\nIf you are in doubt as to whether you are using an online learning support platform appropriately in this course, I encourage you to discuss your situation with me.\nAny assignment content composed by any resource other than you, regardless of whether that resource is human or digital, must be attributed to the source through proper citation. (typically this would be a comment in your code.)\nUnattributed use of online learning support platforms and unauthorized sharing of instructional property are forms of scholastic dishonesty and will be treated as such."
+  },
+  {
+    "objectID": "syllabus.html#disability-accommodations",
+    "href": "syllabus.html#disability-accommodations",
+    "title": "Syllabus",
+    "section": "Disability Accommodations",
+    "text": "Disability Accommodations\nI am committed to creating an inclusive learning environment within my course. Inclusivity and accessibility are ongoing community processes, and I hope that you as a member of our class share my commitment to creating a classroom experience that fosters belonging.\nPlease contact me immediately if you become concerned—for any reason—about your capacity to fully participate in our course due to the structure of the course, activities, or assignments. If you work with the Disability Resource Center (DRC), please notify me as soon as possible so that we can discuss access (see contact information below). If you do not work with the DRC, but know that access barriers may arise (due to undiagnosed health conditions, mental health, learning style, life circumstances, etc.), please reach out to me as soon as possible so that we can work together to support your learning. I welcome the conversation."
+  },
+  {
+    "objectID": "syllabus.html#students-mental-health-and-stress-management",
+    "href": "syllabus.html#students-mental-health-and-stress-management",
+    "title": "Syllabus",
+    "section": "Students Mental Health and Stress Management",
+    "text": "Students Mental Health and Stress Management\nAs a student you may experience a range of issues that can cause barriers to learning, such as strained relationships, increased anxiety, alcohol/drug problems, feeling down, difficulty concentrating and/or lack of motivation. These mental health concerns or stressful events may lead to diminished academic performance and may reduce your ability to participate in daily activities. University services are available to assist you. All of us need a support system, and many students benefit from the use of counseling services. You can learn more about the broad range of confidential mental health services available on campus via the Student Mental Health Website. As an instructor/University community member, we care about the wellbeing of students. If health, safety, or mental health concerns are conveyed, we may consult with campus support offices to provide support and resources to a student.\nMental Health is Physical Health. I am committed to treating mental health issues, short-term or long-term, with the same severity I would treat physical health issues, especially as it would relate to accommodations and make-up work."
+  },
+  {
+    "objectID": "slides/slides-00-01.html#everyone-can-succeed-in-this-class",
+    "href": "slides/slides-00-01.html#everyone-can-succeed-in-this-class",
+    "title": "How to succeed in this course",
+    "section": "Everyone can succeed in this class",
+    "text": "Everyone can succeed in this class\n\nWith consistent and intentional work, anyone can succeed in this class\n\nLearning to be consistent and intentional is a skill that you will practice not only in this course, but in many aspects of your (academic) life"
+  },
+  {
+    "objectID": "slides/slides-00-01.html#what-do-you-need-to-succeed-in-this-class",
+    "href": "slides/slides-00-01.html#what-do-you-need-to-succeed-in-this-class",
+    "title": "How to succeed in this course",
+    "section": "What do you need to succeed in this class?",
+    "text": "What do you need to succeed in this class?\nA willingness to:\n\ntry and fail\nget frustrated and bored\nbe curious about how things work"
+  },
+  {
+    "objectID": "slides/slides-00-01.html#how-is-the-structure-of-this-class-designed-to-help-you-succeed",
+    "href": "slides/slides-00-01.html#how-is-the-structure-of-this-class-designed-to-help-you-succeed",
+    "title": "How to succeed in this course",
+    "section": "How is the structure of this class designed to help you succeed?",
+    "text": "How is the structure of this class designed to help you succeed?\n\nActive learning – you are expected to engage in the in-class activities (I want to hear from you, and what you are thinking)\nDeep processing – I will elicit knowledge from you and help you make connections to new content\nSmall sequential steps – each week we build on top of the content of the previous week, make sure you are following along"
+  },
+  {
+    "objectID": "slides/slides-00-01.html#how-is-the-structure-of-this-class-designed-to-help-you-succeed-1",
+    "href": "slides/slides-00-01.html#how-is-the-structure-of-this-class-designed-to-help-you-succeed-1",
+    "title": "How to succeed in this course",
+    "section": "How is the structure of this class designed to help you succeed?",
+    "text": "How is the structure of this class designed to help you succeed?\n\nSpaced repetition – this is not the type of course you can cram for 2 hours before the exam\nMastery checks – frequent assessment"
+  },
+  {
+    "objectID": "slides/slides-00-01.html#llms-chatgpt-etc.",
+    "href": "slides/slides-00-01.html#llms-chatgpt-etc.",
+    "title": "How to succeed in this course",
+    "section": "LLMs (chatgpt etc.)",
+    "text": "LLMs (chatgpt etc.)\n\nAmazing tools\nI’ve seen students use them carelessly"
+  },
+  {
+    "objectID": "slides/slides-00-01.html#llms",
+    "href": "slides/slides-00-01.html#llms",
+    "title": "How to succeed in this course",
+    "section": "LLMs",
+    "text": "LLMs"
+  },
+  {
+    "objectID": "slides/slides-00-01.html#llms-1",
+    "href": "slides/slides-00-01.html#llms-1",
+    "title": "How to succeed in this course",
+    "section": "LLMs",
+    "text": "LLMs\nRule 1: Don’t use LLM to:\n\nwrite code\nplan code and problem-solve\ndebug code\ntest code\ncomment or format code"
+  },
+  {
+    "objectID": "slides/slides-00-01.html#llms-2",
+    "href": "slides/slides-00-01.html#llms-2",
+    "title": "How to succeed in this course",
+    "section": "LLMs",
+    "text": "LLMs\nWhat’s allowed:\n\nHelp you learn\nHelp with non-graded practice tasks\nHelp you connect to legitimate and useful resource\nMaybe generating data for personal testing\nGenerating practice problems"
+  },
+  {
+    "objectID": "slides/slides-00-01.html#for-any-tool-not-just-llms",
+    "href": "slides/slides-00-01.html#for-any-tool-not-just-llms",
+    "title": "How to succeed in this course",
+    "section": "For any tool (not just LLMs)",
+    "text": "For any tool (not just LLMs)\nYou need to know enough about coding to decide whether that tools fits in one of three category:\n\nHype\nHelp\nHindrance"
+  },
+  {
+    "objectID": "slides/slides-00-01.html#learning",
+    "href": "slides/slides-00-01.html#learning",
+    "title": "How to succeed in this course",
+    "section": "Learning",
+    "text": "Learning\n\nEasy is different than Fun\nLearning can be very repetitive and frustrating at times\nTo train your brain you need to try and fail"
+  },
+  {
+    "objectID": "slides/slides-00-01.html#skills-you-need-to-develop",
+    "href": "slides/slides-00-01.html#skills-you-need-to-develop",
+    "title": "How to succeed in this course",
+    "section": "Skills you need to develop",
+    "text": "Skills you need to develop\nAt some point LLMs can help you with these, I’ll try to guide you when and where.\n\nSpecification\nVerification\nProblem decomposition\nCode reading\nDebugging"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Modules",
+    "section": "",
+    "text": "CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development"
+  },
+  {
+    "objectID": "index.html#module-01---course-overview",
+    "href": "index.html#module-01---course-overview",
+    "title": "Modules",
+    "section": "Module 01 - Course Overview",
+    "text": "Module 01 - Course Overview\nFor this module we will focus first-and-foremost on getting the class started. We’ll be seeing the basic class design, learning what are the parts of the class, and how they will help us learn.\nBy the end of the week you should be able to:\n\nDecide whether CSCI1913 is a course for you (if you fit the audience)\nPrepare for what we will do to learn, and why.\n\n\nDocuments\n\nSyllabus\nAcademic Integrity\nCourse Rules\nTechnology\n\n\n\nSlides\n\nCourse Intro\nHow to succeed in this course"
+  },
+  {
+    "objectID": "index.html#module-02-python",
+    "href": "index.html#module-02-python",
+    "title": "Modules",
+    "section": "Module 02 – Python",
+    "text": "Module 02 – Python\nWe will continue working with Python. In this module we will finish discussing basic python features with a few final details of pyhton’s many scopes, in particular how you can import functions from other files – and some unique details about how this works in python.\nThen we will begin exploring Python’s advanced data representation tools: data structures. Data structures create a flexible way to represent many common forms of data in an ad-hoc way without creating specific classes, or writing tricky data-management code.\nWe will be focusing on the List this week, which is python’s answer to the array. Towards the end of the week we will introduce the set and dictionary as well, with the plan to finish them next week.\nBy the end of this module you will be able to:\n\nRead, write, run, test, and debug simple python programs\nIdentify a list, tuple, and dictionary as represented in python code\nCreate, and loop over python lists"
+  },
+  {
+    "objectID": "index.html#module-03-advanced-python",
+    "href": "index.html#module-03-advanced-python",
+    "title": "Modules",
+    "section": "Module 03 – Advanced Python",
+    "text": "Module 03 – Advanced Python\nBy the end of this module you will be able to:\n\nExplain the concept of mutability and distinguish between mutable and immutable data types in Python, providing examples of each and describing the implications for variable assignment and function parameters.\nCreate and manipulate Python lists using various methods including indexing, slicing, appending, inserting, removing, and sorting elements, while understanding the performance characteristics of these operations.\nAnalyze the behavior of list aliasing and copying, explaining the difference between shallow and deep copies and predicting how changes to one list reference will affect others.\nCreate and manipulate dictionaries to store and retrieve key-value pairs, using appropriate methods for adding, updating, removing, and accessing elements.\nIterate over dictionaries using various approaches (keys, values, items) and understand the implications of dictionary ordering in modern Python versions.\nApply dictionaries to solve practical problems such as counting occurrences, grouping data, creating lookup tables, and representing structured information.\nUse sets for membership testing and duplicate elimination, understanding when sets are preferable to lists for specific operations and leveraging their O(1) average-case lookup performance.\nPerform set operations including union, intersection, difference, and symmetric difference to solve problems involving collections and relationships between groups.\nSelect appropriate data structures (lists, dictionaries, or sets) based on the requirements of a given problem, justifying choices based on performance, functionality, and code clarity."
+  },
+  {
+    "objectID": "index.html#module-04-big-o-notation-and-searching",
+    "href": "index.html#module-04-big-o-notation-and-searching",
+    "title": "Modules",
+    "section": "Module 04 – Big O notation, and searching",
+    "text": "Module 04 – Big O notation, and searching\nBy the end of this module you will be able to:\n\nAnalyze the time complexity of simple algorithms by identifying the relationship between input size and running time.\nExpress algorithm efficiency using Big-O notation and correctly classify common complexity classes including O(1), O(log n), O(n), O(n log n), O(n²), and O(2ⁿ).\nCompare algorithms based on their asymptotic behavior and determine which algorithm is more efficient for large inputs by analyzing their Big-O classifications.\nDistinguish between best-case, average-case, and worst-case time complexity and explain when each measure is most relevant.\nImplement linear search and binary search correctly in code and trace their execution on sample datasets.\nAnalyze the time complexity of linear search as O(n) and binary search as O(log n) and explain why binary search is asymptotically faster.\nExplain why binary search requires sorted data as a precondition and demonstrate how the algorithm eliminates half of the remaining search space with each comparison."
+  },
+  {
+    "objectID": "index.html#module-05-sorting",
+    "href": "index.html#module-05-sorting",
+    "title": "Modules",
+    "section": "Module 05 – Sorting",
+    "text": "Module 05 – Sorting\nBy the end of this module you will be able to:\n\nImplement selection sort, insertion sort, and bubble sort correctly in code and trace their execution on small datasets.\nAnalyze and compare the time complexity of selection sort, insertion sort, and bubble sort in their best, average, and worst cases.\nExplain the underlying mechanism of each sorting algorithm including how elements are compared, swapped, and positioned during execution."
+  },
+  {
+    "objectID": "index.html#module-06-recursion",
+    "href": "index.html#module-06-recursion",
+    "title": "Modules",
+    "section": "Module 06 – Recursion",
+    "text": "Module 06 – Recursion\nBy the end of this module you will be able to:\n\nDefine and explain recursion as a problem-solving technique where a function calls itself with modified parameters to solve progressively smaller subproblems.\nIdentify the essential components of a recursive function, including the base case(s) that stop recursion and the recursive case(s) that break down the problem.\nConvert simple iterative solutions to recursive solutions and vice versa, recognizing when each approach is more appropriate.\nApply recursion to solve problems involving naturally recursive data structures or definitions, such as computing powers, reversing strings, or processing nested lists.\nDebug recursive functions by identifying common errors such as missing base cases, incorrect recursive calls, or infinite recursion."
+  },
+  {
+    "objectID": "labs.html",
+    "href": "labs.html",
+    "title": "Labs",
+    "section": "",
+    "text": "All labs are at Walter Library 106\n\nLaboratory (004) T 02:30 PM - 04:25 PM\n\nLaboratory (005) T 04:40 PM - 06:35 PM\n\nLaboratory (006) W 08:00 AM - 09:55 AM\n\nLaboratory (007) W 10:10 AM - 12:05 PM\n\nLabs are always due at 11:59pm on the Wednesday that Lab sections 6 and 7 happen. Note that my staff and I are not available after 7pm, so if you make the unwise decision to work on the lab close to the deadline you won’t be able to get any help from us.\n\nLab submissions will be primarily evaluated automatically to validate expected behavior.\nAttendance of the lab section itself is expected unless you have an excused absence. Historically, students who skip labs, fail labs (and we don’t want this for you).\n\n\nComputer Lab 1\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 15, 2026\nLabs 6 and 7: Wed, Sep 16, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 16, 2026 at 11:59 pm\n\n\nComputer Lab 2\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 22, 2026\nLabs 6 and 7: Wed, Sep 23, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 23, 2026 at 11:59 pm\n\n\nComputer Lab 3\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 29, 2026\nLabs 6 and 7: Wed, Sep 30, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 30, 2026 at 11:59 pm"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Projects (3 total) are independent/individual programming assignments. You will have roughly three weeks to do each project. The first project will be in python, the second and third will be in Java.\nProjects must be done individually, although you may discuss them with others in a general way (I.E. you can discuss the problem but not the solution). These projects will allow you a chance to incorporate new programming techniques we’re discussing into a bigger, broader program. These will often challenge all of your programming skills, including ones we might not have explicitly trained in this course, as they are designed to help you experience the blend of challenges seen in more realistic large-scale programming problems.\nProjects will always feature substantial manual review. Make sure you write your code first, and foremost, to be human readable. On a project, it will not be enough for the code to “work” – we cannot read and understand the code, you will lose points.\nProject assignments are not collaborative efforts, and you must complete each without the assistance of anyone else other than your instructor or TAs (unless the problem description explicitly says you may work in a pair or group.)\nProject assignments will be posted on Canvas (and on this page), so make sure you check Canvas (and this page) regularly.\nUnless otherwise mentioned, project assignments are to be done individually. You are welcome to discuss what the problems mean, general problem solving strategies, etc., but are not allowed to share solutions in any way. This means you cannot copy others’ work, supply answers in part or whole to others, or make substantial enough use of others’ work that (even if you do not copy verbatim) the answer you submit is not your own work. Do not “research” the problem and try to find solutions on the Internet. This is cheating and if caught, you will be turned into the college. We do run similarity checkers and they are very, very good at catching students who cheat.\n\n\n\n\n\n\nDate\nProjects\n\n\n\n\nMon, Sep 21, 2026\nProject 1 Assigned\n\n\nFri, Oct 16, 2026\nProject 1 Due\n\n\nMon, Oct 19, 2026\nProject 2 Assigned\n\n\nFri, Nov 13, 2026\nProject 2 Due\n\n\nMon, Nov 16, 2026\nProject 3 Assigned\n\n\nMon, Dec 14, 2026\nProject 3 Due"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#outline",
+    "href": "slides/slides-00-00.html#outline",
+    "title": "Course Intro",
+    "section": "Outline",
+    "text": "Outline\n\nAbout me and our staff\nClass overview"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#who-am-i",
+    "href": "slides/slides-00-00.html#who-am-i",
+    "title": "Course Intro",
+    "section": "Who am I?",
+    "text": "Who am I?\n\nAdriana Picoral (PhD)\n\nyou can call me Adriana, if you want to be formal call me Dr. Picoral (Not Ms. or Mrs.)\nAssistant Teaching Professor\napicoral@umn.edu\nOffice: 300A Lind Hall\noffice hours (drop in):\n\nMonday 12pm to 2pm\nTuesday 1pm to 3pm"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#staff",
+    "href": "slides/slides-00-00.html#staff",
+    "title": "Course Intro",
+    "section": "Staff",
+    "text": "Staff\nIn this course we a head TA and undergraduate TAs.\nThe TAs are responsible for:\n\nHelping you, the students, succeed\nGrading assignments, quizzes, and exams\nHelping students on office hours\n\ncsci1913sp25-staff@umn.edu"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#talk-to-a-neighbor",
+    "href": "slides/slides-00-00.html#talk-to-a-neighbor",
+    "title": "Course Intro",
+    "section": "Talk to a neighbor",
+    "text": "Talk to a neighbor\nIntroduce yourself!\nShare your\n\nName\nProgram/Major (why you chose that major)\nOne thing that you can do that took many hours of practice"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#course-overview",
+    "href": "slides/slides-00-00.html#course-overview",
+    "title": "Course Intro",
+    "section": "Course overview",
+    "text": "Course overview\nCSCI 1913 – Introduction to Algorithms, Data Structures, and Program Development\n\nSecond semester course in computer programming\n\nYou should know C/C++/Java"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#parts",
+    "href": "slides/slides-00-00.html#parts",
+    "title": "Course Intro",
+    "section": "3 parts",
+    "text": "3 parts\n\nPython and the study of Algorithms\nJava and the study of Object Oriented Programing\nThe design and implementation of Data Structures"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#readings-5100",
+    "href": "slides/slides-00-00.html#readings-5100",
+    "title": "Course Intro",
+    "section": "Readings (5/100)",
+    "text": "Readings (5/100)\n\nZybooks digital textbook\nWeekly low-stakes assignment (easy points)\nGives you a background and introduction to topics.\nDue Monday at 5pm\nUsing a zybook through canvas\nNo late work accepted"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#readings-5100-1",
+    "href": "slides/slides-00-00.html#readings-5100-1",
+    "title": "Course Intro",
+    "section": "Readings (5/100)",
+    "text": "Readings (5/100)\n\nZyBooks is our interactive online textbook. Make sure you have access to the book specific to our section\nYou can access the textbook by going through the link on any of the Zybook assignments on canvas.\nThere will be required exercises from the textbook: Participation Problems and Challenge Problems\nYou will have unlimited attempts\nOptional sections of the text book are not a part of any assignment, but may provide extra practice or information on more topics"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#labs-15100",
+    "href": "slides/slides-00-00.html#labs-15100",
+    "title": "Course Intro",
+    "section": "Labs (15/100)",
+    "text": "Labs (15/100)\n\nWeekly 2 hour programming session with TA support\nWeekly out-of-class homework\nTurned in through gradescope for credit\nYou must attend all but 4 of your labs pass the class\nLate work accepted"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#labs-15100-1",
+    "href": "slides/slides-00-00.html#labs-15100-1",
+    "title": "Course Intro",
+    "section": "Labs (15/100)",
+    "text": "Labs (15/100)\n\nLabs can be done in groups\nYou can talk to anyone in the class about the labs\nEach gradescope submission can be for up to 3 people"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#projects-20100",
+    "href": "slides/slides-00-00.html#projects-20100",
+    "title": "Course Intro",
+    "section": "Projects (20/100)",
+    "text": "Projects (20/100)\n\nThree substantial (about 3 weeks) programming projects.\nEach is associated with one of the modules of the course.\nGoals:\n\nto practice material holistically\nlearn complications of large-scale\nbuild something actually interesting/useful\n\nThese are many students’ favorite part of the class / These are many students’ least favorite part of the class\nLate submissions are accepted (as long as you contact me before the deadline)"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#gradescope-attendance",
+    "href": "slides/slides-00-00.html#gradescope-attendance",
+    "title": "Course Intro",
+    "section": "Gradescope Attendance",
+    "text": "Gradescope Attendance\nThrough Canvas (this is important, so you sign in through the university website), go to Gradescope and answer the attendance question"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#academic-integrity",
+    "href": "slides/slides-00-00.html#academic-integrity",
+    "title": "Course Intro",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\n\nYou yourself do the work\n\n\nThe goal is not to complete assignments for the sake of completing them, it’s to train your brain\nYou don’t bring a forklift to the gym\nThe goal is to also find joy in computer science and coding – why do people still learn how to play chess if a computer is capable of beating a human in the game?"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#academic-integrity-1",
+    "href": "slides/slides-00-00.html#academic-integrity-1",
+    "title": "Course Intro",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\n\nDon’t search for the problem on the Internet\nIn general, if it’s not something that you could find in the Python reference guide or Java Docs, you shouldn’t be googling it\nPlease be sure to review the Scholastic Conduct section of the syllabus"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#academic-integrity-2",
+    "href": "slides/slides-00-00.html#academic-integrity-2",
+    "title": "Course Intro",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\n\nDon’t post the problem on the Internet\nDon’t work with other students, unless specified that you are allowed to\nDon’t use generative AI unless specified that you are allowed to\nIf you’re not sure, ask!"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#academic-integrity-3",
+    "href": "slides/slides-00-00.html#academic-integrity-3",
+    "title": "Course Intro",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\n\nSimilarity reports will be ran on projects\nYou must be able to explain what you wrote"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#academic-integrity-penalty",
+    "href": "slides/slides-00-00.html#academic-integrity-penalty",
+    "title": "Course Intro",
+    "section": "Academic Integrity Penalty",
+    "text": "Academic Integrity Penalty\nzero on project, one letter grade will be dropped from your final grade"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#quizzes-20100",
+    "href": "slides/slides-00-00.html#quizzes-20100",
+    "title": "Course Intro",
+    "section": "Quizzes (20/100)",
+    "text": "Quizzes (20/100)\n\n10-minute in-class on-paper weekly quizzes (it takes on average 5 minutes to complete)\nheavily based on labs, zybook exercises, and in-class exercises\nwill help you prepare for the midterm exams (repeated questions)\nI will drop the two lowest quiz grades"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#exams-40100",
+    "href": "slides/slides-00-00.html#exams-40100",
+    "title": "Course Intro",
+    "section": "Exams (40/100)",
+    "text": "Exams (40/100)\n\nTwo in-person in-class on-paper midterms exams (10/100 midterm 1, 14/100 midterm 2)\nIn-person on-paper final exam (16/100)\n1 page of double sided notes and a scientific calculator are allowed"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#accommodations",
+    "href": "slides/slides-00-00.html#accommodations",
+    "title": "Course Intro",
+    "section": "Accommodations",
+    "text": "Accommodations\n\nThe Disability Resource Center (DRC) is the campus oﬃce that works with students who have disabilities to provide and/or arrange reasonable accommodations. The DRC website is https://diversity.umn.edu/disability.\nHow can I get accommodations for a disability or medical condition?\n\nYou can make an appointment with Disability Resource Center to discuss any medical conditions that require special accommodations."
+  },
+  {
+    "objectID": "slides/slides-00-00.html#accommodations-1",
+    "href": "slides/slides-00-00.html#accommodations-1",
+    "title": "Course Intro",
+    "section": "Accommodations",
+    "text": "Accommodations\n\nStudents registered with Disability Resource Center, who have a letter requesting accommodation, need to contact instructor early in the semester to discuss the accommodations outlined in their letter.\nEmail Me (apicoral@umn.edu)"
+  },
+  {
+    "objectID": "slides/slides-00-00.html#illness",
+    "href": "slides/slides-00-00.html#illness",
+    "title": "Course Intro",
+    "section": "Illness",
+    "text": "Illness\n\nThe rule is simple: If you are sick stay home\nDo the followig:\n\nTextbook readings\nRead lecture slides\nContact course staﬀ so for project extensions"
+  },
+  {
+    "objectID": "exams.html",
+    "href": "exams.html",
+    "title": "Quizzes and Exams",
+    "section": "",
+    "text": "There will be weekly in-class on-paper quizzes. These will primarily test your understanding of what we’re studying, and will be very similar to the reading and lab exercises. These will be closed notes, but very short and simple. Quizzes will be generally held during class on Wednesday (if you need accommodations, talk to me).\nThese quizzes are meant to help you prepare for the exams.\nWeekly quizzes are meant to help you assess your own understanding and identify where to focus your efforts before the exams. I am interested in your learning process.\nIf you do all of your homework and understand the material, there is no reason for you not to do well on the quizzes. I assign these quizzes for two reasons. One reason is to show me how well students are understanding the material, whether there are some students who are not there yet, and whether I need to review certain concepts with the class. The other reason is to let you assess how well you are understanding the concepts and where you need to focus more of your efforts to learn the course material. If you are struggling on the quizzes, it means that you need to seek help from me, one of the TAs, the Department resources listed below, or your peers, so that we can help you learn the material."
+  },
+  {
+    "objectID": "exams.html#quizzes",
+    "href": "exams.html#quizzes",
+    "title": "Quizzes and Exams",
+    "section": "",
+    "text": "There will be weekly in-class on-paper quizzes. These will primarily test your understanding of what we’re studying, and will be very similar to the reading and lab exercises. These will be closed notes, but very short and simple. Quizzes will be generally held during class on Wednesday (if you need accommodations, talk to me).\nThese quizzes are meant to help you prepare for the exams.\nWeekly quizzes are meant to help you assess your own understanding and identify where to focus your efforts before the exams. I am interested in your learning process.\nIf you do all of your homework and understand the material, there is no reason for you not to do well on the quizzes. I assign these quizzes for two reasons. One reason is to show me how well students are understanding the material, whether there are some students who are not there yet, and whether I need to review certain concepts with the class. The other reason is to let you assess how well you are understanding the concepts and where you need to focus more of your efforts to learn the course material. If you are struggling on the quizzes, it means that you need to seek help from me, one of the TAs, the Department resources listed below, or your peers, so that we can help you learn the material."
+  },
+  {
+    "objectID": "exams.html#exam-dates",
+    "href": "exams.html#exam-dates",
+    "title": "Quizzes and Exams",
+    "section": "Exam Dates",
+    "text": "Exam Dates\n\n\n\n\n\n\nDate\nExams\n\n\n\n\nWed, Oct 14, 2026\nMidterm 1\n\n\nWed, Nov 11, 2026\nMidterm 2\n\n\n\n\n\n\nFinal exam date will be announced"
+  }
+]
