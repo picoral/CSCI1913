@@ -788,7 +788,7 @@
     "href": "slides/slides-01-01.html#python",
     "title": "Intro to Python",
     "section": "Python",
-    "text": "Python\nLets run some code in python!\nInteractive1 mode (you will see me use this for quick examples):\n\nopen a terminal (aka shell)\ntype python (or python3)\n\naka “REPL” (Read Evaluate Print Loop)"
+    "text": "Python\nLets run some code in python!\nInteractive1 mode (you will see me use this for quick examples):\n\nopen a terminal (aka shell) (Windows users: I prefer Git Bash over Powershell)\ntype python (or python3)\n\naka “REPL” (Read Evaluate Print Loop)"
   },
   {
     "objectID": "slides/slides-01-01.html#python-variables",
