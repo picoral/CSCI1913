@@ -442,7 +442,7 @@
   <meta name="generator" content="quarto-1.6.39">
 
   <meta name="author" content="CSCI 1913 – Introduction to Algorithms, Data Structures, and Program DevelopmentAdriana Picoral">
-  <title>CSCI 1913 Fall 2026 – Course Intro</title>
+  <title>CSCI 1913 Fall 2026 – Programming Languages Overview</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -986,7 +986,7 @@ margin-right: 0; }
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Course Intro</h1>
+  <h1 class="title">Programming Languages Overview</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -997,213 +997,109 @@ margin-right: 0; }
 </div>
 
 </section>
-<section id="outline" class="slide level2">
-<h2>Outline</h2>
+<section>
+<section id="what-is-a-programming-language" class="title-slide slide level1 center">
+<h1>What is a programming language?</h1>
+
+</section>
+<section id="what-is-a-programming-language-1" class="slide level2">
+<h2>What is a programming language?</h2>
 <ul>
-<li>About me and our staff</li>
-<li>Class overview</li>
+<li>Instructions that can be understood by a machine</li>
+<li>Programming languages are created to allow people to write code that be read by other people, and that the computer can understand and execute</li>
 </ul>
 </section>
-<section id="who-am-i" class="slide level2">
-<h2>Who am I?</h2>
+<section id="types-of-programming-language" class="slide level2">
+<h2>Types of programming language</h2>
+<p>High-Level Languages:</p>
 <ul>
-<li>Adriana Picoral (PhD)
+<li>Python, Java, C++, JavaScript</li>
+<li>Closer to human/natural language</li>
+</ul>
+<p>Low-Level Languages:</p>
 <ul>
-<li>you can call me Adriana, if you want to be formal call me <strong>Dr.</strong> Picoral (Not Ms. or Mrs.)</li>
-<li>Assistant Teaching Professor</li>
-<li>apicoral@umn.edu</li>
-<li>Office: 300A Lind Hall</li>
-<li>office hours (drop in):
+<li>Assembly language, Machine code</li>
+<li>Closer to machine code, or binary</li>
+<li>More difficult for humans to read (but easier to read than zeros and ones)</li>
+</ul>
+</section>
+<section id="compilation-vs.-interpretation" class="slide level2">
+<h2>Compilation vs. Interpretation</h2>
+<p>Both compilers and interpreters convert human-readable code to a computer-readable set of instructions</p>
 <ul>
-<li>Monday 12pm to 2pm</li>
-<li>Tuesday 1pm to 3pm</li>
+<li>Compiled languages are translated into bytecode (machine code) before runtime
+<ul>
+<li>C, C++</li>
 </ul></li>
-</ul></li>
-</ul>
-</section>
-<section id="staff" class="slide level2">
-<h2>Staff</h2>
-<p>In this course we a head TA and undergraduate TAs.</p>
-<p>The TAs are responsible for:</p>
+<li>Interpreted languages are run line by line by an interpreter
 <ul>
-<li>Helping you, the students, succeed</li>
-<li>Grading assignments, quizzes, and exams</li>
-<li>Helping students on office hours</li>
-</ul>
-</section>
-<section id="talk-to-a-neighbor" class="slide level2">
-<h2>Talk to a neighbor</h2>
-<p>Introduce yourself!</p>
-<p>Share your</p>
-<ul>
-<li>Name</li>
-<li>Program/Major (why you chose that major)</li>
-<li>What makes you human?</li>
-</ul>
-</section>
-<section id="course-overview" class="slide level2">
-<h2>Course overview</h2>
-<p>CSCI 1913 – Introduction to Algorithms, Data Structures, and Program Development</p>
-<ul>
-<li>Second semester course in computer programming
-<ul>
-<li>You should know C/C++/Java</li>
+<li>Python, JavaScript</li>
 </ul></li>
 </ul>
 </section>
-<section id="parts" class="slide level2">
-<h2>3 parts</h2>
+<section id="compilation-vs.-interpretation-1" class="slide level2">
+<h2>Compilation vs. Interpretation</h2>
 <ul>
-<li>Python and the study of Algorithms</li>
-<li>Java and the study of Object Oriented Programing</li>
-<li>The design and implementation of Data Structures</li>
+<li><p>Caveat: interpreted vs. compiled is not necessarily a property of a language but a property of the implementation</p></li>
+<li><p>Many programming languages can be executed as either a compiled program or as an interpreted language in interactive mode</p></li>
+<li><p>When you write code in an interpreted language, you can run it directly from the command line or from an IDE without the need for a separate compilation step</p></li>
+<li><p>Nowadays, for most applications, the difference in run<strong>time</strong> between programming languages is often very small</p></li>
 </ul>
 </section>
-<section id="readings-5100" class="slide level2">
-<h2>Readings (5/100)</h2>
+<section id="compilation-vs.-interpretation-2" class="slide level2">
+<h2>Compilation vs. Interpretation</h2>
 <ul>
-<li>Zybooks digital textbook</li>
-<li>Weekly low-stakes assignment (easy points)</li>
-<li>Gives you a background and introduction to topics.</li>
-<li>Due Monday at 11:59pm</li>
-<li>Using a zybook through canvas</li>
-<li>No late work accepted</li>
+<li>Compiled languages usually result in faster programs – the translationg of code at run time during interpretation adds to the overhead</li>
+<li>Compilers are platform specific – they need to know what machine code they are translating to, the compiled code is optimized for the specific hardware and operating system of the machine it is intended to run on</li>
+<li>Interpreters are platform independent</li>
+<li>Interpreted languages tend to be more flexible</li>
 </ul>
 </section>
-<section id="readings-5100-1" class="slide level2">
-<h2>Readings (5/100)</h2>
+<section id="compilation" class="slide level2">
+<h2>Compilation</h2>
 <ul>
-<li>ZyBooks is our interactive online textbook. Make sure you have access to the book specific to our section</li>
-<li>You can access the textbook by going through the link on any of the Zybook assignments on canvas.</li>
-<li>There will be required exercises from the textbook: Participation Problems and Challenge Problems</li>
-<li>You will have unlimited attempts</li>
-<li>Optional sections of the text book are not a part of any assignment, but may provide extra practice or information on more topics</li>
+<li>A compiler is a program written to read code in a programming language</li>
+<li>You write code in that programming language</li>
+<li>You run the compiler on the code</li>
+<li>The compiler converts code to “bytecode”</li>
+<li>Your CPU runs the bytecode</li>
 </ul>
 </section>
-<section id="labs-15100" class="slide level2">
-<h2>Labs (15/100)</h2>
+<section id="interpretation" class="slide level2">
+<h2>Interpretation</h2>
 <ul>
-<li>Weekly 2 hour programming session with TA support</li>
-<li>Weekly out-of-class homework</li>
-<li>Turned in through gradescope for credit</li>
-<li>You must attend all but 4 of your labs pass the class</li>
-<li>Late work accepted</li>
+<li>An interpreter is a program that reads code and just runs it</li>
+<li>You write your code</li>
+<li>You run the interpreter on your code</li>
+<li>The CPU runs the interpreter, the interpreter runs your code</li>
 </ul>
 </section>
-<section id="labs-15100-1" class="slide level2">
-<h2>Labs (15/100)</h2>
+<section id="java" class="slide level2">
+<h2>Java</h2>
 <ul>
-<li>Labs can be done in groups</li>
-<li>You can talk to anyone in the class about the labs</li>
-<li>Each gradescope submission can be for up to 3 people</li>
+<li>Programming language released in 1995</li>
 </ul>
+<p>Java both compiles and interprets</p>
+<ol type="1">
+<li>Programmer writes Java code</li>
+<li>Java compiler turns Java code into Java bytecode</li>
+<li>Java virtual machine interprets Java bytecode</li>
+</ol>
 </section>
-<section id="projects-20100" class="slide level2">
-<h2>Projects (20/100)</h2>
+<section id="python" class="slide level2">
+<h2>Python</h2>
 <ul>
-<li>Three substantial (about 3 weeks) programming projects.</li>
-<li>Each is associated with one of the modules of the course.</li>
-<li>Goals:
+<li>Programming language released in 1991</li>
+<li>You can type directly into the interpreter or run a file of commands</li>
+<li>Interpreted Language:
 <ul>
-<li>to practice material holistically</li>
-<li>learn complications of large-scale</li>
-<li>build something actually interesting/useful</li>
-</ul></li>
-<li>These are many students’ favorite part of the class / These are many students’ least favorite part of the class</li>
-<li>Late submissions are accepted (as long as you contact me before the deadline)</li>
-</ul>
-</section>
-<section id="gradescope-attendance" class="slide level2">
-<h2>Gradescope Attendance</h2>
-<p>Through Canvas (this is important, so you sign in through the university website), go to Gradescope and answer the <a href="https://www.gradescope.com/courses/1381901/assignments/8543627/">attendance question</a></p>
-</section>
-<section id="academic-integrity" class="slide level2">
-<h2>Academic Integrity</h2>
-<blockquote>
-<p>You yourself do the work</p>
-</blockquote>
-<ul>
-<li>The goal is not to complete assignments for the sake of completing them, it’s to train your brain</li>
-<li>You don’t bring a forklift to the gym</li>
-<li>The goal is to also find joy in computer science and coding – why do people still learn how to play chess if a computer is capable of beating a human in the game?</li>
-</ul>
-</section>
-<section id="academic-integrity-1" class="slide level2">
-<h2>Academic Integrity</h2>
-<ul>
-<li>Don’t search for the problem on the Internet</li>
-<li>In general, if it’s not something that you could find in the Python reference guide or Java Docs, you shouldn’t be googling it</li>
-<li>Please be sure to review the <a href="syllabus.html/#scholastic-conduct-specific-to-this-course">Scholastic Conduct</a> section of the syllabus</li>
-</ul>
-</section>
-<section id="academic-integrity-2" class="slide level2">
-<h2>Academic Integrity</h2>
-<ul>
-<li>Don’t post the problem on the Internet</li>
-<li>Don’t work with other students, unless specified that you are allowed to</li>
-<li>Don’t use generative AI unless specified that you are allowed to</li>
-<li>If you’re not sure, ask!</li>
-</ul>
-</section>
-<section id="academic-integrity-3" class="slide level2">
-<h2>Academic Integrity</h2>
-<ul>
-<li>Similarity reports will be ran on projects</li>
-<li>You must be able to explain what you wrote</li>
-</ul>
-</section>
-<section id="academic-integrity-penalty" class="slide level2">
-<h2>Academic Integrity Penalty</h2>
-<p>zero on project, one letter grade will be dropped from your final grade</p>
-</section>
-<section id="quizzes-20100" class="slide level2">
-<h2>Quizzes (20/100)</h2>
-<ul>
-<li>10-minute in-class on-paper weekly quizzes (it takes on average 5 minutes to complete)</li>
-<li>heavily based on labs, zybook exercises, and in-class exercises</li>
-<li>will help you prepare for the midterm exams (repeated questions)</li>
-<li>I will drop the two lowest quiz grades</li>
-</ul>
-</section>
-<section id="exams-40100" class="slide level2">
-<h2>Exams (40/100)</h2>
-<ul>
-<li>Two in-person in-class on-paper midterms exams (10/100 midterm 1, 14/100 midterm 2)</li>
-<li>In-person on-paper final exam (16/100)</li>
-<li>1 page of double sided notes and a scientific calculator are allowed</li>
-</ul>
-</section>
-<section id="accommodations" class="slide level2">
-<h2>Accommodations</h2>
-<ul>
-<li>The Disability Resource Center (DRC) is the campus oﬃce that works with students who have disabilities to provide and/or arrange reasonable accommodations. The DRC website is https://diversity.umn.edu/disability.</li>
-<li>How can I get accommodations for a disability or medical condition?
-<ul>
-<li>You can make an appointment with Disability Resource Center to discuss any medical conditions that require special accommodations.</li>
-</ul></li>
-</ul>
-</section>
-<section id="accommodations-1" class="slide level2">
-<h2>Accommodations</h2>
-<ul>
-<li>Students registered with Disability Resource Center, who have a letter requesting accommodation, need to contact instructor early in the semester to discuss the accommodations outlined in their letter.</li>
-<li>Email Me (apicoral@umn.edu)</li>
-</ul>
-</section>
-<section id="illness" class="slide level2">
-<h2>Illness</h2>
-<ul>
-<li>The rule is simple: If you are sick stay home</li>
-<li>Do the followig:
-<ul>
-<li>Textbook readings</li>
-<li>Read lecture slides</li>
-<li>Contact course staﬀ so for project extensions</li>
+<li>You don’t have to compile programs into binary before running them</li>
+<li>Current iteration of python is Python3</li>
 </ul></li>
 </ul>
 
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
