@@ -221,7 +221,7 @@
     "href": "slides/slides-00-01.html#skills-you-need-to-develop",
     "title": "How to succeed in this course",
     "section": "Skills you need to develop",
-    "text": "Skills you need to develop\n\nSpecification\nVerification\nProblem decomposition\nCode reading\nDebugging"
+    "text": "Skills you need to develop\nWriting code is one of many skills you need to develop, but these are the skills that will help you write code:\n\nSpecification\nVerification\nProblem decomposition\nCode reading\nDebugging"
   },
   {
     "objectID": "index.html",
@@ -424,21 +424,21 @@
     "href": "slides/slides-00-00.html#accommodations",
     "title": "Course Intro",
     "section": "Accommodations",
-    "text": "Accommodations\n\nThe Disability Resource Center (DRC) is the campus oﬃce that works with students who have disabilities to provide and/or arrange reasonable accommodations. The DRC website is https://diversity.umn.edu/disability.\nHow can I get accommodations for a disability or medical condition?\n\nYou can make an appointment with Disability Resource Center to discuss any medical conditions that require special accommodations."
+    "text": "Accommodations\n\nThe Disability Resource Center (DRC) is the campus oﬃce that works with students who have disabilities to provide and/or arrange reasonable accommodations. You should visit the DRC website to learn about how to get accommodations for a disability or medical condition."
   },
   {
     "objectID": "slides/slides-00-00.html#accommodations-1",
     "href": "slides/slides-00-00.html#accommodations-1",
     "title": "Course Intro",
     "section": "Accommodations",
-    "text": "Accommodations\n\nStudents registered with Disability Resource Center, who have a letter requesting accommodation, need to contact instructor early in the semester to discuss the accommodations outlined in their letter.\nEmail Me (apicoral@umn.edu)"
+    "text": "Accommodations\n\nRegister with Disability Resource Center\nTalk to me early in the semester to discuss accommodations\nEmail Me (apicoral@umn.edu)"
   },
   {
     "objectID": "slides/slides-00-00.html#illness",
     "href": "slides/slides-00-00.html#illness",
     "title": "Course Intro",
     "section": "Illness",
-    "text": "Illness\n\nThe rule is simple: If you are sick stay home\nDo the followig:\n\nTextbook readings\nRead lecture slides\nContact course staﬀ so for project extensions"
+    "text": "Illness\n\nThe rule is simple: If you are sick stay home\nDo the following:\n\nTextbook readings\nRead lecture slides\nContact course staﬀ so for project extensions"
   },
   {
     "objectID": "exams.html",
@@ -908,5 +908,19 @@
     "title": "Intro to Python",
     "section": "Warnings",
     "text": "Warnings\n\nA function call that returns a value is not the same as printing to the standard output\nNote we are not taking input from the user yet\nA function is like a box, arguments go in, values come out"
+  },
+  {
+    "objectID": "slides/slides-00-01.html#student-experience-project",
+    "href": "slides/slides-00-01.html#student-experience-project",
+    "title": "How to succeed in this course",
+    "section": "Student Experience Project",
+    "text": "Student Experience Project\nFill out survey"
+  },
+  {
+    "objectID": "slides/slides-00-01.html#skills-you-will-develop-in-this-course",
+    "href": "slides/slides-00-01.html#skills-you-will-develop-in-this-course",
+    "title": "How to succeed in this course",
+    "section": "Skills you will develop in this course",
+    "text": "Skills you will develop in this course\nWriting code is one of many skills you need to develop, but these are the skills that will help you write code:\n\nSpecification\nVerification\nProblem decomposition\nCode reading\nDebugging"
   }
 ]
