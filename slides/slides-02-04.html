@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="CSCI 1913 – Introduction to Algorithms, Data Structures, and Program DevelopmentAdriana Picoral">
 
-<title>CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development – CSCI 1913 Fall 2026</title>
+<title>Python IO – CSCI 1913 Fall 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +21,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6bd9cfa162949bde0a231f530c97869d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6bd9cfa162949bde0a231f530c97869d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -78,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">CSCI 1913 Fall 2026</span>
     </a>
   </div>
@@ -89,23 +124,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Modules</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./labs.html"> 
+    <a class="nav-link" href="../labs.html"> 
 <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> 
+    <a class="nav-link" href="../projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./exams.html"> 
+    <a class="nav-link" href="../exams.html"> 
 <span class="menu-text">Quizzes and Exams</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./syllabus.html"> 
+    <a class="nav-link" href="../syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
 </ul>
@@ -124,40 +159,34 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-1-python-and-the-study-of-algorithms" id="toc-part-1-python-and-the-study-of-algorithms" class="nav-link active" data-scroll-target="#part-1-python-and-the-study-of-algorithms">Part 1 – Python and the study of Algorithms</a>
-  <ul class="collapse">
-  <li><a href="#module-01---course-overview" id="toc-module-01---course-overview" class="nav-link" data-scroll-target="#module-01---course-overview">Module 01 - Course Overview</a>
-  <ul class="collapse">
-  <li><a href="#documents" id="toc-documents" class="nav-link" data-scroll-target="#documents">Documents</a></li>
-  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
-  </ul></li>
-  <li><a href="#module-02-python" id="toc-module-02-python" class="nav-link" data-scroll-target="#module-02-python">Module 02 – Python</a>
-  <ul class="collapse">
-  <li><a href="#slides-1" id="toc-slides-1" class="nav-link" data-scroll-target="#slides-1">Slides</a></li>
-  </ul></li>
-  <li><a href="#module-03-advanced-python" id="toc-module-03-advanced-python" class="nav-link" data-scroll-target="#module-03-advanced-python">Module 03 – Advanced Python</a></li>
-  <li><a href="#module-04-big-o-notation-and-searching" id="toc-module-04-big-o-notation-and-searching" class="nav-link" data-scroll-target="#module-04-big-o-notation-and-searching">Module 04 – Big O notation, and searching</a></li>
-  <li><a href="#module-05-sorting" id="toc-module-05-sorting" class="nav-link" data-scroll-target="#module-05-sorting">Module 05 – Sorting</a></li>
-  <li><a href="#module-06-recursion" id="toc-module-06-recursion" class="nav-link" data-scroll-target="#module-06-recursion">Module 06 – Recursion</a></li>
-  </ul></li>
-  <li><a href="#part-2-java-and-the-study-of-object-oriented-programming" id="toc-part-2-java-and-the-study-of-object-oriented-programming" class="nav-link" data-scroll-target="#part-2-java-and-the-study-of-object-oriented-programming">Part 2 – Java and the study of Object Oriented Programming</a></li>
-  <li><a href="#part-3-the-design-and-implementation-of-data-structures" id="toc-part-3-the-design-and-implementation-of-data-structures" class="nav-link" data-scroll-target="#part-3-the-design-and-implementation-of-data-structures">Part 3 – The design and implementation of Data Structures</a></li>
+  <li><a href="#input-function" id="toc-input-function" class="nav-link active" data-scroll-target="#input-function"><code>input</code> function</a></li>
+  <li><a href="#input-function-1" id="toc-input-function-1" class="nav-link" data-scroll-target="#input-function-1"><code>input</code> function</a></li>
+  <li><a href="#input-validation" id="toc-input-validation" class="nav-link" data-scroll-target="#input-validation">Input validation</a></li>
+  <li><a href="#print-functions" id="toc-print-functions" class="nav-link" data-scroll-target="#print-functions"><code>print</code> functions</a></li>
+  <li><a href="#when-do-we-use-input-and-print" id="toc-when-do-we-use-input-and-print" class="nav-link" data-scroll-target="#when-do-we-use-input-and-print">When do we use input and print?</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
+  <li><a href="#a-possible-solution" id="toc-a-possible-solution" class="nav-link" data-scroll-target="#a-possible-solution">A possible solution</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides-02-04.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development</h1>
-<p class="subtitle lead">Fall 2026<br>Adriana Picoral</p>
+<h1 class="title">Python IO</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p><em>CSCI 1913 – Introduction to Algorithms, Data Structures, and Program Development</em><br>Adriana Picoral </p>
+          </div>
+  </div>
     
   
     
@@ -168,107 +197,98 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="part-1-python-and-the-study-of-algorithms" class="level1">
-<h1>Part 1 – Python and the study of Algorithms</h1>
-<section id="module-01---course-overview" class="level2">
-<h2 class="anchored" data-anchor-id="module-01---course-overview">Module 01 - Course Overview</h2>
-<p>For this module we will focus first-and-foremost on getting the class started. We’ll be seeing the basic class design, learning what are the parts of the class, and how they will help us learn.</p>
-<p>By the end of the week you should be able to:</p>
+<section id="input-function" class="level2">
+<h2 class="anchored" data-anchor-id="input-function"><code>input</code> function</h2>
 <ul>
-<li>Decide whether CSCI1913 is a course for you (if you fit the audience)</li>
-<li>Prepare for what we will do to learn, and why.</li>
-</ul>
-<section id="documents" class="level3">
-<h3 class="anchored" data-anchor-id="documents">Documents</h3>
-<ul>
-<li><a href="syllabus.html">Syllabus</a></li>
-<li><a href="integrity.html">Academic Integrity</a></li>
-<li><a href="rules.html">Course Rules</a></li>
-<li><a href="technology.html">Technology</a></li>
+<li>text-input and text-output to user are important for testing and debugging</li>
+<li>You rarely use them when writing “real code”</li>
+<li>both operations are done with functions in python</li>
+<li>Both show off something weird about python function</li>
 </ul>
 </section>
-<section id="slides" class="level3">
-<h3 class="anchored" data-anchor-id="slides">Slides</h3>
+<section id="input-function-1" class="level2">
+<h2 class="anchored" data-anchor-id="input-function-1"><code>input</code> function</h2>
 <ul>
-<li><a href="slides/slides-00-00.html">Course Intro</a></li>
-<li><a href="slides/slides-00-01.html">How to succeed in this course</a></li>
+<li><code>input()</code>will wait for user input and return as a string</li>
+<li><code>input("prompt")</code>will print a prompt and then wait for user input return as a string</li>
+<li>Often combined with type-changing functions to type cast.</li>
+</ul>
+<div id="80cab77a" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a number: "</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="bu">int</span>(user_input)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="input-validation" class="level2">
+<h2 class="anchored" data-anchor-id="input-validation">Input validation</h2>
+<p>Remember that type casting fuctions like <code>int()</code> and <code>float()</code> will throw errors if a string argument has non-numeric characters</p>
+</section>
+<section id="print-functions" class="level2">
+<h2 class="anchored" data-anchor-id="print-functions"><code>print</code> functions</h2>
+<p>Check the documentation for <code>print()</code> – what optional parameters can we change?</p>
+</section>
+<section id="when-do-we-use-input-and-print" class="level2">
+<h2 class="anchored" data-anchor-id="when-do-we-use-input-and-print">When do we use input and print?</h2>
+<ul>
+<li>very rarely</li>
+<li><code>print</code> sends data to end-user, can’t be used elsewhere.</li>
+<li><code>input</code> reads data from end-user, can’t be from elsewhere.</li>
+</ul>
+<p>This function is useless and I hate it:</p>
+<div id="21438c3e" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> isEven (x):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"even"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> :</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"odd"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise" class="level2">
+<h2 class="anchored" data-anchor-id="exercise">Exercise</h2>
+<p>Write a basic number guessing game. Here’s some code to get you started:</p>
+<div id="41e52bfa" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>MIN <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>MAX <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>SECRET <span class="op">=</span> random.randint(MIN, MAX)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>The program should repeatedly ask the user to guess a number</li>
+<li>if the user guesses too large report “smaller”</li>
+<li>if the user guesses too small report “larger”</li>
+<li>if the user guesses right, report “correct” and exit.</li>
 </ul>
 </section>
-</section>
-<section id="module-02-python" class="level2">
-<h2 class="anchored" data-anchor-id="module-02-python">Module 02 – Python</h2>
-<p>We will continue working with Python. In this module we will finish discussing basic python features with a few final details of pyhton’s many scopes, in particular how you can import functions from other files – and some unique details about how this works in python.</p>
-<p>Then we will begin exploring Python’s advanced data representation tools: data structures. Data structures create a flexible way to represent many common forms of data in an ad-hoc way without creating specific classes, or writing tricky data-management code.</p>
-<p>We will be focusing on the List this week, which is python’s answer to the array. Towards the end of the week we will introduce the set and dictionary as well, with the plan to finish them next week.</p>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Read, write, run, test, and debug simple python programs</li>
-<li>Identify a list, tuple, and dictionary as represented in python code</li>
-<li>Create, and loop over python lists</li>
-</ul>
-<section id="slides-1" class="level3">
-<h3 class="anchored" data-anchor-id="slides-1">Slides</h3>
-<ul>
-<li><a href="slides/slides-01-00.html">Programming Languages Overview</a></li>
-<li><a href="slides/slides-01-01.html">Intro to Python</a></li>
-<li><a href="slides/slides-02-01.html">More Python</a></li>
-</ul>
-</section>
-</section>
-<section id="module-03-advanced-python" class="level2">
-<h2 class="anchored" data-anchor-id="module-03-advanced-python">Module 03 – Advanced Python</h2>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Explain the concept of mutability and distinguish between mutable and immutable data types in Python, providing examples of each and describing the implications for variable assignment and function parameters.</li>
-<li>Create and manipulate Python lists using various methods including indexing, slicing, appending, inserting, removing, and sorting elements, while understanding the performance characteristics of these operations.</li>
-<li>Analyze the behavior of list aliasing and copying, explaining the difference between shallow and deep copies and predicting how changes to one list reference will affect others.</li>
-<li>Create and manipulate dictionaries to store and retrieve key-value pairs, using appropriate methods for adding, updating, removing, and accessing elements.</li>
-<li>Iterate over dictionaries using various approaches (keys, values, items) and understand the implications of dictionary ordering in modern Python versions.</li>
-<li>Apply dictionaries to solve practical problems such as counting occurrences, grouping data, creating lookup tables, and representing structured information.</li>
-<li>Use sets for membership testing and duplicate elimination, understanding when sets are preferable to lists for specific operations and leveraging their O(1) average-case lookup performance.</li>
-<li>Perform set operations including union, intersection, difference, and symmetric difference to solve problems involving collections and relationships between groups.</li>
-<li>Select appropriate data structures (lists, dictionaries, or sets) based on the requirements of a given problem, justifying choices based on performance, functionality, and code clarity.</li>
-</ul>
-</section>
-<section id="module-04-big-o-notation-and-searching" class="level2">
-<h2 class="anchored" data-anchor-id="module-04-big-o-notation-and-searching">Module 04 – Big O notation, and searching</h2>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Analyze the time complexity of simple algorithms by identifying the relationship between input size and running time.</li>
-<li>Express algorithm efficiency using Big-O notation and correctly classify common complexity classes including O(1), O(log n), O(n), O(n log n), O(n²), and O(2ⁿ).</li>
-<li>Compare algorithms based on their asymptotic behavior and determine which algorithm is more efficient for large inputs by analyzing their Big-O classifications.</li>
-<li>Distinguish between best-case, average-case, and worst-case time complexity and explain when each measure is most relevant.</li>
-<li>Implement linear search and binary search correctly in code and trace their execution on sample datasets.</li>
-<li>Analyze the time complexity of linear search as O(n) and binary search as O(log n) and explain why binary search is asymptotically faster.</li>
-<li>Explain why binary search requires sorted data as a precondition and demonstrate how the algorithm eliminates half of the remaining search space with each comparison.</li>
-</ul>
-</section>
-<section id="module-05-sorting" class="level2">
-<h2 class="anchored" data-anchor-id="module-05-sorting">Module 05 – Sorting</h2>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Implement selection sort, insertion sort, and bubble sort correctly in code and trace their execution on small datasets.</li>
-<li>Analyze and compare the time complexity of selection sort, insertion sort, and bubble sort in their best, average, and worst cases.</li>
-<li>Explain the underlying mechanism of each sorting algorithm including how elements are compared, swapped, and positioned during execution.</li>
-</ul>
-</section>
-<section id="module-06-recursion" class="level2">
-<h2 class="anchored" data-anchor-id="module-06-recursion">Module 06 – Recursion</h2>
-<p>By the end of this module you will be able to:</p>
-<ul>
-<li>Define and explain recursion as a problem-solving technique where a function calls itself with modified parameters to solve progressively smaller subproblems.</li>
-<li>Identify the essential components of a recursive function, including the base case(s) that stop recursion and the recursive case(s) that break down the problem.</li>
-<li>Convert simple iterative solutions to recursive solutions and vice versa, recognizing when each approach is more appropriate.</li>
-<li>Apply recursion to solve problems involving naturally recursive data structures or definitions, such as computing powers, reversing strings, or processing nested lists.</li>
-<li>Debug recursive functions by identifying common errors such as missing base cases, incorrect recursive calls, or infinite recursion.</li>
-</ul>
-</section>
-</section>
-<section id="part-2-java-and-the-study-of-object-oriented-programming" class="level1">
-<h1>Part 2 – Java and the study of Object Oriented Programming</h1>
-</section>
-<section id="part-3-the-design-and-implementation-of-data-structures" class="level1">
-<h1>Part 3 – The design and implementation of Data Structures</h1>
+<section id="a-possible-solution" class="level2">
+<h2 class="anchored" data-anchor-id="a-possible-solution">A possible solution</h2>
+<p>How do we add input validation to this solution? (to ensure <code>int()</code> won’t throw an error)</p>
+<div id="a16cd75b" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> guess(user_input, secret):</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    user_input <span class="op">=</span> <span class="bu">int</span>(user_input)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> user_input <span class="op">==</span> secret:</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"correct"</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> user_input <span class="op">&gt;</span> secret:</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"smaller"</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> user_input <span class="op">&lt;</span> secret:</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"larger"</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> play_game(secret):</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Guess the number: "</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="kw">not</span> guess(user_input, secret):</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Guess the number: "</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    MIN <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    MAX <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    SECRET <span class="op">=</span> random.randint(MIN, MAX)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    play_game(SECRET)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>

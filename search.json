@@ -228,7 +228,7 @@
     "href": "index.html",
     "title": "CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development",
     "section": "",
-    "text": "For this module we will focus first-and-foremost on getting the class started. We’ll be seeing the basic class design, learning what are the parts of the class, and how they will help us learn.\nBy the end of the week you should be able to:\n\nDecide whether CSCI1913 is a course for you (if you fit the audience)\nPrepare for what we will do to learn, and why.\n\n\n\n\nSyllabus\nAcademic Integrity\nCourse Rules\nTechnology\n\n\n\n\n\nCourse Intro\nHow to succeed in this course\n\n\n\n\n\nWe will continue working with Python. In this module we will finish discussing basic python features with a few final details of pyhton’s many scopes, in particular how you can import functions from other files – and some unique details about how this works in python.\nThen we will begin exploring Python’s advanced data representation tools: data structures. Data structures create a flexible way to represent many common forms of data in an ad-hoc way without creating specific classes, or writing tricky data-management code.\nWe will be focusing on the List this week, which is python’s answer to the array. Towards the end of the week we will introduce the set and dictionary as well, with the plan to finish them next week.\nBy the end of this module you will be able to:\n\nRead, write, run, test, and debug simple python programs\nIdentify a list, tuple, and dictionary as represented in python code\nCreate, and loop over python lists\n\n\n\n\nProgramming Languages Overview\nIntro to Python\n\n\n\n\n\nBy the end of this module you will be able to:\n\nExplain the concept of mutability and distinguish between mutable and immutable data types in Python, providing examples of each and describing the implications for variable assignment and function parameters.\nCreate and manipulate Python lists using various methods including indexing, slicing, appending, inserting, removing, and sorting elements, while understanding the performance characteristics of these operations.\nAnalyze the behavior of list aliasing and copying, explaining the difference between shallow and deep copies and predicting how changes to one list reference will affect others.\nCreate and manipulate dictionaries to store and retrieve key-value pairs, using appropriate methods for adding, updating, removing, and accessing elements.\nIterate over dictionaries using various approaches (keys, values, items) and understand the implications of dictionary ordering in modern Python versions.\nApply dictionaries to solve practical problems such as counting occurrences, grouping data, creating lookup tables, and representing structured information.\nUse sets for membership testing and duplicate elimination, understanding when sets are preferable to lists for specific operations and leveraging their O(1) average-case lookup performance.\nPerform set operations including union, intersection, difference, and symmetric difference to solve problems involving collections and relationships between groups.\nSelect appropriate data structures (lists, dictionaries, or sets) based on the requirements of a given problem, justifying choices based on performance, functionality, and code clarity.\n\n\n\n\nBy the end of this module you will be able to:\n\nAnalyze the time complexity of simple algorithms by identifying the relationship between input size and running time.\nExpress algorithm efficiency using Big-O notation and correctly classify common complexity classes including O(1), O(log n), O(n), O(n log n), O(n²), and O(2ⁿ).\nCompare algorithms based on their asymptotic behavior and determine which algorithm is more efficient for large inputs by analyzing their Big-O classifications.\nDistinguish between best-case, average-case, and worst-case time complexity and explain when each measure is most relevant.\nImplement linear search and binary search correctly in code and trace their execution on sample datasets.\nAnalyze the time complexity of linear search as O(n) and binary search as O(log n) and explain why binary search is asymptotically faster.\nExplain why binary search requires sorted data as a precondition and demonstrate how the algorithm eliminates half of the remaining search space with each comparison.\n\n\n\n\nBy the end of this module you will be able to:\n\nImplement selection sort, insertion sort, and bubble sort correctly in code and trace their execution on small datasets.\nAnalyze and compare the time complexity of selection sort, insertion sort, and bubble sort in their best, average, and worst cases.\nExplain the underlying mechanism of each sorting algorithm including how elements are compared, swapped, and positioned during execution.\n\n\n\n\nBy the end of this module you will be able to:\n\nDefine and explain recursion as a problem-solving technique where a function calls itself with modified parameters to solve progressively smaller subproblems.\nIdentify the essential components of a recursive function, including the base case(s) that stop recursion and the recursive case(s) that break down the problem.\nConvert simple iterative solutions to recursive solutions and vice versa, recognizing when each approach is more appropriate.\nApply recursion to solve problems involving naturally recursive data structures or definitions, such as computing powers, reversing strings, or processing nested lists.\nDebug recursive functions by identifying common errors such as missing base cases, incorrect recursive calls, or infinite recursion."
+    "text": "For this module we will focus first-and-foremost on getting the class started. We’ll be seeing the basic class design, learning what are the parts of the class, and how they will help us learn.\nBy the end of the week you should be able to:\n\nDecide whether CSCI1913 is a course for you (if you fit the audience)\nPrepare for what we will do to learn, and why.\n\n\n\n\nSyllabus\nAcademic Integrity\nCourse Rules\nTechnology\n\n\n\n\n\nCourse Intro\nHow to succeed in this course\n\n\n\n\n\nWe will continue working with Python. In this module we will finish discussing basic python features with a few final details of pyhton’s many scopes, in particular how you can import functions from other files – and some unique details about how this works in python.\nThen we will begin exploring Python’s advanced data representation tools: data structures. Data structures create a flexible way to represent many common forms of data in an ad-hoc way without creating specific classes, or writing tricky data-management code.\nWe will be focusing on the List this week, which is python’s answer to the array. Towards the end of the week we will introduce the set and dictionary as well, with the plan to finish them next week.\nBy the end of this module you will be able to:\n\nRead, write, run, test, and debug simple python programs\nIdentify a list, tuple, and dictionary as represented in python code\nCreate, and loop over python lists\n\n\n\n\nProgramming Languages Overview\nIntro to Python\nMore Python\n\n\n\n\n\nBy the end of this module you will be able to:\n\nExplain the concept of mutability and distinguish between mutable and immutable data types in Python, providing examples of each and describing the implications for variable assignment and function parameters.\nCreate and manipulate Python lists using various methods including indexing, slicing, appending, inserting, removing, and sorting elements, while understanding the performance characteristics of these operations.\nAnalyze the behavior of list aliasing and copying, explaining the difference between shallow and deep copies and predicting how changes to one list reference will affect others.\nCreate and manipulate dictionaries to store and retrieve key-value pairs, using appropriate methods for adding, updating, removing, and accessing elements.\nIterate over dictionaries using various approaches (keys, values, items) and understand the implications of dictionary ordering in modern Python versions.\nApply dictionaries to solve practical problems such as counting occurrences, grouping data, creating lookup tables, and representing structured information.\nUse sets for membership testing and duplicate elimination, understanding when sets are preferable to lists for specific operations and leveraging their O(1) average-case lookup performance.\nPerform set operations including union, intersection, difference, and symmetric difference to solve problems involving collections and relationships between groups.\nSelect appropriate data structures (lists, dictionaries, or sets) based on the requirements of a given problem, justifying choices based on performance, functionality, and code clarity.\n\n\n\n\nBy the end of this module you will be able to:\n\nAnalyze the time complexity of simple algorithms by identifying the relationship between input size and running time.\nExpress algorithm efficiency using Big-O notation and correctly classify common complexity classes including O(1), O(log n), O(n), O(n log n), O(n²), and O(2ⁿ).\nCompare algorithms based on their asymptotic behavior and determine which algorithm is more efficient for large inputs by analyzing their Big-O classifications.\nDistinguish between best-case, average-case, and worst-case time complexity and explain when each measure is most relevant.\nImplement linear search and binary search correctly in code and trace their execution on sample datasets.\nAnalyze the time complexity of linear search as O(n) and binary search as O(log n) and explain why binary search is asymptotically faster.\nExplain why binary search requires sorted data as a precondition and demonstrate how the algorithm eliminates half of the remaining search space with each comparison.\n\n\n\n\nBy the end of this module you will be able to:\n\nImplement selection sort, insertion sort, and bubble sort correctly in code and trace their execution on small datasets.\nAnalyze and compare the time complexity of selection sort, insertion sort, and bubble sort in their best, average, and worst cases.\nExplain the underlying mechanism of each sorting algorithm including how elements are compared, swapped, and positioned during execution.\n\n\n\n\nBy the end of this module you will be able to:\n\nDefine and explain recursion as a problem-solving technique where a function calls itself with modified parameters to solve progressively smaller subproblems.\nIdentify the essential components of a recursive function, including the base case(s) that stop recursion and the recursive case(s) that break down the problem.\nConvert simple iterative solutions to recursive solutions and vice versa, recognizing when each approach is more appropriate.\nApply recursion to solve problems involving naturally recursive data structures or definitions, such as computing powers, reversing strings, or processing nested lists.\nDebug recursive functions by identifying common errors such as missing base cases, incorrect recursive calls, or infinite recursion."
   },
   {
     "objectID": "index.html#module-01---course-overview",
@@ -242,7 +242,7 @@
     "href": "index.html#module-02-python",
     "title": "CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development",
     "section": "",
-    "text": "We will continue working with Python. In this module we will finish discussing basic python features with a few final details of pyhton’s many scopes, in particular how you can import functions from other files – and some unique details about how this works in python.\nThen we will begin exploring Python’s advanced data representation tools: data structures. Data structures create a flexible way to represent many common forms of data in an ad-hoc way without creating specific classes, or writing tricky data-management code.\nWe will be focusing on the List this week, which is python’s answer to the array. Towards the end of the week we will introduce the set and dictionary as well, with the plan to finish them next week.\nBy the end of this module you will be able to:\n\nRead, write, run, test, and debug simple python programs\nIdentify a list, tuple, and dictionary as represented in python code\nCreate, and loop over python lists\n\n\n\n\nProgramming Languages Overview\nIntro to Python"
+    "text": "We will continue working with Python. In this module we will finish discussing basic python features with a few final details of pyhton’s many scopes, in particular how you can import functions from other files – and some unique details about how this works in python.\nThen we will begin exploring Python’s advanced data representation tools: data structures. Data structures create a flexible way to represent many common forms of data in an ad-hoc way without creating specific classes, or writing tricky data-management code.\nWe will be focusing on the List this week, which is python’s answer to the array. Towards the end of the week we will introduce the set and dictionary as well, with the plan to finish them next week.\nBy the end of this module you will be able to:\n\nRead, write, run, test, and debug simple python programs\nIdentify a list, tuple, and dictionary as represented in python code\nCreate, and loop over python lists\n\n\n\n\nProgramming Languages Overview\nIntro to Python\nMore Python"
   },
   {
     "objectID": "index.html#module-03-advanced-python",
@@ -886,7 +886,7 @@
     "href": "slides/slides-01-01.html#exercise",
     "title": "Intro to Python",
     "section": "Exercise",
-    "text": "Exercise\nWrite a python function called circle_area, that calculate the area of a circle given a radius parameter (it returns the circle area).\n\nformula: \\(area = \\pi * radius^2\\)\nuse 3.1415 for \\(\\pi\\)\n\nTests:\n\nassert circle_area(7) == 153.9335\nassert circle_area(4) == 50.264\nassert circle_area(10) == 314.15000000000003\n\nSubmit your solution (name your file circle.py) to gradescope"
+    "text": "Exercise\nWrite a python function called circle_area, that calculate the area of a circle given a radius parameter (it returns the circle area).\n\nformula: \\(area = \\pi * radius^2\\)\nuse 3.1415 for \\(\\pi\\)\n\nTests:\n\nassert circle_area(7) == 153.9335\nassert circle_area(4) == 50.264\nassert circle_area(10) == 314.15000000000003\n\nSubmit your solution (name your file circle.py) to Gradescope"
   },
   {
     "objectID": "slides/slides-01-01.html#solution-1",
@@ -907,7 +907,7 @@
     "href": "slides/slides-01-01.html#warnings",
     "title": "Intro to Python",
     "section": "Warnings",
-    "text": "Warnings\n\nA function call that returns a value is not the same as printing to the standard output\nNote we are not taking input from the user yet\nA function is like a box, arguments go in, values come out"
+    "text": "Warnings\n\nA function call that returns a value is not the same as printing to the standard output\nNote we are not taking input from the user yet\nA function is like a “black” box, arguments go in, values come out"
   },
   {
     "objectID": "slides/slides-00-01.html#student-experience-project",
@@ -922,5 +922,383 @@
     "title": "How to succeed in this course",
     "section": "Skills you will develop in this course",
     "text": "Skills you will develop in this course\nWriting code is one of many skills you need to develop, but these are the skills that will help you write code:\n\nSpecification\nVerification\nProblem decomposition\nCode reading\nDebugging"
+  },
+  {
+    "objectID": "slides/slides-02-01.html#python-boolean-expressions",
+    "href": "slides/slides-02-01.html#python-boolean-expressions",
+    "title": "More Python",
+    "section": "Python boolean expressions",
+    "text": "Python boolean expressions\nPython has the same set of boolean operators you’re used to\nExceptions:\n\nlogical operators &&, ||, ! use the words and, or, not\ncomparison chaining is allowed.\n\na &lt; b &lt; c is run as a &lt; b and b &lt; c\nyou can do some weird stuff with this:\na == b &lt; c &gt; d != q\na == b and b &lt; c and c &gt; d and d != q\n\n\n\ntransitive property of inequality"
+  },
+  {
+    "objectID": "slides/slides-02-01.html#python-control-flow",
+    "href": "slides/slides-02-01.html#python-control-flow",
+    "title": "More Python",
+    "section": "Python control flow",
+    "text": "Python control flow\n\nconditionals (if statements)\nloops"
+  },
+  {
+    "objectID": "slides/slides-02-01.html#if-statements",
+    "href": "slides/slides-02-01.html#if-statements",
+    "title": "More Python",
+    "section": "if statements",
+    "text": "if statements\n\nif num_cuts &gt; 4:\n  print(\"That's a lot of cuts. Don't do it!\")\n\n\nwhitespace denotes code blocks\ndon’t miss the colon which marks the beginning of a block\nwhitespace characters must match exactly - careful with spaces and tabs"
+  },
+  {
+    "objectID": "slides/slides-02-01.html#if-elif-and-else-statements",
+    "href": "slides/slides-02-01.html#if-elif-and-else-statements",
+    "title": "More Python",
+    "section": "if, elif and else statements",
+    "text": "if, elif and else statements\n\nif num_cuts &gt; 4:\n  print(\"That's a lot of cuts. Don't do it!\")\nelif num_cuts == 0:\n  print(\"Purrfectly safe\")\nelse:\n  print(\"your risk\")\n\n\nmultiple conditions can be checked with if .. elif .. else\nelif not “else if”"
+  },
+  {
+    "objectID": "slides/slides-02-01.html#exercise",
+    "href": "slides/slides-02-01.html#exercise",
+    "title": "More Python",
+    "section": "Exercise",
+    "text": "Exercise\nWrite a Python function named classify_triangle in a file called triangle.py.\nWhat it does: Given the lengths of three sides, decide what kind of triangle they form (if any). Parameters (in this order):\n\na: integer (length of the first side)\nb: integer (length of the second side)\nc: integer (length of the third side)\n\nReturns: a string — one of “invalid”, “equilateral”, “isosceles”, or “scalene”."
+  },
+  {
+    "objectID": "slides/slides-02-01.html#exercise-1",
+    "href": "slides/slides-02-01.html#exercise-1",
+    "title": "More Python",
+    "section": "Exercise",
+    "text": "Exercise\n\nReturn “invalid” if any side is zero or negative.\nReturn “invalid” if the sides can’t form a triangle. Three lengths form a triangle only when each pair of sides adds up to more than the remaining side (e.g. a + b must be greater than c).\nOtherwise, classify it:\n\n“equilateral” — all three sides are equal\n“isosceles” — exactly two sides are equal\n“scalene” — no two sides are equal"
+  },
+  {
+    "objectID": "slides/slides-02-01.html#solution-1",
+    "href": "slides/slides-02-01.html#solution-1",
+    "title": "More Python",
+    "section": "Solution 1",
+    "text": "Solution 1\n\ndef classify_triangle(a, b, c):\n    # return \"invalid\" if any side is zero or negative.\n    if a &lt;= 0 or b &lt;= 0 or c &lt;= 0:\n        return \"invalid\"\n\n    # return \"invalid\" if the sides can't form a triangle. \n    if a + b &lt;= c or a + c &lt;= b or b + c &lt;= a:\n        return \"invalid\"\n\n    # \"equilateral\" — all three sides are equal\n    if a == b == c:\n        return \"equilateral\"\n \n    # \"isosceles\" — exactly two sides are equal\n    if (a == b and b != c) or (a == c and b != a) or (c == b and c != a):\n        return \"isosceles\"\n\n    return \"scalene\""
+  },
+  {
+    "objectID": "slides/slides-02-01.html#solution-2",
+    "href": "slides/slides-02-01.html#solution-2",
+    "title": "More Python",
+    "section": "Solution 2",
+    "text": "Solution 2\n\ndef classify_triangle(a, b, c):\n    # return \"invalid\" if any side is zero or negative.\n    if a &lt;= 0 or b &lt;= 0 or c &lt;= 0:\n        return \"invalid\"\n\n    # return \"invalid\" if the sides can't form a triangle.\n    if a + b &lt;= c or a + c &lt;= b or b + c &lt;= a:\n        return \"invalid\"\n\n    # \"equilateral\" — all three sides are equal\n    if a == b and b == c:\n        return \"equilateral\"\n    # \"isosceles\" — exactly two sides are equal\n    elif a == b or b == c or a == c:\n        return \"isosceles\"\n    else:\n        return \"scalene\""
+  },
+  {
+    "objectID": "slides/slides-02-01.html#import-statements",
+    "href": "slides/slides-02-01.html#import-statements",
+    "title": "More Python",
+    "section": "import statements",
+    "text": "import statements\nYou can import a module that already exists in base python:\n\nimport random\n\nprint(random.randint(1,128))\n\n98\n\n\nOr create a .py file and import that (overwrites the standard library if you create a .py file with its name)"
+  },
+  {
+    "objectID": "slides/slides-02-01.html#solution-of-circle-area-with-math.pi",
+    "href": "slides/slides-02-01.html#solution-of-circle-area-with-math.pi",
+    "title": "More Python",
+    "section": "Solution of circle area with math.pi",
+    "text": "Solution of circle area with math.pi\n\nimport math\n\ndef circle_area(r):\n    '''\n    Given a radius r, this function calculates and returns the area of that circle\n    Arguments:\n        r (integer or float) -- radius of the circle\n    Returns:\n        And float (rounded at two decimals) representing the area of the circle of radius r\n    '''\n    area = math.pi * r**2\n    # return rounded area at two decimals\n    return round(area, 2)\n\nif __name__ == \"__main__\":\n    assert circle_area(1) == 3.14\n    assert circle_area(2) == 12.57 \n    assert circle_area(3) == 28.27\n    assert circle_area(4) == 50.27\n    assert circle_area(15) == 706.86\n\n    print(\"Passed all tests\")\n\nPassed all tests\n\n\nPrompt for generative AI: Give me a list of circle radii and their corresponding area rounded to two decimals"
+  },
+  {
+    "objectID": "slides/slides-02-01.html#writing-code-for-future-importing",
+    "href": "slides/slides-02-01.html#writing-code-for-future-importing",
+    "title": "More Python",
+    "section": "Writing code for future importing",
+    "text": "Writing code for future importing\n\n# Useful and general functions and variable definitions\nif __name__ == \" __main__ \":\n  # This file has been run directly\n  # interact with the user , call functions , etc."
+  },
+  {
+    "objectID": "slides/slides-02-01.html#importing-your-own-modules",
+    "href": "slides/slides-02-01.html#importing-your-own-modules",
+    "title": "More Python",
+    "section": "Importing your own modules",
+    "text": "Importing your own modules\ntest.py\n\ndef square_root(n):\n  '''Given an integer argument n, it returns square root of n'''\n  return n ** 0.5\n\nimport_test.py\n\nimport test\n\nif __name__ == \"__main__\":\n  # print out to standard output the doc string for the square_root function\n  print(test.square_root.__doc__)"
+  },
+  {
+    "objectID": "slides/slides-02-01.html#exercise-2",
+    "href": "slides/slides-02-01.html#exercise-2",
+    "title": "More Python",
+    "section": "Exercise",
+    "text": "Exercise\nTest cases:\n\nassert classify_triangle(5, 5, 5) == \"equilateral\"\nassert classify_triangle(5, 5, 8) == \"isosceles\"\nassert classify_triangle(3, 4, 5) == \"scalene\"\nassert classify_triangle(1, 2, 10) == \"invalid\"  # 1 + 2 is not more than 10\nassert classify_triangle(1, 2, 3) == \"invalid\"   # 1 + 2 is not MORE than 3\nassert classify_triangle(4, 0, 4) == \"invalid\"   # zero-length side\nassert classify_triangle(-1, 5, 5) == \"invalid\"  # negative side\n\nSubmit your solution (name your file triangle.py) to gradescope"
+  },
+  {
+    "objectID": "slides/slides-02-01.html#type-hints-type-annotations",
+    "href": "slides/slides-02-01.html#type-hints-type-annotations",
+    "title": "More Python",
+    "section": "Type Hints (type annotations)",
+    "text": "Type Hints (type annotations)\n\nOptional syntax used to state the expected data types of variables, function arguments, and return values.\nRemember that Python is a dynamically-typed language and so it does not enforce type annotations at runtime.\nType hints are used by external tools (IDEs, linters, etc) and also for documenting code.\n\n\ndef classify_triangle(a: int, b: int, c: int) -&gt; str:"
+  },
+  {
+    "objectID": "slides/slides-02-04.html",
+    "href": "slides/slides-02-04.html",
+    "title": "Python IO",
+    "section": "",
+    "text": "text-input and text-output to user are important for testing and debugging\nYou rarely use them when writing “real code”\nboth operations are done with functions in python\nBoth show off something weird about python function"
+  },
+  {
+    "objectID": "slides/slides-02-04.html#input-function",
+    "href": "slides/slides-02-04.html#input-function",
+    "title": "Python IO",
+    "section": "",
+    "text": "text-input and text-output to user are important for testing and debugging\nYou rarely use them when writing “real code”\nboth operations are done with functions in python\nBoth show off something weird about python function"
+  },
+  {
+    "objectID": "slides/slides-02-04.html#input-function-1",
+    "href": "slides/slides-02-04.html#input-function-1",
+    "title": "Python IO",
+    "section": "input function",
+    "text": "input function\n\ninput()will wait for user input and return as a string\ninput(\"prompt\")will print a prompt and then wait for user input return as a string\nOften combined with type-changing functions to type cast.\n\n\nuser_input = input(\"Enter a number: \")\nnumber = int(user_input)"
+  },
+  {
+    "objectID": "slides/slides-02-04.html#input-validation",
+    "href": "slides/slides-02-04.html#input-validation",
+    "title": "Python IO",
+    "section": "Input validation",
+    "text": "Input validation\nRemember that type casting fuctions like int() and float() will throw errors if a string argument has non-numeric characters"
+  },
+  {
+    "objectID": "slides/slides-02-04.html#print-functions",
+    "href": "slides/slides-02-04.html#print-functions",
+    "title": "Python IO",
+    "section": "print functions",
+    "text": "print functions\nCheck the documentation for print() – what optional parameters can we change?"
+  },
+  {
+    "objectID": "slides/slides-02-04.html#when-do-we-use-input-and-print",
+    "href": "slides/slides-02-04.html#when-do-we-use-input-and-print",
+    "title": "Python IO",
+    "section": "When do we use input and print?",
+    "text": "When do we use input and print?\n\nvery rarely\nprint sends data to end-user, can’t be used elsewhere.\ninput reads data from end-user, can’t be from elsewhere.\n\nThis function is useless and I hate it:\n\ndef isEven (x):\n  if x % 2 == 0:\n    print(\"even\")\n  else :\n    print(\"odd\")"
+  },
+  {
+    "objectID": "slides/slides-02-04.html#exercise",
+    "href": "slides/slides-02-04.html#exercise",
+    "title": "Python IO",
+    "section": "Exercise",
+    "text": "Exercise\nWrite a basic number guessing game. Here’s some code to get you started:\n\nimport random\n\nMIN = 1\nMAX = 100\nSECRET = random.randint(MIN, MAX)\n\n\nThe program should repeatedly ask the user to guess a number\nif the user guesses too large report “smaller”\nif the user guesses too small report “larger”\nif the user guesses right, report “correct” and exit."
+  },
+  {
+    "objectID": "slides/slides-02-04.html#a-possible-solution",
+    "href": "slides/slides-02-04.html#a-possible-solution",
+    "title": "Python IO",
+    "section": "A possible solution",
+    "text": "A possible solution\nHow do we add input validation to this solution? (to ensure int() won’t throw an error)\n\nimport random\n\ndef guess(user_input, secret):\n    user_input = int(user_input)\n    if user_input == secret:\n        print(\"correct\")\n        return True\n    if user_input &gt; secret:\n        print(\"smaller\")\n        return False\n    if user_input &lt; secret:\n        print(\"larger\")\n        return False\n\ndef play_game(secret):\n    user_input = input(\"Guess the number: \")\n    while not guess(user_input, secret):\n        user_input = input(\"Guess the number: \")\n\n\nif __name__ == \"__main__\":\n    MIN = 1\n    MAX = 100\n    SECRET = random.randint(MIN, MAX)\n    play_game(SECRET)"
+  },
+  {
+    "objectID": "slides/slides-02-03.html",
+    "href": "slides/slides-02-03.html",
+    "title": "Python Lists",
+    "section": "",
+    "text": "Planning and typing are separate\n\nPlan first (this is the hard part!)\nTranslate the plan into language of your choice\n\nHard to read code is rarely necessary and always bad\n\nIf your peers can’t read it, it doesn’t matter if it works\nCode is Communication. prepare it and proofread it just like an essay\n\nMultiple solutions to every problem. Pick the best one"
+  },
+  {
+    "objectID": "slides/slides-02-03.html#thinking-and-planning",
+    "href": "slides/slides-02-03.html#thinking-and-planning",
+    "title": "Python Lists",
+    "section": "",
+    "text": "Planning and typing are separate\n\nPlan first (this is the hard part!)\nTranslate the plan into language of your choice\n\nHard to read code is rarely necessary and always bad\n\nIf your peers can’t read it, it doesn’t matter if it works\nCode is Communication. prepare it and proofread it just like an essay\n\nMultiple solutions to every problem. Pick the best one"
+  },
+  {
+    "objectID": "slides/slides-02-03.html#lists",
+    "href": "slides/slides-02-03.html#lists",
+    "title": "Python Lists",
+    "section": "Lists",
+    "text": "Lists\nLists are similar to tuples, with one important difference: lists are mutable\nLists and tuples:\n\nstore ordered items that can repeat\ncan be indexed\nwe can use built-in functions like len(), max(), min()"
+  },
+  {
+    "objectID": "slides/slides-02-03.html#lists-1",
+    "href": "slides/slides-02-03.html#lists-1",
+    "title": "Python Lists",
+    "section": "Lists",
+    "text": "Lists\nUse square brackets to create a list (not optional like tuples).\n\nmy_list = [\"Peter\", 10, 10.0, \"apple\"]\nprint(my_list[0])\n\nPeter\n\n\nCan also use the list() constructor:\n\nempty_list = []\nanother_empty_list = list()"
+  },
+  {
+    "objectID": "slides/slides-02-03.html#lists-2",
+    "href": "slides/slides-02-03.html#lists-2",
+    "title": "Python Lists",
+    "section": "Lists",
+    "text": "Lists\nLists are mutable, so we can modify a value using its index\n\nmy_list = [\"Peter\", 10, 10.0, \"apple\"]\nprint(my_list[0])\n\nPeter\n\n\n\nmy_list[0] = \"Mary\"\nprint(my_list)\n\n['Mary', 10, 10.0, 'apple']\n\n\nWhile we can index a tuple, we cannot modify items in a tuple"
+  },
+  {
+    "objectID": "slides/slides-02-03.html#lists-3",
+    "href": "slides/slides-02-03.html#lists-3",
+    "title": "Python Lists",
+    "section": "Lists",
+    "text": "Lists\nLists are mutable, so we can modify lists with methods:\n\n.append(item) adds an item to the end of the list\n.insert(index, item) adds an item to index position (rest of list shifts right)\n.remove(item) removes the first matching item\n.pop(index) removes item at index (returns the removed value)"
+  },
+  {
+    "objectID": "slides/slides-02-03.html#keyword-in",
+    "href": "slides/slides-02-03.html#keyword-in",
+    "title": "Python Lists",
+    "section": "Keyword: in",
+    "text": "Keyword: in\n\nThe keyword in determines whether an element is in a collection, returns True or False\n\n\n\"nas\" in \"Bananas\""
+  },
+  {
+    "objectID": "slides/slides-02-03.html#exercise",
+    "href": "slides/slides-02-03.html#exercise",
+    "title": "Python Lists",
+    "section": "Exercise",
+    "text": "Exercise\nWrite a python function that given a string, it returns two lists: one with all vowels (a, e, i, o, u) and another with all consonants.\nTest cases:\n\nif __name__ == \"__main__\":\n    assert vowels_consonants(\"\") == ([], [])\n    assert vowels_consonants(\"aeaAR\") == ([\"a\", \"e\", \"a\", \"A\"], [\"R\"])\n    assert vowels_consonants(\"abcd\") == ([\"a\"], [\"b\", \"c\", \"d\"])\n\n    print(\"Passed all tests\")\n\nSubmit your vowels_consonants.py file to gradescope."
+  },
+  {
+    "objectID": "slides/slides-02-02.html",
+    "href": "slides/slides-02-02.html",
+    "title": "Python Loops",
+    "section": "",
+    "text": "What would the standard output look like after the code below has finished running?\nWhat would the docstring for digits look like? (in other words, what does digits do?)\n\n\ndef digits(number):\n    result = []\n    while number &gt; 0:\n        result.insert(0, number % 10)\n        number = number // 10\n    return result\n\nif __name__ == \"__main__\":\n    for d in digits(104231):\n        print(d)"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#warm-up",
+    "href": "slides/slides-02-02.html#warm-up",
+    "title": "Python Loops",
+    "section": "",
+    "text": "What would the standard output look like after the code below has finished running?\nWhat would the docstring for digits look like? (in other words, what does digits do?)\n\n\ndef digits(number):\n    result = []\n    while number &gt; 0:\n        result.insert(0, number % 10)\n        number = number // 10\n    return result\n\nif __name__ == \"__main__\":\n    for d in digits(104231):\n        print(d)"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#while-vs-for-loops",
+    "href": "slides/slides-02-02.html#while-vs-for-loops",
+    "title": "Python Loops",
+    "section": "while vs for loops",
+    "text": "while vs for loops\nA while loop has a condition that needs to evaluate to False to get out of the loop:\n\nn = 3\nwhile n &gt; 0:\n  print(n)\n  n = n - 1\n\n3\n2\n1\n\n\nA for loop uses a variable:\n\nfor n in range(3):\n  print(n)\n\n0\n1\n2"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#definite-vs.-indefinite-loops",
+    "href": "slides/slides-02-02.html#definite-vs.-indefinite-loops",
+    "title": "Python Loops",
+    "section": "Definite vs. Indefinite loops",
+    "text": "Definite vs. Indefinite loops\nDefinite loop: the number of iterations is known before the loop begins execution\nWhich type of loop is always definite? while or for loops?"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#while-and-for-loops",
+    "href": "slides/slides-02-02.html#while-and-for-loops",
+    "title": "Python Loops",
+    "section": "while and for loops",
+    "text": "while and for loops\n\nA while loop runs until its a return statement inside the loop or the while condition is evaluated as false\nFor loops operate over an iterable object (range, list, string, set, tuple)\nAll for loops can be converted into while loops\nNot all while loops can become for loops (definite loops can be converted to a while loop)\nFor loops are slightly faster\nPython does NOT have do while loops (code block inside while loops can run zero times)"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#range",
+    "href": "slides/slides-02-02.html#range",
+    "title": "Python Loops",
+    "section": "range",
+    "text": "range\nrange(start, stop, step)\n\nrange is both a function and an object\nrange only works with integers\na range object represents a sequence of integer numbers\n\nrange(5) is a sequence of the numbers 0,1,2,3,4\nit is not indexable in all versions of python (we will see indexing in a bit)"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#quiz-01",
+    "href": "slides/slides-02-02.html#quiz-01",
+    "title": "Python Loops",
+    "section": "Quiz 01",
+    "text": "Quiz 01\nYou have 10 minutes to complete the quiz\n\nNo need for comments or doc strings, no need to include the tests in your solution, no need for if __name__\nJust write your function and what’s inside the function\nRaise your hand when you’re done, a TA will come and grab your completed quiz\n\nHINT: use the keyword def to define a function"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#exercise",
+    "href": "slides/slides-02-02.html#exercise",
+    "title": "Python Loops",
+    "section": "Exercise",
+    "text": "Exercise\nWrite a python function called factorial that uses a loop (for or while, up to you) to calculate factorial of a non-negative integer n (n!)\nA factorial is the product of a given positive integer and all the positive integers smaller than it down to 1:\n\\(5! = 5 × 4 × 3 × 2 × 1 = 120\\)\nThe factorial of 0 (0!) is defined as 1.\nSubmit your solution (name your file loop_factorial.py) to gradescope\n\nassert factorial(0) == 1\nassert factorial(5) == 120\nassert factorial(7) == 5040"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#solution-1-for-loop",
+    "href": "slides/slides-02-02.html#solution-1-for-loop",
+    "title": "Python Loops",
+    "section": "Solution 1 – for loop",
+    "text": "Solution 1 – for loop\n\ndef factorial(n):\n  result = 1\n  for number in range(2, n+1):\n    result *= number\n  return result\n\nif __name__ == \"__main__\":\n  assert factorial(0) == 1\n  assert factorial(5) == 120\n  assert factorial(7) == 5040\n  print(\"Passed all tests\")\n\nPassed all tests"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#solution-2-for-loop",
+    "href": "slides/slides-02-02.html#solution-2-for-loop",
+    "title": "Python Loops",
+    "section": "Solution 2 – for loop",
+    "text": "Solution 2 – for loop\n\ndef factorial(n):\n    if n == 0:\n        return 1\n    \n    result = 1\n    for i in range(1, n + 1):\n        result *= i\n    \n    return result"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#solution-3-while-loop",
+    "href": "slides/slides-02-02.html#solution-3-while-loop",
+    "title": "Python Loops",
+    "section": "Solution 3 – while loop",
+    "text": "Solution 3 – while loop\n\ndef factorial(n):\n  result = 1\n  while n &gt; 0:\n    result *= n\n    n-=1\n  return result"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#solution-4-while-loop",
+    "href": "slides/slides-02-02.html#solution-4-while-loop",
+    "title": "Python Loops",
+    "section": "Solution 4 – while loop",
+    "text": "Solution 4 – while loop\n\ndef factorial(n):\n    if n == 0:\n        return 1\n    \n    result = 1\n    i = 1\n    while i &lt;= n:\n        result *= i\n        i += 1\n    \n    return result"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#sequences",
+    "href": "slides/slides-02-02.html#sequences",
+    "title": "Python Loops",
+    "section": "Sequences",
+    "text": "Sequences\nSequence: an ordered collection of items\n\nstrings, tuples, lists\ncan hold duplicate values\ncan be indexed (indexes start at zero)\nbuilt-in len() function\nstrings and tuples are immutable and lists are mutable"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#tuples",
+    "href": "slides/slides-02-02.html#tuples",
+    "title": "Python Loops",
+    "section": "Tuples",
+    "text": "Tuples\nTuple can hold repeated values\n\nmy_tuple = (\"apple\", \"banana\", \"pear\", \"banana\")\nmy_tuple[1] # item at index 1\nmy_tuple[1:3] # slice from second to third item\n\n('banana', 'pear')\n\n\n… can hold any type (including tuples, for nested tuples)\n\nmy_tuple = ((\"apple\", \"banana\"), (\"pear\", \"banana\", 3), 4)\nmy_tuple[1] # item at index 1\nmy_tuple[1:3] # slice from second to third item\n\n(('pear', 'banana', 3), 4)"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#tuples-1",
+    "href": "slides/slides-02-02.html#tuples-1",
+    "title": "Python Loops",
+    "section": "Tuples",
+    "text": "Tuples\nThere are several edge cases for tuple literals\n\nAn empty tuple is just to parentheses containing nothing ()\nA tuple with only one item must have a trailing comma tup_of_1 = (50,)\nYou can always have a trailing comma tup_t = (8, \"6\", 7, 5, \"3\", \"09\", )\nIf you have a bunch of comma separated values without parentheses they may also be interpreted as a tuple.\nvals = 4, 5, 6, 3.3, \"Tuple\""
+  },
+  {
+    "objectID": "slides/slides-02-02.html#tuple-constructor",
+    "href": "slides/slides-02-02.html#tuple-constructor",
+    "title": "Python Loops",
+    "section": "Tuple constructor",
+    "text": "Tuple constructor\n\nmy_chars = tuple(\"abcdef\")\nmy_chars[2]\n\n'c'"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#tuple-operators",
+    "href": "slides/slides-02-02.html#tuple-operators",
+    "title": "Python Loops",
+    "section": "Tuple operators",
+    "text": "Tuple operators\n\nConcatenation: (2, 3) + (1, 2, 3)\nMultiplication: (2,) * 3"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#return-tuples-in-a-python-function",
+    "href": "slides/slides-02-02.html#return-tuples-in-a-python-function",
+    "title": "Python Loops",
+    "section": "Return tuples in a python function",
+    "text": "Return tuples in a python function\n\ndef min_max(numbers):\n  return min(numbers), max(numbers)\n\nif __name__ == \"__main__\":\n  test_numbers = (-2, 100, 3, -23, 0)\n  print(min_max(test_numbers))\n  \n  # unpack tuples into multiple variables\n  min_value, max_value = min_max(test_numbers)\n  print(min_value)\n  print(max_value)\n\n(-23, 100)\n-23\n100"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#strings",
+    "href": "slides/slides-02-02.html#strings",
+    "title": "Python Loops",
+    "section": "Strings",
+    "text": "Strings\nSame operators as tuples\n\nmy_string = \"apple\"\nmy_string[3]\nmy_string[1:4]\n\n'ppl'"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#for-each-loops-in-python",
+    "href": "slides/slides-02-02.html#for-each-loops-in-python",
+    "title": "Python Loops",
+    "section": "for “each” loops in Python",
+    "text": "for “each” loops in Python\nLooping over a sequence with an index:\n\nmy_string = \"apple\"\nfor i in range(len(my_string)):\n  print(my_string[i])\n\nLooping over a sequence without an index:\n\nmy_string = \"apple\"\nfor char in my_string:\n  print(char)"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#exercise-1",
+    "href": "slides/slides-02-02.html#exercise-1",
+    "title": "Python Loops",
+    "section": "Exercise",
+    "text": "Exercise\nWrite a python function called hex_to_rgb that gets as argument a hex code in the string format \"#F54927\" and returns the equivalent RGB code in a tuple of integers format (245, 73, 39)\nHint: The base of a hexadecimal system is 16, we want to convert a two digit hex code to decimal integer. For example, you can convert \"CF\" to python using the int() built-in function like so int(\"CF\", 16)\nSubmit your solution colors.py to the in-class exercise in gradescope."
+  },
+  {
+    "objectID": "slides/slides-02-02.html#solution",
+    "href": "slides/slides-02-02.html#solution",
+    "title": "Python Loops",
+    "section": "Solution",
+    "text": "Solution\n\ndef hex_to_rgb(hex_string):\n    red = hex_string[1:3]\n    blue = hex_string[3:5]\n    green = hex_string[5:7]\n    return int(red, 16), int(blue, 16), int(green, 16)\n  \nif __name__ == \"__main__\":\n    assert hex_to_rgb(\"#F54927\") == (245, 73, 39)\n    assert hex_to_rgb(\"#000000\") == (0, 0, 0)\n    assert hex_to_rgb(\"#FFFFFF\") == (255, 255, 255)\n    assert hex_to_rgb(\"#70B578\") == (112, 181, 120)\n\n    print(\"Passed all tests\")\n\nPassed all tests"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#exercise-2",
+    "href": "slides/slides-02-02.html#exercise-2",
+    "title": "Python Loops",
+    "section": "Exercise",
+    "text": "Exercise\nWrite a python function that determines whether a whole number greater than one is prime. A prime is divisible only by itself and 1 (not a product of two smaller natural numbers). Submit your python script prime.py to gradescope.\nTest the remainder of the division with all primes up to the square root of the argument n.\nTest cases:\n\nif __name__ == \"__main__\":\n    assert is_prime(2) == True\n    assert is_prime(4) == False\n    assert is_prime(29) == True\n    assert is_prime(53) == True\n    assert is_prime(54) == False\n\n    print(\"Passed all tests\")"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#expansion",
+    "href": "slides/slides-02-02.html#expansion",
+    "title": "Python Loops",
+    "section": "Expansion",
+    "text": "Expansion\nAdd to your previous solution a python function called get_primes that takes a whole number greater than one as argument and returns a tuple with all integers that are prime up (and including) n.\nTest cases:\n\nif __name__ == \"__main__\":\n    assert get_primes(2) == (2,)\n    assert get_primes(4) == (2, 3)\n    assert get_primes(29) == (2, 3, 5, 7, 11, 13, 17, 19, 23, 29)\n    assert get_primes(53) == (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53)\n    assert get_primes(54) == (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53)\n\n    print(\"Passed all tests\")"
   }
 ]
