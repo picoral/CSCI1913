@@ -1144,8 +1144,8 @@
     "objectID": "slides/slides-02-02.html#warm-up",
     "href": "slides/slides-02-02.html#warm-up",
     "title": "Python Loops",
-    "section": "",
-    "text": "What would the standard output look like after the code below has finished running?\nWhat would the docstring for digits look like? (in other words, what does digits do?)\n\n\ndef digits(number):\n    result = []\n    while number &gt; 0:\n        result.insert(0, number % 10)\n        number = number // 10\n    return result\n\nif __name__ == \"__main__\":\n    for d in digits(104231):\n        print(d)"
+    "section": "Warm-up",
+    "text": "Warm-up\n\nWhat would the standard output look like after the code below has finished running?\nWhat would the docstring for digits look like? (in other words, what does digits do?)\n\n\ndef digits(number):\n    result = []\n    while number &gt; 0:\n        result.insert(0, number % 10)\n        number = number // 10\n    return result\n\nif __name__ == \"__main__\":\n    for d in digits(104231):\n        print(d)"
   },
   {
     "objectID": "slides/slides-02-02.html#while-vs-for-loops",
