@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Labs – CSCI 1913 Fall 2026</title>
+<title>Computer Laboratory 02 – CSCI 1913 Fall 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -1667,7 +1667,7 @@ async function fuseSearch(query, fuse, fuseOptions) {
   return results;
 }
 </script>
-<meta name="quarto:offset" content="./">
+<meta name="quarto:offset" content="../">
 <script>const sectionChanged = new CustomEvent("quarto-sectionChanged", {
   detail: {},
   bubbles: true,
@@ -4749,7 +4749,7 @@ background-color: #5e0013;
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">CSCI 1913 Fall 2026</span>
     </a>
   </div>
@@ -4760,23 +4760,23 @@ background-color: #5e0013;
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Modules</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./labs.html" aria-current="page"> 
+    <a class="nav-link" href="../labs.html"> 
 <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> 
+    <a class="nav-link" href="../projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./exams.html"> 
+    <a class="nav-link" href="../exams.html"> 
 <span class="menu-text">Quizzes and Exams</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./syllabus.html"> 
+    <a class="nav-link" href="../syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
 </ul>
@@ -4795,9 +4795,22 @@ background-color: #5e0013;
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#computer-lab-1" id="toc-computer-lab-1" class="nav-link active" data-scroll-target="#computer-lab-1">Computer Lab 1</a></li>
-  <li><a href="#computer-lab-2" id="toc-computer-lab-2" class="nav-link" data-scroll-target="#computer-lab-2">Computer Lab 2</a></li>
-  <li><a href="#computer-lab-3" id="toc-computer-lab-3" class="nav-link" data-scroll-target="#computer-lab-3">Computer Lab 3</a></li>
+  <li><a href="#before-you-start" id="toc-before-you-start" class="nav-link active" data-scroll-target="#before-you-start">Before you start</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#files" id="toc-files" class="nav-link" data-scroll-target="#files">Files</a></li>
+  <li><a href="#nim" id="toc-nim" class="nav-link" data-scroll-target="#nim">Nim</a></li>
+  <li><a href="#formal-requirements" id="toc-formal-requirements" class="nav-link" data-scroll-target="#formal-requirements">Formal Requirements</a>
+  <ul class="collapse">
+  <li><a href="#game-state" id="toc-game-state" class="nav-link" data-scroll-target="#game-state">Game State</a></li>
+  <li><a href="#create_game_statesize-token_max" id="toc-create_game_statesize-token_max" class="nav-link" data-scroll-target="#create_game_statesize-token_max">create_game_state(size, token_max)</a></li>
+  <li><a href="#is_valid_movegame_state-row-takes" id="toc-is_valid_movegame_state-row-takes" class="nav-link" data-scroll-target="#is_valid_movegame_state-row-takes">is_valid_move(game_state, row, takes)</a></li>
+  <li><a href="#updategame_state-row-takes" id="toc-updategame_state-row-takes" class="nav-link" data-scroll-target="#updategame_state-row-takes">update(game_state, row, takes)</a></li>
+  <li><a href="#draw_game_stategame_state" id="toc-draw_game_stategame_state" class="nav-link" data-scroll-target="#draw_game_stategame_state">draw_game_state(game_state)</a></li>
+  <li><a href="#is_overgame_state" id="toc-is_overgame_state" class="nav-link" data-scroll-target="#is_overgame_state">is_over(game_state)</a></li>
+  </ul></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#more-fun" id="toc-more-fun" class="nav-link" data-scroll-target="#more-fun">More Fun</a></li>
   </ul>
 </nav>
     </div>
@@ -4806,7 +4819,7 @@ background-color: #5e0013;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Labs</h1>
+<h1 class="title">Computer Laboratory 02</h1>
 </div>
 
 
@@ -4823,59 +4836,265 @@ background-color: #5e0013;
 </header>
 
 
-<p>All labs are at <a href="https://campusmaps.umn.edu/walter-library">Walter Library 106</a></p>
+<p>Deadline: Wed, Sep 23, 2026</p>
+<section id="before-you-start" class="level1">
+<h1>Before you start</h1>
 <ul>
-<li>Laboratory (004) T 02:30 PM - 04:25 PM<br>
-</li>
-<li>Laboratory (005) T 04:40 PM - 06:35 PM<br>
-</li>
-<li>Laboratory (006) W 08:00 AM - 09:55 AM<br>
-</li>
-<li>Laboratory (007) W 10:10 AM - 12:05 PM</li>
-</ul>
-<p>Labs are always due at 11:59pm on the Wednesday that Lab sections 6 and 7 happen. Note that my staff and I are not available after 7pm, so if you make the unwise decision to work on the lab close to the deadline you won’t be able to get any help from us. We cannot accept technical/computer issues as a legitimate reason for late or incomplete work. You need to make sure you are working on the assignments with enough time to figure our these issues.</p>
-<ul>
-<li>Lab submissions will be <em>primarily</em> evaluated automatically to validate expected behavior.</li>
-<li>Attendance of the lab section itself is <strong>expected</strong> unless you have an excused absence. Historically, students who skip labs, fail labs (and we don’t want this for you).</li>
-</ul>
-<section id="computer-lab-1" class="level1">
-<h1>Computer Lab 1</h1>
-<p>Lab section dates:</p>
-<ul>
-<li>Labs 4 and 5: Tue, Sep 15, 2026</li>
-<li>Labs 6 and 7: Wed, Sep 16, 2026</li>
-</ul>
-<p>Due date (deadline to submit to Gradescope): Wed, Sep 16, 2026 at 11:59 pm</p>
-<ul>
-<li><a href="labs/lab01.html">Lab 01 instructions</a></li>
-<li><a href="labs/lab01-slides.html">Lab 01 slides</a></li>
-<li><a href="labs/lab01_tester.py">Lab 01 tester file</a></li>
-<li><a href="https://www.gradescope.com/courses/1381901/assignments/8587583/">Lab 01 gradescope submission</a></li>
+<li>This assignment is due on Wed, Sep 23, 2026 and will be submitted via Gradescope.</li>
+<li>The assignment is intended to be done in pairs or groups of three, although you’re allowed to work on your own if you want. If you work in pairs, you can submit as a group on gradescope</li>
+<li>You can start the assignment before your lab period, although I recommend not getting too far – the lab TAs often have useful hints, and I don’t want you wasting too much time struggling with something that the TAs might announce in-class.</li>
 </ul>
 </section>
-<section id="computer-lab-2" class="level1">
-<h1>Computer Lab 2</h1>
-<p>Lab section dates:</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>This laboratory is intended to give you further practice with loops, logical conditionals, and functions in Python. Additionally, this lab will prominently feature lists.</p>
+<p>In particular, you should ensure you are familliar with:</p>
 <ul>
-<li>Labs 4 and 5: Tue, Sep 22, 2026</li>
-<li>Labs 6 and 7: Wed, Sep 23, 2026</li>
+<li>What a Python list is</li>
+<li>How to create a list in a loop using the append method</li>
+<li>How to access values from a list by index</li>
+<li>How to loop over a list</li>
+<li>How to get the size of a list</li>
 </ul>
-<p>Due date (deadline to submit to Gradescope): Wed, Sep 23, 2026 at 11:59 pm</p>
+<p>If you don’t know how to do one of these things stop now, the textbook covers many of these.</p>
+<p>You are also free to discuss these ideas with the students around you, or the lab TAs (so long as your discussion is about the core syntax here, not lab02 itself).</p>
+</section>
+<section id="files" class="level1">
+<h1>Files</h1>
+<p>You should create a place on your computer to store files for this class. Many students find creating a folder such as ‘Documents/classes/csci1913’ or something similar to be useful. Ultimately you are in charge of organizing your own files on your computer. Just know that NOT being deliberate about where you put files can lead to issues when it comes time to find these files for submission. I recommend you have a separate folder for each assignment in this class.</p>
+<p>This lab will involve the following files:</p>
 <ul>
-<li><a href="labs/lab02.html">Lab 02 instructions</a></li>
-<li><a href="labs/lab02-slides.html">Lab 02 slides</a></li>
-<li><a href="labs/lab02_files.zip">Lab 02 tester file</a></li>
-<li><a href="https://www.gradescope.com/courses/1381901/assignments/8669747">Lab 02 gradescope submission</a></li>
+<li>(REQUIRED, YOU WRITE) <code>nim.py</code> – you will program this. This will contain functions that capture key parts of the rules of the game nim.</li>
+<li>(REQUIRED, PROVIDED) <code>nim_tester.py</code> – we will provide this. This file will contain code to help you test if your nim functions meet our expectations.</li>
+<li>(OPTIONAL, PROVIDED) <code>play_nim.py</code> – we will provide this. This file will, when combined with your nim code, will let you play a game of nim.</li>
+</ul>
+<p>Begin by downloading the <a href="labs/lab02_files.zip">provided zip file</a> and moving the files into your assignment folder.</p>
+<p>You should then make a new python file for your solution. Don’t forget that you are required to have a comment at the top of any file you author that contains your name, and the name of any lab partners you worked with, as well as docstrings for each function.</p>
+</section>
+<section id="nim" class="level1">
+<h1>Nim</h1>
+<p><a href="https://en.wikipedia.org/wiki/Nim">Nim</a> is a simple two-player strategy game. The game is played using several ``tokens’’ (sticks, coins, matches, or even pencil marks). These tokens are organized into several rows:</p>
+<pre><code>====================
+1 #####
+2 ######
+3 #####
+4 ####
+====================</code></pre>
+<p>Players then take turns removing tokens. On any turn players can choose a row and remove tokens from it. Players can remove 1 to 3 tokens (neither more less). Once a player has chosen a row and removed tokens from that row, the other player goes.</p>
+<p>The objective of the game is to make the other player take the last token. This is possible because each turn a player has to take at least one token. Therefore if, at the beginning of a player’s turn, there is only one token left, they would be forced to take it, and in doing so, lose.</p>
+<p>A quick example game can help make this more clear – try to follow the playthrough here and connect the moves chosen to how the token counts change:</p>
+<pre><code>====================
+1 ####
+2 ###
+3 ##
+4 #
+====================
+Choose a row 1 - 4 3
+How many tokens to take, 0 to 3 (no more than are available) 1
+====================
+1 ####
+2 ###
+3 #
+4 #
+====================
+Choose a row 1 - 4 3
+How many tokens to take, 0 to 3 (no more than are available) 1
+====================
+1 ####
+2 ###
+3
+4 #
+====================
+Choose a row 1 - 4 2
+How many tokens to take, 0 to 3 (no more than are available) 1
+====================
+1 ####
+2 ##
+3
+4 #
+====================
+Choose a row 1 - 4 2
+How many tokens to take, 0 to 3 (no more than are available) 2
+====================
+1 ####
+2
+3
+4 #
+====================
+Choose a row 1 - 4 1
+How many tokens to take, 0 to 3 (no more than are available) 1
+====================
+1 ###
+2
+3
+4 #
+====================
+Choose a row 1 - 4 1
+How many tokens to take, 0 to 3 (no more than are available) 3
+====================
+1
+2
+3
+4 #
+====================
+Choose a row 1 - 4 4
+How many tokens to take, 0 to 3 (no more than are available) 1
+Game over, the last player lost!</code></pre>
+<p>It might be worth playing a quick game of nim (on paper) with your lab partner before moving on. While complete knowledge of the nim game is not required to work on this lab – it will help A LOT.</p>
+</section>
+<section id="formal-requirements" class="level1">
+<h1>Formal Requirements</h1>
+<p>While it might be fun to require you to implement a whole nim game from scratch, that would be a bit long for lab02. Therefore we have given you a basic framework (in the provided files – see the description of those earlier in the document!)</p>
+<p>What you need to provide are 5 core functions that, together, encode the major rules of the nim game. While these functions work together and build-up-to a comprehensive program, each can be understood on its own and developed independently.</p>
+<p>Some of these functions may even be useful outside of this specific application.</p>
+<p>The five required functions are:</p>
+<ul>
+<li>create_game_state(size, token_max)</li>
+<li>is_valid_move(game_state, row, takes)</li>
+<li>update(game_state, row, takes)</li>
+<li>draw_game_state(game_state)</li>
+<li>is_over(game_state)</li>
+</ul>
+<p>Before describing these functions – let’s define an idea that will be used by all of the following functions:</p>
+<section id="game-state" class="level2">
+<h2 class="anchored" data-anchor-id="game-state">Game State</h2>
+<p>All of these functions use the term game state. In computer-game theory, “game state” refers to the information stored in the computer about the game. In our case, a “game state” is the number of tokens in each row (along with the number of rows). We can store this using a python list – where each element in the list is the number of elements in that list. For instance the game state:</p>
+<pre><code>====================
+1 ####
+2 ###
+3
+4 #
+====================</code></pre>
+<p>would be represented with the list <code>[4,3,0,1]</code></p>
+<p>Most of the following functions either <em>create</em> these lists, or take them as parameters.</p>
+</section>
+<section id="create_game_statesize-token_max" class="level2">
+<h2 class="anchored" data-anchor-id="create_game_statesize-token_max">create_game_state(size, token_max)</h2>
+<p>This function takes two parameters, <code>size</code>, and <code>token_max.</code> It should return a newly created list of integers representing the number of tokens in each row. The size parameter sets the length of the newly created list, and the <code>token_max</code> parameter controls the values. In particular, the first row (position 0 in the list) should have 1 token, the second should have 2 tokens and so-forth, up until we hit <code>token_max</code> – after which each position should have <code>token_max</code> tokens.</p>
+<p>Example: if you call <code>create_game_state(5, 3)</code> you should get the list <code>[1,2,3,3,3]</code> as a return value.</p>
+<p>Notes:</p>
+<ul>
+<li><p>You can assume that both size and token_max are positive integers.</p></li>
+<li><p>if a size value of 0 is given, you should return an empty list.</p></li>
+<li><p>You <strong>cannot</strong> assume that size (&gt;) token_max.</p></li>
 </ul>
 </section>
-<section id="computer-lab-3" class="level1">
-<h1>Computer Lab 3</h1>
-<p>Lab section dates:</p>
+<section id="is_valid_movegame_state-row-takes" class="level2">
+<h2 class="anchored" data-anchor-id="is_valid_movegame_state-row-takes">is_valid_move(game_state, row, takes)</h2>
+<p>This function takes three parameters, <code>game_state</code> is a list of numbers (how many tokens are in each row), <code>row</code> is a <strong>string</strong> representing which row the user has requested to take tokens from, and <code>takes</code> is a <strong>string</strong> representing how many tokens the user wishes to take. The function should return a boolean value – <code>True</code> to indicate that user has chosen a valid move, or <code>False</code> to indicate that the move would be invalid. <strong>Ultimately, a primary purpose of this function is validating the user’s raw input</strong> as such, make sure to code defensively and plan for all kinds of weird input Strings (since you cannot predict what a human might type!)</p>
+<p>Notes and Details:</p>
 <ul>
-<li>Labs 4 and 5: Tue, Sep 29, 2026</li>
-<li>Labs 6 and 7: Wed, Sep 30, 2026</li>
+<li><p>The row number is expected to be input 1-indexed (so “1” means the first row, not 0)</p></li>
+<li><p>This function must not modify the game_state parameter – the given list should have the same values before and after the function.</p></li>
+<li><p>Row and takes are strings, not integers. You CANNOT assume that they will only have integers in them or be in any particularly valid form. You can assume the string is non-empty (has at least one letter in it)</p></li>
+<li><p>A string that contains anything OTHER than digits (1,2,3,4,5,6,7,8,9 or 0) is invalid.</p>
+<ul>
+<li><p>The string method <code>isdigit</code> can be used to ask a string if it only has digits (and no other letters).</p></li>
+<li><p>If you are unclear how to use this method feel free to use google to learn more: “python string isdigit”</p></li>
+</ul></li>
+<li><p>If the row number is out-of-range then the row is invalid. The valid row numbers are between 1 and the length of the game_state list (inclusive)</p></li>
+<li><p>To be valid the takes number must be between 1 and 3 (inclusive)</p></li>
+<li><p>To be valid, the takes number must be less than or equal the number of tokens in the selected row (I.E. if a row only has 2 tokens, it is not valid to take 3 tokens)</p></li>
 </ul>
-<p>Due date (deadline to submit to Gradescope): Wed, Sep 30, 2026 at 11:59 pm</p>
+<p>Hints:</p>
+<ul>
+<li><p>the row and takes parameters are strings <u>exactly as input by the user</u> – this will require some care and some deliberate type conversion. Thinking carefully about this complexity is a core part of what makes this function hard. If you are deliberate, however, about remembering when variables contain strings or integers, this is quite doable.</p></li>
+<li><p>rows will be entered by the user 1-indexed (meaning “1” represents the first row) this is different from how rows are handled in python – where the token_count list is 0-indexed (0 represents the first row.) Your code will need to account for this.</p></li>
+<li><p>remember to convert the string inputs to integers before using them as list indexes – indices MUST be integers. the <code>int(...)</code>function can be used for this, but only if you have already checked if the string is numeric.</p></li>
+</ul>
+</section>
+<section id="updategame_state-row-takes" class="level2">
+<h2 class="anchored" data-anchor-id="updategame_state-row-takes">update(game_state, row, takes)</h2>
+<p>The update method takes three parameters game_state, row, and takes. While these have the same name as the parameters to the is_valid function, there are important differences. Like before, <code>game_state</code> is a list of how many tokens have in each row in a nim game (similar to one that create_game_state might return), <code>row</code> is an <strong>int</strong> representing which row the user has requested to take tokens from – this will be 0-indexed (not 1-indexed like the user input) and therefore will represent a list index directly. And <code>takes</code> is an representing how many tokens the user wishes to take. The function should return a <strong>newly created</strong> list that represents the board after the listed number of tokens have been taken from the listed row.</p>
+<p>Example: if you call <code>update([5,3,4,1], 2, 3)</code> it should return <code>[5,3,1,1]</code> (index 2 in the array has been reduced by 3, the rest are unchanged.) The input list should remain unchanged.</p>
+<p>Notes:</p>
+<ul>
+<li><p>You do not need to re-check that the inputs are valid in this function. If you look at how the functions are used you will see that this function is only called after validating inputs using the previous one.</p></li>
+<li><p>You should assume that row and takes are integers, that row is a valid index for the game_state list, and that takes is between 1 and 3, and not greater than <code>game_state[i]</code>. This is to say, you can assume that these parameters indicate a valid move as previously defined.</p></li>
+<li><p>Remember that the row is a 0-indexed integer in this problem, not a 1-indexed string like the last problem. You can use it directly like a list index.</p></li>
+<li><p>The game_state list input to this function should be unmodified by this function (I.E. it should have the same value before and after this function runs)</p></li>
+<li><p>The returned list should be a copy of the input list except for the index indicated by row – which should have fewer tokens as indicated by the takes variable.</p></li>
+</ul>
+<p>Hints:</p>
+<ul>
+<li><p>This function’s requirements may not match your expectations – make sure to read them carefully. For instance, the parameters here are formatted differently than the ones in the previous function.</p></li>
+<li><p>Despite the name – the function does not actually “update” a list. Remember – it’s job is to create a new list, NOT change the list given to it.</p></li>
+<li><p>This function is a bit hard to describe, and therefore it can be a bit hard to understand. Make sure you have a sense of what this is expected to do before you start coding.</p></li>
+</ul>
+</section>
+<section id="draw_game_stategame_state" class="level2">
+<h2 class="anchored" data-anchor-id="draw_game_stategame_state">draw_game_state(game_state)</h2>
+<p>The draw_game_statefunction takes one parameter, game_state is a list of numbers (similar to one that create_game_state might return). You can assume that the game_state list contains only non-negative numbers. The draw_game_state function has no return value, and should instead use print statements to produce an output directly to the terminal.</p>
+<p>The output of the function is a depiction of the state of the game, for instance, if given the list <code>[5,2,3,1]</code> The following should be printed:</p>
+<pre><code>====================
+1 #####
+2 ##
+3 ###
+4 #
+====================</code></pre>
+<p>Formally:</p>
+<ul>
+<li><p>The first line should contain 20 equal-signs.</p></li>
+<li><p>for a list length (n), the next (n) lines should be the row number (1-indexed), followed by a single space, and then a number of pound-signs <code>#</code> as indicated by the game_state list.</p></li>
+<li><p>The final line should contain 20 equal-signs.</p></li>
+<li><p>No line starts-with or ends-with any spaces.</p></li>
+<li><p>Your output must match <u>letter to letter</u> – including spaces, newlines, capitalization, symbols etc.</p></li>
+</ul>
+<p>Hints:</p>
+<ul>
+<li><p>A common task for this process is to repeat a string a fixed number of times. There is a simple way to do this in python. If you do not know the simple way to do this, you can also <u>make</u> a simple way to do that with a helper function (a non-required function you define to help you complete your task.)</p></li>
+<li><p>You may find it useful to know that you can use <code>+</code> to “add” strings together (concatenating them) – this is a common way to build strings in loops. Alternatively, you may find it useful to know that <code>print(whatever, end=&quot;&quot;)</code> will print whatever you want <em>without printing the newline character</em> – allowing you to build up a line of output in a loop.</p></li>
+<li><p>Make sure you pay special attention to the requirements on this one – we are looking for letter-to-letter equality, it’s not enough for it to look correct to a human, it needs to print the exact correct series of letters.</p></li>
+<li><p>Remember that differnt types of documents like to place “weird” but pretty version of characters. I STRONGLY recommend against using copy-paste as part of this function – you might accidentally copy a letter that IS NOT what we are expecting.</p></li>
+</ul>
+</section>
+<section id="is_overgame_state" class="level2">
+<h2 class="anchored" data-anchor-id="is_overgame_state">is_over(game_state)</h2>
+<p>The is_over function takes one parameter, <code>game_state</code> (as above). This function returns a boolean value to indicate if the game is over. If every value in the input list is 0 – the game is over. If any value is not 0 – the game is not over. (You can assume the list is not empty – I.E. it has at least one thing in it.)</p>
+</section>
+</section>
+<section id="grading" class="level1">
+<h1>Grading</h1>
+<p>Grading on this assignment will be 50% automated tests, and 50% manual checks.</p>
+<p>The Manual grading will be 10% code style, and 40% spot-checks / partial credit (about 8 points per function) The spot-checking will focus on</p>
+<ul>
+<li><p>Bad approaches to the problem. This can take the form of correct solutions, but vastly over-complicated/inefficient, or cases where you coded to pass the tests, but failed to actually solve the problem as stated in these instructions.</p></li>
+<li><p>Things that make the code <em>anything less than a joy to read</em> – bad variable names, problematic code duplication (especially where this could have been avoided by calling a function). poor use of “formatting” features like newlines, whitespace, etc.</p></li>
+<li><p>Partial credit for code that fails tests, depending on severity of test-failure.</p></li>
+</ul>
+<p>For code style, we will use the following style guidelines for this lab. Future labs may have a <strong>more restrictive style guideline</strong> (as will most workplaces).</p>
+<ul>
+<li><p>Every function should have a docstring (if you are not confident you know what this is, just google it!)</p></li>
+<li><p>Every file should have a comment at the top, which should say, at a minimum, your name and your partners name.</p></li>
+<li><p>Variable names should be as descriptive as possible (clearly <code>n</code> and <code>i</code> will be accepted here as common loop variables or math variables, but <code>c</code> instead of <code>count</code> would be considered a bad variable name choice)</p></li>
+<li><p>Reasonable use of whitespace – don’t spread the lines of a function out with massive whitespace, don’t use 1-space-only for indentation. That sort of thing.</p></li>
+<li><p>If there are problems that actively make your code hard to read, we reserve the right to mention them, even if they are not listed here. Ultimately, code is about communication, if your code doesn’t make sense it’s not correct (no matter how well it runs!)</p></li>
+</ul>
+</section>
+<section id="submission" class="level1">
+<h1>Submission</h1>
+<p>Before submitting your work:</p>
+<ul>
+<li><p>Please test the code and carefully check that your code is bug-free. Buggy code is worth very little in the programming community – especially if the bugs prevent it from running.</p></li>
+<li><p>Make sure the file is named <code>nim.py</code> (case sensitive)</p></li>
+<li><p>Make sure the that you name, and your partner’s name, are in a comment at the top of the file</p></li>
+<li><p>If you and your partner are submitting one copy of the assignment – make sure whoever submits it marks their partner <strong>in gradescope itself</strong>. Please do this unless you and your partner are turning in different files.</p></li>
+</ul>
+<p>You are only required to submit the <code>nim.py</code> file, which will be submitted through gradescope. You can submit as many times as you want, only the final submission will be considered for grading.</p>
+<p>If you worked with a lab partner, gradescope has a way to add your partner to your submission after you submit (to show yourself as having worked in a group). We prefer you use this feature if at all possible. Not using it may lead to trouble getting credit for your work. More information on this feature can be found here:<br>
+<code>https://help.gradescope.com/article/m5qz2xsnjy-student-add-group-members</code> If you worked with a lab partner, please make sure both you and your partner have a copy of the lab files for future reference.</p>
+<p>If you finish this lab during the lab time, feel free to notify your lab TAs, and then leave early. If you do not finish this lab during the lab time you are responsible for finishing and submitting this assignment before the deadline.</p>
+</section>
+<section id="more-fun" class="level1">
+<h1>More Fun</h1>
+<p>There is A LOT of room for improvement in the <code>play_nim.py</code> file. If you finish this lab early, here are a few ideas for more fun you can have: None of these tasks are required, or will be graded, but you can certainly complete them for bragging rights, and share your modified <code>play_nim.py</code> file on slack.</p>
+<ul>
+<li><p>Add turn count tracking – know how long you’ve played!</p></li>
+<li><p>Allow players to enter their names, and track whose turn it is</p></li>
+<li><p>(after the second) track win/loss for players 1 and 2</p></li>
+<li><p>add an AI (start with just random choices, then see if you can do better!)</p></li>
+<li><p>Allow users to enter the initial number of tokens, either the length and max, or the whole list!</p></li>
+</ul>
 
 
 </section>

@@ -277,7 +277,7 @@
     "href": "labs.html",
     "title": "Labs",
     "section": "",
-    "text": "All labs are at Walter Library 106\n\nLaboratory (004) T 02:30 PM - 04:25 PM\n\nLaboratory (005) T 04:40 PM - 06:35 PM\n\nLaboratory (006) W 08:00 AM - 09:55 AM\n\nLaboratory (007) W 10:10 AM - 12:05 PM\n\nLabs are always due at 11:59pm on the Wednesday that Lab sections 6 and 7 happen. Note that my staff and I are not available after 7pm, so if you make the unwise decision to work on the lab close to the deadline you won’t be able to get any help from us. We cannot accept technical/computer issues as a legitimate reason for late or incomplete work. You need to make sure you are working on the assignments with enough time to figure our these issues.\n\nLab submissions will be primarily evaluated automatically to validate expected behavior.\nAttendance of the lab section itself is expected unless you have an excused absence. Historically, students who skip labs, fail labs (and we don’t want this for you).\n\n\nComputer Lab 1\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 15, 2026\nLabs 6 and 7: Wed, Sep 16, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 16, 2026 at 11:59 pm\n\nLab 01 instructions\nLab 01 slides\nLab 01 tester file\nLab 01 gradescope submission\n\n\n\nComputer Lab 2\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 22, 2026\nLabs 6 and 7: Wed, Sep 23, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 23, 2026 at 11:59 pm\n\n\nComputer Lab 3\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 29, 2026\nLabs 6 and 7: Wed, Sep 30, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 30, 2026 at 11:59 pm"
+    "text": "All labs are at Walter Library 106\n\nLaboratory (004) T 02:30 PM - 04:25 PM\n\nLaboratory (005) T 04:40 PM - 06:35 PM\n\nLaboratory (006) W 08:00 AM - 09:55 AM\n\nLaboratory (007) W 10:10 AM - 12:05 PM\n\nLabs are always due at 11:59pm on the Wednesday that Lab sections 6 and 7 happen. Note that my staff and I are not available after 7pm, so if you make the unwise decision to work on the lab close to the deadline you won’t be able to get any help from us. We cannot accept technical/computer issues as a legitimate reason for late or incomplete work. You need to make sure you are working on the assignments with enough time to figure our these issues.\n\nLab submissions will be primarily evaluated automatically to validate expected behavior.\nAttendance of the lab section itself is expected unless you have an excused absence. Historically, students who skip labs, fail labs (and we don’t want this for you).\n\n\nComputer Lab 1\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 15, 2026\nLabs 6 and 7: Wed, Sep 16, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 16, 2026 at 11:59 pm\n\nLab 01 instructions\nLab 01 slides\nLab 01 tester file\nLab 01 gradescope submission\n\n\n\nComputer Lab 2\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 22, 2026\nLabs 6 and 7: Wed, Sep 23, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 23, 2026 at 11:59 pm\n\nLab 02 instructions\nLab 02 slides\nLab 02 tester file\nLab 02 gradescope submission\n\n\n\nComputer Lab 3\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 29, 2026\nLabs 6 and 7: Wed, Sep 30, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 30, 2026 at 11:59 pm"
   },
   {
     "objectID": "projects.html",
@@ -1307,5 +1307,145 @@
     "title": "Python Loops",
     "section": "Infinite loops on Gradescope",
     "text": "Infinite loops on Gradescope\nIf you get the following message from the Gradescope autograder:\n\nYour submission timed out. It took longer than 600 seconds to run.\n\nYour code has an infinite loop in it (it never stops running)"
+  },
+  {
+    "objectID": "labs/lab02-slides.html#nim",
+    "href": "labs/lab02-slides.html#nim",
+    "title": "Lab 02",
+    "section": "Nim",
+    "text": "Nim\n\nSimple two-player game\nPlayers take turns removing tokens from the board by choosing a row from which to remove tokens\nPlayers can remove 1 to 3 tokens (neither more less)\nThe player that takes the last token looses\n\nInitial game state – 5 rows, 3 maximum tokens:\n====================\n1 #\n2 ##\n3 ###\n4 ###\n5 ###\n===================="
+  },
+  {
+    "objectID": "labs/lab02-slides.html#nim-game-play",
+    "href": "labs/lab02-slides.html#nim-game-play",
+    "title": "Lab 02",
+    "section": "Nim – game play",
+    "text": "Nim – game play\nGame with 4 rows, 3 tokens max:\n====================\n1 #\n2 ##\n3 ###\n4 ###\n====================\nChoose a row 1 - 4"
+  },
+  {
+    "objectID": "labs/lab02-slides.html#nim-game-play-1",
+    "href": "labs/lab02-slides.html#nim-game-play-1",
+    "title": "Lab 02",
+    "section": "Nim – game play",
+    "text": "Nim – game play\n====================\n1 #\n2 ##\n3 ###\n4 ###\n====================\nChoose a row 1 - 4 2\nHow many tokens to take, 1 to 3 (no more than are available)"
+  },
+  {
+    "objectID": "labs/lab02-slides.html#nim-game-play-2",
+    "href": "labs/lab02-slides.html#nim-game-play-2",
+    "title": "Lab 02",
+    "section": "Nim – game play",
+    "text": "Nim – game play\n====================\n1 #\n2 ##\n3 ###\n4 ###\n====================\nChoose a row 1 - 4 2\nHow many tokens to take, 1 to 3 (no more than are available) 2\n====================\n1 #\n2 \n3 ###\n4 ###\n====================\nChoose a row 1 - 4"
+  },
+  {
+    "objectID": "labs/lab02-slides.html#nim-game-play-3",
+    "href": "labs/lab02-slides.html#nim-game-play-3",
+    "title": "Lab 02",
+    "section": "Nim – game play",
+    "text": "Nim – game play\n====================\n1 #\n2 \n3 ###\n4 ###\n====================\nChoose a row 1 - 4 3\nHow many tokens to take, 1 to 3 (no more than are available)"
+  },
+  {
+    "objectID": "labs/lab02-slides.html#nim-game-play-4",
+    "href": "labs/lab02-slides.html#nim-game-play-4",
+    "title": "Lab 02",
+    "section": "Nim – game play",
+    "text": "Nim – game play\n====================\n1 #\n2 \n3 ###\n4 ###\n====================\nChoose a row 1 - 4 3\nHow many tokens to take, 1 to 3 (no more than are available)  2\n====================\n1 #\n2 \n3 #\n4 ###\n====================\nChoose a row 1 - 4"
+  },
+  {
+    "objectID": "labs/lab02-slides.html#nim-game-play-5",
+    "href": "labs/lab02-slides.html#nim-game-play-5",
+    "title": "Lab 02",
+    "section": "Nim – game play",
+    "text": "Nim – game play\nChoose a row 1 - 4 4\nHow many tokens to take, 1 to 3 (no more than are available) 3\n====================\n1 #\n2 \n3 #\n4 \n====================\nChoose a row 1 - 4"
+  },
+  {
+    "objectID": "labs/lab02-slides.html#nim-game-play-6",
+    "href": "labs/lab02-slides.html#nim-game-play-6",
+    "title": "Lab 02",
+    "section": "Nim – game play",
+    "text": "Nim – game play\n====================\n1 #\n2 \n3 #\n4 \n====================\nChoose a row 1 - 4 1\nHow many tokens to take, 1 to 3 (no more than are available) 1\n====================\n1 \n2 \n3 #\n4 \n====================\nChoose a row 1 - 4"
+  },
+  {
+    "objectID": "labs/lab02-slides.html#nim-game-play-7",
+    "href": "labs/lab02-slides.html#nim-game-play-7",
+    "title": "Lab 02",
+    "section": "Nim – game play",
+    "text": "Nim – game play\n====================\n1 #\n2 \n3 #\n4 \n====================\nChoose a row 1 - 4"
+  },
+  {
+    "objectID": "labs/lab02-slides.html#nim-game-play-8",
+    "href": "labs/lab02-slides.html#nim-game-play-8",
+    "title": "Lab 02",
+    "section": "Nim – game play",
+    "text": "Nim – game play\nChoose a row 1 - 4 1\nHow many tokens to take, 1 to 3 (no more than are available) 1\n====================\n1 \n2 \n3 #\n4 \n====================\nChoose a row 1 - 4 3\nHow many tokens to take, 1 to 3 (no more than are available) 1\nGame over, the last player lost!"
+  },
+  {
+    "objectID": "labs/lab02-slides.html#game-state-representation",
+    "href": "labs/lab02-slides.html#game-state-representation",
+    "title": "Lab 02",
+    "section": "Game State Representation",
+    "text": "Game State Representation\n====================\n1 ####\n2 ###\n3\n4 #\n====================\nRepresented with the list [4,3,0,1]"
+  },
+  {
+    "objectID": "labs/lab02-slides.html#set-up",
+    "href": "labs/lab02-slides.html#set-up",
+    "title": "Lab 02",
+    "section": "Set up",
+    "text": "Set up\n\nDownload tester code\nDownload code to play game\nOpen VS Code (or another editor of your choosing), open the folder where you have the previous two python files and create a nim.py file"
+  },
+  {
+    "objectID": "labs/lab02-slides.html#functions-you-need-to-write",
+    "href": "labs/lab02-slides.html#functions-you-need-to-write",
+    "title": "Lab 02",
+    "section": "Functions you need to write",
+    "text": "Functions you need to write\n\ncreate_game_state(size, token_max)\nis_valid_move(game_state, row, takes)\nupdate(game_state, row, takes)\ndraw_game_state(game_state)\nis_over(game_state)\n\nAdd at the top of nim.py your name, and the name of any lab partners you worked with, as well as docstrings for each function."
+  },
+  {
+    "objectID": "labs/lab02.html",
+    "href": "labs/lab02.html",
+    "title": "Computer Laboratory 02",
+    "section": "",
+    "text": "Deadline: Wed, Sep 23, 2026"
+  },
+  {
+    "objectID": "labs/lab02.html#game-state",
+    "href": "labs/lab02.html#game-state",
+    "title": "Computer Laboratory 02",
+    "section": "Game State",
+    "text": "Game State\nAll of these functions use the term game state. In computer-game theory, “game state” refers to the information stored in the computer about the game. In our case, a “game state” is the number of tokens in each row (along with the number of rows). We can store this using a python list – where each element in the list is the number of elements in that list. For instance the game state:\n====================\n1 ####\n2 ###\n3\n4 #\n====================\nwould be represented with the list [4,3,0,1]\nMost of the following functions either create these lists, or take them as parameters."
+  },
+  {
+    "objectID": "labs/lab02.html#create_game_statesize-token_max",
+    "href": "labs/lab02.html#create_game_statesize-token_max",
+    "title": "Computer Laboratory 02",
+    "section": "create_game_state(size, token_max)",
+    "text": "create_game_state(size, token_max)\nThis function takes two parameters, size, and token_max. It should return a newly created list of integers representing the number of tokens in each row. The size parameter sets the length of the newly created list, and the token_max parameter controls the values. In particular, the first row (position 0 in the list) should have 1 token, the second should have 2 tokens and so-forth, up until we hit token_max – after which each position should have token_max tokens.\nExample: if you call create_game_state(5, 3) you should get the list [1,2,3,3,3] as a return value.\nNotes:\n\nYou can assume that both size and token_max are positive integers.\nif a size value of 0 is given, you should return an empty list.\nYou cannot assume that size (&gt;) token_max."
+  },
+  {
+    "objectID": "labs/lab02.html#is_valid_movegame_state-row-takes",
+    "href": "labs/lab02.html#is_valid_movegame_state-row-takes",
+    "title": "Computer Laboratory 02",
+    "section": "is_valid_move(game_state, row, takes)",
+    "text": "is_valid_move(game_state, row, takes)\nThis function takes three parameters, game_state is a list of numbers (how many tokens are in each row), row is a string representing which row the user has requested to take tokens from, and takes is a string representing how many tokens the user wishes to take. The function should return a boolean value – True to indicate that user has chosen a valid move, or False to indicate that the move would be invalid. Ultimately, a primary purpose of this function is validating the user’s raw input as such, make sure to code defensively and plan for all kinds of weird input Strings (since you cannot predict what a human might type!)\nNotes and Details:\n\nThe row number is expected to be input 1-indexed (so “1” means the first row, not 0)\nThis function must not modify the game_state parameter – the given list should have the same values before and after the function.\nRow and takes are strings, not integers. You CANNOT assume that they will only have integers in them or be in any particularly valid form. You can assume the string is non-empty (has at least one letter in it)\nA string that contains anything OTHER than digits (1,2,3,4,5,6,7,8,9 or 0) is invalid.\n\nThe string method isdigit can be used to ask a string if it only has digits (and no other letters).\nIf you are unclear how to use this method feel free to use google to learn more: “python string isdigit”\n\nIf the row number is out-of-range then the row is invalid. The valid row numbers are between 1 and the length of the game_state list (inclusive)\nTo be valid the takes number must be between 1 and 3 (inclusive)\nTo be valid, the takes number must be less than or equal the number of tokens in the selected row (I.E. if a row only has 2 tokens, it is not valid to take 3 tokens)\n\nHints:\n\nthe row and takes parameters are strings exactly as input by the user – this will require some care and some deliberate type conversion. Thinking carefully about this complexity is a core part of what makes this function hard. If you are deliberate, however, about remembering when variables contain strings or integers, this is quite doable.\nrows will be entered by the user 1-indexed (meaning “1” represents the first row) this is different from how rows are handled in python – where the token_count list is 0-indexed (0 represents the first row.) Your code will need to account for this.\nremember to convert the string inputs to integers before using them as list indexes – indices MUST be integers. the int(...)function can be used for this, but only if you have already checked if the string is numeric."
+  },
+  {
+    "objectID": "labs/lab02.html#updategame_state-row-takes",
+    "href": "labs/lab02.html#updategame_state-row-takes",
+    "title": "Computer Laboratory 02",
+    "section": "update(game_state, row, takes)",
+    "text": "update(game_state, row, takes)\nThe update method takes three parameters game_state, row, and takes. While these have the same name as the parameters to the is_valid function, there are important differences. Like before, game_state is a list of how many tokens have in each row in a nim game (similar to one that create_game_state might return), row is an int representing which row the user has requested to take tokens from – this will be 0-indexed (not 1-indexed like the user input) and therefore will represent a list index directly. And takes is an representing how many tokens the user wishes to take. The function should return a newly created list that represents the board after the listed number of tokens have been taken from the listed row.\nExample: if you call update([5,3,4,1], 2, 3) it should return [5,3,1,1] (index 2 in the array has been reduced by 3, the rest are unchanged.) The input list should remain unchanged.\nNotes:\n\nYou do not need to re-check that the inputs are valid in this function. If you look at how the functions are used you will see that this function is only called after validating inputs using the previous one.\nYou should assume that row and takes are integers, that row is a valid index for the game_state list, and that takes is between 1 and 3, and not greater than game_state[i]. This is to say, you can assume that these parameters indicate a valid move as previously defined.\nRemember that the row is a 0-indexed integer in this problem, not a 1-indexed string like the last problem. You can use it directly like a list index.\nThe game_state list input to this function should be unmodified by this function (I.E. it should have the same value before and after this function runs)\nThe returned list should be a copy of the input list except for the index indicated by row – which should have fewer tokens as indicated by the takes variable.\n\nHints:\n\nThis function’s requirements may not match your expectations – make sure to read them carefully. For instance, the parameters here are formatted differently than the ones in the previous function.\nDespite the name – the function does not actually “update” a list. Remember – it’s job is to create a new list, NOT change the list given to it.\nThis function is a bit hard to describe, and therefore it can be a bit hard to understand. Make sure you have a sense of what this is expected to do before you start coding."
+  },
+  {
+    "objectID": "labs/lab02.html#draw_game_stategame_state",
+    "href": "labs/lab02.html#draw_game_stategame_state",
+    "title": "Computer Laboratory 02",
+    "section": "draw_game_state(game_state)",
+    "text": "draw_game_state(game_state)\nThe draw_game_statefunction takes one parameter, game_state is a list of numbers (similar to one that create_game_state might return). You can assume that the game_state list contains only non-negative numbers. The draw_game_state function has no return value, and should instead use print statements to produce an output directly to the terminal.\nThe output of the function is a depiction of the state of the game, for instance, if given the list [5,2,3,1] The following should be printed:\n====================\n1 #####\n2 ##\n3 ###\n4 #\n====================\nFormally:\n\nThe first line should contain 20 equal-signs.\nfor a list length (n), the next (n) lines should be the row number (1-indexed), followed by a single space, and then a number of pound-signs # as indicated by the game_state list.\nThe final line should contain 20 equal-signs.\nNo line starts-with or ends-with any spaces.\nYour output must match letter to letter – including spaces, newlines, capitalization, symbols etc.\n\nHints:\n\nA common task for this process is to repeat a string a fixed number of times. There is a simple way to do this in python. If you do not know the simple way to do this, you can also make a simple way to do that with a helper function (a non-required function you define to help you complete your task.)\nYou may find it useful to know that you can use + to “add” strings together (concatenating them) – this is a common way to build strings in loops. Alternatively, you may find it useful to know that print(whatever, end=\"\") will print whatever you want without printing the newline character – allowing you to build up a line of output in a loop.\nMake sure you pay special attention to the requirements on this one – we are looking for letter-to-letter equality, it’s not enough for it to look correct to a human, it needs to print the exact correct series of letters.\nRemember that differnt types of documents like to place “weird” but pretty version of characters. I STRONGLY recommend against using copy-paste as part of this function – you might accidentally copy a letter that IS NOT what we are expecting."
+  },
+  {
+    "objectID": "labs/lab02.html#is_overgame_state",
+    "href": "labs/lab02.html#is_overgame_state",
+    "title": "Computer Laboratory 02",
+    "section": "is_over(game_state)",
+    "text": "is_over(game_state)\nThe is_over function takes one parameter, game_state (as above). This function returns a boolean value to indicate if the game is over. If every value in the input list is 0 – the game is over. If any value is not 0 – the game is not over. (You can assume the list is not empty – I.E. it has at least one thing in it.)"
   }
 ]
