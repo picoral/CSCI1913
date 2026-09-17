@@ -1447,5 +1447,12 @@
     "title": "Computer Laboratory 02",
     "section": "is_over(game_state)",
     "text": "is_over(game_state)\nThe is_over function takes one parameter, game_state (as above). This function returns a boolean value to indicate if the game is over. If every value in the input list is 0 – the game is over. If any value is not 0 – the game is not over. (You can assume the list is not empty – I.E. it has at least one thing in it.)"
+  },
+  {
+    "objectID": "labs/lab02-slides.html#documentation",
+    "href": "labs/lab02-slides.html#documentation",
+    "title": "Lab 02",
+    "section": "Documentation",
+    "text": "Documentation\nRemember to document your code!\nThree ways to document your code:\n\nUse good variable names - python prefers snake_case naming\nin-line comments #\nDocstrings - strings included as first lines of programs and functions (careful with indentation)"
   }
 ]
