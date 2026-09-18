@@ -1454,5 +1454,12 @@
     "title": "Lab 02",
     "section": "Documentation",
     "text": "Documentation\nRemember to document your code!\nThree ways to document your code:\n\nUse good variable names - python prefers snake_case naming\nin-line comments #\nDocstrings - strings included as first lines of programs and functions (careful with indentation)"
+  },
+  {
+    "objectID": "slides/slides-02-02.html#prime-tuples",
+    "href": "slides/slides-02-02.html#prime-tuples",
+    "title": "Python Loops",
+    "section": "Prime Tuples",
+    "text": "Prime Tuples\nAddn to your prime.py file a python function called get_primes that takes a whole number greater than one as argument and returns a tuple with all integers that are prime up (and including) n.\nTest cases:\n\nif __name__ == \"__main__\":\n    assert get_primes(2) == (2,)\n    assert get_primes(4) == (2, 3)\n    assert get_primes(29) == (2, 3, 5, 7, 11, 13, 17, 19, 23, 29)\n    assert get_primes(53) == (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53)\n    assert get_primes(54) == (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53)\n\n    print(\"Passed all tests\")"
   }
 ]
