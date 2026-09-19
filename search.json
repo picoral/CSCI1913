@@ -228,7 +228,7 @@
     "href": "index.html",
     "title": "CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development",
     "section": "",
-    "text": "For this module we will focus first-and-foremost on getting the class started. We’ll be seeing the basic class design, learning what are the parts of the class, and how they will help us learn.\nBy the end of the week you should be able to:\n\nDecide whether CSCI1913 is a course for you (if you fit the audience)\nPrepare for what we will do to learn, and why.\n\n\n\n\nSyllabus\nAcademic Integrity\nCourse Rules\nTechnology\n\n\n\n\n\nCourse Intro\nHow to succeed in this course\n\n\n\n\n\nWe will continue working with Python. In this module we will finish discussing basic python features with a few final details of pyhton’s many scopes, in particular how you can import functions from other files – and some unique details about how this works in python.\nThen we will begin exploring Python’s advanced data representation tools: data structures. Data structures create a flexible way to represent many common forms of data in an ad-hoc way without creating specific classes, or writing tricky data-management code.\nWe will then focus on the List, which is python’s answer to the array. Towards the end of the module we will introduce the set and dictionary as well.\nBy the end of this module you will be able to:\n\nRead, write, run, test, and debug simple python programs\nIdentify a list, tuple, and dictionary as represented in python code\nCreate, and loop over python lists\n\n\n\n\nProgramming Languages Overview\nIntro to Python\nMore Python\nPython Loops\nPython Lists\n\n\n\n\n\nBy the end of this module you will be able to:\n\nExplain the concept of mutability and distinguish between mutable and immutable data types in Python, providing examples of each and describing the implications for variable assignment and function parameters.\nCreate and manipulate Python lists using various methods including indexing, slicing, appending, inserting, removing, and sorting elements, while understanding the performance characteristics of these operations.\nAnalyze the behavior of list aliasing and copying, explaining the difference between shallow and deep copies and predicting how changes to one list reference will affect others.\nCreate and manipulate dictionaries to store and retrieve key-value pairs, using appropriate methods for adding, updating, removing, and accessing elements.\nIterate over dictionaries using various approaches (keys, values, items) and understand the implications of dictionary ordering in modern Python versions.\nApply dictionaries to solve practical problems such as counting occurrences, grouping data, creating lookup tables, and representing structured information.\nUse sets for membership testing and duplicate elimination, understanding when sets are preferable to lists for specific operations and leveraging their O(1) average-case lookup performance.\nPerform set operations including union, intersection, difference, and symmetric difference to solve problems involving collections and relationships between groups.\nSelect appropriate data structures (lists, dictionaries, or sets) based on the requirements of a given problem, justifying choices based on performance, functionality, and code clarity.\n\n\n\n\nBy the end of this module you will be able to:\n\nAnalyze the time complexity of simple algorithms by identifying the relationship between input size and running time.\nExpress algorithm efficiency using Big-O notation and correctly classify common complexity classes including O(1), O(log n), O(n), O(n log n), O(n²), and O(2ⁿ).\nCompare algorithms based on their asymptotic behavior and determine which algorithm is more efficient for large inputs by analyzing their Big-O classifications.\nDistinguish between best-case, average-case, and worst-case time complexity and explain when each measure is most relevant.\nImplement linear search and binary search correctly in code and trace their execution on sample datasets.\nAnalyze the time complexity of linear search as O(n) and binary search as O(log n) and explain why binary search is asymptotically faster.\nExplain why binary search requires sorted data as a precondition and demonstrate how the algorithm eliminates half of the remaining search space with each comparison.\n\n\n\n\nBy the end of this module you will be able to:\n\nImplement selection sort, insertion sort, and bubble sort correctly in code and trace their execution on small datasets.\nAnalyze and compare the time complexity of selection sort, insertion sort, and bubble sort in their best, average, and worst cases.\nExplain the underlying mechanism of each sorting algorithm including how elements are compared, swapped, and positioned during execution.\n\n\n\n\nBy the end of this module you will be able to:\n\nDefine and explain recursion as a problem-solving technique where a function calls itself with modified parameters to solve progressively smaller subproblems.\nIdentify the essential components of a recursive function, including the base case(s) that stop recursion and the recursive case(s) that break down the problem.\nConvert simple iterative solutions to recursive solutions and vice versa, recognizing when each approach is more appropriate.\nApply recursion to solve problems involving naturally recursive data structures or definitions, such as computing powers, reversing strings, or processing nested lists.\nDebug recursive functions by identifying common errors such as missing base cases, incorrect recursive calls, or infinite recursion."
+    "text": "For this module we will focus first-and-foremost on getting the class started. We’ll be seeing the basic class design, learning what are the parts of the class, and how they will help us learn.\nBy the end of the week you should be able to:\n\nDecide whether CSCI1913 is a course for you (if you fit the audience)\nPrepare for what we will do to learn, and why.\n\n\n\n\nSyllabus\nAcademic Integrity\nCourse Rules\nTechnology\n\n\n\n\n\nCourse Intro\nHow to succeed in this course\n\n\n\n\n\nWe will continue working with Python. In this module we will finish discussing basic python features with a few final details of pyhton’s many scopes, in particular how you can import functions from other files – and some unique details about how this works in python.\nThen we will begin exploring Python’s advanced data representation tools: data structures. Data structures create a flexible way to represent many common forms of data in an ad-hoc way without creating specific classes, or writing tricky data-management code.\nWe will then focus on the List, which is python’s answer to the array. Towards the end of the module we will introduce the set and dictionary as well.\nBy the end of this module you will be able to:\n\nRead, write, run, test, and debug simple python programs\nIdentify a list, tuple, and dictionary as represented in python code\nCreate, and loop over python lists\n\n\n\n\nProgramming Languages Overview\nIntro to Python\nMore Python\nPython Loops\nPython Lists\n\n\n\n\n\nBy the end of this module you will be able to:\n\nExplain the concept of mutability and distinguish between mutable and immutable data types in Python, providing examples of each and describing the implications for variable assignment and function parameters.\nCreate and manipulate Python lists using various methods including indexing, slicing, appending, inserting, removing, and sorting elements, while understanding the performance characteristics of these operations.\nAnalyze the behavior of list aliasing and copying, explaining the difference between shallow and deep copies and predicting how changes to one list reference will affect others.\nCreate and manipulate dictionaries to store and retrieve key-value pairs, using appropriate methods for adding, updating, removing, and accessing elements.\nIterate over dictionaries using various approaches (keys, values, items) and understand the implications of dictionary ordering in modern Python versions.\nApply dictionaries to solve practical problems such as counting occurrences, grouping data, creating lookup tables, and representing structured information.\nUse sets for membership testing and duplicate elimination, understanding when sets are preferable to lists for specific operations and leveraging their O(1) average-case lookup performance.\nPerform set operations including union, intersection, difference, and symmetric difference to solve problems involving collections and relationships between groups.\nSelect appropriate data structures (lists, dictionaries, or sets) based on the requirements of a given problem, justifying choices based on performance, functionality, and code clarity.\n\n\n\n\nMutability\nSequence Nesting\nDictionaries\nSets\n\n\n\n\n\nBy the end of this module you will be able to:\n\nAnalyze the time complexity of simple algorithms by identifying the relationship between input size and running time.\nExpress algorithm efficiency using Big-O notation and correctly classify common complexity classes including O(1), O(log n), O(n), O(n log n), O(n²), and O(2ⁿ).\nCompare algorithms based on their asymptotic behavior and determine which algorithm is more efficient for large inputs by analyzing their Big-O classifications.\nDistinguish between best-case, average-case, and worst-case time complexity and explain when each measure is most relevant.\nImplement linear search and binary search correctly in code and trace their execution on sample datasets.\nAnalyze the time complexity of linear search as O(n) and binary search as O(log n) and explain why binary search is asymptotically faster.\nExplain why binary search requires sorted data as a precondition and demonstrate how the algorithm eliminates half of the remaining search space with each comparison.\n\n\n\n\nBy the end of this module you will be able to:\n\nImplement selection sort, insertion sort, and bubble sort correctly in code and trace their execution on small datasets.\nAnalyze and compare the time complexity of selection sort, insertion sort, and bubble sort in their best, average, and worst cases.\nExplain the underlying mechanism of each sorting algorithm including how elements are compared, swapped, and positioned during execution.\n\n\n\n\nBy the end of this module you will be able to:\n\nDefine and explain recursion as a problem-solving technique where a function calls itself with modified parameters to solve progressively smaller subproblems.\nIdentify the essential components of a recursive function, including the base case(s) that stop recursion and the recursive case(s) that break down the problem.\nConvert simple iterative solutions to recursive solutions and vice versa, recognizing when each approach is more appropriate.\nApply recursion to solve problems involving naturally recursive data structures or definitions, such as computing powers, reversing strings, or processing nested lists.\nDebug recursive functions by identifying common errors such as missing base cases, incorrect recursive calls, or infinite recursion."
   },
   {
     "objectID": "index.html#module-01---course-overview",
@@ -249,7 +249,7 @@
     "href": "index.html#module-03-advanced-python",
     "title": "CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development",
     "section": "",
-    "text": "By the end of this module you will be able to:\n\nExplain the concept of mutability and distinguish between mutable and immutable data types in Python, providing examples of each and describing the implications for variable assignment and function parameters.\nCreate and manipulate Python lists using various methods including indexing, slicing, appending, inserting, removing, and sorting elements, while understanding the performance characteristics of these operations.\nAnalyze the behavior of list aliasing and copying, explaining the difference between shallow and deep copies and predicting how changes to one list reference will affect others.\nCreate and manipulate dictionaries to store and retrieve key-value pairs, using appropriate methods for adding, updating, removing, and accessing elements.\nIterate over dictionaries using various approaches (keys, values, items) and understand the implications of dictionary ordering in modern Python versions.\nApply dictionaries to solve practical problems such as counting occurrences, grouping data, creating lookup tables, and representing structured information.\nUse sets for membership testing and duplicate elimination, understanding when sets are preferable to lists for specific operations and leveraging their O(1) average-case lookup performance.\nPerform set operations including union, intersection, difference, and symmetric difference to solve problems involving collections and relationships between groups.\nSelect appropriate data structures (lists, dictionaries, or sets) based on the requirements of a given problem, justifying choices based on performance, functionality, and code clarity."
+    "text": "By the end of this module you will be able to:\n\nExplain the concept of mutability and distinguish between mutable and immutable data types in Python, providing examples of each and describing the implications for variable assignment and function parameters.\nCreate and manipulate Python lists using various methods including indexing, slicing, appending, inserting, removing, and sorting elements, while understanding the performance characteristics of these operations.\nAnalyze the behavior of list aliasing and copying, explaining the difference between shallow and deep copies and predicting how changes to one list reference will affect others.\nCreate and manipulate dictionaries to store and retrieve key-value pairs, using appropriate methods for adding, updating, removing, and accessing elements.\nIterate over dictionaries using various approaches (keys, values, items) and understand the implications of dictionary ordering in modern Python versions.\nApply dictionaries to solve practical problems such as counting occurrences, grouping data, creating lookup tables, and representing structured information.\nUse sets for membership testing and duplicate elimination, understanding when sets are preferable to lists for specific operations and leveraging their O(1) average-case lookup performance.\nPerform set operations including union, intersection, difference, and symmetric difference to solve problems involving collections and relationships between groups.\nSelect appropriate data structures (lists, dictionaries, or sets) based on the requirements of a given problem, justifying choices based on performance, functionality, and code clarity.\n\n\n\n\nMutability\nSequence Nesting\nDictionaries\nSets"
   },
   {
     "objectID": "index.html#module-04-big-o-notation-and-searching",
@@ -1460,6 +1460,356 @@
     "href": "slides/slides-02-02.html#prime-tuples",
     "title": "Python Loops",
     "section": "Prime Tuples",
-    "text": "Prime Tuples\nAddn to your prime.py file a python function called get_primes that takes a whole number greater than one as argument and returns a tuple with all integers that are prime up (and including) n.\nTest cases:\n\nif __name__ == \"__main__\":\n    assert get_primes(2) == (2,)\n    assert get_primes(4) == (2, 3)\n    assert get_primes(29) == (2, 3, 5, 7, 11, 13, 17, 19, 23, 29)\n    assert get_primes(53) == (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53)\n    assert get_primes(54) == (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53)\n\n    print(\"Passed all tests\")"
+    "text": "Prime Tuples\nAdd to your prime.py file a python function called get_primes that takes a whole number greater than one as argument and returns a tuple with all integers that are prime up (and including) n.\nTest cases:\n\nif __name__ == \"__main__\":\n    assert get_primes(2) == (2,)\n    assert get_primes(4) == (2, 3)\n    assert get_primes(29) == (2, 3, 5, 7, 11, 13, 17, 19, 23, 29)\n    assert get_primes(53) == (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53)\n    assert get_primes(54) == (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53)\n\n    print(\"Passed all tests\")"
+  },
+  {
+    "objectID": "slides/slides-03-04.html#sets",
+    "href": "slides/slides-03-04.html#sets",
+    "title": "Sets",
+    "section": "Sets",
+    "text": "Sets\n\nA set is a mutable object\nContains nonduplicate elements\nunordered datastructure\nType name set\nliteral uses curly braces ({})\nOnly contains immutable elements\nWe can use built-in functions like len(), min(), max(), sum()"
+  },
+  {
+    "objectID": "slides/slides-03-04.html#methods",
+    "href": "slides/slides-03-04.html#methods",
+    "title": "Sets",
+    "section": "Methods",
+    "text": "Methods\n\n.add(value) adds an value to the set\n.remove(value) removes an value from the set (throws error if no matching value found)\n.discard(value) removes an value from the set (no error if no matching value found)\n\nSince items in a set are not ordered, not sequential, there’s no index in sets."
+  },
+  {
+    "objectID": "slides/slides-03-04.html#sets-1",
+    "href": "slides/slides-03-04.html#sets-1",
+    "title": "Sets",
+    "section": "Sets",
+    "text": "Sets\nItems in a set are not ordered, and cannot repeat.\n\nmy_set = {\"apple\", \"banana\", \"pear\", \"kiwi\", \"kiwi\"}\nprint(my_set)\n\n{'pear', 'apple', 'banana', 'kiwi'}\n\n\n\nmy_set.add(\"grape\")\nprint(my_set)\n\n{'pear', 'apple', 'kiwi', 'grape', 'banana'}\n\n\n\nmy_set.remove(\"banana\")\nprint(my_set)\n\n{'pear', 'apple', 'kiwi', 'grape'}"
+  },
+  {
+    "objectID": "slides/slides-03-04.html#set-methods",
+    "href": "slides/slides-03-04.html#set-methods",
+    "title": "Sets",
+    "section": "Set methods",
+    "text": "Set methods\n\n.add(value) adds an item to the set, if the value is already there, nothing happens (it changes the set)\n.union(other_set) returns a new set containing all unique elements from both sets\n.intersection(other_set) returns a new set containing only the elements common to both sets\n.difference(other_set) returns a new set containing elements present in one set but not in other_set"
+  },
+  {
+    "objectID": "slides/slides-03-04.html#exercise-by-mario",
+    "href": "slides/slides-03-04.html#exercise-by-mario",
+    "title": "Sets",
+    "section": "Exercise (by Mario)",
+    "text": "Exercise (by Mario)\nEcological Survey\nYou are working with a team of biologists, and each of you have split up to survey different areas of a rainforest. Each biologist makes a list of animals that they spotted during the survey. You have collected everyone’s list and you want to know which animals are common to all of the areas explored.\nTask: Write a function called commonality() which takes any number of lists and returns a single set containing the animals that were found in all of the lists provided."
+  },
+  {
+    "objectID": "slides/slides-03-04.html#exercise-by-mario-1",
+    "href": "slides/slides-03-04.html#exercise-by-mario-1",
+    "title": "Sets",
+    "section": "Exercise (by Mario)",
+    "text": "Exercise (by Mario)\nYour commonality() function takes any number (use * before parameter name) of lists and returns a single set containing the animals that were found in all of the lists provided. Submit your commonality.py solution to gradescope.\nTest case:\n\ndense_forest = [\"howler monkey\", \"sloth\", \"chipmunk\", \"toucan\", \"leafcutter ant\", \"sloth\", \"tarantula\", \"pit viper\"]\ncave = [\"pit viper\", \"bat\", \"leafcutter ant\", \"pit viper\", \"tarantula\", \"tadpole\"]\nvolcano = [\"tarantula\", \"parrot\", \"pit viper\", \"leafcutter ant\", \"tarantula\", \"grasshopper\"]\n\ncommon_animals = commonality(dense_forest, cave, volcano)\n\nassert common_animals == {'leafcutter ant', 'tarantula', 'pit viper'}\n\nReflection: Why might sets be more useful than lists for this task?"
+  },
+  {
+    "objectID": "slides/slides-03-04.html#solution",
+    "href": "slides/slides-03-04.html#solution",
+    "title": "Sets",
+    "section": "Solution",
+    "text": "Solution\n\ndef commonality(*lists) -&gt; set:\n    \"\"\"Returns a set containing items that all list arguments have in common.\"\"\"\n    if len(lists) == 0:\n        return set()\n      \n    # start with first set\n    common = set(lists[0])\n    \n    # for all other sets\n    for i in range(1, len(lists)):\n        set_i = set(lists[i])\n        # find the intersection of common set with current set\n        common = common.intersection(set_i)\n    return common"
+  },
+  {
+    "objectID": "slides/slides-03-04.html#why-sets",
+    "href": "slides/slides-03-04.html#why-sets",
+    "title": "Sets",
+    "section": "Why sets?",
+    "text": "Why sets?\n\nPython sets are implemented using hash tables\nFaster membership check, faster insertion, faster deletion"
+  },
+  {
+    "objectID": "slides/slides-03-03.html#dictionaries",
+    "href": "slides/slides-03-03.html#dictionaries",
+    "title": "Dictionaries",
+    "section": "Dictionaries",
+    "text": "Dictionaries\n\nDictionaries are a non-sequential data structure that stores key-value associations\n\nkey - a piece of data that can be found in the dictionary easily\nvalue - a piece of data that is associated with the key\nEach pair it stores is identified by a key, and has a value\n\nThere is no inherent order, cannot be thought of as “ordered”"
+  },
+  {
+    "objectID": "slides/slides-03-03.html#dictionaries-1",
+    "href": "slides/slides-03-03.html#dictionaries-1",
+    "title": "Dictionaries",
+    "section": "Dictionaries",
+    "text": "Dictionaries\n\nplayers = {\"Messi\": 10, \"Ronaldinho\": 10,\n           \"Maradona\": 10, \"Romario\": 11, \n           \"Cristiano Ronaldo\": 7, \"Mbappé\": 10}\n\n\nkey values can only be immutable types\n“mixed type” keys are allowed\nkeys cannot be duplicated\nvalues van be any type (and mixed-type)\nany number of pairs can be stored\ncontents can change over time"
+  },
+  {
+    "objectID": "slides/slides-03-03.html#dictionaries-2",
+    "href": "slides/slides-03-03.html#dictionaries-2",
+    "title": "Dictionaries",
+    "section": "Dictionaries",
+    "text": "Dictionaries\nCommon use cases: store associations\n\nvikings = {8: \"Kirk Cousins\", 33: \"Dalvin Cook\", 19: \"Adam Thielen\"}\n\nJSON api requests: https://api.weather.gov/gridpoints/MPX/109,72/forecast"
+  },
+  {
+    "objectID": "slides/slides-03-03.html#basic-dictionary-syntax",
+    "href": "slides/slides-03-03.html#basic-dictionary-syntax",
+    "title": "Dictionaries",
+    "section": "Basic Dictionary syntax",
+    "text": "Basic Dictionary syntax\n\nnumber of entries: len(dict)\ncheck if key can be found: key in dict\nget a value (by key):\n\ndict[key] – crash if not found\ndict.get(key, default) – default if not found"
+  },
+  {
+    "objectID": "slides/slides-03-03.html#basic-dictionary-syntax-1",
+    "href": "slides/slides-03-03.html#basic-dictionary-syntax-1",
+    "title": "Dictionaries",
+    "section": "Basic Dictionary syntax",
+    "text": "Basic Dictionary syntax\n\nassign a value to a key: dict[key] = value\n\nif key is new, len(dict) will increase\nif key is not new, old value is removed\n\nremove a key: (return old value)\n\ndel dict[key] – crash if not found\ndict.pop(key, default) – default if not found"
+  },
+  {
+    "objectID": "slides/slides-03-03.html#dictionaries-and-loops",
+    "href": "slides/slides-03-03.html#dictionaries-and-loops",
+    "title": "Dictionaries",
+    "section": "Dictionaries and Loops",
+    "text": "Dictionaries and Loops\n4 syntax, 3 options\n\nfor key in dict: # Loop over keys: \n  code using key here\n  \nfor key in dict.keys(): # Loop over keys:\n  code using key here\n  \nfor value in dict.values(): # Loop over values\n  code using value here\n  \nfor key, value in dict.items(): # Loop over keys, value pairs\n  code using (key, value) here"
+  },
+  {
+    "objectID": "slides/slides-03-03.html#exercise-by-mario",
+    "href": "slides/slides-03-03.html#exercise-by-mario",
+    "title": "Dictionaries",
+    "section": "Exercise (by Mario)",
+    "text": "Exercise (by Mario)\nWrite a function count_coins(coins) that counts U.S. coins in a list and returns a dictionary mapping coin names to the number of times they appear in the list of integers representing coin values (in cents). If no coins is represented in the argument list, its count should be zero.\nThe dictionary should use coin names, not values:\n\n1 → pennies\n5 → nickels\n10 → dimes\n25 → quarters"
+  },
+  {
+    "objectID": "slides/slides-03-03.html#exercise-by-mario-1",
+    "href": "slides/slides-03-03.html#exercise-by-mario-1",
+    "title": "Dictionaries",
+    "section": "Exercise (by Mario)",
+    "text": "Exercise (by Mario)\nSubmit your count_coins.py file to gradescope.\nTest case:\n\ncoins = [1, 25, 1, 25, 1, 10, 5]  \ncounted_coins = count_coins(coins) \nassert counted_coins == {\"pennies\": 3,\n                         \"quarters\": 2,\n                         \"dimes\": 1,\n                         \"nickels\": 1}\n\nIgnore values that do not match coin names in U.S. English."
+  },
+  {
+    "objectID": "slides/slides-03-03.html#solution-1",
+    "href": "slides/slides-03-03.html#solution-1",
+    "title": "Dictionaries",
+    "section": "Solution 1",
+    "text": "Solution 1\nStart with a populated dictionary:\n\ndef count_coins(coins):\n    counts = {\"pennies\": 0,\n              \"quarters\": 0,\n              \"dimes\": 0,\n              \"nickels\": 0}\n    \n    for coin in coins:\n        if coin == 1:\n            counts[\"pennies\"] += 1\n        elif coin == 5:\n            counts[\"nickels\"] += 1\n        elif coin == 10:\n            counts[\"dimes\"] += 1\n        elif coin == 25:\n            counts[\"quarters\"] += 1\n\n    return counts"
+  },
+  {
+    "objectID": "slides/slides-03-03.html#solution-2",
+    "href": "slides/slides-03-03.html#solution-2",
+    "title": "Dictionaries",
+    "section": "Solution 2",
+    "text": "Solution 2\nStart with an empty dictionary (will not pass all autograder tests):\n\ndef count_coins(coins):\n    counts = {}\n    \n    for coin in coins:\n        if coin == 1:\n            counts[\"pennies\"] = counts.get(\"pennies\", 0) + 1\n        elif coin == 5:\n            counts[\"nickels\"] = counts.get(\"nickels\", 0) + 1\n        elif coin == 10:\n            counts[\"dimes\"] = counts.get(\"dimes\", 0) + 1\n        elif coin == 25:\n            counts[\"quarters\"] = counts.get(\"quarters\", 0) + 1\n\n    return counts"
+  },
+  {
+    "objectID": "slides/slides-03-03.html#solution-3",
+    "href": "slides/slides-03-03.html#solution-3",
+    "title": "Dictionaries",
+    "section": "Solution 3",
+    "text": "Solution 3\nStart with an empty dictionary (will not pass all autograder tests):\n\ndef count_coins(coins):\n    counts = {}\n    \n    for coin in coins:\n        match coin:\n          case 1:\n              counts[\"pennies\"] = counts.get(\"pennies\", 0) + 1\n          case 5:\n              counts[\"nickels\"] = counts.get(\"nickels\", 0) + 1\n          case 10:\n              counts[\"dimes\"] = counts.get(\"dimes\", 0) + 1\n          case 25:\n              counts[\"quarters\"] = counts.get(\"quarters\", 0) + 1\n\n    return counts\n  \nif __name__ == \"__main__\":\n    coins = [1, 25, 1, 25, 1, 10, 5]  \n    counted_coins = count_coins(coins) \n    assert counted_coins == {\"pennies\": 3,\n                             \"quarters\": 2,\n                             \"dimes\": 1,\n                             \"nickels\": 1}\n    print(counted_coins)\n\n{'pennies': 3, 'quarters': 2, 'dimes': 1, 'nickels': 1}"
+  },
+  {
+    "objectID": "slides/slides-03-01.html#lists-are-mutable",
+    "href": "slides/slides-03-01.html#lists-are-mutable",
+    "title": "Mutability",
+    "section": "Lists are mutable",
+    "text": "Lists are mutable\n\nYou can change lists after they have been created\n\nThis change does not cause the creation of a new object"
+  },
+  {
+    "objectID": "slides/slides-03-01.html#built-in-id-function",
+    "href": "slides/slides-03-01.html#built-in-id-function",
+    "title": "Mutability",
+    "section": "built-in id() function",
+    "text": "built-in id() function\n\nReturn the “identity” of an object. This is an integer which is guaranteed to be unique and constant for this object during its lifetime. Two objects with non-overlapping lifetimes may have the same id() value.\nCPython implementation detail (Probably your python): this is the address of the object in memory."
+  },
+  {
+    "objectID": "slides/slides-03-01.html#lists-are-mutable-1",
+    "href": "slides/slides-03-01.html#lists-are-mutable-1",
+    "title": "Mutability",
+    "section": "Lists are mutable",
+    "text": "Lists are mutable\n\nYou can change lists after they have been created\n\nThis change does not cause the creation of a new object\n\n\n\nnumbers = [20, 10, 2, 3, 5, 10]\nid(numbers)\n\n4457714432\n\n\n\nnumbers[1] = 99\nid(numbers)\n\n4457714432\n\n\n\nnumbers += [99]\nid(numbers)\n\n4457714432"
+  },
+  {
+    "objectID": "slides/slides-03-01.html#tuples-are-not-mutable",
+    "href": "slides/slides-03-01.html#tuples-are-not-mutable",
+    "title": "Mutability",
+    "section": "Tuples are NOT mutable",
+    "text": "Tuples are NOT mutable\nContrast lists that with tuples:\n\nnumbers = (20, 10, 2, 3, 5, 10)\nid(numbers)\n\n4457595040\n\n\n\nnumbers += (99,)\nid(numbers)\n\n6242974880"
+  },
+  {
+    "objectID": "slides/slides-03-01.html#quiz-02",
+    "href": "slides/slides-03-01.html#quiz-02",
+    "title": "Mutability",
+    "section": "Quiz 02",
+    "text": "Quiz 02\nYou have 10 minutes to complete the quiz\n\nNo need for comments or doc strings, no need to include the tests in your solution, no need for if __name__. Just write your function and what’s inside the function\nRaise your hand when you’re done, a TA will come and grab your completed quiz\n\nHINTS: use the keyword def to define a function"
+  },
+  {
+    "objectID": "slides/slides-03-01.html#lists-are-mutable-2",
+    "href": "slides/slides-03-01.html#lists-are-mutable-2",
+    "title": "Mutability",
+    "section": "Lists are mutable",
+    "text": "Lists are mutable\nThe two functions below are similar, but have one major diﬀerence in what they do: What is it?\n\ndef double1(num_list):\n  out_list = []\n  for i in num_list:\n    out_list += [(i * 2)]\n  return out_list\n\nCompared with:\n\ndef double2(num_list):\n  for i in range(len(num_list)):\n      num_list[i] *= 2\n  return num_list\n\nWhat is the major difference?"
+  },
+  {
+    "objectID": "slides/slides-03-01.html#lists-are-mutable-3",
+    "href": "slides/slides-03-01.html#lists-are-mutable-3",
+    "title": "Mutability",
+    "section": "Lists are mutable",
+    "text": "Lists are mutable\nThe function double1 builds a new list to return without aﬀecting num_list; double2 changes the list passed in as argument."
+  },
+  {
+    "objectID": "slides/slides-03-01.html#lists-are-mutable-4",
+    "href": "slides/slides-03-01.html#lists-are-mutable-4",
+    "title": "Mutability",
+    "section": "Lists are mutable",
+    "text": "Lists are mutable\nDifferent names can reference same object:\n\nfruit = [\"apple\", \"banana\", \"pineapple\"]\nsame_fruit = fruit\n\n# change list\nsame_fruit[0] = \"pear\"\n\n# print both lists\nprint(fruit)\nprint(same_fruit)\n\n['pear', 'banana', 'pineapple']\n['pear', 'banana', 'pineapple']"
+  },
+  {
+    "objectID": "slides/slides-03-01.html#lists-are-mutable-5",
+    "href": "slides/slides-03-01.html#lists-are-mutable-5",
+    "title": "Mutability",
+    "section": "Lists are mutable",
+    "text": "Lists are mutable\nTwo for loops, one changes the list, the other does not:\n\nnumbers = [1, 2, 1, 4]\nfor n in numbers:\n  n = n * 2\nprint(numbers)\n\n[1, 2, 1, 4]\n\n\nCompared with:\n\nnumbers = [1, 2, 1, 4]\nfor i in range(len(numbers)):\n  numbers[i] = numbers[i] * 2\nprint(numbers)\n\n[2, 4, 2, 8]\n\n\nWhat are the differences? Why does one change the list and the other does not?"
+  },
+  {
+    "objectID": "slides/slides-03-01.html#exercise",
+    "href": "slides/slides-03-01.html#exercise",
+    "title": "Mutability",
+    "section": "Exercise",
+    "text": "Exercise\nWrite a python function called lowercase_list that gets as argument a list of strings and modifies the list by lowercasing each item in the list. You can use the string method .lower().\nTest case:\n\nfruit = [\"APPLE\", \"BANANA\", \"PEAR\"]\nlowercase_list(fruit)\nassert fruit == [\"apple\", \"banana\", \"pear\"]\n\nSubmit your lowercase_list.py file to gradescope"
+  },
+  {
+    "objectID": "slides/slides-03-01.html#solution",
+    "href": "slides/slides-03-01.html#solution",
+    "title": "Mutability",
+    "section": "Solution",
+    "text": "Solution\nWe need the index to change items in a list.\n\ndef lowercase_list(my_list):\n    for i in range(len(my_list)):\n        my_list[i] = my_list[i].lower()"
+  },
+  {
+    "objectID": "slides/slides-03-01.html#list-methods",
+    "href": "slides/slides-03-01.html#list-methods",
+    "title": "Mutability",
+    "section": "list methods",
+    "text": "list methods\nThese are some of the methods you talked about:\n\n.append(item) adds an item to the end of the list\n.insert(index, item) adds an item to index position (rest of list shifts right)\n.remove(item) removes the first matching item\n.pop(index) removes item at index (returns the removed value)"
+  },
+  {
+    "objectID": "slides/slides-03-01.html#more-list-methods",
+    "href": "slides/slides-03-01.html#more-list-methods",
+    "title": "Mutability",
+    "section": "More list methods",
+    "text": "More list methods\nThere are more:\n\n.index(item) returns the index of the first matching item, throws error if no match is found\n.copy() returns a copy of the list (different id), can also copy with slicing [:]\n.sort() changes the list, sorts list in place, returns None (contrast with sorted() function)\n.reverse() changes the list, reverses list in place, returns None (contrast with [::-1])"
+  },
+  {
+    "objectID": "slides/slides-03-01.html#vs",
+    "href": "slides/slides-03-01.html#vs",
+    "title": "Mutability",
+    "section": "+ vs +=",
+    "text": "+ vs +=\nadd (the + operator) vs iadd (the += operator)\n\nboth perform addition\nthey differ in how they handle object modification.\n\n\nfruit = [\"apple\", \"pear\"]\nprint(id(fruit))\nvegetable = [\"kale\", \"spinach\"]\nfruit += vegetable  # Modifies list in place (iadd)\nprint(id(fruit))\n\n4457569344\n4457569344"
+  },
+  {
+    "objectID": "slides/slides-03-01.html#vs-1",
+    "href": "slides/slides-03-01.html#vs-1",
+    "title": "Mutability",
+    "section": "+ vs +=",
+    "text": "+ vs +=\nadd (the + operator) vs iadd (the += operator)\n\nboth perform addition\nthey differ in how they handle object modification.\n\n\nfruit = [\"apple\", \"pear\"]\nprint(id(fruit))\nvegetable = [\"kale\", \"spinach\"]\nfruit = fruit + vegetable  # returns new list (add)\nprint(id(fruit))\n\n4457711808\n4456032256"
+  },
+  {
+    "objectID": "slides/slides-03-01.html#immutable-objects",
+    "href": "slides/slides-03-01.html#immutable-objects",
+    "title": "Mutability",
+    "section": "Immutable objects",
+    "text": "Immutable objects\nFor immutable objects, += returns a new object\n\nnumber = 10\nprint(id(number))\nanother_number = 30\nnumber += another_number\nprint(id(number))\n\n4390020576\n4390021536"
+  },
+  {
+    "objectID": "slides/slides-03-01.html#exercise-1",
+    "href": "slides/slides-03-01.html#exercise-1",
+    "title": "Mutability",
+    "section": "Exercise",
+    "text": "Exercise\nWrite a python function called multiply_items that takes two arguments: a list and an integer n.\nThe function should return a new list, with each item in the original list multiplied by n.\nTest case:\n\nthings = [\"apple\", 3, 4.0]\nassert multiply_items(things, 3) == [\"apple\", \"apple\", \"apple\", 3, 3, 3, 4.0, 4.0, 4.0]\n\nSubmit your list_multiplication.py file to gradescope."
+  },
+  {
+    "objectID": "slides/slides-03-01.html#solution-1",
+    "href": "slides/slides-03-01.html#solution-1",
+    "title": "Mutability",
+    "section": "Solution",
+    "text": "Solution\n\ndef multiply_items(my_list, n):\n    result = []\n    for item in my_list:\n        result += [item] * n\n    return result\n  \nif __name__ == \"__main__\":\n    things = [\"apple\", 3, 4.0]\n    print(multiply_items(things, 3))\n\n['apple', 'apple', 'apple', 3, 3, 3, 4.0, 4.0, 4.0]"
+  },
+  {
+    "objectID": "slides/slides-03-02.html#nesting",
+    "href": "slides/slides-03-02.html#nesting",
+    "title": "Sequence Nesting",
+    "section": "Nesting",
+    "text": "Nesting\nIn python lists and tuples can hold lists, tuples, and strings.\n\npeople = [[\"Ana\", 34, \"B\"],\n          [\"Peter\", 23, \"A\"]]\n\n\nHow to retrieve first name \"Ana\"?\nHow to retrieve first name \"Peter\"?\nHow to retrieve the first letter of each first name?\nHow to retrieve integer 23?"
+  },
+  {
+    "objectID": "slides/slides-03-02.html#nesting-1",
+    "href": "slides/slides-03-02.html#nesting-1",
+    "title": "Sequence Nesting",
+    "section": "Nesting",
+    "text": "Nesting\n\nHow to retrieve first name \"Ana\"?\n\n\npeople[0][0]\n\n'Ana'\n\n\n\nHow to retrieve first name \"Peter\"?\n\n\npeople[1][0]\n\n'Peter'"
+  },
+  {
+    "objectID": "slides/slides-03-02.html#nesting-2",
+    "href": "slides/slides-03-02.html#nesting-2",
+    "title": "Sequence Nesting",
+    "section": "Nesting",
+    "text": "Nesting\n\nHow to retrieve the first letter of each first name?\n\n\npeople[0][0][0]\n\n'A'\n\n\n\npeople[1][0][0]\n\n'P'\n\n\n\nHow to retrieve integer 23?\n\n\npeople[1][1]\n\n23"
+  },
+  {
+    "objectID": "slides/slides-03-02.html#nested-for-loops",
+    "href": "slides/slides-03-02.html#nested-for-loops",
+    "title": "Sequence Nesting",
+    "section": "Nested for loops",
+    "text": "Nested for loops\nWe can often use nested for loops to iterate over nested lists, but we don’t always need nested for loops.\n\ndef years_to_months(year):\n  return year * 12\n\ndef change_age(people):\n  for person in people:\n    person[1] = years_to_months(person[1])\n    \ndef to_string(people):\n  new_string = \"Name\\tAge\\tGrade\\n\"\n  for person in people:\n    for item in person:\n      new_string += f\"{item}\\t\"\n    new_string += \"\\n\"\n  return new_string\n\nif __name__ == \"__main__\":\n  \n  people = [[\"Ana\", 34, \"B\"],\n            [\"Peter\", 23, \"A\"],\n            [\"Mary\", 27, \"A\"],\n            [\"John\", 21, \"C\"]]\n            \n  change_age(people)\n  print(people)\n  \n  print(to_string(people))\n\n[['Ana', 408, 'B'], ['Peter', 276, 'A'], ['Mary', 324, 'A'], ['John', 252, 'C']]\nName    Age Grade\nAna 408 B   \nPeter   276 A   \nMary    324 A   \nJohn    252 C"
+  },
+  {
+    "objectID": "slides/slides-03-02.html#exercise",
+    "href": "slides/slides-03-02.html#exercise",
+    "title": "Sequence Nesting",
+    "section": "Exercise",
+    "text": "Exercise\nWrite a Python function called calculate_class_average that takes in as argument a nested list representing student grades and calculates the average of the averages. Name your file grade_average.py.\n\ngradebook = [\n    [85, 92, 78, 90], # Student 1's grades\n    [88, 76, 95, 82], # Student 2's grades  \n    [90, 87, 93, 89], # Student 3's grades\n    [72, 68, 84, 79]  # Student 4's grades\n]\n\nThe function should return the average grade across all students in the class (rounded to 2 decimal places).\n\nassert calculate_class_average(gradebook) == 84.25"
+  },
+  {
+    "objectID": "slides/slides-03-02.html#solution",
+    "href": "slides/slides-03-02.html#solution",
+    "title": "Sequence Nesting",
+    "section": "Solution",
+    "text": "Solution\n\ndef calculate_class_average(grades):\n    total = 0\n    for student in grades:\n        total += sum(student)/len(student)\n    return round(total/len(grades), 2)"
+  },
+  {
+    "objectID": "slides/slides-03-02.html#nested-object-change",
+    "href": "slides/slides-03-02.html#nested-object-change",
+    "title": "Sequence Nesting",
+    "section": "Nested object change",
+    "text": "Nested object change\nWhat will the code below output?\n\ndef create_nested_lists(rows, columns):\n  one_row = [0] * columns\n  return rows * [one_row]\n\nif __name__ == \"__main__\":\n  my_list = create_nested_lists(3, 5)\n  my_list[0][0] = -1\n  print(my_list)"
+  },
+  {
+    "objectID": "slides/slides-03-02.html#nested-object-change-1",
+    "href": "slides/slides-03-02.html#nested-object-change-1",
+    "title": "Sequence Nesting",
+    "section": "Nested object change",
+    "text": "Nested object change\nWhat will the code below output?\n\ndef create_nested_lists(rows, columns):\n  one_row = [0] * columns\n  return rows * [one_row]\n\nif __name__ == \"__main__\":\n  my_list = create_nested_lists(3, 5)\n  my_list[0][0] = -1\n  print(my_list)\n\n[[-1, 0, 0, 0, 0], [-1, 0, 0, 0, 0], [-1, 0, 0, 0, 0]]"
+  },
+  {
+    "objectID": "slides/slides-03-02.html#same-problem",
+    "href": "slides/slides-03-02.html#same-problem",
+    "title": "Sequence Nesting",
+    "section": "Same problem",
+    "text": "Same problem\n\ndef create_nested_lists(rows, columns):\n  return rows * [[0] * columns]\n\nif __name__ == \"__main__\":\n  my_list = create_nested_lists(3, 5)\n  my_list[0][0] = -1\n  print(my_list)\n\n[[-1, 0, 0, 0, 0], [-1, 0, 0, 0, 0], [-1, 0, 0, 0, 0]]"
+  },
+  {
+    "objectID": "slides/slides-03-02.html#solution-for-the-previous-problem",
+    "href": "slides/slides-03-02.html#solution-for-the-previous-problem",
+    "title": "Sequence Nesting",
+    "section": "Solution for the previous problem",
+    "text": "Solution for the previous problem\n\ndef create_nested_lists(rows, columns):\n  new_list = []\n  for _ in range(rows):\n    new_list.append([0] * columns)\n  return new_list\n\nif __name__ == \"__main__\":\n  my_list = create_nested_lists(3, 5)\n  my_list[0][0] = -1\n  print(my_list)\n\n[[-1, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]"
+  },
+  {
+    "objectID": "slides/slides-03-02.html#solution-for-the-previous-problem-1",
+    "href": "slides/slides-03-02.html#solution-for-the-previous-problem-1",
+    "title": "Sequence Nesting",
+    "section": "Solution for the previous problem",
+    "text": "Solution for the previous problem\nWith list comprehension:\n\ndef create_nested_lists(rows, columns):\n  return [ [0] * columns for _ in range(rows)]\n\nif __name__ == \"__main__\":\n  my_list = create_nested_lists(3, 5)\n  my_list[0][0] = -1\n  print(my_list)\n\n[[-1, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]"
+  },
+  {
+    "objectID": "slides/slides-03-02.html#deep-copy-vs.-shallow-copy",
+    "href": "slides/slides-03-02.html#deep-copy-vs.-shallow-copy",
+    "title": "Sequence Nesting",
+    "section": "Deep copy vs. shallow copy",
+    "text": "Deep copy vs. shallow copy\nWhen copying a list, the nested lists will still refer to the same objects as in the original list.\n\ndef create_nested_lists(rows, columns):\n  return [ [0] * columns for _ in range(rows)]\n\nif __name__ == \"__main__\":\n  my_list = create_nested_lists(3, 5)\n  print(my_list)\n  \n  another_list = my_list.copy()\n  \n  another_list[0][0] = -1\n  \n  print(my_list)\n\n[[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]\n[[-1, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]"
+  },
+  {
+    "objectID": "slides/slides-03-02.html#deep-copy",
+    "href": "slides/slides-03-02.html#deep-copy",
+    "title": "Sequence Nesting",
+    "section": "Deep copy",
+    "text": "Deep copy\nTo recursively copy all objects, you need a deep copy.\n\nimport copy\n\ndef create_nested_lists(rows, columns):\n  return [ [0] * columns for _ in range(rows)]\n\nif __name__ == \"__main__\":\n  my_list = create_nested_lists(3, 5)\n  print(my_list)\n  \n  another_list = copy.deepcopy(my_list)\n  \n  another_list[0][0] = -1\n  \n  print(my_list)\n\n[[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]\n[[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]"
   }
 ]
