@@ -1086,59 +1086,50 @@ margin-right: 0; }
 <li>This change does not cause the creation of a new object</li>
 </ul></li>
 </ul>
-<div id="fd452326" class="cell" data-execution_count="1">
+<div id="9b3188a1" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>numbers <span class="op">=</span> [<span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">10</span>]</span>
 <span id="cb1-2"><a></a><span class="bu">id</span>(numbers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>4457714432</code></pre>
+<pre><code>4390706048</code></pre>
 </div>
 </div>
-<div id="7fcc48fe" class="cell" data-execution_count="2">
+<div id="1522b507" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>numbers[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">99</span></span>
 <span id="cb3-2"><a></a><span class="bu">id</span>(numbers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>4457714432</code></pre>
+<pre><code>4390706048</code></pre>
 </div>
 </div>
-<div id="8265c03d" class="cell" data-execution_count="3">
+<div id="4f79bcbe" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>numbers <span class="op">+=</span> [<span class="dv">99</span>]</span>
 <span id="cb5-2"><a></a><span class="bu">id</span>(numbers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>4457714432</code></pre>
+<pre><code>4390706048</code></pre>
 </div>
 </div>
 </section>
 <section id="tuples-are-not-mutable" class="slide level2">
 <h2>Tuples are NOT mutable</h2>
 <p>Contrast lists that with tuples:</p>
-<div id="384d984b" class="cell" data-execution_count="4">
+<div id="90aff8a7" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>numbers <span class="op">=</span> (<span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">10</span>)</span>
 <span id="cb7-2"><a></a><span class="bu">id</span>(numbers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>4457595040</code></pre>
+<pre><code>4390584480</code></pre>
 </div>
 </div>
-<div id="e24612c3" class="cell" data-execution_count="5">
+<div id="205b5b2e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>numbers <span class="op">+=</span> (<span class="dv">99</span>,)</span>
 <span id="cb9-2"><a></a><span class="bu">id</span>(numbers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>6242974880</code></pre>
+<pre><code>5653331104</code></pre>
 </div>
 </div>
-</section>
-<section id="quiz-02" class="slide level2">
-<h2>Quiz 02</h2>
-<p>You have 10 minutes to complete the quiz</p>
-<ul>
-<li>No need for comments or doc strings, no need to include the tests in your solution, no need for <code>if __name__</code>. Just write your function and what’s inside the function</li>
-<li>Raise your hand when you’re done, a TA will come and grab your completed quiz</li>
-</ul>
-<p>HINTS: use the keyword <code>def</code> to define a function</p>
 </section>
 <section id="lists-are-mutable-2" class="slide level2">
 <h2>Lists are mutable</h2>
 <p>The two functions below are similar, but have one major diﬀerence in what they do: What is it?</p>
-<div id="f6e76cfa" class="cell" data-execution_count="6">
+<div id="8bf88117" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="kw">def</span> double1(num_list):</span>
 <span id="cb11-2"><a></a>  out_list <span class="op">=</span> []</span>
 <span id="cb11-3"><a></a>  <span class="cf">for</span> i <span class="kw">in</span> num_list:</span>
@@ -1146,7 +1137,7 @@ margin-right: 0; }
 <span id="cb11-5"><a></a>  <span class="cf">return</span> out_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Compared with:</p>
-<div id="4726dc38" class="cell" data-execution_count="7">
+<div id="b343d07c" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="kw">def</span> double2(num_list):</span>
 <span id="cb12-2"><a></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(num_list)):</span>
 <span id="cb12-3"><a></a>      num_list[i] <span class="op">*=</span> <span class="dv">2</span></span>
@@ -1161,7 +1152,7 @@ margin-right: 0; }
 <section id="lists-are-mutable-4" class="slide level2">
 <h2>Lists are mutable</h2>
 <p>Different names can reference same object:</p>
-<div id="6de61ca6" class="cell" data-execution_count="8">
+<div id="3ef78eaf" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>fruit <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pineapple&quot;</span>]</span>
 <span id="cb13-2"><a></a>same_fruit <span class="op">=</span> fruit</span>
 <span id="cb13-3"><a></a></span>
@@ -1180,7 +1171,7 @@ margin-right: 0; }
 <section id="lists-are-mutable-5" class="slide level2">
 <h2>Lists are mutable</h2>
 <p>Two for loops, one changes the list, the other does not:</p>
-<div id="a5c37e57" class="cell" data-execution_count="9">
+<div id="5e60fbd1" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">4</span>]</span>
 <span id="cb15-2"><a></a><span class="cf">for</span> n <span class="kw">in</span> numbers:</span>
 <span id="cb15-3"><a></a>  n <span class="op">=</span> n <span class="op">*</span> <span class="dv">2</span></span>
@@ -1190,7 +1181,7 @@ margin-right: 0; }
 </div>
 </div>
 <p>Compared with:</p>
-<div id="d2f02b2c" class="cell" data-execution_count="10">
+<div id="be69d2ea" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">4</span>]</span>
 <span id="cb17-2"><a></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(numbers)):</span>
 <span id="cb17-3"><a></a>  numbers[i] <span class="op">=</span> numbers[i] <span class="op">*</span> <span class="dv">2</span></span>
@@ -1205,7 +1196,7 @@ margin-right: 0; }
 <h2>Exercise</h2>
 <p>Write a python function called <code>lowercase_list</code> that gets as argument a <strong>list of strings</strong> and <strong>modifies</strong> the list by lowercasing each item in the list. You can use the string method <code>.lower()</code>.</p>
 <p>Test case:</p>
-<div id="450e0975" class="cell" data-execution_count="11">
+<div id="fb907f3d" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>fruit <span class="op">=</span> [<span class="st">&quot;APPLE&quot;</span>, <span class="st">&quot;BANANA&quot;</span>, <span class="st">&quot;PEAR&quot;</span>]</span>
 <span id="cb19-2"><a></a>lowercase_list(fruit)</span>
 <span id="cb19-3"><a></a><span class="cf">assert</span> fruit <span class="op">==</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1215,7 +1206,7 @@ margin-right: 0; }
 <section id="solution" class="slide level2">
 <h2>Solution</h2>
 <p>We need the index to change items in a list.</p>
-<div id="41a3350d" class="cell" data-execution_count="12">
+<div id="1838bc35" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a><span class="kw">def</span> lowercase_list(my_list):</span>
 <span id="cb20-2"><a></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(my_list)):</span>
 <span id="cb20-3"><a></a>        my_list[i] <span class="op">=</span> my_list[i].lower()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1248,15 +1239,15 @@ margin-right: 0; }
 <li>both perform addition</li>
 <li>they differ in how they handle object modification.</li>
 </ul>
-<div id="d9906557" class="cell" data-execution_count="13">
+<div id="757b9c12" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a>fruit <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;pear&quot;</span>]</span>
 <span id="cb21-2"><a></a><span class="bu">print</span>(<span class="bu">id</span>(fruit))</span>
 <span id="cb21-3"><a></a>vegetable <span class="op">=</span> [<span class="st">&quot;kale&quot;</span>, <span class="st">&quot;spinach&quot;</span>]</span>
 <span id="cb21-4"><a></a>fruit <span class="op">+=</span> vegetable  <span class="co"># Modifies list in place (iadd)</span></span>
 <span id="cb21-5"><a></a><span class="bu">print</span>(<span class="bu">id</span>(fruit))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>4457569344
-4457569344</code></pre>
+<pre><code>4390553920
+4390553920</code></pre>
 </div>
 </div>
 </section>
@@ -1267,30 +1258,30 @@ margin-right: 0; }
 <li>both perform addition</li>
 <li>they differ in how they handle object modification.</li>
 </ul>
-<div id="760ac523" class="cell" data-execution_count="14">
+<div id="cf91cf27" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a>fruit <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;pear&quot;</span>]</span>
 <span id="cb23-2"><a></a><span class="bu">print</span>(<span class="bu">id</span>(fruit))</span>
 <span id="cb23-3"><a></a>vegetable <span class="op">=</span> [<span class="st">&quot;kale&quot;</span>, <span class="st">&quot;spinach&quot;</span>]</span>
 <span id="cb23-4"><a></a>fruit <span class="op">=</span> fruit <span class="op">+</span> vegetable  <span class="co"># returns new list (add)</span></span>
 <span id="cb23-5"><a></a><span class="bu">print</span>(<span class="bu">id</span>(fruit))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>4457711808
-4456032256</code></pre>
+<pre><code>4390701696
+4390558400</code></pre>
 </div>
 </div>
 </section>
 <section id="immutable-objects" class="slide level2">
 <h2>Immutable objects</h2>
 <p>For immutable objects, <code>+=</code> returns a new object</p>
-<div id="5046d197" class="cell" data-execution_count="15">
+<div id="5c547cb8" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a>number <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb25-2"><a></a><span class="bu">print</span>(<span class="bu">id</span>(number))</span>
 <span id="cb25-3"><a></a>another_number <span class="op">=</span> <span class="dv">30</span></span>
 <span id="cb25-4"><a></a>number <span class="op">+=</span> another_number</span>
 <span id="cb25-5"><a></a><span class="bu">print</span>(<span class="bu">id</span>(number))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>4390020576
-4390021536</code></pre>
+<pre><code>4354565600
+4354566560</code></pre>
 </div>
 </div>
 </section>
@@ -1299,7 +1290,7 @@ margin-right: 0; }
 <p>Write a python function called <code>multiply_items</code> that takes two arguments: a list and an integer <code>n</code>.</p>
 <p>The function should return a new list, with each item in the original list multiplied by n.</p>
 <p>Test case:</p>
-<div id="5055f28c" class="cell" data-execution_count="16">
+<div id="426e38a0" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a>things <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="dv">3</span>, <span class="fl">4.0</span>]</span>
 <span id="cb27-2"><a></a><span class="cf">assert</span> multiply_items(things, <span class="dv">3</span>) <span class="op">==</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;apple&quot;</span>, <span class="st">&quot;apple&quot;</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="fl">4.0</span>, <span class="fl">4.0</span>, <span class="fl">4.0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1307,7 +1298,7 @@ margin-right: 0; }
 </section>
 <section id="solution-1" class="slide level2">
 <h2>Solution</h2>
-<div id="e209235e" class="cell" data-execution_count="17">
+<div id="adf6590c" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a></a><span class="kw">def</span> multiply_items(my_list, n):</span>
 <span id="cb28-2"><a></a>    result <span class="op">=</span> []</span>
 <span id="cb28-3"><a></a>    <span class="cf">for</span> item <span class="kw">in</span> my_list:</span>
@@ -1321,6 +1312,15 @@ margin-right: 0; }
 <pre><code>[&#39;apple&#39;, &#39;apple&#39;, &#39;apple&#39;, 3, 3, 3, 4.0, 4.0, 4.0]</code></pre>
 </div>
 </div>
+</section>
+<section id="quiz-02" class="slide level2">
+<h2>Quiz 02</h2>
+<p>You have 10 minutes to complete the quiz</p>
+<ul>
+<li>No need for comments or doc strings, no need to include the tests in your solution, no need for <code>if __name__</code>. Just write your function and what’s inside the function</li>
+<li>Raise your hand when you’re done, a TA will come and grab your completed quiz</li>
+</ul>
+<p>HINTS: use the keyword <code>def</code> to define a function</p>
 
 
 </section>
