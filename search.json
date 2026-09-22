@@ -1614,14 +1614,14 @@
     "href": "slides/slides-03-01.html#lists-are-mutable-1",
     "title": "Mutability",
     "section": "Lists are mutable",
-    "text": "Lists are mutable\n\nYou can change lists after they have been created\n\nThis change does not cause the creation of a new object\n\n\n\nnumbers = [20, 10, 2, 3, 5, 10]\nid(numbers)\n\n4457714432\n\n\n\nnumbers[1] = 99\nid(numbers)\n\n4457714432\n\n\n\nnumbers += [99]\nid(numbers)\n\n4457714432"
+    "text": "Lists are mutable\n\nYou can change lists after they have been created\n\nThis change does not cause the creation of a new object\n\n\n\nnumbers = [20, 10, 2, 3, 5, 10]\nid(numbers)\n\n4431502784\n\n\n\nnumbers[1] = 99\nid(numbers)\n\n4431502784\n\n\n\nnumbers += [99]\nid(numbers)\n\n4431502784"
   },
   {
     "objectID": "slides/slides-03-01.html#tuples-are-not-mutable",
     "href": "slides/slides-03-01.html#tuples-are-not-mutable",
     "title": "Mutability",
     "section": "Tuples are NOT mutable",
-    "text": "Tuples are NOT mutable\nContrast lists that with tuples:\n\nnumbers = (20, 10, 2, 3, 5, 10)\nid(numbers)\n\n4457595040\n\n\n\nnumbers += (99,)\nid(numbers)\n\n6242974880"
+    "text": "Tuples are NOT mutable\nContrast lists that with tuples:\n\nnumbers = (20, 10, 2, 3, 5, 10)\nid(numbers)\n\n4431380640\n\n\n\nnumbers += (99,)\nid(numbers)\n\n5981535392"
   },
   {
     "objectID": "slides/slides-03-01.html#quiz-02",
@@ -1677,7 +1677,7 @@
     "href": "slides/slides-03-01.html#list-methods",
     "title": "Mutability",
     "section": "list methods",
-    "text": "list methods\nThese are some of the methods you talked about:\n\n.append(item) adds an item to the end of the list\n.insert(index, item) adds an item to index position (rest of list shifts right)\n.remove(item) removes the first matching item\n.pop(index) removes item at index (returns the removed value)"
+    "text": "list methods\nThese are some of the methods we talked about:\n\n.append(item) adds an item to the end of the list\n.insert(index, item) adds an item to index position (rest of list shifts right)\n.remove(item) removes the first matching item\n.pop(index) removes item at index (returns the removed value)"
   },
   {
     "objectID": "slides/slides-03-01.html#more-list-methods",
@@ -1691,21 +1691,21 @@
     "href": "slides/slides-03-01.html#vs",
     "title": "Mutability",
     "section": "+ vs +=",
-    "text": "+ vs +=\nadd (the + operator) vs iadd (the += operator)\n\nboth perform addition\nthey differ in how they handle object modification.\n\n\nfruit = [\"apple\", \"pear\"]\nprint(id(fruit))\nvegetable = [\"kale\", \"spinach\"]\nfruit += vegetable  # Modifies list in place (iadd)\nprint(id(fruit))\n\n4457569344\n4457569344"
+    "text": "+ vs +=\nadd (the + operator) vs iadd (the += operator)\n\nboth perform addition\nthey differ in how they handle object modification.\n\n\nfruit = [\"apple\", \"pear\"]\nprint(id(fruit))\nvegetable = [\"kale\", \"spinach\"]\nfruit += vegetable  # Modifies list in place (iadd)\nprint(id(fruit))\n\n4826478272\n4826478272"
   },
   {
     "objectID": "slides/slides-03-01.html#vs-1",
     "href": "slides/slides-03-01.html#vs-1",
     "title": "Mutability",
     "section": "+ vs +=",
-    "text": "+ vs +=\nadd (the + operator) vs iadd (the += operator)\n\nboth perform addition\nthey differ in how they handle object modification.\n\n\nfruit = [\"apple\", \"pear\"]\nprint(id(fruit))\nvegetable = [\"kale\", \"spinach\"]\nfruit = fruit + vegetable  # returns new list (add)\nprint(id(fruit))\n\n4457711808\n4456032256"
+    "text": "+ vs +=\nadd (the + operator) vs iadd (the += operator)\n\nboth perform addition\nthey differ in how they handle object modification.\n\n\nfruit = [\"apple\", \"pear\"]\nprint(id(fruit))\nvegetable = [\"kale\", \"spinach\"]\nfruit = fruit + vegetable  # returns new list (add)\nprint(id(fruit))\n\n4431506496\n4431201600"
   },
   {
     "objectID": "slides/slides-03-01.html#immutable-objects",
     "href": "slides/slides-03-01.html#immutable-objects",
     "title": "Mutability",
     "section": "Immutable objects",
-    "text": "Immutable objects\nFor immutable objects, += returns a new object\n\nnumber = 10\nprint(id(number))\nanother_number = 30\nnumber += another_number\nprint(id(number))\n\n4390020576\n4390021536"
+    "text": "Immutable objects\nFor immutable objects, += returns a new object\n\nnumber = 10\nprint(id(number))\nanother_number = 30\nnumber += another_number\nprint(id(number))\n\n4386055648\n4386056608"
   },
   {
     "objectID": "slides/slides-03-01.html#exercise-1",
