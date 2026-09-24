@@ -1481,14 +1481,14 @@
     "href": "slides/slides-03-04.html#sets-1",
     "title": "Sets",
     "section": "Sets",
-    "text": "Sets\nItems in a set are not ordered, and cannot repeat.\n\nmy_set = {\"apple\", \"banana\", \"pear\", \"kiwi\", \"kiwi\"}\nprint(my_set)\n\n{'pear', 'apple', 'banana', 'kiwi'}\n\n\n\nmy_set.add(\"grape\")\nprint(my_set)\n\n{'pear', 'apple', 'kiwi', 'grape', 'banana'}\n\n\n\nmy_set.remove(\"banana\")\nprint(my_set)\n\n{'pear', 'apple', 'kiwi', 'grape'}"
+    "text": "Sets\nItems in a set are not ordered, and cannot repeat.\n\nmy_set = {\"apple\", \"banana\", \"pear\", \"kiwi\", \"kiwi\"}\nprint(my_set)\n\n{'kiwi', 'banana', 'apple', 'pear'}\n\n\n\nmy_set.add(\"grape\")\nprint(my_set)\n\n{'apple', 'pear', 'kiwi', 'banana', 'grape'}\n\n\n\nmy_set.remove(\"banana\")\nprint(my_set)\n\n{'apple', 'pear', 'kiwi', 'grape'}"
   },
   {
     "objectID": "slides/slides-03-04.html#set-methods",
     "href": "slides/slides-03-04.html#set-methods",
     "title": "Sets",
     "section": "Set methods",
-    "text": "Set methods\n\n.add(value) adds an item to the set, if the value is already there, nothing happens (it changes the set)\n.union(other_set) returns a new set containing all unique elements from both sets\n.intersection(other_set) returns a new set containing only the elements common to both sets\n.difference(other_set) returns a new set containing elements present in one set but not in other_set"
+    "text": "Set methods\n\n.add(value) adds an item to the set, if the value is already there, nothing happens (it changes the set)\n.union(other_set) returns a new set containing all unique elements from both sets – can also use |\n.intersection(other_set) returns a new set containing only the elements common to both sets – can also use &\n.difference(other_set) returns a new set containing elements present in one set but not in other_set – can also use -"
   },
   {
     "objectID": "slides/slides-03-04.html#exercise-by-mario",
@@ -1509,7 +1509,7 @@
     "href": "slides/slides-03-04.html#solution",
     "title": "Sets",
     "section": "Solution",
-    "text": "Solution\n\ndef commonality(*lists) -&gt; set:\n    \"\"\"Returns a set containing items that all list arguments have in common.\"\"\"\n    if len(lists) == 0:\n        return set()\n      \n    # start with first set\n    common = set(lists[0])\n    \n    # for all other sets\n    for i in range(1, len(lists)):\n        set_i = set(lists[i])\n        # find the intersection of common set with current set\n        common = common.intersection(set_i)\n    return common"
+    "text": "Solution\n\ndef compare_rosters(section_a, section_b):\n    set_a = set(section_a)\n    set_b = set(section_b)\n\n    students_in_both = set_a & set_b\n    only_in_a = set_a - set_b\n    total_unique = len(set_a | set_b)\n\n    return students_in_both, only_in_a, total_unique"
   },
   {
     "objectID": "slides/slides-03-04.html#why-sets",
@@ -1874,5 +1874,26 @@
     "title": "Projects",
     "section": "Project 1",
     "text": "Project 1\n\nInstructions\nTest file\nGradescope"
+  },
+  {
+    "objectID": "slides/slides-03-04.html#exercise",
+    "href": "slides/slides-03-04.html#exercise",
+    "title": "Sets",
+    "section": "Exercise",
+    "text": "Exercise\nTwo sections of a course each have a roster, stored as a list of student usernames. The lists may contain duplicates because of data-entry mistakes. Create a roster.py file and write a function compare_rosters(section_a, section_b) that takes the two lists and returns a tuple of three values:\n\nA set of students enrolled in both sections\nA set of students enrolled only in section_a\nAn integer: the total number of distinct students across both sections"
+  },
+  {
+    "objectID": "slides/slides-03-04.html#exercise-1",
+    "href": "slides/slides-03-04.html#exercise-1",
+    "title": "Sets",
+    "section": "Exercise",
+    "text": "Exercise\nRequirements\n\nYou must use Python sets and set operations (&, |, -, or the matching methods .intersection(), .union(), .difference()).\nDo not use loops to compare the lists.\nDo not change the original lists.\n\nSubmit your roster.py solution to gradescope"
+  },
+  {
+    "objectID": "slides/slides-03-04.html#exercise-2",
+    "href": "slides/slides-03-04.html#exercise-2",
+    "title": "Sets",
+    "section": "Exercise",
+    "text": "Exercise\nTest cases:\n\nassert compare_rosters([\"ana\", \"ben\", \"cai\", \"ana\"], [\"ben\", \"dev\", \"cai\"]) == ({\"ben\", \"cai\"}, {\"ana\"}, 4)\nassert compare_rosters([\"x\", \"y\"], [\"z\"]) == (set(), {\"x\", \"y\"}, 3)\nassert compare_rosters([], [\"amy\", \"amy\"]) == (set(), set(), 1)\nassert compare_rosters([], []) == (set(), set(), 0)\nassert compare_rosters([\"p\", \"q\"], [\"q\", \"p\"]) == ({\"p\", \"q\"}, set(), 2)\nprint(\"All tests passed!\")\n\nSubmit your roster.py solution to gradescope"
   }
 ]
