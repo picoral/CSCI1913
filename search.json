@@ -1466,8 +1466,8 @@
     "objectID": "slides/slides-03-04.html#sets",
     "href": "slides/slides-03-04.html#sets",
     "title": "Sets",
-    "section": "Sets",
-    "text": "Sets\n\nA set is a mutable object\nContains nonduplicate elements\nunordered datastructure\nType name set\nliteral uses curly braces ({})\nOnly contains immutable elements\nWe can use built-in functions like len(), min(), max(), sum()"
+    "section": "",
+    "text": "A set is a mutable object\nContains nonduplicate elements\nunordered datastructure\nType name set\nliteral uses curly braces ({})\nOnly contains immutable elements\nWe can use built-in functions like len(), min(), max(), sum()"
   },
   {
     "objectID": "slides/slides-03-04.html#methods",
@@ -1481,7 +1481,7 @@
     "href": "slides/slides-03-04.html#sets-1",
     "title": "Sets",
     "section": "Sets",
-    "text": "Sets\nItems in a set are not ordered, and cannot repeat.\n\nmy_set = {\"apple\", \"banana\", \"pear\", \"kiwi\", \"kiwi\"}\nprint(my_set)\n\n{'kiwi', 'banana', 'apple', 'pear'}\n\n\n\nmy_set.add(\"grape\")\nprint(my_set)\n\n{'apple', 'pear', 'kiwi', 'banana', 'grape'}\n\n\n\nmy_set.remove(\"banana\")\nprint(my_set)\n\n{'apple', 'pear', 'kiwi', 'grape'}"
+    "text": "Sets\nItems in a set are not ordered, and cannot repeat.\n\nmy_set = {\"apple\", \"banana\", \"pear\", \"kiwi\", \"kiwi\"}\nprint(my_set)\n\n{'kiwi', 'pear', 'banana', 'apple'}\n\n\n\nmy_set.add(\"grape\")\nprint(my_set)\n\n{'banana', 'grape', 'pear', 'apple', 'kiwi'}\n\n\n\nmy_set.remove(\"banana\")\nprint(my_set)\n\n{'grape', 'pear', 'apple', 'kiwi'}"
   },
   {
     "objectID": "slides/slides-03-04.html#set-methods",
@@ -1880,20 +1880,125 @@
     "href": "slides/slides-03-04.html#exercise",
     "title": "Sets",
     "section": "Exercise",
-    "text": "Exercise\nTwo sections of a course each have a roster, stored as a list of student usernames. The lists may contain duplicates because of data-entry mistakes. Create a roster.py file and write a function compare_rosters(section_a, section_b) that takes the two lists and returns a tuple of three values:\n\nA set of students enrolled in both sections\nA set of students enrolled only in section_a\nAn integer: the total number of distinct students across both sections"
+    "text": "Exercise\nTwo sections of a course each have a roster, stored as a list of student usernames. The lists may contain duplicates because of data-entry mistakes. Create a compare_roster.py file and write a function compare_rosters(section_a, section_b) that takes the two lists and returns a tuple of three values:\n\nA set of students enrolled in both sections\nA set of students enrolled only in section_a\nAn integer: the total number of distinct students across both sections"
   },
   {
     "objectID": "slides/slides-03-04.html#exercise-1",
     "href": "slides/slides-03-04.html#exercise-1",
     "title": "Sets",
     "section": "Exercise",
-    "text": "Exercise\nRequirements\n\nYou must use Python sets and set operations (&, |, -, or the matching methods .intersection(), .union(), .difference()).\nDo not use loops to compare the lists.\nDo not change the original lists.\n\nSubmit your roster.py solution to gradescope"
+    "text": "Exercise\nRequirements\n\nYou must use Python sets and set operations (&, |, -, or the matching methods .intersection(), .union(), .difference()).\nDo not use loops to compare the lists.\nDo not change the original lists.\n\nSubmit your compare_roster.py solution to gradescope"
   },
   {
     "objectID": "slides/slides-03-04.html#exercise-2",
     "href": "slides/slides-03-04.html#exercise-2",
     "title": "Sets",
     "section": "Exercise",
-    "text": "Exercise\nTest cases:\n\nassert compare_rosters([\"ana\", \"ben\", \"cai\", \"ana\"], [\"ben\", \"dev\", \"cai\"]) == ({\"ben\", \"cai\"}, {\"ana\"}, 4)\nassert compare_rosters([\"x\", \"y\"], [\"z\"]) == (set(), {\"x\", \"y\"}, 3)\nassert compare_rosters([], [\"amy\", \"amy\"]) == (set(), set(), 1)\nassert compare_rosters([], []) == (set(), set(), 0)\nassert compare_rosters([\"p\", \"q\"], [\"q\", \"p\"]) == ({\"p\", \"q\"}, set(), 2)\nprint(\"All tests passed!\")\n\nSubmit your roster.py solution to gradescope"
+    "text": "Exercise\nTest cases:\n\nassert compare_rosters([\"ana\", \"ben\", \"cai\", \"ana\"], [\"ben\", \"dev\", \"cai\"]) == ({\"ben\", \"cai\"}, {\"ana\"}, 4)\nassert compare_rosters([\"x\", \"y\"], [\"z\"]) == (set(), {\"x\", \"y\"}, 3)\nassert compare_rosters([], [\"amy\", \"amy\"]) == (set(), set(), 1)\nassert compare_rosters([], []) == (set(), set(), 0)\nassert compare_rosters([\"p\", \"q\"], [\"q\", \"p\"]) == ({\"p\", \"q\"}, set(), 2)\nprint(\"All tests passed!\")\n\nSubmit your compare_roster.py solution to gradescope"
+  },
+  {
+    "objectID": "labs/lab03.html",
+    "href": "labs/lab03.html",
+    "title": "Computer Laboratory 03",
+    "section": "",
+    "text": "Deadline:"
+  },
+  {
+    "objectID": "labs/lab03.html#reading-csv-files",
+    "href": "labs/lab03.html#reading-csv-files",
+    "title": "Computer Laboratory 03",
+    "section": "Reading CSV files",
+    "text": "Reading CSV files\nThe CSV file format has lasted so long because it is brutally simple. This makes it easy to read in any programming language. Python even has a special software library JUST for reading CSV files:\nimport csv\n\nreader = csv.DictReader(open(\"friends_file_1.csv\"))\n\nfor row in reader:\n    if row[\"Min_Temperature\"] &lt; 32:\n        print(\"It was freezing on\", row[\"Date\"])\nThe csv module (a python built-in module) gives you many different ways to read a CSV file. We will use the csv.DictReader class – this allows you to read a CSV file as if it was a list of dictionaries. The above example, for instance, prints the dates where the low temperature was below freezing.\nSome notes on this:\n\nA DictReader can be looped over just like a list, but it is not a list. All it supports is looping – no other behavior. As seen in our example file, it’s often useful to simply read the DictReader into a list before other computations to make things easy.\nA single DictReader can only be used once – that is, you get one loop out of it before you need to reopen the file (recreate the reader)\nEach “row” object in the reader is a specialized dictionary, called an OrderedDict – it’s a dictionary that remembers what order its keys go in. You can use it just like it was a dictionary.\nThe keys of the row dictionary are the column names found on the first line of the file.\nThe values of the row dictionary are the string values for this row (so row[\"Date\"] is the a string storing the date of the row, etc.)\nAll keys and values returned by DictReader are strings – if your file has non-text data you will need to parse that yourself.\n\nBEFORE YOU BEGIN THE LAB ITSELF Use the provided code in weather.py file to make sure you understand how to work with the data file with this syntax. Not only does this file provide some good examples you can use to make sure you understand, and remind you of some core syntax, but you can also use it as a “playground” to test out different pieces of code. This is something you can work on with other students, even those in other groups, so don’t be afraid to ask around or share how you’re thinking about this. (Of course the TAs will be there to help too!) Remember, while it can be intimidating to learn a new module, learning a new software module is a common task for a practical programmer – treat this like any other skill-building task."
+  },
+  {
+    "objectID": "labs/lab03.html#f_to_c",
+    "href": "labs/lab03.html#f_to_c",
+    "title": "Computer Laboratory 03",
+    "section": "F_to_C",
+    "text": "F_to_C\nThe temperatures in our data file are stored in Fahrenheit, but many scientists prefer to store data in Celsius. This function is a simple conversion function that takes numbers (measurements) in Fahrenheit and converts them to Celsius using the following equation:\n\\(C = \\frac{5(F-32)}{9}\\)\n\nThe input to this function will always be a number\nThe output of this function is a number\nIf you find yourself having trouble with this one, talk it over with a TA, this one should be easy and you might be over-thinking it."
+  },
+  {
+    "objectID": "labs/lab03.html#f_to_c_file",
+    "href": "labs/lab03.html#f_to_c_file",
+    "title": "Computer Laboratory 03",
+    "section": "F_to_C_file",
+    "text": "F_to_C_file\nThe input of this function is a List containing dictionaries as might be returned by the provided “load” function. That means the argument is a CSV file, stored row-by-row into dictionaries, and then those dictionaries are packed into a list.\nThis function should modify the list given to it so that all temperature in the file are converted from Fahrenheit to Celsius. This function will have no return value.\nNotes\n\nWhen initially loaded all data in the file is stored as strings. This includes the temperatures. Therefore you should expect the input temperatures to be stored as strings (I.E. “32” not numbers 32.0). Your code will need to parse these strings into floats in order to then convert the values into Celsius.\nYour code should not convert the resulting Celsius numbers back into strings.\nIt will be treated as a code problem to avoid using the F to C function here. You should be using that function not copying it’s equation.\nThe special values such as “T” should not appear in the temperature columns – you do not have to account for them in this function.\nIf you’re struggling with this function you might be having trouble understnding the input format – Feel free to add print statements to “pull apart” this structure – remember, it’s ultimately a list full of dictionaries. Try to make sure you know how to pull a dictionary out of the list, and then pull data out of the dictionary before you get too far into your coding."
+  },
+  {
+    "objectID": "labs/lab03.html#clean",
+    "href": "labs/lab03.html#clean",
+    "title": "Computer Laboratory 03",
+    "section": "clean",
+    "text": "clean\nThis function takes two inputs:\n\nThe first input of this function is a list containing dictionaries as might be returned by the provided “load” function.\nThe second input of this function is a string indicating one of the columns.\n\nThe clean function will process the file and return a new list containing only “clean” rows of the data. That is, any row of data in which the specified column contains a special value (defined by our data source as “T”, “M”, “S”, “A”, or blank (““) should be removed.\n\nThis function should return a modified copy of the original list, and should not modify the input list.\nRemoving elements from a dictionary while you loop over it is notoriously hard to get right. You may find it easier to approach this problem by appending the rows you want to keep to a new list.\nIt is OK if this function’s return-list and the input list both reference the same dictionaries for each row (I.E. you do not have to also make separate copies of each row dictionary)\nYou can assume that the column label given is valid – it is Ok if your code crashes when that column label is invalid."
+  },
+  {
+    "objectID": "labs/lab03.html#average",
+    "href": "labs/lab03.html#average",
+    "title": "Computer Laboratory 03",
+    "section": "average",
+    "text": "average\nThis function takes two inputs:\n\nThe first input of this function is a list containing dictionaries as might be returned by the provided “load” function.\nThe second input of this function is a string indicating one of the columns.\n\nThe average function should return a mathematical average of the provided column.\n\nYou will need to begin by cleaning the data file using the clean function as some columns may include special values such as “T”\nYou cannot assume the list is not empty. If given an empty list (or a list that is empty after being cleaned) return 0.0[1]\nYou can assume the column label given is valid – it is OK if your code crashes when given an invalid label.\nYou should handle the situation where columns are still in String format. The float function can easily handle this, since float(\"3.4\") == float(3.4) == 3.4 (I.E. the float function can handle strings and numbers without issue)."
+  },
+  {
+    "objectID": "labs/lab03.html#total_rain_by_year",
+    "href": "labs/lab03.html#total_rain_by_year",
+    "title": "Computer Laboratory 03",
+    "section": "total_rain_by_year",
+    "text": "total_rain_by_year\nThe input of this function is a List containing dictionaries as might be returned by the provided “load” function. (I.E. it’s a CSV file, stored row-by-row into dictionaries, and then those dictionaries are packed into a list)\nThe return value of this function should be a dictionary. The returned dictionary should have ints as keys, and floats as values. The keys will be years, as seen in the data file (so 2010, 2011, etc.) The values will be a sum of rain (Precipitation) over all days in the data file from that year.\nHint the data is in a format like: “2023-02-07” if you have that in a string date then year = date[:4] will be “2023”. You will still need to convert this to an int, but that should be easy. If you’re curious how this works – I recommend looking up python slice syntax, it’s useful but rarely required."
+  },
+  {
+    "objectID": "slides/slides-03-04.html",
+    "href": "slides/slides-03-04.html",
+    "title": "Sets",
+    "section": "",
+    "text": "A set is a mutable object\nContains nonduplicate elements\nunordered datastructure\nType name set\nliteral uses curly braces ({})\nOnly contains immutable elements\nWe can use built-in functions like len(), min(), max(), sum()"
+  },
+  {
+    "objectID": "labs/lab03-slides.html",
+    "href": "labs/lab03-slides.html",
+    "title": "Lab 03",
+    "section": "",
+    "text": "In this lab you will be manipulating data that is coming from csv (comma separated values) files\n\nYou do not have to write code to read files for this lab (that part of the code is provided to you)\nYou do have to understand what the code provided is doing\nYou will manipulate a list of dictionaries"
+  },
+  {
+    "objectID": "labs/lab03-slides.html#introduction",
+    "href": "labs/lab03-slides.html#introduction",
+    "title": "Lab 03",
+    "section": "Introduction",
+    "text": "Introduction\nIn this lab you will be manipulating data that is coming from csv (comma separated values) files\n\nYou do not have to write code to read files for this lab (that part of the code is provided to you)\nYou do have to understand what the code provided is doing\nYou will manipulate a list of dictionaries"
+  },
+  {
+    "objectID": "labs/lab03-slides.html#understanding-loadfilename",
+    "href": "labs/lab03-slides.html#understanding-loadfilename",
+    "title": "Lab 03",
+    "section": "Understanding load(filename)",
+    "text": "Understanding load(filename)\nThe docstring for load(filename) says:\n\n“““load the CSV file by name, return list of dictionaries, each dictionary describes one row of the file”“”\n\nYou have a few calls to load(filename) in weather_tester.py:\n\ntest_file_list = load(\"test_file.csv\")\n\n\nWhat does test_file_list[0] return?\nWhat does test_file_list[0][\"Max_Temperature\"] return?"
+  },
+  {
+    "objectID": "labs/lab03-slides.html#understanding-loadfilename-1",
+    "href": "labs/lab03-slides.html#understanding-loadfilename-1",
+    "title": "Lab 03",
+    "section": "Understanding load(filename)",
+    "text": "Understanding load(filename)\n\ntest_file_list = load(\"test_file.csv\")\n\n\nWhat does test_file_list[0] return? The following dictionary:\n\n{ \"Max_Temperature\" : 6.0,\n  \"Min_Temperature\" : -9.0, \n  \"Precipitation\"   : \"T\",\n  \"Snow\"            : \"T\",\n  \"Snow_Depth\"      : 9.0 }\n\nWhat does test_file_list[0][\"Max_Temperature\"] return? 6.0"
+  },
+  {
+    "objectID": "labs/lab03-slides.html#retrieving-values",
+    "href": "labs/lab03-slides.html#retrieving-values",
+    "title": "Lab 03",
+    "section": "Retrieving values",
+    "text": "Retrieving values\nWhat does the following code print?\n\nmessy_file_list = load(\"messy_file.csv\")\nprint(messy_file[0][\"Date\"])\n\nWhat does the following code print?\n\nmessy_file_list = load(\"messy_file.csv\")\nprint(messy_file[0][\"Date\"][0])"
+  },
+  {
+    "objectID": "labs/lab03-slides.html#retrieving-values-1",
+    "href": "labs/lab03-slides.html#retrieving-values-1",
+    "title": "Lab 03",
+    "section": "Retrieving values",
+    "text": "Retrieving values\nWhat does the following code print?\n\nmessy_file_list = load(\"messy_file.csv\")\nprint(messy_file[0][\"Date\"])\n\n\"2010-01-01\"\nWhat does the following code print?\n\nmessy_file_list = load(\"messy_file.csv\")\nprint(messy_file[0][\"Date\"][0])\n\n\"2\""
+  },
+  {
+    "objectID": "labs/lab03-slides.html#documentation",
+    "href": "labs/lab03-slides.html#documentation",
+    "title": "Lab 03",
+    "section": "Documentation",
+    "text": "Documentation\nRemember to document your code!\nAdd at the top of python file your name, and the name of any lab partnersyou worked with, as well as docstrings for each function.\n\nUse good variable names - python prefers snake_case naming\nin-line comments #\nDocstrings - strings included as first lines of programs and functions (careful with indentation)"
   }
 ]
