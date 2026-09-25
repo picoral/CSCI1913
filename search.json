@@ -1466,8 +1466,8 @@
     "objectID": "slides/slides-03-04.html#sets",
     "href": "slides/slides-03-04.html#sets",
     "title": "Sets",
-    "section": "",
-    "text": "A set is a mutable object\nContains nonduplicate elements\nunordered datastructure\nType name set\nliteral uses curly braces ({})\nOnly contains immutable elements\nWe can use built-in functions like len(), min(), max(), sum()"
+    "section": "Sets",
+    "text": "Sets\n\nA set is a mutable object\nContains nonduplicate elements\nunordered datastructure\nType name set\nliteral uses curly braces ({})\nOnly contains immutable elements\nWe can use built-in functions like len(), min(), max(), sum()"
   },
   {
     "objectID": "slides/slides-03-04.html#methods",
@@ -1481,7 +1481,7 @@
     "href": "slides/slides-03-04.html#sets-1",
     "title": "Sets",
     "section": "Sets",
-    "text": "Sets\nItems in a set are not ordered, and cannot repeat.\n\nmy_set = {\"apple\", \"banana\", \"pear\", \"kiwi\", \"kiwi\"}\nprint(my_set)\n\n{'kiwi', 'pear', 'banana', 'apple'}\n\n\n\nmy_set.add(\"grape\")\nprint(my_set)\n\n{'banana', 'grape', 'pear', 'apple', 'kiwi'}\n\n\n\nmy_set.remove(\"banana\")\nprint(my_set)\n\n{'grape', 'pear', 'apple', 'kiwi'}"
+    "text": "Sets\nItems in a set are not ordered, and cannot repeat.\n\nmy_set = {\"apple\", \"banana\", \"pear\", \"kiwi\", \"kiwi\"}\nprint(my_set)\n\n{'apple', 'banana', 'kiwi', 'pear'}\n\n\n\nmy_set.add(\"grape\")\nprint(my_set)\n\n{'pear', 'kiwi', 'banana', 'apple', 'grape'}\n\n\n\nmy_set.remove(\"banana\")\nprint(my_set)\n\n{'pear', 'kiwi', 'apple', 'grape'}"
   },
   {
     "objectID": "slides/slides-03-04.html#set-methods",
