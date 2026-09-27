@@ -228,7 +228,7 @@
     "href": "index.html",
     "title": "CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development",
     "section": "",
-    "text": "For this module we will focus first-and-foremost on getting the class started. We’ll be seeing the basic class design, learning what are the parts of the class, and how they will help us learn.\nBy the end of the week you should be able to:\n\nDecide whether CSCI1913 is a course for you (if you fit the audience)\nPrepare for what we will do to learn, and why.\n\n\n\n\nSyllabus\nAcademic Integrity\nCourse Rules\nTechnology\nTA Office Hours\n\n\n\n\n\nCourse Intro\nHow to succeed in this course\n\n\n\n\n\nWe will continue working with Python. In this module we will finish discussing basic python features with a few final details of pyhton’s many scopes, in particular how you can import functions from other files – and some unique details about how this works in python.\nThen we will begin exploring Python’s advanced data representation tools: data structures. Data structures create a flexible way to represent many common forms of data in an ad-hoc way without creating specific classes, or writing tricky data-management code.\nWe will then focus on the List, which is python’s answer to the array. Towards the end of the module we will introduce the set and dictionary as well.\nBy the end of this module you will be able to:\n\nRead, write, run, test, and debug simple python programs\nIdentify a list, tuple, and dictionary as represented in python code\nCreate, and loop over python lists\n\n\n\n\nProgramming Languages Overview\nIntro to Python\nMore Python\nPython Loops\nPython Lists\n\n\n\n\n\nBy the end of this module you will be able to:\n\nExplain the concept of mutability and distinguish between mutable and immutable data types in Python, providing examples of each and describing the implications for variable assignment and function parameters.\nCreate and manipulate Python lists using various methods including indexing, slicing, appending, inserting, removing, and sorting elements, while understanding the performance characteristics of these operations.\nAnalyze the behavior of list aliasing and copying, explaining the difference between shallow and deep copies and predicting how changes to one list reference will affect others.\nCreate and manipulate dictionaries to store and retrieve key-value pairs, using appropriate methods for adding, updating, removing, and accessing elements.\nIterate over dictionaries using various approaches (keys, values, items) and understand the implications of dictionary ordering in modern Python versions.\nApply dictionaries to solve practical problems such as counting occurrences, grouping data, creating lookup tables, and representing structured information.\nUse sets for membership testing and duplicate elimination, understanding when sets are preferable to lists for specific operations and leveraging their O(1) average-case lookup performance.\nPerform set operations including union, intersection, difference, and symmetric difference to solve problems involving collections and relationships between groups.\nSelect appropriate data structures (lists, dictionaries, or sets) based on the requirements of a given problem, justifying choices based on performance, functionality, and code clarity.\n\n\n\n\nMutability\nSequence Nesting\nDictionaries\nSets\n\n\n\n\n\nBy the end of this module you will be able to:\n\nAnalyze the time complexity of simple algorithms by identifying the relationship between input size and running time.\nExpress algorithm efficiency using Big-O notation and correctly classify common complexity classes including O(1), O(log n), O(n), O(n log n), O(n²), and O(2ⁿ).\nCompare algorithms based on their asymptotic behavior and determine which algorithm is more efficient for large inputs by analyzing their Big-O classifications.\nDistinguish between best-case, average-case, and worst-case time complexity and explain when each measure is most relevant.\nImplement linear search and binary search correctly in code and trace their execution on sample datasets.\nAnalyze the time complexity of linear search as O(n) and binary search as O(log n) and explain why binary search is asymptotically faster.\nExplain why binary search requires sorted data as a precondition and demonstrate how the algorithm eliminates half of the remaining search space with each comparison.\n\n\n\n\nBy the end of this module you will be able to:\n\nImplement selection sort, insertion sort, and bubble sort correctly in code and trace their execution on small datasets.\nAnalyze and compare the time complexity of selection sort, insertion sort, and bubble sort in their best, average, and worst cases.\nExplain the underlying mechanism of each sorting algorithm including how elements are compared, swapped, and positioned during execution.\n\n\n\n\nBy the end of this module you will be able to:\n\nDefine and explain recursion as a problem-solving technique where a function calls itself with modified parameters to solve progressively smaller subproblems.\nIdentify the essential components of a recursive function, including the base case(s) that stop recursion and the recursive case(s) that break down the problem.\nConvert simple iterative solutions to recursive solutions and vice versa, recognizing when each approach is more appropriate.\nApply recursion to solve problems involving naturally recursive data structures or definitions, such as computing powers, reversing strings, or processing nested lists.\nDebug recursive functions by identifying common errors such as missing base cases, incorrect recursive calls, or infinite recursion."
+    "text": "For this module we will focus first-and-foremost on getting the class started. We’ll be seeing the basic class design, learning what are the parts of the class, and how they will help us learn.\nBy the end of the week you should be able to:\n\nDecide whether CSCI1913 is a course for you (if you fit the audience)\nPrepare for what we will do to learn, and why.\n\n\n\n\nSyllabus\nAcademic Integrity\nCourse Rules\nTechnology\nTA Office Hours\n\n\n\n\n\nCourse Intro\nHow to succeed in this course\n\n\n\n\n\nWe will continue working with Python. In this module we will finish discussing basic python features with a few final details of pyhton’s many scopes, in particular how you can import functions from other files – and some unique details about how this works in python.\nThen we will begin exploring Python’s advanced data representation tools: data structures. Data structures create a flexible way to represent many common forms of data in an ad-hoc way without creating specific classes, or writing tricky data-management code.\nWe will then focus on the List, which is python’s answer to the array. Towards the end of the module we will introduce the set and dictionary as well.\nBy the end of this module you will be able to:\n\nRead, write, run, test, and debug simple python programs\nIdentify a list, tuple, and dictionary as represented in python code\nCreate, and loop over python lists\n\n\n\n\nProgramming Languages Overview\nIntro to Python\nMore Python\nPython Loops\nPython Lists\n\n\n\n\n\nBy the end of this module you will be able to:\n\nExplain the concept of mutability and distinguish between mutable and immutable data types in Python, providing examples of each and describing the implications for variable assignment and function parameters.\nCreate and manipulate Python lists using various methods including indexing, slicing, appending, inserting, removing, and sorting elements, while understanding the performance characteristics of these operations.\nAnalyze the behavior of list aliasing and copying, explaining the difference between shallow and deep copies and predicting how changes to one list reference will affect others.\nCreate and manipulate dictionaries to store and retrieve key-value pairs, using appropriate methods for adding, updating, removing, and accessing elements.\nIterate over dictionaries using various approaches (keys, values, items) and understand the implications of dictionary ordering in modern Python versions.\nApply dictionaries to solve practical problems such as counting occurrences, grouping data, creating lookup tables, and representing structured information.\nUse sets for membership testing and duplicate elimination, understanding when sets are preferable to lists for specific operations and leveraging their O(1) average-case lookup performance.\nPerform set operations including union, intersection, difference, and symmetric difference to solve problems involving collections and relationships between groups.\nSelect appropriate data structures (lists, dictionaries, or sets) based on the requirements of a given problem, justifying choices based on performance, functionality, and code clarity.\n\n\n\n\nMutability\nSequence Nesting\nDictionaries\nSets\n\n\n\n\n\nBy the end of this module you will be able to:\n\nAnalyze the time complexity of simple algorithms by identifying the relationship between input size and running time.\nExpress algorithm efficiency using Big-O notation and correctly classify common complexity classes including O(1), O(log n), O(n), O(n log n), O(n²), and O(2ⁿ).\nCompare algorithms based on their asymptotic behavior and determine which algorithm is more efficient for large inputs by analyzing their Big-O classifications.\nDistinguish between best-case, average-case, and worst-case time complexity and explain when each measure is most relevant.\nImplement linear search and binary search correctly in code and trace their execution on sample datasets.\nAnalyze the time complexity of linear search as O(n) and binary search as O(log n) and explain why binary search is asymptotically faster.\nExplain why binary search requires sorted data as a precondition and demonstrate how the algorithm eliminates half of the remaining search space with each comparison.\n\n\n\n\nAlgorithm Analysis\nSearching\nBig-O Practice\n\n\n\n\n\nBy the end of this module you will be able to:\n\nImplement selection sort, insertion sort, and bubble sort correctly in code and trace their execution on small datasets.\nAnalyze and compare the time complexity of selection sort, insertion sort, and bubble sort in their best, average, and worst cases.\nExplain the underlying mechanism of each sorting algorithm including how elements are compared, swapped, and positioned during execution.\n\n\n\n\nBy the end of this module you will be able to:\n\nDefine and explain recursion as a problem-solving technique where a function calls itself with modified parameters to solve progressively smaller subproblems.\nIdentify the essential components of a recursive function, including the base case(s) that stop recursion and the recursive case(s) that break down the problem.\nConvert simple iterative solutions to recursive solutions and vice versa, recognizing when each approach is more appropriate.\nApply recursion to solve problems involving naturally recursive data structures or definitions, such as computing powers, reversing strings, or processing nested lists.\nDebug recursive functions by identifying common errors such as missing base cases, incorrect recursive calls, or infinite recursion."
   },
   {
     "objectID": "index.html#module-01---course-overview",
@@ -256,7 +256,7 @@
     "href": "index.html#module-04-big-o-notation-and-searching",
     "title": "CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development",
     "section": "",
-    "text": "By the end of this module you will be able to:\n\nAnalyze the time complexity of simple algorithms by identifying the relationship between input size and running time.\nExpress algorithm efficiency using Big-O notation and correctly classify common complexity classes including O(1), O(log n), O(n), O(n log n), O(n²), and O(2ⁿ).\nCompare algorithms based on their asymptotic behavior and determine which algorithm is more efficient for large inputs by analyzing their Big-O classifications.\nDistinguish between best-case, average-case, and worst-case time complexity and explain when each measure is most relevant.\nImplement linear search and binary search correctly in code and trace their execution on sample datasets.\nAnalyze the time complexity of linear search as O(n) and binary search as O(log n) and explain why binary search is asymptotically faster.\nExplain why binary search requires sorted data as a precondition and demonstrate how the algorithm eliminates half of the remaining search space with each comparison."
+    "text": "By the end of this module you will be able to:\n\nAnalyze the time complexity of simple algorithms by identifying the relationship between input size and running time.\nExpress algorithm efficiency using Big-O notation and correctly classify common complexity classes including O(1), O(log n), O(n), O(n log n), O(n²), and O(2ⁿ).\nCompare algorithms based on their asymptotic behavior and determine which algorithm is more efficient for large inputs by analyzing their Big-O classifications.\nDistinguish between best-case, average-case, and worst-case time complexity and explain when each measure is most relevant.\nImplement linear search and binary search correctly in code and trace their execution on sample datasets.\nAnalyze the time complexity of linear search as O(n) and binary search as O(log n) and explain why binary search is asymptotically faster.\nExplain why binary search requires sorted data as a precondition and demonstrate how the algorithm eliminates half of the remaining search space with each comparison.\n\n\n\n\nAlgorithm Analysis\nSearching\nBig-O Practice"
   },
   {
     "objectID": "index.html#module-05-sorting",
@@ -2007,5 +2007,572 @@
     "title": "Pert Survey",
     "section": "Feedback I got so far",
     "text": "Feedback I got so far\nIn this class, I don’t feel I can rely on other students for academic support.\nFrom past experiences, I only speak to instructors whenever strictly necessary.\nSurvey Link"
+  },
+  {
+    "objectID": "slides/slides-04-01.html#whats-an-algorithm",
+    "href": "slides/slides-04-01.html#whats-an-algorithm",
+    "title": "Algorithm Analysis",
+    "section": "What’s an algorithm",
+    "text": "What’s an algorithm\nThe word “algorithm” is in the public vernacular (commonly spoken, informal language), but it has a specific meaning in computer science and mathematics.\n\nWhat is an algorithm?"
+  },
+  {
+    "objectID": "slides/slides-04-01.html#algorithm",
+    "href": "slides/slides-04-01.html#algorithm",
+    "title": "Algorithm Analysis",
+    "section": "Algorithm",
+    "text": "Algorithm\nFinite sequence of instructions (not code yet), typically used to solve a class of specific problems (such as search and sorting) or to perform a computation.\nAn algorithm can be expressed as a finite amount of space and time (worst case).\nSocial media recommender systems are often refered as “the algorithm”, but these systes rely on heuristics (there’s no “correct” recommendation)."
+  },
+  {
+    "objectID": "slides/slides-04-01.html#why",
+    "href": "slides/slides-04-01.html#why",
+    "title": "Algorithm Analysis",
+    "section": "Why?",
+    "text": "Why?\n\nimport time\n\ndef run_big_list():\n    evn = list(range(0, 999999, 2))\n    for i in range(10000):\n        _ = i in evn\n    \ndef run_big_set():\n    evn = set(range(0, 999999, 2))\n    for i in range(10000):\n        _ = i in evn\n\nif __name__ == \"__main__\":\n    start_time = time.perf_counter()\n    run_big_list()\n    end_time = time.perf_counter()\n    elapsed_time = end_time - start_time\n    print(f\"Time to run_big_list(): {elapsed_time:.4f} seconds\")\n    \n    start_time = time.perf_counter()\n    run_big_set()\n    end_time = time.perf_counter()\n    elapsed_time = end_time - start_time\n    print(f\"Time to run_big_set(): {elapsed_time:.4f} seconds\")\n\nTime to run_big_list(): 11.7405 seconds\nTime to run_big_set(): 0.0099 seconds"
+  },
+  {
+    "objectID": "slides/slides-04-01.html#correct-vs-good",
+    "href": "slides/slides-04-01.html#correct-vs-good",
+    "title": "Algorithm Analysis",
+    "section": "“correct” vs “good”",
+    "text": "“correct” vs “good”\n\nWhat does it mean when we say code is “correct”?\nHow can code be correct but not good?\nHow do we compare correct code?"
+  },
+  {
+    "objectID": "slides/slides-04-01.html#software-development",
+    "href": "slides/slides-04-01.html#software-development",
+    "title": "Algorithm Analysis",
+    "section": "Software Development",
+    "text": "Software Development\nLevel 1: “direct translation”\n  \n\nSpecific Problem → Specific Code"
+  },
+  {
+    "objectID": "slides/slides-04-01.html#software-development-1",
+    "href": "slides/slides-04-01.html#software-development-1",
+    "title": "Algorithm Analysis",
+    "section": "Software Development",
+    "text": "Software Development\nLevel 2: “problem solving”\n  \n\nProblem Description → Specific Problem → Pseudo-code → Specific Code\n\n\nWhere I want you today\nSkills won through hard practice\nStarting to see connections and re-use tasks\nLanguage agnostic"
+  },
+  {
+    "objectID": "slides/slides-04-01.html#software-development-2",
+    "href": "slides/slides-04-01.html#software-development-2",
+    "title": "Algorithm Analysis",
+    "section": "Software Development",
+    "text": "Software Development\nLevel 3: “generalization”\n  \n\nProblem Description → Specific Problem → Generic Problem → General Algorithm → Pseudo-code → Specific Code\n\n\nWhere we’re going\nMany problems are old friends\nBig problems are made of little familiar problems"
+  },
+  {
+    "objectID": "slides/slides-04-01.html#software-development-3",
+    "href": "slides/slides-04-01.html#software-development-3",
+    "title": "Algorithm Analysis",
+    "section": "Software Development",
+    "text": "Software Development\nLevel 1: add up all elements in an array\nLevel 2: find the prime numbers in an array\nLevel 3: sort an array, use fewer than \\(n^2\\) comparisons"
+  },
+  {
+    "objectID": "slides/slides-04-01.html#algorithm-1",
+    "href": "slides/slides-04-01.html#algorithm-1",
+    "title": "Algorithm Analysis",
+    "section": "Algorithm",
+    "text": "Algorithm\nGeneric Problem: A formally specified problem or task.\nAlgorithm: An ordered series of computations to accomplish a given task (This is purely a mental/conceptual thing.)\nCode: A specific text file containing a specific realization of an algorithm in a specific programming language"
+  },
+  {
+    "objectID": "slides/slides-04-01.html#what-were-going-to-study",
+    "href": "slides/slides-04-01.html#what-were-going-to-study",
+    "title": "Algorithm Analysis",
+    "section": "What we’re going to study",
+    "text": "What we’re going to study\nCSCI 1913/1933 → CSCI 3041 → CSCI 4041 → CSCI 5421\n\nCSCI 1913/1933 - Introduction to Algorithms and Data\nCSCI 3041 Introduction to Discrete Structures and Algorithms\nCSCI 4041 Algorithms and Data Structures\nCSCI 5421 Advanced Algorithms and Data Structures"
+  },
+  {
+    "objectID": "slides/slides-04-01.html#quiz-03",
+    "href": "slides/slides-04-01.html#quiz-03",
+    "title": "Algorithm Analysis",
+    "section": "Quiz 03",
+    "text": "Quiz 03\nYou have 10 minutes to complete the quiz\n\nNo need for comments or doc strings, no need to include the tests in your solution, no need for if __name__. Just write your function and what’s inside the function\n\nHINTS:\n\nremember there are ways to iterate over a list: through its index or through its elements, only one of these work to change the list"
+  },
+  {
+    "objectID": "slides/slides-04-01.html#our-focus",
+    "href": "slides/slides-04-01.html#our-focus",
+    "title": "Algorithm Analysis",
+    "section": "Our Focus",
+    "text": "Our Focus\n\nStructures\nSearching\nSorting\n“organization” – algorithms for data structures\nSensitivity to speed"
+  },
+  {
+    "objectID": "slides/slides-04-01.html#exercise",
+    "href": "slides/slides-04-01.html#exercise",
+    "title": "Algorithm Analysis",
+    "section": "Exercise",
+    "text": "Exercise\nProblem: find largest value in an unsorted collection\nTest cases in python\n\nassert get_max(2, 0, -100, 100, 0, 2) == 100\nassert get_max(2, 0, float(\"inf\"), 100, 0, 2) == float(\"inf\")\n\nSubmit your get_max.py solution to gradescope."
+  },
+  {
+    "objectID": "slides/slides-04-01.html#solution",
+    "href": "slides/slides-04-01.html#solution",
+    "title": "Algorithm Analysis",
+    "section": "Solution?",
+    "text": "Solution?\nCan we easily modify this to get the smallest value instead?\n\ndef get_max(*values):\n  current_max = None\n  for v in values:\n    if current_max == None or v &gt; current_max:\n      current_max = v\n  return current_max\n\nif __name__ == \"__main__\":\n  assert get_max(2, 0, -100, 100, 0, 2) == 100\n  assert get_max(2, 0, float(\"inf\"), 100, 0, 2) == float(\"inf\")\n\nIf you are curious, this is how builtin max() is implemented in Python"
+  },
+  {
+    "objectID": "slides/slides-04-01.html#analysis",
+    "href": "slides/slides-04-01.html#analysis",
+    "title": "Algorithm Analysis",
+    "section": "Analysis",
+    "text": "Analysis\n\nWhat’s the best case?\nWhat’s the worst case?\n\n\ndef get_max(*values):\n  current_max = None\n  for v in values:\n    if current_max == None or v &gt; current_max:\n      current_max = v\n  return current_max"
+  },
+  {
+    "objectID": "slides/slides-04-01.html#analysis-1",
+    "href": "slides/slides-04-01.html#analysis-1",
+    "title": "Algorithm Analysis",
+    "section": "Analysis",
+    "text": "Analysis\n\nWhat’s the best case? Empty collection (constant time)\nWhat’s the worst case? N\n\n\ndef get_max(*values):\n  current_max = None\n  for v in values:\n    if current_max == None or v &gt; current_max:\n      current_max = v\n  return current_max"
+  },
+  {
+    "objectID": "slides/slides-04-01.html#runtime",
+    "href": "slides/slides-04-01.html#runtime",
+    "title": "Algorithm Analysis",
+    "section": "Runtime",
+    "text": "Runtime\n\nimport time\n\ndef get_max_tuple(*values):\n  current_max = None\n  for v in values:\n    if current_max == None or v &gt; current_max:\n      current_max = v\n  return current_max\n\ndef get_max(values):\n  current_max = None\n  for v in values:\n    if current_max == None or v &gt; current_max:\n      current_max = v\n  return current_max\n\nif __name__ == \"__main__\":\n    values = range(99999999)\n\n    start_time = time.perf_counter()\n    get_max_tuple(tuple(values))\n    end_time = time.perf_counter()\n    elapsed_time = end_time - start_time\n    print(f\"Time to get_max_tuple: {elapsed_time:.4f} seconds\")\n\n    start_time = time.perf_counter()\n    get_max(list(values))\n    end_time = time.perf_counter()\n    elapsed_time = end_time - start_time\n    print(f\"Time to get_max list: {elapsed_time:.4f} seconds\")\n\n    start_time = time.perf_counter()\n    get_max(set(values))\n    end_time = time.perf_counter()\n    elapsed_time = end_time - start_time\n    print(f\"Time to get_max set: {elapsed_time:.4f} seconds\")\n\nTime to get_max_tuple: 1.1907 seconds\nTime to get_max list: 3.0187 seconds\nTime to get_max set: 5.8357 seconds"
+  },
+  {
+    "objectID": "slides/slides-04-01.html#asymptotic-runtime",
+    "href": "slides/slides-04-01.html#asymptotic-runtime",
+    "title": "Algorithm Analysis",
+    "section": "Asymptotic Runtime",
+    "text": "Asymptotic Runtime\n\nAsymptotic means “approaching a limit”\nIt doesn’t make sense to use computing runtime to compare implementations/algorithms because there are too many variables like processor speed, assembly code efficiency, etc.\nLiteral running time is NOT helpful.\nGoal IS NOT to predict wall clock (actual, elapsed real-world time)\nGoal IS NOT to evaluate implementations"
+  },
+  {
+    "objectID": "slides/slides-04-01.html#asymptotic-runtime-1",
+    "href": "slides/slides-04-01.html#asymptotic-runtime-1",
+    "title": "Algorithm Analysis",
+    "section": "Asymptotic Runtime",
+    "text": "Asymptotic Runtime\n\nWe deal with approximations for comparisons\nUsually if we care about runtime, we are interested in scalability: how much more time will it take if I double the input size?"
+  },
+  {
+    "objectID": "slides/slides-04-01.html#what-is-big-o",
+    "href": "slides/slides-04-01.html#what-is-big-o",
+    "title": "Algorithm Analysis",
+    "section": "What is Big-O?",
+    "text": "What is Big-O?\nBig-O notation is a way of quantifying the rate at which some quantity grows.\n\nA tool for comparing algorithms and predicting performance\nO stands for order of, N is the input size\nWe ignore constants and smaller terms because we care about what happens when n gets really large\nWe calculate Big-O based on worst case scenario"
+  },
+  {
+    "objectID": "slides/slides-04-01.html#big-o",
+    "href": "slides/slides-04-01.html#big-o",
+    "title": "Algorithm Analysis",
+    "section": "Big O",
+    "text": "Big O\nAn algorithm with O(N) complexity means its runtime grows linearly with the input size (N).\nHow much more time will it take if I double the input size for a O(N) algorithm?\nTwice as long. Finding max value of an array of size 12 takes twice as long as finding max value of an array of size 6 (double the input, double the time complexity)."
+  },
+  {
+    "objectID": "slides/slides-04-02.html#search-problem",
+    "href": "slides/slides-04-02.html#search-problem",
+    "title": "Searching",
+    "section": "Search Problem",
+    "text": "Search Problem\nGiven an unsorted collection and a value, return the index of the value if value is found in collection, return -1 if value is not in collection.\nThe goal of this exercise is to think about the specific problem and how to solve it. Remember this:\n\nProblem Description → Specific Problem → Pseudo-code → Specific Code\n\nDon’t use .index(), actually think about how to solve this problem."
+  },
+  {
+    "objectID": "slides/slides-04-02.html#why",
+    "href": "slides/slides-04-02.html#why",
+    "title": "Searching",
+    "section": "Why?",
+    "text": "Why?\nYou might be asking yourself “why do I have to implement things that were already implemented by others?”\n\nUsing a built-in won’t always work\nSomeone builds the built-ins. Might be you.\nIn-depth understanding leads to creative flexibility\n\nCreativity is built on top of understanding the basics"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#understanding-the-problem",
+    "href": "slides/slides-04-02.html#understanding-the-problem",
+    "title": "Searching",
+    "section": "Understanding the problem",
+    "text": "Understanding the problem\n\n[ 47 | 23 | 30 | 13 | 32 | 44 ]\n\nValue to search: 32"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#understanding-the-problem-1",
+    "href": "slides/slides-04-02.html#understanding-the-problem-1",
+    "title": "Searching",
+    "section": "Understanding the problem",
+    "text": "Understanding the problem\n\n[ 47 | 23 | 30 | 13 | 32 | 44 ]\n\nValue to search: 32\n\nindex 0\ncompare value at index with search value\nnot the same\nmove to next index"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#understanding-the-problem-2",
+    "href": "slides/slides-04-02.html#understanding-the-problem-2",
+    "title": "Searching",
+    "section": "Understanding the problem",
+    "text": "Understanding the problem\n\n[ 47 | 23 | 30 | 13 | 32 | 44 ]\n\nValue to search: 32\n\nindex 1\ncompare value at index with search value\nnot the same\nmove to next index"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#understanding-the-problem-3",
+    "href": "slides/slides-04-02.html#understanding-the-problem-3",
+    "title": "Searching",
+    "section": "Understanding the problem",
+    "text": "Understanding the problem\n\n[ 47 | 23 | 30 | 13 | 32 | 44 ]\n\nValue to search: 32\n\nindex 2\ncompare value at index with search value\nnot the same\nmove to next index"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#understanding-the-problem-4",
+    "href": "slides/slides-04-02.html#understanding-the-problem-4",
+    "title": "Searching",
+    "section": "Understanding the problem",
+    "text": "Understanding the problem\n\n[ 47 | 23 | 30 | 13 | 32 | 44 ]\n\nValue to search: 32\n\nindex 3\ncompare value at index with search value\nnot the same\nmove to next index"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#understanding-the-problem-5",
+    "href": "slides/slides-04-02.html#understanding-the-problem-5",
+    "title": "Searching",
+    "section": "Understanding the problem",
+    "text": "Understanding the problem\n\n[ 47 | 23 | 30 | 13 | 32 | 44 ]\n\nValue to search: 32\n\nindex 4\ncompare value at index with search value\nsame value!\nreturn index"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#another-example",
+    "href": "slides/slides-04-02.html#another-example",
+    "title": "Searching",
+    "section": "Another example",
+    "text": "Another example\n\n[ 47 | 23 | 30 | 13 | 32 | 44 ]\n\nValue to search: 3"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#another-example-1",
+    "href": "slides/slides-04-02.html#another-example-1",
+    "title": "Searching",
+    "section": "Another example",
+    "text": "Another example\n\n[ 47 | 23 | 30 | 13 | 32 | 44 ]\n\nValue to search: 3\n\nindex 0\ncompare value at index with search value\nnot the same\nmove to next index"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#another-example-2",
+    "href": "slides/slides-04-02.html#another-example-2",
+    "title": "Searching",
+    "section": "Another example",
+    "text": "Another example\n\n[ 47 | 23 | 30 | 13 | 32 | 44 ]\n\nValue to search: 3\n\nindex 1\ncompare value at index with search value\nnot the same\nmove to next index"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#another-example-3",
+    "href": "slides/slides-04-02.html#another-example-3",
+    "title": "Searching",
+    "section": "Another example",
+    "text": "Another example\n\n[ 47 | 23 | 30 | 13 | 32 | 44 ]\n\nValue to search: 3\n\nindex 2\ncompare value at index with search value\nnot the same\nmove to next index"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#another-example-4",
+    "href": "slides/slides-04-02.html#another-example-4",
+    "title": "Searching",
+    "section": "Another example",
+    "text": "Another example\n\n[ 47 | 23 | 30 | 13 | 32 | 44 ]\n\nValue to search: 3\n\nindex 3\ncompare value at index with search value\nnot the same\nmove to next index"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#another-example-5",
+    "href": "slides/slides-04-02.html#another-example-5",
+    "title": "Searching",
+    "section": "Another example",
+    "text": "Another example\n\n[ 47 | 23 | 30 | 13 | 32 | 44 ]\n\nValue to search: 3\n\nindex 4\ncompare value at index with search value\nnot the same\nmove to next index"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#another-example-6",
+    "href": "slides/slides-04-02.html#another-example-6",
+    "title": "Searching",
+    "section": "Another example",
+    "text": "Another example\n\n[ 47 | 23 | 30 | 13 | 32 | 44 ]\n\nValue to search: 3\n\nindex 5\ncompare value at index with search value\nnot the same\nmove to next index\nno next index, return -1"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#linear-search",
+    "href": "slides/slides-04-02.html#linear-search",
+    "title": "Searching",
+    "section": "Linear Search",
+    "text": "Linear Search\nImplement linear search (what was just described) in Python.\nCall your function linear_search – it should take a list and a value.\nIt returns the index of the value, if value is in list, otherwise it returns -1.\nDo not use built-in methods.\nSubmit your linear_search.py file to gradescope."
+  },
+  {
+    "objectID": "slides/slides-04-02.html#solution",
+    "href": "slides/slides-04-02.html#solution",
+    "title": "Searching",
+    "section": "Solution",
+    "text": "Solution\nNote the return statement inside the loop:\n\ndef linear_search(array, value):\n  for i in range(len(array)):\n    if array[i] == value:\n      return i\n  return -1\n  \nif __name__ == \"__main__\":\n  numbers = [10, 2, 4, 11, 5]\n  print(linear_search(numbers, 4))\n  print(linear_search(numbers, 9))\n\n2\n-1"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#algorithm-analysis-linear-search",
+    "href": "slides/slides-04-02.html#algorithm-analysis-linear-search",
+    "title": "Searching",
+    "section": "Algorithm Analysis – Linear Search",
+    "text": "Algorithm Analysis – Linear Search\n\nWhat is the best case scenario?\nWhat is the worst case scenario?\nWhat is the Big-O for linear search?\n\n\ndef linear_search(array, value):\n  for i in range(len(array)):\n    if array[i] == value:\n      return i\n  return -1"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#algorithm-analysis-linear-search-1",
+    "href": "slides/slides-04-02.html#algorithm-analysis-linear-search-1",
+    "title": "Searching",
+    "section": "Algorithm Analysis – Linear Search",
+    "text": "Algorithm Analysis – Linear Search\n\nLet N be the length of the input list\nAssume the element is not found\nHow many times do we need to access?\n\n\ndef linear_search(array, value):\n  for i in range(len(array)):\n    if array[i] == value:\n      return i\n  return -1"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#algorithm-analysis-linear-search-2",
+    "href": "slides/slides-04-02.html#algorithm-analysis-linear-search-2",
+    "title": "Searching",
+    "section": "Algorithm Analysis – Linear Search",
+    "text": "Algorithm Analysis – Linear Search\n\nLet N be the length of the input list\nAssume the element is not found\nHow many times do we need to access?\n\n\ndef linear_search(array, value):\n  for i in range(len(array)):\n    if array[i] == value:\n      return i\n  return -1\n\nN times – one to check each position, for all positions\nLinear Search is O(N) time complexity."
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-1",
+    "href": "slides/slides-04-02.html#binary-search-1",
+    "title": "Searching",
+    "section": "Binary Search",
+    "text": "Binary Search\n\nBinary Search is a specialized algorithm for the search algorithm\nExtra Pre-condition: list is sorted smallest to highest\nSubstantial speedup\nCore idea: inspecting one location elminates the need to look into other locations"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-2",
+    "href": "slides/slides-04-02.html#binary-search-2",
+    "title": "Searching",
+    "section": "Binary Search",
+    "text": "Binary Search\n\nAny time we access an element of array, check whether element is:\n\nToo big (no need to look right of this element)\nToo small (no need to look left of this element)\nWhat we are looking for\n\nAs this goes we can “bound” the search area:\n\nlow index - the lowest possible index for elem\nhigh index - the highest possible index for elem\nEach access should update either our low index or our high index"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-example",
+    "href": "slides/slides-04-02.html#binary-search-example",
+    "title": "Searching",
+    "section": "Binary Search – example",
+    "text": "Binary Search – example\n\n[ 15 | 27 | 32 | 37 | 47 | 49 | 60 | 74 | 76 | 78 ]\n\nValue to search: 60\n\nlow 0\nhigh 9 (last index)\nmid 4 (low+high then divide by 2)"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-example-1",
+    "href": "slides/slides-04-02.html#binary-search-example-1",
+    "title": "Searching",
+    "section": "Binary Search – example",
+    "text": "Binary Search – example\n\n[ 15 | 27 | 32 | 37 | 47 | 49 | 60 | 74 | 76 | 78 ]\n\nValue to search: 60\n\nlow 0\nhigh 9\nmid 4 (low+high then divide by 2)\n\n60 is greater than 47"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-example-2",
+    "href": "slides/slides-04-02.html#binary-search-example-2",
+    "title": "Searching",
+    "section": "Binary Search – example",
+    "text": "Binary Search – example\n\n[ 15 | 27 | 32 | 37 | 47 | 49 | 60 | 74 | 76 | 78 ]\n\nValue to search: 60\n\nlow 0\nhigh 9\nmid 4 (low+high then divide by 2)\n\n60 is greater than 47, updated low to mid + 1"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-example-3",
+    "href": "slides/slides-04-02.html#binary-search-example-3",
+    "title": "Searching",
+    "section": "Binary Search – example",
+    "text": "Binary Search – example\n\n[ 15 | 27 | 32 | 37 | 47 | 49 | 60 | 74 | 76 | 78 ]\n\nValue to search: 60\n\nlow 5\nhigh 9\nmid 7 (low+high then divide by 2)"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-example-4",
+    "href": "slides/slides-04-02.html#binary-search-example-4",
+    "title": "Searching",
+    "section": "Binary Search – example",
+    "text": "Binary Search – example\n\n[ 15 | 27 | 32 | 37 | 47 | 49 | 60 | 74 | 76 | 78 ]\n\nValue to search: 60\n\nlow 5\nhigh 9\nmid 7 (low+high then divide by 2)\n\n60 is smaller than 74"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-example-5",
+    "href": "slides/slides-04-02.html#binary-search-example-5",
+    "title": "Searching",
+    "section": "Binary Search – example",
+    "text": "Binary Search – example\n\n[ 15 | 27 | 32 | 37 | 47 | 49 | 60 | 74 | 76 | 78 ]\n\nValue to search: 60\n\nlow 5\nhigh 9\nmid 7 (low+high then divide by 2)\n\n60 is smaller than 74, update high to mid - 1"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-example-6",
+    "href": "slides/slides-04-02.html#binary-search-example-6",
+    "title": "Searching",
+    "section": "Binary Search – example",
+    "text": "Binary Search – example\n\n[ 15 | 27 | 32 | 37 | 47 | 49 | 60 | 74 | 76 | 78 ]\n\nValue to search: 60\n\nlow 5\nhigh 6\nmid 5 (low+high then divide by 2)\n\n60 is greater than 49"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-example-7",
+    "href": "slides/slides-04-02.html#binary-search-example-7",
+    "title": "Searching",
+    "section": "Binary Search – example",
+    "text": "Binary Search – example\n\n[ 15 | 27 | 32 | 37 | 47 | 49 | 60 | 74 | 76 | 78 ]\n\nValue to search: 60\n\nlow 5\nhigh 6 (total length)\nmid 5 (low+high then divide by 2)\n\n60 is greater than 49, update low to mid + 1"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-example-8",
+    "href": "slides/slides-04-02.html#binary-search-example-8",
+    "title": "Searching",
+    "section": "Binary Search – example",
+    "text": "Binary Search – example\n\n[ 15 | 27 | 32 | 37 | 47 | 49 | 60 | 74 | 76 | 78 ]\n\nValue to search: 60\n\nlow 6\nhigh 6\nmid 6 (low+high then divide by 2)\n\n60 is equal to 60, return"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-3",
+    "href": "slides/slides-04-02.html#binary-search-3",
+    "title": "Searching",
+    "section": "Binary Search",
+    "text": "Binary Search\nWhat happens when value is not in collection? (not found?)"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-4",
+    "href": "slides/slides-04-02.html#binary-search-4",
+    "title": "Searching",
+    "section": "Binary Search",
+    "text": "Binary Search\nImplement binary search in python. Write a function called binary_search that takes in two arguments: a sorted list (increasing values) and a search value.\nYour function should return the index of the search value if found, -1 if value is not found.\nTest case:\n\nnumbers = [0, 5, 10, 23, 41, 43, 44, 60, 99, 120, 343]\nassert binary_search(numbers, 99) == 8\nassert binary_search(numbers, 9) == -1\n\nSubmit your binary_search.py solution to gradescope."
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-solution",
+    "href": "slides/slides-04-02.html#binary-search-solution",
+    "title": "Searching",
+    "section": "Binary Search – solution",
+    "text": "Binary Search – solution\n\ndef binary_search(arr, v):\n  low = 0\n  high = len(arr)-1\n  while low &lt;= high:\n    mid = (low+high) // 2\n    if v &gt; arr[mid]: # update low\n      low = mid + 1\n    elif v &lt; arr[mid]: # update high\n      high = mid - 1\n    else:\n      return mid\n  return -1\n\nif __name__ == \"__main__\":\n  numbers = [0, 5, 10, 23, 41, 43, 44, 60, 99, 120, 343]\n  assert binary_search(numbers, 99) == 8\n  assert binary_search(numbers, 9) == -1"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-5",
+    "href": "slides/slides-04-02.html#binary-search-5",
+    "title": "Searching",
+    "section": "Binary Search",
+    "text": "Binary Search\nWhat’s the best case scenario?\nWhat’s the worst case scenario?"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-6",
+    "href": "slides/slides-04-02.html#binary-search-6",
+    "title": "Searching",
+    "section": "Binary Search",
+    "text": "Binary Search\nWhat’s the best case scenario? Search value is at mid index\nWhat’s the worst case scenario? Search value is the last checked index"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-7",
+    "href": "slides/slides-04-02.html#binary-search-7",
+    "title": "Searching",
+    "section": "Binary Search",
+    "text": "Binary Search\nSince every comparison results in eliminating the need to check half of the list:\n\nAfter 1 comparison: N/2 elements remain\nAfter 2 comparisons: N/4 elements remain\nAfter 3 comparisons: N/8 elements remain\nAfter 4 comparisons: N/16 elements remain\nAfter 5 comparisons: N/32 elements remain"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-8",
+    "href": "slides/slides-04-02.html#binary-search-8",
+    "title": "Searching",
+    "section": "Binary Search",
+    "text": "Binary Search\nSince every comparison results in eliminating the need to check half of the list:\n\nAfter 1 comparison: N/2 elements remain\nAfter 2 comparisons: N/4 elements remain\nAfter 3 comparisons: N/8 elements remain\nAfter 4 comparisons: N/16 elements remain\nAfter 5 comparisons: N/32 elements remain\nAfter k comparisons: \\(**N/2^k**\\) elements remain"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-9",
+    "href": "slides/slides-04-02.html#binary-search-9",
+    "title": "Searching",
+    "section": "Binary Search",
+    "text": "Binary Search\nAfter k comparisons: \\(**N/2^k**\\) elements remain.\nWhat’s the value of k?\n\\(N = 2^k\\)\n\\(k = log_2(N)\\)\nO(log N)\nWhat happens when we double the input (2N)?"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-10",
+    "href": "slides/slides-04-02.html#binary-search-10",
+    "title": "Searching",
+    "section": "Binary Search",
+    "text": "Binary Search\nWhat happens when we double the input size (from N to 2N)?\nDoubling the input size only adds one more step to the worst case scenario."
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-vs.-linear-search",
+    "href": "slides/slides-04-02.html#binary-search-vs.-linear-search",
+    "title": "Searching",
+    "section": "Binary Search vs. Linear Search",
+    "text": "Binary Search vs. Linear Search\nWe talked about how Linear Search time complexity is O(N), Binary Search is O(log N).\nEvery one increase in input size, increases one step for worst case scenario in Linear Search.\nTo increase one step in Binary Search, we need to double the size of the input.\nBinary Search is faster than Linear Search."
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-vs.-linear-search-1",
+    "href": "slides/slides-04-02.html#binary-search-vs.-linear-search-1",
+    "title": "Searching",
+    "section": "Binary Search vs. Linear Search",
+    "text": "Binary Search vs. Linear Search\nLinear Search time complexity is O(N), Binary Search is O(log N).\n\n\n\nO(N) vs. O(log N)"
+  },
+  {
+    "objectID": "slides/slides-04-03.html#big-o",
+    "href": "slides/slides-04-03.html#big-o",
+    "title": "Big-O Practice",
+    "section": "Big-O",
+    "text": "Big-O\n\\(O(1) &lt; O(\\log N) &lt; O(N) &lt; O(N \\log N) &lt; O(n^2) &lt; O(n^3) &lt; O(2^n)\\)"
+  },
+  {
+    "objectID": "slides/slides-04-03.html#exercise",
+    "href": "slides/slides-04-03.html#exercise",
+    "title": "Big-O Practice",
+    "section": "Exercise",
+    "text": "Exercise\nWhat is the runtime?\n\ndef foo(n):\n    if n &lt; 0:\n        return True\n    else:\n        return False"
+  },
+  {
+    "objectID": "slides/slides-04-03.html#exercise-1",
+    "href": "slides/slides-04-03.html#exercise-1",
+    "title": "Big-O Practice",
+    "section": "Exercise",
+    "text": "Exercise\nWhat is the runtime? \\(O(1)\\)\n\ndef foo(n):\n    if n &lt; 0:\n        return True\n    else:\n        return False"
+  },
+  {
+    "objectID": "slides/slides-04-03.html#exercise-2",
+    "href": "slides/slides-04-03.html#exercise-2",
+    "title": "Big-O Practice",
+    "section": "Exercise",
+    "text": "Exercise\nWhat is the runtime?\n\ndef foo(numbers):\n    result = []\n    for n in numbers:\n        if n &lt; 0:\n            result.append(True)\n        else:\n            result.append(False)\n    return result"
+  },
+  {
+    "objectID": "slides/slides-04-03.html#exercise-3",
+    "href": "slides/slides-04-03.html#exercise-3",
+    "title": "Big-O Practice",
+    "section": "Exercise",
+    "text": "Exercise\nWhat is the runtime? \\(O(N)\\)\n\ndef foo(numbers):\n    result = []\n    for n in numbers:\n        if n &lt; 0:\n            result.append(True)\n        else:\n            result.append(False)\n    return result"
+  },
+  {
+    "objectID": "slides/slides-04-03.html#exercise-4",
+    "href": "slides/slides-04-03.html#exercise-4",
+    "title": "Big-O Practice",
+    "section": "Exercise",
+    "text": "Exercise\nWhat is the runtime?\n\ndef foo(numbers):\n    result = []\n    for n in numbers:\n        if n &lt; 0:\n            return True\n        else:\n            result.append(False)\n    return result"
+  },
+  {
+    "objectID": "slides/slides-04-03.html#exercise-5",
+    "href": "slides/slides-04-03.html#exercise-5",
+    "title": "Big-O Practice",
+    "section": "Exercise",
+    "text": "Exercise\nWhat is the runtime? \\(O(N)\\)\n\ndef foo(numbers):\n    result = []\n    for n in numbers:\n        if n &lt; 0:\n            return True\n        else:\n            result.append(False)\n    return result"
+  },
+  {
+    "objectID": "slides/slides-04-03.html#exercise-6",
+    "href": "slides/slides-04-03.html#exercise-6",
+    "title": "Big-O Practice",
+    "section": "Exercise",
+    "text": "Exercise\nWhat is the runtime?\n\ndef foo(numbers):\n    result = []\n    while len(numbers) &gt; 1:\n        middle = len(numbers)//2\n        result.append(numbers[middle])\n        numbers = numbers[middle:]\n    return result"
+  },
+  {
+    "objectID": "slides/slides-04-03.html#exercise-7",
+    "href": "slides/slides-04-03.html#exercise-7",
+    "title": "Big-O Practice",
+    "section": "Exercise",
+    "text": "Exercise\nWhat is the runtime? \\(O(\\log N)\\)\n\ndef foo(numbers):\n    result = []\n    while len(numbers) &gt; 1:\n        middle = len(numbers)//2\n        result.append(numbers[middle])\n        numbers = numbers[middle:]\n    return result"
+  },
+  {
+    "objectID": "slides/slides-04-03.html#exercise-8",
+    "href": "slides/slides-04-03.html#exercise-8",
+    "title": "Big-O Practice",
+    "section": "Exercise",
+    "text": "Exercise\nWhat is the runtime?\n\ndef foo(numbers):\n    for i in range(len(numbers)):\n      for j in range(i+1, len(numbers)):\n        if numbers[i] == numbers[j]:\n          return True\n    return False"
+  },
+  {
+    "objectID": "slides/slides-04-03.html#exercise-9",
+    "href": "slides/slides-04-03.html#exercise-9",
+    "title": "Big-O Practice",
+    "section": "Exercise",
+    "text": "Exercise\nWhat is the runtime? \\(O(N^2)\\)\n\ndef foo(numbers):\n    for i in range(len(numbers)):\n      for j in range(i+1, len(numbers)):\n        if numbers[i] == numbers[j]:\n          return True\n    return False\n\n\\((N-1) + (N-2) + (N-3) + ... + 1 = \\frac{N*(N-1)}{2} = \\frac{N^2-N}{2}\\)"
+  },
+  {
+    "objectID": "slides/slides-04-03.html#exercise-10",
+    "href": "slides/slides-04-03.html#exercise-10",
+    "title": "Big-O Practice",
+    "section": "Exercise",
+    "text": "Exercise\nWhat is the runtime?\n\ndef foo(numbers):\n    result = []\n    for i in range(len(numbers)):\n      for j in range(5):\n        result.append(numbers[i] * j)\n    return result"
+  },
+  {
+    "objectID": "slides/slides-04-03.html#exercise-11",
+    "href": "slides/slides-04-03.html#exercise-11",
+    "title": "Big-O Practice",
+    "section": "Exercise",
+    "text": "Exercise\nWhat is the runtime?\\(O(N)\\)\n\ndef foo(numbers):\n    result = []\n    for i in range(len(numbers)):\n      for j in range(5):\n        result.append(numbers[i] * j)\n    return result"
+  },
+  {
+    "objectID": "slides/slides-04-03.html#exercise-12",
+    "href": "slides/slides-04-03.html#exercise-12",
+    "title": "Big-O Practice",
+    "section": "Exercise",
+    "text": "Exercise\nWhat is the runtime?\n\nimport random\n\ndef generate_list(n):  \n    result = []\n    for _ in range(n):\n        result.append(random.randint(0, n))\n    return result\n      \n\ndef foo(n):\n    result = []\n    for i in range(n):\n        numbers = generate_list(n)\n        while len(numbers) &gt; 1:\n            middle = len(numbers)//2\n            result.append(numbers[middle])\n            numbers = numbers[middle:]\n    return result"
+  },
+  {
+    "objectID": "slides/slides-04-03.html#exercise-13",
+    "href": "slides/slides-04-03.html#exercise-13",
+    "title": "Big-O Practice",
+    "section": "Exercise",
+    "text": "Exercise\nWhat is the runtime? \\(O(N^2)\\)\n\nimport random\n\ndef generate_list(n):  \n    result = []\n    for _ in range(n):\n        result.append(random.randint(0, n))\n    return result\n      \n\ndef foo(n):\n    result = []\n    for i in range(n):\n        numbers = generate_list(n)\n        while len(numbers) &gt; 1:\n            middle = len(numbers)//2\n            result.append(numbers[middle])\n            numbers = numbers[middle:]\n    return result\n\n\\(O(N^2) + O(N \\log N)\\)"
+  },
+  {
+    "objectID": "slides/slides-04-03.html#exercise-14",
+    "href": "slides/slides-04-03.html#exercise-14",
+    "title": "Big-O Practice",
+    "section": "Exercise",
+    "text": "Exercise\n\ndef example(y):\n    ctr = 1\n    while ctr &lt; y:\n        ctr *= 2\n    return"
+  },
+  {
+    "objectID": "slides/slides-04-03.html#exercise-15",
+    "href": "slides/slides-04-03.html#exercise-15",
+    "title": "Big-O Practice",
+    "section": "Exercise",
+    "text": "Exercise\nWhat is the runtime? \\(O(\\log N)\\)\n\ndef foo(y):\n    ctr = 1\n    while ctr &lt; y:\n        ctr *= 2\n    return ctr\n\nEach iteration doubles the counter, so for each iteration we half the distance to y."
+  },
+  {
+    "objectID": "slides/slides-04-03.html#gradescope-exercise",
+    "href": "slides/slides-04-03.html#gradescope-exercise",
+    "title": "Big-O Practice",
+    "section": "Gradescope Exercise",
+    "text": "Gradescope Exercise\nAnswer the gradescope quiz."
   }
 ]
