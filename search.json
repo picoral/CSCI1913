@@ -2574,5 +2574,236 @@
     "title": "Big-O Practice",
     "section": "Gradescope Exercise",
     "text": "Gradescope Exercise\nAnswer the gradescope quiz."
+  },
+  {
+    "objectID": "midterm_1_practice.html",
+    "href": "midterm_1_practice.html",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "",
+    "text": "Consider the following function:\n\ndef crunchy(lst):\n    forwards = 0\n    for num in lst:\n        forwards = forwards + num\n\n    backwards = 0\n    for i in range(len(lst)-1, -1, -1):\n        # This loops over the list backwards!\n        backwards = backwards + lst[i]\n\n    even = 0\n    for i in range(0, len(lst), 2):\n        even = even + lst[i]\n\n    odd = 0\n    for i in range(1, len(lst), 2):\n        odd = odd + lst[i]\n\n    evenodd = even + odd\n\n    # check if all 3 equal each other\n    return forwards == backwards == evenodd\n\nWhere \\(N=len(lst)\\), what is the worst case big-O runtime of this function?\n▢ a) \\(O(1)\\)\n▢ b) \\(O(\\log N)\\)\n▢ c) \\(O(N)\\)\n▢ d) \\(O(N \\log N)\\)\n▢ e) \\(O(N^2)\\)\n▢ f) \\(O(N^3)\\)\n▢ g) \\(O(N^4)\\)\n▢ h) \\(O(2^N)\\)\n\n\n\nConsider the following function:\n\ndef crunchy(lst):\n  out = 1\n  tracker = []\n  for idx in range(len(lst)-1):\n      for k in range(idx):\n           out += k \n      tracker.append(lst[idx])\n  return (out, tracker)\n\nWhere \\(N=len(lst)\\), what is the worst case big-O runtime of this function? (You may assume append is constant time and tuple literal creation is constant time.\n▢ a) \\(O(1)\\)\n▢ b) \\(O(\\log N)\\)\n▢ c) \\(O(N)\\)\n▢ d) \\(O(N \\log N)\\)\n▢ e) \\(O(N^2)\\)\n▢ f) \\(O(N^3)\\)\n▢ g) \\(O(N^4)\\)\n▢ h) \\(O(2^N)\\)\n\n\n\nConsider the following function:\n\ndef mystery(data):\n    result = []\n    \n    for i in range(len(data)):\n        temp = 0\n        for j in range(i, len(data)):\n            temp += data[j]\n        result.append(temp)\n    \n    for x in data:\n        for y in data:\n            if x == y:\n                result.append(x * 2)\n    \n    count = 0\n    for i in range(len(result)):\n        count += result[i]\n    \n    return count\n\nWhere \\(N=len(lst)\\), what is the worst case big-O runtime of this function? (You may assume append is constant time and tuple literal creation is constant time.\n▢ a) \\(O(1)\\)\n▢ b) \\(O(\\log N)\\)\n▢ c) \\(O(N)\\)\n▢ d) \\(O(N \\log N)\\)\n▢ e) \\(O(N^2)\\)\n▢ f) \\(O(N^3)\\)\n▢ g) \\(O(N^4)\\)\n▢ h) \\(O(2^N)\\)\n\n\n\nConsider this function:\n\ndef find_max(numbers):\n    if not numbers:\n        return None\n    max_val = numbers[0]\n    for num in numbers:\n        if num &gt; max_val:\n            max_val = num\n    return max_val\n\nWhere N is the length of the argument list, what is the worst case big-O runtime of this function?\n▢ a) \\(O(1)\\)\n▢ b) \\(O(\\log N)\\)\n▢ c) \\(O(N)\\)\n▢ d) \\(O(N \\log N)\\)\n▢ e) \\(O(N^2)\\)\n▢ f) \\(O(N^3)\\)\n▢ g) \\(O(N^4)\\)\n▢ h) \\(O(2^N)\\)\n\n\n\nConsider this function:\n\ndef has_duplicates(arr):\n    for i in range(len(arr)):\n        for j in range(i + 1, len(arr)):\n            if arr[i] == arr[j]:\n                return True\n    return False\n\nWhere N is the length of the argument list, what is the worst case big-O runtime of this function?\n▢ a) \\(O(1)\\)\n▢ b) \\(O(\\log N)\\)\n▢ c) \\(O(N)\\)\n▢ d) \\(O(N \\log N)\\)\n▢ e) \\(O(N^2)\\)\n▢ f) \\(O(N^3)\\)\n▢ g) \\(O(N^4)\\)\n▢ h) \\(O(2^N)\\)\n\n\n\nConsider the following function:\n\ndef print_pairs(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(n):\n            for k in range(n):\n                print(f\"({arr[i]}, {arr[j]}, {arr[k]})\")\n\nWhere N is the length of the argument list, what is the worst case big-O runtime of this function?\n▢ a) \\(O(1)\\)\n▢ b) \\(O(\\log N)\\)\n▢ c) \\(O(N)\\)\n▢ d) \\(O(N \\log N)\\)\n▢ e) \\(O(N^2)\\)\n▢ f) \\(O(N^3)\\)\n▢ g) \\(O(N^4)\\)\n▢ h) \\(O(2^N)\\)\n\n\n\nConsider the following function:\n\ndef foo(arr, target):\n    left = 0\n    right = len(arr) - 1\n    all_mid_values = []\n    while left &lt;= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] &lt; target:\n            left = mid + 1\n            all_mid_values.append(arr[mid])\n        else:\n            right = mid - 1\n            all_mid_values.append(arr[mid])\n    return -1\n\nWhere N is the length of the argument list, what is the worst case big-O runtime of this function?\n▢ a) \\(O(1)\\)\n▢ b) \\(O(\\log N)\\)\n▢ c) \\(O(N)\\)\n▢ d) \\(O(N \\log N)\\)\n▢ e) \\(O(N^2)\\)\n▢ f) \\(O(N^3)\\)\n▢ g) \\(O(N^4)\\)\n▢ h) \\(O(2^N)\\)\n\n\n\nConsider the following functions:\n\ndef binary_search(arr, v):\n  low = 0\n  high = len(arr)-1\n  while low &lt;= high:\n    mid = (low+high)//2\n    if v &gt; arr[mid]:\n      low = mid + 1\n    elif v &lt; arr[mid]:\n      high = mid - 1\n    else:\n      return mid\n  return -1\n  \ndef foo(arr):\n  result = []\n  for value in arr:\n    index = binary_search(arr, value)\n    result.append(index)\n\nWhere N is the length of the argument list, what is the worst case big-O runtime of the foo(arr) function?\n▢ a) \\(O(1)\\)\n▢ b) \\(O(\\log N)\\)\n▢ c) \\(O(N)\\)\n▢ d) \\(O(N \\log N)\\)\n▢ e) \\(O(N^2)\\)\n▢ f) \\(O(N^3)\\)\n▢ g) \\(O(N^4)\\)\n▢ h) \\(O(2^N)\\)"
+  },
+  {
+    "objectID": "midterm_1_practice.html#question-1",
+    "href": "midterm_1_practice.html#question-1",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "",
+    "text": "Consider the following function:\n\ndef crunchy(lst):\n    forwards = 0\n    for num in lst:\n        forwards = forwards + num\n\n    backwards = 0\n    for i in range(len(lst)-1, -1, -1):\n        # This loops over the list backwards!\n        backwards = backwards + lst[i]\n\n    even = 0\n    for i in range(0, len(lst), 2):\n        even = even + lst[i]\n\n    odd = 0\n    for i in range(1, len(lst), 2):\n        odd = odd + lst[i]\n\n    evenodd = even + odd\n\n    # check if all 3 equal each other\n    return forwards == backwards == evenodd\n\nWhere \\(N=len(lst)\\), what is the worst case big-O runtime of this function?\n▢ a) \\(O(1)\\)\n▢ b) \\(O(\\log N)\\)\n▢ c) \\(O(N)\\)\n▢ d) \\(O(N \\log N)\\)\n▢ e) \\(O(N^2)\\)\n▢ f) \\(O(N^3)\\)\n▢ g) \\(O(N^4)\\)\n▢ h) \\(O(2^N)\\)"
+  },
+  {
+    "objectID": "midterm_1_practice.html#question-2",
+    "href": "midterm_1_practice.html#question-2",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "",
+    "text": "Consider the following function:\n\ndef crunchy(lst):\n  out = 1\n  tracker = []\n  for idx in range(len(lst)-1):\n      for k in range(idx):\n           out += k \n      tracker.append(lst[idx])\n  return (out, tracker)\n\nWhere \\(N=len(lst)\\), what is the worst case big-O runtime of this function? (You may assume append is constant time and tuple literal creation is constant time.\n▢ a) \\(O(1)\\)\n▢ b) \\(O(\\log N)\\)\n▢ c) \\(O(N)\\)\n▢ d) \\(O(N \\log N)\\)\n▢ e) \\(O(N^2)\\)\n▢ f) \\(O(N^3)\\)\n▢ g) \\(O(N^4)\\)\n▢ h) \\(O(2^N)\\)"
+  },
+  {
+    "objectID": "midterm_1_practice.html#question-3",
+    "href": "midterm_1_practice.html#question-3",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "",
+    "text": "Consider the following function:\n\ndef mystery(data):\n    result = []\n    \n    for i in range(len(data)):\n        temp = 0\n        for j in range(i, len(data)):\n            temp += data[j]\n        result.append(temp)\n    \n    for x in data:\n        for y in data:\n            if x == y:\n                result.append(x * 2)\n    \n    count = 0\n    for i in range(len(result)):\n        count += result[i]\n    \n    return count\n\nWhere \\(N=len(lst)\\), what is the worst case big-O runtime of this function? (You may assume append is constant time and tuple literal creation is constant time.\n▢ a) \\(O(1)\\)\n▢ b) \\(O(\\log N)\\)\n▢ c) \\(O(N)\\)\n▢ d) \\(O(N \\log N)\\)\n▢ e) \\(O(N^2)\\)\n▢ f) \\(O(N^3)\\)\n▢ g) \\(O(N^4)\\)\n▢ h) \\(O(2^N)\\)"
+  },
+  {
+    "objectID": "midterm_1_practice.html#question-4",
+    "href": "midterm_1_practice.html#question-4",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "",
+    "text": "Consider this function:\n\ndef find_max(numbers):\n    if not numbers:\n        return None\n    max_val = numbers[0]\n    for num in numbers:\n        if num &gt; max_val:\n            max_val = num\n    return max_val\n\nWhere N is the length of the argument list, what is the worst case big-O runtime of this function?\n▢ a) \\(O(1)\\)\n▢ b) \\(O(\\log N)\\)\n▢ c) \\(O(N)\\)\n▢ d) \\(O(N \\log N)\\)\n▢ e) \\(O(N^2)\\)\n▢ f) \\(O(N^3)\\)\n▢ g) \\(O(N^4)\\)\n▢ h) \\(O(2^N)\\)"
+  },
+  {
+    "objectID": "midterm_1_practice.html#question-5",
+    "href": "midterm_1_practice.html#question-5",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "",
+    "text": "Consider this function:\n\ndef has_duplicates(arr):\n    for i in range(len(arr)):\n        for j in range(i + 1, len(arr)):\n            if arr[i] == arr[j]:\n                return True\n    return False\n\nWhere N is the length of the argument list, what is the worst case big-O runtime of this function?\n▢ a) \\(O(1)\\)\n▢ b) \\(O(\\log N)\\)\n▢ c) \\(O(N)\\)\n▢ d) \\(O(N \\log N)\\)\n▢ e) \\(O(N^2)\\)\n▢ f) \\(O(N^3)\\)\n▢ g) \\(O(N^4)\\)\n▢ h) \\(O(2^N)\\)"
+  },
+  {
+    "objectID": "midterm_1_practice.html#question-6",
+    "href": "midterm_1_practice.html#question-6",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "",
+    "text": "Consider the following function:\n\ndef print_pairs(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(n):\n            for k in range(n):\n                print(f\"({arr[i]}, {arr[j]}, {arr[k]})\")\n\nWhere N is the length of the argument list, what is the worst case big-O runtime of this function?\n▢ a) \\(O(1)\\)\n▢ b) \\(O(\\log N)\\)\n▢ c) \\(O(N)\\)\n▢ d) \\(O(N \\log N)\\)\n▢ e) \\(O(N^2)\\)\n▢ f) \\(O(N^3)\\)\n▢ g) \\(O(N^4)\\)\n▢ h) \\(O(2^N)\\)"
+  },
+  {
+    "objectID": "midterm_1_practice.html#question-7",
+    "href": "midterm_1_practice.html#question-7",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "",
+    "text": "Consider the following function:\n\ndef foo(arr, target):\n    left = 0\n    right = len(arr) - 1\n    all_mid_values = []\n    while left &lt;= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] &lt; target:\n            left = mid + 1\n            all_mid_values.append(arr[mid])\n        else:\n            right = mid - 1\n            all_mid_values.append(arr[mid])\n    return -1\n\nWhere N is the length of the argument list, what is the worst case big-O runtime of this function?\n▢ a) \\(O(1)\\)\n▢ b) \\(O(\\log N)\\)\n▢ c) \\(O(N)\\)\n▢ d) \\(O(N \\log N)\\)\n▢ e) \\(O(N^2)\\)\n▢ f) \\(O(N^3)\\)\n▢ g) \\(O(N^4)\\)\n▢ h) \\(O(2^N)\\)"
+  },
+  {
+    "objectID": "midterm_1_practice.html#question-8",
+    "href": "midterm_1_practice.html#question-8",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "",
+    "text": "Consider the following functions:\n\ndef binary_search(arr, v):\n  low = 0\n  high = len(arr)-1\n  while low &lt;= high:\n    mid = (low+high)//2\n    if v &gt; arr[mid]:\n      low = mid + 1\n    elif v &lt; arr[mid]:\n      high = mid - 1\n    else:\n      return mid\n  return -1\n  \ndef foo(arr):\n  result = []\n  for value in arr:\n    index = binary_search(arr, value)\n    result.append(index)\n\nWhere N is the length of the argument list, what is the worst case big-O runtime of the foo(arr) function?\n▢ a) \\(O(1)\\)\n▢ b) \\(O(\\log N)\\)\n▢ c) \\(O(N)\\)\n▢ d) \\(O(N \\log N)\\)\n▢ e) \\(O(N^2)\\)\n▢ f) \\(O(N^3)\\)\n▢ g) \\(O(N^4)\\)\n▢ h) \\(O(2^N)\\)"
+  },
+  {
+    "objectID": "midterm_1_practice.html#question-1-1",
+    "href": "midterm_1_practice.html#question-1-1",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "2.1 Question 1",
+    "text": "2.1 Question 1\nConsider the following code:\n\ndef foo(x):\n   new = \"\"\n \n   if x &lt; 10:\n       new += \"A\"\n   elif x &lt; 100:\n       new += \"B\"\n   elif x &lt; 1000:\n       new += \"C\"\n   else:\n       new += \"D\"\n\n   if x &lt; 10:\n       new += \"E\"\n   else:\n       new += \"F\"\n   return new\n     \nif __name__ == \"__main__\":\n  result = foo(22)\n  print(result)\n  \n  result = foo(5)\n  print(result)\n\nWhat does the code print? For credit your answer must be EXACTLY correct, so a few hints: The question is case sensitive (lowercase vs. uppercase letters matter)."
+  },
+  {
+    "objectID": "midterm_1_practice.html#question-2-1",
+    "href": "midterm_1_practice.html#question-2-1",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "2.2 Question 2",
+    "text": "2.2 Question 2\nConsider the following code:\n\ndef foo(count):\n    result = \"\"\n    while count &gt; 0:\n        if count % 2 == 1:\n            result += \"X\"\n        else:\n            result += \"Y\"\n        count -= 1\n\n    if len(result) &gt; 2:\n        result += \"A\"\n    else:\n        result += \"B\"\n    return result\n        \nif __name__ == \"__main__\":\n  result = foo(5)\n  print(result)\n\nWhat does the code print? For credit your answer must be EXACTLY correct, so a few hints: The question is case sensitive (lowercase vs. uppercase letters matter)."
+  },
+  {
+    "objectID": "midterm_1_practice.html#question-1-2",
+    "href": "midterm_1_practice.html#question-1-2",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "3.1 Question 1",
+    "text": "3.1 Question 1\nThis question tests your understanding of looping patterns and overall access-patterns for the various data structures. Consider the following function:\n\ndef lovely(something):\n    new = []\n    for heart in something:\n        new.append(something[heart])\n    return new\n\nFor each input below either indicate it would crash, or if it would run to completion, write out what would be printed. (if there are multiple possible correct printings, for example because dictionaries and sets are unordered, give one possible printed output)\n\n\n\n\nmy_list1=[\"N\", \"S\", \"E\", \"W\", \"north\"]\nresult = lovely(my_list1)\nprint(result)\n\n\n\n\n\nvar={\"up\":\"down\", \"left\":\"right\", \"north\":\"south\", \"east\":\"west\"}\nresult = lovely(var)\nprint(result)"
+  },
+  {
+    "objectID": "midterm_1_practice.html#question-1-3",
+    "href": "midterm_1_practice.html#question-1-3",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "4.1 Question 1",
+    "text": "4.1 Question 1\nWrite a python function rotate that rotates a list in place by k elements left. This is a mutator function, that mutates the argument list. This function should take two argu- ments: a list and an integer k. For example [1,2,3,4,5,6] rotated by k = 2 becomes [3,4,5,6,1,2]\nTest cases:\n\nnumbers = [1, 2, 3, 4, 5, 6]\nrotate(numbers, 2) \nassert numbers == [3, 4, 5, 6, 1, 2]\n\nletters = [\"a\", \"B\", \"c\", \"d\"]\nrotate(letters, 1)\nassert letters == [\"B\", \"c\", \"d\", \"a\"]"
+  },
+  {
+    "objectID": "midterm_1_practice.html#question-2-2",
+    "href": "midterm_1_practice.html#question-2-2",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "4.2 Question 2",
+    "text": "4.2 Question 2\nWrite a python function called get_average that takes a list of numbers are argument and returns the average (sum all numbers and divide by total number of items in list).\nTest cases:\n\nnumbers = [1, 2, 3, 4, 5, 6]\nassert get_average(numbers)  == 3.5\n\nassert get_average([]) == 0 # empty list"
+  },
+  {
+    "objectID": "midterm_1_practice.html#question-3-1",
+    "href": "midterm_1_practice.html#question-3-1",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "4.3 Question 3",
+    "text": "4.3 Question 3\nWrite a python function adjust_grades that takes a list of grades and adjusts them according to the rules specified below. This is a mutator function, that mutates the argument list.\n\nEvery student receives a grade in the inclusive range from 0 to 100. (no need to validate this)\nIf the difference between the grade and the next multiple of 5 is less than 1, round the grade up to the next multiple of 5.\nIf the value of grade is less than 60, no rounding occurs as the result will still be a failing grade.\n\n\nspring_2026 = [59.7, 69.6, 64.5, 73, 79, 79.5, 84.1]\nadjust_grades(spring_2026)\nassert spring_2026 == [59.7, 70.0, 65.0, 73, 79, 80, 85]"
+  },
+  {
+    "objectID": "midterm_1_practice.html#question-4-1",
+    "href": "midterm_1_practice.html#question-4-1",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "4.4 Question 4",
+    "text": "4.4 Question 4\nWrite a ptyhon function most_frequent that takes in a list (of any immutable type) and returns the most frequent element in the list.\n\nthings = [\"apple\", 0, 0, \"apple\", \"pear\", 0, \"apple\", \"apple\"]\nassert most_frequent(things) == \"apple\""
+  },
+  {
+    "objectID": "midterm_1_practice.html#big-o-question-1",
+    "href": "midterm_1_practice.html#big-o-question-1",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "6.1 Big-O Question 1",
+    "text": "6.1 Big-O Question 1\nThe answer is c) \\(O(N)\\) because the four for loops are not nested. The total time complexity is: \\(O(1) + O(N) + O(N) + O(N) + O(N) = O(N)\\)"
+  },
+  {
+    "objectID": "midterm_1_practice.html#big-o-question-2",
+    "href": "midterm_1_practice.html#big-o-question-2",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "6.2 Big-O Question 2",
+    "text": "6.2 Big-O Question 2\nThe answer is e) \\(O(N^2)\\)\nOuter loop runs runs N times.\nInner loop runs 0 times for idx 0, 1 time for idx 1, 2 times for idx 2 – \\(0 + 1 + 2 + ... + (N-2) = (N-2)(N-1)/2\\).\n\\(\\frac{(N-2)(N-1)}{2} = O(N^2)\\)\ntracker.append(lst[idx]) runs N times (\\(O(N)\\)).\n\\(O(N^2) + O(N) = O(N^2)\\)"
+  },
+  {
+    "objectID": "midterm_1_practice.html#big-o-question-3",
+    "href": "midterm_1_practice.html#big-o-question-3",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "6.3 Big-O Question 3",
+    "text": "6.3 Big-O Question 3\nThe answer is e) \\(O(N^2)\\)\nFirst loop is \\(O(N^2)\\).\nSecond loop is \\(O(N^2)\\).\nThird loops runs \\(2N\\) for worst-case scenario, so \\(O(N)\\)."
+  },
+  {
+    "objectID": "midterm_1_practice.html#big-o-question-4",
+    "href": "midterm_1_practice.html#big-o-question-4",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "6.4 Big-O Question 4",
+    "text": "6.4 Big-O Question 4\nThe answer is c) \\(O(N)\\)\nBest case is \\(O(1)\\) (empty list), worst case is \\(O(N)\\). Loop checks every value in argument list."
+  },
+  {
+    "objectID": "midterm_1_practice.html#big-o-question-5",
+    "href": "midterm_1_practice.html#big-o-question-5",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "6.5 Big-O Question 5",
+    "text": "6.5 Big-O Question 5\nThe answer is e) \\(O(N^2)\\)\nBecause fo the nested loops comparing all pairs. For every item in list, it’s compared to every item in the (minus itself)."
+  },
+  {
+    "objectID": "midterm_1_practice.html#big-o-question-6",
+    "href": "midterm_1_practice.html#big-o-question-6",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "6.6 Big-O Question 6",
+    "text": "6.6 Big-O Question 6\nThe answer is f) \\(O(N^3)\\)\nThree nested loops."
+  },
+  {
+    "objectID": "midterm_1_practice.html#big-o-question-7",
+    "href": "midterm_1_practice.html#big-o-question-7",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "6.7 Big-O Question 7",
+    "text": "6.7 Big-O Question 7\nThe answer is b) \\(O(\\log N)\\)\nBoundaries of which values will be checked in the while loop change at every iteraction, halving the size of the sublist that is considered in each interaction.\n\nAfter 1 comparison: N/2 elements remain\nAfter 2 comparisons: N/4 elements remain\nAfter 3 comparisons: N/8 elements remain\nAfter 4 comparisons: N/16 elements remain\nAfter 5 comparisons: N/32 elements remain\nAfter k comparisons: N/2^k elements remain\n\nAfter k comparisons: N/2^k elements remain.\nWhat’s the value of k?\n\\(N = 2^k\\)\n\\(k = log_2(N)\\)"
+  },
+  {
+    "objectID": "midterm_1_practice.html#big-o-question-8",
+    "href": "midterm_1_practice.html#big-o-question-8",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "6.8 Big-O Question 8",
+    "text": "6.8 Big-O Question 8\nThe answer is d) \\(O(N \\log N)\\)\nBinary Search is performed for every element in the array. Binary Search is \\(O(\\log N)\\) so running Binary Search for every array item is \\(O(N \\log N)\\)"
+  },
+  {
+    "objectID": "midterm_1_practice.html#read-code-output-question-1",
+    "href": "midterm_1_practice.html#read-code-output-question-1",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "6.9 Read code – output Question 1",
+    "text": "6.9 Read code – output Question 1\n\n\nBF\nAE"
+  },
+  {
+    "objectID": "midterm_1_practice.html#read-code-question-2",
+    "href": "midterm_1_practice.html#read-code-question-2",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "6.10 Read code – Question 2",
+    "text": "6.10 Read code – Question 2\n\n\nXYXYXA"
+  },
+  {
+    "objectID": "midterm_1_practice.html#loops-and-python-types-question-1",
+    "href": "midterm_1_practice.html#loops-and-python-types-question-1",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "6.11 Loops and Python types Question 1",
+    "text": "6.11 Loops and Python types Question 1\n\nIt crashes because items in a list are accessed by an index, so when it does something[heart] it is indexing the list through its items (it can’t) so it crashes because a string does not index a list. The loop would need to be for i in range(len(something)) and then we need to do something[i]\nSince something is a dictionary, and the for loop retrieves each key in the dictionary, something[heart] works because heart is always a dictionary key. The standard output would look like this:\n\n\n\n['down', 'right', 'south', 'west']"
+  },
+  {
+    "objectID": "midterm_1_practice.html#write-code-question-1",
+    "href": "midterm_1_practice.html#write-code-question-1",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "6.12 Write code Question 1",
+    "text": "6.12 Write code Question 1\nSolution 1:\n\ndef rotate(my_list, k):\n    list_copy = my_list.copy()\n    for i in range(len(my_list)-k):\n        my_list[i] = list_copy[i+k]\n        \n    for i in range(1, k+1):\n        index = (k-i+1) * -1\n        my_list[index] = list_copy[i-1]\n\nSolution 2:\n\ndef rotate(my_list, k):\n    for i in range(k):\n        my_list.append(my_list.pop(0))"
+  },
+  {
+    "objectID": "midterm_1_practice.html#write-code-question-2",
+    "href": "midterm_1_practice.html#write-code-question-2",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "6.13 Write code Question 2",
+    "text": "6.13 Write code Question 2\n\ndef get_average(my_list):\n  average = 0\n  for item in my_list:\n    average += item\n  return average/len(my_list)"
+  },
+  {
+    "objectID": "midterm_1_practice.html#write-code-question-3",
+    "href": "midterm_1_practice.html#write-code-question-3",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "6.14 Write code Question 3",
+    "text": "6.14 Write code Question 3\n\ndef adjust_grades(grades):\n  for i in range(len(grades)):\n    grade = grades[i]\n    round_up = (grade+5)//5 * 5\n    if round_up - grade &lt; 1 and grade &gt; 60:\n      grades[i] = round_up"
+  },
+  {
+    "objectID": "midterm_1_practice.html#write-code-question-3-1",
+    "href": "midterm_1_practice.html#write-code-question-3-1",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "6.15 Write code Question 3",
+    "text": "6.15 Write code Question 3\nSolution 1:\n\ndef most_frequent(my_list):\n  # count first\n  counts = {}\n  for item in my_list:\n    counts[item] = counts.get(item, 0) + 1\n    \n  return max(counts, key=counts.get)\n\nSolution 2:\n\ndef most_frequent(my_list):\n  # count first\n  counts = {}\n  for item in my_list:\n    counts[item] = counts.get(item, 0) + 1\n    \n  highest = max(counts.values())\n  \n  for key, value in counts.items():\n    if value == highest:\n      return key"
+  },
+  {
+    "objectID": "midterm_1_practice.html#sorting-1",
+    "href": "midterm_1_practice.html#sorting-1",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "6.16 Sorting",
+    "text": "6.16 Sorting\n\nThe main principle behind selection sort is b) Repeatedly find the minimum element from the unsorted portion and place it at the beginning\nInsertion sort builds the final sorted array by c) building the sorted array one item at a time, inserting each new element into its proper position\nInsertion sort perform most efficiently c) When the array is already sorted or nearly sorted\nBubble sort do in each pass through the array d) Compares adjacent elements and swaps them if they’re out of order\nAfter the first complete pass of bubble sort on an array of n elements, a) The largest element is in its correct position\nBubble sort cab be optimized to detect when the array is already sorted? a) By using a flag to check if any swaps occurred during a pass\nAfter the first complete pass of selection sort on an array of n elements, b) The smallest element is in its correct position\nSelection, insertion, and bubble sort algorithms c) all have O(n²) time complexity"
+  },
+  {
+    "objectID": "exams.html#exams",
+    "href": "exams.html#exams",
+    "title": "Quizzes and Exams",
+    "section": "Exams",
+    "text": "Exams\n\nPractice\n\nMidterm 1 Practice\n\n\n\nDates\n\n\n\n\n\n\nDate\nExams\n\n\n\n\nWed, Oct 14, 2026\nMidterm 1\n\n\nWed, Nov 11, 2026\nMidterm 2\n\n\n\n\n\n\nFinal exam date will be announced"
   }
 ]
