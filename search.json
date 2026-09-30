@@ -2027,7 +2027,7 @@
     "href": "slides/slides-04-01.html#why",
     "title": "Algorithm Analysis",
     "section": "Why?",
-    "text": "Why?\n\nimport time\n\ndef run_big_list():\n    evn = list(range(0, 999999, 2))\n    for i in range(10000):\n        _ = i in evn\n    \ndef run_big_set():\n    evn = set(range(0, 999999, 2))\n    for i in range(10000):\n        _ = i in evn\n\nif __name__ == \"__main__\":\n    start_time = time.perf_counter()\n    run_big_list()\n    end_time = time.perf_counter()\n    elapsed_time = end_time - start_time\n    print(f\"Time to run_big_list(): {elapsed_time:.4f} seconds\")\n    \n    start_time = time.perf_counter()\n    run_big_set()\n    end_time = time.perf_counter()\n    elapsed_time = end_time - start_time\n    print(f\"Time to run_big_set(): {elapsed_time:.4f} seconds\")\n\nTime to run_big_list(): 11.7405 seconds\nTime to run_big_set(): 0.0099 seconds"
+    "text": "Why?\n\nimport time\n\ndef run_big_list():\n    evn = list(range(0, 999999, 2))\n    for i in range(10000):\n        _ = i in evn\n    \ndef run_big_set():\n    evn = set(range(0, 999999, 2))\n    for i in range(10000):\n        _ = i in evn\n\nif __name__ == \"__main__\":\n    start_time = time.perf_counter()\n    run_big_list()\n    end_time = time.perf_counter()\n    elapsed_time = end_time - start_time\n    print(f\"Time to run_big_list(): {elapsed_time:.4f} seconds\")\n    \n    start_time = time.perf_counter()\n    run_big_set()\n    end_time = time.perf_counter()\n    elapsed_time = end_time - start_time\n    print(f\"Time to run_big_set(): {elapsed_time:.4f} seconds\")\n\nTime to run_big_list(): 11.3529 seconds\nTime to run_big_set(): 0.0107 seconds"
   },
   {
     "objectID": "slides/slides-04-01.html#correct-vs-good",
@@ -2125,7 +2125,7 @@
     "href": "slides/slides-04-01.html#runtime",
     "title": "Algorithm Analysis",
     "section": "Runtime",
-    "text": "Runtime\n\nimport time\n\ndef get_max_tuple(*values):\n  current_max = None\n  for v in values:\n    if current_max == None or v &gt; current_max:\n      current_max = v\n  return current_max\n\ndef get_max(values):\n  current_max = None\n  for v in values:\n    if current_max == None or v &gt; current_max:\n      current_max = v\n  return current_max\n\nif __name__ == \"__main__\":\n    values = range(99999999)\n\n    start_time = time.perf_counter()\n    get_max_tuple(tuple(values))\n    end_time = time.perf_counter()\n    elapsed_time = end_time - start_time\n    print(f\"Time to get_max_tuple: {elapsed_time:.4f} seconds\")\n\n    start_time = time.perf_counter()\n    get_max(list(values))\n    end_time = time.perf_counter()\n    elapsed_time = end_time - start_time\n    print(f\"Time to get_max list: {elapsed_time:.4f} seconds\")\n\n    start_time = time.perf_counter()\n    get_max(set(values))\n    end_time = time.perf_counter()\n    elapsed_time = end_time - start_time\n    print(f\"Time to get_max set: {elapsed_time:.4f} seconds\")\n\nTime to get_max_tuple: 1.1907 seconds\nTime to get_max list: 3.0187 seconds\nTime to get_max set: 5.8357 seconds"
+    "text": "Runtime\n\nimport time\n\ndef get_max_tuple(*values):\n  current_max = None\n  for v in values:\n    if current_max == None or v &gt; current_max:\n      current_max = v\n  return current_max\n\ndef get_max(values):\n  current_max = None\n  for v in values:\n    if current_max == None or v &gt; current_max:\n      current_max = v\n  return current_max\n\nif __name__ == \"__main__\":\n    values = range(99999999)\n\n    start_time = time.perf_counter()\n    get_max_tuple(tuple(values))\n    end_time = time.perf_counter()\n    elapsed_time = end_time - start_time\n    print(f\"Time to get_max_tuple: {elapsed_time:.4f} seconds\")\n\n    start_time = time.perf_counter()\n    get_max(list(values))\n    end_time = time.perf_counter()\n    elapsed_time = end_time - start_time\n    print(f\"Time to get_max list: {elapsed_time:.4f} seconds\")\n\n    start_time = time.perf_counter()\n    get_max(set(values))\n    end_time = time.perf_counter()\n    elapsed_time = end_time - start_time\n    print(f\"Time to get_max set: {elapsed_time:.4f} seconds\")\n\nTime to get_max_tuple: 1.4664 seconds\nTime to get_max list: 3.0830 seconds\nTime to get_max set: 6.0571 seconds"
   },
   {
     "objectID": "slides/slides-04-01.html#asymptotic-runtime",
@@ -2447,7 +2447,7 @@
     "href": "slides/slides-04-02.html#binary-search-vs.-linear-search-1",
     "title": "Searching",
     "section": "Binary Search vs. Linear Search",
-    "text": "Binary Search vs. Linear Search\nLinear Search time complexity is O(N), Binary Search is O(log N).\n\n\n\nO(N) vs. O(log N)"
+    "text": "Binary Search vs. Linear Search\nLinear Search time complexity is O(N), Binary Search is O(log N).\n\nO(N) vs. O(log N)"
   },
   {
     "objectID": "slides/slides-04-03.html#big-o",
@@ -2805,5 +2805,12 @@
     "title": "Quizzes and Exams",
     "section": "Exams",
     "text": "Exams\n\nPractice\n\nMidterm 1 Practice\n\n\n\nDates\n\n\n\n\n\n\nDate\nExams\n\n\n\n\nWed, Oct 14, 2026\nMidterm 1\n\n\nWed, Nov 11, 2026\nMidterm 2\n\n\n\n\n\n\nFinal exam date will be announced"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#quiz-03",
+    "href": "slides/slides-04-02.html#quiz-03",
+    "title": "Searching",
+    "section": "Quiz 03",
+    "text": "Quiz 03\nYou have 10 minutes to complete the quiz\n\nNo need for comments or doc strings, no need to include the tests in your solution, no need for if __name__. Just write your function and what’s inside the function\n\nHINTS:\n\nremember there are ways to iterate over a list: through its index or through its elements, only one of these work to change the list"
   }
 ]
