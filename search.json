@@ -277,7 +277,7 @@
     "href": "labs.html",
     "title": "Labs",
     "section": "",
-    "text": "All labs are at Walter Library 106\n\nLaboratory (004) T 02:30 PM - 04:25 PM\n\nLaboratory (005) T 04:40 PM - 06:35 PM\n\nLaboratory (006) W 08:00 AM - 09:55 AM\n\nLaboratory (007) W 10:10 AM - 12:05 PM\n\nLabs are always due at 11:59pm on the Wednesday that Lab sections 6 and 7 happen. Note that my staff and I are not available after 7pm, so if you make the unwise decision to work on the lab close to the deadline you won’t be able to get any help from us. We cannot accept technical/computer issues as a legitimate reason for late or incomplete work. You need to make sure you are working on the assignments with enough time to figure our these issues.\n\nLab submissions will be primarily evaluated automatically to validate expected behavior.\nAttendance of the lab section itself is expected unless you have an excused absence. Historically, students who skip labs, fail labs (and we don’t want this for you).\n\n\nComputer Lab 1\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 15, 2026\nLabs 6 and 7: Wed, Sep 16, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 16, 2026 at 11:59 pm\n\nLab 01 instructions\nLab 01 slides\nLab 01 tester file\nLab 01 gradescope submission\n\n\n\nComputer Lab 2\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 22, 2026\nLabs 6 and 7: Wed, Sep 23, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 23, 2026 at 11:59 pm\n\nLab 02 instructions\nLab 02 slides\nLab 02 tester file\nLab 02 gradescope submission\n\n\n\nComputer Lab 3\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 29, 2026\nLabs 6 and 7: Wed, Sep 30, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 30, 2026 at 11:59 pm\n\nLab 03 instructions\nLab 03 slides\nLab 03 tester file\nLab 03 gradescope submission"
+    "text": "All labs are at Walter Library 106\n\nLaboratory (004) T 02:30 PM - 04:25 PM\n\nLaboratory (005) T 04:40 PM - 06:35 PM\n\nLaboratory (006) W 08:00 AM - 09:55 AM\n\nLaboratory (007) W 10:10 AM - 12:05 PM\n\nLabs are always due at 11:59pm on the Wednesday that Lab sections 6 and 7 happen. Note that my staff and I are not available after 7pm, so if you make the unwise decision to work on the lab close to the deadline you won’t be able to get any help from us. We cannot accept technical/computer issues as a legitimate reason for late or incomplete work. You need to make sure you are working on the assignments with enough time to figure our these issues.\n\nLab submissions will be primarily evaluated automatically to validate expected behavior.\nAttendance of the lab section itself is expected unless you have an excused absence. Historically, students who skip labs, fail labs (and we don’t want this for you).\n\n\nComputer Lab 1\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 15, 2026\nLabs 6 and 7: Wed, Sep 16, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 16, 2026 at 11:59 pm\n\nLab 01 instructions\nLab 01 slides\nLab 01 tester file\nLab 01 gradescope submission\n\n\n\nComputer Lab 2\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 22, 2026\nLabs 6 and 7: Wed, Sep 23, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 23, 2026 at 11:59 pm\n\nLab 02 instructions\nLab 02 slides\nLab 02 tester file\nLab 02 gradescope submission\n\n\n\nComputer Lab 3\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 29, 2026\nLabs 6 and 7: Wed, Sep 30, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 30, 2026 at 11:59 pm\n\nLab 03 instructions\nLab 03 slides\nLab 03 tester file\nLab 03 gradescope submission\n\n\n\nComputer Lab 4\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 29, 2026\nLabs 6 and 7: Wed, Oct 7, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Oct 7, 2026 at 11:59 pm\n\nLab 04 instructions\nLab 04 slides\nLab 04 tester file\nLab 04 gradescope submission"
   },
   {
     "objectID": "projects.html",
@@ -2819,5 +2819,110 @@
     "title": "Searching",
     "section": "Binary Search",
     "text": "Binary Search"
+  },
+  {
+    "objectID": "labs/lab04.html",
+    "href": "labs/lab04.html",
+    "title": "Computer Laboratory 04",
+    "section": "",
+    "text": "Deadline:"
+  },
+  {
+    "objectID": "labs/lab04.html#is_sortedpricebook",
+    "href": "labs/lab04.html#is_sortedpricebook",
+    "title": "Computer Laboratory 04",
+    "section": "is_sorted(pricebook)",
+    "text": "is_sorted(pricebook)\nSince we have different functions for manipulating sorted and unsorted pricebooks, it makes sense to want to check if a pricebook is current stored in sorted order.\nThis function takes a pricebook (I.E. a list of tuples as defined earlier) and returns either True or False to indicate if the list is sorted.\nNotes:\n\nIf given an empty list, return True\nWe want lists to be sorted based on product names not prices. – remember those are the second position in the tuple, not the first.\nWe want the list sorted smallest to biggest (I.E. alphabetic order). HINT – this is the “natural order” for python strings – so you can just use the &lt; and &gt; operators\nThis function should not modify the list passed to it.\nThis function is required to run in time \\(O(N)\\) – if you use a single loop you should be fine.\nThis function doesn’t need to be too complicated – I recommend looping in-order and seeing if each element is bigger than the one preceding it!\n\nThe real purpose of this function is to “warm up” for the later functions and make sure you’re familiar with the pricebook list-of-tuples format."
+  },
+  {
+    "objectID": "labs/lab04.html#price_averagepricebook",
+    "href": "labs/lab04.html#price_averagepricebook",
+    "title": "Computer Laboratory 04",
+    "section": "price_average(pricebook)",
+    "text": "price_average(pricebook)\nA common pricebook-task is to get the average price for a given product category or shopping cart. The price_average function should take a pricebook (list-of-tuples as above – this can be sorted or unsorted) and returns the average price of all products in the pricebook.\nNotes:\n\nif given an empty list, return 0.0\nThis function should not modify the list passed to it.\nThis function is required to run in time \\(O(N)\\) – if you use a single loop you should be fine.\nThis function doesn’t need to be too complicated – like the last one its real purpose is to help you familiarize yourself with the pricebook list-of-tuples format before tackling the harder problems."
+  },
+  {
+    "objectID": "labs/lab04.html#unsorted_getpricebook-name",
+    "href": "labs/lab04.html#unsorted_getpricebook-name",
+    "title": "Computer Laboratory 04",
+    "section": "unsorted_get(pricebook, name)",
+    "text": "unsorted_get(pricebook, name)\nThe unsorted get function replicates the behavior of the dict.get(key) method. It takes two parameters: an unsorted pricebook and a product’s name.\nThe function should use a linear search algorithm to check if the named product is in the pricebook.\nIf the product is in the pricebook, the function should return their price. Otherwise, the special value None should be returned. (Note that’s not a string, it’s just None)\nHow to return None:\nNotes:\n\nThis function should not modify the list passed to it.\nThis function must run in time \\(O(N)\\) – use the linear search algorithm and you should have no trouble making this runtime requirement."
+  },
+  {
+    "objectID": "labs/lab04.html#unsorted_putpricebook-name-price",
+    "href": "labs/lab04.html#unsorted_putpricebook-name-price",
+    "title": "Computer Laboratory 04",
+    "section": "unsorted_put(pricebook, name, price)",
+    "text": "unsorted_put(pricebook, name, price)\nThe unsorted put function replicates the behavior of the dictionary assignment statement: dict[key] = values. It takes three parameters: an unsorted pricebook, the products name, and the product’s price. This function should then update the pricebook to record that product’s new price (either updating an existing position in the list, or adding a new element to the list)\nNotes:\n\nIf the product is contained in one of the tuples in the pricebook, then only the price should be modified – remember tuples cannot be modified so you will need to replace the entire (price, name) tuple with an updated version.\nIf the product is not in currently in the pricebook you will need to add the price,product pair somewhere in the list. For grading purposes, we are requiring you add the (price, product) tuple to the end of the list in this case.\nThis function SHOULD modify the list given to it.\nThis function must run in time \\(O(N)\\) – use the linear search algorithm and you should have no trouble making this runtime requirement."
+  },
+  {
+    "objectID": "labs/lab04.html#sorted_getpricebook-name",
+    "href": "labs/lab04.html#sorted_getpricebook-name",
+    "title": "Computer Laboratory 04",
+    "section": "sorted_get(pricebook, name)",
+    "text": "sorted_get(pricebook, name)\nLike the unsorted get function, the sorted get function replicates the behavior of the dict.get(key) method.\nIt takes two parameters: a sorted pricebook and a product’s name.\nThe function should then use a binary search to check if the product is in the pricebook.\nIf the product is in the pricebook, the function should return their price. Otherwise, the special value None should be returned (as before – this isn’t a string, it’s a special value)\nHere’s how your function should return None:\n\nreturn None\n\nNotes:\n\nYou can assume that the pricebook provided is sorted by product name in alphabetic order.\nYou may find it useful to look at the examples in the test file to see how this is structured if you are unsure – coding for the wrong structure or sort order is a good way to lose time on this assignment.\nYou are free to reference the in-class or textbook binary search code – just know that you will need to modify it for the pricebook’s format.\nThis function should not modify the list passed to it.\nThis function must run in time \\(O(\\log N)\\) – use the binary search algorithm and you should have no trouble making this runtime requirement."
+  },
+  {
+    "objectID": "labs/lab04.html#sorted_putpricebook-name-price",
+    "href": "labs/lab04.html#sorted_putpricebook-name-price",
+    "title": "Computer Laboratory 04",
+    "section": "sorted_put(pricebook, name, price)",
+    "text": "sorted_put(pricebook, name, price)\nLike the unsorted put method, the sorted put method replicates the behavior of the dictionary assignment statement: dict[key] = values.\nIt takes three parameters: a sorted pricebook, the products name, and the product’s price. This function should then update the pricebook to record that product’s new price, while carefully maintaining the sorted order.\nThe sorted order here means sort by the key, as know as the product name, instead of value (price).\nNotes:\n\nIf the product is already in the pricebook, only the price for that product should update – remember that tuples cannot be modified so you will need to replace the entire (price,name) tuple with an updated version. You are free to use a binary search or linear search for this step (as noted later – we only require \\(O(N)\\) runtime for this function.)\nIf the product is not contained in the pricebook – you will need to add a new (price, name) tuple somewhere in this list. This is the hard part: you must add the tuple in such a way that the list stays sorted (so you can’t just throw the new tuple at the end). Some hints about this:\n\nYou will ultimately need to call the list.insert(index, value) method.\nThe list.insert(index, value) method takes \\(O(N)\\) time all on it’s own. This means that your function cannot run faster than \\(O(N)\\). As such, feel free to use a simple linear search to find where the new tuple belongs. You are not required to use a modified binary search for this.\nDon’t forget to handle the case where the new tuple belongs at the beginning of the list (product is first in alphabetic order) or the end of the list (product is last in alphabetic order) – these cases may require special cases in your code.\n\nThis function is required to run in time \\(O(N)\\)\n\nBecause we do not require \\(O(\\log N)\\) time – you don’t need to use binary-search logic anywhere in this function.\nNote – sorting in python is typically, \\(O(N \\log N)\\) – which is bigger than \\(O(N)\\). Using a full-list sorting algorithm or function will be treated as failing the runtime requirement for this function.\n\nThis function is probably the hardest part of the lab – this is on purpose as it gives you a chance to design an algorithm on your own, rather than using a pre-designed algorithm. Make sure you’re planning time for this function to take longer than the rest.\nThis function SHOULD modify the list given to it."
+  },
+  {
+    "objectID": "labs/lab04-slides.html",
+    "href": "labs/lab04-slides.html",
+    "title": "Lab 04",
+    "section": "",
+    "text": "The goal of this lab is to implement:\n\nlinear search in a unsorted data structure\nbinary search in a sorted data structure\n\n\nDownload pricebook_tester.py"
+  },
+  {
+    "objectID": "labs/lab04-slides.html#introduction",
+    "href": "labs/lab04-slides.html#introduction",
+    "title": "Lab 04",
+    "section": "Introduction",
+    "text": "Introduction\n\nThe goal of this lab is to implement:\n\nlinear search in a unsorted data structure\nbinary search in a sorted data structure\n\n\nDownload pricebook_tester.py"
+  },
+  {
+    "objectID": "labs/lab04-slides.html#big-o-requirements",
+    "href": "labs/lab04-slides.html#big-o-requirements",
+    "title": "Lab 04",
+    "section": "Big-O requirements",
+    "text": "Big-O requirements\nThe six required functions are:\n\nis_sorted(pricebook) \\(O(N)\\)\nprice_average(pricebook) \\(O(N)\\)\nunsorted_get(pricebook, name) \\(O(N)\\)\nunsorted_put(pricebook, name, price) \\(O(N)\\)\nsorted_get(pricebook, name) \\(O(\\log N)\\)\nsorted_put(pricebook, name, price) \\(O(N)\\)"
+  },
+  {
+    "objectID": "labs/lab04-slides.html#data-structure",
+    "href": "labs/lab04-slides.html#data-structure",
+    "title": "Lab 04",
+    "section": "Data Structure",
+    "text": "Data Structure\nLists of Tuples: pricebook representation\n\nprices = [(80.0, 'Lego'),\n          (690.0, 'Laptop'),\n          (300.0, 'Camera'),\n          (5.9, 'Knife'),\n          (194.4, 'Headphone')]\n\nFirst item (at index zero) is the price, second item (at index 1) is name"
+  },
+  {
+    "objectID": "labs/lab04-slides.html#avoid-nested-for-loops",
+    "href": "labs/lab04-slides.html#avoid-nested-for-loops",
+    "title": "Lab 04",
+    "section": "Avoid nested for loops",
+    "text": "Avoid nested for loops\nThere’s no need for nested for loops when you know the first position of each tuple (index zero) is price and the second position (index one) is product name.\nYou can index the tuple in a for loop to get each price or name:\n\nfor i in range(1, len(pricebook)):\n  # do something with pricebook[i][1] (each product name)\n  \nfor product in pricebook:\n  # do something with product[1] (each product name)"
+  },
+  {
+    "objectID": "labs/lab04-slides.html#how-to-check-if-a-list-in-unsorted",
+    "href": "labs/lab04-slides.html#how-to-check-if-a-list-in-unsorted",
+    "title": "Lab 04",
+    "section": "How to check if a list in unsorted?",
+    "text": "How to check if a list in unsorted?\n\nCompare each value with the next (or the previous) value\nIf any two adjacent values are out of order, list is not sorted"
+  },
+  {
+    "objectID": "labs/lab04-slides.html#how-to-replace-a-tuple",
+    "href": "labs/lab04-slides.html#how-to-replace-a-tuple",
+    "title": "Lab 04",
+    "section": "How to replace a tuple?",
+    "text": "How to replace a tuple?\n\nRemember that tuples are not mutable (cannot change them)\nIf your unsorted_put is asked to change a price of an existing product name, you need to remove the existing tuple from the list of products, and append a new tuple with the new price for that existing product name."
+  },
+  {
+    "objectID": "labs/lab04-slides.html#document-your-code",
+    "href": "labs/lab04-slides.html#document-your-code",
+    "title": "Lab 04",
+    "section": "Document your Code!",
+    "text": "Document your Code!\n\nAdd docstrings to every function\nAdd at least one in-line comment in each function"
   }
 ]
