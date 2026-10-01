@@ -2812,5 +2812,12 @@
     "title": "Searching",
     "section": "Quiz 03",
     "text": "Quiz 03\nYou have 10 minutes to complete the quiz\n\nNo need for comments or doc strings, no need to include the tests in your solution, no need for if __name__. Just write your function and what’s inside the function\n\nHINTS:\n\nremember there are ways to iterate over a list: through its index or through its elements, only one of these work to change the list"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#binary-search-11",
+    "href": "slides/slides-04-02.html#binary-search-11",
+    "title": "Searching",
+    "section": "Binary Search",
+    "text": "Binary Search"
   }
 ]
