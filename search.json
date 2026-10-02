@@ -2447,7 +2447,7 @@
     "href": "slides/slides-04-02.html#binary-search-vs.-linear-search-1",
     "title": "Searching",
     "section": "Binary Search vs. Linear Search",
-    "text": "Binary Search vs. Linear Search\nLinear Search time complexity is O(N), Binary Search is O(log N).\n\n\n\nO(N) vs. O(log N)"
+    "text": "Binary Search vs. Linear Search\nLinear Search time complexity is O(N), Binary Search is O(log N).\n\nO(N) vs. O(log N)"
   },
   {
     "objectID": "slides/slides-04-03.html#big-o",
@@ -3141,5 +3141,12 @@
     "title": "Sorting",
     "section": "Insertion Sort runtime",
     "text": "Insertion Sort runtime\nWhat’s Insertion Sort’s runtime?\n\\(O(N^2)\\)"
+  },
+  {
+    "objectID": "slides/slides-04-02.html#more-runtime-comparisons",
+    "href": "slides/slides-04-02.html#more-runtime-comparisons",
+    "title": "Searching",
+    "section": "More runtime comparisons",
+    "text": "More runtime comparisons"
   }
 ]
