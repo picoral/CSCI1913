@@ -228,7 +228,7 @@
     "href": "index.html",
     "title": "CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development",
     "section": "",
-    "text": "For this module we will focus first-and-foremost on getting the class started. We’ll be seeing the basic class design, learning what are the parts of the class, and how they will help us learn.\nBy the end of the week you should be able to:\n\nDecide whether CSCI1913 is a course for you (if you fit the audience)\nPrepare for what we will do to learn, and why.\n\n\n\n\nSyllabus\nAcademic Integrity\nCourse Rules\nTechnology\nTA Office Hours\n\n\n\n\n\nCourse Intro\nHow to succeed in this course\n\n\n\n\n\nWe will continue working with Python. In this module we will finish discussing basic python features with a few final details of pyhton’s many scopes, in particular how you can import functions from other files – and some unique details about how this works in python.\nThen we will begin exploring Python’s advanced data representation tools: data structures. Data structures create a flexible way to represent many common forms of data in an ad-hoc way without creating specific classes, or writing tricky data-management code.\nWe will then focus on the List, which is python’s answer to the array. Towards the end of the module we will introduce the set and dictionary as well.\nBy the end of this module you will be able to:\n\nRead, write, run, test, and debug simple python programs\nIdentify a list, tuple, and dictionary as represented in python code\nCreate, and loop over python lists\n\n\n\n\nProgramming Languages Overview\nIntro to Python\nMore Python\nPython Loops\nPython Lists\n\n\n\n\n\nBy the end of this module you will be able to:\n\nExplain the concept of mutability and distinguish between mutable and immutable data types in Python, providing examples of each and describing the implications for variable assignment and function parameters.\nCreate and manipulate Python lists using various methods including indexing, slicing, appending, inserting, removing, and sorting elements, while understanding the performance characteristics of these operations.\nAnalyze the behavior of list aliasing and copying, explaining the difference between shallow and deep copies and predicting how changes to one list reference will affect others.\nCreate and manipulate dictionaries to store and retrieve key-value pairs, using appropriate methods for adding, updating, removing, and accessing elements.\nIterate over dictionaries using various approaches (keys, values, items) and understand the implications of dictionary ordering in modern Python versions.\nApply dictionaries to solve practical problems such as counting occurrences, grouping data, creating lookup tables, and representing structured information.\nUse sets for membership testing and duplicate elimination, understanding when sets are preferable to lists for specific operations and leveraging their O(1) average-case lookup performance.\nPerform set operations including union, intersection, difference, and symmetric difference to solve problems involving collections and relationships between groups.\nSelect appropriate data structures (lists, dictionaries, or sets) based on the requirements of a given problem, justifying choices based on performance, functionality, and code clarity.\n\n\n\n\nMutability\nSequence Nesting\nDictionaries\nSets\n\n\n\n\n\nBy the end of this module you will be able to:\n\nAnalyze the time complexity of simple algorithms by identifying the relationship between input size and running time.\nExpress algorithm efficiency using Big-O notation and correctly classify common complexity classes including O(1), O(log n), O(n), O(n log n), O(n²), and O(2ⁿ).\nCompare algorithms based on their asymptotic behavior and determine which algorithm is more efficient for large inputs by analyzing their Big-O classifications.\nDistinguish between best-case, average-case, and worst-case time complexity and explain when each measure is most relevant.\nImplement linear search and binary search correctly in code and trace their execution on sample datasets.\nAnalyze the time complexity of linear search as O(n) and binary search as O(log n) and explain why binary search is asymptotically faster.\nExplain why binary search requires sorted data as a precondition and demonstrate how the algorithm eliminates half of the remaining search space with each comparison.\n\n\n\n\nAlgorithm Analysis\nSearching\nBig-O Practice\n\n\n\n\n\nBy the end of this module you will be able to:\n\nImplement selection sort, insertion sort, and bubble sort correctly in code and trace their execution on small datasets.\nAnalyze and compare the time complexity of selection sort, insertion sort, and bubble sort in their best, average, and worst cases.\nExplain the underlying mechanism of each sorting algorithm including how elements are compared, swapped, and positioned during execution.\n\n\n\n\nBy the end of this module you will be able to:\n\nDefine and explain recursion as a problem-solving technique where a function calls itself with modified parameters to solve progressively smaller subproblems.\nIdentify the essential components of a recursive function, including the base case(s) that stop recursion and the recursive case(s) that break down the problem.\nConvert simple iterative solutions to recursive solutions and vice versa, recognizing when each approach is more appropriate.\nApply recursion to solve problems involving naturally recursive data structures or definitions, such as computing powers, reversing strings, or processing nested lists.\nDebug recursive functions by identifying common errors such as missing base cases, incorrect recursive calls, or infinite recursion."
+    "text": "For this module we will focus first-and-foremost on getting the class started. We’ll be seeing the basic class design, learning what are the parts of the class, and how they will help us learn.\nBy the end of the week you should be able to:\n\nDecide whether CSCI1913 is a course for you (if you fit the audience)\nPrepare for what we will do to learn, and why.\n\n\n\n\nSyllabus\nAcademic Integrity\nCourse Rules\nTechnology\nTA Office Hours\n\n\n\n\n\nCourse Intro\nHow to succeed in this course\n\n\n\n\n\nWe will continue working with Python. In this module we will finish discussing basic python features with a few final details of pyhton’s many scopes, in particular how you can import functions from other files – and some unique details about how this works in python.\nThen we will begin exploring Python’s advanced data representation tools: data structures. Data structures create a flexible way to represent many common forms of data in an ad-hoc way without creating specific classes, or writing tricky data-management code.\nWe will then focus on the List, which is python’s answer to the array. Towards the end of the module we will introduce the set and dictionary as well.\nBy the end of this module you will be able to:\n\nRead, write, run, test, and debug simple python programs\nIdentify a list, tuple, and dictionary as represented in python code\nCreate, and loop over python lists\n\n\n\n\nProgramming Languages Overview\nIntro to Python\nMore Python\nPython Loops\nPython Lists\n\n\n\n\n\nBy the end of this module you will be able to:\n\nExplain the concept of mutability and distinguish between mutable and immutable data types in Python, providing examples of each and describing the implications for variable assignment and function parameters.\nCreate and manipulate Python lists using various methods including indexing, slicing, appending, inserting, removing, and sorting elements, while understanding the performance characteristics of these operations.\nAnalyze the behavior of list aliasing and copying, explaining the difference between shallow and deep copies and predicting how changes to one list reference will affect others.\nCreate and manipulate dictionaries to store and retrieve key-value pairs, using appropriate methods for adding, updating, removing, and accessing elements.\nIterate over dictionaries using various approaches (keys, values, items) and understand the implications of dictionary ordering in modern Python versions.\nApply dictionaries to solve practical problems such as counting occurrences, grouping data, creating lookup tables, and representing structured information.\nUse sets for membership testing and duplicate elimination, understanding when sets are preferable to lists for specific operations and leveraging their O(1) average-case lookup performance.\nPerform set operations including union, intersection, difference, and symmetric difference to solve problems involving collections and relationships between groups.\nSelect appropriate data structures (lists, dictionaries, or sets) based on the requirements of a given problem, justifying choices based on performance, functionality, and code clarity.\n\n\n\n\nMutability\nSequence Nesting\nDictionaries\nSets\n\n\n\n\n\nBy the end of this module you will be able to:\n\nAnalyze the time complexity of simple algorithms by identifying the relationship between input size and running time.\nExpress algorithm efficiency using Big-O notation and correctly classify common complexity classes including O(1), O(log n), O(n), O(n log n), O(n²), and O(2ⁿ).\nCompare algorithms based on their asymptotic behavior and determine which algorithm is more efficient for large inputs by analyzing their Big-O classifications.\nDistinguish between best-case, average-case, and worst-case time complexity and explain when each measure is most relevant.\nImplement linear search and binary search correctly in code and trace their execution on sample datasets.\nAnalyze the time complexity of linear search as O(n) and binary search as O(log n) and explain why binary search is asymptotically faster.\nExplain why binary search requires sorted data as a precondition and demonstrate how the algorithm eliminates half of the remaining search space with each comparison.\n\n\n\n\nAlgorithm Analysis\nSearching\nBig-O Practice\n\n\n\n\n\nBy the end of this module you will be able to:\n\nImplement selection sort, insertion sort, and bubble sort correctly in code and trace their execution on small datasets.\nAnalyze and compare the time complexity of selection sort, insertion sort, and bubble sort in their best, average, and worst cases.\nExplain the underlying mechanism of each sorting algorithm including how elements are compared, swapped, and positioned during execution.\n\n\n\n\nSorting\n\n\n\n\n\nBy the end of this module you will be able to:\n\nDefine and explain recursion as a problem-solving technique where a function calls itself with modified parameters to solve progressively smaller subproblems.\nIdentify the essential components of a recursive function, including the base case(s) that stop recursion and the recursive case(s) that break down the problem.\nConvert simple iterative solutions to recursive solutions and vice versa, recognizing when each approach is more appropriate.\nApply recursion to solve problems involving naturally recursive data structures or definitions, such as computing powers, reversing strings, or processing nested lists.\nDebug recursive functions by identifying common errors such as missing base cases, incorrect recursive calls, or infinite recursion."
   },
   {
     "objectID": "index.html#module-01---course-overview",
@@ -263,7 +263,7 @@
     "href": "index.html#module-05-sorting",
     "title": "CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development",
     "section": "",
-    "text": "By the end of this module you will be able to:\n\nImplement selection sort, insertion sort, and bubble sort correctly in code and trace their execution on small datasets.\nAnalyze and compare the time complexity of selection sort, insertion sort, and bubble sort in their best, average, and worst cases.\nExplain the underlying mechanism of each sorting algorithm including how elements are compared, swapped, and positioned during execution."
+    "text": "By the end of this module you will be able to:\n\nImplement selection sort, insertion sort, and bubble sort correctly in code and trace their execution on small datasets.\nAnalyze and compare the time complexity of selection sort, insertion sort, and bubble sort in their best, average, and worst cases.\nExplain the underlying mechanism of each sorting algorithm including how elements are compared, swapped, and positioned during execution.\n\n\n\n\nSorting"
   },
   {
     "objectID": "index.html#module-06-recursion",
@@ -2924,5 +2924,222 @@
     "title": "Lab 04",
     "section": "Document your Code!",
     "text": "Document your Code!\n\nAdd docstrings to every function\nAdd at least one in-line comment in each function"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#the-sorting-problem",
+    "href": "slides/slides-05-01.html#the-sorting-problem",
+    "title": "Sorting",
+    "section": "The sorting Problem",
+    "text": "The sorting Problem\nGiven a list or array of elements (usually of uniform type)\nReturn:\n\nNothing (input list is modified) – in-place sorting\nA new list in sorted order\n\nPost-Condition: after the function, the list is sorted:\n\n(ascending) each element is ≥ the one before it\n(descending) each element is ≤ the one before it"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#thinking-about-this-problem",
+    "href": "slides/slides-05-01.html#thinking-about-this-problem",
+    "title": "Sorting",
+    "section": "Thinking about this problem",
+    "text": "Thinking about this problem\nImagine you have the following unsorted list:\n[ 30 | 10 | 3 | 45 | 50 | 100 | 0 ]\nHow would you go about sorting it?"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#sorting",
+    "href": "slides/slides-05-01.html#sorting",
+    "title": "Sorting",
+    "section": "Sorting",
+    "text": "Sorting\nIt is one of the fundamental problems in computer science, with many solutions\n\nthere are many sorting algorithms\nsome are faster/slower than others\nsome use more/less memory than others\nsome work better with specific kinds of data\nsome can utilize multiple computers / processors"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#many-solutions",
+    "href": "slides/slides-05-01.html#many-solutions",
+    "title": "Sorting",
+    "section": "Many Solutions",
+    "text": "Many Solutions\n\nbogo sort\nbubble sort\nselection sort\ninsertion sort\nshell sort"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#many-solutions-1",
+    "href": "slides/slides-05-01.html#many-solutions-1",
+    "title": "Sorting",
+    "section": "Many Solutions",
+    "text": "Many Solutions\n\nmerge sort\nheap sort\nquick sort\nbucket sort\nradix sort\ntimsort"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#types-of-sorting-algorithms",
+    "href": "slides/slides-05-01.html#types-of-sorting-algorithms",
+    "title": "Sorting",
+    "section": "Types of Sorting Algorithms",
+    "text": "Types of Sorting Algorithms\nComparison Sort\n\n&lt; and &gt; provide “order knowledge”\nMost general and studied type of sort\n\\(O(N \\log N)\\) (probable limit on worst-case speed)\n\nNon-comparison sort\n\nOther forms of “order knowledge”\nUsually data-type specific\nCan be up to \\(O(N)\\) worst case (under the right conditions)"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#bogo-sort-1",
+    "href": "slides/slides-05-01.html#bogo-sort-1",
+    "title": "Sorting",
+    "section": "Bogo Sort",
+    "text": "Bogo Sort\nBogo sort: Orders a list of values by repetitively shuﬀeling them and checking if they are sorted.\nName comes from “bogus”\n\nimport random\n\ndef is_sorted(lst):\n    for i in range(len(lst)-1):\n        if lst[i] &gt; lst[i+1]:\n            return False\n    return True\n\ndef bogo_sort(lst):\n    while not is_sorted(lst):\n        random.shuffle(lst)\n    return lst\n\nWhat is the runtime?"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#bogo-sort-runtime",
+    "href": "slides/slides-05-01.html#bogo-sort-runtime",
+    "title": "Sorting",
+    "section": "Bogo sort runtime",
+    "text": "Bogo sort runtime\n\nBest: \\(O(N)\\)\nAverage: \\(Θ(N*N!)\\)\nWorst: Unbounded, runs forever"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#sorting-high-level-overview",
+    "href": "slides/slides-05-01.html#sorting-high-level-overview",
+    "title": "Sorting",
+    "section": "Sorting high-level overview",
+    "text": "Sorting high-level overview\n\\(O(N^2)\\) algorithms:\n\nbubble sort\ninsertion sort\nselection sort\n\n\\(O(N^{1.5})\\) algorithm: Shell Sort"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#sorting-high-level-overview-1",
+    "href": "slides/slides-05-01.html#sorting-high-level-overview-1",
+    "title": "Sorting",
+    "section": "Sorting high-level overview",
+    "text": "Sorting high-level overview\n\\(O(N \\log N)\\) algorithms:\n\nquick sort\nheap sort\nmerge sort\ntimsort\n\n\\(O(N)\\) algorithm: radix sort\n\nradix sort is not a comparison sort"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#quiz-04",
+    "href": "slides/slides-05-01.html#quiz-04",
+    "title": "Sorting",
+    "section": "Quiz 04",
+    "text": "Quiz 04\nYou have 10 minutes to complete the quiz\nCheck ONE option (zero will be awarded to quizzes with multiple answers checked)\n\nTypo: it should be for k in range(j):"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#selection-sort-1",
+    "href": "slides/slides-05-01.html#selection-sort-1",
+    "title": "Sorting",
+    "section": "Selection sort",
+    "text": "Selection sort\nApproach: “select” item for each location and swap:\n\nfind smallest item, place in 1st position\nfind second smallest, place in 2nd position\nfind smallest from unsorted part, place where it belongs\n\nAnimation of what Selection Sort looks like"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#selection-sort-2",
+    "href": "slides/slides-05-01.html#selection-sort-2",
+    "title": "Sorting",
+    "section": "Selection sort",
+    "text": "Selection sort\nMid search snapshot:\n\nList has two “zones”\nSorted Zone\n\nis sorted\ncontains the smaller part of the original list\n\nUnsorted Zone\n\nis not sorted\ncontains the larger part of the original list"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#implement-selection-sort-strategies",
+    "href": "slides/slides-05-01.html#implement-selection-sort-strategies",
+    "title": "Sorting",
+    "section": "Implement Selection Sort – strategies",
+    "text": "Implement Selection Sort – strategies\nNested loops:\n\nOuter loop repeats n-1 times, n being size of list\nInitialize a small variable in between the outer and the inner loop to hold the smallest value index\nInner loop finds the index of the smallest value (compare each value at index small with the current index at inner iteration, updating small whenever a smaller value is found)\n\nSwapping in place:\nlst[i], lst[small] = lst[small], lst[i]"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#selection-sort-implementation",
+    "href": "slides/slides-05-01.html#selection-sort-implementation",
+    "title": "Sorting",
+    "section": "Selection Sort – implementation",
+    "text": "Selection Sort – implementation\n\ndef selection_sort(lst):\n    for i in range(len(lst) - 1):\n        # Find index of smallest\n        small = i\n        for j in range(i + 1, len(lst)):\n            if lst[j] &lt; lst[small]:\n                small = j\n        # Swap smallest into place\n        lst[i],lst[small] = lst[small],lst[i]\n    \nif __name__ == \"__main__\":\n    fruit = [\"blackberry\", \"apple\", \"papaya\",  \"cantaloupe\", \"apricot\",  \"banana\"]\n    selection_sort(fruit)\n    print(fruit)\n\n['apple', 'apricot', 'banana', 'blackberry', 'cantaloupe', 'papaya']"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#selection-sort-runtime",
+    "href": "slides/slides-05-01.html#selection-sort-runtime",
+    "title": "Sorting",
+    "section": "Selection Sort runtime",
+    "text": "Selection Sort runtime\nWhat’s Selection Sort’s runtime?"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#selection-sort-runtime-1",
+    "href": "slides/slides-05-01.html#selection-sort-runtime-1",
+    "title": "Sorting",
+    "section": "Selection Sort runtime",
+    "text": "Selection Sort runtime\nWhat’s Selection Sort’s runtime?\n\\(O(N^2)\\)"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#bubble-sort-1",
+    "href": "slides/slides-05-01.html#bubble-sort-1",
+    "title": "Sorting",
+    "section": "Bubble sort",
+    "text": "Bubble sort\nApproach: While the list is not sorted, iterate through the list swaping adjacent pairs.\nAnimation of what Bubble Sort looks like\nCalled “bubble” sort because large numbers bubble to the “top” (end of the list)"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#bubble-sort-2",
+    "href": "slides/slides-05-01.html#bubble-sort-2",
+    "title": "Sorting",
+    "section": "Bubble sort",
+    "text": "Bubble sort\nMid search snapshot:\n\nList has two “zones”\nSorted Zone\n\nis sorted\ncontains the largest numbers of the original list sorted\n\nUnsorted Zone\n\nis not sorted\ncontains the smalles part of the original list"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#implement-bubble-sort-strategies",
+    "href": "slides/slides-05-01.html#implement-bubble-sort-strategies",
+    "title": "Sorting",
+    "section": "Implement Bubble Sort – strategies",
+    "text": "Implement Bubble Sort – strategies\nNested loops:\n\nOuter loop can either repeat n times, n being size of list, or until list is sorted\nInner loop repeats n-1 times, checking current value against next value, swapping if current value is larger than next value.\n\nSwapping in place:\nlst[j], lst[j+1] = lst[j+1], lst[j]\nHow do we know a list is sorted? If there were not swaps, the list is sorted."
+  },
+  {
+    "objectID": "slides/slides-05-01.html#bubble-sort-implementation-1",
+    "href": "slides/slides-05-01.html#bubble-sort-implementation-1",
+    "title": "Sorting",
+    "section": "Bubble Sort – implementation 1",
+    "text": "Bubble Sort – implementation 1\n\ndef bubble_sort(lst):\n    for i in range(len(lst)):\n        for j in range(len(lst)-1):\n            if lst[j]&gt; lst[j+1]:\n                lst[j], lst[j+1] = lst[j+1], lst[j]"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#bubble-sort-implementation-2",
+    "href": "slides/slides-05-01.html#bubble-sort-implementation-2",
+    "title": "Sorting",
+    "section": "Bubble Sort – implementation 2",
+    "text": "Bubble Sort – implementation 2\n\ndef bubble_sort(lst):\n    list_sorted = False\n    while not list_sorted:\n        list_sorted = True\n        for j in range(len(lst)-1):\n            if lst[j] &gt; lst[j+1]:\n                lst[j], lst[j+1] = lst[j+1], lst[j]\n                list_sorted = False"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#bubble-sort-runtime",
+    "href": "slides/slides-05-01.html#bubble-sort-runtime",
+    "title": "Sorting",
+    "section": "Bubble Sort runtime",
+    "text": "Bubble Sort runtime\nWhat’s Bubble Sort’s runtime?"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#bubble-sort-runtime-1",
+    "href": "slides/slides-05-01.html#bubble-sort-runtime-1",
+    "title": "Sorting",
+    "section": "Bubble Sort runtime",
+    "text": "Bubble Sort runtime\nWhat’s Bubble Sort’s runtime?\n\\(O(N^2)\\)"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#insertion-sort-1",
+    "href": "slides/slides-05-01.html#insertion-sort-1",
+    "title": "Sorting",
+    "section": "Insertion Sort",
+    "text": "Insertion Sort\nApproach: Keep two zones, a sorted and unsorted zone. “Insert” next element into sorted zone\n\nkeep left-side sorted\neach loop:\n\nshift next element left until sorted"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#insertion-sort-2",
+    "href": "slides/slides-05-01.html#insertion-sort-2",
+    "title": "Sorting",
+    "section": "Insertion Sort",
+    "text": "Insertion Sort\nMid Search snapshot:\n\nList has two “zones”:\n\nSorted Zone\n\ncontains original elements\nre-ordered to be sorted\n\n\nUnsorted Zone\n\ncontains original elements\nhas not been touched yet"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#insertion-sort-strategies",
+    "href": "slides/slides-05-01.html#insertion-sort-strategies",
+    "title": "Sorting",
+    "section": "Insertion Sort – strategies",
+    "text": "Insertion Sort – strategies\nNested loops:\n\nOuter loop repeats n-1 times, n being size of list (start at 1 because we are looking one index back)\nInner loop starts at current index for outer loop and goes back, checking each current element with previous until the beginning of the list or until a smaller value is found.\n\nSwapping in place:\nlst[j], lst[j-1] = lst[j-1], lst[j]"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#insertion-sort-implementation-1",
+    "href": "slides/slides-05-01.html#insertion-sort-implementation-1",
+    "title": "Sorting",
+    "section": "Insertion Sort – implementation 1",
+    "text": "Insertion Sort – implementation 1\n\ndef insertion_sort(lst):\n  for i in range(1, len(lst)):\n    j = i\n    while j &gt; 0 and lst[j] &lt; lst[j-1]:\n        lst[j], lst[j-1] = lst[j-1], lst[j]\n        j = j - 1"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#insertion-sort-implementation-2",
+    "href": "slides/slides-05-01.html#insertion-sort-implementation-2",
+    "title": "Sorting",
+    "section": "Insertion Sort – implementation 2",
+    "text": "Insertion Sort – implementation 2\n\ndef insertion_sort(lst):\n    for i in range(1, len(lst)):\n        for j in range(i, 0, -1):\n            if lst[j] &lt; lst[j-1]:\n                lst[j], lst[j-1] = lst[j-1], lst[j]"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#insertion-sort-runtime",
+    "href": "slides/slides-05-01.html#insertion-sort-runtime",
+    "title": "Sorting",
+    "section": "Insertion Sort runtime",
+    "text": "Insertion Sort runtime\nWhat’s Insertion Sort’s runtime?"
+  },
+  {
+    "objectID": "slides/slides-05-01.html#insertion-sort-runtime-1",
+    "href": "slides/slides-05-01.html#insertion-sort-runtime-1",
+    "title": "Sorting",
+    "section": "Insertion Sort runtime",
+    "text": "Insertion Sort runtime\nWhat’s Insertion Sort’s runtime?\n\\(O(N^2)\\)"
   }
 ]
