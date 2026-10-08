@@ -260,7 +260,7 @@
 <section id="function-stacks-1" class="slide level2">
 <h2>Function Stacks</h2>
 <p>What will this print?</p>
-<div id="2b0148be" class="cell" data-execution_count="1">
+<div id="47a260a2" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="kw">def</span> fun_a():</span>
 <span id="cb1-2"><a></a>  <span class="bu">print</span>(<span class="st">"A"</span>)</span>
 <span id="cb1-3"><a></a>  fun_b()</span>
@@ -325,7 +325,7 @@ C</code></pre>
 <section id="remember-factorial" class="slide level2">
 <h2>Remember factorial?</h2>
 <p>What’s the runtime?</p>
-<div id="78a56eca" class="cell" data-execution_count="4">
+<div id="d08e8aa6" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb3-2"><a></a>  product <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb3-3"><a></a>  <span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
@@ -342,7 +342,7 @@ C</code></pre>
 <section id="remember-factorial-1" class="slide level2">
 <h2>Remember factorial?</h2>
 <p>What’s the runtime? <span class="math inline">\(O(n)\)</span></p>
-<div id="95314dda" class="cell" data-execution_count="5">
+<div id="41e36710" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb4-2"><a></a>  product <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb4-3"><a></a>  <span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
@@ -361,7 +361,7 @@ C</code></pre>
 <blockquote>
 <p>“a recursive function calls itself”</p>
 </blockquote>
-<div id="8b28b5dc" class="cell" data-execution_count="6">
+<div id="a20f4707" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb5-2"><a></a>  factorial(n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -383,7 +383,7 @@ C</code></pre>
 <blockquote>
 <p>“a recursive function needs a base case”</p>
 </blockquote>
-<div id="2e700698" class="cell" data-execution_count="7">
+<div id="7ee02b93" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb6-2"><a></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span>:</span>
 <span id="cb6-3"><a></a>    <span class="cf">return</span> <span class="dv">1</span></span>
@@ -416,7 +416,7 @@ C</code></pre>
 <p>“recursive case(s) must always mode towards a base case”</p>
 </blockquote>
 <p>We need to get to <code>1</code></p>
-<div id="04715d30" class="cell" data-execution_count="8">
+<div id="1b00b7ae" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb7-2"><a></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span>:</span>
 <span id="cb7-3"><a></a>    <span class="cf">return</span> <span class="dv">1</span></span>
@@ -435,7 +435,7 @@ C</code></pre>
 </section>
 <section id="recursive-factorial-6" class="slide level2">
 <h2>Recursive factorial</h2>
-<div id="0a493b6c" class="cell" data-execution_count="9">
+<div id="2c394fdf" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb8-2"><a></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span> <span class="kw">or</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb8-3"><a></a>    <span class="cf">return</span> <span class="dv">1</span></span>
@@ -453,7 +453,7 @@ C</code></pre>
 <li>single recursive call <span class="math inline">\(T(N-1)\)</span></li>
 <li>one multiplication of the result <span class="math inline">\(O(1)\)</span></li>
 </ol>
-<div id="4a23de6c" class="cell" data-execution_count="10">
+<div id="838daa8c" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb9-2"><a></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span> <span class="kw">or</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb9-3"><a></a>    <span class="cf">return</span> <span class="dv">1</span></span>
@@ -467,7 +467,7 @@ C</code></pre>
 <li>single recursive call <span class="math inline">\(T(n-1)\)</span></li>
 <li>one multiplication of the result <span class="math inline">\(O(1)\)</span></li>
 </ol>
-<div id="a0676b68" class="cell" data-execution_count="11">
+<div id="97f65eb6" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb10-2"><a></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span> <span class="kw">or</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb10-3"><a></a>    <span class="cf">return</span> <span class="dv">1</span></span>
@@ -478,7 +478,7 @@ C</code></pre>
 <section id="recurrence-relations-2" class="slide level2">
 <h2>Recurrence relations</h2>
 <p><span class="math inline">\(T(N) = T(N-1) + 1\)</span></p>
-<div id="38911ec1" class="cell" data-execution_count="12">
+<div id="05221d49" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb11-2"><a></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span> <span class="kw">or</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb11-3"><a></a>    <span class="cf">return</span> <span class="dv">1</span></span>
@@ -523,7 +523,7 @@ C</code></pre>
 <section id="exercise-binary-search" class="slide level2">
 <h2>Exercise – Binary Search</h2>
 <p>Here’s our original Binary Search implementation:</p>
-<div id="606fb6f0" class="cell" data-execution_count="13">
+<div id="e1505e7a" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="kw">def</span> binary_search(arr, v):</span>
 <span id="cb12-2"><a></a>  low <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb12-3"><a></a>  high <span class="op">=</span> <span class="bu">len</span>(arr)<span class="op">-</span><span class="dv">1</span></span>
@@ -568,7 +568,7 @@ C</code></pre>
 </section>
 <section id="exercise-binary-search-3" class="slide level2">
 <h2>Exercise – Binary Search</h2>
-<div id="f624c34f" class="cell" data-execution_count="14">
+<div id="f042746c" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="kw">def</span> recursive_binary_search(lst, target, low, high):</span>
 <span id="cb13-2"><a></a>  mid <span class="op">=</span> (low<span class="op">+</span>high)<span class="op">//</span><span class="dv">2</span></span>
 <span id="cb13-3"><a></a>  </span>
@@ -600,7 +600,7 @@ C</code></pre>
 <section id="recurrence-relation-binary-search" class="slide level2">
 <h2>Recurrence relation – Binary Search</h2>
 <p>What’s the runtime for recursive binary search?</p>
-<div id="863c4672" class="cell" data-execution_count="15">
+<div id="c8ffde56" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a><span class="kw">def</span> recursive_binary_search(lst, target, low, high):</span>
 <span id="cb15-2"><a></a>  mid <span class="op">=</span> (low<span class="op">+</span>high)<span class="op">//</span><span class="dv">2</span></span>
 <span id="cb15-3"><a></a>  </span>
@@ -682,7 +682,7 @@ C</code></pre>
 <section id="exercise-power-function" class="slide level2">
 <h2>Exercise – Power function</h2>
 <p>Power Function: Computing <span class="math inline">\(x^n\)</span> can be defined as <span class="math inline">\(x^n = x × x^{(n-1)}\)</span>, with base case <span class="math inline">\(x^0 = 1\)</span>. You can assume the exponent is zero or greater.</p>
-<div id="d2995b28" class="cell" data-execution_count="16">
+<div id="cfaab0ac" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
 <span id="cb16-2"><a></a>  <span class="cf">assert</span> power(<span class="dv">2</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="dv">4</span></span>
 <span id="cb16-3"><a></a>  <span class="cf">assert</span> power(<span class="dv">3</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="dv">9</span></span>
@@ -692,7 +692,7 @@ C</code></pre>
 </section>
 <section id="solution-power-function" class="slide level2">
 <h2>Solution – Power function</h2>
-<div id="7d56cdcb" class="cell" data-execution_count="17">
+<div id="fdc6e2d5" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a><span class="kw">def</span> power(base, exp):</span>
 <span id="cb17-2"><a></a>  <span class="cf">if</span> exp <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb17-3"><a></a>    <span class="cf">return</span> <span class="dv">1</span></span>
@@ -708,7 +708,7 @@ C</code></pre>
 <section id="runtime-power-function" class="slide level2">
 <h2>Runtime – Power function</h2>
 <p>What’s the runtime?</p>
-<div id="b557adaa" class="cell" data-execution_count="18">
+<div id="7eb4eaae" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a><span class="kw">def</span> power(base, exp):</span>
 <span id="cb18-2"><a></a>  <span class="cf">if</span> exp <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb18-3"><a></a>    <span class="cf">return</span> <span class="dv">1</span></span>
@@ -719,7 +719,7 @@ C</code></pre>
 <section id="runtime-power-function-1" class="slide level2">
 <h2>Runtime – Power function</h2>
 <p>What’s the runtime? <span class="math inline">\(T(N) = T(N-1) + 1\)</span></p>
-<div id="92ed1b3f" class="cell" data-execution_count="19">
+<div id="a882bc52" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a><span class="kw">def</span> power(base, exp):</span>
 <span id="cb19-2"><a></a>  <span class="cf">if</span> exp <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb19-3"><a></a>    <span class="cf">return</span> <span class="dv">1</span></span>
@@ -731,7 +731,7 @@ C</code></pre>
 <section id="exercise-two-to-x" class="slide level2">
 <h2>Exercise – Two to X</h2>
 <p>Two to X: Computing <span class="math inline">\(2^x\)</span> can be defined as <span class="math inline">\(2^x = 2^1 * 2^{x-1}\)</span> or <span class="math inline">\(2^x = 2^{x-1} + 2^{x-1}\)</span>, with base case <span class="math inline">\(2^0 = 1\)</span>. You can assume the exponent <code>x</code> is zero or greater.</p>
-<div id="3f15a74b" class="cell" data-execution_count="20">
+<div id="2be60301" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
 <span id="cb20-2"><a></a>    <span class="cf">assert</span> two_to(<span class="dv">0</span>) <span class="op">==</span> <span class="dv">1</span></span>
 <span id="cb20-3"><a></a>    <span class="cf">assert</span> two_to(<span class="dv">1</span>) <span class="op">==</span> <span class="dv">2</span></span>
@@ -743,7 +743,7 @@ C</code></pre>
 </section>
 <section id="two-to-x-solution-1" class="slide level2">
 <h2>Two to X – solution 1</h2>
-<div id="39ecd2a6" class="cell" data-execution_count="21">
+<div id="daf294a9" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a><span class="kw">def</span> two_to(exp):</span>
 <span id="cb21-2"><a></a>    <span class="cf">if</span> exp <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb21-3"><a></a>        <span class="cf">return</span> <span class="dv">1</span></span>
@@ -753,7 +753,7 @@ C</code></pre>
 </section>
 <section id="two-to-x-solution-2" class="slide level2">
 <h2>Two to X – solution 2</h2>
-<div id="aa1340a6" class="cell" data-execution_count="22">
+<div id="e368a450" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a><span class="kw">def</span> two_to(exp):</span>
 <span id="cb22-2"><a></a>    <span class="cf">if</span> exp <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb22-3"><a></a>        <span class="cf">return</span> <span class="dv">1</span></span>
@@ -813,7 +813,7 @@ two_to(0)  ...</code></pre>
 <p><span class="math inline">\(F(n) = F(n-1) + F(n-2)\)</span>, with base cases <span class="math inline">\(F(0) = 0\)</span> and <span class="math inline">\(F(1) = 1\)</span>.</p>
 <p>This generates the sequence 0, 1, 1, 2, 3, 5, 8, 13, 21, 32, …</p>
 <p>Test cases:</p>
-<div id="fd1c46e1" class="cell" data-execution_count="23">
+<div id="a0ea4a7b" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a><span class="cf">assert</span> fib(<span class="dv">0</span>) <span class="op">==</span> <span class="dv">0</span></span>
 <span id="cb24-2"><a></a><span class="cf">assert</span> fib(<span class="dv">1</span>) <span class="op">==</span> <span class="dv">1</span></span>
 <span id="cb24-3"><a></a><span class="cf">assert</span> fib(<span class="dv">2</span>) <span class="op">==</span> <span class="dv">1</span></span>
@@ -825,7 +825,7 @@ two_to(0)  ...</code></pre>
 </section>
 <section id="exercise-fibonacci-sequence-1" class="slide level2">
 <h2>Exercise – Fibonacci Sequence</h2>
-<div id="23dd47ee" class="cell" data-execution_count="24">
+<div id="75af155a" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a><span class="kw">def</span> fib(n):</span>
 <span id="cb25-2"><a></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb25-3"><a></a>    <span class="cf">return</span> <span class="dv">0</span></span>
@@ -854,6 +854,36 @@ two_to(0)  ...</code></pre>
 <li>T(n) = T(n-1) + T(n-2) + O(1) — two recursive calls plus constant work</li>
 </ul>
 <p><span class="math inline">\(O(2^n)\)</span></p>
+</section>
+<section id="tail-recursion-iterative-recursion" class="slide level2">
+<h2>Tail Recursion (Iterative Recursion)</h2>
+<p>The accumulator builds up the result as it recurses</p>
+</section>
+<section id="tail-recursion-sum_recura-b-total" class="slide level2">
+<h2>Tail Recursion sum_recur(a, b, total)</h2>
+<ul>
+<li>The addition happens before the recursive call (accumulated in total)</li>
+<li>The recursive call is the last operation (nothing happens after it returns)</li>
+<li>No pending operations need to be remembered</li>
+</ul>
+<p>Call stack example for sum_recur(a, b, total):</p>
+<pre><code>sum_recur(1, 3, 0) → sum_recur(2, 3, 1)
+sum_recur(2, 3, 1) → sum_recur(3, 3, 3)
+sum_recur(3, 3, 3) → sum_recur(4, 3, 6)
+sum_recur(4, 3, 6) → returns 6</code></pre>
+</section>
+<section id="tail-recursion-iterative-recursion-1" class="slide level2">
+<h2>Tail Recursion (Iterative Recursion)</h2>
+<ul>
+<li>The recursive call is in the “tail position” - it’s the very last thing the function does</li>
+<li>In languages with tail call optimization, the compiler can replace the recursion with a loop, making it as efficient as iteration</li>
+<li>It doesn’t build up the call stack since there’s nothing to remember after each call</li>
+</ul>
+</section>
+<section id="tail-recursion-iterative-recursion-2" class="slide level2">
+<h2>Tail Recursion (Iterative Recursion)</h2>
+<p>Python does not support native Tail Call Optimization (TCO).</p>
+<p>While you can write tail-recursive functions in Python, the interpreter (CPython) does not optimize the stack frames.</p>
 
 
 </section></section>
