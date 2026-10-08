@@ -228,7 +228,7 @@
     "href": "index.html",
     "title": "CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development",
     "section": "",
-    "text": "For this module we will focus first-and-foremost on getting the class started. We’ll be seeing the basic class design, learning what are the parts of the class, and how they will help us learn.\nBy the end of the week you should be able to:\n\nDecide whether CSCI1913 is a course for you (if you fit the audience)\nPrepare for what we will do to learn, and why.\n\n\n\n\nSyllabus\nAcademic Integrity\nCourse Rules\nTechnology\nTA Office Hours\n\n\n\n\n\nCourse Intro\nHow to succeed in this course\n\n\n\n\n\nWe will continue working with Python. In this module we will finish discussing basic python features with a few final details of pyhton’s many scopes, in particular how you can import functions from other files – and some unique details about how this works in python.\nThen we will begin exploring Python’s advanced data representation tools: data structures. Data structures create a flexible way to represent many common forms of data in an ad-hoc way without creating specific classes, or writing tricky data-management code.\nWe will then focus on the List, which is python’s answer to the array. Towards the end of the module we will introduce the set and dictionary as well.\nBy the end of this module you will be able to:\n\nRead, write, run, test, and debug simple python programs\nIdentify a list, tuple, and dictionary as represented in python code\nCreate, and loop over python lists\n\n\n\n\nProgramming Languages Overview\nIntro to Python\nMore Python\nPython Loops\nPython Lists\n\n\n\n\n\nBy the end of this module you will be able to:\n\nExplain the concept of mutability and distinguish between mutable and immutable data types in Python, providing examples of each and describing the implications for variable assignment and function parameters.\nCreate and manipulate Python lists using various methods including indexing, slicing, appending, inserting, removing, and sorting elements, while understanding the performance characteristics of these operations.\nAnalyze the behavior of list aliasing and copying, explaining the difference between shallow and deep copies and predicting how changes to one list reference will affect others.\nCreate and manipulate dictionaries to store and retrieve key-value pairs, using appropriate methods for adding, updating, removing, and accessing elements.\nIterate over dictionaries using various approaches (keys, values, items) and understand the implications of dictionary ordering in modern Python versions.\nApply dictionaries to solve practical problems such as counting occurrences, grouping data, creating lookup tables, and representing structured information.\nUse sets for membership testing and duplicate elimination, understanding when sets are preferable to lists for specific operations and leveraging their O(1) average-case lookup performance.\nPerform set operations including union, intersection, difference, and symmetric difference to solve problems involving collections and relationships between groups.\nSelect appropriate data structures (lists, dictionaries, or sets) based on the requirements of a given problem, justifying choices based on performance, functionality, and code clarity.\n\n\n\n\nMutability\nSequence Nesting\nDictionaries\nSets\n\n\n\n\n\nBy the end of this module you will be able to:\n\nAnalyze the time complexity of simple algorithms by identifying the relationship between input size and running time.\nExpress algorithm efficiency using Big-O notation and correctly classify common complexity classes including O(1), O(log n), O(n), O(n log n), O(n²), and O(2ⁿ).\nCompare algorithms based on their asymptotic behavior and determine which algorithm is more efficient for large inputs by analyzing their Big-O classifications.\nDistinguish between best-case, average-case, and worst-case time complexity and explain when each measure is most relevant.\nImplement linear search and binary search correctly in code and trace their execution on sample datasets.\nAnalyze the time complexity of linear search as O(n) and binary search as O(log n) and explain why binary search is asymptotically faster.\nExplain why binary search requires sorted data as a precondition and demonstrate how the algorithm eliminates half of the remaining search space with each comparison.\n\n\n\n\nAlgorithm Analysis\nSearching\nBig-O Practice\n\n\n\n\n\nBy the end of this module you will be able to:\n\nImplement selection sort, insertion sort, and bubble sort correctly in code and trace their execution on small datasets.\nAnalyze and compare the time complexity of selection sort, insertion sort, and bubble sort in their best, average, and worst cases.\nExplain the underlying mechanism of each sorting algorithm including how elements are compared, swapped, and positioned during execution.\n\n\n\n\nSorting\n\n\n\n\n\nBy the end of this module you will be able to:\n\nDefine and explain recursion as a problem-solving technique where a function calls itself with modified parameters to solve progressively smaller subproblems.\nIdentify the essential components of a recursive function, including the base case(s) that stop recursion and the recursive case(s) that break down the problem.\nConvert simple iterative solutions to recursive solutions and vice versa, recognizing when each approach is more appropriate.\nApply recursion to solve problems involving naturally recursive data structures or definitions, such as computing powers, reversing strings, or processing nested lists.\nDebug recursive functions by identifying common errors such as missing base cases, incorrect recursive calls, or infinite recursion."
+    "text": "For this module we will focus first-and-foremost on getting the class started. We’ll be seeing the basic class design, learning what are the parts of the class, and how they will help us learn.\nBy the end of the week you should be able to:\n\nDecide whether CSCI1913 is a course for you (if you fit the audience)\nPrepare for what we will do to learn, and why.\n\n\n\n\nSyllabus\nAcademic Integrity\nCourse Rules\nTechnology\nTA Office Hours\n\n\n\n\n\nCourse Intro\nHow to succeed in this course\n\n\n\n\n\nWe will continue working with Python. In this module we will finish discussing basic python features with a few final details of pyhton’s many scopes, in particular how you can import functions from other files – and some unique details about how this works in python.\nThen we will begin exploring Python’s advanced data representation tools: data structures. Data structures create a flexible way to represent many common forms of data in an ad-hoc way without creating specific classes, or writing tricky data-management code.\nWe will then focus on the List, which is python’s answer to the array. Towards the end of the module we will introduce the set and dictionary as well.\nBy the end of this module you will be able to:\n\nRead, write, run, test, and debug simple python programs\nIdentify a list, tuple, and dictionary as represented in python code\nCreate, and loop over python lists\n\n\n\n\nProgramming Languages Overview\nIntro to Python\nMore Python\nPython Loops\nPython Lists\n\n\n\n\n\nBy the end of this module you will be able to:\n\nExplain the concept of mutability and distinguish between mutable and immutable data types in Python, providing examples of each and describing the implications for variable assignment and function parameters.\nCreate and manipulate Python lists using various methods including indexing, slicing, appending, inserting, removing, and sorting elements, while understanding the performance characteristics of these operations.\nAnalyze the behavior of list aliasing and copying, explaining the difference between shallow and deep copies and predicting how changes to one list reference will affect others.\nCreate and manipulate dictionaries to store and retrieve key-value pairs, using appropriate methods for adding, updating, removing, and accessing elements.\nIterate over dictionaries using various approaches (keys, values, items) and understand the implications of dictionary ordering in modern Python versions.\nApply dictionaries to solve practical problems such as counting occurrences, grouping data, creating lookup tables, and representing structured information.\nUse sets for membership testing and duplicate elimination, understanding when sets are preferable to lists for specific operations and leveraging their O(1) average-case lookup performance.\nPerform set operations including union, intersection, difference, and symmetric difference to solve problems involving collections and relationships between groups.\nSelect appropriate data structures (lists, dictionaries, or sets) based on the requirements of a given problem, justifying choices based on performance, functionality, and code clarity.\n\n\n\n\nMutability\nSequence Nesting\nDictionaries\nSets\n\n\n\n\n\nBy the end of this module you will be able to:\n\nAnalyze the time complexity of simple algorithms by identifying the relationship between input size and running time.\nExpress algorithm efficiency using Big-O notation and correctly classify common complexity classes including O(1), O(log n), O(n), O(n log n), O(n²), and O(2ⁿ).\nCompare algorithms based on their asymptotic behavior and determine which algorithm is more efficient for large inputs by analyzing their Big-O classifications.\nDistinguish between best-case, average-case, and worst-case time complexity and explain when each measure is most relevant.\nImplement linear search and binary search correctly in code and trace their execution on sample datasets.\nAnalyze the time complexity of linear search as O(n) and binary search as O(log n) and explain why binary search is asymptotically faster.\nExplain why binary search requires sorted data as a precondition and demonstrate how the algorithm eliminates half of the remaining search space with each comparison.\n\n\n\n\nAlgorithm Analysis\nSearching\nBig-O Practice\n\n\n\n\n\nBy the end of this module you will be able to:\n\nImplement selection sort, insertion sort, and bubble sort correctly in code and trace their execution on small datasets.\nAnalyze and compare the time complexity of selection sort, insertion sort, and bubble sort in their best, average, and worst cases.\nExplain the underlying mechanism of each sorting algorithm including how elements are compared, swapped, and positioned during execution.\n\n\n\n\nSorting\n\n\n\n\n\nBy the end of this module you will be able to:\n\nDefine and explain recursion as a problem-solving technique where a function calls itself with modified parameters to solve progressively smaller subproblems.\nIdentify the essential components of a recursive function, including the base case(s) that stop recursion and the recursive case(s) that break down the problem.\nConvert simple iterative solutions to recursive solutions and vice versa, recognizing when each approach is more appropriate.\nApply recursion to solve problems involving naturally recursive data structures or definitions, such as computing powers, reversing strings, or processing nested lists.\nDebug recursive functions by identifying common errors such as missing base cases, incorrect recursive calls, or infinite recursion.\n\n\n\n\nRecursion"
   },
   {
     "objectID": "index.html#module-01---course-overview",
@@ -270,7 +270,7 @@
     "href": "index.html#module-06-recursion",
     "title": "CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development",
     "section": "",
-    "text": "By the end of this module you will be able to:\n\nDefine and explain recursion as a problem-solving technique where a function calls itself with modified parameters to solve progressively smaller subproblems.\nIdentify the essential components of a recursive function, including the base case(s) that stop recursion and the recursive case(s) that break down the problem.\nConvert simple iterative solutions to recursive solutions and vice versa, recognizing when each approach is more appropriate.\nApply recursion to solve problems involving naturally recursive data structures or definitions, such as computing powers, reversing strings, or processing nested lists.\nDebug recursive functions by identifying common errors such as missing base cases, incorrect recursive calls, or infinite recursion."
+    "text": "By the end of this module you will be able to:\n\nDefine and explain recursion as a problem-solving technique where a function calls itself with modified parameters to solve progressively smaller subproblems.\nIdentify the essential components of a recursive function, including the base case(s) that stop recursion and the recursive case(s) that break down the problem.\nConvert simple iterative solutions to recursive solutions and vice versa, recognizing when each approach is more appropriate.\nApply recursion to solve problems involving naturally recursive data structures or definitions, such as computing powers, reversing strings, or processing nested lists.\nDebug recursive functions by identifying common errors such as missing base cases, incorrect recursive calls, or infinite recursion.\n\n\n\n\nRecursion"
   },
   {
     "objectID": "labs.html",
@@ -3000,7 +3000,7 @@
     "href": "slides/slides-05-01.html#quiz-04",
     "title": "Sorting",
     "section": "Quiz 04",
-    "text": "Quiz 04\nYou have 10 minutes to complete the quiz"
+    "text": "Quiz 04\nYou have 10 minutes to complete the quiz\nWhen asked “what will it return” I’m expecting the return value"
   },
   {
     "objectID": "slides/slides-05-01.html#selection-sort-1",
@@ -3155,5 +3155,467 @@
     "title": "Sorting",
     "section": "Bubble Sort – implementation 3",
     "text": "Bubble Sort – implementation 3\n\ndef bubble_sort(array):\n  n = len(array)\n  for i in range(n - 1):\n    swapped = False\n    for j in range(n - 1 - i):\n      if array[j] &gt; array[j + 1]:\n        array[j], array[j + 1] = array[j + 1], array[j]\n        swapped = True\n    if not swapped:\n      return"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recursion-is-magic",
+    "href": "slides/slides-06-01.html#recursion-is-magic",
+    "title": "Recursion",
+    "section": "Recursion is Magic",
+    "text": "Recursion is Magic\n\nTo write a recursive function, you need to believe that it already works (but only for a smaller version of the same problem).\nSometimes that step is called the “recursive leap of faith”"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#what-is-recursion",
+    "href": "slides/slides-06-01.html#what-is-recursion",
+    "title": "Recursion",
+    "section": "What is recursion?",
+    "text": "What is recursion?\n\nIn general? Something defined in terms of itself\nIn Computer Science? A recursive function that calls itself\nAn alternative to loops\n\n\n\n\n\nRecursion inside recursion inside recursion inside recursion inside…"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recursion-vs.-loops",
+    "href": "slides/slides-06-01.html#recursion-vs.-loops",
+    "title": "Recursion",
+    "section": "Recursion vs. Loops",
+    "text": "Recursion vs. Loops\n\nLoops are easier to understand conceptually\nLoops are generally faster\nIn many problems, loops will be fewer lines of code\nAnything you can do with recursion, you can do with loops (and vice versa)\nSo why use recursion?"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recursively-defined-problems",
+    "href": "slides/slides-06-01.html#recursively-defined-problems",
+    "title": "Recursion",
+    "section": "Recursively Defined Problems",
+    "text": "Recursively Defined Problems\n\nThere are some problems where the recursive solution is significantly less code, easier to understand, and requires fewer constructs.\nThese are generally problems where the problem structure is tree-like in nature\n\nFor example, visiting all nodes in a binary tree in-order, you recursively visit the left subtree, process the current node, then recursively visit the right subtree."
+  },
+  {
+    "objectID": "slides/slides-06-01.html#function-stacks",
+    "href": "slides/slides-06-01.html#function-stacks",
+    "title": "Recursion",
+    "section": "Function Stacks",
+    "text": "Function Stacks\n\nSome programming languages use what is called a function stack\nA function stack is a data structure that holds a function name, arguments, and a return point for functions\nA new function adds to the stack building up\nThe implementation we are all likely using of Python (CPython) is implemented using function call stacks"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#function-stacks-1",
+    "href": "slides/slides-06-01.html#function-stacks-1",
+    "title": "Recursion",
+    "section": "Function Stacks",
+    "text": "Function Stacks\nWhat will this print?\n\ndef fun_a():\n  print(\"A\")\n  fun_b()\n  print(\"Another A\")\n  \ndef fun_b():\n  print(\"B\")\n  \ndef fun_c():\n  print(\"C\")\n  \nif __name__ == \"__main__\":\n  fun_a()\n  fun_b()\n  fun_c()\n\nA\nB\nAnother A\nB\nC"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#function-stacks-recursion",
+    "href": "slides/slides-06-01.html#function-stacks-recursion",
+    "title": "Recursion",
+    "section": "Function Stacks – recursion",
+    "text": "Function Stacks – recursion\nRepetition through recursion – function calls itself repeatedly until a specific end condition (base case) is met.\nWhat will my_recursive_function(10, 5) return?"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#function-stacks-recursion-1",
+    "href": "slides/slides-06-01.html#function-stacks-recursion-1",
+    "title": "Recursion",
+    "section": "Function Stacks – recursion",
+    "text": "Function Stacks – recursion\nRepetition through recursion – function calls itself repeatedly until a specific end condition (base case) is met.\nWhat will my_recursive_function(10, 5) return?\nThe my_recursive_function method above calculates \\(a × b\\) (multiplication through repeated addition)"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#remember-factorial",
+    "href": "slides/slides-06-01.html#remember-factorial",
+    "title": "Recursion",
+    "section": "Remember factorial?",
+    "text": "Remember factorial?\nWhat’s the runtime?\n\ndef factorial(n):\n  product = 1\n  while n &gt; 0:\n    product *= n\n    n -= 1\n  return product\n\nif __name__ == \"__main__\":\n  assert factorial(1) == 1\n  assert factorial(5) == 120\n  assert factorial(7) == 5040"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#remember-factorial-1",
+    "href": "slides/slides-06-01.html#remember-factorial-1",
+    "title": "Recursion",
+    "section": "Remember factorial?",
+    "text": "Remember factorial?\nWhat’s the runtime? \\(O(n)\\)\n\ndef factorial(n):\n  product = 1\n  while n &gt; 0:\n    product *= n\n    n -= 1\n  return product\n\nif __name__ == \"__main__\":\n  assert factorial(1) == 1\n  assert factorial(5) == 120\n  assert factorial(7) == 5040"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recursive-factorial",
+    "href": "slides/slides-06-01.html#recursive-factorial",
+    "title": "Recursion",
+    "section": "Recursive factorial",
+    "text": "Recursive factorial\n\n“a recursive function calls itself”\n\n\ndef factorial(n):\n  factorial(n)"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#infinite-recursion",
+    "href": "slides/slides-06-01.html#infinite-recursion",
+    "title": "Recursion",
+    "section": "“Infinite” Recursion",
+    "text": "“Infinite” Recursion\n\nHappens when your recursive steps never reach a base case\nEach time you call a function, memory is allocated to remember things like what it was called with, what line it’s currently at, variables, etc. (Function stack in Cpython)\nPython limits how deep the stack can get to avoid memory problems (maximum recursion depth)"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recursive-factorial-1",
+    "href": "slides/slides-06-01.html#recursive-factorial-1",
+    "title": "Recursion",
+    "section": "Recursive factorial",
+    "text": "Recursive factorial\n\n“a recursive function must have at least one base case”\n\nWhat’s our base case for our recursive factorial function?"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recursive-factorial-2",
+    "href": "slides/slides-06-01.html#recursive-factorial-2",
+    "title": "Recursion",
+    "section": "Recursive factorial",
+    "text": "Recursive factorial\n\n“a recursive function needs a base case”\n\n\ndef factorial(n):\n  if n == 1:\n    return 1\n  factorial(n)"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#base-case",
+    "href": "slides/slides-06-01.html#base-case",
+    "title": "Recursion",
+    "section": "Base Case",
+    "text": "Base Case\n\nDirectly return the solution for that specific case\nDo not have a recursive call\nAre generally a “trivial solution”"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recursive-factorial-3",
+    "href": "slides/slides-06-01.html#recursive-factorial-3",
+    "title": "Recursion",
+    "section": "Recursive factorial",
+    "text": "Recursive factorial\n\n“recursive case(s) must always move towards a base case”\n\nWhat’s our recursive case for our factorial function?"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recursive-factorial-4",
+    "href": "slides/slides-06-01.html#recursive-factorial-4",
+    "title": "Recursion",
+    "section": "Recursive factorial",
+    "text": "Recursive factorial\n\n“recursive case(s) must always mode towards a base case”\n\nWe need to get to 1\n\ndef factorial(n):\n  if n == 1:\n    return 1\n  factorial(n-1)"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recursive-factorial-5",
+    "href": "slides/slides-06-01.html#recursive-factorial-5",
+    "title": "Recursion",
+    "section": "Recursive factorial",
+    "text": "Recursive factorial\n\na recursive function needs at lease one base case\nrecursive case(s) must always mode towards a base case\nit needs to provide the correct answer\n\n\\(5! = 5 * 4 * 3 * 2 * 1\\)\nFor various math reasons, \\(0!\\) is defined to be \\(1\\)"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recursive-factorial-6",
+    "href": "slides/slides-06-01.html#recursive-factorial-6",
+    "title": "Recursion",
+    "section": "Recursive factorial",
+    "text": "Recursive factorial\n\ndef factorial(n):\n  if n == 1 or n == 0:\n    return 1\n  return n*factorial(n-1)\n\nif __name__ == \"__main__\":\n  assert factorial(1) == 1\n  assert factorial(5) == 120"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recurrence-relations",
+    "href": "slides/slides-06-01.html#recurrence-relations",
+    "title": "Recursion",
+    "section": "Recurrence relations",
+    "text": "Recurrence relations\nThe runtime complexity T(N) of a recursive function will have function T on both sides of the equation\n\nsingle recursive call \\(T(N-1)\\)\none multiplication of the result \\(O(1)\\)\n\n\ndef factorial(n):\n  if n == 1 or n == 0:\n    return 1\n  return n*factorial(n-1)\n\nUsing O-notation to express runtime complexity of a recursive function requires solving the recurrence relation."
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recurrence-relations-1",
+    "href": "slides/slides-06-01.html#recurrence-relations-1",
+    "title": "Recursion",
+    "section": "Recurrence relations",
+    "text": "Recurrence relations\n\nsingle recursive call \\(T(n-1)\\)\none multiplication of the result \\(O(1)\\)\n\n\ndef factorial(n):\n  if n == 1 or n == 0:\n    return 1\n  return n*factorial(n-1)\n\n\\(T(N) = T(N-1) + 1\\)"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recurrence-relations-2",
+    "href": "slides/slides-06-01.html#recurrence-relations-2",
+    "title": "Recursion",
+    "section": "Recurrence relations",
+    "text": "Recurrence relations\n\\(T(N) = T(N-1) + 1\\)\n\ndef factorial(n):\n  if n == 1 or n == 0:\n    return 1\n  return n*factorial(n-1)\n\n\n\\(T(0) = 1\\)\n\\(T(1) = 1\\) base case\n\\(T(2) = T(1) + 1 = 1 + 1 = 2\\)\n\\(T(3) = T(2) + 1 = 2 + 1 = 3\\)\n\\(T(4) = T(3) + 1 = 3 + 1 = 4\\)\n\\(T(N) = N\\)"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recurrence-relations-recursive-factorial",
+    "href": "slides/slides-06-01.html#recurrence-relations-recursive-factorial",
+    "title": "Recursion",
+    "section": "Recurrence relations – Recursive Factorial",
+    "text": "Recurrence relations – Recursive Factorial\n\n\\(T(N) = T(N-1) + 1\\)\n\\(T(N-1) = T(N-2) + 1\\)\n\\(T(N) = T(N-2) + 1 + 1\\)\n\\(T(N) = T(N-3) + 1 + 1 + 1\\)\n\\(T(N) = T(N-4) + 1 + 1 + 1 + 1\\)\n\n…"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recurrence-relations-recursive-factorial-1",
+    "href": "slides/slides-06-01.html#recurrence-relations-recursive-factorial-1",
+    "title": "Recursion",
+    "section": "Recurrence relations – Recursive Factorial",
+    "text": "Recurrence relations – Recursive Factorial\n\n\\(T(N) = T(0) + N\\)\n\\(T(N) = 1 + N\\)\n\\(T(N) = N\\)"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#how-to-write-a-recursive-function",
+    "href": "slides/slides-06-01.html#how-to-write-a-recursive-function",
+    "title": "Recursion",
+    "section": "How to Write a Recursive Function",
+    "text": "How to Write a Recursive Function\n\nConstruct at least one base case (more may be needed if there are inputs that won’t eventually reach that base case).\nFind a recurrence relation: a solution expressed in terms of the solution to a smaller instance of the same problem.\nPretend that your function magically works for the smaller instance of the problem, use this to construct the recursive case"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#exercise-binary-search",
+    "href": "slides/slides-06-01.html#exercise-binary-search",
+    "title": "Recursion",
+    "section": "Exercise – Binary Search",
+    "text": "Exercise – Binary Search\nHere’s our original Binary Search implementation:\n\ndef binary_search(arr, v):\n  low = 0\n  high = len(arr)-1\n  while low &lt;= high:\n    mid = (low+high) // 2\n    if v &gt; arr[mid]: # update low\n      low = mid + 1\n    elif v &lt; arr[mid]: # update high\n      high = mid - 1\n    else:\n      return mid\n  return -1\n\nif __name__ == \"__main__\":\n  numbers = [0, 5, 10, 23, 41, 43, 44, 60, 99, 120, 343]\n  assert binary_search(numbers, 99) == 8\n  assert binary_search(numbers, 9) == -1"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#exercise-binary-search-1",
+    "href": "slides/slides-06-01.html#exercise-binary-search-1",
+    "title": "Recursion",
+    "section": "Exercise – Binary Search",
+    "text": "Exercise – Binary Search\nWrite binary search as a recursive function.\n\nWhat are the base cases?\nWhat’s the recursive case?\n\nRemember:\n\na recursive function needs at lease one base case\nrecursive case(s) must always mode towards a base case\nit needs to provide the correct answer"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#exercise-binary-search-2",
+    "href": "slides/slides-06-01.html#exercise-binary-search-2",
+    "title": "Recursion",
+    "section": "Exercise – Binary Search",
+    "text": "Exercise – Binary Search\nWrite binary search as a recursive function.\n\nWhat are the base case? low &gt; high\nWhat’s the recursive case? n/2 – divide list by two or change either low or high\n\nCall your function binary_search and your file binary_search.py to submit to gradescope"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#exercise-binary-search-3",
+    "href": "slides/slides-06-01.html#exercise-binary-search-3",
+    "title": "Recursion",
+    "section": "Exercise – Binary Search",
+    "text": "Exercise – Binary Search\n\ndef recursive_binary_search(lst, target, low, high):\n  mid = (low+high)//2\n  \n  if lst[mid] == target:\n    return mid\n  \n  if low &gt; high:\n    return -1\n  \n  if target &lt; lst[mid]:\n    return recursive_binary_search(lst, target, low, mid-1)\n  \n  if target &gt; lst[mid]:\n    return recursive_binary_search(lst, target, mid+1, high)\n  \ndef binary_search(arr, target):\n  return recursive_binary_search(arr, target, 0, len(arr)-1)\n  \nif __name__ == \"__main__\":\n  numbers = [0, 5, 10, 23, 41, 43, 44, 60, 99, 120, 343]\n  assert binary_search(numbers, 99) == 8\n  assert binary_search(numbers, 9) == -1\n  print(\"Passed tests\")\n\nPassed tests"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recurrence-relation-binary-search",
+    "href": "slides/slides-06-01.html#recurrence-relation-binary-search",
+    "title": "Recursion",
+    "section": "Recurrence relation – Binary Search",
+    "text": "Recurrence relation – Binary Search\nWhat’s the runtime for recursive binary search?\n\ndef recursive_binary_search(lst, target, low, high):\n  mid = (low+high)//2\n  \n  if lst[mid] == target:\n    return mid\n  \n  if low &gt; high:\n    return -1\n  \n  if target &lt; lst[mid]:\n    return recursive_binary_search(lst, target, low, mid-1)\n  \n  if target &gt; lst[mid]:\n    return recursive_binary_search(lst, target, mid+1, high)"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recurrence-relation-binary-search-1",
+    "href": "slides/slides-06-01.html#recurrence-relation-binary-search-1",
+    "title": "Recursion",
+    "section": "Recurrence relation – Binary Search",
+    "text": "Recurrence relation – Binary Search\nWhat’s the runtime for recursive binary search?\nThe runtime complexity T(N) of a recursive function will have function T on both sides of the equation\nUsing O-notation to express runtime complexity of a recursive function requires solving the recurrence relation."
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recurrence-relation-binary-search-2",
+    "href": "slides/slides-06-01.html#recurrence-relation-binary-search-2",
+    "title": "Recursion",
+    "section": "Recurrence relation – Binary Search",
+    "text": "Recurrence relation – Binary Search\nWhat’s the runtime for recursive binary search?\nThe runtime complexity T(N) of a recursive function will have function T on both sides of the equation\n\none recursive call \\(T(N/2)\\)\none return of the result \\(O(1)\\)\n\n\\(T(N) = T(N/2) + 1\\)\nUsing O-notation to express runtime complexity of a recursive function requires solving the recurrence relation."
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recurrence-relation-binary-search-3",
+    "href": "slides/slides-06-01.html#recurrence-relation-binary-search-3",
+    "title": "Recursion",
+    "section": "Recurrence relation – Binary Search",
+    "text": "Recurrence relation – Binary Search\nWhat’s the runtime for recursive binary search?\n\\(T(N) = T(N/2) + 1\\) N is size of list\nUsing O-notation to express runtime complexity of a recursive function requires solving the recurrence relation.\n\n\\(T(1) = 1\\) – two options either the list value matches target (return index) or it doesn’t (return -1)\n\\(T(2) = T(2/2) + 1 = T(1) + 1 = 1 + 1\\)\n\\(T(4) = T(4/2) + 1 = T(2) + 1 = 2 + 1\\)\n\\(T(8) = T(8/2) + 1 = T(4) + 1 = 3 + 1\\)\n\\(T(16) = T(16/2) + 1 = T(8) + 1 = 4 + 1\\)"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recurrence-relation-binary-search-4",
+    "href": "slides/slides-06-01.html#recurrence-relation-binary-search-4",
+    "title": "Recursion",
+    "section": "Recurrence relation – Binary Search",
+    "text": "Recurrence relation – Binary Search\nWhat’s the runtime for recursive binary search?\n\n\\(T(2) = T(2/2) + 1 = T(1) + 1 = 1 + 1\\)\n\\(T(4) = T(4/2) + 1 = T(2) + 1 = 2 + 1\\)\n\\(T(8) = T(8/2) + 1 = T(4) + 1 = 3 + 1\\)\n\\(T(16) = T(16/2) + 1 = T(8) + 1 = 4 + 1\\)\n\\(T(N) = T(N/2) + 1 = 2^k + 1\\)\n\nWhat’s the value of \\(k\\)?\n\\(k = \\log_2 N\\)\n\\(O(\\log N)\\)"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recurrence-relation-binary-search-5",
+    "href": "slides/slides-06-01.html#recurrence-relation-binary-search-5",
+    "title": "Recursion",
+    "section": "Recurrence relation – Binary Search",
+    "text": "Recurrence relation – Binary Search\nWhat’s the runtime for recursive binary search?\n\\(T(N) = T(N/2) + 1\\) N is size of list\nUsing O-notation to express runtime complexity of a recursive function requires solving the recurrence relation.\n\n\\(T(N) = T(N/2) + 1\\)\n\\(T(N/2) = T(N/4) + 1\\)\n\\(T(N) = [T(N/4) + 1] + 1 = T(N/4) + 2\\)\n\\(T(N) = [[T(N/8) + 1] + 1] + 1 = T(N/8) + 3\\)\n\\(T(N) = [[[T(N/16) + 1] + 1] + 1] + 1 = T(N/16) + 4\\)\n\n…\n\n\\(T(N) = T(1) + 2^k\\)\n\n\\(O(\\log N)\\)"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#exercise-power-function",
+    "href": "slides/slides-06-01.html#exercise-power-function",
+    "title": "Recursion",
+    "section": "Exercise – Power function",
+    "text": "Exercise – Power function\nPower Function: Computing \\(x^n\\) can be defined as \\(x^n = x × x^{(n-1)}\\), with base case \\(x^0 = 1\\). You can assume the exponent is zero or greater.\n\nif __name__ == \"__main__\":\n  assert power(2, 2) == 4\n  assert power(3, 2) == 9\n  assert power(2, 4) == 16\n\nSubmit your power.py file to Gradescope"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#solution-power-function",
+    "href": "slides/slides-06-01.html#solution-power-function",
+    "title": "Recursion",
+    "section": "Solution – Power function",
+    "text": "Solution – Power function\n\ndef power(base, exp):\n  if exp == 0:\n    return 1\n  \n  return base * power(base, exp-1)\n\nif __name__ == \"__main__\":\n  assert power(2, 2) == 4\n  assert power(3, 2) == 9\n  assert power(2, 4) == 16"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#runtime-power-function",
+    "href": "slides/slides-06-01.html#runtime-power-function",
+    "title": "Recursion",
+    "section": "Runtime – Power function",
+    "text": "Runtime – Power function\nWhat’s the runtime?\n\ndef power(base, exp):\n  if exp == 0:\n    return 1\n  \n  return base * power(base, exp-1)"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#runtime-power-function-1",
+    "href": "slides/slides-06-01.html#runtime-power-function-1",
+    "title": "Recursion",
+    "section": "Runtime – Power function",
+    "text": "Runtime – Power function\nWhat’s the runtime? \\(T(N) = T(N-1) + 1\\)\n\ndef power(base, exp):\n  if exp == 0:\n    return 1\n  \n  return base * power(base, exp-1)\n\n\\(O(N)\\)"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#exercise-two-to-x",
+    "href": "slides/slides-06-01.html#exercise-two-to-x",
+    "title": "Recursion",
+    "section": "Exercise – Two to X",
+    "text": "Exercise – Two to X\nTwo to X: Computing \\(2^x\\) can be defined as \\(2^x = 2^1 * 2^{x-1}\\) or \\(2^x = 2^{x-1} + 2^{x-1}\\), with base case \\(2^0 = 1\\). You can assume the exponent x is zero or greater.\n\nif __name__ == \"__main__\":\n    assert two_to(0) == 1\n    assert two_to(1) == 2\n    assert two_to(2) == 4\n    assert two_to(3) == 8\n    assert two_to(4) == 16\n    print(\"Passed\")"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#two-to-x-solution-1",
+    "href": "slides/slides-06-01.html#two-to-x-solution-1",
+    "title": "Recursion",
+    "section": "Two to X – solution 1",
+    "text": "Two to X – solution 1\n\ndef two_to(exp):\n    if exp == 0:\n        return 1\n    \n    return 2 * two_to(exp-1)"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#two-to-x-solution-2",
+    "href": "slides/slides-06-01.html#two-to-x-solution-2",
+    "title": "Recursion",
+    "section": "Two to X – solution 2",
+    "text": "Two to X – solution 2\n\ndef two_to(exp):\n    if exp == 0:\n        return 1\n    \n    return two_to(exp-1) + two_to(exp-1)"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#runtime-two-to-x",
+    "href": "slides/slides-06-01.html#runtime-two-to-x",
+    "title": "Recursion",
+    "section": "Runtime – Two to X",
+    "text": "Runtime – Two to X\nWhat’s the difference in runtime between the two solutions?\nFor solution 1, the call stack is linear: two_to(4) → two_to(3) → two_to(2) → two_to(1) → two_to(0)\nFor solution 2, each call branches out twice:\n                     two_to(4)\n                   /          \\\n              two_to(3)      two_to(3)\n              /      \\        /      \\\n         two_to(2) two_to(2) two_to(2) two_to(2)\n         /    \\      /  \\      /  \\      /  \\\n  two_to(1)  ...  ...  ...  ...  ...  ...  ...\n    /   \\    / \\  / \\  / \\  / \\  / \\  / \\  / \\\ntwo_to(0)  ..."
+  },
+  {
+    "objectID": "slides/slides-06-01.html#runtime-two-to-x-1",
+    "href": "slides/slides-06-01.html#runtime-two-to-x-1",
+    "title": "Recursion",
+    "section": "Runtime – Two to X",
+    "text": "Runtime – Two to X\nWhile the two solutions produce the same result, Solution 1 is far more efficient. Solution 2’s repeated computation of the same subproblems makes it extremely wasteful"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recurrence-relation-of-solution-1",
+    "href": "slides/slides-06-01.html#recurrence-relation-of-solution-1",
+    "title": "Recursion",
+    "section": "Recurrence Relation of Solution 1",
+    "text": "Recurrence Relation of Solution 1\n\n\\(T(0) = O(1)\\) — base case\n\\(T(N) = T(N-1) + O(1)\\) — one recursive call plus constant work (multiplication)\n\nSolving the recurrence:\n\n\\(T(N) = T(N-1) + 1\\)\n\\(T(N) = T(N-2) + 1 + 1 = T(N-2) + 2\\)\n\\(T(N) = T(N-3) + 3\\) …\n\\(T(N) = T(0) + N = O(N)\\)\n\nBig-O: O(N) where N = exp"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recurrence-relation-of-solution-2",
+    "href": "slides/slides-06-01.html#recurrence-relation-of-solution-2",
+    "title": "Recursion",
+    "section": "Recurrence Relation of Solution 2",
+    "text": "Recurrence Relation of Solution 2\n\n\\(T(0) = O(1)\\) — base case\n\\(T(N) = 2 · T(N-1) + O(1)\\) — two recursive calls plus constant work (addition)\n\\(T(N) = 2 · T(N-1) + 1\\)\n\\(T(N) = 2 · (2 · T(N-2) + 1) + 1 = 4 · T(N-2) + 2 + 1\\)\n\\(T(N) = 4 · (2 · T(N-3) + 1) + 3 = 8 · T(N-3) + 7\\)\n\\(T(N) = 2^k · T(N-k) + (2^k - 1)\\)\n\nWhen \\(k = N\\): \\(T(N) = 2^N · T(0) + (2^N - 1) = O(2^N)\\)"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#exercise-fibonacci-sequence",
+    "href": "slides/slides-06-01.html#exercise-fibonacci-sequence",
+    "title": "Recursion",
+    "section": "Exercise – Fibonacci Sequence",
+    "text": "Exercise – Fibonacci Sequence\nA fibonacci sequence is such that each number is the sum of the two preceding ones:\n\\(F(n) = F(n-1) + F(n-2)\\), with base cases \\(F(0) = 0\\) and \\(F(1) = 1\\).\nThis generates the sequence 0, 1, 1, 2, 3, 5, 8, 13, 21, 32, …\nTest cases:\n\nassert fib(0) == 0\nassert fib(1) == 1\nassert fib(2) == 1\nassert fib(3) == 2\nassert fib(4) == 3\nassert fit(5) == 5\nassert fit(11) == 89"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#exercise-fibonacci-sequence-1",
+    "href": "slides/slides-06-01.html#exercise-fibonacci-sequence-1",
+    "title": "Recursion",
+    "section": "Exercise – Fibonacci Sequence",
+    "text": "Exercise – Fibonacci Sequence\n\ndef fib(n):\n  if n == 0:\n    return 0\n  \n  if n == 1:\n    return 1\n  \n  return fib(n-1) + fib(n-2)\n\nif __name__ == \"__main__\":\n  assert fib(0) == 0\n  assert fib(1) == 1\n  assert fib(2) == 1\n  assert fib(3) == 2\n  assert fib(4) == 3\n  assert fib(5) == 5\n  assert fib(11) == 89"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#runtime-fibonacci-sequence",
+    "href": "slides/slides-06-01.html#runtime-fibonacci-sequence",
+    "title": "Recursion",
+    "section": "Runtime – Fibonacci Sequence",
+    "text": "Runtime – Fibonacci Sequence\nRecurrence Relation:\n\nT(0) = O(1) — base case\nT(1) = O(1) — base case\nT(n) = T(n-1) + T(n-2) + O(1) — two recursive calls plus constant work\n\n\\(O(2^n)\\)"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recursive-algorithm-basics",
+    "href": "slides/slides-06-01.html#recursive-algorithm-basics",
+    "title": "Recursion",
+    "section": "Recursive Algorithm Basics",
+    "text": "Recursive Algorithm Basics\n\nReduction formula – making the problem size smaller – this needs to get closer to the base case\nBase Case – the trivial (easiest) case, check for it first! It the solution you already know.\n\nKey: find what is the smaller/simpler version of a problem\nRecursionError: maximum recursion depth exceeded"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recursionerror-recursion",
+    "href": "slides/slides-06-01.html#recursionerror-recursion",
+    "title": "Recursion",
+    "section": "RecursionError Recursion",
+    "text": "RecursionError Recursion\nRecursionError: maximum recursion depth exceeded\n\nHappens when your recursive steps never reach a base case\nEach time you call a function, memory is allocated to remember things like what it was called with, what line it’s currently at, variables, etc. (Function stack in Cpython)\nPython limits how deep the stack can get to avoid memory problems (maximum recursion depth)"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#recursion",
+    "href": "slides/slides-06-01.html#recursion",
+    "title": "Recursion",
+    "section": "Recursion",
+    "text": "Recursion\n\na recursive function calls itself\na recursive function must have at least one base case\nrecursive case(s) must always move towards a base case"
+  },
+  {
+    "objectID": "slides/slides-06-02.html",
+    "href": "slides/slides-06-02.html",
+    "title": "Merge Sort",
+    "section": "",
+    "text": "What are base cases?\nHow can solving small problem help solve large problem?"
+  },
+  {
+    "objectID": "slides/slides-06-02.html#recursive-algorithm-design",
+    "href": "slides/slides-06-02.html#recursive-algorithm-design",
+    "title": "Merge Sort",
+    "section": "",
+    "text": "What are base cases?\nHow can solving small problem help solve large problem?"
+  },
+  {
+    "objectID": "slides/slides-06-02.html#recursive-sorting",
+    "href": "slides/slides-06-02.html#recursive-sorting",
+    "title": "Merge Sort",
+    "section": "Recursive Sorting",
+    "text": "Recursive Sorting\n\nWhat is a “trivial” sorting problem (base case)?\nWhat does it mean to solve small problem?\nHow do we combine small solutions?"
+  },
+  {
+    "objectID": "slides/slides-06-02.html#recursive-sorting-1",
+    "href": "slides/slides-06-02.html#recursive-sorting-1",
+    "title": "Merge Sort",
+    "section": "Recursive Sorting",
+    "text": "Recursive Sorting\n\nWhat is a “trivial” sorting problem (base case)?\n\nlist with 1 element\n\nWhat does it mean to solve small problem?\n\nsort a smaller list\n\nHow do we combine small solutions?\n\nmerge smaller sorted lists"
+  },
+  {
+    "objectID": "slides/slides-06-02.html#merge-operation-not-in-place",
+    "href": "slides/slides-06-02.html#merge-operation-not-in-place",
+    "title": "Merge Sort",
+    "section": "Merge Operation (not in place)",
+    "text": "Merge Operation (not in place)\nGiven:\n\nLeft, a sorted list size K\nRight, a sorted list size G\n\nReturn:\n\nCenter, a sorted list size N = K + G\nCenter is a sorted version of Left + Right"
+  },
+  {
+    "objectID": "slides/slides-06-02.html#approach",
+    "href": "slides/slides-06-02.html#approach",
+    "title": "Merge Sort",
+    "section": "Approach",
+    "text": "Approach\nImagine you have two stacks of sorted cards, and you wanted to make one sorted pile in the center.\nMain loop (until one stack is empty):\n\nif “top” value of left stack is smaller put it on top of the center stack\notherwise put top of right stack on top of the center stack\n\nAftewards move leftover stack onto center."
+  },
+  {
+    "objectID": "slides/slides-06-02.html#merge",
+    "href": "slides/slides-06-02.html#merge",
+    "title": "Merge Sort",
+    "section": "Merge",
+    "text": "Merge\n\ndef merge (left, right):\n  center = []\n  l = 0\n  r = 0\n  \n  while l &lt; len(left) and r &lt; len(right):\n    if left [l] &lt; right [r]:\n      center.append(left[l])\n      l += 1\n    else:\n      center.append(right[r])\n      r += 1\n      \n  while l &lt; len(left):\n    center.append(left[l])\n    l += 1\n  \n  while r &lt; len(right):\n    center.append(right[r])\n    r += 1\n  \n  return center"
+  },
+  {
+    "objectID": "slides/slides-06-02.html#runtime",
+    "href": "slides/slides-06-02.html#runtime",
+    "title": "Merge Sort",
+    "section": "Runtime",
+    "text": "Runtime\n\nBody of all loops are O(1) (append is O(1))\nEach run through the loop appends exactly once\nEnd list is size N = G + K, so all lists run O(N) times.\nMerge is an O(N) = O(G + K) algorithm."
+  },
+  {
+    "objectID": "slides/slides-06-02.html#merge-sort-1",
+    "href": "slides/slides-06-02.html#merge-sort-1",
+    "title": "Merge Sort",
+    "section": "Merge sort",
+    "text": "Merge sort\n\nWhat is a “trivial” sorting problem (base case)?\n\nlist with 1 element\n\nWhat does it mean to solve small problem?\n\nsort a smaller list\n\nHow do we combine small solutions?\n\nmerge smaller sorted lists (solved with merge)"
+  },
+  {
+    "objectID": "slides/slides-06-02.html#merge-sort-2",
+    "href": "slides/slides-06-02.html#merge-sort-2",
+    "title": "Merge Sort",
+    "section": "Merge sort",
+    "text": "Merge sort\nClass “divide and conquer” algorithm\n\ndef merge_sort(lst):\n    if len(lst) == 1:\n        return lst\n    else:\n        mid = len(lst)//2\n        left = lst[:mid]\n        right = lst[mid:]\n\n        left = merge_sort(left)\n        right = merge_sort(right)\n\n        return merge(left, right)"
+  },
+  {
+    "objectID": "slides/slides-06-02.html#correctness-of-recursive-algorithms",
+    "href": "slides/slides-06-02.html#correctness-of-recursive-algorithms",
+    "title": "Merge Sort",
+    "section": "Correctness of recursive algorithms",
+    "text": "Correctness of recursive algorithms\n\nDemonstrate the recursion will halt\nDemonstrate each base-case is correct\nAssume recursive calls return correctly – demonstrate recursive case is right."
+  },
+  {
+    "objectID": "slides/slides-06-02.html#correctness-of-recursive-algorithms-1",
+    "href": "slides/slides-06-02.html#correctness-of-recursive-algorithms-1",
+    "title": "Merge Sort",
+    "section": "Correctness of recursive algorithms",
+    "text": "Correctness of recursive algorithms\n\nRecursion halts: Argument – each recursive call is a shorter list (it reaches the base case)\nBase case is right – 1 element list is sorted\nSo long as recursive call does its thing, merge can finish the job"
+  },
+  {
+    "objectID": "slides/slides-06-02.html#runtime-1",
+    "href": "slides/slides-06-02.html#runtime-1",
+    "title": "Merge Sort",
+    "section": "Runtime",
+    "text": "Runtime\n\\(O(N) work + recursion case\\)\nAt each level we have linear work across all subproblems combined, and there are only logarithmically many levels.\n\nmerge does O(N) work\nThere are log(N) “layers”\n\nThe array is divided in half \\(\\log N\\) times (the depth of the recursion tree). At each level, we do \\(O(N)\\) work to merge all subarrays at that level.\nTotal work is \\(O(N) * \\log N\\) = \\(O(N \\log N)\\)"
+  },
+  {
+    "objectID": "slides/slides-06-02.html#runtime-2",
+    "href": "slides/slides-06-02.html#runtime-2",
+    "title": "Merge Sort",
+    "section": "Runtime",
+    "text": "Runtime\nThe recurrence relation is \\(T(N) = 2*T(\\frac{N}{2}) + O(N)\\)\n\n\\(2*T(\\frac{N}{2})\\) represents recursively sorting two halves of the array\n\\(O(N)\\) is the time to merge the two sorted halves back together\n\nTotal runtime is \\(O(N \\log N)\\)"
   }
 ]
