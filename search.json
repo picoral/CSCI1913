@@ -2691,113 +2691,113 @@
     "objectID": "midterm_1_practice.html#big-o-question-1",
     "href": "midterm_1_practice.html#big-o-question-1",
     "title": "Fall 2026 Midterm 1 Practice Problems",
-    "section": "6.1 Big-O Question 1",
-    "text": "6.1 Big-O Question 1\nThe answer is c) \\(O(N)\\) because the four for loops are not nested. The total time complexity is: \\(O(1) + O(N) + O(N) + O(N) + O(N) = O(N)\\)"
+    "section": "7.1 Big-O Question 1",
+    "text": "7.1 Big-O Question 1\nThe answer is c) \\(O(N)\\) because the four for loops are not nested. The total time complexity is: \\(O(1) + O(N) + O(N) + O(N) + O(N) = O(N)\\)"
   },
   {
     "objectID": "midterm_1_practice.html#big-o-question-2",
     "href": "midterm_1_practice.html#big-o-question-2",
     "title": "Fall 2026 Midterm 1 Practice Problems",
-    "section": "6.2 Big-O Question 2",
-    "text": "6.2 Big-O Question 2\nThe answer is e) \\(O(N^2)\\)\nOuter loop runs runs N times.\nInner loop runs 0 times for idx 0, 1 time for idx 1, 2 times for idx 2 – \\(0 + 1 + 2 + ... + (N-2) = (N-2)(N-1)/2\\).\n\\(\\frac{(N-2)(N-1)}{2} = O(N^2)\\)\ntracker.append(lst[idx]) runs N times (\\(O(N)\\)).\n\\(O(N^2) + O(N) = O(N^2)\\)"
+    "section": "7.2 Big-O Question 2",
+    "text": "7.2 Big-O Question 2\nThe answer is e) \\(O(N^2)\\)\nOuter loop runs runs N times.\nInner loop runs 0 times for idx 0, 1 time for idx 1, 2 times for idx 2 – \\(0 + 1 + 2 + ... + (N-2) = (N-2)(N-1)/2\\).\n\\(\\frac{(N-2)(N-1)}{2} = O(N^2)\\)\ntracker.append(lst[idx]) runs N times (\\(O(N)\\)).\n\\(O(N^2) + O(N) = O(N^2)\\)"
   },
   {
     "objectID": "midterm_1_practice.html#big-o-question-3",
     "href": "midterm_1_practice.html#big-o-question-3",
     "title": "Fall 2026 Midterm 1 Practice Problems",
-    "section": "6.3 Big-O Question 3",
-    "text": "6.3 Big-O Question 3\nThe answer is e) \\(O(N^2)\\)\nFirst loop is \\(O(N^2)\\).\nSecond loop is \\(O(N^2)\\).\nThird loops runs \\(2N\\) for worst-case scenario, so \\(O(N)\\)."
+    "section": "7.3 Big-O Question 3",
+    "text": "7.3 Big-O Question 3\nThe answer is e) \\(O(N^2)\\)\nFirst loop is \\(O(N^2)\\).\nSecond loop is \\(O(N^2)\\).\nThird loops runs \\(2N\\) for worst-case scenario, so \\(O(N)\\)."
   },
   {
     "objectID": "midterm_1_practice.html#big-o-question-4",
     "href": "midterm_1_practice.html#big-o-question-4",
     "title": "Fall 2026 Midterm 1 Practice Problems",
-    "section": "6.4 Big-O Question 4",
-    "text": "6.4 Big-O Question 4\nThe answer is c) \\(O(N)\\)\nBest case is \\(O(1)\\) (empty list), worst case is \\(O(N)\\). Loop checks every value in argument list."
+    "section": "7.4 Big-O Question 4",
+    "text": "7.4 Big-O Question 4\nThe answer is c) \\(O(N)\\)\nBest case is \\(O(1)\\) (empty list), worst case is \\(O(N)\\). Loop checks every value in argument list."
   },
   {
     "objectID": "midterm_1_practice.html#big-o-question-5",
     "href": "midterm_1_practice.html#big-o-question-5",
     "title": "Fall 2026 Midterm 1 Practice Problems",
-    "section": "6.5 Big-O Question 5",
-    "text": "6.5 Big-O Question 5\nThe answer is e) \\(O(N^2)\\)\nBecause fo the nested loops comparing all pairs. For every item in list, it’s compared to every item in the (minus itself)."
+    "section": "7.5 Big-O Question 5",
+    "text": "7.5 Big-O Question 5\nThe answer is e) \\(O(N^2)\\)\nBecause fo the nested loops comparing all pairs. For every item in list, it’s compared to every item in the (minus itself)."
   },
   {
     "objectID": "midterm_1_practice.html#big-o-question-6",
     "href": "midterm_1_practice.html#big-o-question-6",
     "title": "Fall 2026 Midterm 1 Practice Problems",
-    "section": "6.6 Big-O Question 6",
-    "text": "6.6 Big-O Question 6\nThe answer is f) \\(O(N^3)\\)\nThree nested loops."
+    "section": "7.6 Big-O Question 6",
+    "text": "7.6 Big-O Question 6\nThe answer is f) \\(O(N^3)\\)\nThree nested loops."
   },
   {
     "objectID": "midterm_1_practice.html#big-o-question-7",
     "href": "midterm_1_practice.html#big-o-question-7",
     "title": "Fall 2026 Midterm 1 Practice Problems",
-    "section": "6.7 Big-O Question 7",
-    "text": "6.7 Big-O Question 7\nThe answer is b) \\(O(\\log N)\\)\nBoundaries of which values will be checked in the while loop change at every iteraction, halving the size of the sublist that is considered in each interaction.\n\nAfter 1 comparison: N/2 elements remain\nAfter 2 comparisons: N/4 elements remain\nAfter 3 comparisons: N/8 elements remain\nAfter 4 comparisons: N/16 elements remain\nAfter 5 comparisons: N/32 elements remain\nAfter k comparisons: N/2^k elements remain\n\nAfter k comparisons: N/2^k elements remain.\nWhat’s the value of k?\n\\(N = 2^k\\)\n\\(k = log_2(N)\\)"
+    "section": "7.7 Big-O Question 7",
+    "text": "7.7 Big-O Question 7\nThe answer is b) \\(O(\\log N)\\)\nBoundaries of which values will be checked in the while loop change at every iteraction, halving the size of the sublist that is considered in each interaction.\n\nAfter 1 comparison: N/2 elements remain\nAfter 2 comparisons: N/4 elements remain\nAfter 3 comparisons: N/8 elements remain\nAfter 4 comparisons: N/16 elements remain\nAfter 5 comparisons: N/32 elements remain\nAfter k comparisons: N/2^k elements remain\n\nAfter k comparisons: N/2^k elements remain.\nWhat’s the value of k?\n\\(N = 2^k\\)\n\\(k = log_2(N)\\)"
   },
   {
     "objectID": "midterm_1_practice.html#big-o-question-8",
     "href": "midterm_1_practice.html#big-o-question-8",
     "title": "Fall 2026 Midterm 1 Practice Problems",
-    "section": "6.8 Big-O Question 8",
-    "text": "6.8 Big-O Question 8\nThe answer is d) \\(O(N \\log N)\\)\nBinary Search is performed for every element in the array. Binary Search is \\(O(\\log N)\\) so running Binary Search for every array item is \\(O(N \\log N)\\)"
+    "section": "7.8 Big-O Question 8",
+    "text": "7.8 Big-O Question 8\nThe answer is d) \\(O(N \\log N)\\)\nBinary Search is performed for every element in the array. Binary Search is \\(O(\\log N)\\) so running Binary Search for every array item is \\(O(N \\log N)\\)"
   },
   {
     "objectID": "midterm_1_practice.html#read-code-output-question-1",
     "href": "midterm_1_practice.html#read-code-output-question-1",
     "title": "Fall 2026 Midterm 1 Practice Problems",
-    "section": "6.9 Read code – output Question 1",
-    "text": "6.9 Read code – output Question 1\n\n\nBF\nAE"
+    "section": "7.9 Read code – output Question 1",
+    "text": "7.9 Read code – output Question 1\n\n\nBF\nAE"
   },
   {
     "objectID": "midterm_1_practice.html#read-code-question-2",
     "href": "midterm_1_practice.html#read-code-question-2",
     "title": "Fall 2026 Midterm 1 Practice Problems",
-    "section": "6.10 Read code – Question 2",
-    "text": "6.10 Read code – Question 2\n\n\nXYXYXA"
+    "section": "7.10 Read code – Question 2",
+    "text": "7.10 Read code – Question 2\n\n\nXYXYXA"
   },
   {
     "objectID": "midterm_1_practice.html#loops-and-python-types-question-1",
     "href": "midterm_1_practice.html#loops-and-python-types-question-1",
     "title": "Fall 2026 Midterm 1 Practice Problems",
-    "section": "6.11 Loops and Python types Question 1",
-    "text": "6.11 Loops and Python types Question 1\n\nIt crashes because items in a list are accessed by an index, so when it does something[heart] it is indexing the list through its items (it can’t) so it crashes because a string does not index a list. The loop would need to be for i in range(len(something)) and then we need to do something[i]\nSince something is a dictionary, and the for loop retrieves each key in the dictionary, something[heart] works because heart is always a dictionary key. The standard output would look like this:\n\n\n\n['down', 'right', 'south', 'west']"
+    "section": "7.11 Loops and Python types Question 1",
+    "text": "7.11 Loops and Python types Question 1\n\nIt crashes because items in a list are accessed by an index, so when it does something[heart] it is indexing the list through its items (it can’t) so it crashes because a string does not index a list. The loop would need to be for i in range(len(something)) and then we need to do something[i]\nSince something is a dictionary, and the for loop retrieves each key in the dictionary, something[heart] works because heart is always a dictionary key. The standard output would look like this:\n\n\n\n['down', 'right', 'south', 'west']"
   },
   {
     "objectID": "midterm_1_practice.html#write-code-question-1",
     "href": "midterm_1_practice.html#write-code-question-1",
     "title": "Fall 2026 Midterm 1 Practice Problems",
-    "section": "6.12 Write code Question 1",
-    "text": "6.12 Write code Question 1\nSolution 1:\n\ndef rotate(my_list, k):\n    list_copy = my_list.copy()\n    for i in range(len(my_list)-k):\n        my_list[i] = list_copy[i+k]\n        \n    for i in range(1, k+1):\n        index = (k-i+1) * -1\n        my_list[index] = list_copy[i-1]\n\nSolution 2:\n\ndef rotate(my_list, k):\n    for i in range(k):\n        my_list.append(my_list.pop(0))"
+    "section": "7.12 Write code Question 1",
+    "text": "7.12 Write code Question 1\nSolution 1:\n\ndef rotate(my_list, k):\n    list_copy = my_list.copy()\n    for i in range(len(my_list)-k):\n        my_list[i] = list_copy[i+k]\n        \n    for i in range(1, k+1):\n        index = (k-i+1) * -1\n        my_list[index] = list_copy[i-1]\n\nSolution 2:\n\ndef rotate(my_list, k):\n    for i in range(k):\n        my_list.append(my_list.pop(0))"
   },
   {
     "objectID": "midterm_1_practice.html#write-code-question-2",
     "href": "midterm_1_practice.html#write-code-question-2",
     "title": "Fall 2026 Midterm 1 Practice Problems",
-    "section": "6.13 Write code Question 2",
-    "text": "6.13 Write code Question 2\n\ndef get_average(my_list):\n  average = 0\n  for item in my_list:\n    average += item\n  return average/len(my_list)"
+    "section": "7.13 Write code Question 2",
+    "text": "7.13 Write code Question 2\n\ndef get_average(my_list):\n  average = 0\n  for item in my_list:\n    average += item\n  return average/len(my_list)"
   },
   {
     "objectID": "midterm_1_practice.html#write-code-question-3",
     "href": "midterm_1_practice.html#write-code-question-3",
     "title": "Fall 2026 Midterm 1 Practice Problems",
-    "section": "6.14 Write code Question 3",
-    "text": "6.14 Write code Question 3\n\ndef adjust_grades(grades):\n  for i in range(len(grades)):\n    grade = grades[i]\n    round_up = (grade+5)//5 * 5\n    if round_up - grade &lt; 1 and grade &gt; 60:\n      grades[i] = round_up"
+    "section": "7.14 Write code Question 3",
+    "text": "7.14 Write code Question 3\n\ndef adjust_grades(grades):\n  for i in range(len(grades)):\n    grade = grades[i]\n    round_up = (grade+5)//5 * 5\n    if round_up - grade &lt; 1 and grade &gt; 60:\n      grades[i] = round_up"
   },
   {
     "objectID": "midterm_1_practice.html#write-code-question-3-1",
     "href": "midterm_1_practice.html#write-code-question-3-1",
     "title": "Fall 2026 Midterm 1 Practice Problems",
-    "section": "6.15 Write code Question 3",
-    "text": "6.15 Write code Question 3\nSolution 1:\n\ndef most_frequent(my_list):\n  # count first\n  counts = {}\n  for item in my_list:\n    counts[item] = counts.get(item, 0) + 1\n    \n  return max(counts, key=counts.get)\n\nSolution 2:\n\ndef most_frequent(my_list):\n  # count first\n  counts = {}\n  for item in my_list:\n    counts[item] = counts.get(item, 0) + 1\n    \n  highest = max(counts.values())\n  \n  for key, value in counts.items():\n    if value == highest:\n      return key"
+    "section": "7.15 Write code Question 3",
+    "text": "7.15 Write code Question 3\nSolution 1:\n\ndef most_frequent(my_list):\n  # count first\n  counts = {}\n  for item in my_list:\n    counts[item] = counts.get(item, 0) + 1\n    \n  return max(counts, key=counts.get)\n\nSolution 2:\n\ndef most_frequent(my_list):\n  # count first\n  counts = {}\n  for item in my_list:\n    counts[item] = counts.get(item, 0) + 1\n    \n  highest = max(counts.values())\n  \n  for key, value in counts.items():\n    if value == highest:\n      return key"
   },
   {
     "objectID": "midterm_1_practice.html#sorting-1",
     "href": "midterm_1_practice.html#sorting-1",
     "title": "Fall 2026 Midterm 1 Practice Problems",
-    "section": "6.16 Sorting",
-    "text": "6.16 Sorting\n\nThe main principle behind selection sort is b) Repeatedly find the minimum element from the unsorted portion and place it at the beginning\nInsertion sort builds the final sorted array by c) building the sorted array one item at a time, inserting each new element into its proper position\nInsertion sort perform most efficiently c) When the array is already sorted or nearly sorted\nBubble sort do in each pass through the array d) Compares adjacent elements and swaps them if they’re out of order\nAfter the first complete pass of bubble sort on an array of n elements, a) The largest element is in its correct position\nBubble sort cab be optimized to detect when the array is already sorted? a) By using a flag to check if any swaps occurred during a pass\nAfter the first complete pass of selection sort on an array of n elements, b) The smallest element is in its correct position\nSelection, insertion, and bubble sort algorithms c) all have O(n²) time complexity"
+    "section": "7.16 Sorting",
+    "text": "7.16 Sorting\n\nThe main principle behind selection sort is b) Repeatedly find the minimum element from the unsorted portion and place it at the beginning\nInsertion sort builds the final sorted array by c) building the sorted array one item at a time, inserting each new element into its proper position\nInsertion sort perform most efficiently c) When the array is already sorted or nearly sorted\nBubble sort do in each pass through the array d) Compares adjacent elements and swaps them if they’re out of order\nAfter the first complete pass of bubble sort on an array of n elements, a) The largest element is in its correct position\nBubble sort cab be optimized to detect when the array is already sorted? a) By using a flag to check if any swaps occurred during a pass\nAfter the first complete pass of selection sort on an array of n elements, b) The smallest element is in its correct position\nSelection, insertion, and bubble sort algorithms c) all have O(n²) time complexity"
   },
   {
     "objectID": "exams.html#exams",
