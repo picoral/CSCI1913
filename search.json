@@ -3196,21 +3196,21 @@
     "href": "slides/slides-06-01.html#function-stacks-1",
     "title": "Recursion",
     "section": "Function Stacks",
-    "text": "Function Stacks\nWhat will this print?\n\ndef fun_a():\n  print(\"A\")\n  fun_b()\n  print(\"Another A\")\n  \ndef fun_b():\n  print(\"B\")\n  \ndef fun_c():\n  print(\"C\")\n  \nif __name__ == \"__main__\":\n  fun_a()\n  fun_b()\n  fun_c()\n\nA\nB\nAnother A\nB\nC"
+    "text": "Function Stacks\nWhat will this print?\n\ndef fun_a():\n  print(\"A\")\n  fun_b()\n  print(\"Another A\")\n  \ndef fun_b():\n  print(\"B\")\n  \ndef fun_c():\n  print(\"C\")\n  \nif __name__ == \"__main__\":\n  fun_a()\n  fun_b()\n  fun_c()"
   },
   {
     "objectID": "slides/slides-06-01.html#function-stacks-recursion",
     "href": "slides/slides-06-01.html#function-stacks-recursion",
     "title": "Recursion",
     "section": "Function Stacks – recursion",
-    "text": "Function Stacks – recursion\nRepetition through recursion – function calls itself repeatedly until a specific end condition (base case) is met.\nWhat will my_recursive_function(10, 5) return?"
+    "text": "Function Stacks – recursion\nRepetition through recursion – function calls itself repeatedly until a specific end condition (base case) is met.\nWhat will my_recursive_function(10, 5) return?\n\ndef my_recursive_function(a, b):\n  if b == 0:\n    return 0\n  return a + my_recursive_function(a, b-1)"
   },
   {
     "objectID": "slides/slides-06-01.html#function-stacks-recursion-1",
     "href": "slides/slides-06-01.html#function-stacks-recursion-1",
     "title": "Recursion",
     "section": "Function Stacks – recursion",
-    "text": "Function Stacks – recursion\nRepetition through recursion – function calls itself repeatedly until a specific end condition (base case) is met.\nWhat will my_recursive_function(10, 5) return?\nThe my_recursive_function method above calculates \\(a × b\\) (multiplication through repeated addition)"
+    "text": "Function Stacks – recursion\nRepetition through recursion – function calls itself repeatedly until a specific end condition (base case) is met.\nWhat will my_recursive_function(10, 5) return?\n\ndef my_recursive_function(a, b):\n  if b == 0:\n    return 0\n  return a + my_recursive_function(a, b-1)\n\nThe my_recursive_function method above calculates \\(a × b\\) (multiplication through repeated addition)"
   },
   {
     "objectID": "slides/slides-06-01.html#remember-factorial",
