@@ -3652,5 +3652,33 @@
     "title": "Recursion",
     "section": "Function Stacks – recursion",
     "text": "Function Stacks – recursion\nWhat will my_recursive_function(10, 5) return?\n\ndef my_recursive_function(a, b):\n  if b == 0:\n    return 0\n  return a + my_recursive_function(a, b-1)\n\n\nmy_recursive_function(10, 5) → my_recursive_function(10, 4)\n\n\nmy_recursive_function(10, 4) → my_recursive_function(10, 3)\n\n\nmy_recursive_function(10, 3) → my_recursive_function(10, 2)\n\n\nmy_recursive_function(10, 2) → my_recursive_function(10, 1)\n\n\nmy_recursive_function(10, 1) → my_recursive_function(10, 0)\n\n\nmy_recursive_function(10, 0) returns 0\n\n\nmy_recursive_function(10, 1) returns 10 + 0 (10)\n\n\nmy_recursive_function(10, 2) returns 10 + 10 (20)\n\n\nmy_recursive_function(10, 3) returns 10 + 20 (30)\n\n\nmy_recursive_function(10, 4) returns 10 + 30 (40)\n\n\nmy_recursive_function(10, 5) returns 10 + 40 (50)"
+  },
+  {
+    "objectID": "java-install.html",
+    "href": "java-install.html",
+    "title": "Installing Java and IntelliJ on Windows/Mac OSX/ Linux",
+    "section": "",
+    "text": "Go back to Course Home Page"
+  },
+  {
+    "objectID": "java-install.html#part-a-installing-java-23-jdk23",
+    "href": "java-install.html#part-a-installing-java-23-jdk23",
+    "title": "Installing Java and IntelliJ on Windows/Mac OSX/ Linux",
+    "section": "PART A: Installing Java 23 (JDK23)",
+    "text": "PART A: Installing Java 23 (JDK23)\nSteps to install Java:\n\nFor Ubuntu: Install Oracle Java JDK 21/23 on Ubuntu\nFor Mac OSX: Install the JDK on macOS\n\nFor Windows:\n\nDownload the file: Java 23 (select JDK 23 and Windows)\nDouble Click and Install.\n\nFor Linux:\n\nDownload the file: Java 23 (select JDK 23 and Linux)\nDouble Click and Install."
+  },
+  {
+    "objectID": "java-install.html#part-b-installing-intellij",
+    "href": "java-install.html#part-b-installing-intellij",
+    "title": "Installing Java and IntelliJ on Windows/Mac OSX/ Linux",
+    "section": "PART B: Installing Intellij",
+    "text": "PART B: Installing Intellij\nJetbrains provides comprehensive instructions for installing Intellij. If you are still having trouble, ask a TA during lab or office hours for help. Download the community edition (you will have to scroll down to find a community edition option) unless you want to pay a $300+ yearly subscription for the ultimate edition (you can also create a student account with jetbrains)."
+  },
+  {
+    "objectID": "java-install.html#part-a-installing-java-25-jdk25",
+    "href": "java-install.html#part-a-installing-java-25-jdk25",
+    "title": "Installing Java and IntelliJ on Windows/Mac OSX/ Linux",
+    "section": "PART A: Installing Java 25 (JDK25)",
+    "text": "PART A: Installing Java 25 (JDK25)\nSteps to install Java:\n\nDownload the Installer file for your specific operating system: JDK 25\nDouble Click and Install."
   }
 ]
