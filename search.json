@@ -3483,14 +3483,14 @@
     "href": "slides/slides-06-01.html#exercise-fibonacci-sequence",
     "title": "Recursion",
     "section": "Exercise – Fibonacci Sequence",
-    "text": "Exercise – Fibonacci Sequence\nA fibonacci sequence is such that each number is the sum of the two preceding ones:\n\\(F(n) = F(n-1) + F(n-2)\\), with base cases \\(F(0) = 0\\) and \\(F(1) = 1\\).\nThis generates the sequence 0, 1, 1, 2, 3, 5, 8, 13, 21, 32, …\nTest cases:\n\nassert fib(0) == 0\nassert fib(1) == 1\nassert fib(2) == 1\nassert fib(3) == 2\nassert fib(4) == 3\nassert fit(5) == 5\nassert fit(11) == 89"
+    "text": "Exercise – Fibonacci Sequence\nA fibonacci sequence is such that each number is the sum of the two preceding ones: \\(F(n) = F(n-1) + F(n-2)\\), with base cases \\(F(0) = 0\\) and \\(F(1) = 1\\).\nThis generates the sequence 0, 1, 1, 2, 3, 5, 8, 13, 21, 32, …\nTest cases:\n\nassert fib(0) == 0\nassert fib(1) == 1\nassert fib(2) == 1\nassert fib(3) == 2\nassert fib(11) == 89\n\nSubmit your fibonacci.py file with your fib(n) function to gradescope"
   },
   {
     "objectID": "slides/slides-06-01.html#exercise-fibonacci-sequence-1",
     "href": "slides/slides-06-01.html#exercise-fibonacci-sequence-1",
     "title": "Recursion",
     "section": "Exercise – Fibonacci Sequence",
-    "text": "Exercise – Fibonacci Sequence\n\ndef fib(n):\n  if n == 0:\n    return 0\n  \n  if n == 1:\n    return 1\n  \n  return fib(n-1) + fib(n-2)\n\nif __name__ == \"__main__\":\n  assert fib(0) == 0\n  assert fib(1) == 1\n  assert fib(2) == 1\n  assert fib(3) == 2\n  assert fib(4) == 3\n  assert fib(5) == 5\n  assert fib(11) == 89"
+    "text": "Exercise – Fibonacci Sequence\n\ndef fib(n):\n  if n == 0:\n    return 0\n  \n  if n == 1:\n    return 1\n  \n  return fib(n-1) + fib(n-2)"
   },
   {
     "objectID": "slides/slides-06-01.html#runtime-fibonacci-sequence",
@@ -3623,7 +3623,7 @@
     "href": "slides/slides-06-01.html#tail-recursion-iterative-recursion",
     "title": "Recursion",
     "section": "Tail Recursion (Iterative Recursion)",
-    "text": "Tail Recursion (Iterative Recursion)\n\ndef sum_recur(a, b):\n  if a &gt; b:\n    return 0\n  return a + sum_recur(a + 1, b)\n\nvs. The accumulator builds up the result as it recurses\n\ndef sum_recur(a, b, total):\n  if a &gt; b:\n    return total\n  return sum_recur(a + 1, b, total + a)"
+    "text": "Tail Recursion (Iterative Recursion)\nReturn statement needs to calculate something, but it has to wait for recursive call to return a value first\n\ndef sum_recur(a, b):\n  if a &gt; b:\n    return 0\n  return a + sum_recur(a + 1, b)\n\nvs. The accumulator builds up the result as it recurses\n\ndef sum_recur(a, b, total):\n  if a &gt; b:\n    return total\n  return sum_recur(a + 1, b, total + a)"
   },
   {
     "objectID": "slides/slides-06-01.html#tail-recursion-sum_recura-b-total",
@@ -3680,5 +3680,19 @@
     "title": "Installing Java and IntelliJ on Windows/Mac OSX/ Linux",
     "section": "PART A: Installing Java 25 (JDK25)",
     "text": "PART A: Installing Java 25 (JDK25)\nSteps to install Java:\n\nDownload the Installer file for your specific operating system: JDK 25\nDouble Click and Install."
+  },
+  {
+    "objectID": "slides/slides-06-01.html#exercise-fibonacci-sequence-2",
+    "href": "slides/slides-06-01.html#exercise-fibonacci-sequence-2",
+    "title": "Recursion",
+    "section": "Exercise – Fibonacci Sequence",
+    "text": "Exercise – Fibonacci Sequence\nWhat’s the runtime of this solution?\n\ndef fib(n):\n    sequence = [0, 1]\n    for i in range(2, n + 1):\n        sequence.append(sequence[i-1] + sequence[i-2])\n    return sequence[n]"
+  },
+  {
+    "objectID": "slides/slides-06-01.html#exercise-fibonacci-sequence-3",
+    "href": "slides/slides-06-01.html#exercise-fibonacci-sequence-3",
+    "title": "Recursion",
+    "section": "Exercise – Fibonacci Sequence",
+    "text": "Exercise – Fibonacci Sequence\nWhat’s the runtime of this solution?\n\ndef fib(n):\n    a, b = 0, 1\n    for _ in range(n):\n        a, b = b, a + b\n    return a"
   }
 ]
