@@ -277,7 +277,7 @@
     "href": "labs.html",
     "title": "Labs",
     "section": "",
-    "text": "All labs are at Walter Library 106\n\nLaboratory (004) T 02:30 PM - 04:25 PM\n\nLaboratory (005) T 04:40 PM - 06:35 PM\n\nLaboratory (006) W 08:00 AM - 09:55 AM\n\nLaboratory (007) W 10:10 AM - 12:05 PM\n\nLabs are always due at 11:59pm on the Wednesday that Lab sections 6 and 7 happen. Note that my staff and I are not available after 7pm, so if you make the unwise decision to work on the lab close to the deadline you won’t be able to get any help from us. We cannot accept technical/computer issues as a legitimate reason for late or incomplete work. You need to make sure you are working on the assignments with enough time to figure our these issues.\n\nLab submissions will be primarily evaluated automatically to validate expected behavior.\nAttendance of the lab section itself is expected unless you have an excused absence. Historically, students who skip labs, fail labs (and we don’t want this for you).\n\n\nComputer Lab 1\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 15, 2026\nLabs 6 and 7: Wed, Sep 16, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 16, 2026 at 11:59 pm\n\nLab 01 instructions\nLab 01 slides\nLab 01 tester file\nLab 01 gradescope submission\n\n\n\nComputer Lab 2\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 22, 2026\nLabs 6 and 7: Wed, Sep 23, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 23, 2026 at 11:59 pm\n\nLab 02 instructions\nLab 02 slides\nLab 02 tester file\nLab 02 gradescope submission\n\n\n\nComputer Lab 3\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 29, 2026\nLabs 6 and 7: Wed, Sep 30, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 30, 2026 at 11:59 pm\n\nLab 03 instructions\nLab 03 slides\nLab 03 tester file\nLab 03 gradescope submission\n\n\n\nComputer Lab 4\nLab section dates:\n\nLabs 4 and 5: Tue, Oct 6, 2026\nLabs 6 and 7: Wed, Oct 7, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Oct 7, 2026 at 11:59 pm\n\nLab 04 instructions\nLab 04 slides\nLab 04 tester file\nLab 04 gradescope submission\n\n\n\nComputer Lab 5\nLab section dates:\n\nLabs 4 and 5: Tue, Oct 20, 2026\nLabs 6 and 7: Wed, Oct 21, 2026"
+    "text": "All labs are at Walter Library 106\n\nLaboratory (004) T 02:30 PM - 04:25 PM\n\nLaboratory (005) T 04:40 PM - 06:35 PM\n\nLaboratory (006) W 08:00 AM - 09:55 AM\n\nLaboratory (007) W 10:10 AM - 12:05 PM\n\nLabs are always due at 11:59pm on the Wednesday that Lab sections 6 and 7 happen. Note that my staff and I are not available after 7pm, so if you make the unwise decision to work on the lab close to the deadline you won’t be able to get any help from us. We cannot accept technical/computer issues as a legitimate reason for late or incomplete work. You need to make sure you are working on the assignments with enough time to figure our these issues.\n\nLab submissions will be primarily evaluated automatically to validate expected behavior.\nAttendance of the lab section itself is expected unless you have an excused absence. Historically, students who skip labs, fail labs (and we don’t want this for you).\n\n\nComputer Lab 1\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 15, 2026\nLabs 6 and 7: Wed, Sep 16, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 16, 2026 at 11:59 pm\n\nLab 01 instructions\nLab 01 slides\nLab 01 tester file\nLab 01 gradescope submission\n\n\n\nComputer Lab 2\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 22, 2026\nLabs 6 and 7: Wed, Sep 23, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 23, 2026 at 11:59 pm\n\nLab 02 instructions\nLab 02 slides\nLab 02 tester file\nLab 02 gradescope submission\n\n\n\nComputer Lab 3\nLab section dates:\n\nLabs 4 and 5: Tue, Sep 29, 2026\nLabs 6 and 7: Wed, Sep 30, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Sep 30, 2026 at 11:59 pm\n\nLab 03 instructions\nLab 03 slides\nLab 03 tester file\nLab 03 gradescope submission\n\n\n\nComputer Lab 4\nLab section dates:\n\nLabs 4 and 5: Tue, Oct 6, 2026\nLabs 6 and 7: Wed, Oct 7, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Oct 7, 2026 at 11:59 pm\n\nLab 04 instructions\nLab 04 slides\nLab 04 tester file\nLab 04 gradescope submission\n\n\n\nComputer Lab 5\nLab section dates:\n\nLabs 4 and 5: Tue, Oct 20, 2026\nLabs 6 and 7: Wed, Oct 21, 2026\n\nDue date (deadline to submit to Gradescope): Wed, Oct 21, 2026 at 11:59 pm\n\nLab 05 instructions\nLab 05 slides\nLab 05 tester file\nLab 05 gradescope submission"
   },
   {
     "objectID": "projects.html",
@@ -3694,5 +3694,187 @@
     "title": "Recursion",
     "section": "Exercise – Fibonacci Sequence",
     "text": "Exercise – Fibonacci Sequence\nWhat’s the runtime of this solution?\n\ndef fib(n):\n    a, b = 0, 1\n    for _ in range(n):\n        a, b = b, a + b\n    return a"
+  },
+  {
+    "objectID": "midterm_1_practice.html#sorting-ii-1",
+    "href": "midterm_1_practice.html#sorting-ii-1",
+    "title": "Fall 2026 Midterm 1 Practice Problems",
+    "section": "7.17 Sorting II",
+    "text": "7.17 Sorting II\n\n\nInsertion Sort\n\n\nBubble Sort\n\n\nSelection Sort"
+  },
+  {
+    "objectID": "labs/lab05.html",
+    "href": "labs/lab05.html",
+    "title": "Computer Laboratory 05",
+    "section": "",
+    "text": "Deadline: Wed, Oct 21, 2026 5pm"
+  },
+  {
+    "objectID": "labs/lab05.html#overview",
+    "href": "labs/lab05.html#overview",
+    "title": "Computer Laboratory 05",
+    "section": "Overview",
+    "text": "Overview\nThis is your first Java lab. In this lab you’ll build the core logic for the classic game Minesweeper, and practice recursion along the way. When you’re done, you’ll be able to actually play the game in your terminal.\nIf you’ve never played Minesweeper: the board is a grid of hidden cells, and some cells hide mines. When you reveal a safe cell, it shows a number: how many of its 8 neighbors are mines. If you reveal a cell with 0 neighboring mines, the game automatically reveals all of its neighbors, and if any of those are 0, it keeps going. That “keep going” is the flood fill that clears big empty areas in one click, and recursion is a natural way to write it.\n\nLearning goals\n\nWrite Java methods: types, parameters, return values, static methods\nWork with Java arrays, including 2D arrays (boolean[][], char[][])\nWrite recursive methods with clear base cases and recursive cases\nUse recursion to solve a problem that’s hard to solve with loops (flood fill)\n\n\n\nFiles\nDownload lab05files.zip from Canvas. It contains:\n\n\n\n\n\n\n\n\nFile\nWhat it is\nDo you edit it?\n\n\n\n\nMinesweeper.java\nThe methods you’ll write\nYes, this is the only file you submit\n\n\nMinesweeperTester.java\nTests you can run locally\nYou may comment out tests\n\n\nTester.java\nHelper used by the tester (same one as later labs)\nNo\n\n\nPlayMinesweeper.java\nLets you play the game once your code works\nNo"
+  },
+  {
+    "objectID": "labs/lab05.html#some-java-youll-need",
+    "href": "labs/lab05.html#some-java-youll-need",
+    "title": "Computer Laboratory 05",
+    "section": "Some Java you’ll need",
+    "text": "Some Java you’ll need\nComing from Python, here are the main differences you’ll run into in this lab.\nEvery statement ends with ;, and blocks use { } instead of indentation. (Keep indenting anyway; your code still needs to be readable.)\nif (n &lt;= 0) {\n    return \"\";\n}\nEvery variable and parameter has a type. int, boolean, char, String, and arrays like boolean[] or char[][].\nchar vs String. '#' (single quotes) is a char, a single character. \"#\" (double quotes) is a String. They’re different types.\nArrays have a fixed length. You create them with new and the size:\nboolean[] row = new boolean[5];          // 5 values, all start as false\nchar[][] grid = new char[3][4];          // 3 rows, each with 4 chars\nint numRows = grid.length;               // 3\nint numCols = grid[0].length;            // 4\ngrid[1][2] = '#';                        // row 1, column 2\nfor loops look like this:\nfor (int i = 0; i &lt; row.length; i++) {\n    // i goes 0, 1, 2, ..., row.length - 1\n}\nCharacters are secretly numbers. That’s handy for turning a count into a digit:\nint count = 3;\nchar digit = (char) ('0' + count);       // digit is '3'\nConstants. Minesweeper.java defines HIDDEN, FLAG, and MINE at the top. Use these names (e.g., view[r][c] = HIDDEN;) instead of typing '#', 'F', '*'."
+  },
+  {
+    "objectID": "labs/lab05.html#how-the-board-is-stored",
+    "href": "labs/lab05.html#how-the-board-is-stored",
+    "title": "Computer Laboratory 05",
+    "section": "How the board is stored",
+    "text": "How the board is stored\nThe game uses two 2D arrays of the same size:\n\nboolean[][] mines: the answer key. mines[r][c] is true if there’s a mine at row r, column c.\nchar[][] view: what the player sees. Each cell holds one of:\n\nHIDDEN ('#'): not revealed yet\nFLAG ('F'): the player marked this cell as a suspected mine\nMINE ('*'): a revealed mine (the player lost!)\n'0' through '8': a revealed safe cell, showing the number of neighboring mines\n\n\nRows and columns are numbered from 0. Position (row, col) means mines[row][col]."
+  },
+  {
+    "objectID": "labs/lab05.html#part-1-recursion-warm-ups",
+    "href": "labs/lab05.html#part-1-recursion-warm-ups",
+    "title": "Computer Laboratory 05",
+    "section": "Part 1: Recursion warm-ups",
+    "text": "Part 1: Recursion warm-ups\nRules for Part 1: no loops (for, while) allowed, and each method must call itself. Gradescope checks this, and part of your score depends on it.\nFor each method, before you write any code, answer two questions: 1. Base case: what’s the smallest input, where I know the answer right away? 2. Recursive case: how can I solve this input using the answer to a slightly smaller input?\n\nrepeat(String s, int n)\nReturn a string made of n copies of s.\nrepeat(\"ab\", 3)  -&gt;  \"ababab\"\nrepeat(\"-\", 1)   -&gt;  \"-\"\nrepeat(\"abc\", 0) -&gt;  \"\"\nHint: repeat(\"ab\", 3) is \"ab\" + repeat(\"ab\", 2).\n(The provided drawBoard method uses repeat to draw the line under the column numbers.)\n\n\ncountTrue(boolean[] row, int start)\nReturn how many values in row are true, counting only from index start to the end.\nrow = [false, true, false, true, true]\ncountTrue(row, 0) -&gt; 3\ncountTrue(row, 2) -&gt; 2\ncountTrue(row, 5) -&gt; 0      // start == row.length: nothing left to count\nHint: Why does this method have a start parameter? In Python you might have used slicing (row[1:]) to make a smaller list. Java arrays don’t slice, so instead we make the problem smaller by moving start forward by one.\n\n\ncountMines(boolean[][] mines, int startRow)\nReturn the total number of mines in the grid, counting rows startRow through the last row. Use countTrue to count each row.\nX..X\n....\n.XX.\n...X\n\ncountMines(board, 0) -&gt; 5\ncountMines(board, 2) -&gt; 3\ncountMines(board, 4) -&gt; 0\nThis is the same pattern as countTrue, one level up: a 2D array is an array of rows, and mines[startRow] is a boolean[] you can hand straight to countTrue."
+  },
+  {
+    "objectID": "labs/lab05.html#part-2-the-game",
+    "href": "labs/lab05.html#part-2-the-game",
+    "title": "Computer Laboratory 05",
+    "section": "Part 2: The game",
+    "text": "Part 2: The game\nLoops are allowed in Part 2, except in reveal, which must be recursive with no loops.\nYou’re given one helper method, inBounds(numRows, numCols, row, col), which returns true if (row, col) is a real position on the board. You’ll find it useful for countAdjacent and reveal.\n\ncreateView(int numRows, int numCols)\nCreate and return a new numRows x numCols char array where every cell is HIDDEN.\ncreateView(2, 5) -&gt;\n#####\n#####\n\n\ncountAdjacent(boolean[][] mines, int row, int col)\nReturn how many of the (up to 8) cells surrounding (row, col) contain mines.\n\nDo not count the cell (row, col) itself.\nCells on the edge or in a corner have fewer than 8 neighbors. Skip positions that fall off the board (don’t crash with an ArrayIndexOutOfBoundsException!).\n\nX.X..\n.XX..\nX...X\n....X\n\ncountAdjacent(board, 1, 1) -&gt; 4\ncountAdjacent(board, 1, 2) -&gt; 2   // (1, 2) is a mine, but it doesn't count itself\ncountAdjacent(board, 0, 4) -&gt; 0   // top-right corner\nHint: the 8 neighbors of (row, col) are at (row + dr, col + dc) where dr and dc are each -1, 0, or 1, except for dr == 0 && dc == 0. Two nested loops work nicely here.\n\n\nreveal(boolean[][] mines, char[][] view, int row, int col)\nThis is the heart of the game. reveal doesn’t return anything; it changes view. Follow these rules, in this order:\n\nIf (row, col) is out of bounds, do nothing (just return;).\nIf view[row][col] is not HIDDEN (it’s already revealed, or flagged), do nothing.\nIf there’s a mine at (row, col), set view[row][col] to MINE and stop.\nOtherwise, set view[row][col] to the digit for countAdjacent(mines, row, col).\nIf that count was 0, call reveal on all 8 neighbors.\n\nRules 1 and 2 are your base cases. Rule 5 is the recursive case.\nThink about why rule 2 matters: if cell A is a 0, it reveals its neighbor B. If B is also a 0, it calls reveal on its neighbors, including A. Without rule 2, A and B would keep revealing each other forever (and you’d get a StackOverflowError).\nNotice that rule 1 lets you call reveal on neighbors without checking whether they’re on the board first. The recursive call checks for you.\nExample. On this board (X = mine):\n......\n......\n....X.\n......\nX.....\nCalling reveal(mines, view, 0, 0) on an all-hidden view produces:\n000000\n000111\n0001##\n110111\n#10000\nLook at the two # cells in row 2. (2, 4) is a mine. (2, 5) is safe, but every neighbor it has is either a mine or a numbered cell, and numbered cells don’t spread. So nothing ever calls reveal on it. That’s correct behavior!\n\n\nhasWon(boolean[][] mines, char[][] view)\nReturn true if the player has won: every cell without a mine has been revealed (shows a digit) and no mine has been revealed. Mine cells can be HIDDEN or FLAG; it doesn’t matter."
+  },
+  {
+    "objectID": "labs/lab05.html#testing",
+    "href": "labs/lab05.html#testing",
+    "title": "Computer Laboratory 05",
+    "section": "Testing",
+    "text": "Testing\nCompile and run the tester:\njavac *.java\njava MinesweeperTester\nEach test prints passed test, or tells you what was expected vs. what your code returned. The reveal tests also draw the board so you can see what happened.\nWork in order: Part 1 first, then createView, countAdjacent, reveal, hasWon. reveal depends on countAdjacent, so make sure countAdjacent passes before moving on.\nGradescope also checks that repeat, countTrue, countMines, and reveal are recursive and use no loops. The local tester does not check this, so it’s on you."
+  },
+  {
+    "objectID": "labs/lab05.html#play",
+    "href": "labs/lab05.html#play",
+    "title": "Computer Laboratory 05",
+    "section": "Play!",
+    "text": "Play!\nOnce everything passes:\njava PlayMinesweeper\nType r 3 4 to reveal row 3, column 4, or f 3 4 to place/remove a flag. Your first reveal is always safe. Clear every safe cell to win."
+  },
+  {
+    "objectID": "labs/lab05.html#submission",
+    "href": "labs/lab05.html#submission",
+    "title": "Computer Laboratory 05",
+    "section": "Submission",
+    "text": "Submission\nSubmit only Minesweeper.java to Gradescope. Make sure your name is in the comment at the top.\nYour file must compile! If it doesn’t compile, the autograder gives you 0. Don’t add a package line, and don’t rename the class or change any method headers."
+  },
+  {
+    "objectID": "labs/lab05.html#grading-50-points",
+    "href": "labs/lab05.html#grading-50-points",
+    "title": "Computer Laboratory 05",
+    "section": "Grading (50 points)",
+    "text": "Grading (50 points)\n\n\n\n\n\n\n\nPart\nPoints\n\n\n\n\nrepeat\n6\n\n\ncountTrue\n6\n\n\ncountMines\n6\n\n\ncreateView\n4\n\n\ncountAdjacent\n8\n\n\nreveal\n12\n\n\nhasWon\n4\n\n\nRecursion check (repeat, countTrue, countMines, reveal call themselves and use no loops; each must also work)\n4"
+  },
+  {
+    "objectID": "labs/lab05.html#optional-challenges-not-graded",
+    "href": "labs/lab05.html#optional-challenges-not-graded",
+    "title": "Computer Laboratory 05",
+    "section": "Optional challenges (not graded)",
+    "text": "Optional challenges (not graded)\n\nWrite a recursive countHidden(char[][] view, int row, int col) that counts the hidden cells by walking the grid one cell at a time with no loops. (Hint: when col reaches the end of a row, move to the next row.)\nReal Minesweeper has “chording”: clicking a number whose neighboring flags already match that number reveals all of its other neighbors. Add it to PlayMinesweeper.\nChange PlayMinesweeper to let the player choose the board size and number of mines."
+  },
+  {
+    "objectID": "labs/lab05.html#installing-java-and-intellij-on-windowsmac-osx-linux",
+    "href": "labs/lab05.html#installing-java-and-intellij-on-windowsmac-osx-linux",
+    "title": "Computer Laboratory 05",
+    "section": "Installing Java and IntelliJ on Windows/Mac OSX/ Linux",
+    "text": "Installing Java and IntelliJ on Windows/Mac OSX/ Linux\n\nPART A: Installing Java 25 (JDK25)\nSteps to install Java:\n\nDownload the Installer file for your specific operating system: JDK 25\nDouble Click and Install.\n\n\n\nPART B: Installing Intellij\nJetbrains provides comprehensive instructions for installing Intellij. If you are still having trouble, ask a TA during lab or office hours for help. Download the community edition (you will have to scroll down to find a community edition option) unless you want to pay a $300+ yearly subscription for the ultimate edition (you can also create a student account with jetbrains)."
+  },
+  {
+    "objectID": "labs/lab05.html#start-intellij-and-create-a-new-java-project",
+    "href": "labs/lab05.html#start-intellij-and-create-a-new-java-project",
+    "title": "Computer Laboratory 05",
+    "section": "Start IntelliJ and create a new Java Project",
+    "text": "Start IntelliJ and create a new Java Project\nBegin by loading IntelliJ. Depending on your past use of intelliJ you may need to enter some one-time settings such as color theme and default set of keyboard shortcuts for IntelliJ.\nYou can set these options however you want, while I prefer default key-bindings and a light theme, many people may disagree, and it doesn’t effect your coding output one bit.\nIf you are not prompted for these settings, that too is fine. You can change these in the settings at your leisure.\nOnce open, depending on settings and past use IntelliJ will either open to it’s splash-screen or a previously opened project. Either way you want to make a new project.\nIf you are in a previous project go to File \\(\\rightarrow\\) New \\(\\rightarrow\\) Project.... Otherwise you can simply click the new project option.\nThe new project window should look something like this:\n\n\n\nIntelliJ new project window\n\n\nYou want a Java project, with no additional library or framework support.\nMake sure your project has a name (“lab5” would be appropriate, but so would “NIM”). Make sure to check the project location. If necessary, update where the project is stored to keep your files well organized.\nIf you are working on your own computer don’t forget to check the Project SDK settings. You shouldn’t need to be using an SDK version 23, like shown in the screenshot, so long as you are using 9 or above, you should be fine. (We will be grading on version 17)\nIf no SDK is listed, click new and setup your JDK. Typically IntelliJ will automatically open to your JDK (Java Development Kit) location.\n\nClick create\n\nIf not shown, you will likely want to open the project view. The keyboard command for that is alt-1 on windows (and I believe this is true for Linux as well). This keyboard command is also shown in the background of the file viewer if no files are open."
+  },
+  {
+    "objectID": "labs/lab05.html#setup-for-java-files",
+    "href": "labs/lab05.html#setup-for-java-files",
+    "title": "Computer Laboratory 05",
+    "section": "Setup for Java files",
+    "text": "Setup for Java files\nNow that you have a project set up, click the tiny triangles in the project view to open the project itself and the source folder (src).\nDownload the template java files and move them to the src folder. You can do this by clicking and dragging the file from your file browser to IntelliJ’s window. Make sure the files are in src, if they are not IntelliJ will not let you run these files.\nNote: Java, as a compiled language, has no patience for code it doesn’t understand. Therefore, you may need to comment out parts of the testing code relating to functions you haven’t written yet."
+  },
+  {
+    "objectID": "labs/lab05.html#creategamestateint-size-int-tokenmax",
+    "href": "labs/lab05.html#creategamestateint-size-int-tokenmax",
+    "title": "Computer Laboratory 05",
+    "section": "createGameState(int size, int tokenMax)",
+    "text": "createGameState(int size, int tokenMax)\nThis function takes two parameters, size, and tokenMax. It should return a newly created array of ints representing the number of tokens in each row. The size parameter sets the length of the newly created list, and the tokenMax parameter controls the values. In particular, the first row (position 0 in the array) should have one in it, the second row should have 2 and so-forth up to the max.\nNotes:\n\nYou can assume that both size and tokenMax are positive.\nif a size value of 0 is given, you should return a size 0 array.\nYou cannot assume that size \\(&lt;\\) tokenMax. In a case like this the (size - tokenMax + 1) last positions should all be equal to token Max.\n\nHints:\n\nUnlike a list – when you make an array you give it a size – the array will then be full of 0s.\nSince the array is made full-length, you will need to assign to the array using indexing syntax myarray[i] = value;. This is different from the python approach where you make the list through repeated append.\nyou can return an array in Java, simply use a return statement and the name of the variable pointing to your array."
+  },
+  {
+    "objectID": "labs/lab05.html#isvalidmoveint-gamestate-string-row-string-takes",
+    "href": "labs/lab05.html#isvalidmoveint-gamestate-string-row-string-takes",
+    "title": "Computer Laboratory 05",
+    "section": "isValidMove(int[] gameState, String row, String takes)",
+    "text": "isValidMove(int[] gameState, String row, String takes)\nThis function takes three parameters, gameState is an array representing the state of the game (similar to one that createGameState might return)\n\nrow is a string representing which row the user has requested to take tokens from, and\ntakes is a string representing how many tokens the user wishes to take.\n\nThe function should return a boolean value – true to indicate that user has chosen a valid move, or false to indicate that the move would be invalid.\nNotes:\n\nThis function must not modify the gameState array parameter – the given array should have the same values before and after the function.\nrow and takes are strings, not integers. You CANNOT assume that they will only have integers in them or be in any particularly valid form. You can assume the string is non-empty (has at least one letter in it)\nA string that contains anything OTHER than digits (1,2,3,4,5,6,7,8,9 or 0) is invalid.\n\nA function isDigit(someString) is provided to help check this. You should use this function. The function calling syntax remains essentially unchanged from python in this case – simply name the function and then put parameters in the parenthesis.\nYou can convert a string to an integer with the following code: lstinline{int intTakes = Integer.parseInt(takes);\n\nIf the row number is out-of-range then the row is invalid. The valid row numbers are between 1 and the length of the gameState array (inclusive)\n\nyou can get the length of an array with gameStates.length\n\nTo be valid the takes number must be between 1 and 3 (inclusive)\nTo be valid, the takes number must be less than or equal the number of tokens in the selected row (I.E. if a row only has 2 tokens, it is not valid to take 3 tokens)\n\nHints:\n\nThis is probably one of the more complicated functions in this lab – fortunately, you already resolved these complexities in Lab02. Make sure you understand how you approached this program in Lab02, then translate that into code suitable for Lab05.\nrows will be entered by the user 1-indexed (meaning “1” represents the first row) this is different from how rows are handled in java arrays – where the gameState array is 0-indexed (0 represents the first row.) Your code will need to account for this."
+  },
+  {
+    "objectID": "labs/lab05.html#updateint-gamestate-int-row-int-takes",
+    "href": "labs/lab05.html#updateint-gamestate-int-row-int-takes",
+    "title": "Computer Laboratory 05",
+    "section": "update(int[] gameState, int row, int takes)",
+    "text": "update(int[] gameState, int row, int takes)\nThe update method takes three parameters gameState, row, and takes. While these have the same name as the parameters to the isValidMove function, there are important differences.\nLike before, gameState is an array representing the state of the game (similar to one that createGameState might return)\n\nrow is an int representing which row the user has requested to take tokens from – this will be 0-indexed (not 1-indexed like the user input) and therefore will represent an array index directly.\ntakes is an int representing how many tokens the user wishes to take. The function should return a array that represents the board after the listed number of tokens have been taken from the listed row.\n\nNotes:\n\nYou can assume that row is a valid index for the gameState array, and that takes is between 1 and 3, and not greater than gameStates[i]. This is to say, you can assume that these parameters indicate a valid move as previously defined.\nRemember that the row is a 0-indexed integer in this function, not a 1-indexed string like in isValidMove. You can use it directly like an array index.\nThe gameState array input to this function should be unmodified by this function (I.E. it should have the same value before and after this function runs)\nThe returned array should be a copy of the input array except for the index indicated by row – which should have fewer tokens as indicated by the takes variable.\n\nHints:\n\nLike with the earlier function you should remember that java arrays, unlike python lists, are created full-length and filled with 0. Therefore, you should plan on using repeated assignments: newTokens[i] = something; instead of appending when creating your return array."
+  },
+  {
+    "objectID": "labs/lab05.html#drawgamestategamestate",
+    "href": "labs/lab05.html#drawgamestategamestate",
+    "title": "Computer Laboratory 05",
+    "section": "drawGameState(gameState)",
+    "text": "drawGameState(gameState)\nThe drawGameState function takes one parameter, gameState is an array representing the state of the game (similar to one that createGameState might return). You can assume that the gameState array contains only non-negative numbers. The drawGameState function has no return value, and should instead use print statements to produce an output directly to the terminal.\nThe output of the function is a depiction of the state of the game, for instance, if given the array [5,2,3,1] The following should be printed:\n====================\n1 #####\n2 ##\n3 ###\n4 #\n====================\nFormally:\n\nThe first line should contain 20 equal-signs.\nfor an array length \\(n\\), the next \\(n\\) lines should be the row number, followed by a single space, and then a number of pound-signs # as indicated by the gameState array.\nThe final line should contain 20 equal-signs. (there should be a final end-line after the 20 equals as well)\nNo line starts-with or ends-with any spaces (with the technical exception of a line representing a row with no tokens left, which would be a number followed by a space.)\nYour output must match letter to letter – including spaces, newlines, capitalization, symbols etc.\n\nHints:\n\nA common task for this process is to repeat a string a fixed number of times. There is not an easy way to do this in Java. It would be easy enough, however, to make a helper function to make such strings, or to print the characters one-by-one in a loop.\nYou will likely need to use both System.out.println} (print with a final new-line character) and System.out.print (print but do not end the line) to make this function work."
+  },
+  {
+    "objectID": "labs/lab05.html#isovergamestate",
+    "href": "labs/lab05.html#isovergamestate",
+    "title": "Computer Laboratory 05",
+    "section": "isOver(gameState)",
+    "text": "isOver(gameState)\nThe isOver function takes one parameter, gameState is an array representing the state of the game (similar to one that createGameState might return).\nThis function returns a boolean value to indicate if the game is over.\n\nIf every value in the input array is 0 – the game is over.\nIf any value is not 0 – the game is not over.\n\n(You can assume the array is not empty – I.E. it has length greater than 0)"
+  },
+  {
+    "objectID": "labs/lab05.html#math-differences-and-other-minor-notes",
+    "href": "labs/lab05.html#math-differences-and-other-minor-notes",
+    "title": "Computer Laboratory 05",
+    "section": "Math differences and other minor notes",
+    "text": "Math differences and other minor notes\nMost mathematical computation does not need to be translated. The only differences:\n\nLogical operators are back to their C-style versions: || (or), && (and), ! (not)\nWe no longer have exponentiation operator ** or int-division operator //\nThe standard division operator now has type-dependent behavior. If you give it two integers then it will perform an integer division. Otherwise we get float-division.\nBoolean values are now lower-case true and false\nAll statements should end with a semicolon. (Not needed with flow-of-control, but needed for everything else)\nThe return statement is unchanged.\nprinting is done with System.out.println(), System.out.println(something), System.out.print(something):\n\nSystem.out.println() with 0 parameters, this prints the newline character only\nSystem.out.println(something) only 1 parameter is allowed at max. This will print something then print the newline character\nSystem.out.print(something) only 1 parameter is allowed at max. This print something but NOT print the newline character, similar to print(something, end='') in python\n\nStrings must have double-quotes and only double-quotes. (single quotes are used for char type)"
+  },
+  {
+    "objectID": "labs/lab05.html#variables",
+    "href": "labs/lab05.html#variables",
+    "title": "Computer Laboratory 05",
+    "section": "Variables",
+    "text": "Variables\nVariables must have a type in java. For most variables in this lab the type will be sufficient. Once created, variable assignments require no real modification.\nTask: create new int variable nad update it\nPython:\n\ncount = 0\ncount += 1\n\nJava:\n\nint count = 0\ncount += 1;\ncount++"
+  },
+  {
+    "objectID": "labs/lab05.html#basic-flow-of-control",
+    "href": "labs/lab05.html#basic-flow-of-control",
+    "title": "Computer Laboratory 05",
+    "section": "Basic flow of control",
+    "text": "Basic flow of control\n\nconditionals\nPython:\n\nif condition:\n  some code\nelif another condition:\n  some code\nelse:\n  some code\n\nJava:\n\nif (condition) {\n  some code;\n} else if (condition) {\n  some code;\n} else {\n  some code;\n}\n\n\n\nwhile loop\nPython:\n\nwhile condition:\n  some code\n\nJava:\n\nwhile (condition) {\n  some code;\n}\n\n\n\nfor loops\nPython:\n\nfor i in range(5):\n  do something with i\n  \nfor i in range(len(lst)):\n  do something with lst[i]\n  \nfor elem in lst:\n  do something with elem\n\nJava:\n\nfor (int i = 0; i &lt; 5; i++) {\n  do something with i;\n}\n\nfor (int i = 0; i &lt; arr.length; i++) {\n  do something with arr[i];\n}\n\nJava has for each loops for collections (note the specification of the type of value):\n\nfor (int number : arr) {\n    do something with number;\n}\n        \nfor (String word : arr) {\n    do something with word;\n}"
+  },
+  {
+    "objectID": "labs/lab05.html#arrays-and-lists",
+    "href": "labs/lab05.html#arrays-and-lists",
+    "title": "Computer Laboratory 05",
+    "section": "arrays and lists",
+    "text": "arrays and lists\nArrays and lists are the biggest difference in this code.\n\nPython lists are created empty, and brought up to length by filling them with the append method.\nJava arrays are created at their final (and only) size, and cannot be resized once made. Therefore code for building and returning a list is quite different.\n\nPython:\n\n# create new list with 10 zeros\nnew_list = [0] * 10 \n\n# change second value\nnew_list[1] = 99\n\n# retrieve value and assign it to a variable\nx = new_list[2]\n\n# get list size\nsize = len(new_list)\n\nJava:\n\n# create new list with 10 zeros\nint[] new_arr = new int[10];\n\n# change second value\nnew_arr[1] = 99;\n\n# retrieve value and assign it to a variable\nint x = new_arr[2];\n\n# get list size\nsize = new_arr.length;"
+  },
+  {
+    "objectID": "labs/lab05-slides.html#set-up-environment",
+    "href": "labs/lab05-slides.html#set-up-environment",
+    "title": "Lab 05",
+    "section": "Set up environment",
+    "text": "Set up environment\n\nDownload JDK\nDownload and install IntelliJ\nStart an IntelliJ project\nDownload the template java files and move them to the src folder"
+  },
+  {
+    "objectID": "labs/lab05-slides.html#folder-structure",
+    "href": "labs/lab05-slides.html#folder-structure",
+    "title": "Lab 05",
+    "section": "Folder Structure",
+    "text": "Folder Structure\nYour intelij project directory should look something like the following (intellij should generate the “out” directory and all the files in it automatically. You should only have to worry about src)\n.\n|-- Lab 05\n|-- out\n|   `-- production\n|      ...\n|       |-- NimTester.class\n|       |-- PlayNIM.class\n|       `-- NIM.class\n`-- src\n    |-- NimTester.java\n    |-- PlayNIM.java\n    `-- NIM.java"
   }
 ]
