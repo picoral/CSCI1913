@@ -3876,5 +3876,12 @@
     "title": "Lab 05",
     "section": "Folder Structure",
     "text": "Folder Structure\nYour intelij project directory should look something like the following (intellij should generate the “out” directory and all the files in it automatically. You should only have to worry about src)\n.\n|-- Lab 05\n|-- out\n|   `-- production\n|      ...\n|       |-- NimTester.class\n|       |-- PlayNIM.class\n|       `-- NIM.class\n`-- src\n    |-- NimTester.java\n    |-- PlayNIM.java\n    `-- NIM.java"
+  },
+  {
+    "objectID": "exam-instructions.html#exam-instructions",
+    "href": "exam-instructions.html#exam-instructions",
+    "title": "Exam Instructions",
+    "section": "Exam Instructions",
+    "text": "Exam Instructions\n\nOne-page (double-sided) of written notes and a simple calculator is allowed (nothing else is allowed)\nRaise your hand if you have a question – staff can answer clarifying questions about the exam (no content/syntax questions)\nNo restroom breaks during the exam\nYou have 50 minutes to complete the exam\nWhen you are done, please bring your completed exam to the front so we can check your ID (ucard, driver’s license) – if you are finished early, you are welcome to leave"
   }
 ]
