@@ -4065,5 +4065,313 @@
     "title": "Java Basics",
     "section": "Solution",
     "text": "Solution\npublic class Average {\n\n    public static double average(int[] numbers) {\n        double result = 0;\n        for (int n : numbers) {\n            result += n;\n        }\n        return result/numbers.length;\n    }\n    \n}"
+  },
+  {
+    "objectID": "index.html#module-07",
+    "href": "index.html#module-07",
+    "title": "CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development",
+    "section": "Module 07",
+    "text": "Module 07\nBy the end of this module you will be able to:\n\nIdentify the role of each component in a Java program, including class definition, main method, variable declarations, and method signatures\nDistinguish between primitive types (int, double, boolean, char) and reference types (objects) in a given program\nWrite a complete, compilable Java program with a main method\nDeclare and initialize variables of appropriate types\nWrite conditional statements and loops to control program flow\nDefine and call methods with parameters and return values\nInstantiate objects from existing classes using constructors\nCall instance methods on objects and use the returned values\nExplain the difference between a class and an object\nAccess and interpret the state of an object through its methods\nUse objects from the Java standard library (e.g., String, Scanner)\n\n\nSlides\n\nJava Basics"
+  },
+  {
+    "objectID": "slides/slides-07-02.html",
+    "href": "slides/slides-07-02.html",
+    "title": "Java Objects",
+    "section": "",
+    "text": "Java Objects are titled case\n\nString\n\nOnly object that gets special syntax (no need to call constructor with new)\nImmutable\nUse double quotes\n\nScanner\n\nRepresents specifically structured, text based input\nNot necessarily “scanning” from the user"
+  },
+  {
+    "objectID": "slides/slides-07-02.html#objects",
+    "href": "slides/slides-07-02.html#objects",
+    "title": "Java Objects",
+    "section": "",
+    "text": "Java Objects are titled case\n\nString\n\nOnly object that gets special syntax (no need to call constructor with new)\nImmutable\nUse double quotes\n\nScanner\n\nRepresents specifically structured, text based input\nNot necessarily “scanning” from the user"
+  },
+  {
+    "objectID": "slides/slides-07-02.html#string",
+    "href": "slides/slides-07-02.html#string",
+    "title": "Java Objects",
+    "section": "String",
+    "text": "String\nString is a class (title capitalization)\nWe can construct strings two ways:\nString str = new String(\"with new\");\nString str2 = \"Don't need new\"\nSome string methods:\n.equals(String otherString)\n.length() // len() function in python\n.charAt(int index) // [] indexing in python\n.substring(int beginIndex, int endIndex) // [:] indexing in python\n.indexOf(String str) // .find() method in python"
+  },
+  {
+    "objectID": "slides/slides-07-02.html#objects-1",
+    "href": "slides/slides-07-02.html#objects-1",
+    "title": "Java Objects",
+    "section": "Objects",
+    "text": "Objects\nThese work like pointers:\n\nvariable stores location, not object itself\nvariable defaults to null (meaning “not pointing to object”)\n\nComparison == not the same as .equals()\npublic static void main(String[] args) {\n        String wordOne = new String(\"Hello\");\n        String wordTwo = new String(\"Hello\");\n        \n        System.out.println(wordOne == wordTwo);\n        System.out.println(wordOne.equals(wordTwo));\n\n    }"
+  },
+  {
+    "objectID": "slides/slides-07-02.html#quiz-05",
+    "href": "slides/slides-07-02.html#quiz-05",
+    "title": "Java Objects",
+    "section": "Quiz 05",
+    "text": "Quiz 05\nYou have 10 minutes to complete quiz 05\n\nA is first solution\nB is second solution\nC is third solution"
+  },
+  {
+    "objectID": "slides/slides-07-02.html#practice",
+    "href": "slides/slides-07-02.html#practice",
+    "title": "Java Objects",
+    "section": "Practice",
+    "text": "Practice\nWrite an application (HoursMinutesSeconds.java) that, given number (integer) as seconds, it converts it to hours:minutes:seconds. Your application should print the equivalent hours, minutes, and seconds in this format: hours:minutes:seconds\nExamples: 1 should be converted to the \"0:0:1\", 3661 should be converted to the \"1:1:1\", 8274 should be converted to the \"2:17:54\"\nHINTS: There are 3600 seconds in one hour. Use % to calculate minutes and seconds left."
+  },
+  {
+    "objectID": "slides/slides-07-02.html#solution",
+    "href": "slides/slides-07-02.html#solution",
+    "title": "Java Objects",
+    "section": "Solution",
+    "text": "Solution\npublic class HoursMinutesSeconds {\n\n    public static int getHours(int seconds) {\n        return seconds/3600;\n    }\n\n    public static int getMinutes(int seconds) {\n        return seconds/60;\n    }\n\n    public static String getTime(int seconds) {\n        // get full hours\n        int hours = getHours(seconds);\n        // update how many seconds are left\n        int secondsLeft = seconds - (hours * 3600);\n        // calculate full minutes\n        int minutes = getMinutes(secondsLeft);\n        // update how many seconds are left\n        secondsLeft = secondsLeft - (minutes * 60);\n        \n        return hours + \":\" + minutes + \":\" + secondsLeft;\n    }\n\n    public static void main(String[] args) {\n        int seconds = 119;\n        String result = getTime(seconds);\n        System.out.println(result);\n\n    }\n}"
+  },
+  {
+    "objectID": "slides/slides-07-02.html#scanner",
+    "href": "slides/slides-07-02.html#scanner",
+    "title": "Java Objects",
+    "section": "Scanner",
+    "text": "Scanner\nThe Scanner class (from java.util) is used to get different types of input\nWe use System.in to read keyboard input:\nScanner myObj = new Scanner(System.in);  // Scanner object\nString userInputString = myObj.nextLine();  // method to read user input\nint userInputInt = myObj.nextInt(); // another method to read user input"
+  },
+  {
+    "objectID": "slides/slides-07-02.html#solution-1",
+    "href": "slides/slides-07-02.html#solution-1",
+    "title": "Java Objects",
+    "section": "Solution",
+    "text": "Solution\nimport java.util.Scanner;\n\n/**\n * File: HoursMinutesSeconds.java\n * Author: Adriana Picoral\n * Description: Prompts the user to enter an integer representing seconds\n * and prints out time in h:m:s format\n */\npublic class HoursMinutesSeconds {\n    \n    /**\n     * Calculates number of full hours in many seconds\n     * @param seconds (integer)\n     * @return an integer representing number of hours\n     */\n    public static int getHours(int seconds) {\n        return seconds / 3600;\n    }\n    \n    /**\n     * Calculates number of full minutes left in many seconds\n     * not considering the number of full hours\n     * @param seconds (integer)\n     * @return an integer representing number of minutes\n     */\n    \n    public static int getMinutes(int seconds) {\n        return seconds  % 3600 / 60;\n    }\n    \n    /**\n     * Calculates seconds left that are not in full minutes\n     * @param seconds (integer)\n     * @return an integer representing seconds\n     */\n    public static int getSeconds(int seconds) {\n        return seconds % 60;\n    }\n\n    public static void main(String[] args) {\n        Scanner userInput = new Scanner(System.in);\n          \n        // prints out message to user\n      System.out.print(\"Enter number of seconds: \");\n      \n        // get integer from keyboard entry\n        int seconds = userInput.nextInt();\n        userInput.close();\n        \n        // build up the message to print\n        String message;\n        message = getHours(seconds) + \":\" + getMinutes(seconds);\n        message += \":\" + getSeconds(seconds);\n        System.out.println(message);\n\n    }\n\n}"
+  },
+  {
+    "objectID": "slides/slides-07-02.html#submit-solution-to-gradescope",
+    "href": "slides/slides-07-02.html#submit-solution-to-gradescope",
+    "title": "Java Objects",
+    "section": "Submit solution to gradescope",
+    "text": "Submit solution to gradescope\nSubmit your HoursMinutesSeconds class file to gradescope.\nOutput needs to match exactly what is expected. \"Enter number of seconds: \" is the prompt to the user."
+  },
+  {
+    "objectID": "slides/slides-07-02.html#practice-1",
+    "href": "slides/slides-07-02.html#practice-1",
+    "title": "Java Objects",
+    "section": "Practice",
+    "text": "Practice\nWrite a Java application to check if a year is leap or regular\nLeap years are those that are either:\n\ndivisible by 4 and not 100\ndivisible by 400\n\nSubmit your LeapYear class to gradescope. It should have a public static String isLeap(int year) method that returns \"Leap Year\" or \"Regular Year\"."
+  },
+  {
+    "objectID": "slides/slides-07-02.html#solution-1-1",
+    "href": "slides/slides-07-02.html#solution-1-1",
+    "title": "Java Objects",
+    "section": "Solution 1",
+    "text": "Solution 1\nimport java.util.Scanner;\n\npublic class LeapYear {\n    \n    public static String isLeap(int year) {\n        if ((year % 100 != 0) && (year % 4 == 0)) return \"Leap Year\";\n        else if ((year % 400 == 0)) return \"Leap Year\";\n        else return \"Regular Year\";\n\n    }\n\n    public static void main(String[] args) {\n        Scanner userInput = new Scanner(System.in);\n        \n        // prints out message to user\n        System.out.print(\"Enter a year: \");\n      \n        // get integer from keyboard entry\n        int year = userInput.nextInt();\n        userInput.close();\n        \n        System.out.println(isLeap(year));\n    }\n}"
+  },
+  {
+    "objectID": "slides/slides-07-02.html#solution-2",
+    "href": "slides/slides-07-02.html#solution-2",
+    "title": "Java Objects",
+    "section": "Solution 2",
+    "text": "Solution 2\nimport java.util.Scanner;\n\npublic class LeapYear {\n    \n    public static String isLeap(int year) {\n        boolean isLeapYear;\n        \n        isLeapYear = ((year % 100 != 0) && (year % 4 == 0));\n        isLeapYear = isLeapYear || ((year % 400 == 0));\n        \n        if (isLeapYear) return \"Leap Year\";\n        else return \"Regular Year\";\n\n    }\n\n    public static void main(String[] args) {\n        Scanner userInput = new Scanner(System.in);\n        \n        // prints out message to user\n        System.out.print(\"Enter a year: \");\n      \n        // get integer from keyboard entry\n        int year = userInput.nextInt();\n        userInput.close();\n        \n        System.out.println(isLeap(year));\n\n    }\n}"
+  },
+  {
+    "objectID": "slides/slides-07-02.html#other-useful-classes",
+    "href": "slides/slides-07-02.html#other-useful-classes",
+    "title": "Java Objects",
+    "section": "Other useful classes",
+    "text": "Other useful classes\nBoth Double and Integer classes have methods to cast a string into a double or int\nDouble.valueOf(\"10\");\nInteger.valueOf(\"10\");\nInteger.parseInt(\"10\");"
+  },
+  {
+    "objectID": "slides/slides-07-03.html",
+    "href": "slides/slides-07-03.html",
+    "title": "OOP",
+    "section": "",
+    "text": "Collection of methods and attributes (information/values)\nTemplate, blueprint of cookie cutter to construct many objects\n\nModularity: Classes allow us to split the problem to be solved into distinct tasks\nYou should be able to think about what a class does, not how it does it"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#classes",
+    "href": "slides/slides-07-03.html#classes",
+    "title": "OOP",
+    "section": "",
+    "text": "Collection of methods and attributes (information/values)\nTemplate, blueprint of cookie cutter to construct many objects\n\nModularity: Classes allow us to split the problem to be solved into distinct tasks\nYou should be able to think about what a class does, not how it does it"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#object-oriented-programming-oop",
+    "href": "slides/slides-07-03.html#object-oriented-programming-oop",
+    "title": "OOP",
+    "section": "Object Oriented Programming (OOP)",
+    "text": "Object Oriented Programming (OOP)\n\nProgramming paradigm\nCode is organized in objects\nObjects contain both data (attributes) and functions (methods)"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#why-oop",
+    "href": "slides/slides-07-03.html#why-oop",
+    "title": "OOP",
+    "section": "Why OOP?",
+    "text": "Why OOP?\n\nRepresent complicated objects\nProvide meaningful manipulations\nEnforce invariants about data\nHide difficult details\nDecompose code differenty"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#class-vs.-object",
+    "href": "slides/slides-07-03.html#class-vs.-object",
+    "title": "OOP",
+    "section": "Class vs. Object",
+    "text": "Class vs. Object\nClass - A blueprint or template that defines the structure and behavior of objects.\npublic class MyTime {\n  \n}\nObject/Instance - A concrete realization of a class. If a class is the blueprint, an object is the actual house built from it.\nMyTime time = new MyTime();\n\nEach object is an independent copy of the Class\nCreating objects from a class is often called instantiating the class"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#keyword-new",
+    "href": "slides/slides-07-03.html#keyword-new",
+    "title": "OOP",
+    "section": "Keyword new",
+    "text": "Keyword new\nThe keyword new does three things:\n\nfinds space in memory for the new object\ncalls the constructor to initialize the object\nreturns the location in memory where the object resides"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#class-vs.-object-1",
+    "href": "slides/slides-07-03.html#class-vs.-object-1",
+    "title": "OOP",
+    "section": "Class vs. Object",
+    "text": "Class vs. Object\n\nA Class definition is like the plan for a house\nAn Object is like a house built according to the plan\nMany houses can be built following the same plan\nThe existence of a plan does not mean a building exists, but once a plan exists, one or more buildings can be built to the plan spec\nSimilarly, many Objects can be created from a Class definition"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#parts-of-a-class",
+    "href": "slides/slides-07-03.html#parts-of-a-class",
+    "title": "OOP",
+    "section": "Parts of a Class",
+    "text": "Parts of a Class\nAttributes/Properties/Fields - Variables that belong to a class or object, storing data about that object’s state.\npublic class MyTime {\n  private int seconds;\n  \n}"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#methods",
+    "href": "slides/slides-07-03.html#methods",
+    "title": "OOP",
+    "section": "Methods",
+    "text": "Methods\nMethods are functions defined inside a class that describe behaviors or actions an object (or class if the static keyword is used) can perform.\nTypes of Methods:\n\nConstructor\nGetter\nSetter\nOperator\nHelper"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#constructor",
+    "href": "slides/slides-07-03.html#constructor",
+    "title": "OOP",
+    "section": "Constructor",
+    "text": "Constructor\nA special method that runs automatically when creating a new object, typically used to initialize attributes.\n\nNo return type, same name as class\nThere should be at least one public constructor, but there could be private constructors as well."
+  },
+  {
+    "objectID": "slides/slides-07-03.html#constructor-1",
+    "href": "slides/slides-07-03.html#constructor-1",
+    "title": "OOP",
+    "section": "Constructor",
+    "text": "Constructor\n\nConstructors are the only type of method that has no return type\n\npublic class MyTime {\n  private int seconds;\n  \n  public MyTime(int seconds) {\n    this.seconds = seconds;\n  }\n  \n}\nthis – A reference to the current instance of the class, keyword used to differenciate between the instance variable and the parameter name"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#getter-and-setter",
+    "href": "slides/slides-07-03.html#getter-and-setter",
+    "title": "OOP",
+    "section": "Getter and Setter",
+    "text": "Getter and Setter\n\nGetter/Accessor - Methods that retrieve (read) the value of private attributes.\nSetter/Mutator - Methods that modify (write) the value of private attributes, often with validation."
+  },
+  {
+    "objectID": "slides/slides-07-03.html#getter-and-setter-1",
+    "href": "slides/slides-07-03.html#getter-and-setter-1",
+    "title": "OOP",
+    "section": "Getter and Setter",
+    "text": "Getter and Setter\nThese are usually public – used to access and modify instance variables\n// getter\npublic int getSeconds() {\n  return seconds;\n}\n\n// setter\npublic void setSeconds(int seconds) {\n  this.seconds = seconds;\n}"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#encapsulation",
+    "href": "slides/slides-07-03.html#encapsulation",
+    "title": "OOP",
+    "section": "Encapsulation",
+    "text": "Encapsulation\nBundled data and methods together (getters/setters) while hiding internal details and controlling access to them.\n\nGenerally attributes should be private, and those that are intended for general use will have public accessors (getters and/or setters) with validation for setters"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#operator-vs.-helper",
+    "href": "slides/slides-07-03.html#operator-vs.-helper",
+    "title": "OOP",
+    "section": "Operator vs. Helper",
+    "text": "Operator vs. Helper\n\nOperator methods – use public keyword to provide external way to perform an operation – example: add complex numbers, subtract complex numbers\nHelper methods – Use private keyword to perform operations that are used internally by other methods. These are intended for internal use within a class to support other methods, typically not meant to be called directly from outside the class.\n\nHelper methods are usually used to break down complex operations into smaller, reusable pieces. Operator methods often call helper methods."
+  },
+  {
+    "objectID": "slides/slides-07-03.html#operator-and-helper-methods",
+    "href": "slides/slides-07-03.html#operator-and-helper-methods",
+    "title": "OOP",
+    "section": "Operator and Helper methods",
+    "text": "Operator and Helper methods\nThis does not complete the class code, what else do you need to make this class work as intended?\npublic String getHMS() {\n  return hours + \":\" + minutes + \":\" + seconds;\n}\n\nprivate int getHours() {\n  return seconds/3600;\n}\n\nprivate int getMinutes() {\n  return seconds/60;\n}\nWhat instance variables do we need?"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#complete-the-class",
+    "href": "slides/slides-07-03.html#complete-the-class",
+    "title": "OOP",
+    "section": "Complete the Class",
+    "text": "Complete the Class\nWhat code do you need to write to have this main method work?\npublic static void main(String[] args) {\n  MyTime time = new MyTime(3661);\n  System.out.println(time.getHMS());\n}\nSubmit your MyTime.java file to gradescope."
+  },
+  {
+    "objectID": "slides/slides-07-03.html#solution-with-object-instantiation",
+    "href": "slides/slides-07-03.html#solution-with-object-instantiation",
+    "title": "OOP",
+    "section": "Solution with Object Instantiation",
+    "text": "Solution with Object Instantiation\npublic class MyTime {\n  \n    public MyTime(int seconds) {\n        secondsLeft = seconds;\n\n        // get full hours\n        hours = getHours();\n\n        // update how many seconds are left\n        secondsLeft = secondsLeft - (hours * 3600);\n\n        // calculate full minutes\n        minutes = getMinutes();\n\n        // update how many seconds are left\n        secondsLeft = secondsLeft - (minutes * 60);\n    }\n\n    public String getHMS() {\n        return hours + \":\" + minutes + \":\" + secondsLeft;\n    }\n\n    private int getHours() {\n        return secondsLeft/3600;\n    }\n\n    private int getMinutes() {\n        return secondsLeft/60;\n    }\n    \n    private int secondsLeft;\n    private int hours;\n    private int minutes;\n\n    public static void main(String[] args) {\n        MyTime time = new MyTime(3661);\n        System.out.println(time.getHMS());\n    }\n}"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#modifiers",
+    "href": "slides/slides-07-03.html#modifiers",
+    "title": "OOP",
+    "section": "Modifiers",
+    "text": "Modifiers\nStatic vs. non-static properties\n\nstatic – property of the Class\n\nUsed for utility functions\nUsed for constants\nUsed for “global” like variables (shared by all instances)\n\nnon-static – property of instances of the class\n\nused for behavior of object\nused for instance data\na reasonable default"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#access-modifiers",
+    "href": "slides/slides-07-03.html#access-modifiers",
+    "title": "OOP",
+    "section": "Access modifiers",
+    "text": "Access modifiers\nPublic vs. Private\n\npublic – part of the “interface” of the object\n\nMost methods\nAlmost all constructors\naccessible from any file/class"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#access-modifiers-1",
+    "href": "slides/slides-07-03.html#access-modifiers-1",
+    "title": "OOP",
+    "section": "Access modifiers",
+    "text": "Access modifiers\nPublic vs. Private\n\nprivate – Only part of the “implementation”\n\nHidden from user\nEssential for making/keeping promises.\nSome methods\nalmost all attributes\naccessible only from this file\n\n\nNote – the rules are enforced at a FILE level"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#recommendations-for-writing-classes",
+    "href": "slides/slides-07-03.html#recommendations-for-writing-classes",
+    "title": "OOP",
+    "section": "Recommendations for writing classes",
+    "text": "Recommendations for writing classes\nDeclare:\n\ninstance variables private after class definition and create public methods to set and access variables\nconstructors public no return type (do not use static)\nmost methods public (do not use static), but private helper methods are often useful"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#common-object-methods",
+    "href": "slides/slides-07-03.html#common-object-methods",
+    "title": "OOP",
+    "section": "Common Object Methods",
+    "text": "Common Object Methods\nWe overwrite these:\n\ntoString()\n\nGuaranteed to exist\nNot Guaranteed to be good.\nCalled automatically in many places\n\nequals(Object other)\n\nSupposed to check “true” equality\nGuaranteed to exist\nNot Guaranteed to be good."
+  },
+  {
+    "objectID": "slides/slides-07-03.html#practice",
+    "href": "slides/slides-07-03.html#practice",
+    "title": "OOP",
+    "section": "Practice",
+    "text": "Practice\nImagine you wanted to make a java class representing a date in the Gregorian calendar system (The current most common calendar)\n\nWhat information would you need to build a new date object?\nWhat information would a date object need to store internally?\nHow should you be able to manipulate a date object?\nDoes your answer depend on anything?"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#key-idea",
+    "href": "slides/slides-07-03.html#key-idea",
+    "title": "OOP",
+    "section": "Key idea",
+    "text": "Key idea\nAs a designer you have to live in two worlds:\n\n“Interface” (how do we use this object)\n“Implementation” (how do we build this object)\n\nIt’s nice when they align, but this isn’t always true\n\nattributes are often not part of interface\nhelper functions are often not part of interface\nmany objects have “getter” methods for attributes that don’t exist\n\nKeeping these straight: access modifiers"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#exercise",
+    "href": "slides/slides-07-03.html#exercise",
+    "title": "OOP",
+    "section": "Exercise",
+    "text": "Exercise\nWrite a GregorianDate class with the following public methods:\n\ngetYear()\ngetMonth()\ngetDay()\n.toString() should return the following format April 13, 1981\n\nSubmit your to GregorianDate.java file to gradescope"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#solution",
+    "href": "slides/slides-07-03.html#solution",
+    "title": "OOP",
+    "section": "Solution",
+    "text": "Solution\npublic class GregorianDate {\n    private int year;\n    private int month;\n    private int day;\n    private static final String[] MONTHS = new String[]{\"January\", \"February\",\n                                                        \"March\", \"April\", \"May\",\n                                                        \"June\", \"July\", \"August\",\n                                                        \"September\", \"October\", \"November\",\n                                                        \"December\"};\n    \n    public GregorianDate(int year, int month, int day) {\n        this.year = year;\n        this.month = month;\n        this.day = day;\n    }\n\n    public int getYear() {\n        return year;\n    }\n\n    public int getMonth() {\n        return month;\n    }\n\n    public int getDay() {\n        return day;\n    }\n\n    private String getMonthName() {\n        return MONTHS[month-1];\n    }\n\n    public String toString() {\n        return getMonthName() + \" \" + day + \", \" + year;\n    }\n}"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#encapsulation-1",
+    "href": "slides/slides-07-03.html#encapsulation-1",
+    "title": "OOP",
+    "section": "Encapsulation",
+    "text": "Encapsulation\nAn object should hide its internal details\n\nThis is about debugging and changing\nThe more code with access, the more code you need to check.\nThe more code with access – the more ways to make bugs"
+  },
+  {
+    "objectID": "slides/slides-07-03.html#looking-back",
+    "href": "slides/slides-07-03.html#looking-back",
+    "title": "OOP",
+    "section": "Looking back",
+    "text": "Looking back\n\nAn Object exists when a class is instantiated\nThe existence of a class does not imply an Object of that class exists\nMethod types: constructor, setter, getter, operator, helper\nWhat does new do?"
   }
 ]
