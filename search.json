@@ -3883,5 +3883,187 @@
     "title": "Exam Instructions",
     "section": "Exam Instructions",
     "text": "Exam Instructions\n\nOne-page (double-sided) of written notes and a simple calculator is allowed (nothing else is allowed)\nRaise your hand if you have a question – staff can answer clarifying questions about the exam (no content/syntax questions)\nNo restroom breaks during the exam\nYou have 50 minutes to complete the exam\nWhen you are done, please bring your completed exam to the front so we can check your ID (ucard, driver’s license) – if you are finished early, you are welcome to leave"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#closing-remarks-on-python",
+    "href": "slides/slides-07-01.html#closing-remarks-on-python",
+    "title": "Java Basics",
+    "section": "Closing remarks on Python",
+    "text": "Closing remarks on Python\nPython supports multiple styles of programming as well as language unique features Object oriented programming\n\nHigher-order programming\nDecorators\nGenerators\nComprehension syntax\n\nAn expert can write TRULY UNREADABLE code that is VERY SHORT and POWERFUL. You can build that expertise up from the core syntax you have."
+  },
+  {
+    "objectID": "slides/slides-07-01.html#java",
+    "href": "slides/slides-07-01.html#java",
+    "title": "Java Basics",
+    "section": "Java",
+    "text": "Java\n\nDescendant of C++, a lot of syntax and data type overlap/reuse\nCompiled and Interpreted mix\n\nadvanced error-checking from compiled\nrun-everywhere from interpreted\n\nThe de-facto object-oriented programming language.\nBuilt for large-scale programming\n\nMakes it a bit wordy\nHas lots of “engineering” features which might be counter-intuitive"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#python-vs.-java",
+    "href": "slides/slides-07-01.html#python-vs.-java",
+    "title": "Java Basics",
+    "section": "Python vs. Java",
+    "text": "Python vs. Java\nPython:\n\nWants to get out of your way and let you work\nDo more with less\nNever talk about types\nIntentional effort needs to be put on to prevent bugs\nYou can build big if you want"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#python-vs.-java-1",
+    "href": "slides/slides-07-01.html#python-vs.-java-1",
+    "title": "Java Basics",
+    "section": "Python vs. Java",
+    "text": "Python vs. Java\nJava:\n\nWants you to build REALLY BIG things\nCares deeply about types\nWill fight you over some bugs python will ignore\nLarge scale organization is the default"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#java-hello-world",
+    "href": "slides/slides-07-01.html#java-hello-world",
+    "title": "Java Basics",
+    "section": "Java – Hello World!",
+    "text": "Java – Hello World!\npublic class Hello {\n    public static void main(String[] args) {\n        System.out.println(\"Hello World!\");\n    }\n}\nJDK 25+:\npublic class Hello {\n    void main() {\n        IO.println(\"hello\");\n    }\n}\nDifference between .println() and .print()?"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#java-method-signature",
+    "href": "slides/slides-07-01.html#java-method-signature",
+    "title": "Java Basics",
+    "section": "Java – method signature",
+    "text": "Java – method signature\nThe main method looks like this:\npublic static void main(String[] args) {}\n\npublic is an access modifier (private is another option)\nstatic – the method belongs to the class itself rather than to an instance of that class\nvoid is what the method returns (nothing)\nString[] args is the parameter, an array of String\n\nJDK 25+:\nvoid main() {}"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#typing",
+    "href": "slides/slides-07-01.html#typing",
+    "title": "Java Basics",
+    "section": "Typing",
+    "text": "Typing\n\nPython does dynamic typing\n\n\nword = \"car\"\nnumber = 3\nnew_list = []\nnames = [\"Pedro\", \"Melissa\", \"Jessica\"]\n\n\nStatic typing in Java\n\nString word = \"car\";\nint number = 3;\nint[] numbers = new int[10];\nString[] names = new String[]{\"Pedro\", \"Melissa\", \"Jessica\"};"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#terms-to-know",
+    "href": "slides/slides-07-01.html#terms-to-know",
+    "title": "Java Basics",
+    "section": "Terms to Know",
+    "text": "Terms to Know\n\nstatic typing vs. dynamic typing\nstrong typing vs. weak typing\ncompiling (javac) vs. interpreting (java)\ncompile time vs. runtime\nrunning a java program requires 2 steps:\n\nMyProgram.java → javac → MyProgram.class → java → output"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#try-it-out",
+    "href": "slides/slides-07-01.html#try-it-out",
+    "title": "Java Basics",
+    "section": "Try it out",
+    "text": "Try it out\nModify your main method in your HelloWorld class to assign the string literal \"Hello World!\" to a String variable name, and then print out that variable instead.\nQuestions:\n\nCan you use both double and single strings to create the variable?\nDoes concatenation with the + operator work?\nCan we concatenate (glue together) String, char and int (or a combination of these)?"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#java-variables",
+    "href": "slides/slides-07-01.html#java-variables",
+    "title": "Java Basics",
+    "section": "Java variables",
+    "text": "Java variables\nDeclare any time before use, and strongly-typed\npublic class Hello {\n    public static void main(String[] args) {\n        String word = \"Hello World!\";\n        System.out.println(word);\n    }\n}"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#java-variables-1",
+    "href": "slides/slides-07-01.html#java-variables-1",
+    "title": "Java Basics",
+    "section": "Java variables",
+    "text": "Java variables\n\nDeclare any time before use\nStrongly-typed\nTwo “flavors” of variable: primitive and object"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#java-primitive-types",
+    "href": "slides/slides-07-01.html#java-primitive-types",
+    "title": "Java Basics",
+    "section": "Java primitive types",
+    "text": "Java primitive types\n\nboolean\nchar (unicode) – single quotes\nint\n\nshort and byte for smaller ints\nlong for longer ints\n\ndouble\n\nfloat for shorter floats\n\n\nPrimitive type names are lower-case"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#java-primitive-types-1",
+    "href": "slides/slides-07-01.html#java-primitive-types-1",
+    "title": "Java Basics",
+    "section": "Java primitive types",
+    "text": "Java primitive types\nThese act like c++ variables\n\nvariable literally and directly stores value"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#java-data-types-and-memory-space",
+    "href": "slides/slides-07-01.html#java-data-types-and-memory-space",
+    "title": "Java Basics",
+    "section": "Java Data Types and Memory Space",
+    "text": "Java Data Types and Memory Space\n1 byte is 8 binary digits\n\n\n\nbyte (1 byte)\nshort (2 bytes)\nint (4 bytes)\nlong (8 bytes)\n\n\n\n\n\nfloat (4 bytes)\ndouble (8 bytes)\nboolean (1 bit)\nchar (2 bytes)\n\n\nAll Objects (everything else) (4 bytes)"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#mathematical-operations",
+    "href": "slides/slides-07-01.html#mathematical-operations",
+    "title": "Java Basics",
+    "section": "Mathematical Operations",
+    "text": "Mathematical Operations\nAll operators as you would expect:\n\nmathematical: + * - / %\n\nNo // in Java. Division type will be based on input types\nint divided by an int is an int\nOnly works for number types\n\ncomparison: &lt; &gt; &lt;= &gt;=\n\nnumbers only"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#mathematical-operations-1",
+    "href": "slides/slides-07-01.html#mathematical-operations-1",
+    "title": "Java Basics",
+    "section": "Mathematical Operations",
+    "text": "Mathematical Operations\n\nequality: == !=\n\nbehave as expected for primitives\nbehave differently for objects\n\nlogical: && || !\n\nback to the symbols (instead of words in Python)"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#style-and-documentation",
+    "href": "slides/slides-07-01.html#style-and-documentation",
+    "title": "Java Basics",
+    "section": "Style and documentation",
+    "text": "Style and documentation\n\nvariable names often camelCase\nJava requires a lot of code to express a simple concept.\nYou need to be much more explicit when writing Java than Python (more words to type in Java)\nComments are extra important\n\n// one line comment\n\n/*\n  multi-line\n  comment\n */\n    \n/**\n * JavaDoc comments for external documentation\n * @returns description of what returns   \n */"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#in-class-exercise",
+    "href": "slides/slides-07-01.html#in-class-exercise",
+    "title": "Java Basics",
+    "section": "In-class exercise",
+    "text": "In-class exercise\nAnswer the in-class exercise on gradescope"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#practice",
+    "href": "slides/slides-07-01.html#practice",
+    "title": "Java Basics",
+    "section": "Practice",
+    "text": "Practice\nCreate a Java application that determines if an integer is odd or even"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#solution",
+    "href": "slides/slides-07-01.html#solution",
+    "title": "Java Basics",
+    "section": "Solution",
+    "text": "Solution\nboolean isEven(int number) {\n  return number % 2 == 0;\n}\n\nvoid main() {\n  int number;\n  number = 3;\n  boolean result = isEven(number);\n  System.out.println(result);\n}"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#practice-1",
+    "href": "slides/slides-07-01.html#practice-1",
+    "title": "Java Basics",
+    "section": "Practice",
+    "text": "Practice\nSubmit a java class called OddEven to Gradescope that contains two public methods:\n\nisOdd(int number) takes an integer as argument and returns a boolean\nisEven(int number) takes an integer as argument and returns a boolean"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#java-methods",
+    "href": "slides/slides-07-01.html#java-methods",
+    "title": "Java Basics",
+    "section": "Java methods",
+    "text": "Java methods\npublic class OddEven {\n\n    public static boolean isOdd(int number) {\n        boolean result = number % 2 == 1;\n        return result;\n    }\n    \n    public static boolean isEven(int number) {\n        return number % 2 == 0;\n    }\n    \n    public static void main(String[] args) {\n        int number = 3;\n        if (isOdd(number)) {\n            System.out.println(\"Number is odd\");\n        }\n        \n        if (isEven(number)) {\n            System.out.println(\"Number is even\");\n        } else {\n            System.out.println(\"Number is not even\");\n        }\n\n    }\n\n}"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#java-arrays",
+    "href": "slides/slides-07-01.html#java-arrays",
+    "title": "Java Basics",
+    "section": "Java arrays",
+    "text": "Java arrays\nSyntax:\nint[] numbers = new int[10];\nint[] moreNumbers = new int[]{0, 5, 0, 2};\nnumbers[1] // get second item in array\nnumbers.length // attribute -- note the lack of parenthesis"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#java-loops",
+    "href": "slides/slides-07-01.html#java-loops",
+    "title": "Java Basics",
+    "section": "Java loops",
+    "text": "Java loops\npublic static void main(String[] args) {\n        int[] numbers = new int[10];\n\n        for (int i = 0; i &lt; numbers.length; i++) {\n            numbers[i] = i * 2;\n        }\n\n        for (int n : numbers) {\n            System.out.print(n + \" \");\n        }\n        \n        int counter = 0;\n        while (counter &lt; numbers.length) {\n            System.out.print(numbers[counter] + \" \");\n            counter++;\n        }\n    }"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#in-class-exercise-1",
+    "href": "slides/slides-07-01.html#in-class-exercise-1",
+    "title": "Java Basics",
+    "section": "In-class exercise",
+    "text": "In-class exercise\nSubmit a java class called Average to Gradescope that contains one public static method:\n\naverage(int[] numbers) takes an array of integers as argument and returns a double representing the average of all values in the array (sum values, divide by total number of values)"
+  },
+  {
+    "objectID": "slides/slides-07-01.html#solution-1",
+    "href": "slides/slides-07-01.html#solution-1",
+    "title": "Java Basics",
+    "section": "Solution",
+    "text": "Solution\npublic class Average {\n\n    public static double average(int[] numbers) {\n        double result = 0;\n        for (int n : numbers) {\n            result += n;\n        }\n        return result/numbers.length;\n    }\n    \n}"
   }
 ]
