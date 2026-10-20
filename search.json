@@ -4106,7 +4106,7 @@
     "href": "slides/slides-07-02.html#quiz-05",
     "title": "Java Objects",
     "section": "Quiz 05",
-    "text": "Quiz 05\nYou have 10 minutes to complete quiz 05\n\nA is first solution\nB is second solution\nC is third solution"
+    "text": "Quiz 05\nYou have 10 minutes to complete quiz 05\nMark ONE choice for each question. Multiple marks will be graded as incorrect."
   },
   {
     "objectID": "slides/slides-07-02.html#practice",
@@ -4288,7 +4288,7 @@
     "href": "slides/slides-07-03.html#complete-the-class",
     "title": "OOP",
     "section": "Complete the Class",
-    "text": "Complete the Class\nWhat code do you need to write to have this main method work?\npublic static void main(String[] args) {\n  MyTime time = new MyTime(3661);\n  System.out.println(time.getHMS());\n}\nSubmit your MyTime.java file to gradescope."
+    "text": "Complete the Class\nWhat code do you need to write to have this main method work?\npublic static void main(String[] args) {\n  MyTime time = new MyTime(3661);\n  System.out.println(time.getHMS());\n}"
   },
   {
     "objectID": "slides/slides-07-03.html#solution-with-object-instantiation",
@@ -4330,7 +4330,7 @@
     "href": "slides/slides-07-03.html#common-object-methods",
     "title": "OOP",
     "section": "Common Object Methods",
-    "text": "Common Object Methods\nWe overwrite these:\n\ntoString()\n\nGuaranteed to exist\nNot Guaranteed to be good.\nCalled automatically in many places\n\nequals(Object other)\n\nSupposed to check “true” equality\nGuaranteed to exist\nNot Guaranteed to be good."
+    "text": "Common Object Methods\nWe override these:\n\ntoString()\n\nGuaranteed to exist\nNot Guaranteed to be good.\nCalled automatically in many places\n\nequals(Object other)\n\nSupposed to check “true” equality\nGuaranteed to exist\nNot Guaranteed to be good."
   },
   {
     "objectID": "slides/slides-07-03.html#practice",
@@ -4351,7 +4351,7 @@
     "href": "slides/slides-07-03.html#exercise",
     "title": "OOP",
     "section": "Exercise",
-    "text": "Exercise\nWrite a GregorianDate class with the following public methods:\n\ngetYear()\ngetMonth()\ngetDay()\n.toString() should return the following format April 13, 1981\n\nSubmit your to GregorianDate.java file to gradescope"
+    "text": "Exercise\nWrite a GregorianDate class with the following public methods:\n\nConstructor that takes year, month, and day\ngetYear(), getMonth(), getDay()\n.toString() should return the following format April 13, 1981\n\nSubmit your to GregorianDate.java file to gradescope"
   },
   {
     "objectID": "slides/slides-07-03.html#solution",
