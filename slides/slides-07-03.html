@@ -1388,11 +1388,11 @@ margin-right: 0; }
 <span id="cb9-10"><a></a></span>
 <span id="cb9-11"><a></a>    public GregorianDate(int year, int month, int day) {</span>
 <span id="cb9-12"><a></a>        int currentYear = java.time.Year.now().getValue();</span>
-<span id="cb9-13"><a></a>        if (year &lt; 1910 || year &gt; currentYear) this.year = year;</span>
+<span id="cb9-13"><a></a>        if (year &gt;= 1910 &amp;&amp; year &lt;= currentYear) this.year = year;</span>
 <span id="cb9-14"><a></a>        else this.year = currentYear;</span>
-<span id="cb9-15"><a></a>        if (month &lt; 1 || month &gt; 12) this.month = month;</span>
+<span id="cb9-15"><a></a>        if (month &gt;= 1 &amp;&amp; month &lt;= 12) this.month = month;</span>
 <span id="cb9-16"><a></a>        else this.month = 1;</span>
-<span id="cb9-17"><a></a>        if (day &lt; 1 || day &gt; 31) this.day = day;</span>
+<span id="cb9-17"><a></a>        if (day &gt;= 1 &amp;&amp; day &lt;= 31) this.day = day;</span>
 <span id="cb9-18"><a></a>        else this.day = 1;</span>
 <span id="cb9-19"><a></a>    }</span>
 <span id="cb9-20"><a></a></span>
