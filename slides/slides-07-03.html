@@ -1362,15 +1362,17 @@ margin-right: 0; }
 </ul>
 <p>Keeping these straight: access modifiers</p>
 </section>
-<section id="exercise" class="slide level2">
+<section id="exercise" class="slide level2 smaller">
 <h2>Exercise</h2>
 <p>Write a <code>GregorianDate</code> class with the following public methods:</p>
 <ul>
 <li>Constructor that takes year, month, and day</li>
 <li><code>getYear()</code>, <code>getMonth()</code>, <code>getDay()</code></li>
+<li>setters should return false if argument is not valid</li>
 <li><code>.toString()</code> should return the following format <code>April 13, 1981</code></li>
+<li>implement <code>.equals(Object other)</code></li>
 </ul>
-<p>Submit your to <code>GregorianDate.java</code> file to <a href>gradescope</a></p>
+<p>Submit your to <code>GregorianDate.java</code> file to gradescope</p>
 </section>
 <section id="solution" class="slide level2">
 <h2>Solution</h2>
@@ -1383,33 +1385,74 @@ margin-right: 0; }
 <span id="cb9-7"><a></a>                                                        &quot;June&quot;, &quot;July&quot;, &quot;August&quot;,</span>
 <span id="cb9-8"><a></a>                                                        &quot;September&quot;, &quot;October&quot;, &quot;November&quot;,</span>
 <span id="cb9-9"><a></a>                                                        &quot;December&quot;};</span>
-<span id="cb9-10"><a></a>    </span>
+<span id="cb9-10"><a></a></span>
 <span id="cb9-11"><a></a>    public GregorianDate(int year, int month, int day) {</span>
-<span id="cb9-12"><a></a>        this.year = year;</span>
-<span id="cb9-13"><a></a>        this.month = month;</span>
-<span id="cb9-14"><a></a>        this.day = day;</span>
-<span id="cb9-15"><a></a>    }</span>
-<span id="cb9-16"><a></a></span>
-<span id="cb9-17"><a></a>    public int getYear() {</span>
-<span id="cb9-18"><a></a>        return year;</span>
+<span id="cb9-12"><a></a>        int currentYear = java.time.Year.now().getValue();</span>
+<span id="cb9-13"><a></a>        if (year &lt; 1910 || year &gt; currentYear) this.year = year;</span>
+<span id="cb9-14"><a></a>        else this.year = currentYear;</span>
+<span id="cb9-15"><a></a>        if (month &lt; 1 || month &gt; 12) this.month = month;</span>
+<span id="cb9-16"><a></a>        else this.month = 1;</span>
+<span id="cb9-17"><a></a>        if (day &lt; 1 || day &gt; 31) this.day = day;</span>
+<span id="cb9-18"><a></a>        else this.day = 1;</span>
 <span id="cb9-19"><a></a>    }</span>
 <span id="cb9-20"><a></a></span>
-<span id="cb9-21"><a></a>    public int getMonth() {</span>
-<span id="cb9-22"><a></a>        return month;</span>
+<span id="cb9-21"><a></a>    public int getYear() {</span>
+<span id="cb9-22"><a></a>        return year;</span>
 <span id="cb9-23"><a></a>    }</span>
 <span id="cb9-24"><a></a></span>
-<span id="cb9-25"><a></a>    public int getDay() {</span>
-<span id="cb9-26"><a></a>        return day;</span>
+<span id="cb9-25"><a></a>    public int getMonth() {</span>
+<span id="cb9-26"><a></a>        return month;</span>
 <span id="cb9-27"><a></a>    }</span>
 <span id="cb9-28"><a></a></span>
-<span id="cb9-29"><a></a>    private String getMonthName() {</span>
-<span id="cb9-30"><a></a>        return MONTHS[month-1];</span>
+<span id="cb9-29"><a></a>    public int getDay() {</span>
+<span id="cb9-30"><a></a>        return day;</span>
 <span id="cb9-31"><a></a>    }</span>
 <span id="cb9-32"><a></a></span>
-<span id="cb9-33"><a></a>    public String toString() {</span>
-<span id="cb9-34"><a></a>        return getMonthName() + &quot; &quot; + day + &quot;, &quot; + year;</span>
-<span id="cb9-35"><a></a>    }</span>
-<span id="cb9-36"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-33"><a></a>    public boolean setYear(int year) {</span>
+<span id="cb9-34"><a></a>        int currentYear = java.time.Year.now().getValue();</span>
+<span id="cb9-35"><a></a>        if (year &lt; 1910 || year &gt; currentYear) {</span>
+<span id="cb9-36"><a></a>            return false;</span>
+<span id="cb9-37"><a></a>        }</span>
+<span id="cb9-38"><a></a>        this.year = year;</span>
+<span id="cb9-39"><a></a>        return true;</span>
+<span id="cb9-40"><a></a>    }</span>
+<span id="cb9-41"><a></a></span>
+<span id="cb9-42"><a></a>    public boolean setMonth(int month) {</span>
+<span id="cb9-43"><a></a>        if (month &lt; 1 || month &gt; 12) {</span>
+<span id="cb9-44"><a></a>            return false;</span>
+<span id="cb9-45"><a></a>        }</span>
+<span id="cb9-46"><a></a>        this.month = month;</span>
+<span id="cb9-47"><a></a>        return true;</span>
+<span id="cb9-48"><a></a>    }</span>
+<span id="cb9-49"><a></a></span>
+<span id="cb9-50"><a></a>    public boolean setDay(int day) {</span>
+<span id="cb9-51"><a></a>        if (day &lt; 1 || day &gt; 31) {</span>
+<span id="cb9-52"><a></a>            return false;</span>
+<span id="cb9-53"><a></a>        }</span>
+<span id="cb9-54"><a></a>        this.day = day;</span>
+<span id="cb9-55"><a></a>        return true;</span>
+<span id="cb9-56"><a></a>    }</span>
+<span id="cb9-57"><a></a></span>
+<span id="cb9-58"><a></a>    public String getMonthName() {</span>
+<span id="cb9-59"><a></a>        return MONTHS[month-1];</span>
+<span id="cb9-60"><a></a>    }</span>
+<span id="cb9-61"><a></a></span>
+<span id="cb9-62"><a></a>    public String toString() {</span>
+<span id="cb9-63"><a></a>        return getMonthName() + &quot; &quot; + day + &quot;, &quot; + year;</span>
+<span id="cb9-64"><a></a>    }</span>
+<span id="cb9-65"><a></a></span>
+<span id="cb9-66"><a></a>    public boolean equals(Object other) {</span>
+<span id="cb9-67"><a></a>        if (this == other) {</span>
+<span id="cb9-68"><a></a>            return true;</span>
+<span id="cb9-69"><a></a>        }</span>
+<span id="cb9-70"><a></a>        if (!(other instanceof GregorianDate)) {</span>
+<span id="cb9-71"><a></a>            return false;</span>
+<span id="cb9-72"><a></a>        }</span>
+<span id="cb9-73"><a></a>        GregorianDate otherDate = (GregorianDate) other;</span>
+<span id="cb9-74"><a></a>        return year == otherDate.year &amp;&amp; month == otherDate.month &amp;&amp; day == otherDate.day;</span>
+<span id="cb9-75"><a></a>    }</span>
+<span id="cb9-76"><a></a>}</span>
+<span id="cb9-77"><a></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="encapsulation-1" class="slide level2">
 <h2>Encapsulation</h2>
