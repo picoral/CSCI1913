@@ -2804,7 +2804,7 @@
     "href": "exams.html#exams",
     "title": "Quizzes and Exams",
     "section": "Exams",
-    "text": "Exams\n\nPractice\n\nMidterm 1 Practice\n\n\n\nDates\n\n\n\n\n\n\nDate\nExams\n\n\n\n\nWed, Oct 14, 2026\nMidterm 1\n\n\nWed, Nov 11, 2026\nMidterm 2\n\n\n\n\n\n\nFinal Exam:\n\nDate/time: Friday 12/18/2026 - 8:00a.m.-10:00a.m.\nRoom: Anderson Hall 270"
+    "text": "Exams\n\nPractice\n\nMidterm 1 Practice\nMidterm 2 Practice\n\n\n\nDates\n\n\n\n\n\n\nDate\nExams\n\n\n\n\nWed, Oct 14, 2026\nMidterm 1\n\n\nWed, Nov 11, 2026\nMidterm 2\n\n\n\n\n\n\nFinal Exam:\n\nDate/time: Friday 12/18/2026 - 8:00a.m.-10:00a.m.\nRoom: Anderson Hall 270"
   },
   {
     "objectID": "slides/slides-04-02.html#quiz-03",
@@ -4975,5 +4975,96 @@
     "title": "Recap",
     "section": "Important syntax",
     "text": "Important syntax\ninstanceof – evaluates to true if and only if reference is a member of Type\nvariableName instanceOf Type\nWe use instanceof together with type casting\n(SubClass) parClassVariableName\nConverts a parent-class-reference (storing a child class) to a child-class reference (no actual conversion) – purpose is to call methods in subclass"
+  },
+  {
+    "objectID": "midterm_2_practice.html",
+    "href": "midterm_2_practice.html",
+    "title": "Fall 2026 Midterm 2 Practice Problems",
+    "section": "",
+    "text": "What access modifier allows an attribute or method to be accessed from any class? ______________\nWhat access modifier restricts access to only within the same class? ______________\nWhat access modifier allows an attribute or method to be access within the same class and a child class only (no access from any other class)? ______________\nWhich of the following access modifiers provides the most restrictive access?\n\n         ▢ a) public\n         ▢ b) protected\n         ▢ c) private\n\nIf a method is declared as protected in a parent class, can it be accessed by a subclass?\n\n         ▢ a) No, never\n         ▢ b) Yes, through inheritance\n         ▢ c) Only if explicitly imported\n\nWhat happens if you try to access a private method from a subclass?\n\n         ▢ a) It works fine\n         ▢ b) Compilation error\n         ▢ c) Runtime error\n         ▢ d) The method becomes protected automatically\n\nWhich statement about access modifiers is TRUE?\n\n         ▢ a) protected is more restrictive than private\n         ▢ b) private allows access from any class\n         ▢ c) private methods cannot be access even within the same class\n         ▢ d) public is the least restrictive access modifier\n\n\n\n\nWhat is the purpose of the extends keyword in Java?\n\n         ▢ a) To create an interface\n         ▢ b) To import packages\n         ▢ c) To establish inheritance between classes\n         ▢ d) To declare a method\n\nWhich statement about the this keyword is correct?\n\n         ▢ a) It refers to the current object instance\n         ▢ b) It refers to the parent class\n         ▢ c) It refers to a static variable\n         ▢ d) It refers to the main method\n\nWhat does super() do when called in a constructor?\n\n         ▢ a) Calls a method in the current class\n         ▢ b) Creates a new object\n         ▢ c) Deletes the parent class\n         ▢ d) Calls the constructor of the parent class\n\nHow many classes can a Java class extend using the extends keyword?\n\n         ▢ a) None\n         ▢ b) One\n         ▢ c) Two\n         ▢ d) Unlimited\n\nWhen must super() be called in a constructor?\n\n         ▢ a) At the end of the constructor\n         ▢ b) Anywhere in the constructor\n         ▢ c) As the first statement in the constructor\n         ▢ d) It’s optional and never required\n\nWhich keyword is used to differentiate between instance variables and parameters with the same name?\n\n         ▢ a) extends\n         ▢ b) super\n         ▢ c) this\n         ▢ d) static\n\nWhat does super.method() do?\n\n         ▢ a) Calls an overridden method from the parent class\n         ▢ b) Calls a method from the current class\n         ▢ c) Creates a new method\n         ▢ d) Deletes a method\n\n\n\n\nWhat is the output of this code?\n\npublic class Parent {\n    protected int x = 10;\n}\npublic class Child extends Parent {\n    int x = 20;\n    \n    public void display() {\n        System.out.println(super.x);\n    }\n}\npublic class RunStuff {\n  \n  public static void main(String[] args) {\n    Child myChild = new Child();\n    myChild.display();\n  }\n  \n}\n\nWhat will this code output?\n\nclass Animal {\n    Animal() {\n        System.out.println(\"Animal created\");\n    }\n}\nclass Dog extends Animal {\n    Dog() {\n        System.out.println(\"Dog created\");\n    }\n}\npublic class Test {\n    public static void main(String[] args) {\n        Dog d = new Dog();\n    }\n}\n\nConsider the following code:\n\npublic class Midterm {\n    public static int foo(int[] numbers) {\n        int n = numbers.length;\n        int a = 0;\n        int b = 0;\n        for (int i = 0; i &lt; n; i++) {\n            if ((numbers[i] % 10) == 0) {\n                // tens\n                a += numbers[i];\n            } else {\n                // not tens\n                b += numbers[i];\n            }\n        }\n        return b - a;\n    }\n\n    public static void main(String[] args) {\n        System.out.println(foo(new int[]{1, 40, 2, 93, 70, 4, 1}));\n    }\n}\nWhat would the code print? _____________________\n\n\n\n\nIdentify the error:\n\nclass Parent {\n    Parent(int x) {\n        System.out.println(x);\n    }\n}\nclass Child extends Parent {\n    Child() {\n        System.out.println(\"Child\");\n    }\n}\n         ▢ a) No error\n         ▢ b) extends keyword is wrong\n         ▢ c) Missing super() call with argument in Child constructor\n         ▢ d) Parent class cannot have a parameterized constructor\n\n\n\npublic class Fruit {\n    /**\n     * Create a new fruit. The boolean parameter\n     * indicates if this fruit would go well in a\n     * fruit salad (true) or would best be left out (false).\n     */\n    public Fruit(boolean goesInFruitSalad) {\n      // unimportant code here.\n    }\n}\n\npublic class Tomato extends Fruit {\n    /**\n     * Create a new Tomato. As a general rule -- no tomato (ripe\n     * or not) should ever go in a fruit salad. The boolean\n     * parameter indicates if the tomato is ripe or not.\n     */\n    public Tomato(boolean ripe) {\n        // SOMETHING is required here\n    }\n}\nA line of code is needed to replace the // SOMETHING is required here and make the code compile. Pick the CORRECT line from below. Note – more than one line below will make the code compile, but only one matches the intent of the author as indicated by the comments on Tomato and Fruit classes.\n         ▢ a) Fruit(true);\n         ▢ b) new Fruit(false);\n         ▢ c) new Fruit(true);\n         ▢ d) super(false);\n         ▢ e) super(true);\n\n\n\nWrite a class called Employee with the following instance variables:\n\nA string for firstName\nA string for surname\nAn integer for ID\nA double variable for yearlySalary\n\nHere are the methods you should include in your solution:\n\nGetters and setters for at least two instance variables\nA constructor that takes as argument values for the four instance variables listed\nA method that returns the employee’s full name\nA method that returns the employee’s monthly salary\nA method that returns the employee earning bracket based their yearly salary – below 150k returns “low”, 150k and above “high”\ntoString() method that returns a message with the employee’s full name and its earning bracket\n\nIn addition to correctness (the right value is returned for each method), your solution will also be assessed based on whether you do not repeat code unnecessarily – in other words: Do Not Repeat Yourself. Your methods should call other methods when appropriate; you should not write code to calculate the same thing more than once."
+  },
+  {
+    "objectID": "midterm_2_practice.html#access-modifiers",
+    "href": "midterm_2_practice.html#access-modifiers",
+    "title": "Fall 2026 Midterm 2 Practice Problems",
+    "section": "",
+    "text": "What access modifier allows an attribute or method to be accessed from any class? ______________\nWhat access modifier restricts access to only within the same class? ______________\nWhat access modifier allows an attribute or method to be access within the same class and a child class only (no access from any other class)? ______________\nWhich of the following access modifiers provides the most restrictive access?\n\n         ▢ a) public\n         ▢ b) protected\n         ▢ c) private\n\nIf a method is declared as protected in a parent class, can it be accessed by a subclass?\n\n         ▢ a) No, never\n         ▢ b) Yes, through inheritance\n         ▢ c) Only if explicitly imported\n\nWhat happens if you try to access a private method from a subclass?\n\n         ▢ a) It works fine\n         ▢ b) Compilation error\n         ▢ c) Runtime error\n         ▢ d) The method becomes protected automatically\n\nWhich statement about access modifiers is TRUE?\n\n         ▢ a) protected is more restrictive than private\n         ▢ b) private allows access from any class\n         ▢ c) private methods cannot be access even within the same class\n         ▢ d) public is the least restrictive access modifier"
+  },
+  {
+    "objectID": "midterm_2_practice.html#java-keywords",
+    "href": "midterm_2_practice.html#java-keywords",
+    "title": "Fall 2026 Midterm 2 Practice Problems",
+    "section": "",
+    "text": "What is the purpose of the extends keyword in Java?\n\n         ▢ a) To create an interface\n         ▢ b) To import packages\n         ▢ c) To establish inheritance between classes\n         ▢ d) To declare a method\n\nWhich statement about the this keyword is correct?\n\n         ▢ a) It refers to the current object instance\n         ▢ b) It refers to the parent class\n         ▢ c) It refers to a static variable\n         ▢ d) It refers to the main method\n\nWhat does super() do when called in a constructor?\n\n         ▢ a) Calls a method in the current class\n         ▢ b) Creates a new object\n         ▢ c) Deletes the parent class\n         ▢ d) Calls the constructor of the parent class\n\nHow many classes can a Java class extend using the extends keyword?\n\n         ▢ a) None\n         ▢ b) One\n         ▢ c) Two\n         ▢ d) Unlimited\n\nWhen must super() be called in a constructor?\n\n         ▢ a) At the end of the constructor\n         ▢ b) Anywhere in the constructor\n         ▢ c) As the first statement in the constructor\n         ▢ d) It’s optional and never required\n\nWhich keyword is used to differentiate between instance variables and parameters with the same name?\n\n         ▢ a) extends\n         ▢ b) super\n         ▢ c) this\n         ▢ d) static\n\nWhat does super.method() do?\n\n         ▢ a) Calls an overridden method from the parent class\n         ▢ b) Calls a method from the current class\n         ▢ c) Creates a new method\n         ▢ d) Deletes a method"
+  },
+  {
+    "objectID": "midterm_2_practice.html#output",
+    "href": "midterm_2_practice.html#output",
+    "title": "Fall 2026 Midterm 2 Practice Problems",
+    "section": "",
+    "text": "What is the output of this code?\n\npublic class Parent {\n    protected int x = 10;\n}\npublic class Child extends Parent {\n    int x = 20;\n    \n    public void display() {\n        System.out.println(super.x);\n    }\n}\npublic class RunStuff {\n  \n  public static void main(String[] args) {\n    Child myChild = new Child();\n    myChild.display();\n  }\n  \n}\n\nWhat will this code output?\n\nclass Animal {\n    Animal() {\n        System.out.println(\"Animal created\");\n    }\n}\nclass Dog extends Animal {\n    Dog() {\n        System.out.println(\"Dog created\");\n    }\n}\npublic class Test {\n    public static void main(String[] args) {\n        Dog d = new Dog();\n    }\n}\n\nConsider the following code:\n\npublic class Midterm {\n    public static int foo(int[] numbers) {\n        int n = numbers.length;\n        int a = 0;\n        int b = 0;\n        for (int i = 0; i &lt; n; i++) {\n            if ((numbers[i] % 10) == 0) {\n                // tens\n                a += numbers[i];\n            } else {\n                // not tens\n                b += numbers[i];\n            }\n        }\n        return b - a;\n    }\n\n    public static void main(String[] args) {\n        System.out.println(foo(new int[]{1, 40, 2, 93, 70, 4, 1}));\n    }\n}\nWhat would the code print? _____________________"
+  },
+  {
+    "objectID": "midterm_2_practice.html#errors",
+    "href": "midterm_2_practice.html#errors",
+    "title": "Fall 2026 Midterm 2 Practice Problems",
+    "section": "",
+    "text": "Identify the error:\n\nclass Parent {\n    Parent(int x) {\n        System.out.println(x);\n    }\n}\nclass Child extends Parent {\n    Child() {\n        System.out.println(\"Child\");\n    }\n}\n         ▢ a) No error\n         ▢ b) extends keyword is wrong\n         ▢ c) Missing super() call with argument in Child constructor\n         ▢ d) Parent class cannot have a parameterized constructor"
+  },
+  {
+    "objectID": "midterm_2_practice.html#complete-the-code",
+    "href": "midterm_2_practice.html#complete-the-code",
+    "title": "Fall 2026 Midterm 2 Practice Problems",
+    "section": "",
+    "text": "public class Fruit {\n    /**\n     * Create a new fruit. The boolean parameter\n     * indicates if this fruit would go well in a\n     * fruit salad (true) or would best be left out (false).\n     */\n    public Fruit(boolean goesInFruitSalad) {\n      // unimportant code here.\n    }\n}\n\npublic class Tomato extends Fruit {\n    /**\n     * Create a new Tomato. As a general rule -- no tomato (ripe\n     * or not) should ever go in a fruit salad. The boolean\n     * parameter indicates if the tomato is ripe or not.\n     */\n    public Tomato(boolean ripe) {\n        // SOMETHING is required here\n    }\n}\nA line of code is needed to replace the // SOMETHING is required here and make the code compile. Pick the CORRECT line from below. Note – more than one line below will make the code compile, but only one matches the intent of the author as indicated by the comments on Tomato and Fruit classes.\n         ▢ a) Fruit(true);\n         ▢ b) new Fruit(false);\n         ▢ c) new Fruit(true);\n         ▢ d) super(false);\n         ▢ e) super(true);"
+  },
+  {
+    "objectID": "midterm_2_practice.html#write-code",
+    "href": "midterm_2_practice.html#write-code",
+    "title": "Fall 2026 Midterm 2 Practice Problems",
+    "section": "",
+    "text": "Write a class called Employee with the following instance variables:\n\nA string for firstName\nA string for surname\nAn integer for ID\nA double variable for yearlySalary\n\nHere are the methods you should include in your solution:\n\nGetters and setters for at least two instance variables\nA constructor that takes as argument values for the four instance variables listed\nA method that returns the employee’s full name\nA method that returns the employee’s monthly salary\nA method that returns the employee earning bracket based their yearly salary – below 150k returns “low”, 150k and above “high”\ntoString() method that returns a message with the employee’s full name and its earning bracket\n\nIn addition to correctness (the right value is returned for each method), your solution will also be assessed based on whether you do not repeat code unnecessarily – in other words: Do Not Repeat Yourself. Your methods should call other methods when appropriate; you should not write code to calculate the same thing more than once."
+  },
+  {
+    "objectID": "midterm_2_practice.html#access-modifiers-1",
+    "href": "midterm_2_practice.html#access-modifiers-1",
+    "title": "Fall 2026 Midterm 2 Practice Problems",
+    "section": "2.1 Access Modifiers",
+    "text": "2.1 Access Modifiers\n\npublic\nprivate\nprotected\n\nprivate\n\n\nYes, through inheritance\n\n\nCompilation error\n\n\npublic is the least restrictive access modifier"
+  },
+  {
+    "objectID": "midterm_2_practice.html#java-keywords-1",
+    "href": "midterm_2_practice.html#java-keywords-1",
+    "title": "Fall 2026 Midterm 2 Practice Problems",
+    "section": "2.2 Java Keywords",
+    "text": "2.2 Java Keywords\n\n\nTo establish inheritance between classes\n\n\nIt refers to the current object instance\n\n\nCalls the constructor of the parent class\n\n\nOne\n\n\nAs the first statement in the constructor\n\n\nthis\n\n\nCalls an overridden method from the parent class"
+  },
+  {
+    "objectID": "midterm_2_practice.html#output-1",
+    "href": "midterm_2_practice.html#output-1",
+    "title": "Fall 2026 Midterm 2 Practice Problems",
+    "section": "2.3 Output",
+    "text": "2.3 Output\n\n\n\n        10\n\n\n\n        Animal Created\n        Dog created\n\n\n\n        -9"
+  },
+  {
+    "objectID": "midterm_2_practice.html#errors-1",
+    "href": "midterm_2_practice.html#errors-1",
+    "title": "Fall 2026 Midterm 2 Practice Problems",
+    "section": "2.4 Errors",
+    "text": "2.4 Errors\n\n\nMissing super() call with argument in Child constructor"
+  },
+  {
+    "objectID": "midterm_2_practice.html#complete-the-code-1",
+    "href": "midterm_2_practice.html#complete-the-code-1",
+    "title": "Fall 2026 Midterm 2 Practice Problems",
+    "section": "2.5 Complete the code",
+    "text": "2.5 Complete the code\n\n\nsuper(false);"
+  },
+  {
+    "objectID": "midterm_2_practice.html#write-code-1",
+    "href": "midterm_2_practice.html#write-code-1",
+    "title": "Fall 2026 Midterm 2 Practice Problems",
+    "section": "2.6 Write Code",
+    "text": "2.6 Write Code\npublic class Employee {       \n      private String firstName;\n      private String surname;                                                          \n      private int ID;\n      private double yearlySalary;       \n                  \n      public Employee(String firstName, String surname, int ID, double yearlySalary) {\n          this.firstName = firstName;\n          this.surname = surname;\n          this.ID = ID;\n          this.yearlySalary = yearlySalary;\n      }\n\n      public String getFirstName() { return firstName; }\n      public void setFirstName(String firstName) { this.firstName = firstName; }\n\n      public String getSurname() { return surname; }\n      public void setSurname(String surname) { this.surname = surname; }\n\n      public double getYearlySalary() { return yearlySalary; }\n      public void setYearlySalary(double yearlySalary) { this.yearlySalary = yearlySalary; }\n\n      public String getFullName() {\n          return firstName + \" \" + surname;\n      }\n\n      public double monthlySalary() {\n          return yearlySalary / 12;\n      }\n\n      public String earningBracket() {\n          if (yearlySalary &lt; 150000) return \"low\";\n          return \"high\";\n      }\n\n      @Override\n      public String toString() {\n          return getFullName() + \" is in the \" + earningBracket() + \" earning bracket\";\n      }\n  }"
   }
 ]
