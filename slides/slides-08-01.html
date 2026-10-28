@@ -1216,55 +1216,42 @@ margin-right: 0; }
 <span id="cb3-24"><a></a></span>
 <span id="cb3-25"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="practice" class="slide level2">
+<section id="practice" class="slide level2 smaller">
 <h2>Practice</h2>
-<p>Implement two Java classes that simulate rolling dice — a <strong>fair die</strong> and a <strong>biased die</strong> — while practicing <strong>inheritance</strong>.</p>
-<p>What instance variables should <code>Dice.java</code> have?</p>
-<p>Methods:</p>
+<p>Implement two Java classes that simulate rolling dice — a <strong>fair die</strong> and a <strong>biased die</strong> — while practicing <strong>inheritance</strong>. Test your solution with <a href="code/DiceTest.java">DiceTest.java</a> before submitting to Gradescope.</p>
 <ul>
-<li>Constructor (with number of sides as a parameter) – <code>public Dice(int sides)</code></li>
+<li>Your super class should be called <code>Dice</code> – constructor call: <code>public Dice(int sides)</code>
+<ul>
 <li>getter for number of sides – <code>public int getSides()</code></li>
-<li><code>public int roll()</code> – returns an integer between <code>1</code> and <code>number of sides</code> (needs random module)</li>
+<li><code>public int roll()</code> – returns an integer between <code>1</code> and <code>number of sides</code> (needs random module): <code>random.nextInt(sides) + 1;</code></li>
+</ul></li>
+<li>Create a subclass called <code>BiasedDice</code> (use <code>extends</code> keyword) with getters for favored side and bias (<code>getFavored()</code> and <code>getBias()</code>)
+<ul>
+<li><code>roll()</code> method favors one side with a specified probability. For example, if the <code>favored</code> sides equals <code>3</code> and <code>bias</code> equals <code>0.5</code>, then a 6-sided die has a 50% chance of landing on 3 and a 10% chance each of landing on 1, 2, 4, 5, and 6. (<code>if (random.nextDouble() &lt; bias) { return favored; }</code>)</li>
+<li><code>public void setFavored(int favored, double bias)</code> – <code>favored</code> must be in <code>[1, number of sides]</code>, <code>bias</code> must be in <code>[0.0, 1.0]</code></li>
+</ul></li>
 </ul>
-<pre><code>import java.util.Random;
-Random random = new Random();
-random.nextInt(sides) + 1;</code></pre>
 </section>
 <section id="super-class-solution" class="slide level2">
 <h2>Super class solution</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>import java.util.Random;</span>
-<span id="cb5-2"><a></a></span>
-<span id="cb5-3"><a></a>public class Dice {</span>
-<span id="cb5-4"><a></a>    private int sides = 6;</span>
-<span id="cb5-5"><a></a>    private Random random = new Random();</span>
-<span id="cb5-6"><a></a></span>
-<span id="cb5-7"><a></a>    public Dice(int sides) {</span>
-<span id="cb5-8"><a></a>        this.sides = sides;</span>
-<span id="cb5-9"><a></a>    }</span>
-<span id="cb5-10"><a></a></span>
-<span id="cb5-11"><a></a>    public int getSides() {</span>
-<span id="cb5-12"><a></a>        return sides;</span>
-<span id="cb5-13"><a></a>    }</span>
-<span id="cb5-14"><a></a></span>
-<span id="cb5-15"><a></a>    public int roll() {</span>
-<span id="cb5-16"><a></a>        return random.nextInt(sides) + 1;</span>
-<span id="cb5-17"><a></a>    }</span>
-<span id="cb5-18"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="part-2-the-biaseddice-class" class="slide level2">
-<h2>Part 2: The <code>BiasedDice</code> Class</h2>
-<p>In a separate file (<code>BiasedDice.java</code>), create a subclass of <code>Dice</code> (use <code>extends</code> keyword) that favors one side with a specified probability. For example, if the <code>favored</code> sides equals <code>3</code> and <code>bias</code> equals <code>0.5</code>, then a 6-sided die has a 50% chance of landing on 3 and a 10% chance of landing on 1, 2, 4, 5, and 6.</p>
-</section>
-<section id="part-2-the-biaseddice-class-1" class="slide level2">
-<h2>Part 2: The <code>BiasedDice</code> Class</h2>
-<ul>
-<li>Override <code>roll()</code>:
-<ul>
-<li>With probability <code>bias</code>, return the favored side.</li>
-<li>Otherwise, choose uniformly among the remaining sides.</li>
-<li>e.g., if <code>favored</code> equals <code>3</code> and <code>bias</code> equals <code>0.5</code>, then a 6-sided die has a 50% chance of landing on 3 and a 10% chance of landing on 1, 2, 4, 5, and 6.</li>
-</ul></li>
-</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>import java.util.Random;</span>
+<span id="cb4-2"><a></a></span>
+<span id="cb4-3"><a></a>public class Dice {</span>
+<span id="cb4-4"><a></a>    private int sides = 6;</span>
+<span id="cb4-5"><a></a>    protected Random random = new Random();</span>
+<span id="cb4-6"><a></a></span>
+<span id="cb4-7"><a></a>    public Dice(int sides) {</span>
+<span id="cb4-8"><a></a>        if (sides &gt; 0) this.sides = sides;</span>
+<span id="cb4-9"><a></a>    }</span>
+<span id="cb4-10"><a></a></span>
+<span id="cb4-11"><a></a>    public int getSides() {</span>
+<span id="cb4-12"><a></a>        return sides;</span>
+<span id="cb4-13"><a></a>    }</span>
+<span id="cb4-14"><a></a></span>
+<span id="cb4-15"><a></a>    public int roll() {</span>
+<span id="cb4-16"><a></a>        return random.nextInt(sides) + 1;</span>
+<span id="cb4-17"><a></a>    }</span>
+<span id="cb4-18"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="protected-keyword" class="slide level2">
 <h2>protected keyword</h2>
@@ -1316,73 +1303,49 @@ random.nextInt(sides) + 1;</code></pre>
 </tbody>
 </table>
 </section>
-<section id="part-2-the-biaseddice-class-2" class="slide level2">
-<h2>Part 2: The <code>BiasedDice</code> Class</h2>
-<p>You can use the random object from the super class (change access modifier to <code>protected</code>) and then use the <code>.nextDouble()</code> method to get a double between 0 and 1. If this double is within the <code>bias</code> treshold return <code>favored</code>, otherwise return one of the other sides (randomly).</p>
-<pre><code>if (random.nextDouble() &lt; bias) { return favored; }</code></pre>
-</section>
-<section id="part-2-the-biaseddice-class-3" class="slide level2">
-<h2>Part 2: The <code>BiasedDice</code> Class</h2>
-<p>In a separate file (<code>BiasedDice.java</code>), create a subclass of <code>Dice</code> (use <code>extends</code> keyword) that favors one side with a specified probability. Methods:</p>
-<ul>
-<li>Constructor: <code>public BiasedDice(int sides)</code></li>
-<li><code>public void setFavored(int favored, double bias)</code>
-<ul>
-<li><code>favored</code> must be in <code>[1, number of sides]</code><br>
-</li>
-<li><code>bias</code> must be in <code>[0.0, 1.0]</code></li>
-</ul></li>
-<li>getters for favored side and bias (<code>getFavored()</code> and <code>getBias()</code>)</li>
-</ul>
-</section>
-<section id="submit-to-gradescope" class="slide level2">
-<h2>Submit to gradescope</h2>
-<p>Submit your <code>Dice.java</code> and <code>BiasedDice.java</code> files to gradescope</p>
-</section>
 <section id="biaseddice-class-solution" class="slide level2">
 <h2><code>BiasedDice</code> Class – solution</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a>public class BiasedDice extends Dice {</span>
-<span id="cb7-2"><a></a>    private int favored = 1;</span>
-<span id="cb7-3"><a></a>    private double bias = 0.1;</span>
-<span id="cb7-4"><a></a></span>
-<span id="cb7-5"><a></a>    public BiasedDice(int sides) {</span>
-<span id="cb7-6"><a></a>        super(sides);</span>
-<span id="cb7-7"><a></a>    }</span>
-<span id="cb7-8"><a></a></span>
-<span id="cb7-9"><a></a>    public void setFavored(int favored, double bias) {</span>
-<span id="cb7-10"><a></a>        this.favored = favored;</span>
-<span id="cb7-11"><a></a>        this.bias = bias;</span>
-<span id="cb7-12"><a></a>    }</span>
-<span id="cb7-13"><a></a></span>
-<span id="cb7-14"><a></a>    public int getFavored() {</span>
-<span id="cb7-15"><a></a>        return favored;</span>
-<span id="cb7-16"><a></a>    }</span>
-<span id="cb7-17"><a></a></span>
-<span id="cb7-18"><a></a>    public double getBias() {</span>
-<span id="cb7-19"><a></a>        return bias;</span>
-<span id="cb7-20"><a></a>    }</span>
-<span id="cb7-21"><a></a></span>
-<span id="cb7-22"><a></a>    public int roll() {</span>
-<span id="cb7-23"><a></a>        if (random.nextDouble() &lt; bias) {</span>
-<span id="cb7-24"><a></a>            return favored;</span>
-<span id="cb7-25"><a></a>        }</span>
-<span id="cb7-26"><a></a></span>
-<span id="cb7-27"><a></a>        int die = random.nextInt(getSides()) + 1;</span>
-<span id="cb7-28"><a></a>        while (die == favored) {</span>
-<span id="cb7-29"><a></a>            die = random.nextInt(getSides()) + 1;</span>
-<span id="cb7-30"><a></a>        }</span>
-<span id="cb7-31"><a></a>        return die;</span>
-<span id="cb7-32"><a></a>    }</span>
-<span id="cb7-33"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>public class BiasedDice extends Dice {</span>
+<span id="cb5-2"><a></a>    private int favored = 1;</span>
+<span id="cb5-3"><a></a>    private double bias = 0.1;</span>
+<span id="cb5-4"><a></a></span>
+<span id="cb5-5"><a></a>    public BiasedDice(int sides) {</span>
+<span id="cb5-6"><a></a>        super(sides);</span>
+<span id="cb5-7"><a></a>    }</span>
+<span id="cb5-8"><a></a></span>
+<span id="cb5-9"><a></a>    public void setFavored(int favored, double bias) {</span>
+<span id="cb5-10"><a></a>        if (favored &lt; 1 || favored &gt; getSides() || bias &lt; 0.0 || bias &gt; 1.0) {</span>
+<span id="cb5-11"><a></a>            return;</span>
+<span id="cb5-12"><a></a>        }</span>
+<span id="cb5-13"><a></a>        this.favored = favored;</span>
+<span id="cb5-14"><a></a>        this.bias = bias;</span>
+<span id="cb5-15"><a></a>    }</span>
+<span id="cb5-16"><a></a></span>
+<span id="cb5-17"><a></a>    public int getFavored() {</span>
+<span id="cb5-18"><a></a>        return favored;</span>
+<span id="cb5-19"><a></a>    }</span>
+<span id="cb5-20"><a></a></span>
+<span id="cb5-21"><a></a>    public double getBias() {</span>
+<span id="cb5-22"><a></a>        return bias;</span>
+<span id="cb5-23"><a></a>    }</span>
+<span id="cb5-24"><a></a></span>
+<span id="cb5-25"><a></a>    public int roll() {</span>
+<span id="cb5-26"><a></a>        if (random.nextDouble() &lt; bias) {</span>
+<span id="cb5-27"><a></a>            return favored;</span>
+<span id="cb5-28"><a></a>        }</span>
+<span id="cb5-29"><a></a></span>
+<span id="cb5-30"><a></a>        int die = random.nextInt(getSides()) + 1;</span>
+<span id="cb5-31"><a></a>        while (die == favored) {</span>
+<span id="cb5-32"><a></a>            die = random.nextInt(getSides()) + 1;</span>
+<span id="cb5-33"><a></a>        }</span>
+<span id="cb5-34"><a></a>        return die;</span>
+<span id="cb5-35"><a></a>    }</span>
+<span id="cb5-36"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="quiz-06" class="slide level2">
 <h2>Quiz 06</h2>
 <p>You have 10 minutes to complete the quiz.</p>
-<p>Two parts:</p>
-<ol type="1">
-<li>Fill in the blanks in the code</li>
-<li>Answer the two questions about the code</li>
-</ol>
+<p>Choose on one choice for each question. Multiple marks on different choices will be graded as zero.</p>
 
 
 </section>

@@ -4659,35 +4659,35 @@
     "href": "slides/slides-08-01.html#quiz-06",
     "title": "Inheritance",
     "section": "Quiz 06",
-    "text": "Quiz 06\nYou have 10 minutes to complete the quiz.\nTwo parts:\n\nFill in the blanks in the code\nAnswer the two questions about the code"
+    "text": "Quiz 06\nYou have 10 minutes to complete the quiz.\nChoose on one choice for each question. Multiple marks on different choices will be graded as zero."
   },
   {
     "objectID": "slides/slides-08-01.html#practice",
     "href": "slides/slides-08-01.html#practice",
     "title": "Inheritance",
     "section": "Practice",
-    "text": "Practice\nImplement two Java classes that simulate rolling dice — a fair die and a biased die — while practicing inheritance.\nWhat instance variables should Dice.java have?\nMethods:\n\nConstructor (with number of sides as a parameter) – public Dice(int sides)\ngetter for number of sides – public int getSides()\npublic int roll() – returns an integer between 1 and number of sides (needs random module)\n\nimport java.util.Random;\nRandom random = new Random();\nrandom.nextInt(sides) + 1;"
+    "text": "Practice\nImplement two Java classes that simulate rolling dice — a fair die and a biased die — while practicing inheritance. Test your solution with DiceTest.java before submitting to Gradescope.\n\nYour super class should be called Dice – constructor call: public Dice(int sides)\n\ngetter for number of sides – public int getSides()\npublic int roll() – returns an integer between 1 and number of sides (needs random module): random.nextInt(sides) + 1;\n\nCreate a subclass called BiasedDice (use extends keyword) with getters for favored side and bias (getFavored() and getBias())\n\nroll() method favors one side with a specified probability. For example, if the favored sides equals 3 and bias equals 0.5, then a 6-sided die has a 50% chance of landing on 3 and a 10% chance each of landing on 1, 2, 4, 5, and 6. (if (random.nextDouble() &lt; bias) { return favored; })\npublic void setFavored(int favored, double bias) – favored must be in [1, number of sides], bias must be in [0.0, 1.0]"
   },
   {
     "objectID": "slides/slides-08-01.html#super-class-solution",
     "href": "slides/slides-08-01.html#super-class-solution",
     "title": "Inheritance",
     "section": "Super class solution",
-    "text": "Super class solution\nimport java.util.Random;\n\npublic class Dice {\n    private int sides = 6;\n    private Random random = new Random();\n\n    public Dice(int sides) {\n        this.sides = sides;\n    }\n\n    public int getSides() {\n        return sides;\n    }\n\n    public int roll() {\n        return random.nextInt(sides) + 1;\n    }\n}"
+    "text": "Super class solution\nimport java.util.Random;\n\npublic class Dice {\n    private int sides = 6;\n    protected Random random = new Random();\n\n    public Dice(int sides) {\n        if (sides &gt; 0) this.sides = sides;\n    }\n\n    public int getSides() {\n        return sides;\n    }\n\n    public int roll() {\n        return random.nextInt(sides) + 1;\n    }\n}"
   },
   {
     "objectID": "slides/slides-08-01.html#part-2-the-biaseddice-class",
     "href": "slides/slides-08-01.html#part-2-the-biaseddice-class",
     "title": "Inheritance",
     "section": "Part 2: The BiasedDice Class",
-    "text": "Part 2: The BiasedDice Class\nIn a separate file (BiasedDice.java), create a subclass of Dice (use extends keyword) that favors one side with a specified probability. For example, if the favored sides equals 3 and bias equals 0.5, then a 6-sided die has a 50% chance of landing on 3 and a 10% chance of landing on 1, 2, 4, 5, and 6."
+    "text": "Part 2: The BiasedDice Class\nYou can use the random object from the super class (change access modifier to protected) and then use the .nextDouble() method to get a double between 0 and 1. If this double is within the bias threshold return favored, otherwise return one of the other sides (randomly).\nif (random.nextDouble() &lt; bias) { return favored; }"
   },
   {
     "objectID": "slides/slides-08-01.html#part-2-the-biaseddice-class-1",
     "href": "slides/slides-08-01.html#part-2-the-biaseddice-class-1",
     "title": "Inheritance",
     "section": "Part 2: The BiasedDice Class",
-    "text": "Part 2: The BiasedDice Class\n\nOverride roll():\n\nWith probability bias, return the favored side.\nOtherwise, choose uniformly among the remaining sides.\ne.g., if favored equals 3 and bias equals 0.5, then a 6-sided die has a 50% chance of landing on 3 and a 10% chance of landing on 1, 2, 4, 5, and 6."
+    "text": "Part 2: The BiasedDice Class\nYou can use the random object from the super class (change access modifier to protected) and then use the .nextDouble() method to get a double between 0 and 1. If this double is within the bias treshold return favored, otherwise return one of the other sides (randomly).\nif (random.nextDouble() &lt; bias) { return favored; }"
   },
   {
     "objectID": "slides/slides-08-01.html#protected-keyword",
@@ -4708,7 +4708,7 @@
     "href": "slides/slides-08-01.html#part-2-the-biaseddice-class-2",
     "title": "Inheritance",
     "section": "Part 2: The BiasedDice Class",
-    "text": "Part 2: The BiasedDice Class\nYou can use the random object from the super class (change access modifier to protected) and then use the .nextDouble() method to get a double between 0 and 1. If this double is within the bias treshold return favored, otherwise return one of the other sides (randomly).\nif (random.nextDouble() &lt; bias) { return favored; }"
+    "text": "Part 2: The BiasedDice Class\nIn a separate file (BiasedDice.java), create a subclass of Dice (use extends keyword) that favors one side with a specified probability. Methods:\n\nConstructor: public BiasedDice(int sides)\npublic void setFavored(int favored, double bias)\n\nfavored must be in [1, number of sides]\n\nbias must be in [0.0, 1.0]\n\ngetters for favored side and bias (getFavored() and getBias())"
   },
   {
     "objectID": "slides/slides-08-01.html#part-2-the-biaseddice-class-3",
@@ -4729,7 +4729,7 @@
     "href": "slides/slides-08-01.html#biaseddice-class-solution",
     "title": "Inheritance",
     "section": "BiasedDice Class – solution",
-    "text": "BiasedDice Class – solution\npublic class BiasedDice extends Dice {\n    private int favored = 1;\n    private double bias = 0.1;\n\n    public BiasedDice(int sides) {\n        super(sides);\n    }\n\n    public void setFavored(int favored, double bias) {\n        this.favored = favored;\n        this.bias = bias;\n    }\n\n    public int getFavored() {\n        return favored;\n    }\n\n    public double getBias() {\n        return bias;\n    }\n\n    public int roll() {\n        if (random.nextDouble() &lt; bias) {\n            return favored;\n        }\n\n        int die = random.nextInt(getSides()) + 1;\n        while (die == favored) {\n            die = random.nextInt(getSides()) + 1;\n        }\n        return die;\n    }\n}"
+    "text": "BiasedDice Class – solution\npublic class BiasedDice extends Dice {\n    private int favored = 1;\n    private double bias = 0.1;\n\n    public BiasedDice(int sides) {\n        super(sides);\n    }\n\n    public void setFavored(int favored, double bias) {\n        if (favored &lt; 1 || favored &gt; getSides() || bias &lt; 0.0 || bias &gt; 1.0) {\n            return;\n        }\n        this.favored = favored;\n        this.bias = bias;\n    }\n\n    public int getFavored() {\n        return favored;\n    }\n\n    public double getBias() {\n        return bias;\n    }\n\n    public int roll() {\n        if (random.nextDouble() &lt; bias) {\n            return favored;\n        }\n\n        int die = random.nextInt(getSides()) + 1;\n        while (die == favored) {\n            die = random.nextInt(getSides()) + 1;\n        }\n        return die;\n    }\n}"
   },
   {
     "objectID": "index.html#module-08",
