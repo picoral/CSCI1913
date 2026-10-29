@@ -5066,5 +5066,180 @@
     "title": "Fall 2026 Midterm 2 Practice Problems",
     "section": "2.6 Write Code",
     "text": "2.6 Write Code\npublic class Employee {       \n      private String firstName;\n      private String surname;                                                          \n      private int ID;\n      private double yearlySalary;       \n                  \n      public Employee(String firstName, String surname, int ID, double yearlySalary) {\n          this.firstName = firstName;\n          this.surname = surname;\n          this.ID = ID;\n          this.yearlySalary = yearlySalary;\n      }\n\n      public String getFirstName() { return firstName; }\n      public void setFirstName(String firstName) { this.firstName = firstName; }\n\n      public String getSurname() { return surname; }\n      public void setSurname(String surname) { this.surname = surname; }\n\n      public double getYearlySalary() { return yearlySalary; }\n      public void setYearlySalary(double yearlySalary) { this.yearlySalary = yearlySalary; }\n\n      public String getFullName() {\n          return firstName + \" \" + surname;\n      }\n\n      public double monthlySalary() {\n          return yearlySalary / 12;\n      }\n\n      public String earningBracket() {\n          if (yearlySalary &lt; 150000) return \"low\";\n          return \"high\";\n      }\n\n      @Override\n      public String toString() {\n          return getFullName() + \" is in the \" + earningBracket() + \" earning bracket\";\n      }\n  }"
+  },
+  {
+    "objectID": "labs/lab07.html",
+    "href": "labs/lab07.html",
+    "title": "Computer Laboratory 07",
+    "section": "",
+    "text": "Deadline: Wed, Nov 4, 2026"
+  },
+  {
+    "objectID": "labs/lab07.html#constructor",
+    "href": "labs/lab07.html#constructor",
+    "title": "Computer Laboratory 07",
+    "section": "constructor",
+    "text": "constructor\npublic Skill(String name, int strength, int usageLimit)\nThis constructor should assign the private name, strength, and usage limits from its input parameters.\nAdditionally, set up variables so that a newly created skill has all its uses left."
+  },
+  {
+    "objectID": "labs/lab07.html#refresh",
+    "href": "labs/lab07.html#refresh",
+    "title": "Computer Laboratory 07",
+    "section": "refresh",
+    "text": "refresh\npublic void refresh()\nThis should reset private variables so that getUsageLeft will be the usageLimit.\nThis function will be called at the beginning of a battle to reset the use-tracking variables for a new battle!"
+  },
+  {
+    "objectID": "labs/lab07.html#tostring",
+    "href": "labs/lab07.html#tostring",
+    "title": "Computer Laboratory 07",
+    "section": "toString",
+    "text": "toString\npublic String toString()\nThis should return a string formed of the name, a space, the number of remaining usages, a “/” and the usage limit.\nFor examples of this format you will need to look at the test code."
+  },
+  {
+    "objectID": "labs/lab07.html#applychanges",
+    "href": "labs/lab07.html#applychanges",
+    "title": "Computer Laboratory 07",
+    "section": "applyChanges",
+    "text": "applyChanges\nThe method public void applyChanges(CodeMonster me, CodeMonster foe) is in charge of actually updating the state of the CodeMonsters to reflect the change made by using this skill. It may seem strange to separate this into its own method, but it will end up being the right decision later, when we introduce other versions of Skills.\nThis class (Skill) represents a basic attack, so “applying the changes” of having “me” attack “foe” would mean dealing damage to foe (or more directly, reducing its health).\nYou will need to use the adjustHealth method in class CodeMonster to do this, if you’re coding as-you-read you may find it useful to read-ahead and make sure you know how parameters for this function work."
+  },
+  {
+    "objectID": "labs/lab07.html#useskill",
+    "href": "labs/lab07.html#useskill",
+    "title": "Computer Laboratory 07",
+    "section": "useSkill",
+    "text": "useSkill\nThe method public void useSkill(CodeMonster me, CodeMonster foe) is the main entry point to using a skill (that is to say, this is the method other classes would normally call, not the above one).\nThe code for this method only needs to ensure that the usage limit for a skill is enforced. If there are still usage available, reduce the remaining usages by one and then call applyChanges to actually effect the battle.\nIf the move does not have any uses left in this battle, the function should do nothing."
+  },
+  {
+    "objectID": "labs/lab07.html#constructor-1",
+    "href": "labs/lab07.html#constructor-1",
+    "title": "Computer Laboratory 07",
+    "section": "constructor",
+    "text": "constructor\npublic CodeMonster(int maxHp, double speedScore, String name, Skill[] moves)\nThis constructor should update the maxHP, speedScore, name, and moves array from its parameters.\n\nThe current hp should be set to the maxHP.\nThe nextTurnTime should be set to the speed score."
+  },
+  {
+    "objectID": "labs/lab07.html#isalive",
+    "href": "labs/lab07.html#isalive",
+    "title": "Computer Laboratory 07",
+    "section": "isAlive",
+    "text": "isAlive\npublic boolean isAlive()\nThis function should return true if the current HP is greater than 0, false otherwise."
+  },
+  {
+    "objectID": "labs/lab07.html#setnextturntime",
+    "href": "labs/lab07.html#setnextturntime",
+    "title": "Computer Laboratory 07",
+    "section": "setNextTurnTime",
+    "text": "setNextTurnTime\npublic void setNextTurnTime(double nextTurnTime)\nThis function should update the private nextTurnTime attribute based on its input parameter value."
+  },
+  {
+    "objectID": "labs/lab07.html#tostring-1",
+    "href": "labs/lab07.html#tostring-1",
+    "title": "Computer Laboratory 07",
+    "section": "toString",
+    "text": "toString\npublic String toString()\nThis function should return a string that is the CodeMonster’s name, followed by a space, then their current hp, then a “/” then their max hp. Examples of this format can be seen in the tester code."
+  },
+  {
+    "objectID": "labs/lab07.html#adjusthealth",
+    "href": "labs/lab07.html#adjusthealth",
+    "title": "Computer Laboratory 07",
+    "section": "adjustHealth",
+    "text": "adjustHealth\nThe public void adjustHealth(int amount) method should adjust the current HP with positive amounts increasing the current HP (representing healing) and negative amounts decreasing the HP (representing damage).\nThis function is in charge of enforcing two limits: the HP should never go over the maximum, and the HP should never go below 0 (although it can be reduced to 0).\n\nIf the HP would ever be reduced below 0 in this function, simply set the hp to 0.\nIf the hp would ever be increased above the max in this function, simply set the hp to its max."
+  },
+  {
+    "objectID": "labs/lab07.html#taketurn",
+    "href": "labs/lab07.html#taketurn",
+    "title": "Computer Laboratory 07",
+    "section": "takeTurn",
+    "text": "takeTurn\nThe public Skill takeTurn() function will be called by the battle code when it’s this codeMonster’s turn to use a skill.\nThis method has two separate, but related tasks:\n\nupdate the nextTurnTime– this is done by adding the codeMonster’s speed to the next turn time. In this way faster codeMonster’s (smaller speed scores) will act more often (as their next turn time will not increase as much after acting).\nchoose which skill to use – this is indicated by returning the Skill the CodeMonster wishes to use. We will use a simple strategy here – CodeMonsters will use the skills in their moves array in the order given in the array – looping over the array after each skill has been used. So if a CodeMonster has 3 moves (for example, let’s call them A, B, and C, in that order) then the first time takeTurn is called, it should return A. The second time takeTurn is called B should be returned, the third time takeTurn is called C should be returned, and then the fourth time A should be returned, the fifth time B should be returned and so-forth. (Note – no consideration should be made for if the skill can be used more times. Even if a skill cannot be used again, it should be returned)\n\nYou will need to use the moveIndex variable – or some other private variable of your own devising to accomplish this.\n(note – this method is NOT in charge of actually using the skill – the battle code will handle this.)"
+  },
+  {
+    "objectID": "labs/lab07.html#prepforbattle",
+    "href": "labs/lab07.html#prepforbattle",
+    "title": "Computer Laboratory 07",
+    "section": "prepForBattle",
+    "text": "prepForBattle\nThe method public void prepForBattle() is called before a new battle.\nThis should reset private variables for a new battle as follows:\n\nthe current HP should be reset to max (battles always start with a codeMonster healed up and ready to go!)\nthe next turn time should be set to the CodeMonster’s speed score. This way, whichever codeMonster is fastest (smallest speed) goes first.\nthe moveIndex (or whatever you named that variable) should be reset such that the next call to takeTurn will return the first skill in the array.\nevery skill in the moves array should be refreshed, using the skill refresh method (so that each move’s use-count is reset)\n\nAt this point, your code should pass all tests in SkillTester.java and CodeMonster.java – you should not implement the other classes if you are failing any of the tests in these two files."
+  },
+  {
+    "objectID": "labs/lab07.html#dooneturn",
+    "href": "labs/lab07.html#dooneturn",
+    "title": "Computer Laboratory 07",
+    "section": "doOneTurn",
+    "text": "doOneTurn\nThe public static void doOneTurn(CodeMonster one, CodeMonster two) function is in charge of handling exactly one turn of battle.\nNormally this would be a private function, but we are making it an explicit part of the problem design to help us test your code for correctness, and help you structure the battle logic. This function should first figure out which CodeMonster (one or two) is taking this turn. Note – only one CodeMonster should act each time this function is called – CodeMonsters do not take equal numbers of turns – faster CodeMonsters act more frequently than slower ones. The CodeMonster with a smaller nextTurnTime should go, if the CodeMonsters are tied for nextTurnTime then CodeMonster one should go.\nAfter deciding which CodeMonster is going, its takeTurn method should be called to decide which skill is used, and the skill should be used.\nFinally, a message should be printed – see the tester code for the format of this message. (As a hint – the message is deliberately designed to largely be made up of the toString outputs from the Skill and CodeMonster class – make sure you’re using those methods!)"
+  },
+  {
+    "objectID": "labs/lab07.html#battle-1",
+    "href": "labs/lab07.html#battle-1",
+    "title": "Computer Laboratory 07",
+    "section": "battle",
+    "text": "battle\nThe public static CodeMonster battle(CodeMonster one, CodeMonster two) function will carry out an entire battle.\n\nstart by preparing each CodeMonster for battle\nThen print a message indicating the match up (see tester code for exact message format, but it should be &lt;CodeMonster one&gt; vs. &lt;CodeMonster two&gt;.)\nthen, one turn should be taken at a time until one CodeMonster is no longer alive.\nOnce one CodeMonster is not alive, the living CodeMonster is declared the winner.\nA message should print to note who won (again – see tester code for exact message format.) and the winner should be returned to indicate the victory."
+  },
+  {
+    "objectID": "labs/lab07.html#healingskill",
+    "href": "labs/lab07.html#healingskill",
+    "title": "Computer Laboratory 07",
+    "section": "HealingSkill",
+    "text": "HealingSkill\nThe HealingSkill class is a child-class of the Skill class.\nWhile it only declares a constructor and an applyChanges method, it has all methods from Skill.\nPlease note the following syntax from this class:\n\npublic class HealingSkill extends Skill the special keyword extends sets up HealingSkill as a child class of Skill. This will be required for the two classes you write.\n(in the constructor) super(name, strength, usageLimit); this code invokes the Skill constructor – this is something each child-class constructor will need to do.\n(in applyChanges) getStrength() – note that we have to use the getter here, we cannot use the strength attribute directly because it is PRIVATE – and access to private variables is not inherited. Your code will need this too!\nNotice further that no new attributes were added to this class. They are not needed, as we inherit attributes for name, strength, and usage tracking from the Skill class."
+  },
+  {
+    "objectID": "labs/lab07.html#fastskill",
+    "href": "labs/lab07.html#fastskill",
+    "title": "Computer Laboratory 07",
+    "section": "FastSkill",
+    "text": "FastSkill\nThe FastSkill represents skills that can be used in no time at all! When applied, this skill should damage the foe based on the skill’s power and reduce the “me” CodeMonster’s nextTurnTime by that CodeMonster’s speed score. (in essence refunding the time that was marked for this turn, and ensuring the CodeMonster goes again!)"
+  },
+  {
+    "objectID": "labs/lab07.html#vampiricskill",
+    "href": "labs/lab07.html#vampiricskill",
+    "title": "Computer Laboratory 07",
+    "section": "VampiricSkill",
+    "text": "VampiricSkill\nThe vampiric skill represents a skill that hurts the foe and heals the CodeMonster executing the skill at the same time. When applied, this skill should damage the foe based on the skill’s power, and also heal the “me” CodeMonster by the skill’s power."
+  },
+  {
+    "objectID": "labs/lab07.html#personal-testing",
+    "href": "labs/lab07.html#personal-testing",
+    "title": "Computer Laboratory 07",
+    "section": "Personal testing",
+    "text": "Personal testing\nTo keep tests simple for students who may struggle on this last part we have not added any tests that formally show off how these skills can be used (as such tests might keep you from compiling your code…). As such, we recommend you spare a few minutes to see this for yourself.\nThe following is strongly recommended, but will not be graded. Nonetheless you should do this to help you better understand what we can do with polymorphism and why we would build our software this way!\n\nCreate a main function on some class and create two CodeMonsters.\nGive them each a few different skills.\n\nAs you do this, try to give them a healing skill, vampiric skill, and fastSkill – this should require no special syntax, simply make the objects and assign them into a Skill array.\n\nYou should be able to see the effects of each of these in practice by “watching” your codeMonsters battle!\n\nIf you’ve done everything right, you’ll see that you can simply add the new skills to a Skill array as if they were normal skills! That’s the power of polymorphism."
+  },
+  {
+    "objectID": "labs/lab07-slides.html",
+    "href": "labs/lab07-slides.html",
+    "title": "Lab 08",
+    "section": "",
+    "text": "Download JDK\nDownload and install IntelliJ\nStart an IntelliJ project\nDownload the template java files and move them to the src folder"
+  },
+  {
+    "objectID": "labs/lab07-slides.html#set-up-environment",
+    "href": "labs/lab07-slides.html#set-up-environment",
+    "title": "Lab 07",
+    "section": "Set up environment",
+    "text": "Set up environment\n\nStart an IntelliJ project\nDownload the template java files and move them to the src folder"
+  },
+  {
+    "objectID": "labs/lab07-slides.html#folder-structure",
+    "href": "labs/lab07-slides.html#folder-structure",
+    "title": "Lab 07",
+    "section": "Folder Structure",
+    "text": "Folder Structure\nYour intelij project directory should look something like the following:\nLab07\n|-- out\n`-- src\n    |-- BattleTester.java\n    |-- CodeMonsterTester.java\n    |-- HealingSkill.java\n    |-- MoreSkillsTester.java\n    |-- SkillTester.java\n    `-- Tester.java"
+  },
+  {
+    "objectID": "labs/lab07-slides.html#create-files",
+    "href": "labs/lab07-slides.html#create-files",
+    "title": "Lab 07",
+    "section": "Create Files",
+    "text": "Create Files\nHere are the classes you are to create:\nTwo other skills that you should use extends Skill:\n\nVampiricSkill.java\nFastSkill.java\n\nUse as reference HealingSkill.java which also extends Skill:\npublic class HealingSkill extends Skill {}\nAnd one class for the monster and another for the battle:\n\nCodeMonster.java\nBattle.java"
+  },
+  {
+    "objectID": "labs/lab07-slides.html#javadoc",
+    "href": "labs/lab07-slides.html#javadoc",
+    "title": "Lab 07",
+    "section": "Javadoc",
+    "text": "Javadoc\nKey Rules:\n\nStarts with /** and ends with */\nFirst sentence is a short summary — it appears in the generated HTML overview\n@param tag should be listed for every parameter"
+  },
+  {
+    "objectID": "labs/lab07-slides.html#javadoc-1",
+    "href": "labs/lab07-slides.html#javadoc-1",
+    "title": "Lab 07",
+    "section": "Javadoc",
+    "text": "Javadoc\n   /**                                                                               \n   * Calculates the average of an array of test scores.\n   * Returns 0 if the array is null or empty.    \n   *              \n   * @param scores  an array of test scores, each in the range [0, 100]\n   * @param count   the number of scores in the array\n   * @return        the average of all scores, or 0 if the array is null or empty\n   * @throws        IllegalArgumentException if count is negative\n   *\n   * @author        Adriana Picoral\n   * @version       1.0\n   */\n  public double calculateAverage(double[] scores, int count) {\n      if (scores == null || scores.length == 0) return 0;\n      if (count &lt; 0) throw new IllegalArgumentException(\"Count cannot be negative\");\n\n      double sum = 0;\n      for (double score : scores) {\n          sum += score;\n      }\n      return sum / count;\n  }"
   }
 ]
