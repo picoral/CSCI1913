@@ -4736,7 +4736,7 @@
     "href": "index.html#module-08",
     "title": "CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development",
     "section": "Module 08",
-    "text": "Module 08\nBy the end of this module you will be able to:\n\nExplain what inheritance is and why it is useful for organizing and reusing code\nIdentify the relationship between a superclass and a subclass in a class hierarchy\nUse the extends keyword to create a subclass that inherits fields and methods from a superclass\nUse the super keyword to call a superclass constructor or to access a super instance variable\nDetermine which fields and methods a subclass inherits, overrides, or adds\nOverride a method in a subclass and explain how Java determines which version of the method to call at runtime\nOverride toString in a subclass to return a meaningful string representation of an object\nOverride equals in a subclass to compare two objects based on their field values rather than reference\nDistinguish between abstract classes and concrete classes and explain when to use each\nDefine method overloading and distinguish it from method overriding\nWrite multiple versions of a method with the same name but different parameters\nIdentify which overloaded method Java will call given a specific set of arguments\nDefine an abstract class with abstract and concrete methods\nImplement a concrete subclass that provides implementations for all abstract methods\nExplain why abstract classes cannot be instantiated directly\nDesign a class hierarchy using abstract and concrete classes to model a real-world problem\n\n\nSlides\n\nInheritance\nPolymorphism\nAbstract Classes\nRecap"
+    "text": "Module 08\nBy the end of this module you will be able to:\n\nExplain what inheritance is and why it is useful for organizing and reusing code\nIdentify the relationship between a superclass and a subclass in a class hierarchy\nUse the extends keyword to create a subclass that inherits fields and methods from a superclass\nUse the super keyword to call a superclass constructor or to access a super instance variable\nDetermine which fields and methods a subclass inherits, overrides, or adds\nOverride a method in a subclass and explain how Java determines which version of the method to call at runtime\nOverride toString in a subclass to return a meaningful string representation of an object\nOverride equals in a subclass to compare two objects based on their field values rather than reference\nDistinguish between abstract classes and concrete classes and explain when to use each\nDefine method overloading and distinguish it from method overriding\nWrite multiple versions of a method with the same name but different parameters\nIdentify which overloaded method Java will call given a specific set of arguments\nDefine an abstract class with abstract and concrete methods\nImplement a concrete subclass that provides implementations for all abstract methods\nExplain why abstract classes cannot be instantiated directly\nDesign a class hierarchy using abstract and concrete classes to model a real-world problem\nExplain what an interface is and how it defines a contract of methods a class must provide\nDefine an interface and use the implements keyword to write classes that fulfill it\nUse an interface as a variable or parameter type to write polymorphic code\nImplement multiple interfaces in a single class and explain why Java allows this but not multiple inheritance of classes\nCompare abstract classes and interfaces and choose the appropriate one for a given design problem\nImplement the Comparable interface to define a natural ordering for objects\n\n\nSlides\n\nInheritance\nPolymorphism\nAbstract Classes\nRecap\nInterfaces"
   },
   {
     "objectID": "slides/slides-08-03.html",
@@ -5241,5 +5241,124 @@
     "title": "Lab 07",
     "section": "Javadoc",
     "text": "Javadoc\n   /**                                                                               \n   * Calculates the average of an array of test scores.\n   * Returns 0 if the array is null or empty.    \n   *              \n   * @param scores  an array of test scores, each in the range [0, 100]\n   * @param count   the number of scores in the array\n   * @return        the average of all scores, or 0 if the array is null or empty\n   * @throws        IllegalArgumentException if count is negative\n   *\n   * @author        Adriana Picoral\n   * @version       1.0\n   */\n  public double calculateAverage(double[] scores, int count) {\n      if (scores == null || scores.length == 0) return 0;\n      if (count &lt; 0) throw new IllegalArgumentException(\"Count cannot be negative\");\n\n      double sum = 0;\n      for (double score : scores) {\n          sum += score;\n      }\n      return sum / count;\n  }"
+  },
+  {
+    "objectID": "slides/slides-08-05.html#interfaces",
+    "href": "slides/slides-08-05.html#interfaces",
+    "title": "Interfaces",
+    "section": "Interfaces",
+    "text": "Interfaces\nUsed for: describing what a class can do, without saying how it does it\nAn interface is a “contract” – a list of methods a class promises to provide\nSyntax: interface (instead of class)\npublic interface MyInterface {...}\nLike abstract classes, we cannot make instances of an interface (cannot use “new” keyword)"
+  },
+  {
+    "objectID": "slides/slides-08-05.html#interface-methods",
+    "href": "slides/slides-08-05.html#interface-methods",
+    "title": "Interfaces",
+    "section": "Interface Methods",
+    "text": "Interface Methods\nMethods in an interface have no body (end line with semi-colon)\npublic interface Shape {\n    double area();\n    double perimeter();\n}\n\nInterface methods are automatically public and abstract\nNo instance variables (only static final constants are allowed)\nNo constructors"
+  },
+  {
+    "objectID": "slides/slides-08-05.html#implementing-an-interface",
+    "href": "slides/slides-08-05.html#implementing-an-interface",
+    "title": "Interfaces",
+    "section": "Implementing an Interface",
+    "text": "Implementing an Interface\nUse keyword implements to sign the contract\npublic class Square implements Shape {\n    private double side;\n\n    public Square(double side) {\n        this.side = side;\n    }\n\n    public double area() {\n        return side * side;\n    }\n\n    public double perimeter() {\n        return 4 * side;\n    }\n}\nClass has an obligation to implement every method in the interface (or the code does not compile)"
+  },
+  {
+    "objectID": "slides/slides-08-05.html#interface-as-a-type",
+    "href": "slides/slides-08-05.html#interface-as-a-type",
+    "title": "Interfaces",
+    "section": "Interface as a type",
+    "text": "Interface as a type\nAn interface can be used as a variable type (just like a parent class)\nShape s = new Square(2.0);\nSystem.out.println(s.area());\n\nJava knows the methods in Shape exist (you can call them)\nDynamic binding: the Square version of area() runs\nPolymorphism: one interface with multiple implementations"
+  },
+  {
+    "objectID": "slides/slides-08-05.html#is-a-relationship",
+    "href": "slides/slides-08-05.html#is-a-relationship",
+    "title": "Interfaces",
+    "section": "is-a relationship",
+    "text": "is-a relationship\nSquare implements Shape means a Square is-a Shape\nSquare sq = new Square(2.0);\nSystem.out.println(sq instanceof Shape); // true\nWe can write methods that work with any class that implements the interface\npublic static double totalArea(Shape[] shapes) {\n    double total = 0;\n    for (Shape s : shapes) {\n        total += s.area();\n    }\n    return total;\n}"
+  },
+  {
+    "objectID": "slides/slides-08-05.html#multiple-interfaces",
+    "href": "slides/slides-08-05.html#multiple-interfaces",
+    "title": "Interfaces",
+    "section": "Multiple interfaces",
+    "text": "Multiple interfaces\nA class can only extend one parent class…\n…but it can implement many interfaces\npublic class Duck extends Animal implements Flyer, Swimmer {...}\n\nextends comes first, then implements\nSeparate multiple interfaces with commas\nClass must implement the methods from all interfaces"
+  },
+  {
+    "objectID": "slides/slides-08-05.html#interfaces-can-extend-interfaces",
+    "href": "slides/slides-08-05.html#interfaces-can-extend-interfaces",
+    "title": "Interfaces",
+    "section": "Interfaces can extend interfaces",
+    "text": "Interfaces can extend interfaces\npublic interface Shape {\n    double area();\n    double perimeter();\n}\n\npublic interface Shape3D extends Shape {\n    double volume();\n}\nA class that implements Shape3D must implement area(), perimeter(), and volume()"
+  },
+  {
+    "objectID": "slides/slides-08-05.html#default-methods",
+    "href": "slides/slides-08-05.html#default-methods",
+    "title": "Interfaces",
+    "section": "default methods",
+    "text": "default methods\nInterfaces can provide a method with a body using the default keyword\npublic interface Shape {\n    double area();\n    double perimeter();\n\n    default String describe() {\n        return \"Shape with area \" + area();\n    }\n}\n\nImplementing classes inherit describe()\nImplementing classes can still override it"
+  },
+  {
+    "objectID": "slides/slides-08-05.html#abstract-class-vs.-interface",
+    "href": "slides/slides-08-05.html#abstract-class-vs.-interface",
+    "title": "Interfaces",
+    "section": "Abstract class vs. Interface",
+    "text": "Abstract class vs. Interface\n\n\n\n\n\n\n\n\n\nAbstract class\nInterface\n\n\n\n\nKeyword\nabstract class, extends\ninterface, implements\n\n\nHow many?\nextend only one\nimplement many\n\n\nInstance variables\nyes\nno (only constants)\n\n\nConstructors\nyes\nno\n\n\nMethods with body\nyes\nonly default (and static)\n\n\nPrivacy\npublic, protected, private\nmethods are public\n\n\nRelationship\n“is a kind of” (shared code)\n“can do” (shared ability)"
+  },
+  {
+    "objectID": "slides/slides-08-05.html#when-to-use-which",
+    "href": "slides/slides-08-05.html#when-to-use-which",
+    "title": "Interfaces",
+    "section": "When to use which?",
+    "text": "When to use which?\nAbstract class: closely related classes that share data and code\n\nGreeter → Formal, Informal (they all share name)\n\nInterface: unrelated classes that share an ability\n\nComparable – things that can be ordered (String, Integer, Student…)\nFlyer – things that can fly (Bird, Airplane, Superhero…)"
+  },
+  {
+    "objectID": "slides/slides-08-05.html#built-in-interface-comparable",
+    "href": "slides/slides-08-05.html#built-in-interface-comparable",
+    "title": "Interfaces",
+    "section": "Built-in interface: Comparable",
+    "text": "Built-in interface: Comparable\nJava’s Comparable&lt;T&gt; interface has one method:\npublic interface Comparable&lt;T&gt; {\n    int compareTo(T other);\n}\na.compareTo(b) returns:\n\na negative number if a comes before b\nzero if a and b are equal\na positive number if a comes after b"
+  },
+  {
+    "objectID": "slides/slides-08-05.html#comparable-example",
+    "href": "slides/slides-08-05.html#comparable-example",
+    "title": "Interfaces",
+    "section": "Comparable example",
+    "text": "Comparable example\npublic class Student implements Comparable&lt;Student&gt; {\n    private String name;\n    private double gpa;\n\n    public Student(String name, double gpa) {\n        this.name = name;\n        this.gpa = gpa;\n    }\n\n    public int compareTo(Student other) {\n        return Double.compare(this.gpa, other.gpa);\n    }\n}\nNow Arrays.sort() can sort an array of Student objects (by GPA)\nStudent[] students = {...};\nArrays.sort(students);"
+  },
+  {
+    "objectID": "slides/slides-08-05.html#practice-shape-interface",
+    "href": "slides/slides-08-05.html#practice-shape-interface",
+    "title": "Interfaces",
+    "section": "Practice – Shape Interface",
+    "text": "Practice – Shape Interface\nWrite a Shape interface and two classes that implement it\n\nShape: methods area(), perimeter() (both return double)\nCircle: private radius (set in constructor)\nRectangle: private width and height (set in constructor)\nOverride toString() in both classes\n\nThings to note:\n\nInterface provides structure (a contract) to implementing classes\nCode in main only needs to know about Shape"
+  },
+  {
+    "objectID": "slides/slides-08-05.html#practice-main-function",
+    "href": "slides/slides-08-05.html#practice-main-function",
+    "title": "Interfaces",
+    "section": "Practice – main function",
+    "text": "Practice – main function\nSubmit your Shape.java, Circle.java and Rectangle.java to gradescope\nYou can use this Shapes.java main to test your code in your computer:\npublic class Shapes {\n\n    public static void main(String[] args) {\n        Shape[] shapes = {new Circle(1.0), new Rectangle(2.0, 3.0)};\n\n        for (Shape s : shapes) {\n            System.out.println(s);\n            System.out.printf(\"area: %.2f%n\", s.area());\n            System.out.printf(\"perimeter: %.2f%n\", s.perimeter());\n        }\n    }\n}\nCircle with radius 1.0\narea: 3.14\nperimeter: 6.28\nRectangle 2.0 x 3.0\narea: 6.00\nperimeter: 10.00"
+  },
+  {
+    "objectID": "slides/slides-08-05.html#solution-shape.java",
+    "href": "slides/slides-08-05.html#solution-shape.java",
+    "title": "Interfaces",
+    "section": "Solution Shape.java",
+    "text": "Solution Shape.java\npublic interface Shape {\n    double area();\n    double perimeter();\n}"
+  },
+  {
+    "objectID": "slides/slides-08-05.html#solution-circle.java",
+    "href": "slides/slides-08-05.html#solution-circle.java",
+    "title": "Interfaces",
+    "section": "Solution Circle.java",
+    "text": "Solution Circle.java\npublic class Circle implements Shape {\n    private double radius;\n\n    public Circle(double radius) {\n        this.radius = radius;\n    }\n\n    public double area() {\n        return Math.PI * radius * radius;\n    }\n\n    public double perimeter() {\n        return 2 * Math.PI * radius;\n    }\n\n    @Override\n    public String toString() {\n        return \"Circle with radius \" + radius;\n    }\n}"
+  },
+  {
+    "objectID": "slides/slides-08-05.html#solution-rectangle.java",
+    "href": "slides/slides-08-05.html#solution-rectangle.java",
+    "title": "Interfaces",
+    "section": "Solution Rectangle.java",
+    "text": "Solution Rectangle.java\npublic class Rectangle implements Shape {\n    private double width;\n    private double height;\n\n    public Rectangle(double width, double height) {\n        this.width = width;\n        this.height = height;\n    }\n\n    public double area() {\n        return width * height;\n    }\n\n    public double perimeter() {\n        return 2 * (width + height);\n    }\n\n    @Override\n    public String toString() {\n        return \"Rectangle \" + width + \" x \" + height;\n    }\n}"
   }
 ]
