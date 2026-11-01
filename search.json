@@ -5317,7 +5317,7 @@
     "href": "slides/slides-08-05.html#built-in-interface-comparable",
     "title": "Interfaces",
     "section": "Built-in interface: Comparable",
-    "text": "Built-in interface: Comparable\nJava’s Comparable&lt;T&gt; interface has one method:\npublic interface Comparable&lt;T&gt; {\n    int compareTo(T other);\n}\na.compareTo(b) returns:\n\na negative number if a comes before b\nzero if a and b are equal\na positive number if a comes after b"
+    "text": "Built-in interface: Comparable\nJava’s Comparable interface has one method:\npublic interface Comparable&lt;T&gt; {\n    int compareTo(T other);\n}\na.compareTo(b) returns:\n\na negative number if a comes before b\nzero if a and b are equal\na positive number if a comes after b"
   },
   {
     "objectID": "slides/slides-08-05.html#comparable-example",
