@@ -1241,9 +1241,9 @@ margin-right: 0; }
 <span id="cb10-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>a.compareTo(b)</code> returns:</p>
 <ul>
-<li>a <strong>negative</strong> number if <code>a</code> comes before <code>b</code></li>
+<li>a <strong>negative</strong> number if <code>a</code> comes before <code>b</code> (the calling object is smaller than the argument object)</li>
 <li><strong>zero</strong> if <code>a</code> and <code>b</code> are equal</li>
-<li>a <strong>positive</strong> number if <code>a</code> comes after <code>b</code></li>
+<li>a <strong>positive</strong> number if <code>a</code> comes after <code>b</code> (the calling object is larger than the argument object)</li>
 </ul>
 </section>
 <section id="comparable-example" class="slide level2">
@@ -1258,7 +1258,7 @@ margin-right: 0; }
 <span id="cb11-8"><a></a>    }</span>
 <span id="cb11-9"><a></a></span>
 <span id="cb11-10"><a></a>    public int compareTo(Student other) {</span>
-<span id="cb11-11"><a></a>        return Double.compare(this.gpa, other.gpa);</span>
+<span id="cb11-11"><a></a>        return this.gpa - other.gpa;</span>
 <span id="cb11-12"><a></a>    }</span>
 <span id="cb11-13"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now <code>Arrays.sort()</code> can sort an array of <code>Student</code> objects (by GPA)</p>
