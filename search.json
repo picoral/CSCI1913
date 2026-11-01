@@ -5317,14 +5317,14 @@
     "href": "slides/slides-08-05.html#built-in-interface-comparable",
     "title": "Interfaces",
     "section": "Built-in interface: Comparable",
-    "text": "Built-in interface: Comparable\nJava’s Comparable interface has one method:\npublic interface Comparable&lt;T&gt; {\n    int compareTo(T other);\n}\na.compareTo(b) returns:\n\na negative number if a comes before b\nzero if a and b are equal\na positive number if a comes after b"
+    "text": "Built-in interface: Comparable\nJava’s Comparable interface has one method:\npublic interface Comparable&lt;T&gt; {\n    int compareTo(T other);\n}\na.compareTo(b) returns:\n\na negative number if a comes before b (the calling object is smaller than the argument object)\nzero if a and b are equal\na positive number if a comes after b (the calling object is larger than the argument object)"
   },
   {
     "objectID": "slides/slides-08-05.html#comparable-example",
     "href": "slides/slides-08-05.html#comparable-example",
     "title": "Interfaces",
     "section": "Comparable example",
-    "text": "Comparable example\npublic class Student implements Comparable&lt;Student&gt; {\n    private String name;\n    private double gpa;\n\n    public Student(String name, double gpa) {\n        this.name = name;\n        this.gpa = gpa;\n    }\n\n    public int compareTo(Student other) {\n        return Double.compare(this.gpa, other.gpa);\n    }\n}\nNow Arrays.sort() can sort an array of Student objects (by GPA)\nStudent[] students = {...};\nArrays.sort(students);"
+    "text": "Comparable example\npublic class Student implements Comparable&lt;Student&gt; {\n    private String name;\n    private double gpa;\n\n    public Student(String name, double gpa) {\n        this.name = name;\n        this.gpa = gpa;\n    }\n\n    public int compareTo(Student other) {\n        return this.gpa - other.gpa;\n    }\n}\nNow Arrays.sort() can sort an array of Student objects (by GPA)\nStudent[] students = {...};\nArrays.sort(students);"
   },
   {
     "objectID": "slides/slides-08-05.html#practice-shape-interface",
