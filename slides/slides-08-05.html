@@ -1144,24 +1144,24 @@ margin-right: 0; }
 <div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a></a>public interface Shape {</span>
 <span id="cb8-2"><a></a>    double area();</span>
 <span id="cb8-3"><a></a>    double perimeter();</span>
-<span id="cb8-4"><a></a>}</span>
-<span id="cb8-5"><a></a></span>
-<span id="cb8-6"><a></a>public interface Shape3D extends Shape {</span>
-<span id="cb8-7"><a></a>    double volume();</span>
-<span id="cb8-8"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a></a>public interface Shape3D extends Shape {</span>
+<span id="cb9-2"><a></a>    double volume();</span>
+<span id="cb9-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>A class that implements <code>Shape3D</code> must implement <code>area()</code>, <code>perimeter()</code>, <strong>and</strong> <code>volume()</code></p>
 </section>
 <section id="default-methods" class="slide level2">
 <h2><code>default</code> methods</h2>
 <p>Interfaces can provide a method <strong>with</strong> a body using the <code>default</code> keyword</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a></a>public interface Shape {</span>
-<span id="cb9-2"><a></a>    double area();</span>
-<span id="cb9-3"><a></a>    double perimeter();</span>
-<span id="cb9-4"><a></a></span>
-<span id="cb9-5"><a></a>    default String describe() {</span>
-<span id="cb9-6"><a></a>        return &quot;Shape with area &quot; + area();</span>
-<span id="cb9-7"><a></a>    }</span>
-<span id="cb9-8"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a></a>public interface Shape {</span>
+<span id="cb10-2"><a></a>    double area();</span>
+<span id="cb10-3"><a></a>    double perimeter();</span>
+<span id="cb10-4"><a></a></span>
+<span id="cb10-5"><a></a>    default String describe() {</span>
+<span id="cb10-6"><a></a>        return &quot;Shape with area &quot; + area();</span>
+<span id="cb10-7"><a></a>    }</span>
+<span id="cb10-8"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Implementing classes inherit <code>describe()</code></li>
 <li>Implementing classes can still override it</li>
@@ -1236,9 +1236,9 @@ margin-right: 0; }
 <section id="built-in-interface-comparable" class="slide level2">
 <h2>Built-in interface: <code>Comparable</code></h2>
 <p>Java’s <a href="https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/lang/Comparable.java">Comparable<t></t></a> interface has one method:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a></a>public interface Comparable&lt;T&gt; {</span>
-<span id="cb10-2"><a></a>    int compareTo(T other);</span>
-<span id="cb10-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a></a>public interface Comparable&lt;T&gt; {</span>
+<span id="cb11-2"><a></a>    int compareTo(T other);</span>
+<span id="cb11-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>a.compareTo(b)</code> returns:</p>
 <ul>
 <li>a <strong>negative</strong> number if <code>a</code> comes before <code>b</code> (the calling object is smaller than the argument object)</li>
@@ -1248,22 +1248,22 @@ margin-right: 0; }
 </section>
 <section id="comparable-example" class="slide level2">
 <h2><code>Comparable</code> example</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a></a>public class Student implements Comparable&lt;Student&gt; {</span>
-<span id="cb11-2"><a></a>    private String name;</span>
-<span id="cb11-3"><a></a>    private double gpa;</span>
-<span id="cb11-4"><a></a></span>
-<span id="cb11-5"><a></a>    public Student(String name, double gpa) {</span>
-<span id="cb11-6"><a></a>        this.name = name;</span>
-<span id="cb11-7"><a></a>        this.gpa = gpa;</span>
-<span id="cb11-8"><a></a>    }</span>
-<span id="cb11-9"><a></a></span>
-<span id="cb11-10"><a></a>    public int compareTo(Student other) {</span>
-<span id="cb11-11"><a></a>        return this.gpa - other.gpa;</span>
-<span id="cb11-12"><a></a>    }</span>
-<span id="cb11-13"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a></a>public class Student implements Comparable&lt;Student&gt; {</span>
+<span id="cb12-2"><a></a>    private String name;</span>
+<span id="cb12-3"><a></a>    private double gpa;</span>
+<span id="cb12-4"><a></a></span>
+<span id="cb12-5"><a></a>    public Student(String name, double gpa) {</span>
+<span id="cb12-6"><a></a>        this.name = name;</span>
+<span id="cb12-7"><a></a>        this.gpa = gpa;</span>
+<span id="cb12-8"><a></a>    }</span>
+<span id="cb12-9"><a></a></span>
+<span id="cb12-10"><a></a>    public int compareTo(Student other) {</span>
+<span id="cb12-11"><a></a>        return this.gpa - other.gpa;</span>
+<span id="cb12-12"><a></a>    }</span>
+<span id="cb12-13"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now <code>Arrays.sort()</code> can sort an array of <code>Student</code> objects (by GPA)</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a></a>Student[] students = {...};</span>
-<span id="cb12-2"><a></a>Arrays.sort(students);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a></a>Student[] students = {...};</span>
+<span id="cb13-2"><a></a>Arrays.sort(students);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="practice-shape-interface" class="slide level2 smaller">
 <h2>Practice – Shape Interface</h2>
@@ -1284,18 +1284,18 @@ margin-right: 0; }
 <h2>Practice – main function</h2>
 <p>Submit your <code>Shape.java</code>, <code>Circle.java</code> and <code>Rectangle.java</code> to gradescope</p>
 <p>You can use this <code>Shapes.java</code> main to test your code in your computer:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a></a>public class Shapes {</span>
-<span id="cb13-2"><a></a></span>
-<span id="cb13-3"><a></a>    public static void main(String[] args) {</span>
-<span id="cb13-4"><a></a>        Shape[] shapes = {new Circle(1.0), new Rectangle(2.0, 3.0)};</span>
-<span id="cb13-5"><a></a></span>
-<span id="cb13-6"><a></a>        for (Shape s : shapes) {</span>
-<span id="cb13-7"><a></a>            System.out.println(s);</span>
-<span id="cb13-8"><a></a>            System.out.printf(&quot;area: %.2f%n&quot;, s.area());</span>
-<span id="cb13-9"><a></a>            System.out.printf(&quot;perimeter: %.2f%n&quot;, s.perimeter());</span>
-<span id="cb13-10"><a></a>        }</span>
-<span id="cb13-11"><a></a>    }</span>
-<span id="cb13-12"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a></a>public class Shapes {</span>
+<span id="cb14-2"><a></a></span>
+<span id="cb14-3"><a></a>    public static void main(String[] args) {</span>
+<span id="cb14-4"><a></a>        Shape[] shapes = {new Circle(1.0), new Rectangle(2.0, 3.0)};</span>
+<span id="cb14-5"><a></a></span>
+<span id="cb14-6"><a></a>        for (Shape s : shapes) {</span>
+<span id="cb14-7"><a></a>            System.out.println(s);</span>
+<span id="cb14-8"><a></a>            System.out.printf(&quot;area: %.2f%n&quot;, s.area());</span>
+<span id="cb14-9"><a></a>            System.out.printf(&quot;perimeter: %.2f%n&quot;, s.perimeter());</span>
+<span id="cb14-10"><a></a>        }</span>
+<span id="cb14-11"><a></a>    }</span>
+<span id="cb14-12"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>Circle with radius 1.0
 area: 3.14
 perimeter: 6.28
@@ -1305,58 +1305,58 @@ perimeter: 10.00</code></pre>
 </section>
 <section id="solution-shape.java" class="slide level2">
 <h2>Solution <code>Shape.java</code></h2>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1"><a></a>public interface Shape {</span>
-<span id="cb15-2"><a></a>    double area();</span>
-<span id="cb15-3"><a></a>    double perimeter();</span>
-<span id="cb15-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb16-1"><a></a>public interface Shape {</span>
+<span id="cb16-2"><a></a>    double area();</span>
+<span id="cb16-3"><a></a>    double perimeter();</span>
+<span id="cb16-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="solution-circle.java" class="slide level2">
 <h2>Solution <code>Circle.java</code></h2>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb16-1"><a></a>public class Circle implements Shape {</span>
-<span id="cb16-2"><a></a>    private double radius;</span>
-<span id="cb16-3"><a></a></span>
-<span id="cb16-4"><a></a>    public Circle(double radius) {</span>
-<span id="cb16-5"><a></a>        this.radius = radius;</span>
-<span id="cb16-6"><a></a>    }</span>
-<span id="cb16-7"><a></a></span>
-<span id="cb16-8"><a></a>    public double area() {</span>
-<span id="cb16-9"><a></a>        return Math.PI * radius * radius;</span>
-<span id="cb16-10"><a></a>    }</span>
-<span id="cb16-11"><a></a></span>
-<span id="cb16-12"><a></a>    public double perimeter() {</span>
-<span id="cb16-13"><a></a>        return 2 * Math.PI * radius;</span>
-<span id="cb16-14"><a></a>    }</span>
-<span id="cb16-15"><a></a></span>
-<span id="cb16-16"><a></a>    @Override</span>
-<span id="cb16-17"><a></a>    public String toString() {</span>
-<span id="cb16-18"><a></a>        return &quot;Circle with radius &quot; + radius;</span>
-<span id="cb16-19"><a></a>    }</span>
-<span id="cb16-20"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb17-1"><a></a>public class Circle implements Shape {</span>
+<span id="cb17-2"><a></a>    private double radius;</span>
+<span id="cb17-3"><a></a></span>
+<span id="cb17-4"><a></a>    public Circle(double radius) {</span>
+<span id="cb17-5"><a></a>        this.radius = radius;</span>
+<span id="cb17-6"><a></a>    }</span>
+<span id="cb17-7"><a></a></span>
+<span id="cb17-8"><a></a>    public double area() {</span>
+<span id="cb17-9"><a></a>        return Math.PI * radius * radius;</span>
+<span id="cb17-10"><a></a>    }</span>
+<span id="cb17-11"><a></a></span>
+<span id="cb17-12"><a></a>    public double perimeter() {</span>
+<span id="cb17-13"><a></a>        return 2 * Math.PI * radius;</span>
+<span id="cb17-14"><a></a>    }</span>
+<span id="cb17-15"><a></a></span>
+<span id="cb17-16"><a></a>    @Override</span>
+<span id="cb17-17"><a></a>    public String toString() {</span>
+<span id="cb17-18"><a></a>        return &quot;Circle with radius &quot; + radius;</span>
+<span id="cb17-19"><a></a>    }</span>
+<span id="cb17-20"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="solution-rectangle.java" class="slide level2">
 <h2>Solution <code>Rectangle.java</code></h2>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb17-1"><a></a>public class Rectangle implements Shape {</span>
-<span id="cb17-2"><a></a>    private double width;</span>
-<span id="cb17-3"><a></a>    private double height;</span>
-<span id="cb17-4"><a></a></span>
-<span id="cb17-5"><a></a>    public Rectangle(double width, double height) {</span>
-<span id="cb17-6"><a></a>        this.width = width;</span>
-<span id="cb17-7"><a></a>        this.height = height;</span>
-<span id="cb17-8"><a></a>    }</span>
-<span id="cb17-9"><a></a></span>
-<span id="cb17-10"><a></a>    public double area() {</span>
-<span id="cb17-11"><a></a>        return width * height;</span>
-<span id="cb17-12"><a></a>    }</span>
-<span id="cb17-13"><a></a></span>
-<span id="cb17-14"><a></a>    public double perimeter() {</span>
-<span id="cb17-15"><a></a>        return 2 * (width + height);</span>
-<span id="cb17-16"><a></a>    }</span>
-<span id="cb17-17"><a></a></span>
-<span id="cb17-18"><a></a>    @Override</span>
-<span id="cb17-19"><a></a>    public String toString() {</span>
-<span id="cb17-20"><a></a>        return &quot;Rectangle &quot; + width + &quot; x &quot; + height;</span>
-<span id="cb17-21"><a></a>    }</span>
-<span id="cb17-22"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb18-1"><a></a>public class Rectangle implements Shape {</span>
+<span id="cb18-2"><a></a>    private double width;</span>
+<span id="cb18-3"><a></a>    private double height;</span>
+<span id="cb18-4"><a></a></span>
+<span id="cb18-5"><a></a>    public Rectangle(double width, double height) {</span>
+<span id="cb18-6"><a></a>        this.width = width;</span>
+<span id="cb18-7"><a></a>        this.height = height;</span>
+<span id="cb18-8"><a></a>    }</span>
+<span id="cb18-9"><a></a></span>
+<span id="cb18-10"><a></a>    public double area() {</span>
+<span id="cb18-11"><a></a>        return width * height;</span>
+<span id="cb18-12"><a></a>    }</span>
+<span id="cb18-13"><a></a></span>
+<span id="cb18-14"><a></a>    public double perimeter() {</span>
+<span id="cb18-15"><a></a>        return 2 * (width + height);</span>
+<span id="cb18-16"><a></a>    }</span>
+<span id="cb18-17"><a></a></span>
+<span id="cb18-18"><a></a>    @Override</span>
+<span id="cb18-19"><a></a>    public String toString() {</span>
+<span id="cb18-20"><a></a>        return &quot;Rectangle &quot; + width + &quot; x &quot; + height;</span>
+<span id="cb18-21"><a></a>    }</span>
+<span id="cb18-22"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
