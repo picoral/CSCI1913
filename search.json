@@ -5360,5 +5360,12 @@
     "title": "Interfaces",
     "section": "Solution Rectangle.java",
     "text": "Solution Rectangle.java\npublic class Rectangle implements Shape {\n    private double width;\n    private double height;\n\n    public Rectangle(double width, double height) {\n        this.width = width;\n        this.height = height;\n    }\n\n    public double area() {\n        return width * height;\n    }\n\n    public double perimeter() {\n        return 2 * (width + height);\n    }\n\n    @Override\n    public String toString() {\n        return \"Rectangle \" + width + \" x \" + height;\n    }\n}"
+  },
+  {
+    "objectID": "slides/slides-08-04.html#quiz-7",
+    "href": "slides/slides-08-04.html#quiz-7",
+    "title": "Recap",
+    "section": "Quiz 7",
+    "text": "Quiz 7\nYou have 10 minutes to complete the quiz.\nComplete the body of three methods in subclass: StudentTicket constructor, setDiscount(double discount) with validation, and getPrice() (with calculated discount)"
   }
 ]
