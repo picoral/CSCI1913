@@ -67,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -163,7 +192,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#slides-7" id="toc-slides-7" class="nav-link" data-scroll-target="#slides-7">Slides</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#part-3-the-design-and-implementation-of-data-structures" id="toc-part-3-the-design-and-implementation-of-data-structures" class="nav-link" data-scroll-target="#part-3-the-design-and-implementation-of-data-structures">Part 3 – The design and implementation of Data Structures</a></li>
+  <li><a href="#part-3-the-design-and-implementation-of-data-structures" id="toc-part-3-the-design-and-implementation-of-data-structures" class="nav-link" data-scroll-target="#part-3-the-design-and-implementation-of-data-structures">Part 3 – The design and implementation of Data Structures</a>
+  <ul class="collapse">
+  <li><a href="#module-09" id="toc-module-09" class="nav-link" data-scroll-target="#module-09">Module 09</a>
+  <ul class="collapse">
+  <li><a href="#slides-8" id="toc-slides-8" class="nav-link" data-scroll-target="#slides-8">Slides</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -389,8 +424,41 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="part-3-the-design-and-implementation-of-data-structures" class="level1">
 <h1>Part 3 – The design and implementation of Data Structures</h1>
+<section id="module-09" class="level2">
+<h2 class="anchored" data-anchor-id="module-09">Module 09</h2>
+<p>By the end of this module you will be able to:</p>
+<ul>
+<li>Define the concept of an abstract data type (ADT) and explain how it separates interface from implementation.</li>
+<li>Use Java interfaces to specify the contract for a data structure without prescribing its implementation.</li>
+<li>Explain what parametric polymorphism is and why generics are useful for writing flexible, reusable code</li>
+<li>Read and interpret generic class and method declarations that use type parameters (e.g., <t>)</t></li>
+<li>Instantiate generic classes with specific type arguments (e.g., MyClass<string>)</string></li>
+<li>Implement a simple generic class or method that works correctly for multiple data types</li>
+<li>Explain the benefit of generics over using <code>Object</code> as a universal type, particularly with respect to type safety</li>
+<li>Design and write a generic List interface in Java that includes core operations (e.g., add, remove, get, size, isEmpty).<br>
+</li>
+<li>Implement the List interface using an array-backed structure, managing resizing and index-based access.<br>
+</li>
+<li>Describe the structure of a singly linked list, including the role of nodes, data fields, and next pointers.a</li>
+<li>Trace the state of a linked list (drawing boxes and arrows) after a<br>
+sequence of insertions and deletions.</li>
+<li>Implement the List interface using a singly linked list, managing node creation, pointer manipulation, and traversal.<br>
+</li>
+<li>Compare the array-based and linked-list implementations with respect to time complexity for common operations (e.g., access, insertion, deletion at head/tail/middle).</li>
+<li>Explain why linked lists have <span class="math inline">\(O(1)\)</span> insertion/deletion at the head but <span class="math inline">\(O(n)\)</span> access by index, and contrast this with arrays.</li>
+<li>Select an appropriate List implementation for a given use case based on its performance trade-offs.</li>
+</ul>
+<section id="slides-8" class="level3">
+<h3 class="anchored" data-anchor-id="slides-8">Slides</h3>
+<ul>
+<li><a href="slides/slides-09-01.html">Data Structures</a></li>
+<li><a href="slides/slides-09-02.html">Generics</a></li>
+<li><a href="slides/slides-09-03.html">List</a></li>
+</ul>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

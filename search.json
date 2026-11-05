@@ -5367,5 +5367,425 @@
     "title": "Recap",
     "section": "Quiz 7",
     "text": "Quiz 7\nYou have 10 minutes to complete the quiz.\nComplete the body of three methods in subclass: StudentTicket constructor, setDiscount(double discount) with validation, and getPrice() (with calculated discount)"
+  },
+  {
+    "objectID": "slides/slides-09-01.html#data-structures",
+    "href": "slides/slides-09-01.html#data-structures",
+    "title": "Data Structures",
+    "section": "Data Structures",
+    "text": "Data Structures\nA data structure is an object that is also an algorithm:\n\nAs an object it represents a data storage tool\nProvides standard interfaces for logical manipulations\nBasic data structure “algorithms” will be simple\nAdvanced data structure methods hide deep complexity"
+  },
+  {
+    "objectID": "slides/slides-09-01.html#abstract-data-type",
+    "href": "slides/slides-09-01.html#abstract-data-type",
+    "title": "Data Structures",
+    "section": "Abstract Data Type",
+    "text": "Abstract Data Type\nAbstract Data Type: A general description of behaviors\n\nList\n\nStack (Last-In, First-Out)\nQueue (First-In, First-Out)\nDeque (Double-Ended Queue)\n\nSet (unordered collection of unique elements)\nBag (unordered collection that allows repeated elements)\nMap/Dictionary"
+  },
+  {
+    "objectID": "slides/slides-09-01.html#javas-data-structures",
+    "href": "slides/slides-09-01.html#javas-data-structures",
+    "title": "Data Structures",
+    "section": "Java’s data structures",
+    "text": "Java’s data structures\n\nList\n\nArrayList\nLinkedList\n\nSet\n\nTreeSet\nHashSet\n\nMap (java’s dictionary)\n\nTreeMap\nHashMap"
+  },
+  {
+    "objectID": "slides/slides-09-01.html#javas-data-structures-1",
+    "href": "slides/slides-09-01.html#javas-data-structures-1",
+    "title": "Data Structures",
+    "section": "Java’s data structures",
+    "text": "Java’s data structures\n\nStack\n\nStack\n\nQueue\n\nArrayDeque (can also be used for a stack)\nLinkedList\n\nDeque\n\nArrayDeque"
+  },
+  {
+    "objectID": "slides/slides-09-01.html#steps-for-building-a-data-structure",
+    "href": "slides/slides-09-01.html#steps-for-building-a-data-structure",
+    "title": "Data Structures",
+    "section": "Steps for building a data structure",
+    "text": "Steps for building a data structure\nFully understand the data structure you’re implementing\n\nPlan out, in the abstract, the “object nature” and what behaviors you need to support\nWrite some example/test code\n\nPlan out private data and how it’s organized\n\nThis is where the “algorithm” lives\nPlan should connect each method\nMethods will depend on each other\nThen plan out the algorithm"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#the-problem",
+    "href": "slides/slides-09-02.html#the-problem",
+    "title": "Generics",
+    "section": "The problem",
+    "text": "The problem\nWe want to build our own data structures (e.g., a list, a stack, a queue)\n\nA list of Strings\nA list of Integers\nA list of Students\n…\n\nDo we need to write a separate class for every type?"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#one-class-per-type",
+    "href": "slides/slides-09-02.html#one-class-per-type",
+    "title": "Generics",
+    "section": "One class per type?",
+    "text": "One class per type?\nA Box that holds a String item:\npublic class StringBox {\n    private String item;\n\n    public StringBox(String item) { this.item = item; }\n    public String getItem() { return item; }\n}\nA Box that holds an Integer item:\npublic class IntegerBox {\n    private Integer item;\n\n    public IntegerBox(Integer item) { this.item = item; }\n    public Integer getItem() { return item; }\n}\n\nSame code, different type – lots of duplication\nEvery bug fix has to be made in every copy"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#what-is-polymorphism",
+    "href": "slides/slides-09-02.html#what-is-polymorphism",
+    "title": "Generics",
+    "section": "What is polymorphism?",
+    "text": "What is polymorphism?\nPolymorphism (“many forms”): the same code can work with values of different types\nJava supports a few kinds of polymorphism:\n\nSubtype/inclusion polymorphism: established through class inheritance or interface implementation (method overriding)\nAd hoc polymorphism: method overloading (same name, different parameter types)\nParametric polymorphism: code written with a type parameter – this is generics"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#subtype-polymorphism-review",
+    "href": "slides/slides-09-02.html#subtype-polymorphism-review",
+    "title": "Generics",
+    "section": "Subtype polymorphism (review)",
+    "text": "Subtype polymorphism (review)\nShape s = new Square(2.0);\nSystem.out.println(s.area());\n\ns = new Circle(1.0);\nSystem.out.println(s.area());\n\nOne variable type (Shape), many actual object types\nDynamic binding picks the right area() method at runtime"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#attempt-1-use-object",
+    "href": "slides/slides-09-02.html#attempt-1-use-object",
+    "title": "Generics",
+    "section": "Attempt 1: use Object",
+    "text": "Attempt 1: use Object\nEvery class in Java inherits from Object, so…\npublic class ObjectBox {\n    private Object item;\n\n    public ObjectBox(Object item) { this.item = item; }\n    public Object getItem() { return item; }\n}\nOne class that can hold anything!"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#the-trouble-with-object",
+    "href": "slides/slides-09-02.html#the-trouble-with-object",
+    "title": "Generics",
+    "section": "The trouble with Object",
+    "text": "The trouble with Object\nObjectBox box = new ObjectBox(\"hello\");\n\nString s = (String) box.getItem();  // need a cast\n\nInteger n = (Integer) box.getItem(); // compiles!\n// ClassCastException at runtime\n\nWe have to cast every time we take something out\nThe compiler can’t check that we’re using the right type\nErrors show up at runtime instead of compile time"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#attempt-2-generics",
+    "href": "slides/slides-09-02.html#attempt-2-generics",
+    "title": "Generics",
+    "section": "Attempt 2: generics",
+    "text": "Attempt 2: generics\npublic class Box&lt;T&gt; {\n    private T item;\n\n    public Box(T item) { this.item = item; }\n    public T getItem() { return item; }\n}\n\nOne class, works with any (reference) type\nThe compiler knows and checks the type\nNo casting needed"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#type-parameters",
+    "href": "slides/slides-09-02.html#type-parameters",
+    "title": "Generics",
+    "section": "Type parameters",
+    "text": "Type parameters\npublic class Box&lt;T&gt; {\n    ...\n}\n\n&lt;T&gt; declares a type parameter named T\nT is a placeholder for a real type, chosen when the class is used\nInside the class, use T anywhere you’d use a type: instance variables, parameters, return types, local variables"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#naming-conventions",
+    "href": "slides/slides-09-02.html#naming-conventions",
+    "title": "Generics",
+    "section": "Naming conventions",
+    "text": "Naming conventions\nType parameters are usually a single uppercase letter (but they can be anything, this is just a convention):\n\nT – Type\nE – Element (used by Java collections)\nK, V – Key and Value (used in maps)\nN – Number"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#using-a-generic-class",
+    "href": "slides/slides-09-02.html#using-a-generic-class",
+    "title": "Generics",
+    "section": "Using a generic class",
+    "text": "Using a generic class\nProvide the actual type in angle brackets:\nBox&lt;String&gt; b1 = new Box&lt;String&gt;(\"hello\");\nBox&lt;Integer&gt; b2 = new Box&lt;&gt;(42);  // diamond operator: type inferred\n\nString s = b1.getItem();   // no cast\nint n = b2.getItem();      // auto-unboxing\n\nb1 = new Box&lt;&gt;(3.14);      // compile error!"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#type-arguments-must-be-reference-types",
+    "href": "slides/slides-09-02.html#type-arguments-must-be-reference-types",
+    "title": "Generics",
+    "section": "Type arguments must be reference types",
+    "text": "Type arguments must be reference types\nGenerics only work with objects, not primitive types\nBox&lt;int&gt; b = new Box&lt;&gt;(5);      // compile error\nBox&lt;Integer&gt; b = new Box&lt;&gt;(5);  // OK\nUse the wrapper classes:\n\n\n\nPrimitive\nWrapper\n\n\n\n\nint\nInteger\n\n\ndouble\nDouble\n\n\nchar\nCharacter\n\n\nboolean\nBoolean"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#multiple-type-parameters",
+    "href": "slides/slides-09-02.html#multiple-type-parameters",
+    "title": "Generics",
+    "section": "Multiple type parameters",
+    "text": "Multiple type parameters\npublic class Pair&lt;K, V&gt; {\n    private K key;\n    private V value;\n\n    public Pair(K key, V value) {\n        this.key = key;\n        this.value = value;\n    }\n\n    public K getKey() { return key; }\n    public V getValue() { return value; }\n}\nDeclare all types when instantiating a new object:\nPair&lt;String, Integer&gt; p = new Pair&lt;&gt;(\"age\", 20);"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#example-a-generic-list",
+    "href": "slides/slides-09-02.html#example-a-generic-list",
+    "title": "Generics",
+    "section": "Example: a generic list",
+    "text": "Example: a generic list\npublic class MyList&lt;E&gt; {\n    private E[] items;\n    private int size;\n\n    public MyList() {\n        items = (E[]) new Object[10];  // can't do: new E[10]\n        size = 0;\n    }\n\n    public void add(E item) {\n        items[size] = item;   // (ignoring resizing for now)\n        size++;\n    }\n\n    public E get(int index) {\n        return items[index];\n    }\n}"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#why-e-new-object10",
+    "href": "slides/slides-09-02.html#why-e-new-object10",
+    "title": "Generics",
+    "section": "Why (E[]) new Object[10]?",
+    "text": "Why (E[]) new Object[10]?\n\nJava does not allow new E[10] – the actual type of E is not known at runtime (type erasure)\nWorkaround: create an Object array and cast it to E[]\nThe compiler gives an “unchecked” warning – this is expected and safe as long as we only put Es into the array"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#generic-methods",
+    "href": "slides/slides-09-02.html#generic-methods",
+    "title": "Generics",
+    "section": "Generic methods",
+    "text": "Generic methods\nA single method (not part of a generic class) can also have its own type parameter:\npublic static &lt;T&gt; void printAll(T[] array) {\n    for (T item : array) {\n        System.out.println(item);\n    }\n}\nThe method can then be used with different types:\nString[] names = {\"Ana\", \"Bo\"};\nInteger[] nums = {1, 2, 3};\nprintAll(names);\nprintAll(nums);"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#bounded-type-parameters",
+    "href": "slides/slides-09-02.html#bounded-type-parameters",
+    "title": "Generics",
+    "section": "Bounded type parameters",
+    "text": "Bounded type parameters\nSometimes we need T to have certain methods\npublic static &lt;T extends Comparable&lt;T&gt;&gt; T max(T a, T b) {\n    if (a.compareTo(b) &gt; 0) {\n        return a;\n    }\n    return b;\n}\n\nT extends Comparable&lt;T&gt;: T must be a type that can be compared\nNow we can call compareTo on T values\nmax(\"apple\", \"banana\") and max(3, 7) both work"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#generic-interfaces",
+    "href": "slides/slides-09-02.html#generic-interfaces",
+    "title": "Generics",
+    "section": "Generic interfaces",
+    "text": "Generic interfaces\nInterfaces can be generic too\npublic interface MyStack&lt;E&gt; {\n    void push(E item);\n    E pop();\n    E peek();\n    boolean isEmpty();\n}\nThe type parameter needs to match:\npublic class ArrayStack&lt;E&gt; implements MyStack&lt;E&gt; {\n    ...\n}\nYou’ve already used one: Comparable&lt;T&gt;"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#benefits",
+    "href": "slides/slides-09-02.html#benefits",
+    "title": "Generics",
+    "section": "Benefits",
+    "text": "Benefits\n\nCode reuse: write a data structure once, use it with any type\nType safety: the compiler catches type errors at compile time, not at runtime\nNo casting: cleaner, more readable code\nClear intent: MyList&lt;Student&gt; tells the reader exactly what’s inside"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#compile-time-vs.-runtime-errors",
+    "href": "slides/slides-09-02.html#compile-time-vs.-runtime-errors",
+    "title": "Generics",
+    "section": "Compile time vs. runtime errors",
+    "text": "Compile time vs. runtime errors\n// Without generics\nObjectBox box = new ObjectBox(\"hi\");\nInteger n = (Integer) box.getItem(); // crashes when run\n\n// With generics\nBox&lt;String&gt; box = new Box&lt;&gt;(\"hi\");\nInteger n = box.getItem();           // won't compile\nIt’s always better to find a bug before the program runs"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#javas-collections-are-generic",
+    "href": "slides/slides-09-02.html#javas-collections-are-generic",
+    "title": "Generics",
+    "section": "Java’s collections are generic",
+    "text": "Java’s collections are generic\nArrayList&lt;String&gt; names = new ArrayList&lt;&gt;();\nHashMap&lt;String, Integer&gt; ages = new HashMap&lt;&gt;();\nArrayDeque&lt;Integer&gt; stack = new ArrayDeque&lt;&gt;();\n\nEvery data structure in java.util uses generics\nThe data structures we build in this class will be generic too"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#summary",
+    "href": "slides/slides-09-02.html#summary",
+    "title": "Generics",
+    "section": "Summary",
+    "text": "Summary\n\nPolymorphism: same code works with many types\nGenerics are parametric polymorphism: classes and methods with type parameters (&lt;T&gt;)\nType arguments must be reference types (use wrapper classes, capitalized first letter: String, Integer, Boolean, etc.)\nCan’t create new T[] – use (T[]) new Object[n]\nBounded types (&lt;T extends Comparable&lt;T&gt;&gt;) let us require certain methods\nGenerics give us reuse and type safety"
+  },
+  {
+    "objectID": "index.html#module-09",
+    "href": "index.html#module-09",
+    "title": "CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development",
+    "section": "Module 09",
+    "text": "Module 09\nBy the end of this module you will be able to:\n\nDefine the concept of an abstract data type (ADT) and explain how it separates interface from implementation.\nUse Java interfaces to specify the contract for a data structure without prescribing its implementation.\nExplain what parametric polymorphism is and why generics are useful for writing flexible, reusable code\nRead and interpret generic class and method declarations that use type parameters (e.g., )\nInstantiate generic classes with specific type arguments (e.g., MyClass)\nImplement a simple generic class or method that works correctly for multiple data types\nExplain the benefit of generics over using Object as a universal type, particularly with respect to type safety\nDesign and write a generic List interface in Java that includes core operations (e.g., add, remove, get, size, isEmpty).\n\nImplement the List interface using an array-backed structure, managing resizing and index-based access.\n\nDescribe the structure of a singly linked list, including the role of nodes, data fields, and next pointers.a\nTrace the state of a linked list (drawing boxes and arrows) after a\nsequence of insertions and deletions.\nImplement the List interface using a singly linked list, managing node creation, pointer manipulation, and traversal.\n\nCompare the array-based and linked-list implementations with respect to time complexity for common operations (e.g., access, insertion, deletion at head/tail/middle).\nExplain why linked lists have \\(O(1)\\) insertion/deletion at the head but \\(O(n)\\) access by index, and contrast this with arrays.\nSelect an appropriate List implementation for a given use case based on its performance trade-offs.\n\n\nSlides\n\nData Structures\nGenerics\nList"
+  },
+  {
+    "objectID": "slides/slides-09-03.html",
+    "href": "slides/slides-09-03.html",
+    "title": "List",
+    "section": "",
+    "text": "An ordered, finite, mutable data structure\n\nPlan out, in the abstract, the “object nature” and what behaviors you need to support\nWrite some example/test code"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#list",
+    "href": "slides/slides-09-03.html#list",
+    "title": "List",
+    "section": "List",
+    "text": "List\nAn ordered, finite, mutable data structure\n\nPlan out, in the abstract, the “object nature” and what behaviors you need to support\nWrite some example/test code"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#list-1",
+    "href": "slides/slides-09-03.html#list-1",
+    "title": "List",
+    "section": "List",
+    "text": "List\n\nWhat is a list?\nHow do we use lists?\nWhat methods do we need?"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#list-2",
+    "href": "slides/slides-09-03.html#list-2",
+    "title": "List",
+    "section": "List",
+    "text": "List\n\nAn ordered, finite, mutable data structure\nWe manipulate it (create list, add, append, remove, insert, get length, set an individual value)\nappend, prepend, insert, length, set, search\n\nWhat about sort?"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#list-methods",
+    "href": "slides/slides-09-03.html#list-methods",
+    "title": "List",
+    "section": "List methods",
+    "text": "List methods\nHow do we do lists?\ncreate list of a specific size, append, prepend, remove, insert, getLength, search, sort"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#list-interface",
+    "href": "slides/slides-09-03.html#list-interface",
+    "title": "List",
+    "section": "List interface",
+    "text": "List interface\nLet’s implement a list interface.\n\nRemember that an interface only contains method signatures.\n\nLet’s start with the basic methods:\n\ngetter get(int index)\nlength() returns how many items in the list\nset(int index, T value) – changes the value of item at index (return a bollean if value was set successfully)"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#list-interface-1",
+    "href": "slides/slides-09-03.html#list-interface-1",
+    "title": "List",
+    "section": "List interface",
+    "text": "List interface\nHere’s our initial generic interface:\npublic interface List&lt;T&gt; {\n    void append(T value);\n    int length();\n    T get(int index);\n    void set(int index, T value);\n}"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#list-implementation",
+    "href": "slides/slides-09-03.html#list-implementation",
+    "title": "List",
+    "section": "List Implementation",
+    "text": "List Implementation\n\nData structures, or abstract data types (ADTs) can be implemented using different approaches\nWe have our List interface, we will start by implementing our List with an array\nWe will call our class ArrayList and we will use the implements keyword:\n\npublic class ArrayList&lt;T&gt; implements List&lt;T&gt; {}"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#arraylist",
+    "href": "slides/slides-09-03.html#arraylist",
+    "title": "List",
+    "section": "ArrayList",
+    "text": "ArrayList\nHere’s how we are setting up the private instance variable: private T[] data;\nConstructor:\npublic ArrayList() {\n  data = (T[]) new Object[size]; // define an arbitraty size\n}"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#arraylist-1",
+    "href": "slides/slides-09-03.html#arraylist-1",
+    "title": "List",
+    "section": "ArrayList",
+    "text": "ArrayList\nWe will create a generic ArrayList that implements List\npublic class ArrayList&lt;T&gt; implements List&lt;T&gt; {\n    private T[] data;\n    private int size = 10;\n    private int length  = 0;\n\n\n    @SuppressWarnings(\"unchecked\")\n    public ArrayList() {\n        data = (T[]) new Object[size];\n    }\n\n    @Override\n    public int length() {\n        return length;\n    }\n\n    @Override\n    public void append(T value) {\n      // TODO: implement\n    }\n\n    @Override\n    public T get(int index) {\n        // TODO: implement\n    }\n\n    @Override\n    public void set(int index, T value) {\n        // TODO: implement\n    }\n\n\n}"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#finish-implementation",
+    "href": "slides/slides-09-03.html#finish-implementation",
+    "title": "List",
+    "section": "Finish implementation",
+    "text": "Finish implementation\nSubmit your List.java and ArrayList.java files to gradescope.\npublic class UseList {\n    public static void main(String[] args) {\n        List&lt;String&gt; fruitList = new ArrayList&lt;&gt;();\n        System.out.println(fruitList.length()); // 0\n        System.out.println(fruitList); \n\n        fruitList.append(\"apple\");\n        fruitList.append(\"pear\");\n        fruitList.append(\"banana\");\n\n        System.out.println(fruitList);\n    }\n}"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#arraylist-append",
+    "href": "slides/slides-09-03.html#arraylist-append",
+    "title": "List",
+    "section": "ArrayList append",
+    "text": "ArrayList append\n@Override\npublic void append(T value) {\n  data[length] = value;\n  length++;\n}\nWhat happens when length is the same as size?"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#expand-the-size-of-our-array",
+    "href": "slides/slides-09-03.html#expand-the-size-of-our-array",
+    "title": "List",
+    "section": "Expand the size of our array",
+    "text": "Expand the size of our array\n@SuppressWarnings(\"unchecked\")\nprivate void expandArray() {\n  size *= 2;\n  T[] newData = (T[]) new Object[size];\n  for (int i = 0; i &lt; length; i++) newData[i] = data[i];\n  data = newData;\n}"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#append-implementation",
+    "href": "slides/slides-09-03.html#append-implementation",
+    "title": "List",
+    "section": "append implementation",
+    "text": "append implementation\n@Override\npublic void append(T value) {\n  if (length == size) expandArray();\n  data[length] = value;\n  length++;\n}"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#submit-to-gradescope-with-array-expand",
+    "href": "slides/slides-09-03.html#submit-to-gradescope-with-array-expand",
+    "title": "List",
+    "section": "Submit to gradescope with array Expand",
+    "text": "Submit to gradescope with array Expand\nSubmit your List.java and ArrayList.java files to gradescope making sure your array implementation can do multiple append calls (your implementation deals with array expansion)"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#runtime-of-array-expand",
+    "href": "slides/slides-09-03.html#runtime-of-array-expand",
+    "title": "List",
+    "section": "Runtime of array Expand",
+    "text": "Runtime of array Expand\nThe arrayExpand process is \\(O(n)\\) (gotta copy the array!) BUT it doesn’t run every time, so how do we handle the aﬀect on append?\nBest case: \\(O(1)\\) Worst case: \\(O(n)\\)"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#runtime-of-array-expand-1",
+    "href": "slides/slides-09-03.html#runtime-of-array-expand-1",
+    "title": "List",
+    "section": "Runtime of array Expand",
+    "text": "Runtime of array Expand\nWhat we often care about is not the runtime of myList.append(4); but instead:\nfor (int i = 0; i &lt; N; i++) {\n  myList.append(i);\n}"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#runtime-of-array-expand-2",
+    "href": "slides/slides-09-03.html#runtime-of-array-expand-2",
+    "title": "List",
+    "section": "Runtime of array Expand",
+    "text": "Runtime of array Expand\n\ndouble array vs. increase array size by 10 plots"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#why-does-it-work-this-way",
+    "href": "slides/slides-09-03.html#why-does-it-work-this-way",
+    "title": "List",
+    "section": "Why does it work this way",
+    "text": "Why does it work this way\nOne way to think about it:\n\nAfter an expand that costs N operations:\nWe get N “free” appends\nThen we do 2N operations for next expand. (and so forth)"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#runtime-of-array-expand-3",
+    "href": "slides/slides-09-03.html#runtime-of-array-expand-3",
+    "title": "List",
+    "section": "Runtime of array Expand",
+    "text": "Runtime of array Expand\n\nIt is not technically true that append is \\(O(1)\\)\nIt IS true that \\(O(n)\\) appends costs \\(O(n)\\) time\nWe can divide that through and call append \\(O(\\frac{n}{n}) = O(1)\\)\nWe can say “amortized runtime” \\(O(1)\\) instead of “runtime \\(O(n)\\)”"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#updated-list-interface",
+    "href": "slides/slides-09-03.html#updated-list-interface",
+    "title": "List",
+    "section": "Updated List interface",
+    "text": "Updated List interface\nLet’s add prepend and insert to our interface.\nvoid insert(int index, T value);\nvoid prepend(T value);\nWhen implementing ArrayList insert and prepend, we need to shift values in our array to the right"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#shiftright",
+    "href": "slides/slides-09-03.html#shiftright",
+    "title": "List",
+    "section": "shiftRight",
+    "text": "shiftRight\nprivate void shiftRight(int startIndex) {\n  length++;\n  if (length == size) expandArray();\n  for (int i = length-1; i &gt; startIndex; i--) data[i] = data[i-1];\n}"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#insert",
+    "href": "slides/slides-09-03.html#insert",
+    "title": "List",
+    "section": "insert",
+    "text": "insert\npublic void insert(int index, T value) {\n  if (index &lt; 0 || index &gt; length) throw new \n  shiftRight(index);\n  data[index] = value;\n}"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#prepend",
+    "href": "slides/slides-09-03.html#prepend",
+    "title": "List",
+    "section": "prepend",
+    "text": "prepend\npublic void prepend(T value) {\n  shiftRight(0); // need to shift all the other values\n  data[0] = value;\n}"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#submit-to-gradescope",
+    "href": "slides/slides-09-03.html#submit-to-gradescope",
+    "title": "List",
+    "section": "Submit to gradescope",
+    "text": "Submit to gradescope\nSubmit your List.java and ArrayList.java files to gradescope making sure your array implementation contains methods prepend and insert."
+  },
+  {
+    "objectID": "slides/slides-09-03.html#changing-size-of-the-list-removing-from-list",
+    "href": "slides/slides-09-03.html#changing-size-of-the-list-removing-from-list",
+    "title": "List",
+    "section": "Changing size of the list – removing from list",
+    "text": "Changing size of the list – removing from list\n\nAdd T pop(int index) to our List interface\n\nWe need to implement shiftLeft in ArrrayList"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#test-your-arraylist-implementation",
+    "href": "slides/slides-09-03.html#test-your-arraylist-implementation",
+    "title": "List",
+    "section": "Test your ArrayList implementation",
+    "text": "Test your ArrayList implementation\npublic class UseList {\n    public static void main(String[] args) {\n        List&lt;String&gt; fruitList = new ArrayList&lt;&gt;();\n        System.out.println(fruitList.length()); // 0\n        System.out.println(fruitList);\n\n        fruitList.append(\"apple\");\n        fruitList.append(\"pear\");\n        fruitList.append(\"banana\");\n        fruitList.prepend(\"kiwi\");\n        fruitList.prepend(\"tomato\");\n        fruitList.insert(2, \"pineapple\");\n\n        System.out.println(fruitList);\n        System.out.println(fruitList.pop(1));\n        System.out.println(fruitList);\n    }\n}"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#submit-to-gradescope-1",
+    "href": "slides/slides-09-03.html#submit-to-gradescope-1",
+    "title": "List",
+    "section": "Submit to gradescope",
+    "text": "Submit to gradescope\nSubmit your List.java and ArrayList.java files to gradescope making sure your array implementation contains the pop method."
+  },
+  {
+    "objectID": "slides/slides-09-03.html#arraylist-implementation",
+    "href": "slides/slides-09-03.html#arraylist-implementation",
+    "title": "List",
+    "section": "ArrayList implementation",
+    "text": "ArrayList implementation\npublic class ArrayList&lt;T&gt; implements List&lt;T&gt; {\n    private T[] data;\n    private int size = 10;\n    private int length  = 0;\n\n    @SuppressWarnings(\"unchecked\")\n    public ArrayList() {\n        data = (T[]) new Object[size];\n    }\n\n    @Override\n    public int length() {\n        return length;\n    }\n\n    @Override\n    public void append(T value) {\n        if (length == size) {\n            expandArray();\n        }\n        data[length] = value;\n        length++;\n    }\n\n    @Override\n    public void insert(int index, T value) {\n        if (index &lt; 0 || index &gt; length) throw new RuntimeException(\"index our of range\");\n        shiftRight(index);\n        data[index] = value;\n    }\n\n    @Override\n    public void prepend(T value) {\n        shiftRight(0); // need to shift all the other values\n        data[0] = value;\n    }\n\n    @Override\n    public T pop(int index) {\n        if (index &lt; 0 || index &gt;= length) throw new RuntimeException(\"index out of range\");\n        T out = data[index];\n        shiftLeft(index);\n        return out;\n    }\n\n    private void shiftRight(int startIndex) {\n        length++;\n        if (length == size) expandArray();\n        for (int i = length-1; i &gt; startIndex; i--) data[i] = data[i-1];\n    }\n\n    private void shiftLeft(int startIndex) {\n        for (int i = startIndex; i &lt; length; i++) data[i] = data[i+1];\n        length--;\n    }\n\n    @SuppressWarnings(\"unchecked\")\n    private void expandArray() {\n        size *= 2;\n        T[] newData = (T[]) new Object[size];\n        for (int i = 0; i &lt; length; i++) newData[i] = data[i];\n        data = newData;\n    }\n\n    @Override\n    public T get(int index) {\n        if (index &lt; 0 || index &gt;= length) throw new RuntimeException(\"index out of range\");\n        return data[index];\n    }\n\n    @Override\n    public void set(int index, T value) {\n        if (index &lt; 0 || index &gt;= length) throw new RuntimeException(\"index out of range\");\n        data[length] = value;\n    }\n\n    @Override\n    public String toString() {\n        String out = \"\";\n        for (int i=0; i &lt; length; i++) out += data[i] + \" \";\n        return out.trim();\n    }\n\n\n}"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#array-based-list-runtime-summary",
+    "href": "slides/slides-09-03.html#array-based-list-runtime-summary",
+    "title": "List",
+    "section": "Array-based List Runtime Summary",
+    "text": "Array-based List Runtime Summary\n\n\n\n\nFront of List\nMiddle of List\nEnd of List\n\n\n\n\nget\nO(1)\nO(1)\nO(1)\n\n\nset\nO(1)\nO(1)\nO(1)\n\n\ninsert\nO(n)\nO(n)\nO(1)\n\n\nappend\nO(n)\nO(n)\nO(1)\n\n\nprepend\nO(n)\nO(n)\nO(n)\n\n\npop\nO(n)\nO(n)\nO(1)"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#quiz-07",
+    "href": "slides/slides-09-03.html#quiz-07",
+    "title": "List",
+    "section": "Quiz 07",
+    "text": "Quiz 07\nYou have 10 minutes to complete the quiz"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#in-class-exercise",
+    "href": "slides/slides-09-02.html#in-class-exercise",
+    "title": "Generics",
+    "section": "In-class exercise",
+    "text": "In-class exercise\nWrite a generic class called Duo&lt;T&gt; that holds two items of the same type, with the following public methods:\n\nConstructor that takes two arguments: first and second (both of type T)\ngetFirst() and getSecond() return the items\nswap() swaps the two items (returns nothing)\ntoString() returns the items in the format (first, second)\n\nSubmit your Duo.java file to gradescope\nDuo&lt;String&gt; d = new Duo&lt;&gt;(\"hello\", \"world\");\nSystem.out.println(d);            // (hello, world)\nd.swap();\nSystem.out.println(d.getFirst()); // world\n\nDuo&lt;Integer&gt; n = new Duo&lt;&gt;(1, 2);\nSystem.out.println(n);            // (1, 2)"
+  },
+  {
+    "objectID": "slides/slides-09-02.html#solution",
+    "href": "slides/slides-09-02.html#solution",
+    "title": "Generics",
+    "section": "Solution",
+    "text": "Solution\npublic class Duo&lt;T&gt; {\n    private T first;\n    private T second;\n\n    public Duo(T first, T second) {\n        this.first = first;\n        this.second = second;\n    }\n\n    public T getFirst() { return first; }\n\n    public T getSecond() { return second; }\n\n    public void swap() {\n        T temp = first;\n        first = second;\n        second = temp;\n    }\n\n    public String toString() {\n        return \"(\" + first + \", \" + second + \")\";\n    }\n}\nNote the local variable temp has type T"
   }
 ]
