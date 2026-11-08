@@ -5560,16 +5560,16 @@
   {
     "objectID": "slides/slides-09-03.html",
     "href": "slides/slides-09-03.html",
-    "title": "List + Array List",
+    "title": "List + Array-based List",
     "section": "",
-    "text": "An ordered, finite, mutable data structure\n\nPlan out, in the abstract, the “object nature” and what behaviors you need to support\nWrite some example/test code"
+    "text": "Before writing any code:\n\nPlan out, in the abstract, the “object nature” and what behaviors you need to support\nWrite some example/test code\n\nDiscuss:\n\nWhat is a list?\nHow do we use lists?\nWhat methods do we need?"
   },
   {
     "objectID": "slides/slides-09-03.html#list",
     "href": "slides/slides-09-03.html#list",
     "title": "List + Array-based List",
-    "section": "List",
-    "text": "List\nBefore writing any code:\n\nPlan out, in the abstract, the “object nature” and what behaviors you need to support\nWrite some example/test code\n\nDiscuss:\n\nWhat is a list?\nHow do we use lists?\nWhat methods do we need?"
+    "section": "",
+    "text": "Before writing any code:\n\nPlan out, in the abstract, the “object nature” and what behaviors you need to support\nWrite some example/test code\n\nDiscuss:\n\nWhat is a list?\nHow do we use lists?\nWhat methods do we need?"
   },
   {
     "objectID": "slides/slides-09-03.html#list-1",
@@ -5702,7 +5702,7 @@
     "href": "slides/slides-09-03.html#updated-list-interface",
     "title": "List + Array-based List",
     "section": "Updated List interface",
-    "text": "Updated List interface\nLet’s add prepend and insert to our interface.\nvoid insert(int index, T value);\nvoid prepend(T value);\nWhen implementing ArrayList insert and prepend, we need to shift values in our array to the right"
+    "text": "Updated List interface\nLet’s add prepend, insert, append to our interface.\nvoid insert(int index, T value);\nvoid prepend(T value);\nWhen implementing ArrayList insert and prepend, we need to shift values in our array to the right"
   },
   {
     "objectID": "slides/slides-09-03.html#shiftright",
@@ -6010,7 +6010,7 @@
     "href": "slides/slides-09-03.html#runtime-of-array-expansion-2",
     "title": "List + Array-based List",
     "section": "Runtime of array expansion",
-    "text": "Runtime of array expansion\n\ndouble array vs. increase array size by 10 plots"
+    "text": "Runtime of array expansion\n\n\n\ndouble array vs. increase array size by 10 plots"
   },
   {
     "objectID": "slides/slides-09-03.html#amortized-runtime",
