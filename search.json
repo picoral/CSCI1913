@@ -5555,54 +5555,54 @@
     "href": "index.html#module-09",
     "title": "CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development",
     "section": "Module 09",
-    "text": "Module 09\nBy the end of this module you will be able to:\n\nDefine the concept of an abstract data type (ADT) and explain how it separates interface from implementation.\nUse Java interfaces to specify the contract for a data structure without prescribing its implementation.\nExplain what parametric polymorphism is and why generics are useful for writing flexible, reusable code\nRead and interpret generic class and method declarations that use type parameters (e.g., )\nInstantiate generic classes with specific type arguments (e.g., MyClass)\nImplement a simple generic class or method that works correctly for multiple data types\nExplain the benefit of generics over using Object as a universal type, particularly with respect to type safety\nDesign and write a generic List interface in Java that includes core operations (e.g., add, remove, get, size, isEmpty).\n\nImplement the List interface using an array-backed structure, managing resizing and index-based access.\n\nDescribe the structure of a singly linked list, including the role of nodes, data fields, and next pointers.a\nTrace the state of a linked list (drawing boxes and arrows) after a\nsequence of insertions and deletions.\nImplement the List interface using a singly linked list, managing node creation, pointer manipulation, and traversal.\n\nCompare the array-based and linked-list implementations with respect to time complexity for common operations (e.g., access, insertion, deletion at head/tail/middle).\nExplain why linked lists have \\(O(1)\\) insertion/deletion at the head but \\(O(n)\\) access by index, and contrast this with arrays.\nSelect an appropriate List implementation for a given use case based on its performance trade-offs.\n\n\nSlides\n\nData Structures\nGenerics\nList"
+    "text": "Module 09\nBy the end of this module you will be able to:\n\nDefine the concept of an abstract data type (ADT) and explain how it separates interface from implementation.\nUse Java interfaces to specify the contract for a data structure without prescribing its implementation.\nExplain what parametric polymorphism is and why generics are useful for writing flexible, reusable code\nRead and interpret generic class and method declarations that use type parameters (e.g., )\nInstantiate generic classes with specific type arguments (e.g., MyClass)\nImplement a simple generic class or method that works correctly for multiple data types\nExplain the benefit of generics over using Object as a universal type, particularly with respect to type safety\nDesign and write a generic List interface in Java that includes core operations (e.g., add, remove, get, size, isEmpty).\n\nImplement the List interface using an array-backed structure, managing resizing and index-based access.\n\nDescribe the structure of a singly linked list, including the role of nodes, data fields, and next pointers.a\nTrace the state of a linked list (drawing boxes and arrows) after a\nsequence of insertions and deletions.\nImplement the List interface using a singly linked list, managing node creation, pointer manipulation, and traversal.\n\nCompare the array-based and linked-list implementations with respect to time complexity for common operations (e.g., access, insertion, deletion at head/tail/middle).\nExplain why linked lists have \\(O(1)\\) insertion/deletion at the head but \\(O(n)\\) access by index, and contrast this with arrays.\nSelect an appropriate List implementation for a given use case based on its performance trade-offs.\n\n\nSlides\n\nData Structures\nGenerics\nList Interface + Array-based List”\nLinked List"
   },
   {
     "objectID": "slides/slides-09-03.html",
     "href": "slides/slides-09-03.html",
-    "title": "List",
+    "title": "List + Array List",
     "section": "",
     "text": "An ordered, finite, mutable data structure\n\nPlan out, in the abstract, the “object nature” and what behaviors you need to support\nWrite some example/test code"
   },
   {
     "objectID": "slides/slides-09-03.html#list",
     "href": "slides/slides-09-03.html#list",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "List",
-    "text": "List\nAn ordered, finite, mutable data structure\n\nPlan out, in the abstract, the “object nature” and what behaviors you need to support\nWrite some example/test code"
+    "text": "List\nBefore writing any code:\n\nPlan out, in the abstract, the “object nature” and what behaviors you need to support\nWrite some example/test code\n\nDiscuss:\n\nWhat is a list?\nHow do we use lists?\nWhat methods do we need?"
   },
   {
     "objectID": "slides/slides-09-03.html#list-1",
     "href": "slides/slides-09-03.html#list-1",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "List",
-    "text": "List\n\nWhat is a list?\nHow do we use lists?\nWhat methods do we need?"
+    "text": "List\n\nAn ordered, finite, mutable data structure\nWe manipulate it: create a list, append, prepend, insert, remove, get the length, get/set an individual value, search\n\nWhat about sort?"
   },
   {
     "objectID": "slides/slides-09-03.html#list-2",
     "href": "slides/slides-09-03.html#list-2",
-    "title": "List",
+    "title": "List + Array List",
     "section": "List",
     "text": "List\n\nAn ordered, finite, mutable data structure\nWe manipulate it (create list, add, append, remove, insert, get length, set an individual value)\nappend, prepend, insert, length, set, search\n\nWhat about sort?"
   },
   {
     "objectID": "slides/slides-09-03.html#list-methods",
     "href": "slides/slides-09-03.html#list-methods",
-    "title": "List",
+    "title": "List + Array List",
     "section": "List methods",
     "text": "List methods\nHow do we do lists?\ncreate list of a specific size, append, prepend, remove, insert, getLength, search, sort"
   },
   {
     "objectID": "slides/slides-09-03.html#list-interface",
     "href": "slides/slides-09-03.html#list-interface",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "List interface",
-    "text": "List interface\nLet’s implement a list interface.\n\nRemember that an interface only contains method signatures.\n\nLet’s start with the basic methods:\n\ngetter get(int index)\nlength() returns how many items in the list\nset(int index, T value) – changes the value of item at index (return a bollean if value was set successfully)"
+    "text": "List interface\nLet’s implement a list interface.\n\nRemember that an interface only contains method signatures.\n\nLet’s start with the basic methods:\n\nappend(T value) – adds an item to the end of the list\nlength() – returns how many items are in the list\nget(int index) – returns the item at index\nset(int index, T value) – changes the value of the item at index"
   },
   {
     "objectID": "slides/slides-09-03.html#list-interface-1",
     "href": "slides/slides-09-03.html#list-interface-1",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "List interface",
     "text": "List interface\nHere’s our initial generic interface:\npublic interface List&lt;T&gt; {\n    void append(T value);\n    int length();\n    T get(int index);\n    void set(int index, T value);\n}"
   },
@@ -5616,156 +5616,156 @@
   {
     "objectID": "slides/slides-09-03.html#arraylist",
     "href": "slides/slides-09-03.html#arraylist",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "ArrayList",
-    "text": "ArrayList\nHere’s how we are setting up the private instance variable: private T[] data;\nConstructor:\npublic ArrayList() {\n  data = (T[]) new Object[size]; // define an arbitraty size\n}"
+    "text": "ArrayList\nWe need to keep track of three things:\n\ndata – the array that stores the items\ncapacity – how many items the array can hold\nlength – how many items the list actually holds\n\nprivate T[] data;\nprivate int capacity = 10; // arbitrary starting capacity\nprivate int length = 0;\n\n@SuppressWarnings(\"unchecked\")\npublic ArrayList() {\n  data = (T[]) new Object[capacity];\n}"
   },
   {
     "objectID": "slides/slides-09-03.html#arraylist-1",
     "href": "slides/slides-09-03.html#arraylist-1",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "ArrayList",
-    "text": "ArrayList\nWe will create a generic ArrayList that implements List\npublic class ArrayList&lt;T&gt; implements List&lt;T&gt; {\n    private T[] data;\n    private int size = 10;\n    private int length  = 0;\n\n\n    @SuppressWarnings(\"unchecked\")\n    public ArrayList() {\n        data = (T[]) new Object[size];\n    }\n\n    @Override\n    public int length() {\n        return length;\n    }\n\n    @Override\n    public void append(T value) {\n      // TODO: implement\n    }\n\n    @Override\n    public T get(int index) {\n        // TODO: implement\n    }\n\n    @Override\n    public void set(int index, T value) {\n        // TODO: implement\n    }\n\n\n}"
+    "text": "ArrayList\nWe will create a generic ArrayList that implements List\npublic class ArrayList&lt;T&gt; implements List&lt;T&gt; {\n    private T[] data;\n    private int capacity = 10;\n    private int length = 0;\n\n    @SuppressWarnings(\"unchecked\")\n    public ArrayList() {\n        data = (T[]) new Object[capacity];\n    }\n\n    @Override\n    public int length() {\n        return length;\n    }\n\n    @Override\n    public void append(T value) {\n        // TODO: implement\n    }\n\n    @Override\n    public T get(int index) {\n        // TODO: implement\n        return null;\n    }\n\n    @Override\n    public void set(int index, T value) {\n        // TODO: implement\n    }\n\n    @Override\n    public String toString() {\n        // TODO: implement\n        return \"\";\n    }\n}"
   },
   {
     "objectID": "slides/slides-09-03.html#finish-implementation",
     "href": "slides/slides-09-03.html#finish-implementation",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "Finish implementation",
-    "text": "Finish implementation\nSubmit your List.java and ArrayList.java files to gradescope.\npublic class UseList {\n    public static void main(String[] args) {\n        List&lt;String&gt; fruitList = new ArrayList&lt;&gt;();\n        System.out.println(fruitList.length()); // 0\n        System.out.println(fruitList); \n\n        fruitList.append(\"apple\");\n        fruitList.append(\"pear\");\n        fruitList.append(\"banana\");\n\n        System.out.println(fruitList);\n    }\n}"
+    "text": "Finish implementation\nSubmit your List.java and ArrayList.java files to gradescope.\npublic class UseList {\n    public static void main(String[] args) {\n        List&lt;String&gt; fruitList = new ArrayList&lt;&gt;();\n        System.out.println(fruitList.length()); // 0\n        System.out.println(fruitList);\n\n        fruitList.append(\"apple\");\n        fruitList.append(\"pear\");\n        fruitList.append(\"banana\");\n\n        System.out.println(fruitList); // apple pear banana\n    }\n}"
   },
   {
     "objectID": "slides/slides-09-03.html#arraylist-append",
     "href": "slides/slides-09-03.html#arraylist-append",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "ArrayList append",
-    "text": "ArrayList append\n@Override\npublic void append(T value) {\n  data[length] = value;\n  length++;\n}\nWhat happens when length is the same as size?"
+    "text": "ArrayList append\n@Override\npublic void append(T value) {\n  data[length] = value;\n  length++;\n}\nWhat happens when length is the same as capacity?"
   },
   {
     "objectID": "slides/slides-09-03.html#expand-the-size-of-our-array",
     "href": "slides/slides-09-03.html#expand-the-size-of-our-array",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "Expand the size of our array",
-    "text": "Expand the size of our array\n@SuppressWarnings(\"unchecked\")\nprivate void expandArray() {\n  size *= 2;\n  T[] newData = (T[]) new Object[size];\n  for (int i = 0; i &lt; length; i++) newData[i] = data[i];\n  data = newData;\n}"
+    "text": "Expand the size of our array\n@SuppressWarnings(\"unchecked\")\nprivate void expandArray() {\n  capacity *= 2;\n  T[] newData = (T[]) new Object[capacity];\n  for (int i = 0; i &lt; length; i++) newData[i] = data[i];\n  data = newData;\n}"
   },
   {
     "objectID": "slides/slides-09-03.html#append-implementation",
     "href": "slides/slides-09-03.html#append-implementation",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "append implementation",
-    "text": "append implementation\n@Override\npublic void append(T value) {\n  if (length == size) expandArray();\n  data[length] = value;\n  length++;\n}"
+    "text": "append implementation\n@Override\npublic void append(T value) {\n  if (length == capacity) expandArray();\n  data[length] = value;\n  length++;\n}"
   },
   {
     "objectID": "slides/slides-09-03.html#submit-to-gradescope-with-array-expand",
     "href": "slides/slides-09-03.html#submit-to-gradescope-with-array-expand",
-    "title": "List",
+    "title": "List + Array List",
     "section": "Submit to gradescope with array Expand",
     "text": "Submit to gradescope with array Expand\nSubmit your List.java and ArrayList.java files to gradescope making sure your array implementation can do multiple append calls (your implementation deals with array expansion)"
   },
   {
     "objectID": "slides/slides-09-03.html#runtime-of-array-expand",
     "href": "slides/slides-09-03.html#runtime-of-array-expand",
-    "title": "List",
+    "title": "List + Array List",
     "section": "Runtime of array Expand",
     "text": "Runtime of array Expand\nThe arrayExpand process is \\(O(n)\\) (gotta copy the array!) BUT it doesn’t run every time, so how do we handle the aﬀect on append?\nBest case: \\(O(1)\\) Worst case: \\(O(n)\\)"
   },
   {
     "objectID": "slides/slides-09-03.html#runtime-of-array-expand-1",
     "href": "slides/slides-09-03.html#runtime-of-array-expand-1",
-    "title": "List",
+    "title": "List + Array List",
     "section": "Runtime of array Expand",
     "text": "Runtime of array Expand\nWhat we often care about is not the runtime of myList.append(4); but instead:\nfor (int i = 0; i &lt; N; i++) {\n  myList.append(i);\n}"
   },
   {
     "objectID": "slides/slides-09-03.html#runtime-of-array-expand-2",
     "href": "slides/slides-09-03.html#runtime-of-array-expand-2",
-    "title": "List",
+    "title": "List + Array List",
     "section": "Runtime of array Expand",
-    "text": "Runtime of array Expand\n\ndouble array vs. increase array size by 10 plots"
+    "text": "Runtime of array Expand\n\n\n\ndouble array vs. increase array size by 10 plots"
   },
   {
     "objectID": "slides/slides-09-03.html#why-does-it-work-this-way",
     "href": "slides/slides-09-03.html#why-does-it-work-this-way",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "Why does it work this way",
-    "text": "Why does it work this way\nOne way to think about it:\n\nAfter an expand that costs N operations:\nWe get N “free” appends\nThen we do 2N operations for next expand. (and so forth)"
+    "text": "Why does it work this way\nOne way to think about it:\n\nAfter an expand that costs N operations:\n\nWe get N “free” appends\nThen we do 2N operations for next expand. (and so forth)"
   },
   {
     "objectID": "slides/slides-09-03.html#runtime-of-array-expand-3",
     "href": "slides/slides-09-03.html#runtime-of-array-expand-3",
-    "title": "List",
+    "title": "List + Array List",
     "section": "Runtime of array Expand",
     "text": "Runtime of array Expand\n\nIt is not technically true that append is \\(O(1)\\)\nIt IS true that \\(O(n)\\) appends costs \\(O(n)\\) time\nWe can divide that through and call append \\(O(\\frac{n}{n}) = O(1)\\)\nWe can say “amortized runtime” \\(O(1)\\) instead of “runtime \\(O(n)\\)”"
   },
   {
     "objectID": "slides/slides-09-03.html#updated-list-interface",
     "href": "slides/slides-09-03.html#updated-list-interface",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "Updated List interface",
     "text": "Updated List interface\nLet’s add prepend and insert to our interface.\nvoid insert(int index, T value);\nvoid prepend(T value);\nWhen implementing ArrayList insert and prepend, we need to shift values in our array to the right"
   },
   {
     "objectID": "slides/slides-09-03.html#shiftright",
     "href": "slides/slides-09-03.html#shiftright",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "shiftRight",
-    "text": "shiftRight\nprivate void shiftRight(int startIndex) {\n  length++;\n  if (length == size) expandArray();\n  for (int i = length-1; i &gt; startIndex; i--) data[i] = data[i-1];\n}"
+    "text": "shiftRight\nprivate void shiftRight(int startIndex) {\n  if (length == capacity) expandArray(); // make room BEFORE growing\n  length++;\n  for (int i = length-1; i &gt; startIndex; i--) data[i] = data[i-1];\n}"
   },
   {
     "objectID": "slides/slides-09-03.html#insert",
     "href": "slides/slides-09-03.html#insert",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "insert",
-    "text": "insert\npublic void insert(int index, T value) {\n  if (index &lt; 0 || index &gt; length) throw new \n  shiftRight(index);\n  data[index] = value;\n}"
+    "text": "insert\npublic void insert(int index, T value) {\n  if (index &lt; 0 || index &gt; length) throw new IndexOutOfBoundsException(\"index out of range\");\n  shiftRight(index);\n  data[index] = value;\n}\nNote: index == length is allowed – that is the same as append"
   },
   {
     "objectID": "slides/slides-09-03.html#prepend",
     "href": "slides/slides-09-03.html#prepend",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "prepend",
-    "text": "prepend\npublic void prepend(T value) {\n  shiftRight(0); // need to shift all the other values\n  data[0] = value;\n}"
+    "text": "prepend\npublic void prepend(T value) {\n  shiftRight(0); // need to shift all values\n  data[0] = value;\n}"
   },
   {
     "objectID": "slides/slides-09-03.html#submit-to-gradescope",
     "href": "slides/slides-09-03.html#submit-to-gradescope",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "Submit to gradescope",
     "text": "Submit to gradescope\nSubmit your List.java and ArrayList.java files to gradescope making sure your array implementation contains methods prepend and insert."
   },
   {
     "objectID": "slides/slides-09-03.html#changing-size-of-the-list-removing-from-list",
     "href": "slides/slides-09-03.html#changing-size-of-the-list-removing-from-list",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "Changing size of the list – removing from list",
-    "text": "Changing size of the list – removing from list\n\nAdd T pop(int index) to our List interface\n\nWe need to implement shiftLeft in ArrrayList"
+    "text": "Changing size of the list – removing from list\nAdd T pop(int index) to our List interface – removes the item at index and returns it\nWe need to implement shiftLeft in ArrayList\n                      index:   0   1   2   3   4\nbefore (pop(1)):             [ A | X | B | C | D ]   save X to return\nafter shiftLeft(1):          [ A | B | C | D | D ]   copy forwards\nclear last slot:             [ A | B | C | D |   ]   length--"
   },
   {
     "objectID": "slides/slides-09-03.html#test-your-arraylist-implementation",
     "href": "slides/slides-09-03.html#test-your-arraylist-implementation",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "Test your ArrayList implementation",
-    "text": "Test your ArrayList implementation\npublic class UseList {\n    public static void main(String[] args) {\n        List&lt;String&gt; fruitList = new ArrayList&lt;&gt;();\n        System.out.println(fruitList.length()); // 0\n        System.out.println(fruitList);\n\n        fruitList.append(\"apple\");\n        fruitList.append(\"pear\");\n        fruitList.append(\"banana\");\n        fruitList.prepend(\"kiwi\");\n        fruitList.prepend(\"tomato\");\n        fruitList.insert(2, \"pineapple\");\n\n        System.out.println(fruitList);\n        System.out.println(fruitList.pop(1));\n        System.out.println(fruitList);\n    }\n}"
+    "text": "Test your ArrayList implementation\npublic class UseList {\n    public static void main(String[] args) {\n        List&lt;String&gt; fruitList = new ArrayList&lt;&gt;();\n        System.out.println(fruitList.length()); // 0\n        System.out.println(fruitList);\n\n        fruitList.append(\"apple\");\n        fruitList.append(\"pear\");\n        fruitList.append(\"banana\");\n        fruitList.prepend(\"kiwi\");\n        fruitList.prepend(\"tomato\");\n        fruitList.insert(2, \"pineapple\");\n\n        System.out.println(fruitList); // tomato kiwi pineapple apple pear banana\n        System.out.println(fruitList.pop(1)); // kiwi\n        System.out.println(fruitList); // tomato pineapple apple pear banana\n    }\n}\nAlso test the edge cases: an empty list, a full array (append 10+ items, then insert), the first index, and the last index."
   },
   {
     "objectID": "slides/slides-09-03.html#submit-to-gradescope-1",
     "href": "slides/slides-09-03.html#submit-to-gradescope-1",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "Submit to gradescope",
     "text": "Submit to gradescope\nSubmit your List.java and ArrayList.java files to gradescope making sure your array implementation contains the pop method."
   },
   {
     "objectID": "slides/slides-09-03.html#arraylist-implementation",
     "href": "slides/slides-09-03.html#arraylist-implementation",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "ArrayList implementation",
-    "text": "ArrayList implementation\npublic class ArrayList&lt;T&gt; implements List&lt;T&gt; {\n    private T[] data;\n    private int size = 10;\n    private int length  = 0;\n\n    @SuppressWarnings(\"unchecked\")\n    public ArrayList() {\n        data = (T[]) new Object[size];\n    }\n\n    @Override\n    public int length() {\n        return length;\n    }\n\n    @Override\n    public void append(T value) {\n        if (length == size) {\n            expandArray();\n        }\n        data[length] = value;\n        length++;\n    }\n\n    @Override\n    public void insert(int index, T value) {\n        if (index &lt; 0 || index &gt; length) throw new RuntimeException(\"index our of range\");\n        shiftRight(index);\n        data[index] = value;\n    }\n\n    @Override\n    public void prepend(T value) {\n        shiftRight(0); // need to shift all the other values\n        data[0] = value;\n    }\n\n    @Override\n    public T pop(int index) {\n        if (index &lt; 0 || index &gt;= length) throw new RuntimeException(\"index out of range\");\n        T out = data[index];\n        shiftLeft(index);\n        return out;\n    }\n\n    private void shiftRight(int startIndex) {\n        length++;\n        if (length == size) expandArray();\n        for (int i = length-1; i &gt; startIndex; i--) data[i] = data[i-1];\n    }\n\n    private void shiftLeft(int startIndex) {\n        for (int i = startIndex; i &lt; length; i++) data[i] = data[i+1];\n        length--;\n    }\n\n    @SuppressWarnings(\"unchecked\")\n    private void expandArray() {\n        size *= 2;\n        T[] newData = (T[]) new Object[size];\n        for (int i = 0; i &lt; length; i++) newData[i] = data[i];\n        data = newData;\n    }\n\n    @Override\n    public T get(int index) {\n        if (index &lt; 0 || index &gt;= length) throw new RuntimeException(\"index out of range\");\n        return data[index];\n    }\n\n    @Override\n    public void set(int index, T value) {\n        if (index &lt; 0 || index &gt;= length) throw new RuntimeException(\"index out of range\");\n        data[length] = value;\n    }\n\n    @Override\n    public String toString() {\n        String out = \"\";\n        for (int i=0; i &lt; length; i++) out += data[i] + \" \";\n        return out.trim();\n    }\n\n\n}"
+    "text": "ArrayList implementation\npublic class ArrayList&lt;T&gt; implements List&lt;T&gt; {\n    private T[] data;\n    private int capacity = 10;\n    private int length = 0;\n\n    @SuppressWarnings(\"unchecked\")\n    public ArrayList() {\n        data = (T[]) new Object[capacity];\n    }\n\n    @Override\n    public int length() {\n        return length;\n    }\n\n    @Override\n    public void append(T value) {\n        if (length == capacity) {\n            expandArray();\n        }\n        data[length] = value;\n        length++;\n    }\n\n    @Override\n    public void insert(int index, T value) {\n        if (index &lt; 0 || index &gt; length) throw new IndexOutOfBoundsException(\"index out of range\");\n        shiftRight(index);\n        data[index] = value;\n    }\n\n    @Override\n    public void prepend(T value) {\n        shiftRight(0); // need to shift all the other values\n        data[0] = value;\n    }\n\n    @Override\n    public T pop(int index) {\n        if (index &lt; 0 || index &gt;= length) throw new IndexOutOfBoundsException(\"index out of range\");\n        T out = data[index];\n        shiftLeft(index);\n        return out;\n    }\n\n    private void shiftRight(int startIndex) {\n        if (length == capacity) expandArray(); // make room BEFORE growing\n        length++;\n        for (int i = length-1; i &gt; startIndex; i--) data[i] = data[i-1];\n    }\n\n    private void shiftLeft(int startIndex) {\n        for (int i = startIndex; i &lt; length-1; i++) data[i] = data[i+1];\n        data[length-1] = null; // clear the old last slot\n        length--;\n    }\n\n    @SuppressWarnings(\"unchecked\")\n    private void expandArray() {\n        capacity *= 2;\n        T[] newData = (T[]) new Object[capacity];\n        for (int i = 0; i &lt; length; i++) newData[i] = data[i];\n        data = newData;\n    }\n\n    @Override\n    public T get(int index) {\n        if (index &lt; 0 || index &gt;= length) throw new IndexOutOfBoundsException(\"index out of range\");\n        return data[index];\n    }\n\n    @Override\n    public void set(int index, T value) {\n        if (index &lt; 0 || index &gt;= length) throw new IndexOutOfBoundsException(\"index out of range\");\n        data[index] = value;\n    }\n\n    @Override\n    public String toString() {\n        String out = \"\";\n        for (int i = 0; i &lt; length; i++) out += data[i] + \" \";\n        return out.trim();\n    }\n}"
   },
   {
     "objectID": "slides/slides-09-03.html#array-based-list-runtime-summary",
     "href": "slides/slides-09-03.html#array-based-list-runtime-summary",
-    "title": "List",
+    "title": "List + Array-based List",
     "section": "Array-based List Runtime Summary",
-    "text": "Array-based List Runtime Summary\n\n\n\n\nFront of List\nMiddle of List\nEnd of List\n\n\n\n\nget\nO(1)\nO(1)\nO(1)\n\n\nset\nO(1)\nO(1)\nO(1)\n\n\ninsert\nO(n)\nO(n)\nO(1)\n\n\nappend\nO(n)\nO(n)\nO(1)\n\n\nprepend\nO(n)\nO(n)\nO(n)\n\n\npop\nO(n)\nO(n)\nO(1)"
+    "text": "Array-based List Runtime Summary\n\n\n\n\nFront of List\nMiddle of List\nEnd of List\n\n\n\n\nget\nO(1)\nO(1)\nO(1)\n\n\nset\nO(1)\nO(1)\nO(1)\n\n\ninsert\nO(n)\nO(n)\nO(1)*\n\n\npop\nO(n)\nO(n)\nO(1)\n\n\n\n* amortized – an occasional insert triggers an \\(O(n)\\) expansion\n\nappend = insert at the end → amortized \\(O(1)\\)\nprepend = insert at the front → \\(O(n)\\) (every item shifts)"
   },
   {
     "objectID": "slides/slides-09-03.html#quiz-07",
@@ -5787,5 +5787,278 @@
     "title": "Generics",
     "section": "Solution",
     "text": "Solution\npublic class Duo&lt;T&gt; {\n    private T first;\n    private T second;\n\n    public Duo(T first, T second) {\n        this.first = first;\n        this.second = second;\n    }\n\n    public T getFirst() { return first; }\n\n    public T getSecond() { return second; }\n\n    public void swap() {\n        T temp = first;\n        first = second;\n        second = temp;\n    }\n\n    public String toString() {\n        return \"(\" + first + \", \" + second + \")\";\n    }\n}\nNote the local variable temp has type T"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#array-based-list",
+    "href": "slides/slides-09-04.html#array-based-list",
+    "title": "Linked List",
+    "section": "Array-based List",
+    "text": "Array-based List"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#array-based-list-1",
+    "href": "slides/slides-09-04.html#array-based-list-1",
+    "title": "Linked List",
+    "section": "Array-based List",
+    "text": "Array-based List\nElements are stored in one contiguous block of memory – to grow, we must allocate a bigger block and copy everything over\n\n\n\n\nFront of List\nMiddle of List\nEnd of List\n\n\n\n\nget\nO(1)\nO(1)\nO(1)\n\n\nset\nO(1)\nO(1)\nO(1)\n\n\ninsert\nO(n)\nO(n)\nO(1)*\n\n\npop\nO(n)\nO(n)\nO(1)\n\n\n\n* amortized\n\nrandom access (access through an index) is fast\ninsert/remove something – shift everything else"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#linked-lists",
+    "href": "slides/slides-09-04.html#linked-lists",
+    "title": "Linked List",
+    "section": "Linked lists",
+    "text": "Linked lists\nA linked list is a chain of nodes, where each node contains:\n\ndata - the actual value you’re storing (like arrays)\na pointer/reference - the address of the next node in the chain\n\nNo need for contiguous memory (nodes can be scattered anywhere in memory)"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#linked-list",
+    "href": "slides/slides-09-04.html#linked-list",
+    "title": "Linked List",
+    "section": "Linked List",
+    "text": "Linked List\n\ndynamic structure, can grow and shrink as needed – each new item gets its own node, so there is no resizing or copying\nelements are arranged in a linear sequence\nimplemented through nodes – each node has a reference to the next node"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#nodes",
+    "href": "slides/slides-09-04.html#nodes",
+    "title": "Linked List",
+    "section": "Nodes",
+    "text": "Nodes\nTo create a linked list:\n\na class of self-referential objects\neach object of the class contains a reference to an object of the same class\nconvention is to name the class Node\n\nWrite a generic class in Java called Node that has two instance variables: data (any type), and a reference to another node.\nWrite the constructor method, and a set and get method for each instance variable."
+  },
+  {
+    "objectID": "slides/slides-09-04.html#solution",
+    "href": "slides/slides-09-04.html#solution",
+    "title": "Linked List",
+    "section": "Solution",
+    "text": "Solution\npublic class Node&lt;T&gt; {\n    private T data;\n    private Node&lt;T&gt; next;\n\n    // constructor\n    public Node(T data) {\n        this.data = data;\n        next = null;\n    }\n\n    // setters\n    public void setNext(Node&lt;T&gt; next) {\n        this.next = next;\n    }\n\n    public void setData(T data) {\n        this.data = data;\n    }\n\n    // getters\n    public Node&lt;T&gt; getNext() {\n        return next;\n    }\n\n    public T getData() {\n        return data;\n    }\n\n}"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#linkedlist-class",
+    "href": "slides/slides-09-04.html#linkedlist-class",
+    "title": "Linked List",
+    "section": "LinkedList class",
+    "text": "LinkedList class\n\nWhat instance variables do you need?"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#linkedlist-class-1",
+    "href": "slides/slides-09-04.html#linkedlist-class-1",
+    "title": "Linked List",
+    "section": "LinkedList class",
+    "text": "LinkedList class\n\nhead – reference to the first Node\ntail – reference to the last Node\nlength – number of nodes in the list\n\nStrictly speaking, only head is required – tail and length save us from walking the whole list"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#linkedlist-set-up-and-constructor",
+    "href": "slides/slides-09-04.html#linkedlist-set-up-and-constructor",
+    "title": "Linked List",
+    "section": "LinkedList set up and constructor",
+    "text": "LinkedList set up and constructor\npublic class LinkedList&lt;T&gt; {\n    private Node&lt;T&gt; head;\n    private Node&lt;T&gt; tail;\n    private int length;\n\n    // constructor\n    public LinkedList() {\n        head = null;\n        tail = null;\n        length = 0;\n    }\n\n}"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#methods",
+    "href": "slides/slides-09-04.html#methods",
+    "title": "Linked List",
+    "section": "Methods",
+    "text": "Methods\nWhat methods do you need to implement?\nHere’s our generic interface we used to implement our ArrayList:\npublic interface List&lt;T&gt; {\n    void append(T value);\n    void prepend(T value);\n    void insert(int index, T value);\n    int length();\n    T get(int index);\n    void set(int index, T value);\n    T pop(int index);\n}\nImplement append, prepend and length in your LinkedList&lt;T&gt; class + a toString() method to test your code. Submit your List.java, Node.java and LinkedList.java files to gradescope."
+  },
+  {
+    "objectID": "slides/slides-09-04.html#prepend-o1",
+    "href": "slides/slides-09-04.html#prepend-o1",
+    "title": "Linked List",
+    "section": "prepend – O(1)",
+    "text": "prepend – O(1)\nbefore:              head → [A] → [B] → [C] → null\n1. create node:      [X]\n2. X.next = head:    [X] → [A] → [B] → [C] → null\n3. head = X:         head → [X] → [A] → [B] → [C] → null\nWhat happens if we do step 3 before step 2?"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#append-on",
+    "href": "slides/slides-09-04.html#append-on",
+    "title": "Linked List",
+    "section": "append – O(n)",
+    "text": "append – O(n)\nIf we only had head, we would need to walk to the end of the list:\npublic void append(T value) {\n  Node&lt;T&gt; nodeToAdd = new Node&lt;&gt;(value);\n  if (head == null) head = nodeToAdd;\n  else {\n    Node&lt;T&gt; currNode = head;\n    while (currNode.getNext() != null) {\n      currNode = currNode.getNext();\n    }\n    currNode.setNext(nodeToAdd);\n  }\n  length++;\n}"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#append-o1",
+    "href": "slides/slides-09-04.html#append-o1",
+    "title": "Linked List",
+    "section": "append – O(1)",
+    "text": "append – O(1)\nKeep a tail instance variable.\npublic void append(T value) {\n  Node&lt;T&gt; nodeToAdd = new Node&lt;&gt;(value);\n  if (head == null) {\n    head = nodeToAdd;\n    tail = nodeToAdd;\n  } else {\n    tail.setNext(nodeToAdd);\n    tail = nodeToAdd;\n  }\n  length++;\n}"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#tostring-method",
+    "href": "slides/slides-09-04.html#tostring-method",
+    "title": "Linked List",
+    "section": "toString() method",
+    "text": "toString() method\nLet’s create a toString() method to test our list insertion.\nWrite a toString() method that traverses the entire list\n\nConcatenate values"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#tostring-solution",
+    "href": "slides/slides-09-04.html#tostring-solution",
+    "title": "Linked List",
+    "section": "toString() solution",
+    "text": "toString() solution\n@Override\npublic String toString() {\n  String result = \"\";\n  Node&lt;T&gt; currNode = head;\n  while (currNode != null) {\n    result += currNode.getData() + \" \";\n    currNode = currNode.getNext();\n  }\n  return result.trim();\n}"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#search-method",
+    "href": "slides/slides-09-04.html#search-method",
+    "title": "Linked List",
+    "section": "search() method",
+    "text": "search() method\nWrite a search() method that traverses the entire list trying to find a node that matches the argument value – if found, return true, otherwise return false. Add the boolean search(T data) signature to the List.java interface.\n\nImplementation of search() is similar to toString() (write a while loop)\nAdding a method to the interface means every class that implements List must implement it – including ArrayList!\n\nSubmit your List.java, Node.java and LinkedList.java with the search() method to gradescope."
+  },
+  {
+    "objectID": "slides/slides-09-04.html#search-solution",
+    "href": "slides/slides-09-04.html#search-solution",
+    "title": "Linked List",
+    "section": "search() solution",
+    "text": "search() solution\npublic boolean search(T data) {\n  Node&lt;T&gt; currNode = head;\n  while (currNode != null) {\n    if (currNode.getData().equals(data)) {\n      return true;\n    }\n    currNode = currNode.getNext();\n  }\n  return false;\n}"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#linear-search-complexity",
+    "href": "slides/slides-09-04.html#linear-search-complexity",
+    "title": "Linked List",
+    "section": "Linear search – complexity",
+    "text": "Linear search – complexity\nWhat we have implemented is an unsorted linked list – how many comparisons does it require to find a target element?\nIn the worst case, each node must be examined once, resulting in \\(O(n)\\) complexity – \\(n\\) is the number of elements in the list."
+  },
+  {
+    "objectID": "slides/slides-09-04.html#delete-node",
+    "href": "slides/slides-09-04.html#delete-node",
+    "title": "Linked List",
+    "section": "Delete node",
+    "text": "Delete node\nRemoving a node takes a few more steps:\n\nFind the node to remove (by index or by matching data), keeping track of the previous node\nMake the previous node skip over it: previous.setNext(cur.getNext())"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#implement-popint-index",
+    "href": "slides/slides-09-04.html#implement-popint-index",
+    "title": "Linked List",
+    "section": "implement pop(int index)",
+    "text": "implement pop(int index)\nImplement pop(int index), get(int index), and set(int index, T value) in your LinkedList.java and submit it alongside with List.java and Node.java to gradescope.\nGo back to the edge cases checklist!"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#find-index-and-remove",
+    "href": "slides/slides-09-04.html#find-index-and-remove",
+    "title": "Linked List",
+    "section": "Find index and remove",
+    "text": "Find index and remove\npublic T pop(int index) {\n  if (index &lt; 0 || index &gt;= length) throw new IndexOutOfBoundsException(\"index out of range\");\n  int count = 0;\n  Node&lt;T&gt; previous = null;\n  Node&lt;T&gt; cur = head;\n  while (count &lt; index) {\n    previous = cur;\n    cur = cur.getNext();\n    count++;\n  }\n  if (previous == null) head = cur.getNext(); // removing the head\n  else previous.setNext(cur.getNext());\n  if (cur == tail) tail = previous;          // removing the tail\n  length--;\n  return cur.getData();\n}"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#complete-linkedlist-solution",
+    "href": "slides/slides-09-04.html#complete-linkedlist-solution",
+    "title": "Linked List",
+    "section": "Complete LinkedList solution",
+    "text": "Complete LinkedList solution\npublic class LinkedList&lt;T&gt; implements List&lt;T&gt; {\n    private Node&lt;T&gt; head;\n    private Node&lt;T&gt; tail;\n    private int length;\n\n    public LinkedList() {\n        head = null;\n        tail = null;\n        length = 0;\n    }\n\n    public void append(T value) {\n        Node&lt;T&gt; nodeToAdd = new Node&lt;&gt;(value);\n        if (head == null) {\n            head = nodeToAdd;\n            tail = nodeToAdd;\n        } else {\n            tail.setNext(nodeToAdd);\n            tail = nodeToAdd;\n        }\n        length++;\n    }\n\n    public void prepend(T value) {\n        Node&lt;T&gt; nodeToAdd = new Node&lt;&gt;(value);\n        if (head == null) {\n            head = nodeToAdd;\n            tail = nodeToAdd;\n        } else {\n            nodeToAdd.setNext(head);\n            head = nodeToAdd;\n        }\n        length++;\n    }\n\n    public void insert(int index, T value) {\n        if (index &lt; 0 || index &gt; length) throw new IndexOutOfBoundsException(\"index out of range\");\n        if (index == 0) {\n            prepend(value);\n            return;\n        }\n        if (index == length) {\n            append(value);\n            return;\n        }\n        Node&lt;T&gt; nodeToAdd = new Node&lt;&gt;(value);\n        int count = 0;\n        Node&lt;T&gt; previous = head;\n        while (count &lt; index - 1) {\n            previous = previous.getNext();\n            count++;\n        }\n        nodeToAdd.setNext(previous.getNext());\n        previous.setNext(nodeToAdd);\n        length++;\n    }\n\n    public int length() {return length; }\n\n    public T get(int index) {\n        if (index &lt; 0 || index &gt;= length) throw new IndexOutOfBoundsException(\"index out of range\");\n        int count = 0;\n        Node&lt;T&gt; cur = head;\n        while (count &lt; index) {\n            cur = cur.getNext();\n            count++;\n        }\n        return cur.getData();\n    }\n\n    public void set(int index, T value) {\n        if (index &lt; 0 || index &gt;= length) throw new IndexOutOfBoundsException(\"index out of range\");\n        int count = 0;\n        Node&lt;T&gt; cur = head;\n        while (count &lt; index) {\n            cur = cur.getNext();\n            count++;\n        }\n        cur.setData(value);\n    }\n\n    public T pop(int index) {\n        if (index &lt; 0 || index &gt;= length) throw new IndexOutOfBoundsException(\"index out of range\");\n        int count = 0;\n        Node&lt;T&gt; previous = null;\n        Node&lt;T&gt; cur = head;\n        while (count &lt; index) {\n            previous = cur;\n            cur = cur.getNext();\n            count++;\n        }\n        if (previous == null) head = cur.getNext(); // removing the head\n        else previous.setNext(cur.getNext());\n        if (cur == tail) tail = previous;          // removing the tail\n        length--;\n        return cur.getData();\n    }\n\n    public String toString() {\n        String out = \"\";\n        Node&lt;T&gt; cur = head;\n        while (cur != null) {\n            out += cur.getData() + \" \";\n            cur = cur.getNext();\n        }\n        return out.trim();\n    }\n\n    public boolean search(T data) {\n        Node&lt;T&gt; currNode = head;\n        while (currNode != null) {\n            if (currNode.getData().equals(data)) {\n                return true;\n            }\n            currNode = currNode.getNext();\n        }\n        return false;\n    }\n\n}"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#runtime-of-linkedlist",
+    "href": "slides/slides-09-04.html#runtime-of-linkedlist",
+    "title": "Linked List",
+    "section": "Runtime of LinkedList",
+    "text": "Runtime of LinkedList\n\n\n\n\nFront of List\nMiddle of List\nEnd of List\n\n\n\n\nget\nO(1)\nO(n)\nO(n)*\n\n\nset\nO(1)\nO(n)\nO(n)*\n\n\ninsert\nO(1)\nO(n)\nO(1)\n\n\npop\nO(1)\nO(n)\nO(n)\n\n\n\n* could be O(1) if we check for the last index and use tail – our implementation walks the list\nWhy is pop at the end \\(O(n)\\) even though we have tail? (Hint: what does tail need to become?)"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#other-types-of-linked-list",
+    "href": "slides/slides-09-04.html#other-types-of-linked-list",
+    "title": "Linked List",
+    "section": "Other types of linked list",
+    "text": "Other types of linked list\nWe just implemented a singly linked list\n\nDoubly linked list – each node also points to the previous node, so pop at the end becomes O(1):"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#other-types-of-linked-list-1",
+    "href": "slides/slides-09-04.html#other-types-of-linked-list-1",
+    "title": "Linked List",
+    "section": "Other types of linked list",
+    "text": "Other types of linked list\nCircular linked list:"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#list-implementation-array",
+    "href": "slides/slides-09-03.html#list-implementation-array",
+    "title": "List + Array-based List",
+    "section": "List Implementation (Array)",
+    "text": "List Implementation (Array)\n\nData structures, or abstract data types (ADTs) can be implemented using different approaches\nWe have our List interface, we will start by implementing our List with an array\nWe will call our class ArrayList and we will use the implements keyword:\n\npublic class ArrayList&lt;T&gt; implements List&lt;T&gt; {}\nNote: Java already has java.util.List and java.util.ArrayList – don’t import them, or they will clash with ours!"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#list-implementation-array0",
+    "href": "slides/slides-09-03.html#list-implementation-array0",
+    "title": "List + Array List",
+    "section": "List Implementation (Array0)",
+    "text": "List Implementation (Array0)\n\nData structures, or abstract data types (ADTs) can be implemented using different approaches\nWe have our List interface, we will start by implementing our List with an array\nWe will call our class ArrayList and we will use the implements keyword:\n\npublic class ArrayList&lt;T&gt; implements List&lt;T&gt; {}"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#tostring",
+    "href": "slides/slides-09-03.html#tostring",
+    "title": "List + Array-based List",
+    "section": "toString()",
+    "text": "toString()\nWhat happens if we run System.out.println(fruitList); without a toString() method?\nArrayList@1b6d3586\nWrite a toString() that returns the items separated by spaces – only the first length items!\n@Override\npublic String toString() {\n  String out = \"\";\n  for (int i = 0; i &lt; length; i++) out += data[i] + \" \";\n  return out.trim();\n}"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#submit-to-gradescope-with-array-expansion",
+    "href": "slides/slides-09-03.html#submit-to-gradescope-with-array-expansion",
+    "title": "List + Array-based List",
+    "section": "Submit to gradescope with array expansion",
+    "text": "Submit to gradescope with array expansion\nSubmit your List.java and ArrayList.java files to gradescope making sure your array implementation can do multiple append calls (your implementation deals with array expansion)"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#runtime-of-array-expansion",
+    "href": "slides/slides-09-03.html#runtime-of-array-expansion",
+    "title": "List + Array-based List",
+    "section": "Runtime of array expansion",
+    "text": "Runtime of array expansion\nThe expandArray process is \\(O(n)\\) (gotta copy the array!) BUT it doesn’t run every time, so how do we handle the effect on append?\n\nBest case: \\(O(1)\\)\nWorst case: \\(O(n)\\)"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#runtime-of-array-expansion-1",
+    "href": "slides/slides-09-03.html#runtime-of-array-expansion-1",
+    "title": "List + Array-based List",
+    "section": "Runtime of array expansion",
+    "text": "Runtime of array expansion\nWhat we often care about is not the runtime of myList.append(4); but instead:\nfor (int i = 0; i &lt; N; i++) {\n  myList.append(i);\n}"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#runtime-of-array-expansion-2",
+    "href": "slides/slides-09-03.html#runtime-of-array-expansion-2",
+    "title": "List + Array-based List",
+    "section": "Runtime of array expansion",
+    "text": "Runtime of array expansion\n\ndouble array vs. increase array size by 10 plots"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#amortized-runtime",
+    "href": "slides/slides-09-03.html#amortized-runtime",
+    "title": "List + Array-based List",
+    "section": "Amortized runtime",
+    "text": "Amortized runtime\n\nIt is not technically true that a single append is \\(O(1)\\) – sometimes it is \\(O(n)\\)\nIt IS true that \\(n\\) appends cost \\(O(n)\\) time in total\nSpread that total over all \\(n\\) appends: \\(O(n) / n = O(1)\\) per append, on average\nWe say append has amortized runtime \\(O(1)\\)\n\nWhat if we grew the array by 10 each time instead of doubling? (see the plot!)"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#shifting-right",
+    "href": "slides/slides-09-03.html#shifting-right",
+    "title": "List + Array-based List",
+    "section": "Shifting right",
+    "text": "Shifting right\ninsert(1, X) on a list with 4 items:\n                      index:   0   1   2   3   4\nbefore:                      [ A | B | C | D |   ]\nafter shiftRight(1):         [ A | B | B | C | D ]   copy backwards\ndata[1] = X:                 [ A | X | B | C | D ]\nWhy do we have to copy starting from the end? What happens if we start from index 1?"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#edge-cases-checklist",
+    "href": "slides/slides-09-04.html#edge-cases-checklist",
+    "title": "Linked List",
+    "section": "Edge cases checklist",
+    "text": "Edge cases checklist\nLinked list bugs almost always hide in the edge cases. For every method, ask:\n\nWhat if the list is empty? (head == null)\nWhat if the list has one node? (head == tail)\nWhat if we change the head? (do we update head?)\nWhat if we change the tail? (do we update tail?)\nWhat if the index is out of range?\nDid we update length?"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#prepend-o1-1",
+    "href": "slides/slides-09-04.html#prepend-o1-1",
+    "title": "Linked List",
+    "section": "prepend – O(1)",
+    "text": "prepend – O(1)\npublic void prepend(T value) {\n  Node&lt;T&gt; nodeToAdd = new Node&lt;&gt;(value);\n  if (head == null) {\n    head = nodeToAdd;\n    tail = nodeToAdd;\n  } else {\n    nodeToAdd.setNext(head);\n    head = nodeToAdd;\n  }\n  length++;\n}"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#same-test-different-implementation",
+    "href": "slides/slides-09-04.html#same-test-different-implementation",
+    "title": "Linked List",
+    "section": "Same test, different implementation",
+    "text": "Same test, different implementation\nOur UseList test from the ArrayList lecture – change one word:\npublic class UseList {\n    public static void main(String[] args) {\n        List&lt;String&gt; fruitList = new LinkedList&lt;&gt;(); // was: new ArrayList&lt;&gt;()\n        fruitList.append(\"apple\");\n        fruitList.append(\"pear\");\n        fruitList.append(\"banana\");\n        fruitList.prepend(\"kiwi\");\n        fruitList.prepend(\"tomato\");\n\n        System.out.println(fruitList); // tomato kiwi apple pear banana\n    }\n}\nThis is the payoff of writing the List interface first: code that uses a List doesn’t care how it is implemented."
+  },
+  {
+    "objectID": "slides/slides-09-04.html#delete-node-head-and-tail",
+    "href": "slides/slides-09-04.html#delete-node-head-and-tail",
+    "title": "Linked List",
+    "section": "Delete node – head and tail",
+    "text": "Delete node – head and tail\nRemoving the head – there is no previous node!\nbefore:    head → [A] → [B] → [C] → null\npop(0):    head = head.getNext()\nafter:     head → [B] → [C] → null\nRemoving the tail – previous becomes the new tail\nbefore:    [A] → [B] → [C] → null      tail → [C]\npop(2):    previous.setNext(null); tail = previous\nafter:     [A] → [B] → null            tail → [B]"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#arraylist-vs.-linkedlist",
+    "href": "slides/slides-09-04.html#arraylist-vs.-linkedlist",
+    "title": "Linked List",
+    "section": "ArrayList vs. LinkedList",
+    "text": "ArrayList vs. LinkedList\n\n\n\n\n\n\n\n\n\nArrayList\nLinkedList\n\n\n\n\nget/set by index\nO(1)\nO(n)\n\n\ninsert/pop at front\nO(n)\nO(1)\n\n\nappend\nO(1) amortized\nO(1) (with tail)\n\n\npop at end\nO(1)\nO(n)\n\n\ninsert/pop in middle\nO(n)\nO(n)\n\n\nmemory\none block, may have unused slots\none node (data + reference) per item"
   }
 ]
