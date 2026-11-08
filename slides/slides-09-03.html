@@ -1176,34 +1176,32 @@ margin-right: 0; }
 <span id="cb4-36"><a></a>    }</span>
 <span id="cb4-37"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<section id="finish-implementation" class="slide level2">
+<h2>Finish implementation</h2>
+<p>Submit your <code>List.java</code> and <code>ArrayList.java</code> files to gradescope.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>public class UseList {</span>
+<span id="cb5-2"><a></a>    public static void main(String[] args) {</span>
+<span id="cb5-3"><a></a>        List&lt;String&gt; fruitList = new ArrayList&lt;&gt;();</span>
+<span id="cb5-4"><a></a>        System.out.println(fruitList.length()); // 0</span>
+<span id="cb5-5"><a></a>        System.out.println(fruitList);</span>
+<span id="cb5-6"><a></a></span>
+<span id="cb5-7"><a></a>        fruitList.append(&quot;apple&quot;);</span>
+<span id="cb5-8"><a></a>        fruitList.append(&quot;pear&quot;);</span>
+<span id="cb5-9"><a></a>        fruitList.append(&quot;banana&quot;);</span>
+<span id="cb5-10"><a></a>    }</span>
+<span id="cb5-11"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 <section id="tostring" class="slide level2">
 <h2><code>toString()</code></h2>
 <p>What happens if we run <code>System.out.println(fruitList);</code> without a <code>toString()</code> method?</p>
 <pre><code>ArrayList@1b6d3586</code></pre>
 <p>Write a <code>toString()</code> that returns the items separated by spaces – only the first <code>length</code> items!</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>@Override</span>
-<span id="cb6-2"><a></a>public String toString() {</span>
-<span id="cb6-3"><a></a>  String out = &quot;&quot;;</span>
-<span id="cb6-4"><a></a>  for (int i = 0; i &lt; length; i++) out += data[i] + &quot; &quot;;</span>
-<span id="cb6-5"><a></a>  return out.trim();</span>
-<span id="cb6-6"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="finish-implementation" class="slide level2">
-<h2>Finish implementation</h2>
-<p>Submit your <code>List.java</code> and <code>ArrayList.java</code> files to gradescope.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a>public class UseList {</span>
-<span id="cb7-2"><a></a>    public static void main(String[] args) {</span>
-<span id="cb7-3"><a></a>        List&lt;String&gt; fruitList = new ArrayList&lt;&gt;();</span>
-<span id="cb7-4"><a></a>        System.out.println(fruitList.length()); // 0</span>
-<span id="cb7-5"><a></a>        System.out.println(fruitList);</span>
-<span id="cb7-6"><a></a></span>
-<span id="cb7-7"><a></a>        fruitList.append(&quot;apple&quot;);</span>
-<span id="cb7-8"><a></a>        fruitList.append(&quot;pear&quot;);</span>
-<span id="cb7-9"><a></a>        fruitList.append(&quot;banana&quot;);</span>
-<span id="cb7-10"><a></a></span>
-<span id="cb7-11"><a></a>        System.out.println(fruitList); // apple pear banana</span>
-<span id="cb7-12"><a></a>    }</span>
-<span id="cb7-13"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a>@Override</span>
+<span id="cb7-2"><a></a>public String toString() {</span>
+<span id="cb7-3"><a></a>  String out = &quot;&quot;;</span>
+<span id="cb7-4"><a></a>  for (int i = 0; i &lt; length; i++) out += data[i] + &quot; &quot;;</span>
+<span id="cb7-5"><a></a>  return out.trim();</span>
+<span id="cb7-6"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="arraylist-append" class="slide level2">
 <h2>ArrayList append</h2>
@@ -1235,7 +1233,7 @@ margin-right: 0; }
 </section>
 <section id="submit-to-gradescope-with-array-expansion" class="slide level2">
 <h2>Submit to gradescope with array expansion</h2>
-<p>Submit your <code>List.java</code> and <code>ArrayList.java</code> files to gradescope making sure your array implementation can do multiple append calls (your implementation deals with array expansion)</p>
+<p>Submit your <code>List.java</code> and <code>ArrayList.java</code> files to gradescope making sure your array implementation can do multiple append calls (your implementation deals with array expansion) (don’t forget the <code>toString()</code> implementation as well)</p>
 </section>
 <section id="runtime-of-array-expansion" class="slide level2">
 <h2>Runtime of array expansion</h2>
