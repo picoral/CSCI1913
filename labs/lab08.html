@@ -4985,8 +4985,7 @@ background-color: #5e0013;
   <li><a href="#node" id="toc-node" class="nav-link" data-scroll-target="#node">Node</a></li>
   <li><a href="#linkedset" id="toc-linkedset" class="nav-link" data-scroll-target="#linkedset">LinkedSet</a>
   <ul class="collapse">
-  <li><a href="#constructor" id="toc-constructor" class="nav-link" data-scroll-target="#constructor">constructor</a></li>
-  <li><a href="#contains" id="toc-contains" class="nav-link" data-scroll-target="#contains">contains</a></li>
+  <li><a href="#hints-on-methods" id="toc-hints-on-methods" class="nav-link" data-scroll-target="#hints-on-methods">Hints on methods</a></li>
   </ul></li>
   <li><a href="#runtime-questions" id="toc-runtime-questions" class="nav-link" data-scroll-target="#runtime-questions">Runtime questions</a></li>
   <li><a href="#personal-testing" id="toc-personal-testing" class="nav-link" data-scroll-target="#personal-testing">Personal testing</a></li>
@@ -5096,7 +5095,7 @@ background-color: #5e0013;
 <p>Both of your implementations must behave <strong>identically</strong> from the outside. The tester files run the <em>same</em> checks on both classes, so if one passes a test and the other doesn’t, something is off.</p>
 <p>The rules every <code>Set</code> must follow are:</p>
 <ul>
-<li><strong>No duplicates.</strong> Two items are considered “the same” if <code>a.equals(b)</code> is <code>true</code>. <strong>Do not use <code>==</code></strong> to compare items – <code>==</code> checks whether two variables refer to the <em>same object in memory</em>, which is not what we want (two different <code>String</code> objects can both hold <code>&quot;cat&quot;</code>).</li>
+<li><strong>No duplicates.</strong> Two items are considered “the same” if <code>a.equals(b)</code> is <code>true</code>. <strong>Do not use <code>==</code></strong> to compare Objectes – <code>==</code> checks whether two variables refer to the <em>same object in memory</em>, which is not what we want (two different <code>String</code> objects can both hold <code>&quot;cat&quot;</code>).</li>
 <li><strong>No nulls.</strong> You may assume <code>null</code> is never passed to any method.</li>
 <li><strong>Insertion order.</strong> Sets in general don’t promise any particular order, but to make testing possible <em>our</em> sets will keep items in the order they were first added. When an item is removed, the remaining items stay in the same relative order.</li>
 <li><strong><code>toString</code> format.</strong> Items are listed in insertion order, separated by a comma and a space, surrounded by curly braces. For example, after adding <code>&quot;a&quot;</code>, <code>&quot;b&quot;</code>, <code>&quot;c&quot;</code> the set should print as <code>{a, b, c}</code>. An empty set prints as <code>{}</code>. Use each item’s own <code>toString()</code> to print it (string concatenation does this for you).</li>
@@ -5151,7 +5150,7 @@ Our <code>Set</code> vs. Java’s <code>Set</code>
 <section id="helper-methods" class="level2">
 <h2 class="anchored" data-anchor-id="helper-methods">helper methods</h2>
 <p>You should consider writing a <code>indexOf(T item)</code> helper (private) method.</p>
-<p>Search the array (only the indices that hold items!) for <code>item</code>, and return its index. If it isn’t there, return <code>-1</code>. Use <code>.equals()</code> to compare.</p>
+<p>Search the array (only the indices that hold items!) for <code>item</code>, and return its index. If it isn’t there, return <code>-1</code>. Use <code>.equals()</code> to compare T objects.</p>
 <p>Many of the remaining methods become very short once you have this helper – write it first.</p>
 </section>
 <section id="tostring" class="level2">
@@ -5162,7 +5161,7 @@ Our <code>Set</code> vs. Java’s <code>Set</code>
 </section>
 <section id="node" class="level1">
 <h1>Node</h1>
-<p><code>LinkedSet</code> is built out of <code>Node&lt;T&gt;</code> objects. Each node holds one item (<code>data</code>) and a reference to the next node in the chain (<code>next</code>). This is the same <code>Node</code> class we wrote in lecture, so you may reuse yours.</p>
+<p><code>LinkedSet</code> is built out of <code>Node&lt;T&gt;</code> objects. Each node holds one item (<code>data</code>) and a reference to the next node in the chain (<code>next</code>). This is the same <code>Node</code> class we wrote in lecture, so you may reuse yours. Implementing <code>.equals()</code> in <code>Node</code> will help you writing the <code>contains</code> method that you need to implement in <code>LinkedSet</code>.</p>
 </section>
 <section id="linkedset" class="level1">
 <h1>LinkedSet</h1>
@@ -5176,13 +5175,9 @@ Our <code>Set</code> vs. Java’s <code>Set</code>
 <li>What if we change the <strong>tail</strong>? Did we update <code>tail</code>?</li>
 <li>Did we update <code>size</code>?</li>
 </ul>
-<section id="constructor" class="level2">
-<h2 class="anchored" data-anchor-id="constructor">constructor</h2>
-<p><code>LinkedSet()</code> should create an empty set.</p>
-</section>
-<section id="contains" class="level2">
-<h2 class="anchored" data-anchor-id="contains">contains</h2>
-<p>Implementing <code>.equals()</code> will help you writing the <code>contains</code> method.</p>
+<section id="hints-on-methods" class="level2">
+<h2 class="anchored" data-anchor-id="hints-on-methods">Hints on methods</h2>
+<p><code>LinkedSet()</code> should create an empty set. Implementing <code>.equals()</code> in <code>Node</code> will help you writing the <code>contains</code> method.</p>
 </section>
 </section>
 <section id="runtime-questions" class="level1">

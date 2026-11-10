@@ -6192,6 +6192,13 @@
     "href": "labs/lab08.html#helper-methods",
     "title": "Computer Laboratory 08",
     "section": "helper methods",
-    "text": "helper methods\nYou should consider writing a indexOf(T item) helper (private) method.\nSearch the array (only the indices that hold items!) for item, and return its index. If it isn’t there, return -1. Use .equals() to compare.\nMany of the remaining methods become very short once you have this helper – write it first."
+    "text": "helper methods\nYou should consider writing a indexOf(T item) helper (private) method.\nSearch the array (only the indices that hold items!) for item, and return its index. If it isn’t there, return -1. Use .equals() to compare T objects.\nMany of the remaining methods become very short once you have this helper – write it first."
+  },
+  {
+    "objectID": "labs/lab08.html#hints-on-methods",
+    "href": "labs/lab08.html#hints-on-methods",
+    "title": "Computer Laboratory 08",
+    "section": "Hints on methods",
+    "text": "Hints on methods\nLinkedSet() should create an empty set. Implementing .equals() in Node will help you writing the contains method."
   }
 ]
