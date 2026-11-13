@@ -1079,19 +1079,49 @@ margin-right: 0; }
     |-- LinkedSetTester.java
     `-- Tester.java</code></pre>
 </section>
-<section id="create-files" class="slide level2">
+<section id="create-files" class="slide level2 smaller">
 <h2>Create Files</h2>
 <p>Here are the files you are to create:</p>
 <ul>
-<li><code>Set.java</code> (interface)</li>
+<li><code>Set.java</code> (interface) remember: <code>isEmpty</code> is a default method</li>
 <li><code>ArraySet.java</code></li>
 <li><code>Node.java</code></li>
 <li><code>LinkedSet.java</code></li>
 </ul>
+<p>The only module you are allowed to import (but you don’t have to) <code>java.util.Objects;</code></p>
 </section>
 <section id="helper-methods" class="slide level2">
 <h2>Helper methods</h2>
 <p>In addition to implementing the public <code>contains</code> method, it is helpful to implement private <code>search</code> methods for both the <code>ArraySet</code> (returns the index of the item) and the <code>LinkedSet</code> (returns the searched node) classes.</p>
+</section>
+<section id="runtime-questions" class="title-slide slide level1 smaller center">
+<h1>Runtime questions</h1>
+<p>At the top of <code>Set.java</code>, below your names, add a comment that answers the following questions. For each method, give the <strong>worst-case</strong> big-O runtime for <strong>both</strong> <code>ArraySet</code> and <code>LinkedSet</code>, in terms of <span class="math inline">\(n\)</span> (the number of items in the set), along with a one-sentence explanation.</p>
+</section>
+
+<section id="runtime-questions-1" class="title-slide slide level1 smaller center">
+<h1>Runtime questions</h1>
+<ol type="1">
+<li><code>contains</code></li>
+<li><code>add</code> (Be careful! Think about everything <code>add</code> has to do before it can actually add the item. For <code>ArraySet</code>, you may give the <em>amortized</em> runtime and say so.)</li>
+<li><code>remove</code></li>
+<li><code>size</code></li>
+<li>Both implementations keep items in insertion order and both must check for duplicates. Based on your answers above, is either implementation clearly faster than the other for a set? Explain in 2-3 sentences. What would need to change about our design to make <code>contains</code> faster than <span class="math inline">\(O(n)\)</span>?</li>
+</ol>
+</section>
+
+<section>
+<section id="runtime-questions-2" class="title-slide slide level1 smaller center">
+<h1>Runtime questions</h1>
+<p>A table inside a block comment is a perfectly fine format:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource java number-lines code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a></a><span class="co">/*</span></span>
+<span id="cb2-2"><a></a><span class="co"> * Runtime analysis</span></span>
+<span id="cb2-3"><a></a><span class="co"> *</span></span>
+<span id="cb2-4"><a></a><span class="co"> * method    | ArraySet | LinkedSet | explanation</span></span>
+<span id="cb2-5"><a></a><span class="co"> * ----------+----------+-----------+------------------------------</span></span>
+<span id="cb2-6"><a></a><span class="co"> * contains  |   O(?)   |   O(?)    | ...</span></span>
+<span id="cb2-7"><a></a><span class="co"> * ...</span></span>
+<span id="cb2-8"><a></a><span class="co"> */</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="javadoc" class="slide level2">
 <h2>Javadoc</h2>
@@ -1104,31 +1134,31 @@ margin-right: 0; }
 </section>
 <section id="javadoc-1" class="slide level2">
 <h2>Javadoc</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>   /**                                                                               </span>
-<span id="cb2-2"><a></a>   * Calculates the average of an array of test scores.</span>
-<span id="cb2-3"><a></a>   * Returns 0 if the array is null or empty.    </span>
-<span id="cb2-4"><a></a>   *              </span>
-<span id="cb2-5"><a></a>   * @param scores  an array of test scores, each in the range [0, 100]</span>
-<span id="cb2-6"><a></a>   * @param count   the number of scores in the array</span>
-<span id="cb2-7"><a></a>   * @return        the average of all scores, or 0 if the array is null or empty</span>
-<span id="cb2-8"><a></a>   * @throws        IllegalArgumentException if count is negative</span>
-<span id="cb2-9"><a></a>   *</span>
-<span id="cb2-10"><a></a>   * @author        Adriana Picoral</span>
-<span id="cb2-11"><a></a>   * @version       1.0</span>
-<span id="cb2-12"><a></a>   */</span>
-<span id="cb2-13"><a></a>  public double calculateAverage(double[] scores, int count) {</span>
-<span id="cb2-14"><a></a>      if (scores == null || scores.length == 0) return 0;</span>
-<span id="cb2-15"><a></a>      if (count &lt; 0) throw new IllegalArgumentException(&quot;Count cannot be negative&quot;);</span>
-<span id="cb2-16"><a></a></span>
-<span id="cb2-17"><a></a>      double sum = 0;</span>
-<span id="cb2-18"><a></a>      for (double score : scores) {</span>
-<span id="cb2-19"><a></a>          sum += score;</span>
-<span id="cb2-20"><a></a>      }</span>
-<span id="cb2-21"><a></a>      return sum / count;</span>
-<span id="cb2-22"><a></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>   /**                                                                               </span>
+<span id="cb3-2"><a></a>   * Calculates the average of an array of test scores.</span>
+<span id="cb3-3"><a></a>   * Returns 0 if the array is null or empty.    </span>
+<span id="cb3-4"><a></a>   *              </span>
+<span id="cb3-5"><a></a>   * @param scores  an array of test scores, each in the range [0, 100]</span>
+<span id="cb3-6"><a></a>   * @param count   the number of scores in the array</span>
+<span id="cb3-7"><a></a>   * @return        the average of all scores, or 0 if the array is null or empty</span>
+<span id="cb3-8"><a></a>   * @throws        IllegalArgumentException if count is negative</span>
+<span id="cb3-9"><a></a>   *</span>
+<span id="cb3-10"><a></a>   * @author        Adriana Picoral</span>
+<span id="cb3-11"><a></a>   * @version       1.0</span>
+<span id="cb3-12"><a></a>   */</span>
+<span id="cb3-13"><a></a>  public double calculateAverage(double[] scores, int count) {</span>
+<span id="cb3-14"><a></a>      if (scores == null || scores.length == 0) return 0;</span>
+<span id="cb3-15"><a></a>      if (count &lt; 0) throw new IllegalArgumentException(&quot;Count cannot be negative&quot;);</span>
+<span id="cb3-16"><a></a></span>
+<span id="cb3-17"><a></a>      double sum = 0;</span>
+<span id="cb3-18"><a></a>      for (double score : scores) {</span>
+<span id="cb3-19"><a></a>          sum += score;</span>
+<span id="cb3-20"><a></a>      }</span>
+<span id="cb3-21"><a></a>      return sum / count;</span>
+<span id="cb3-22"><a></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

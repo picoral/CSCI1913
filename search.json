@@ -6262,7 +6262,7 @@
     "href": "labs/lab08-slides.html#create-files",
     "title": "Lab 08",
     "section": "Create Files",
-    "text": "Create Files\nHere are the files you are to create:\n\nSet.java (interface)\nArraySet.java\nNode.java\nLinkedSet.java"
+    "text": "Create Files\nHere are the files you are to create:\n\nSet.java (interface) remember: isEmpty is a default method\nArraySet.java\nNode.java\nLinkedSet.java\n\nThe only module you are allowed to import (but you don’t have to) java.util.Objects;"
   },
   {
     "objectID": "labs/lab08-slides.html#helper-methods",
