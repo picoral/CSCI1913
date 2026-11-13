@@ -5856,7 +5856,7 @@
     "href": "slides/slides-09-04.html#methods",
     "title": "Linked List",
     "section": "Methods",
-    "text": "Methods\nWhat methods do you need to implement?\nHere’s our generic interface we used to implement our ArrayList:\npublic interface List&lt;T&gt; {\n    void append(T value);\n    void prepend(T value);\n    void insert(int index, T value);\n    int length();\n    T get(int index);\n    void set(int index, T value);\n    T pop(int index);\n}\nImplement append, prepend and length in your LinkedList&lt;T&gt; class + a toString() method to test your code. Submit your List.java, Node.java and LinkedList.java files to gradescope."
+    "text": "Methods\nWhat methods do you need to implement?\nHere’s our generic interface we used to implement our ArrayList:\npublic interface List&lt;T&gt; {\n    void append(T value);\n    void prepend(T value);\n    void insert(int index, T value);\n    int length();\n    T get(int index);\n    void set(int index, T value);\n    T pop(int index);\n}\nImplement append, prepend and length in your LinkedList&lt;T&gt; class + a toString() method to test your code.\nAdd implements List&lt;T&gt; to your class – for the methods we haven’t written yet, add a stub so the class compiles:\npublic T get(int index) {\n  throw new UnsupportedOperationException(\"not implemented yet\");\n}\nSubmit your List.java, Node.java and LinkedList.java files to gradescope."
   },
   {
     "objectID": "slides/slides-09-04.html#prepend-o1",
@@ -5870,7 +5870,7 @@
     "href": "slides/slides-09-04.html#append-on",
     "title": "Linked List",
     "section": "append – O(n)",
-    "text": "append – O(n)\nIf we only had head, we would need to walk to the end of the list:\npublic void append(T value) {\n  Node&lt;T&gt; nodeToAdd = new Node&lt;&gt;(value);\n  if (head == null) head = nodeToAdd;\n  else {\n    Node&lt;T&gt; currNode = head;\n    while (currNode.getNext() != null) {\n      currNode = currNode.getNext();\n    }\n    currNode.setNext(nodeToAdd);\n  }\n  length++;\n}"
+    "text": "append – O(n)\nIf we only had head, we would need to walk to the end of the list:\npublic void append(T value) {\n  Node&lt;T&gt; nodeToAdd = new Node&lt;&gt;(value);\n  if (head == null) head = nodeToAdd; // no tail in this version\n  else {\n    Node&lt;T&gt; currNode = head;\n    while (currNode.getNext() != null) {\n      currNode = currNode.getNext();\n    }\n    currNode.setNext(nodeToAdd);\n  }\n  length++;\n}"
   },
   {
     "objectID": "slides/slides-09-04.html#append-o1",
@@ -5905,14 +5905,14 @@
     "href": "slides/slides-09-04.html#search-solution",
     "title": "Linked List",
     "section": "search() solution",
-    "text": "search() solution\npublic boolean search(T data) {\n  Node&lt;T&gt; currNode = head;\n  while (currNode != null) {\n    if (currNode.getData().equals(data)) {\n      return true;\n    }\n    currNode = currNode.getNext();\n  }\n  return false;\n}"
+    "text": "search() solution\npublic boolean search(T data) {\n  Node&lt;T&gt; currNode = head;\n  while (currNode != null) {\n    if (currNode.getData().equals(data)) {\n      return true;\n    }\n    currNode = currNode.getNext();\n  }\n  return false;\n}\nWe use .equals() and not == – we want to compare values, not whether two references point to the same object"
   },
   {
     "objectID": "slides/slides-09-04.html#linear-search-complexity",
     "href": "slides/slides-09-04.html#linear-search-complexity",
     "title": "Linked List",
     "section": "Linear search – complexity",
-    "text": "Linear search – complexity\nWhat we have implemented is an unsorted linked list – how many comparisons does it require to find a target element?\nIn the worst case, each node must be examined once, resulting in \\(O(n)\\) complexity – \\(n\\) is the number of elements in the list."
+    "text": "Linear search – complexity\nWhat we have implemented is an unsorted linked list – how many comparisons does it require to find a target element?\n\nBest case: the target is at the head – \\(O(1)\\)\nWorst case: each node must be examined once (target is last or not in the list) – \\(O(n)\\), where \\(n\\) is the number of elements in the list"
   },
   {
     "objectID": "slides/slides-09-04.html#delete-node",
@@ -5926,7 +5926,7 @@
     "href": "slides/slides-09-04.html#implement-popint-index",
     "title": "Linked List",
     "section": "implement pop(int index)",
-    "text": "implement pop(int index)\nImplement pop(int index), get(int index), and set(int index, T value) in your LinkedList.java and submit it alongside with List.java and Node.java to gradescope.\nGo back to the edge cases checklist!"
+    "text": "implement pop(int index)\nImplement insert(int index, T value), pop(int index), get(int index), and set(int index, T value) in your LinkedList.java and submit it alongside with List.java and Node.java to gradescope.\nGo back to the edge cases checklist!"
   },
   {
     "objectID": "slides/slides-09-04.html#find-index-and-remove",
@@ -5940,7 +5940,7 @@
     "href": "slides/slides-09-04.html#complete-linkedlist-solution",
     "title": "Linked List",
     "section": "Complete LinkedList solution",
-    "text": "Complete LinkedList solution\npublic class LinkedList&lt;T&gt; implements List&lt;T&gt; {\n    private Node&lt;T&gt; head;\n    private Node&lt;T&gt; tail;\n    private int length;\n\n    public LinkedList() {\n        head = null;\n        tail = null;\n        length = 0;\n    }\n\n    public void append(T value) {\n        Node&lt;T&gt; nodeToAdd = new Node&lt;&gt;(value);\n        if (head == null) {\n            head = nodeToAdd;\n            tail = nodeToAdd;\n        } else {\n            tail.setNext(nodeToAdd);\n            tail = nodeToAdd;\n        }\n        length++;\n    }\n\n    public void prepend(T value) {\n        Node&lt;T&gt; nodeToAdd = new Node&lt;&gt;(value);\n        if (head == null) {\n            head = nodeToAdd;\n            tail = nodeToAdd;\n        } else {\n            nodeToAdd.setNext(head);\n            head = nodeToAdd;\n        }\n        length++;\n    }\n\n    public void insert(int index, T value) {\n        if (index &lt; 0 || index &gt; length) throw new IndexOutOfBoundsException(\"index out of range\");\n        if (index == 0) {\n            prepend(value);\n            return;\n        }\n        if (index == length) {\n            append(value);\n            return;\n        }\n        Node&lt;T&gt; nodeToAdd = new Node&lt;&gt;(value);\n        int count = 0;\n        Node&lt;T&gt; previous = head;\n        while (count &lt; index - 1) {\n            previous = previous.getNext();\n            count++;\n        }\n        nodeToAdd.setNext(previous.getNext());\n        previous.setNext(nodeToAdd);\n        length++;\n    }\n\n    public int length() {return length; }\n\n    public T get(int index) {\n        if (index &lt; 0 || index &gt;= length) throw new IndexOutOfBoundsException(\"index out of range\");\n        int count = 0;\n        Node&lt;T&gt; cur = head;\n        while (count &lt; index) {\n            cur = cur.getNext();\n            count++;\n        }\n        return cur.getData();\n    }\n\n    public void set(int index, T value) {\n        if (index &lt; 0 || index &gt;= length) throw new IndexOutOfBoundsException(\"index out of range\");\n        int count = 0;\n        Node&lt;T&gt; cur = head;\n        while (count &lt; index) {\n            cur = cur.getNext();\n            count++;\n        }\n        cur.setData(value);\n    }\n\n    public T pop(int index) {\n        if (index &lt; 0 || index &gt;= length) throw new IndexOutOfBoundsException(\"index out of range\");\n        int count = 0;\n        Node&lt;T&gt; previous = null;\n        Node&lt;T&gt; cur = head;\n        while (count &lt; index) {\n            previous = cur;\n            cur = cur.getNext();\n            count++;\n        }\n        if (previous == null) head = cur.getNext(); // removing the head\n        else previous.setNext(cur.getNext());\n        if (cur == tail) tail = previous;          // removing the tail\n        length--;\n        return cur.getData();\n    }\n\n    public String toString() {\n        String out = \"\";\n        Node&lt;T&gt; cur = head;\n        while (cur != null) {\n            out += cur.getData() + \" \";\n            cur = cur.getNext();\n        }\n        return out.trim();\n    }\n\n    public boolean search(T data) {\n        Node&lt;T&gt; currNode = head;\n        while (currNode != null) {\n            if (currNode.getData().equals(data)) {\n                return true;\n            }\n            currNode = currNode.getNext();\n        }\n        return false;\n    }\n\n}"
+    "text": "Complete LinkedList solution\nimport java.util.Objects;\n\npublic class LinkedList&lt;T&gt; implements List&lt;T&gt; {\n    private Node&lt;T&gt; head;\n    private Node&lt;T&gt; tail;\n    private int length;\n\n    public LinkedList() {\n        head = null;\n        tail = null;\n        length = 0;\n    }\n\n    @Override\n    public void append(T value) {\n        Node&lt;T&gt; nodeToAdd = new Node&lt;&gt;(value);\n        if (head == null) {\n            head = nodeToAdd;\n            tail = nodeToAdd;\n        } else {\n            tail.setNext(nodeToAdd);\n            tail = nodeToAdd;\n        }\n        length++;\n    }\n\n    @Override\n    public void prepend(T value) {\n        Node&lt;T&gt; nodeToAdd = new Node&lt;&gt;(value);\n        if (head == null) {\n            head = nodeToAdd;\n            tail = nodeToAdd;\n        } else {\n            nodeToAdd.setNext(head);\n            head = nodeToAdd;\n        }\n        length++;\n    }\n\n    @Override\n    public void insert(int index, T value) {\n        if (index &lt; 0 || index &gt; length) throw new IndexOutOfBoundsException(\"index out of range\");\n        if (index == 0) {\n            prepend(value);\n            return;\n        }\n        if (index == length) {\n            append(value);\n            return;\n        }\n        Node&lt;T&gt; nodeToAdd = new Node&lt;&gt;(value);\n        int count = 0;\n        Node&lt;T&gt; previous = head;\n        while (count &lt; index - 1) {\n            previous = previous.getNext();\n            count++;\n        }\n        nodeToAdd.setNext(previous.getNext());\n        previous.setNext(nodeToAdd);\n        length++;\n    }\n\n    @Override\n    public int length() {return length; }\n\n    @Override\n    public T get(int index) {\n        if (index &lt; 0 || index &gt;= length) throw new IndexOutOfBoundsException(\"index out of range\");\n        int count = 0;\n        Node&lt;T&gt; cur = head;\n        while (count &lt; index) {\n            cur = cur.getNext();\n            count++;\n        }\n        return cur.getData();\n    }\n\n    @Override\n    public void set(int index, T value) {\n        if (index &lt; 0 || index &gt;= length) throw new IndexOutOfBoundsException(\"index out of range\");\n        int count = 0;\n        Node&lt;T&gt; cur = head;\n        while (count &lt; index) {\n            cur = cur.getNext();\n            count++;\n        }\n        cur.setData(value);\n    }\n\n    @Override\n    public T pop(int index) {\n        if (index &lt; 0 || index &gt;= length) throw new IndexOutOfBoundsException(\"index out of range\");\n        int count = 0;\n        Node&lt;T&gt; previous = null;\n        Node&lt;T&gt; cur = head;\n        while (count &lt; index) {\n            previous = cur;\n            cur = cur.getNext();\n            count++;\n        }\n        if (previous == null) head = cur.getNext(); // removing the head\n        else previous.setNext(cur.getNext());\n        if (cur == tail) tail = previous;          // removing the tail\n        length--;\n        return cur.getData();\n    }\n\n    @Override\n    public String toString() {\n        String out = \"\";\n        Node&lt;T&gt; cur = head;\n        while (cur != null) {\n            out += cur.getData() + \" \";\n            cur = cur.getNext();\n        }\n        return out.trim();\n    }\n\n    @Override\n    public boolean search(T data) {\n        Node&lt;T&gt; currNode = head;\n        while (currNode != null) {\n            if (Objects.equals(currNode.getData(), data)) {\n                return true;\n            }\n            currNode = currNode.getNext();\n        }\n        return false;\n    }\n\n}"
   },
   {
     "objectID": "slides/slides-09-04.html#runtime-of-linkedlist",
@@ -5954,14 +5954,14 @@
     "href": "slides/slides-09-04.html#other-types-of-linked-list",
     "title": "Linked List",
     "section": "Other types of linked list",
-    "text": "Other types of linked list\nWe just implemented a singly linked list\n\nDoubly linked list – each node also points to the previous node, so pop at the end becomes O(1):"
+    "text": "Other types of linked list\nWe just implemented a singly linked list"
   },
   {
     "objectID": "slides/slides-09-04.html#other-types-of-linked-list-1",
     "href": "slides/slides-09-04.html#other-types-of-linked-list-1",
     "title": "Linked List",
     "section": "Other types of linked list",
-    "text": "Other types of linked list\nCircular linked list:"
+    "text": "Other types of linked list\nDoubly linked list – each node also points to the previous node:\n\nHow does this change the runtime of pop at the end?"
   },
   {
     "objectID": "slides/slides-09-03.html#list-implementation-array",
@@ -6045,7 +6045,7 @@
     "href": "slides/slides-09-04.html#same-test-different-implementation",
     "title": "Linked List",
     "section": "Same test, different implementation",
-    "text": "Same test, different implementation\nOur UseList test from the ArrayList lecture – change one word:\npublic class UseList {\n    public static void main(String[] args) {\n        List&lt;String&gt; fruitList = new LinkedList&lt;&gt;(); // was: new ArrayList&lt;&gt;()\n        fruitList.append(\"apple\");\n        fruitList.append(\"pear\");\n        fruitList.append(\"banana\");\n        fruitList.prepend(\"kiwi\");\n        fruitList.prepend(\"tomato\");\n\n        System.out.println(fruitList); // tomato kiwi apple pear banana\n    }\n}\nThis is the payoff of writing the List interface first: code that uses a List doesn’t care how it is implemented."
+    "text": "Same test, different implementation\nA trimmed version of our UseList test from the ArrayList lecture – only the constructor changes:\npublic class UseList {\n    public static void main(String[] args) {\n        List&lt;String&gt; fruitList = new LinkedList&lt;&gt;(); // was: new ArrayList&lt;&gt;()\n        fruitList.append(\"apple\");\n        fruitList.append(\"pear\");\n        fruitList.append(\"banana\");\n        fruitList.prepend(\"kiwi\");\n        fruitList.prepend(\"tomato\");\n\n        System.out.println(fruitList); // tomato kiwi apple pear banana\n    }\n}\nThis is the payoff of writing the List interface first: code that uses a List doesn’t care how it is implemented.\n(We’ll add back the insert and pop calls once those methods are implemented.)"
   },
   {
     "objectID": "slides/slides-09-04.html#delete-node-head-and-tail",
@@ -6200,5 +6200,40 @@
     "title": "Computer Laboratory 08",
     "section": "Hints on methods",
     "text": "Hints on methods\nLinkedSet() should create an empty set. Implementing .equals() in Node will help you writing the contains method."
+  },
+  {
+    "objectID": "slides/slides-09-04.html#insert-node",
+    "href": "slides/slides-09-04.html#insert-node",
+    "title": "Linked List",
+    "section": "Insert node",
+    "text": "Insert node\nInserting at index – walk to the node before the position, then link the new node in:\nbefore:                 head → [A] → [B] → [C] → null\ninsert(2, X):           walk to previous = [B] (index 1)\n1. X.next = B.next:     [X] → [C]\n2. B.next = X:          head → [A] → [B] → [X] → [C] → null\n\nWhat happens if we do step 2 before step 1?\ninsert(0, value) → just call prepend(value)\ninsert(length, value) → just call append(value)"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#other-types-of-linked-list-2",
+    "href": "slides/slides-09-04.html#other-types-of-linked-list-2",
+    "title": "Linked List",
+    "section": "Other types of linked list",
+    "text": "Other types of linked list\nCircular linked list:"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#search-and-nullpointerexception",
+    "href": "slides/slides-09-04.html#search-and-nullpointerexception",
+    "title": "Linked List",
+    "section": "search() and NullPointerException",
+    "text": "search() and NullPointerException\nNothing stops someone from storing null in our list:\nList&lt;String&gt; fruitList = new LinkedList&lt;&gt;();\nfruitList.append(\"apple\");\nfruitList.append(null);\nfruitList.append(\"pear\");\nfruitList.search(\"pear\"); // NullPointerException!\n\nWhen currNode reaches the second node, currNode.getData() is null\nnull.equals(data) – we can’t call a method on null, so Java throws a NullPointerException\nNote: search(null) on a list without null values is fine – \"apple\".equals(null) just returns false"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#fix-1-check-for-null-first",
+    "href": "slides/slides-09-04.html#fix-1-check-for-null-first",
+    "title": "Linked List",
+    "section": "Fix 1 – check for null first",
+    "text": "Fix 1 – check for null first\npublic boolean search(T data) {\n  Node&lt;T&gt; currNode = head;\n  while (currNode != null) {\n    T value = currNode.getData();\n    if (value == null) {\n      if (data == null) return true;    // looking for null, found null\n    } else if (value.equals(data)) {    // safe: value is not null\n      return true;\n    }\n    currNode = currNode.getNext();\n  }\n  return false;\n}\nOnly call .equals() on something you know is not null"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#fix-2-objects.equals",
+    "href": "slides/slides-09-04.html#fix-2-objects.equals",
+    "title": "Linked List",
+    "section": "Fix 2 – Objects.equals()",
+    "text": "Fix 2 – Objects.equals()\nJava already has a null-safe helper in java.util.Objects:\nimport java.util.Objects;\n\npublic boolean search(T data) {\n  Node&lt;T&gt; currNode = head;\n  while (currNode != null) {\n    if (Objects.equals(currNode.getData(), data)) {\n      return true;\n    }\n    currNode = currNode.getNext();\n  }\n  return false;\n}\nObjects.equals(a, b) returns true if both are null, false if only one is null, and a.equals(b) otherwise – the same logic as Fix 1"
   }
 ]
