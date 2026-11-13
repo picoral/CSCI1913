@@ -1275,9 +1275,10 @@ margin-right: 0; }
 </ul>
 <p>What if we grew the array by 10 each time instead of doubling? (see the plot!)</p>
 </section>
-<section id="updated-list-interface" class="slide level2">
-<h2>Updated List interface</h2>
-<p>Let’s add <code>prepend</code>, and <code>insert</code>to our interface.</p>
+<section id="update-list-interface" class="slide level2">
+<h2>Update List interface</h2>
+<p>You can download <a href="code/ArrayList.zip">the code we have worked on so far</a>.</p>
+<p>Add <code>prepend</code> and <code>insert</code> to the List interface.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a></a>void insert(int index, T value);</span>
 <span id="cb12-2"><a></a>void prepend(T value);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>When implementing ArrayList <code>insert</code> and <code>prepend</code>, we need to shift values in our array to the right</p>

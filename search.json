@@ -6235,5 +6235,12 @@
     "title": "Linked List",
     "section": "Fix 2 – Objects.equals()",
     "text": "Fix 2 – Objects.equals()\nJava already has a null-safe helper in java.util.Objects:\nimport java.util.Objects;\n\npublic boolean search(T data) {\n  Node&lt;T&gt; currNode = head;\n  while (currNode != null) {\n    if (Objects.equals(currNode.getData(), data)) {\n      return true;\n    }\n    currNode = currNode.getNext();\n  }\n  return false;\n}\nObjects.equals(a, b) returns true if both are null, false if only one is null, and a.equals(b) otherwise – the same logic as Fix 1"
+  },
+  {
+    "objectID": "slides/slides-09-03.html#update-list-interface",
+    "href": "slides/slides-09-03.html#update-list-interface",
+    "title": "List + Array-based List",
+    "section": "Update List interface",
+    "text": "Update List interface\nYou can download the code we have worked on so far.\nAdd prepend and insert to the List interface.\nvoid insert(int index, T value);\nvoid prepend(T value);\nWhen implementing ArrayList insert and prepend, we need to shift values in our array to the right"
   }
 ]
