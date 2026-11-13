@@ -5702,7 +5702,7 @@
     "href": "slides/slides-09-03.html#updated-list-interface",
     "title": "List + Array-based List",
     "section": "Updated List interface",
-    "text": "Updated List interface\nLet’s add prepend, insert, append to our interface.\nvoid insert(int index, T value);\nvoid prepend(T value);\nWhen implementing ArrayList insert and prepend, we need to shift values in our array to the right"
+    "text": "Updated List interface\nLet’s add prepend, and insertto our interface.\nvoid insert(int index, T value);\nvoid prepend(T value);\nWhen implementing ArrayList insert and prepend, we need to shift values in our array to the right"
   },
   {
     "objectID": "slides/slides-09-03.html#shiftright",
