@@ -6389,5 +6389,12 @@
     "title": "Linked List",
     "section": "set and get through index",
     "text": "set and get through index\n\ncheck if index argument is valid\ncreate a count variable starting at zero, loop across the nodes updating count\nwhen count reached the index, you have the node you need – either change the its data to set it or return it to get it"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#implement-the-entire-list-interface",
+    "href": "slides/slides-09-04.html#implement-the-entire-list-interface",
+    "title": "Linked List",
+    "section": "implement the entire List interface",
+    "text": "implement the entire List interface\nImplement the rest of the List interface in your LinkedList.java and submit it alongside with List.java and Node.java to gradescope.\nGo back to the edge cases checklist!"
   }
 ]
