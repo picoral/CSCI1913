@@ -6288,70 +6288,70 @@
   {
     "objectID": "projects/project3.html",
     "href": "projects/project3.html",
-    "title": "CSC 1913 Project 3 – Which penguin is that? Nearest-neighbor classification with k-d trees",
+    "title": "CSC 1913 Project 3 – Which penguin is that?",
     "section": "",
     "text": "Deadline: Mon, Dec 14, 2026"
   },
   {
     "objectID": "projects/project3.html#pacing-and-planning",
     "href": "projects/project3.html#pacing-and-planning",
-    "title": "CSC 1913 Project 3 – Which penguin is that? Nearest-neighbor classification with k-d trees",
+    "title": "CSC 1913 Project 3 – Which penguin is that?",
     "section": "Pacing and Planning",
-    "text": "Pacing and Planning\nThis is a three-week assignment. It is shorter in lines of code than Project 2, but it asks for more thinking per line.\nThis writeup is deliberately different from the ones you’ve seen so far. Earlier projects told you, often step by step, how to build each method. This one mostly tells you what each class must do (its contract) and why, and leaves the how to you. Expect to spend real time with paper and pencil:\n\ndrawing trees\ntracing your algorithm on small examples\nconvincing yourself that it is correct before you type it\n\nThat planning is the assignment, not a detour from it.\nA suggested schedule:\n\n\n\n\n\n\n\nWeek\nGoal\n\n\n\n\n1\nRead this whole document. Scaler done. KDTree insert / size / height / contains done. Start drawing nearest-neighbor examples by hand.\n\n\n2\nnearest working (correct first, then efficient). kNearest designed and working.\n\n\n3\nKNNClassifier, run ClassifierMain, write the analysis, clean up style."
+    "text": "Pacing and Planning\nThis is a three-week assignment. It is shorter in lines of code than Project 2, but it asks for more thinking per line.\nThis writeup is deliberately different from the ones you’ve seen so far. Earlier projects told you, often step by step, how to build each method. This one mostly tells you what each class must do (its contract) and why, and leaves the how to you. Expect to spend real time with paper and pencil:\n\ndrawing trees\ntracing your algorithm on small examples\nconvincing yourself that it is correct before you type it\n\nThat planning is the assignment, not a detour from it.\nA suggested schedule:\n\n\n\n\n\n\n\nWeek\nGoal\n\n\n\n\n1\nRead this whole document and the code provided. KDTree insert / size / height / contains done. Start drawing nearest-neighbor examples by hand.\n\n\n2\nnearest working (correct first, then efficient). kNearest designed and working.\n\n\n3\nKNNClassifier, run ClassifierMain, write the analysis, clean up style."
   },
   {
     "objectID": "projects/project3.html#deadline",
     "href": "projects/project3.html#deadline",
-    "title": "CSC 1913 Project 3 – Which penguin is that? Nearest-neighbor classification with k-d trees",
+    "title": "CSC 1913 Project 3 – Which penguin is that?",
     "section": "Deadline",
     "text": "Deadline\nThe deadline for this assignment is Mon, Dec 14, 2026.\nLate work is not generally accepted on projects – there will be a brief grace period on gradescope to help mitigate technical issues – but beyond this grace period late work will not be accepted without an exception.\nTo request an extension, please email course staff before the deadline, and clearly state both the reason an extension is needed/warranted, and the length of the extension you are requesting."
   },
   {
     "objectID": "projects/project3.html#files",
     "href": "projects/project3.html#files",
-    "title": "CSC 1913 Project 3 – Which penguin is that? Nearest-neighbor classification with k-d trees",
+    "title": "CSC 1913 Project 3 – Which penguin is that?",
     "section": "Files",
-    "text": "Files\nYou will write the following files:\n\nScaler.java – computes the mean and standard deviation of each feature in a data set and converts features to z-scores.\nKDNode.java – one node of a k-d tree. You design this class.\nKDTree.java – a k-d tree: a binary search tree for multi-dimensional points that can quickly find the points nearest to a query.\nKNNClassifier.java – a k-nearest-neighbor classifier that predicts a penguin’s species from its measurements.\nanalysis.txt – your written answers to the analysis questions."
+    "text": "Files\nYou will write the following files:\n\nKDNode.java – one node of a k-d tree. You design this class.\nKDTree.java – a k-d tree: a binary search tree for multi-dimensional points that can quickly find the points nearest to a query.\nKNNClassifier.java – a k-nearest-neighbor classifier that predicts a penguin’s species from its measurements.\nanalysis.txt – your written answers to the analysis questions."
   },
   {
     "objectID": "projects/project3.html#other-important-restrictions",
     "href": "projects/project3.html#other-important-restrictions",
-    "title": "CSC 1913 Project 3 – Which penguin is that? Nearest-neighbor classification with k-d trees",
+    "title": "CSC 1913 Project 3 – Which penguin is that?",
     "section": "Other important restrictions",
     "text": "Other important restrictions\nIndividual project – Unlike labs, where partner work is allowed, this project is an individual assignment. This means that you are expected to solve this problem independently relying only on course resources (zybook, lecture, office hours) for assistance. Inappropriate online resources, or collaboration at any level with another student will result in a grade of 0 on this assignment, even if appropriate attribution is given. Inappropriate online resources, or collaboration at any level with another student without attribution will be treated as an incident of academic dishonesty.\nTo be very clear, you can ask other students questions only about this document itself (“What is Adriana asking for in the KDTree section?”). Questions such as “how would you approach method X”, “How are you storing the k nearest points?”, or “I’m stuck on nearest, can you give me a pointer” are considered appropriate only if no specific code is exchanged. Likewise, you are free to search for information about the java programming language and included java classes, but searching for information about the problem in this project (e.g. “k-d tree nearest neighbor java”) is not allowed.\nAllowed java classes: You are not allowed to use any of the pre-built java classes except those we’ve explicitly discussed in class such as Scanner, Random, String, Math, Arrays, etc. If you are unsure if a java class would be allowed here you should ask. Using unapproved java classes can lead to failing this assignment.\nSpecific examples of BANNED java classes:\n\nAny subclass of java.util.List (ArrayList, LinkedList, …)\nAny subclass of java.util.Map (HashMap, TreeMap, …)\nAny subclass of java.util.Set (HashSet, TreeSet, …)\njava.util.PriorityQueue and java.util.Collections\n\nEvery data storage task in this project can be done with arrays and nodes you build yourself. Figuring out how to do that is part of the assignment."
   },
   {
     "objectID": "projects/project3.html#learning-goals",
     "href": "projects/project3.html#learning-goals",
-    "title": "CSC 1913 Project 3 – Which penguin is that? Nearest-neighbor classification with k-d trees",
+    "title": "CSC 1913 Project 3 – Which penguin is that?",
     "section": "Learning Goals",
     "text": "Learning Goals\n\nDesign and build a tree data structure in which every node stores an array (a point in k-dimensional space).\nDesign your own internal representation for a class from its public contract.\nReason about when part of a tree can be safely skipped, and measure the efficiency gained by skipping it.\nApply basic statistics to real data: means, standard deviations, z-scores, accuracy, and confusion matrices.\nInterpret experimental results and explain them in writing."
   },
   {
     "objectID": "projects/project3.html#data-points",
     "href": "projects/project3.html#data-points",
-    "title": "CSC 1913 Project 3 – Which penguin is that? Nearest-neighbor classification with k-d trees",
+    "title": "CSC 1913 Project 3 – Which penguin is that?",
     "section": "Data points",
     "text": "Data points\nEach penguin is a provided DataPoint: an array of double features plus a String label. For the penguin data the features are, in order:\n\n\n\nindex\nfeature\n\n\n\n\n0\nbill length (mm)\n\n\n1\nbill depth (mm)\n\n\n2\nflipper length (mm)\n\n\n3\nbody mass (g)\n\n\n\nand the label is \"Adelie\", \"Chinstrap\", or \"Gentoo\".\nWe treat a data point with \\(d\\) features as a point in \\(d\\)-dimensional space. The distance between two points \\(p\\) and \\(q\\) is the ordinary (Euclidean) distance:\n\\[\\text{dist}(p, q) = \\sqrt{\\sum_{i=0}^{d-1} (p_i - q_i)^2}\\]\nRead DataPoint.java before you start. Note the difference between getFeature(i) (fast) and getFeatures() (makes a copy)."
   },
   {
     "objectID": "projects/project3.html#standardization-z-scores",
     "href": "projects/project3.html#standardization-z-scores",
-    "title": "CSC 1913 Project 3 – Which penguin is that? Nearest-neighbor classification with k-d trees",
+    "title": "CSC 1913 Project 3 – Which penguin is that?",
     "section": "Standardization (z-scores)",
     "text": "Standardization (z-scores)\nTo keep one feature from dominating the distance just because of its units, we standardize each feature. We replace each value \\(x\\) with its z-score: how many standard deviations it is above or below that feature’s mean.\n\\[z = \\frac{x - \\bar{x}}{s} \\qquad \\bar{x} = \\frac{1}{n}\\sum_{j=1}^{n} x_j \\qquad s = \\sqrt{\\frac{1}{n-1}\\sum_{j=1}^{n}(x_j - \\bar{x})^2}\\]\nHere \\(s\\) is the sample standard deviation (divide by \\(n - 1\\)). This is the same value R’s sd() returns. After standardizing, every feature has mean 0 and standard deviation 1, so each one contributes on a comparable scale.\nOne important statistical rule: the mean and standard deviation are computed from the training data only. The same transformation is then applied to every new point we classify. (Think about why. You’ll be asked about it in the analysis.)"
   },
   {
     "objectID": "projects/project3.html#k-d-trees",
     "href": "projects/project3.html#k-d-trees",
-    "title": "CSC 1913 Project 3 – Which penguin is that? Nearest-neighbor classification with k-d trees",
+    "title": "CSC 1913 Project 3 – Which penguin is that?",
     "section": "k-d trees",
     "text": "k-d trees\nA k-d tree (“k-dimensional tree”) is a binary search tree for points with several coordinates. In an ordinary BST every node compares on the same thing (the key). A k-d tree rotates which coordinate it compares on as you go down the tree:\n\nA node at depth 0 (the root) compares on coordinate 0.\nA node at depth 1 compares on coordinate 1.\n… and a node at depth \\(\\text{depth}\\) compares on coordinate \\(\\text{depth} \\bmod d\\).\n\nThe coordinate a node compares on is its splitting axis. The rule is the same BST rule you already know, applied to the splitting axis only. For a node at depth \\(t\\) with splitting axis \\(a = t \\bmod d\\):\n\nevery point in its left subtree has coordinate \\(a\\) less than the node’s coordinate \\(a\\),\nevery point in its right subtree has coordinate \\(a\\) greater than or equal to the node’s coordinate \\(a\\).\n\nFor example, inserting the 2-dimensional points\nf(7,2), b(5,4), c(9,6), a(2,3), d(4,7), e(8,1)\nin that order produces this tree:\n\n\n\n\n\n\n\nG\n\n\n\nf\n\nf (7, 2)\nsplit on x\n\n\n\nb\n\nb (5, 4)\nsplit on y\n\n\n\nf-&gt;b\n\n\n x &lt; 7\n\n\n\nc\n\nc (9, 6)\nsplit on y\n\n\n\nf-&gt;c\n\n\n x ≥ 7\n\n\n\na\n\na (2, 3)\nsplit on x\n\n\n\nb-&gt;a\n\n\n y &lt; 4\n\n\n\nd\n\nd (4, 7)\nsplit on x\n\n\n\nb-&gt;d\n\n\n y ≥ 4\n\n\n\ne\n\ne (8, 1)\nsplit on x\n\n\n\nc-&gt;e\n\n\n y &lt; 6\n\n\n\n\n\n\n\n\n\n\nTrace each insertion yourself until you can reproduce this tree.\nGeometrically, each node cuts its region of space in two with a line (or a plane, or a hyperplane in more dimensions). f splits the whole plane at \\(x = 7\\). b splits the left half at \\(y = 4\\). Each subtree is responsible for one rectangular region."
   },
   {
     "objectID": "projects/project3.html#the-nearest-neighbor-problem",
     "href": "projects/project3.html#the-nearest-neighbor-problem",
-    "title": "CSC 1913 Project 3 – Which penguin is that? Nearest-neighbor classification with k-d trees",
+    "title": "CSC 1913 Project 3 – Which penguin is that?",
     "section": "The nearest-neighbor problem",
     "text": "The nearest-neighbor problem\nGiven a query point \\(q\\), which stored point is closest to it?\nThe obvious answer is to compute the distance from \\(q\\) to every point and keep the smallest. That is \\(O(n)\\) per query. It is always correct, so it’s a good way to check your answers, but it is not acceptable as your final KDTree solution.\nThe k-d tree makes it possible to skip whole subtrees without ever looking at them. How to do that safely is the central design problem of this project, and it’s yours to solve. Some questions to work through on paper first (this is the “planning” part of your three weeks):\n\nIf you walk down the tree as if you were inserting \\(q\\), is the last node you reach always the nearest neighbor? Try to construct a counterexample with the six points above. (Hint: try \\(q = (7.2, 4.5)\\).)\nSuppose you’re at a node whose splitting axis is \\(a\\), and the query is on the left side of the splitting line. Which side should you search first, and why might that order matter for efficiency?\nAfter searching one side, you know the closest point found so far and its distance \\(r\\). What is the closest that any point on the other side of the splitting line could possibly be to \\(q\\)? When does that let you skip the other side entirely?\nWhat changes when you want the \\(k\\) closest points instead of just one? What plays the role of “\\(r\\)” now?\n\nDraw pictures. A circle of radius \\(r\\) around \\(q\\) and a splitting line make the answer to the third question visible."
   },
@@ -6365,21 +6365,21 @@
   {
     "objectID": "projects/project3.html#kdnode",
     "href": "projects/project3.html#kdnode",
-    "title": "CSC 1913 Project 3 – Which penguin is that? Nearest-neighbor classification with k-d trees",
+    "title": "CSC 1913 Project 3 – Which penguin is that?",
     "section": "KDNode",
     "text": "KDNode\nRepresents one node of your k-d tree. There is no required public interface. Design the fields, constructor(s), and methods that make your KDTree clean. All fields must be private.\nKeep in mind that an instance of this class will exist for every point in the tree, so don’t store things you don’t need. Anything you can compute cheaply from the node’s position in the tree is a candidate for not storing."
   },
   {
     "objectID": "projects/project3.html#kdtree",
     "href": "projects/project3.html#kdtree",
-    "title": "CSC 1913 Project 3 – Which penguin is that? Nearest-neighbor classification with k-d trees",
+    "title": "CSC 1913 Project 3 – Which penguin is that?",
     "section": "KDTree",
     "text": "KDTree\nA k-d tree of DataPoints, following the definition in the Background section exactly:\n\nA node at depth \\(t\\) splits on axis \\(t \\bmod d\\).\nPoints that are equal on the splitting axis go right.\nDuplicate points are allowed.\n\n\n\n\n\n\n\n\nMember\nContract\n\n\n\n\npublic KDTree(int dimensions)\nAn empty tree for points with that many features. Throws IllegalArgumentException if dimensions &lt; 1.\n\n\npublic int getDimensions()\nThe number of dimensions.\n\n\npublic void insert(DataPoint p)\nAdds p to the tree. Throws IllegalArgumentException if p has the wrong number of features (and the tree is unchanged).\n\n\npublic int size()\nNumber of points stored. \\(O(1)\\).\n\n\npublic int height()\nNumber of nodes on the longest root-to-leaf path. An empty tree has height 0 and a single node has height 1.\n\n\npublic boolean contains(double[] point)\ntrue if some stored point equals point on every coordinate. Should only visit nodes along one root-to-leaf path.\n\n\npublic DataPoint nearest(double[] query)\nThe stored point closest to query, or null if the tree is empty. If several points are equally close, any of them is acceptable.\n\n\npublic DataPoint[] kNearest(double[] query, int k)\nThe k stored points closest to query, sorted closest first. If the tree holds fewer than k points, returns all of them (still sorted). Throws IllegalArgumentException if k &lt; 1.\n\n\npublic long getDistanceCount()\nThe total number of point-to-query distance computations performed by nearest and kNearest since the tree was created or last reset.\n\n\npublic void resetDistanceCount()\nSets the distance count back to 0.\n\n\n\ncontains, nearest, and kNearest throw IllegalArgumentException if the query array has the wrong length.\nAbout the distance count: every time your code computes the distance between a stored point and the query, the count must go up by one. The easy way to guarantee this is to put all distance computation in a single private helper method that increments the counter. insert and contains don’t compute distances. Graders will check that the counter is honest.\nHints and constraints:\n\nYou’ll never need the actual distance, only comparisons between distances. Is there a cheaper quantity that orders points the same way?\nkNearest needs to keep track of “the best \\(k\\) found so far” while it searches. Designing that bookkeeping (with arrays, no banned classes) is part of the assignment. Think about which operations it needs to support, and how often each one happens.\n\nEfficiency goals (checked by the autograder with getDistanceCount):\n\nnearest on 20,000 random 2-D points: fewer than 100 distance computations per query on average. A linear scan uses 20,000.\nkNearest with \\(k = 10\\) on 20,000 random 3-D points: fewer than 500 distance computations per query on average.\n\nA correct but un-pruned search will pass every correctness test and fail only these. So get a correct (even slow) version working first, then make it efficient."
   },
   {
     "objectID": "projects/project3.html#knnclassifier",
     "href": "projects/project3.html#knnclassifier",
-    "title": "CSC 1913 Project 3 – Which penguin is that? Nearest-neighbor classification with k-d trees",
+    "title": "CSC 1913 Project 3 – Which penguin is that?",
     "section": "KNNClassifier",
     "text": "KNNClassifier\n\n\n\n\n\n\n\nMember\nContract\n\n\n\n\npublic KNNClassifier(int k, boolean standardize)\nA classifier that votes with k neighbors and, if standardize is true, standardizes features with a Scaler. Throws IllegalArgumentException if k &lt; 1.\n\n\npublic KNNClassifier(int k)\nSame as KNNClassifier(k, true).\n\n\npublic void train(DataPoint[] data)\nBuilds the model from the training data. If standardizing, the Scaler is fit on this data and the tree stores transformed points. Calling train again replaces the old model. Throws IllegalArgumentException if data is empty.\n\n\npublic String[] getLabels()\nThe distinct labels in the training data, in alphabetical order.\n\n\npublic String predict(double[] features)\nThe majority label among the k nearest training points. If the vote is tied, return the tied label whose neighbor is closest to the query. Must not modify features.\n\n\npublic double accuracy(DataPoint[] testData)\nThe fraction of testData whose predicted label equals its actual label.\n\n\npublic int[][] confusionMatrix(DataPoint[] testData)\nA square matrix m where m[r][c] counts test points whose actual label is getLabels()[r] and whose predicted label is getLabels()[c]. Throws IllegalArgumentException if a test point’s label was not in the training data.\n\n\n\ngetLabels, predict, accuracy, and confusionMatrix throw IllegalStateException before train has been called.\nA confusion matrix shows which mistakes a classifier makes, not just how many. The diagonal holds the correct predictions. For example, a large value at row Chinstrap, column Adelie means Chinstraps are often mistaken for Adelies.\nYour vote counting must not use banned classes. Decide how to map a label (String) to a position in your counting array."
   },
@@ -6396,5 +6396,12 @@
     "title": "Linked List",
     "section": "implement the entire List interface",
     "text": "implement the entire List interface\nImplement the rest of the List interface in your LinkedList.java and submit it alongside with List.java and Node.java to gradescope.\nGo back to the edge cases checklist!"
+  },
+  {
+    "objectID": "projects/project3.html#scaler-provided-to-you",
+    "href": "projects/project3.html#scaler-provided-to-you",
+    "title": "CSC 1913 Project 3 – Which penguin is that?",
+    "section": "Scaler (provided to you)",
+    "text": "Scaler (provided to you)\nLearns the mean and sample standard deviation of each feature from a data set, then converts feature arrays to z-scores. Things to keep in mind:\n\ntransform never modifies its input.\ntransform(DataPoint p) calls p.getFeatures(), which returns a copy, and builds a new DataPoint with the scaled features and the same label. The original point is left unchanged.\n\nWhen your KNNClassifier standardizes, the training points you pass in stay in their original units, and the tree stores separate, transformed copies."
   }
 ]
