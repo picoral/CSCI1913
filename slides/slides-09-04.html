@@ -1350,7 +1350,7 @@ margin-right: 0; }
 <span id="cb11-10"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We use <code>.equals()</code> and not <code>==</code> – we want to compare <strong>values</strong>, not whether two references point to the same object</p>
 </section>
-<section id="search-and-nullpointerexception" class="slide level2">
+<section id="search-and-nullpointerexception" class="slide level2 smaller">
 <h2><code>search()</code> and <code>NullPointerException</code></h2>
 <p>Nothing stops someone from storing <code>null</code> in our list:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a></a>List&lt;String&gt; fruitList = new LinkedList&lt;&gt;();</span>
@@ -1406,6 +1406,14 @@ margin-right: 0; }
 <li>Worst case: each node must be examined once (target is last or not in the list) – <span class="math inline">\(O(n)\)</span>, where <span class="math inline">\(n\)</span> is the number of elements in the list</li>
 </ul>
 </section>
+<section id="set-and-get-through-index" class="slide level2">
+<h2>set and get through index</h2>
+<ol type="1">
+<li>check if index argument is valid</li>
+<li>create a count variable starting at zero, loop across the nodes updating count</li>
+<li>when count reached the index, you have the node you need – either change the its data to set it or return it to get it</li>
+</ol>
+</section>
 <section id="delete-node" class="slide level2">
 <h2>Delete node</h2>
 <p>Removing a node takes a few more steps:</p>
@@ -1419,11 +1427,11 @@ margin-right: 0; }
 <h2>Delete node – head and tail</h2>
 <p>Removing the head – there is no previous node!</p>
 <pre><code>before:    head → [A] → [B] → [C] → null
-pop(0):    head = head.getNext()
+pop(0):    head = head.getNext();
 after:     head → [B] → [C] → null</code></pre>
 <p>Removing the tail – <code>previous</code> becomes the new tail</p>
 <pre><code>before:    [A] → [B] → [C] → null      tail → [C]
-pop(2):    previous.setNext(null); tail = previous
+pop(2):    previous.setNext(null); tail = previous;
 after:     [A] → [B] → null            tail → [B]</code></pre>
 </section>
 <section id="insert-node" class="slide level2">
