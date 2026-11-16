@@ -6403,5 +6403,12 @@
     "title": "CSC 1913 Project 3 – Which penguin is that?",
     "section": "Scaler (provided to you)",
     "text": "Scaler (provided to you)\nLearns the mean and sample standard deviation of each feature from a data set, then converts feature arrays to z-scores. Things to keep in mind:\n\ntransform never modifies its input.\ntransform(DataPoint p) calls p.getFeatures(), which returns a copy, and builds a new DataPoint with the scaled features and the same label. The original point is left unchanged.\n\nWhen your KNNClassifier standardizes, the training points you pass in stay in their original units, and the tree stores separate, transformed copies."
+  },
+  {
+    "objectID": "projects.html#project-3",
+    "href": "projects.html#project-3",
+    "title": "Projects",
+    "section": "Project 3",
+    "text": "Project 3\n\nInstructions"
   }
 ]
