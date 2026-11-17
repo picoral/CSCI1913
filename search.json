@@ -6388,7 +6388,7 @@
     "href": "slides/slides-09-04.html#set-and-get-through-index",
     "title": "Linked List",
     "section": "set and get through index",
-    "text": "set and get through index\n\ncheck if index argument is valid\ncreate a count variable starting at zero, loop across the nodes updating count\nwhen count reached the index, you have the node you need – either change the its data to set it or return it to get it"
+    "text": "set and get through index\n\ncheck if index argument is valid\ncreate a count variable starting at zero, loop across the nodes updating count\nwhen count reaches the index, you have the node you need – either change the its data to set it or return it to get it\n\nWhat’s the runtime for set and get methods?"
   },
   {
     "objectID": "slides/slides-09-04.html#implement-the-entire-list-interface",
@@ -6410,5 +6410,586 @@
     "title": "Projects",
     "section": "Project 3",
     "text": "Project 3\n\nInstructions"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#linear-vs.-hierarchical",
+    "href": "slides/slides-10-01.html#linear-vs.-hierarchical",
+    "title": "Trees",
+    "section": "Linear vs. Hierarchical",
+    "text": "Linear vs. Hierarchical\n\nArrays and linked lists store data in a line\nTrees store data in a hierarchy instead"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#tree",
+    "href": "slides/slides-10-01.html#tree",
+    "title": "Trees",
+    "section": "Tree",
+    "text": "Tree\nWhat is a tree in computer science?\n\nA tree is a collection of nodes, which can be empty.\nAn empty tree root points to null\nIf a tree is not empty we have a “root” node\nEvery node is connected to the root by exactly one path"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#tree-nodes",
+    "href": "slides/slides-10-01.html#tree-nodes",
+    "title": "Trees",
+    "section": "Tree Nodes",
+    "text": "Tree Nodes\nA tree is a data structure made of nodes connected by edges, where:\n\nOne node is the root (the top)\nEach node can have children (nodes below it)\nNodes with no children are leaves\nEach node (except the root) has exactly one parent"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#tree-key-properties",
+    "href": "slides/slides-10-01.html#tree-key-properties",
+    "title": "Trees",
+    "section": "Tree – key properties",
+    "text": "Tree – key properties\n\nNo cycles - no loops back to start\nConnected - there’s a path from the root to every node\nA tree with n nodes has exactly n-1 edges"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#tree-advantages",
+    "href": "slides/slides-10-01.html#tree-advantages",
+    "title": "Trees",
+    "section": "Tree – advantages",
+    "text": "Tree – advantages\n\nFast searching - in some types of trees (a balanced binary search tree, for example), search is \\(O(\\log n)\\)\nEfficient for many other operations - insertion, deletion, traversal\nMany problems are inherently represented by tree (hierarchical relationships)"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#tree-example",
+    "href": "slides/slides-10-01.html#tree-example",
+    "title": "Trees",
+    "section": "Tree – example",
+    "text": "Tree – example\n\n\n\n\n\n\n\nTree\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA--B\n\n\n\n\nC\n\nC\n\n\n\nA--C\n\n\n\n\nD\n\nD\n\n\n\nA--D\n\n\n\n\nE\n\nE\n\n\n\nA--E\n\n\n\n\nF\n\nF\n\n\n\nA--F\n\n\n\n\nG\n\nG\n\n\n\nA--G\n\n\n\n\nH\n\nH\n\n\n\nD--H\n\n\n\n\nI\n\nI\n\n\n\nE--I\n\n\n\n\nJ\n\nJ\n\n\n\nE--J\n\n\n\n\nK\n\nK\n\n\n\nF--K\n\n\n\n\nL\n\nL\n\n\n\nF--L\n\n\n\n\nM\n\nM\n\n\n\nF--M\n\n\n\n\nN\n\nN\n\n\n\nG--N\n\n\n\n\nO\n\nO\n\n\n\nJ--O\n\n\n\n\nP\n\nP\n\n\n\nJ--P"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#tree-example-1",
+    "href": "slides/slides-10-01.html#tree-example-1",
+    "title": "Trees",
+    "section": "Tree – example",
+    "text": "Tree – example\nA is the root.\nThere are n (the tree below n is 16) nodes and n-1 edges (the tree below has 15 edges).\n\n\n\n\n\n\n\nTree\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA--B\n\n\n\n\nC\n\nC\n\n\n\nA--C\n\n\n\n\nD\n\nD\n\n\n\nA--D\n\n\n\n\nE\n\nE\n\n\n\nA--E\n\n\n\n\nF\n\nF\n\n\n\nA--F\n\n\n\n\nG\n\nG\n\n\n\nA--G\n\n\n\n\nH\n\nH\n\n\n\nD--H\n\n\n\n\nI\n\nI\n\n\n\nE--I\n\n\n\n\nJ\n\nJ\n\n\n\nE--J\n\n\n\n\nK\n\nK\n\n\n\nF--K\n\n\n\n\nL\n\nL\n\n\n\nF--L\n\n\n\n\nM\n\nM\n\n\n\nF--M\n\n\n\n\nN\n\nN\n\n\n\nG--N\n\n\n\n\nO\n\nO\n\n\n\nJ--O\n\n\n\n\nP\n\nP\n\n\n\nJ--P"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#tree-example-2",
+    "href": "slides/slides-10-01.html#tree-example-2",
+    "title": "Trees",
+    "section": "Tree – example",
+    "text": "Tree – example\nB is a child of A\nF is a child of A\n\n\n\n\n\n\n\nTree\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA--B\n\n\n\n\nC\n\nC\n\n\n\nA--C\n\n\n\n\nD\n\nD\n\n\n\nA--D\n\n\n\n\nE\n\nE\n\n\n\nA--E\n\n\n\n\nF\n\nF\n\n\n\nA--F\n\n\n\n\nG\n\nG\n\n\n\nA--G\n\n\n\n\nH\n\nH\n\n\n\nD--H\n\n\n\n\nI\n\nI\n\n\n\nE--I\n\n\n\n\nJ\n\nJ\n\n\n\nE--J\n\n\n\n\nK\n\nK\n\n\n\nF--K\n\n\n\n\nL\n\nL\n\n\n\nF--L\n\n\n\n\nM\n\nM\n\n\n\nF--M\n\n\n\n\nN\n\nN\n\n\n\nG--N\n\n\n\n\nO\n\nO\n\n\n\nJ--O\n\n\n\n\nP\n\nP\n\n\n\nJ--P"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#tree-example-3",
+    "href": "slides/slides-10-01.html#tree-example-3",
+    "title": "Trees",
+    "section": "Tree – example",
+    "text": "Tree – example\nNode A is a parent of C\nNode E is a parent of I\n\n\n\n\n\n\n\nTree\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA--B\n\n\n\n\nC\n\nC\n\n\n\nA--C\n\n\n\n\nD\n\nD\n\n\n\nA--D\n\n\n\n\nE\n\nE\n\n\n\nA--E\n\n\n\n\nF\n\nF\n\n\n\nA--F\n\n\n\n\nG\n\nG\n\n\n\nA--G\n\n\n\n\nH\n\nH\n\n\n\nD--H\n\n\n\n\nI\n\nI\n\n\n\nE--I\n\n\n\n\nJ\n\nJ\n\n\n\nE--J\n\n\n\n\nK\n\nK\n\n\n\nF--K\n\n\n\n\nL\n\nL\n\n\n\nF--L\n\n\n\n\nM\n\nM\n\n\n\nF--M\n\n\n\n\nN\n\nN\n\n\n\nG--N\n\n\n\n\nO\n\nO\n\n\n\nJ--O\n\n\n\n\nP\n\nP\n\n\n\nJ--P"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#tree-example-4",
+    "href": "slides/slides-10-01.html#tree-example-4",
+    "title": "Trees",
+    "section": "Tree – example",
+    "text": "Tree – example\nNodes with no children are leaves.\nNodes B, C, H, I, K, L, M, N, O, P are all leaves\n\n\n\n\n\n\n\nTree\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA--B\n\n\n\n\nC\n\nC\n\n\n\nA--C\n\n\n\n\nD\n\nD\n\n\n\nA--D\n\n\n\n\nE\n\nE\n\n\n\nA--E\n\n\n\n\nF\n\nF\n\n\n\nA--F\n\n\n\n\nG\n\nG\n\n\n\nA--G\n\n\n\n\nH\n\nH\n\n\n\nD--H\n\n\n\n\nI\n\nI\n\n\n\nE--I\n\n\n\n\nJ\n\nJ\n\n\n\nE--J\n\n\n\n\nK\n\nK\n\n\n\nF--K\n\n\n\n\nL\n\nL\n\n\n\nF--L\n\n\n\n\nM\n\nM\n\n\n\nF--M\n\n\n\n\nN\n\nN\n\n\n\nG--N\n\n\n\n\nO\n\nO\n\n\n\nJ--O\n\n\n\n\nP\n\nP\n\n\n\nJ--P"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#tree-example-5",
+    "href": "slides/slides-10-01.html#tree-example-5",
+    "title": "Trees",
+    "section": "Tree – example",
+    "text": "Tree – example\nNodes with the same parent are siblings\nNodes I and J are siblings. K, L, and M are siblings.\n\n\n\n\n\n\n\nTree\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA--B\n\n\n\n\nC\n\nC\n\n\n\nA--C\n\n\n\n\nD\n\nD\n\n\n\nA--D\n\n\n\n\nE\n\nE\n\n\n\nA--E\n\n\n\n\nF\n\nF\n\n\n\nA--F\n\n\n\n\nG\n\nG\n\n\n\nA--G\n\n\n\n\nH\n\nH\n\n\n\nD--H\n\n\n\n\nI\n\nI\n\n\n\nE--I\n\n\n\n\nJ\n\nJ\n\n\n\nE--J\n\n\n\n\nK\n\nK\n\n\n\nF--K\n\n\n\n\nL\n\nL\n\n\n\nF--L\n\n\n\n\nM\n\nM\n\n\n\nF--M\n\n\n\n\nN\n\nN\n\n\n\nG--N\n\n\n\n\nO\n\nO\n\n\n\nJ--O\n\n\n\n\nP\n\nP\n\n\n\nJ--P"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#tree-example-6",
+    "href": "slides/slides-10-01.html#tree-example-6",
+    "title": "Trees",
+    "section": "Tree – example",
+    "text": "Tree – example\nNodes H and N are only childnre (they have no siblings)\n\n\n\n\n\n\n\nTree\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA--B\n\n\n\n\nC\n\nC\n\n\n\nA--C\n\n\n\n\nD\n\nD\n\n\n\nA--D\n\n\n\n\nE\n\nE\n\n\n\nA--E\n\n\n\n\nF\n\nF\n\n\n\nA--F\n\n\n\n\nG\n\nG\n\n\n\nA--G\n\n\n\n\nH\n\nH\n\n\n\nD--H\n\n\n\n\nI\n\nI\n\n\n\nE--I\n\n\n\n\nJ\n\nJ\n\n\n\nE--J\n\n\n\n\nK\n\nK\n\n\n\nF--K\n\n\n\n\nL\n\nL\n\n\n\nF--L\n\n\n\n\nM\n\nM\n\n\n\nF--M\n\n\n\n\nN\n\nN\n\n\n\nG--N\n\n\n\n\nO\n\nO\n\n\n\nJ--O\n\n\n\n\nP\n\nP\n\n\n\nJ--P"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#tree-example-7",
+    "href": "slides/slides-10-01.html#tree-example-7",
+    "title": "Trees",
+    "section": "Tree – example",
+    "text": "Tree – example\nWe can define a path from an ancestor to a descendant. The path from A to O is: A-E-J-O\n\n\n\n\n\n\n\nTree\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA--B\n\n\n\n\nC\n\nC\n\n\n\nA--C\n\n\n\n\nD\n\nD\n\n\n\nA--D\n\n\n\n\nE\n\nE\n\n\n\nA--E\n\n\n\n\nF\n\nF\n\n\n\nA--F\n\n\n\n\nG\n\nG\n\n\n\nA--G\n\n\n\n\nH\n\nH\n\n\n\nD--H\n\n\n\n\nI\n\nI\n\n\n\nE--I\n\n\n\n\nJ\n\nJ\n\n\n\nE--J\n\n\n\n\nK\n\nK\n\n\n\nF--K\n\n\n\n\nL\n\nL\n\n\n\nF--L\n\n\n\n\nM\n\nM\n\n\n\nF--M\n\n\n\n\nN\n\nN\n\n\n\nG--N\n\n\n\n\nO\n\nO\n\n\n\nJ--O\n\n\n\n\nP\n\nP\n\n\n\nJ--P"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#tree-example-8",
+    "href": "slides/slides-10-01.html#tree-example-8",
+    "title": "Trees",
+    "section": "Tree – example",
+    "text": "Tree – example\nThe length of the path is three (the number of edges).\n\n\n\n\n\n\n\nTree\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA--B\n\n\n\n\nC\n\nC\n\n\n\nA--C\n\n\n\n\nD\n\nD\n\n\n\nA--D\n\n\n\n\nE\n\nE\n\n\n\nA--E\n\n\n\n\nF\n\nF\n\n\n\nA--F\n\n\n\n\nG\n\nG\n\n\n\nA--G\n\n\n\n\nH\n\nH\n\n\n\nD--H\n\n\n\n\nI\n\nI\n\n\n\nE--I\n\n\n\n\nJ\n\nJ\n\n\n\nE--J\n\n\n\n\nK\n\nK\n\n\n\nF--K\n\n\n\n\nL\n\nL\n\n\n\nF--L\n\n\n\n\nM\n\nM\n\n\n\nF--M\n\n\n\n\nN\n\nN\n\n\n\nG--N\n\n\n\n\nO\n\nO\n\n\n\nJ--O\n\n\n\n\nP\n\nP\n\n\n\nJ--P"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#tree-example-9",
+    "href": "slides/slides-10-01.html#tree-example-9",
+    "title": "Trees",
+    "section": "Tree – example",
+    "text": "Tree – example\nThe height of a node is the longest path from that node to a leaf: F has a height of 1. All leaves are a height of 0.\n\n\n\n\n\n\n\nTree\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA--B\n\n\n\n\nC\n\nC\n\n\n\nA--C\n\n\n\n\nD\n\nD\n\n\n\nA--D\n\n\n\n\nE\n\nE\n\n\n\nA--E\n\n\n\n\nF\n\nF\n\n\n\nA--F\n\n\n\n\nG\n\nG\n\n\n\nA--G\n\n\n\n\nH\n\nH\n\n\n\nD--H\n\n\n\n\nI\n\nI\n\n\n\nE--I\n\n\n\n\nJ\n\nJ\n\n\n\nE--J\n\n\n\n\nK\n\nK\n\n\n\nF--K\n\n\n\n\nL\n\nL\n\n\n\nF--L\n\n\n\n\nM\n\nM\n\n\n\nF--M\n\n\n\n\nN\n\nN\n\n\n\nG--N\n\n\n\n\nO\n\nO\n\n\n\nJ--O\n\n\n\n\nP\n\nP\n\n\n\nJ--P"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#tree-example-10",
+    "href": "slides/slides-10-01.html#tree-example-10",
+    "title": "Trees",
+    "section": "Tree – example",
+    "text": "Tree – example\nThe height of the tree is the height of the root. Here’s a tree of height 3:\n\n\n\n\n\n\n\nTree\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA--B\n\n\n\n\nC\n\nC\n\n\n\nA--C\n\n\n\n\nD\n\nD\n\n\n\nA--D\n\n\n\n\nE\n\nE\n\n\n\nA--E\n\n\n\n\nF\n\nF\n\n\n\nA--F\n\n\n\n\nG\n\nG\n\n\n\nA--G\n\n\n\n\nH\n\nH\n\n\n\nD--H\n\n\n\n\nI\n\nI\n\n\n\nE--I\n\n\n\n\nJ\n\nJ\n\n\n\nE--J\n\n\n\n\nK\n\nK\n\n\n\nF--K\n\n\n\n\nL\n\nL\n\n\n\nF--L\n\n\n\n\nM\n\nM\n\n\n\nF--M\n\n\n\n\nN\n\nN\n\n\n\nG--N\n\n\n\n\nO\n\nO\n\n\n\nJ--O\n\n\n\n\nP\n\nP\n\n\n\nJ--P"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#gradescope-in-class-exercise",
+    "href": "slides/slides-10-01.html#gradescope-in-class-exercise",
+    "title": "Trees",
+    "section": "Gradescope – In-class exercise",
+    "text": "Gradescope – In-class exercise\nComplete the in-class gradescope exercise on trees"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#implementation",
+    "href": "slides/slides-10-01.html#implementation",
+    "title": "Trees",
+    "section": "Implementation",
+    "text": "Implementation\nOur tree data structure is made of nodes\n\nEach node has pointers to children – how many children?\n\nA Tree has a pointer to some “root” node\n\nBinary (2 children, left and right) tree is a common implementation.\nTypically, some type of ordering will be imposed on the elements in a binary tree."
+  },
+  {
+    "objectID": "slides/slides-10-01.html#binary-trees-another-higher-order-data-structure",
+    "href": "slides/slides-10-01.html#binary-trees-another-higher-order-data-structure",
+    "title": "Trees",
+    "section": "Binary Trees – Another Higher Order Data Structure",
+    "text": "Binary Trees – Another Higher Order Data Structure\n\nBinary tree terms\n\nroot – the base of the tree (level 1)\nempty tree has no nodes (not even a root, root is null)\nleft and right children, parents, siblings\nsubtree\nleaves\nbalanced, complete and full trees (next slides)\n\n\nWe will be implementing two types of binary trees: Binary Search Trees (linked), and a Heap (array)"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#full-binary-tree",
+    "href": "slides/slides-10-01.html#full-binary-tree",
+    "title": "Trees",
+    "section": "Full Binary Tree",
+    "text": "Full Binary Tree\nEvery node has 0 or 2 children.\n\n\n\n\n\n\n\nBST\n\n\n\n10\n\n10\n\n\n\n5\n\n5\n\n\n\n10--5\n\n\n\n\n15\n\n15\n\n\n\n10--15\n\n\n\n\n3\n\n3\n\n\n\n5--3\n\n\n\n\n8\n\n8\n\n\n\n5--8"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#complete-binary-tree",
+    "href": "slides/slides-10-01.html#complete-binary-tree",
+    "title": "Trees",
+    "section": "Complete Binary Tree",
+    "text": "Complete Binary Tree\nIn a complete binary tree is a binary all levels except the last level are completely filled and all the leaves in the last level are all to the left side. A tree can be both full and complete at the same time.\n\n\n\n\n\n\n\nBST\n\n\n\n10\n\n10\n\n\n\n5\n\n5\n\n\n\n10--5\n\n\n\n\n15\n\n15\n\n\n\n10--15\n\n\n\n\n3\n\n3\n\n\n\n5--3\n\n\n\n\nnull\n\n\n\n5--null"
+  },
+  {
+    "objectID": "slides/slides-10-01.html#balanced-binary-tree",
+    "href": "slides/slides-10-01.html#balanced-binary-tree",
+    "title": "Trees",
+    "section": "Balanced Binary Tree",
+    "text": "Balanced Binary Tree\nA balanced binary tree is a binary tree where the height of the two subtrees of every node never differ by more than 1.\nBelow is a balanced binary tree but not a complete binary tree.\n\n\n\n\n\n\n\nBST\n\n\n\n10\n\n10\n\n\n\n5\n\n5\n\n\n\n10--5\n\n\n\n\n15\n\n15\n\n\n\n10--15\n\n\n\n\nnull\n\n\n\n15--null\n\n\n\n\n20\n\n20\n\n\n\n15--20\n\n\n\n\n\n\n\n\n\nEvery complete binary tree is balanced but not the other way around."
+  },
+  {
+    "objectID": "slides/slides-10-02.html#binary-search-trees",
+    "href": "slides/slides-10-02.html#binary-search-trees",
+    "title": "Binary Search Trees",
+    "section": "Binary Search Trees",
+    "text": "Binary Search Trees\n\nArrays provide fast random access but inserting/deleting is slow\nLinked lists make insertion easy but searching is slow\n\nWhat if we want something that’s reasonably fast at both searching and inserting?\nWe will start by taking a look at binary search trees and will look at different kinds of balanced trees and set/dictionary implementations later"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#binary-search-trees-1",
+    "href": "slides/slides-10-02.html#binary-search-trees-1",
+    "title": "Binary Search Trees",
+    "section": "Binary Search Trees",
+    "text": "Binary Search Trees\nA Binary Search Tree (BST) is a linked structure where:\n\neach node has at most two children\neverything in the left subtree is smaller than that node\neverything in the right subtree is larger than that node\n\nRepeated values can be handled differently, we will be implementing a strict BST (disallow duplicates)."
+  },
+  {
+    "objectID": "slides/slides-10-02.html#binary-search-trees-2",
+    "href": "slides/slides-10-02.html#binary-search-trees-2",
+    "title": "Binary Search Trees",
+    "section": "Binary Search Trees",
+    "text": "Binary Search Trees\nEach node has at most two children\n\n\n\n\n\n\n\nBST\n\n\n\n10\n\n10\n\n\n\n5\n\n5\n\n\n\n10--5\n\n\n\n\n15\n\n15\n\n\n\n10--15\n\n\n\n\n3\n\n3\n\n\n\n5--3\n\n\n\n\n8\n\n8\n\n\n\n5--8\n\n\n\n\n12\n\n12\n\n\n\n15--12\n\n\n\n\n20\n\n20\n\n\n\n15--20\n\n\n\n\n1\n\n1\n\n\n\n3--1\n\n\n\n\n4\n\n4\n\n\n\n3--4\n\n\n\n\n6\n\n6\n\n\n\n8--6\n\n\n\n\n9\n\n9\n\n\n\n8--9\n\n\n\n\n11\n\n11\n\n\n\n12--11\n\n\n\n\nnull1\n\n\n\n12--null1\n\n\n\n\n16\n\n16\n\n\n\n20--16\n\n\n\n\n25\n\n25\n\n\n\n20--25\n\n\n\n\nnull2\n\n\n\n25--null2\n\n\n\n\n28\n\n28\n\n\n\n25--28"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#binary-search-trees-3",
+    "href": "slides/slides-10-02.html#binary-search-trees-3",
+    "title": "Binary Search Trees",
+    "section": "Binary Search Trees",
+    "text": "Binary Search Trees\neverything in a left subtree is smaller than its parent node\n\n\n\n\n\n\n\nBST\n\n\n\n5\n\n5\n\n\n\n3\n\n3\n\n\n\n5--3\n\n\n\n\n8\n\n8\n\n\n\n5--8\n\n\n\n\n1\n\n1\n\n\n\n3--1\n\n\n\n\n4\n\n4\n\n\n\n3--4\n\n\n\n\n10\n\n10\n\n\n\n10--5\n\n\n\n\n15\n\n15\n\n\n\n10--15\n\n\n\n\n12\n\n12\n\n\n\n15--12\n\n\n\n\n20\n\n20\n\n\n\n15--20\n\n\n\n\n6\n\n6\n\n\n\n8--6\n\n\n\n\n9\n\n9\n\n\n\n8--9\n\n\n\n\n11\n\n11\n\n\n\n12--11\n\n\n\n\nnull1\n\n\n\n12--null1\n\n\n\n\n16\n\n16\n\n\n\n20--16\n\n\n\n\n25\n\n25\n\n\n\n20--25\n\n\n\n\nnull2\n\n\n\n25--null2\n\n\n\n\n28\n\n28\n\n\n\n25--28"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#binary-search-trees-4",
+    "href": "slides/slides-10-02.html#binary-search-trees-4",
+    "title": "Binary Search Trees",
+    "section": "Binary Search Trees",
+    "text": "Binary Search Trees\neverything in a right subtree is larger than its parent node\n\n\n\n\n\n\n\nBST\n\n\n\n10\n\n10\n\n\n\n5\n\n5\n\n\n\n10--5\n\n\n\n\n15\n\n15\n\n\n\n10--15\n\n\n\n\n3\n\n3\n\n\n\n5--3\n\n\n\n\n8\n\n8\n\n\n\n5--8\n\n\n\n\n12\n\n12\n\n\n\n15--12\n\n\n\n\n20\n\n20\n\n\n\n15--20\n\n\n\n\n1\n\n1\n\n\n\n3--1\n\n\n\n\n4\n\n4\n\n\n\n3--4\n\n\n\n\n6\n\n6\n\n\n\n8--6\n\n\n\n\n9\n\n9\n\n\n\n8--9\n\n\n\n\n11\n\n11\n\n\n\n12--11\n\n\n\n\nnull1\n\n\n\n12--null1\n\n\n\n\n16\n\n16\n\n\n\n20--16\n\n\n\n\n25\n\n25\n\n\n\n20--25\n\n\n\n\nnull2\n\n\n\n25--null2\n\n\n\n\n28\n\n28\n\n\n\n25--28"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#binary-search-trees-5",
+    "href": "slides/slides-10-02.html#binary-search-trees-5",
+    "title": "Binary Search Trees",
+    "section": "Binary Search Trees",
+    "text": "Binary Search Trees\nWe will look at 5 functions:\n\nadd\nremove\nfindMin\nfindMax\nsearch (specific to BST)"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#add",
+    "href": "slides/slides-10-02.html#add",
+    "title": "Binary Search Trees",
+    "section": "Add",
+    "text": "Add\nData in Node that we want to add: 7\nWhat do we have to do to add Node 7 to the right spot?\n\n\n\n\n\n\n\nBST\n\n\n\n10\n\n10\n\n\n\n5\n\n5\n\n\n\n10--5\n\n\n\n\n15\n\n15\n\n\n\n10--15\n\n\n\n\n3\n\n3\n\n\n\n5--3\n\n\n\n\n8\n\n8\n\n\n\n5--8\n\n\n\n\n12\n\n12\n\n\n\n15--12\n\n\n\n\n20\n\n20\n\n\n\n15--20\n\n\n\n\n1\n\n1\n\n\n\n3--1\n\n\n\n\n4\n\n4\n\n\n\n3--4\n\n\n\n\n6\n\n6\n\n\n\n8--6\n\n\n\n\n9\n\n9\n\n\n\n8--9\n\n\n\n\n11\n\n11\n\n\n\n12--11\n\n\n\n\nnull1\n\n\n\n12--null1\n\n\n\n\n16\n\n16\n\n\n\n20--16\n\n\n\n\n25\n\n25\n\n\n\n20--25\n\n\n\n\nnull2\n\n\n\n25--null2\n\n\n\n\n28\n\n28\n\n\n\n25--28"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#add-1",
+    "href": "slides/slides-10-02.html#add-1",
+    "title": "Binary Search Trees",
+    "section": "Add",
+    "text": "Add\nCompare value to be added to root\n\n\n\n\n\n\n\nBST\n\n\n\n7\n\n7\n\n\n\n10\n\n10\n\n\n\n5\n\n5\n\n\n\n10--5\n\n\n\n\n15\n\n15\n\n\n\n10--15\n\n\n\n\n3\n\n3\n\n\n\n5--3\n\n\n\n\n8\n\n8\n\n\n\n5--8\n\n\n\n\n12\n\n12\n\n\n\n15--12\n\n\n\n\n20\n\n20\n\n\n\n15--20\n\n\n\n\n1\n\n1\n\n\n\n3--1\n\n\n\n\n4\n\n4\n\n\n\n3--4\n\n\n\n\n6\n\n6\n\n\n\n8--6\n\n\n\n\n9\n\n9\n\n\n\n8--9\n\n\n\n\n11\n\n11\n\n\n\n12--11\n\n\n\n\nnull1\n\n\n\n12--null1\n\n\n\n\n16\n\n16\n\n\n\n20--16\n\n\n\n\n25\n\n25\n\n\n\n20--25\n\n\n\n\nnull2\n\n\n\n25--null2\n\n\n\n\n28\n\n28\n\n\n\n25--28"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#add-2",
+    "href": "slides/slides-10-02.html#add-2",
+    "title": "Binary Search Trees",
+    "section": "Add",
+    "text": "Add\n7 is less than 10, so our next comparison is with the root of the left subtree\n\n\n\n\n\n\n\nBST\n\n\n\n7\n\n7\n\n\n\n10\n\n10\n\n\n\n5\n\n5\n\n\n\n10--5\n\n\n\n\n15\n\n15\n\n\n\n10--15\n\n\n\n\n3\n\n3\n\n\n\n5--3\n\n\n\n\n8\n\n8\n\n\n\n5--8\n\n\n\n\n12\n\n12\n\n\n\n15--12\n\n\n\n\n20\n\n20\n\n\n\n15--20\n\n\n\n\n1\n\n1\n\n\n\n3--1\n\n\n\n\n4\n\n4\n\n\n\n3--4\n\n\n\n\n6\n\n6\n\n\n\n8--6\n\n\n\n\n9\n\n9\n\n\n\n8--9\n\n\n\n\n11\n\n11\n\n\n\n12--11\n\n\n\n\nnull1\n\n\n\n12--null1\n\n\n\n\n16\n\n16\n\n\n\n20--16\n\n\n\n\n25\n\n25\n\n\n\n20--25\n\n\n\n\nnull2\n\n\n\n25--null2\n\n\n\n\n28\n\n28\n\n\n\n25--28"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#add-3",
+    "href": "slides/slides-10-02.html#add-3",
+    "title": "Binary Search Trees",
+    "section": "Add",
+    "text": "Add\n7 is greater than 5, so our next comparison is with the root of the right subtree\n\n\n\n\n\n\n\nBST\n\n\n\n7\n\n7\n\n\n\n10\n\n10\n\n\n\n5\n\n5\n\n\n\n10--5\n\n\n\n\n15\n\n15\n\n\n\n10--15\n\n\n\n\n3\n\n3\n\n\n\n5--3\n\n\n\n\n8\n\n8\n\n\n\n5--8\n\n\n\n\n12\n\n12\n\n\n\n15--12\n\n\n\n\n20\n\n20\n\n\n\n15--20\n\n\n\n\n1\n\n1\n\n\n\n3--1\n\n\n\n\n4\n\n4\n\n\n\n3--4\n\n\n\n\n6\n\n6\n\n\n\n8--6\n\n\n\n\n9\n\n9\n\n\n\n8--9\n\n\n\n\n11\n\n11\n\n\n\n12--11\n\n\n\n\nnull1\n\n\n\n12--null1\n\n\n\n\n16\n\n16\n\n\n\n20--16\n\n\n\n\n25\n\n25\n\n\n\n20--25\n\n\n\n\nnull2\n\n\n\n25--null2\n\n\n\n\n28\n\n28\n\n\n\n25--28"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#add-4",
+    "href": "slides/slides-10-02.html#add-4",
+    "title": "Binary Search Trees",
+    "section": "Add",
+    "text": "Add\n7 is less than 8, so our next comparison is with the root of the left subtree\n\n\n\n\n\n\n\nBST\n\n\n\n7\n\n7\n\n\n\n10\n\n10\n\n\n\n5\n\n5\n\n\n\n10--5\n\n\n\n\n15\n\n15\n\n\n\n10--15\n\n\n\n\n3\n\n3\n\n\n\n5--3\n\n\n\n\n8\n\n8\n\n\n\n5--8\n\n\n\n\n12\n\n12\n\n\n\n15--12\n\n\n\n\n20\n\n20\n\n\n\n15--20\n\n\n\n\n1\n\n1\n\n\n\n3--1\n\n\n\n\n4\n\n4\n\n\n\n3--4\n\n\n\n\n6\n\n6\n\n\n\n8--6\n\n\n\n\n9\n\n9\n\n\n\n8--9\n\n\n\n\n11\n\n11\n\n\n\n12--11\n\n\n\n\nnull1\n\n\n\n12--null1\n\n\n\n\n16\n\n16\n\n\n\n20--16\n\n\n\n\n25\n\n25\n\n\n\n20--25\n\n\n\n\nnull2\n\n\n\n25--null2\n\n\n\n\n28\n\n28\n\n\n\n25--28"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#add-5",
+    "href": "slides/slides-10-02.html#add-5",
+    "title": "Binary Search Trees",
+    "section": "Add",
+    "text": "Add\n7 is greater than 6, so our next comparison is with the root of the right subtree – the right node is null, so that’s where our node to be added goes.\n\n\n\n\n\n\n\nBST\n\n\n\n10\n\n10\n\n\n\n5\n\n5\n\n\n\n10--5\n\n\n\n\n15\n\n15\n\n\n\n10--15\n\n\n\n\n3\n\n3\n\n\n\n5--3\n\n\n\n\n8\n\n8\n\n\n\n5--8\n\n\n\n\n12\n\n12\n\n\n\n15--12\n\n\n\n\n20\n\n20\n\n\n\n15--20\n\n\n\n\n1\n\n1\n\n\n\n3--1\n\n\n\n\n4\n\n4\n\n\n\n3--4\n\n\n\n\n6\n\n6\n\n\n\n8--6\n\n\n\n\n9\n\n9\n\n\n\n8--9\n\n\n\n\nnull\n\n\n\n6--null\n\n\n\n\n7\n\n7\n\n\n\n6--7\n\n\n\n\n11\n\n11\n\n\n\n12--11\n\n\n\n\nnull1\n\n\n\n12--null1\n\n\n\n\n16\n\n16\n\n\n\n20--16\n\n\n\n\n25\n\n25\n\n\n\n20--25\n\n\n\n\nnull2\n\n\n\n25--null2\n\n\n\n\n28\n\n28\n\n\n\n25--28"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#binary-search-trees-6",
+    "href": "slides/slides-10-02.html#binary-search-trees-6",
+    "title": "Binary Search Trees",
+    "section": "Binary Search Trees",
+    "text": "Binary Search Trees\nBSTs are only efficient when they’re balanced.\nIn the worst case you get O(n) operations – how?\nYou will learn about self-balancing trees like AVL trees and Red-Black trees (later)"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#binary-search-trees-7",
+    "href": "slides/slides-10-02.html#binary-search-trees-7",
+    "title": "Binary Search Trees",
+    "section": "Binary Search Trees",
+    "text": "Binary Search Trees\nIn the worst case you get O(n) operations – how? Add 90 to tree:\n\n\n\n\n\n\n\nBST\n\n\n\n100\n\n100\n\n\n\nleftNull\n\n\n\n100--leftNull\n\n\n\n\nrightNull\n\n\n\n100--rightNull"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#binary-search-trees-8",
+    "href": "slides/slides-10-02.html#binary-search-trees-8",
+    "title": "Binary Search Trees",
+    "section": "Binary Search Trees",
+    "text": "Binary Search Trees\nIn the worst case you get O(n) operations – how? Add 80 to tree:\n\n\n\n\n\n\n\nBST\n\n\n\n100\n\n100\n\n\n\n90\n\n90\n\n\n\n100--90\n\n\n\n\nnull\n\n\n\n100--null"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#binary-search-trees-9",
+    "href": "slides/slides-10-02.html#binary-search-trees-9",
+    "title": "Binary Search Trees",
+    "section": "Binary Search Trees",
+    "text": "Binary Search Trees\nIn the worst case you get O(n) operations – how? Add 79 to tree:\n\n\n\n\n\n\n\nBST\n\n\n\n100\n\n100\n\n\n\n90\n\n90\n\n\n\n100--90\n\n\n\n\nnull\n\n\n\n100--null\n\n\n\n\n80\n\n80\n\n\n\n90--80\n\n\n\n\nnull2\n\n\n\n90--null2"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#binary-search-trees-10",
+    "href": "slides/slides-10-02.html#binary-search-trees-10",
+    "title": "Binary Search Trees",
+    "section": "Binary Search Trees",
+    "text": "Binary Search Trees\nIn the worst case you get O(n) operations – how? Add 65 to tree:\n\n\n\n\n\n\n\nBST\n\n\n\n100\n\n100\n\n\n\n90\n\n90\n\n\n\n100--90\n\n\n\n\nnull\n\n\n\n100--null\n\n\n\n\n80\n\n80\n\n\n\n90--80\n\n\n\n\nnull2\n\n\n\n90--null2\n\n\n\n\n79\n\n79\n\n\n\n80--79\n\n\n\n\nnull3\n\n\n\n80--null3"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#binary-search-trees-11",
+    "href": "slides/slides-10-02.html#binary-search-trees-11",
+    "title": "Binary Search Trees",
+    "section": "Binary Search Trees",
+    "text": "Binary Search Trees\nIn the worst case you get O(n) operations – how? Add 42 to tree:\n\n\n\n\n\n\n\nBST\n\n\n\n100\n\n100\n\n\n\n90\n\n90\n\n\n\n100--90\n\n\n\n\nnull\n\n\n\n100--null\n\n\n\n\n80\n\n80\n\n\n\n90--80\n\n\n\n\nnull2\n\n\n\n90--null2\n\n\n\n\n79\n\n79\n\n\n\n80--79\n\n\n\n\nnull3\n\n\n\n80--null3\n\n\n\n\n65\n\n65\n\n\n\n79--65\n\n\n\n\nnull4\n\n\n\n79--null4"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#binary-search-trees-12",
+    "href": "slides/slides-10-02.html#binary-search-trees-12",
+    "title": "Binary Search Trees",
+    "section": "Binary Search Trees",
+    "text": "Binary Search Trees\nIn the worst case you get O(n) operations – how? Add 26 to tree:\n\n\n\n\n\n\n\nBST\n\n\n\n100\n\n100\n\n\n\n90\n\n90\n\n\n\n100--90\n\n\n\n\nnull\n\n\n\n100--null\n\n\n\n\n80\n\n80\n\n\n\n90--80\n\n\n\n\nnull2\n\n\n\n90--null2\n\n\n\n\n79\n\n79\n\n\n\n80--79\n\n\n\n\nnull3\n\n\n\n80--null3\n\n\n\n\n65\n\n65\n\n\n\n79--65\n\n\n\n\nnull4\n\n\n\n79--null4\n\n\n\n\n42\n\n42\n\n\n\n65--42\n\n\n\n\nnull5\n\n\n\n65--null5"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#binary-search-trees-13",
+    "href": "slides/slides-10-02.html#binary-search-trees-13",
+    "title": "Binary Search Trees",
+    "section": "Binary Search Trees",
+    "text": "Binary Search Trees\nIn the worst case you get O(n) operations – how?\n\n\n\n\n\n\n\nBST\n\n\n\n100\n\n100\n\n\n\n90\n\n90\n\n\n\n100--90\n\n\n\n\nnull\n\n\n\n100--null\n\n\n\n\n80\n\n80\n\n\n\n90--80\n\n\n\n\nnull2\n\n\n\n90--null2\n\n\n\n\n79\n\n79\n\n\n\n80--79\n\n\n\n\nnull3\n\n\n\n80--null3\n\n\n\n\n65\n\n65\n\n\n\n79--65\n\n\n\n\nnull4\n\n\n\n79--null4\n\n\n\n\n42\n\n42\n\n\n\n65--42\n\n\n\n\nnull5\n\n\n\n65--null5\n\n\n\n\n26\n\n26\n\n\n\n42--26\n\n\n\n\nnull6\n\n\n\n42--null6"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#node-implementation",
+    "href": "slides/slides-10-02.html#node-implementation",
+    "title": "Binary Search Trees",
+    "section": "Node implementation",
+    "text": "Node implementation\nHere’s our generic Node class:\npublic class Node&lt;T extends Comparable&lt;T&gt;&gt; {\n    private T data;\n    private Node&lt;T&gt; left;\n    private Node&lt;T&gt; right;\n\n    // constructor with data as argument\n    public Node(T data) {\n        this.data = data;\n        left = null;\n        right = null;\n    }\n\n    // getters\n    public T getData() {\n        return data;\n    }\n\n    public Node&lt;T&gt; getLeft() {\n        return left;\n    }\n\n    public Node&lt;T&gt; getRight() {\n        return right;\n    }\n\n    // setters\n    public void setData(T data) {\n        this.data = data;\n    }\n\n    public void setLeft(Node&lt;T&gt; node) {\n        left = node;\n    }\n\n    public void setRight(Node&lt;T&gt; node) {\n        right = node;\n    }\n}"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#node-comparable-implementation",
+    "href": "slides/slides-10-02.html#node-comparable-implementation",
+    "title": "Binary Search Trees",
+    "section": "Node Comparable implementation",
+    "text": "Node Comparable implementation\nWe need to implement extend Comparable to be able to go left or right (use compareTo from the data object)\npublic class Node&lt;T extends Comparable&lt;T&gt;&gt; {\n    private T data;\n    private Node&lt;T&gt; left;\n    private Node&lt;T&gt; right;\n\n    public Node(T data) {\n        this.data = data;\n        left = null;\n        right = null;\n    }\n\n    public T getData() {\n        return data;\n    }\n\n    public Node&lt;T&gt; getLeft() {\n        return left;\n    }\n\n    public Node&lt;T&gt; getRight() {\n        return right;\n    }\n\n    public void setData(T data) {\n        this.data = data;\n    }\n\n    public void setLeft(Node&lt;T&gt; node) {\n        left = node;\n    }\n\n    public void setRight(Node&lt;T&gt; node) {\n        right = node;\n    }\n\n    public String toString() { return data.toString(); }\n    \n\n}"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#tree-implementation-basics",
+    "href": "slides/slides-10-02.html#tree-implementation-basics",
+    "title": "Binary Search Trees",
+    "section": "Tree implementation (basics)",
+    "text": "Tree implementation (basics)\npublic class Tree&lt;T extends Comparable&lt;T&gt;&gt; {\n    private Node&lt;T&gt; root;\n\n    public Tree() {\n        root = null;\n    }\n  \n    public Node&lt;T&gt; getRoot() {\n        return root;\n    }\n    \n}"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#add-strategy",
+    "href": "slides/slides-10-02.html#add-strategy",
+    "title": "Binary Search Trees",
+    "section": "Add – strategy",
+    "text": "Add – strategy\n\nCheck if tree is empty (is root null?), if so the node to add is the root\nIf tree is not empty, find the spot to add (I’ll do that recursively)"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#public-addnode",
+    "href": "slides/slides-10-02.html#public-addnode",
+    "title": "Binary Search Trees",
+    "section": "public addNode",
+    "text": "public addNode\npublic void addNode(Node&lt;T&gt; node) {\n  if (root == null) {\n    root = node;\n  } else {\n    addNode(root, node);\n  }\n}"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#private-addnode",
+    "href": "slides/slides-10-02.html#private-addnode",
+    "title": "Binary Search Trees",
+    "section": "private addNode",
+    "text": "private addNode\nThis recursive method should be private.\nprivate void addNode(Node&lt;T&gt; current, Node&lt;T&gt; nodeToAdd)\nStrategy:\n\nDecide if you need to go left or right (use compareTo)\nCheck if left/right (whatever path you need to take) child is null, if so, set current node child to nodeToAdd\nIf left/right child is not null, call addNode recursively with left/right child as current node"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#test-it",
+    "href": "slides/slides-10-02.html#test-it",
+    "title": "Binary Search Trees",
+    "section": "Test it",
+    "text": "Test it\nTree&lt;Character&gt; tree = new Tree&lt;&gt;();\n\ntree.addNode(new Node&lt;&gt;('M'));\nSystem.out.println(tree.getRoot().getData());\n\ntree.addNode(new Node&lt;&gt;('O'));\nSystem.out.println(tree.getRoot().getLeft());\nSystem.out.println(tree.getRoot().getRight().getData());\nSubmit your Node.java and Tree.java files to gradescope"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#addnode",
+    "href": "slides/slides-10-02.html#addnode",
+    "title": "Binary Search Trees",
+    "section": "addNode",
+    "text": "addNode\nprivate void addNode(Node&lt;T&gt; current, Node&lt;T&gt; nodeToAdd) {\n  if (current.getData().compareTo(nodeToAdd.getData()) &gt; 0) {\n    if (current.getLeft() == null) current.setLeft(nodeToAdd);\n    else addNode(current.getLeft(), nodeToAdd);\n  } else if(current.getData().compareTo(nodeToAdd.getData()) &lt; 0) {\n    if (current.getRight() == null) current.setRight(nodeToAdd);\n    else addNode(current.getRight(), nodeToAdd);\n  }\n}\n\npublic void addNode(Node&lt;T&gt; node) {\n  if (root == null) root = node;\n  else addNode(root, node);\n}"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#tostring",
+    "href": "slides/slides-10-02.html#tostring",
+    "title": "Binary Search Trees",
+    "section": "toString",
+    "text": "toString\nIt’s going to be easy to test adding multiple nodes if we implement toString\nHere’s the public toString:\npublic String toString() {\n  return toString(root).trim();\n}\nImplement a private toString(Node)"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#depth-first-traversal-dfs",
+    "href": "slides/slides-10-02.html#depth-first-traversal-dfs",
+    "title": "Binary Search Trees",
+    "section": "Depth-First Traversal (DFS)",
+    "text": "Depth-First Traversal (DFS)\nThese traverse as far down a branch as possible before backtracking:\nInorder (Left → Root → Right)\n\nVisits left subtree, then root, then right subtree\nFor binary search trees, this produces values in sorted order\n\nPreorder (Root → Left → Right)\n\nVisits root first, then left subtree, then right subtree\nUseful for creating a copy of the tree or getting prefix expressions"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#depth-first-traversal-dfs-1",
+    "href": "slides/slides-10-02.html#depth-first-traversal-dfs-1",
+    "title": "Binary Search Trees",
+    "section": "Depth-First Traversal (DFS)",
+    "text": "Depth-First Traversal (DFS)\nThese traverse as far down a branch as possible before backtracking:\nPostorder (Left → Right → Root)\n\nVisits left subtree, then right subtree, then root last\nUseful for deleting trees or evaluating postfix expressions"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#breadth-first-traversal-bfs",
+    "href": "slides/slides-10-02.html#breadth-first-traversal-bfs",
+    "title": "Binary Search Trees",
+    "section": "Breadth-First Traversal (BFS)",
+    "text": "Breadth-First Traversal (BFS)\nLevel-order\n\nVisits nodes level by level, from top to bottom and left to right\nTypically implemented using a queue (we will see more of this later)\nUseful for finding shortest paths or level-based operations"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#tostring-1",
+    "href": "slides/slides-10-02.html#tostring-1",
+    "title": "Binary Search Trees",
+    "section": "toString",
+    "text": "toString\nOne way to implement this that I find useful for debugging:\nprivate String toString(Node&lt;T&gt; current) {\n        if (current == null) {\n            return \"\";\n        }\n        String message = \"\";\n\n        if (current.getLeft() != null) {\n            message += current.getData() + \" left child is \" + current.getLeft().getData() + \"\\n\";\n        }\n        if (current.getRight() != null) {\n            message += current.getData() + \" right child is \" + current.getRight().getData() + \"\\n\";\n        }\n\n        if (current.getLeft() != null) {\n            message += toString(current.getLeft());\n        }\n        if (current.getRight() != null) {\n            message += toString(current.getRight());\n        }\n        return message;\n    }"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#other-methods",
+    "href": "slides/slides-10-02.html#other-methods",
+    "title": "Binary Search Trees",
+    "section": "Other methods",
+    "text": "Other methods\n\nfindMin\nfindMax\n\nBefore you start writing code, what is the strategy here?\nSubmit your Node.java and Tree.java to gradescope"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#findmin",
+    "href": "slides/slides-10-02.html#findmin",
+    "title": "Binary Search Trees",
+    "section": "findMin",
+    "text": "findMin\npublic Node&lt;T&gt; findMin() {\n  return findMin(root);\n}\n\nprivate Node&lt;T&gt; findMin(Node&lt;T&gt; current) {\n  if (current == null) return current;\n  if (current.getLeft() == null) return current;\n  return findMin(current.getLeft());\n}"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#findmax",
+    "href": "slides/slides-10-02.html#findmax",
+    "title": "Binary Search Trees",
+    "section": "findMax",
+    "text": "findMax\npublic Node&lt;T&gt; findMax() {\n  return findMax(root);\n}\n\nprivate Node&lt;T&gt; findMax(Node&lt;T&gt; current) {\n  if (current == null) return current;\n  if (current.getRight() == null) return current;\n  return findMax(current.getRight());\n}"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#search",
+    "href": "slides/slides-10-02.html#search",
+    "title": "Binary Search Trees",
+    "section": "Search",
+    "text": "Search\nBefore you start writing code, what is the strategy here?\nSubmit your Node.java and Tree.java to gradescope"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#search-1",
+    "href": "slides/slides-10-02.html#search-1",
+    "title": "Binary Search Trees",
+    "section": "Search",
+    "text": "Search\nWhat’s the runtime?\npublic Node&lt;T&gt; search(T value) {\n  return search(root, value);\n}\n\nprivate Node&lt;T&gt; search(Node&lt;T&gt; current, T value) {\n  if (current == null) return null;\n  if (current.getData().compareTo(value) == 0) return current;\n  if (current.getData().compareTo(value) &gt; 0) {\n    if (current.getLeft() == null) return null;\n    return search(current.getLeft(), value);\n  }\n  if (current.getRight() == null) return null;\n  return search(current.getRight(), value);\n}"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#search-runtime",
+    "href": "slides/slides-10-02.html#search-runtime",
+    "title": "Binary Search Trees",
+    "section": "Search runtime",
+    "text": "Search runtime\n\\(O(\\log n)\\) when the tree is balanced\n\nIn a balanced BST the number of iterations equals the height of the tree.\nThe height of the tree is \\(\\log n\\)\n\nWorst case: \\(O(n)\\) (why?)"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#remove",
+    "href": "slides/slides-10-02.html#remove",
+    "title": "Binary Search Trees",
+    "section": "Remove",
+    "text": "Remove\nBefore you start writing code, what is the strategy here?"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#remove-1",
+    "href": "slides/slides-10-02.html#remove-1",
+    "title": "Binary Search Trees",
+    "section": "Remove",
+    "text": "Remove\nGeneral idea - search for node to remove and its parent."
+  },
+  {
+    "objectID": "slides/slides-10-02.html#remove-2",
+    "href": "slides/slides-10-02.html#remove-2",
+    "title": "Binary Search Trees",
+    "section": "Remove",
+    "text": "Remove\nLeaf\n\nCan be removed without breaking tree\n\nOne child (two cases really, left/right)\n\nCannot be removed without breaking tree\nCan be removed with only locally available pointers"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#remove-3",
+    "href": "slides/slides-10-02.html#remove-3",
+    "title": "Binary Search Trees",
+    "section": "Remove",
+    "text": "Remove\nTwo children\n\nCannot be removed without breaking tree\nCannot be fixed with locally available pointers\nCosts an additional O(H) work to find a way to fix."
+  },
+  {
+    "objectID": "slides/slides-10-02.html#remove-4",
+    "href": "slides/slides-10-02.html#remove-4",
+    "title": "Binary Search Trees",
+    "section": "Remove",
+    "text": "Remove\n\n\n\n\n\n\n\nBST\n\n\n\nlemon\n\nlemon\n\n\n\nguava\n\nguava\n\n\n\nlemon--guava\n\n\n\n\nraspberry\n\nraspberry\n\n\n\nlemon--raspberry\n\n\n\n\ncoconut\n\ncoconut\n\n\n\nguava--coconut\n\n\n\n\nkiwi\n\nkiwi\n\n\n\nguava--kiwi\n\n\n\n\nlychee\n\nlychee\n\n\n\nraspberry--lychee\n\n\n\n\nstrawberry\n\nstrawberry\n\n\n\nraspberry--strawberry\n\n\n\n\navocado\n\navocado\n\n\n\ncoconut--avocado\n\n\n\n\nfig\n\nfig\n\n\n\ncoconut--fig\n\n\n\n\nlime\n\nlime\n\n\n\nlychee--lime\n\n\n\n\npomelo\n\npomelo\n\n\n\nlychee--pomelo\n\n\n\n\nstarfruit\n\nstarfruit\n\n\n\nstrawberry--starfruit\n\n\n\n\ntomato\n\ntomato\n\n\n\nstrawberry--tomato\n\n\n\n\nnull1\n\n\n\nnull2"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#remove-5",
+    "href": "slides/slides-10-02.html#remove-5",
+    "title": "Binary Search Trees",
+    "section": "Remove",
+    "text": "Remove\nA leaf can be removed without breaking the tree\n\n\n\n\n\n\n\nBST\n\n\n\nlemon\n\nlemon\n\n\n\nguava\n\nguava\n\n\n\nlemon--guava\n\n\n\n\nraspberry\n\nraspberry\n\n\n\nlemon--raspberry\n\n\n\n\ncoconut\n\ncoconut\n\n\n\nguava--coconut\n\n\n\n\nkiwi\n\nkiwi\n\n\n\nguava--kiwi\n\n\n\n\nlychee\n\nlychee\n\n\n\nraspberry--lychee\n\n\n\n\nstrawberry\n\nstrawberry\n\n\n\nraspberry--strawberry\n\n\n\n\navocado\n\navocado\n\n\n\ncoconut--avocado\n\n\n\n\nfig\n\nfig\n\n\n\ncoconut--fig\n\n\n\n\nlime\n\nlime\n\n\n\nlychee--lime\n\n\n\n\npomelo\n\npomelo\n\n\n\nlychee--pomelo\n\n\n\n\nstarfruit\n\nstarfruit\n\n\n\nstrawberry--starfruit\n\n\n\n\ntomato\n\ntomato\n\n\n\nstrawberry--tomato\n\n\n\n\nnull1\n\n\n\nnull2"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#remove-6",
+    "href": "slides/slides-10-02.html#remove-6",
+    "title": "Binary Search Trees",
+    "section": "Remove",
+    "text": "Remove\nNode with one child can be removed with only locally available pointers\n\n\n\n\n\n\n\nBST\n\n\n\nlemon\n\nlemon\n\n\n\nguava\n\nguava\n\n\n\nlemon--guava\n\n\n\n\nraspberry\n\nraspberry\n\n\n\nlemon--raspberry\n\n\n\n\ncoconut\n\ncoconut\n\n\n\nguava--coconut\n\n\n\n\nnull0\n\n\n\nguava--null0\n\n\n\n\nlychee\n\nlychee\n\n\n\nraspberry--lychee\n\n\n\n\nstrawberry\n\nstrawberry\n\n\n\nraspberry--strawberry\n\n\n\n\navocado\n\navocado\n\n\n\ncoconut--avocado\n\n\n\n\nfig\n\nfig\n\n\n\ncoconut--fig\n\n\n\n\nlime\n\nlime\n\n\n\nlychee--lime\n\n\n\n\npomelo\n\npomelo\n\n\n\nlychee--pomelo\n\n\n\n\nstarfruit\n\nstarfruit\n\n\n\nstrawberry--starfruit\n\n\n\n\ntomato\n\ntomato\n\n\n\nstrawberry--tomato\n\n\n\n\nnull1\n\n\n\nnull2"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#remove-7",
+    "href": "slides/slides-10-02.html#remove-7",
+    "title": "Binary Search Trees",
+    "section": "Remove",
+    "text": "Remove\nNode with one child can be removed with only locally available pointers\n\n\n\n\n\n\n\nBST\n\n\n\nlemon\n\nlemon\n\n\n\ncoconut\n\ncoconut\n\n\n\nlemon--coconut\n\n\n\n\nraspberry\n\nraspberry\n\n\n\nlemon--raspberry\n\n\n\n\navocado\n\navocado\n\n\n\ncoconut--avocado\n\n\n\n\nfig\n\nfig\n\n\n\ncoconut--fig\n\n\n\n\nlychee\n\nlychee\n\n\n\nraspberry--lychee\n\n\n\n\nstrawberry\n\nstrawberry\n\n\n\nraspberry--strawberry\n\n\n\n\nlime\n\nlime\n\n\n\nlychee--lime\n\n\n\n\npomelo\n\npomelo\n\n\n\nlychee--pomelo\n\n\n\n\nstarfruit\n\nstarfruit\n\n\n\nstrawberry--starfruit\n\n\n\n\ntomato\n\ntomato\n\n\n\nstrawberry--tomato\n\n\n\n\nnull1\n\n\n\nnull2"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#remove-8",
+    "href": "slides/slides-10-02.html#remove-8",
+    "title": "Binary Search Trees",
+    "section": "Remove",
+    "text": "Remove\nNode with two children\n\n\n\n\n\n\n\nBST\n\n\n\nlemon\n\nlemon\n\n\n\ncoconut\n\ncoconut\n\n\n\nlemon--coconut\n\n\n\n\nraspberry\n\nraspberry\n\n\n\nlemon--raspberry\n\n\n\n\navocado\n\navocado\n\n\n\ncoconut--avocado\n\n\n\n\nfig\n\nfig\n\n\n\ncoconut--fig\n\n\n\n\nlychee\n\nlychee\n\n\n\nraspberry--lychee\n\n\n\n\nstrawberry\n\nstrawberry\n\n\n\nraspberry--strawberry\n\n\n\n\nlime\n\nlime\n\n\n\nlychee--lime\n\n\n\n\npomelo\n\npomelo\n\n\n\nlychee--pomelo\n\n\n\n\nstarfruit\n\nstarfruit\n\n\n\nstrawberry--starfruit\n\n\n\n\ntomato\n\ntomato\n\n\n\nstrawberry--tomato\n\n\n\n\nnull1\n\n\n\nnull2"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#remove-9",
+    "href": "slides/slides-10-02.html#remove-9",
+    "title": "Binary Search Trees",
+    "section": "Remove",
+    "text": "Remove\nNode with two children – replace node to remove data with min to the right data (or max to the left data)\n\n\n\n\n\n\n\nBST\n\n\n\nlemon\n\nlemon\n\n\n\ncoconut\n\ncoconut\n\n\n\nlemon--coconut\n\n\n\n\nraspberry\n\nraspberry\n\n\n\nlemon--raspberry\n\n\n\n\navocado\n\navocado\n\n\n\ncoconut--avocado\n\n\n\n\nfig\n\nfig\n\n\n\ncoconut--fig\n\n\n\n\nlychee\n\nlychee\n\n\n\nraspberry--lychee\n\n\n\n\nstrawberry\n\nstrawberry\n\n\n\nraspberry--strawberry\n\n\n\n\nlime\n\nlime\n\n\n\nlychee--lime\n\n\n\n\npomelo\n\npomelo\n\n\n\nlychee--pomelo\n\n\n\n\nstarfruit\n\nstarfruit\n\n\n\nstrawberry--starfruit\n\n\n\n\ntomato\n\ntomato\n\n\n\nstrawberry--tomato\n\n\n\n\nnull1\n\n\n\nnull2"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#remove-10",
+    "href": "slides/slides-10-02.html#remove-10",
+    "title": "Binary Search Trees",
+    "section": "Remove",
+    "text": "Remove\nNode with two children – replace node to remove data with min to the right data (or max to the left data)\n\n\n\n\n\n\n\nBST\n\n\n\nlemon\n\nlemon\n\n\n\ncoconut\n\ncoconut\n\n\n\nlemon--coconut\n\n\n\n\nstarfruit\n\nstarfruit\n\n\n\nlemon--starfruit\n\n\n\n\navocado\n\navocado\n\n\n\ncoconut--avocado\n\n\n\n\nfig\n\nfig\n\n\n\ncoconut--fig\n\n\n\n\nlychee\n\nlychee\n\n\n\nstarfruit--lychee\n\n\n\n\nstrawberry\n\nstrawberry\n\n\n\nstarfruit--strawberry\n\n\n\n\nlime\n\nlime\n\n\n\nlychee--lime\n\n\n\n\npomelo\n\npomelo\n\n\n\nlychee--pomelo\n\n\n\n\nnull2\n\n\n\nstrawberry--null2\n\n\n\n\ntomato\n\ntomato\n\n\n\nstrawberry--tomato\n\n\n\n\nnull1"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#remove-steps",
+    "href": "slides/slides-10-02.html#remove-steps",
+    "title": "Binary Search Trees",
+    "section": "Remove – steps",
+    "text": "Remove – steps\n\nfind parent of node to remove\nmodify parent.left/right to not reference node to remove\ncount how many children node to remove has\n\n0 children – modify parent.left/right to not reference node to remove\n1 child – the “orphan” child replaces the node to remove\n2 children – special node (we need to find it) replaces it (can’t just swap nodes because of references, switch data instead)"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#remove-implementation",
+    "href": "slides/slides-10-02.html#remove-implementation",
+    "title": "Binary Search Trees",
+    "section": "remove implementation",
+    "text": "remove implementation\npublic void remove(T value) {\n  // find node to remove and its parent\n  Node&lt;T&gt; parent = null;\n  Node&lt;T&gt; current = root;\n  \n  while (current != null && current.getData().compareTo(value) != 0) {\n    parent = current;\n    if (current.getData().compareTo(value) &gt; 0) {\n      current = current.getLeft();\n    } else {\n      current = current.getRight();\n    }\n  }\n  if (current != null) {\n    remove(parent, current);\n  }\n}\n\nprivate void remove(Node&lt;T&gt; parent, Node&lt;T&gt; nodeToRemove) {\n  // count number of children\n  int children = 0;\n  Node&lt;T&gt; child = null;\n  \n  if (nodeToRemove.getLeft() != null) {\n    children++;\n    child = nodeToRemove.getLeft();\n  }\n  if (nodeToRemove.getRight() != null) {\n    children++;\n    child = nodeToRemove.getRight();\n  }\n  \n  // address each case\n  if (children &lt;= 1) {\n    if (parent == null) root = child;\n    else if (parent.getLeft() == nodeToRemove) parent.setLeft(child);\n    else parent.setRight(child);\n  }\n  \n  if (children == 2) {\n    // find minimum to the right\n    // or find max to the left\n    Node&lt;T&gt; previous = nodeToRemove;\n    Node&lt;T&gt; replacement = previous.getRight();\n    while (replacement.getLeft() != null) {\n      previous = replacement;\n      replacement = replacement.getLeft();\n    }\n    nodeToRemove.setData(replacement.getData());\n    if (previous == nodeToRemove) previous.setRight(null);\n    else previous.setLeft(null);\n    \n  }\n  \n}"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#gradescope-exercise",
+    "href": "slides/slides-10-02.html#gradescope-exercise",
+    "title": "Binary Search Trees",
+    "section": "Gradescope Exercise",
+    "text": "Gradescope Exercise\nComplete gradescope’s exercise on BST node removal"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#recap",
+    "href": "slides/slides-10-02.html#recap",
+    "title": "Binary Search Trees",
+    "section": "Recap",
+    "text": "Recap\n\nWhat is a binary search tree?\nHow do you traverse a binary search tree?\nHow do you search a binary search tree?\nHow do you add to a binary search tree?\nHow do you remove from a binary search tree?\nWhat is the runtime of these operations?"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#tree-implementation",
+    "href": "slides/slides-10-02.html#tree-implementation",
+    "title": "Binary Search Trees",
+    "section": "Tree Implementation",
+    "text": "Tree Implementation\npublic class Tree&lt;T extends Comparable&lt;T&gt;&gt; {\n    private Node&lt;T&gt; root;\n\n    public Tree() { root = null; }\n\n    private void addNode(Node&lt;T&gt; current, Node&lt;T&gt; nodeToAdd) {\n        if (current.getData().compareTo(nodeToAdd.getData()) &gt; 0) {\n            if (current.getLeft() == null) {\n                current.setLeft(nodeToAdd);\n            } else {\n                addNode(current.getLeft(), nodeToAdd);\n            }\n        } else if(current.getData().compareTo(nodeToAdd.getData()) &lt; 0) {\n            if (current.getRight() == null) {\n                current.setRight(nodeToAdd);\n            } else {\n                addNode(current.getRight(), nodeToAdd);\n            }\n        }\n    }\n\n    public Node&lt;T&gt; getRoot() { return root; }\n\n    public void addNode(Node&lt;T&gt; node) {\n        if (root == null) root = node;\n        else addNode(root, node);\n    }\n\n    private String toString(int level, Node&lt;T&gt; current) {\n        if (current == null) return \"\";\n\n        String retVal = toString(level + 1, current.getLeft());\n\n        for (int i = 0; i &lt; level; i++) retVal += \"\\t\";\n\n        retVal += current.getData() + \"&lt;\";\n        retVal += \"\\n\";\n\n        retVal += toString(level + 1, current.getRight());\n        return retVal;\n    }\n\n    private String toString(Node&lt;T&gt; current) {\n        if (current == null) return \"\";\n\n        String message = \"\";\n\n        if (current.getLeft() != null) {\n            message += current.getData() + \" left child is \" + current.getLeft().getData() + \"\\n\";\n        }\n        if (current.getRight() != null) {\n            message += current.getData() + \" right child is \" + current.getRight().getData() + \"\\n\";\n        }\n\n        if (current.getLeft() != null) {\n            message += toString(current.getLeft());\n        }\n        if (current.getRight() != null) {\n            message += toString(current.getRight());\n        }\n        return message;\n    }\n\n\n    public String toString() {\n        return toString(0, root);\n        //return root.getData() + \" is the root\\n\" + toString(root).trim();\n    }\n\n    public Node&lt;T&gt; findMin() {\n        return findMin(root);\n    }\n\n    private Node&lt;T&gt; findMin(Node&lt;T&gt; current) {\n        if (current == null) return current;\n        if (current.getLeft() == null) return current;\n        return findMin(current.getLeft());\n    }\n\n    public Node&lt;T&gt; findMax() {\n        return findMax(root);\n    }\n\n    private Node&lt;T&gt; findMax(Node&lt;T&gt; current) {\n        if (current == null) return current;\n        if (current.getRight() == null) return current;\n        return findMax(current.getRight());\n    }\n\n    public Node&lt;T&gt; search(T value) {\n        return search(root, value);\n    }\n\n    private Node&lt;T&gt; search(Node&lt;T&gt; current, T value) {\n        if (current == null) return null;\n        if (current.getData().compareTo(value) == 0) return current;\n        if (current.getData().compareTo(value) &gt; 0) {\n            if (current.getLeft() == null) return null;\n            return search(current.getLeft(), value);\n        }\n        if (current.getRight() == null) return null;\n        return search(current.getRight(), value);\n    }\n\n    private void remove(Node&lt;T&gt; parent, Node&lt;T&gt; nodeToRemove) {\n        // count number of children\n        int children = 0;\n        Node&lt;T&gt; child = null;\n\n        if (nodeToRemove.getLeft() != null) {\n            children++;\n            child = nodeToRemove.getLeft();\n        }\n        if (nodeToRemove.getRight() != null) {\n            children++;\n            child = nodeToRemove.getRight();\n        }\n\n        // address each case\n        if (children &lt;= 1) {\n            if (parent == null) root = child;\n            else if (parent.getLeft() == nodeToRemove) parent.setLeft(child);\n            else parent.setRight(child);\n        }\n\n        if (children == 2) {\n            // find minimum to the right\n            // or find max to the left\n            Node&lt;T&gt; previous = nodeToRemove;\n            Node&lt;T&gt; replacement = previous.getRight();\n            while (replacement.getLeft() != null) {\n                previous = replacement;\n                replacement = replacement.getLeft();\n            }\n            nodeToRemove.setData(replacement.getData());\n            if (previous == nodeToRemove) previous.setRight(null);\n            else previous.setLeft(null);\n\n        }\n\n    }\n\n    public void remove(T value) {\n        // find node to remove and its parent\n        Node&lt;T&gt; parent = null;\n        Node&lt;T&gt; current = root;\n\n        while (current != null && current.getData().compareTo(value) != 0) {\n            parent = current;\n            if (current.getData().compareTo(value) &gt; 0) {\n                current = current.getLeft();\n            } else {\n                current = current.getRight();\n            }\n        }\n        if (current != null) {\n            remove(parent, current);\n        }\n    }\n}"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#bst-operations-runtime",
+    "href": "slides/slides-10-02.html#bst-operations-runtime",
+    "title": "Binary Search Trees",
+    "section": "BST operations runtime",
+    "text": "BST operations runtime\nTree height \\(h\\) is \\(\\log n\\) for balanced tree.\nSearch, Insert, Delete:\n\nAverage case: O(log n) - when the tree is reasonably balanced\nWorst case: O(n) - when the tree degenerates into a linked list (all nodes in a single chain)\n\nFind Minimum/Maximum:\n\nAverage case: O(log n)\nWorst case: O(n)\n\nTraversal (inorder, preorder, postorder):\n\nAlways O(n) - must visit every node"
+  },
+  {
+    "objectID": "slides/slides-10-02.html#tree-interface",
+    "href": "slides/slides-10-02.html#tree-interface",
+    "title": "Binary Search Trees",
+    "section": "Tree interface",
+    "text": "Tree interface\nThe data type T that must extend Comparable to be able to go left or right (use compareTo from the data object, bounded type generic)\npublic interface Tree&lt;T extends Comparable&lt;T&gt;&gt; {\n  Node&lt;T&gt; getRoot();\n  void addNode(Node&lt;T&gt; node);\n  Node&lt;T&gt; findMin();\n  Node&lt;T&gt; findMax();\n  void remove(T value);\n}"
+  },
+  {
+    "objectID": "slides/slides-09-04.html#where-we-are",
+    "href": "slides/slides-09-04.html#where-we-are",
+    "title": "Linked List",
+    "section": "Where we are",
+    "text": "Where we are\nDownload all the files for what you have implemented so far if you haven’t been able to catch up. I’ve also made changes to the autograder, so you get the messages for compiling errors."
+  },
+  {
+    "objectID": "slides/slides-09-04.html#quiz-8",
+    "href": "slides/slides-09-04.html#quiz-8",
+    "title": "Linked List",
+    "section": "Quiz 8",
+    "text": "Quiz 8\nYou have 10 minutes to complete the quiz."
+  },
+  {
+    "objectID": "slides/slides-10-02.html#self-balancing-binary-search-trees-bbsts",
+    "href": "slides/slides-10-02.html#self-balancing-binary-search-trees-bbsts",
+    "title": "Binary Search Trees",
+    "section": "Self-balancing Binary Search Trees (BBSTs)",
+    "text": "Self-balancing Binary Search Trees (BBSTs)\nThe solution to this problem is Self-balancing Binary Search Trees (BBSTs).\n\nAVL Trees: keeps the height difference (balance factor) between the left and right subtrees of every node at ≤ 1\nRed-Black Trees: gives a color (red or black) to each node along with structural rules (for example, the root is black, red nodes cannot have red children, and all paths from a node to its leaves have the same number of black nodes).\n\nWe will be not be implementing a self-balancing binary search tree in class."
+  },
+  {
+    "objectID": "index.html#module-10",
+    "href": "index.html#module-10",
+    "title": "CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development",
+    "section": "Module 10",
+    "text": "Module 10\nBy the end of this module you will be able to:\n\nDefine what a tree is, including a balanced, complete and full tree\nDefine a binary search tree (BST) and describe the properties that distinguish it from a general binary tree\nExplain the relationship between a BST node’s value and the values in its left and right subtrees\nTrace the structure of a BST after a sequence of insertions and deletions by drawing diagrams\nIdentify whether a given binary tree satisfies the BST property\nImplement in Java a generic Tree interface, a Node class with a data field and left and right child references, and a BST class that maintains a reference to the root node\nIdentify and handle edge cases such as an empty tree, a single-node tree, and deleting the root node\nWrite a recursive method in Java to insert a new value into a BST while maintaining the BST property\nWrite a recursive method in Java to search a BST for a target value, returning a boolean or the node\nDefine and distinguish between the following tree traversals and predict the output of each for a given BST: In-order, Pre-order, Post-order\nWrite a toString method that returns the elements of the BST in a meaningful order using traversal\nWrite a recursive method to delete a node from a BST, correctly handling all three cases: Node has no children (leaf), Node has one child, Node has two children (replace with in-order successor or predecessor)\nExplain why the efficiency of BST operations depends on the height of the tree\n\n\nSlides\n\nTrees\nBinary Search Trees"
   }
 ]
