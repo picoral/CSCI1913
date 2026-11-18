@@ -6542,7 +6542,7 @@
     "href": "slides/slides-10-01.html#binary-trees-another-higher-order-data-structure",
     "title": "Trees",
     "section": "Binary Trees – Another Higher Order Data Structure",
-    "text": "Binary Trees – Another Higher Order Data Structure\n\nBinary tree terms\n\nroot – the base of the tree (level 1)\nempty tree has no nodes (not even a root, root is null)\nleft and right children, parents, siblings\nsubtree\nleaves\nbalanced, complete and full trees (next slides)\n\n\nWe will be implementing two types of binary trees: Binary Search Trees (linked), and a Heap (array)"
+    "text": "Binary Trees – Another Higher Order Data Structure\n\nBinary tree terms:\n\nleft and right children\nbalanced, complete and full trees (next slides)\n\n\nWe will be implementing two types of binary trees: Binary Search Trees (linked), and a Heap (array)"
   },
   {
     "objectID": "slides/slides-10-01.html#full-binary-tree",
