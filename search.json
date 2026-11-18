@@ -6423,7 +6423,7 @@
     "href": "slides/slides-10-01.html#tree",
     "title": "Trees",
     "section": "Tree",
-    "text": "Tree\nWhat is a tree in computer science?\n\nA tree is a collection of nodes, which can be empty.\nAn empty tree root points to null\nIf a tree is not empty we have a “root” node\nEvery node is connected to the root by exactly one path"
+    "text": "Tree\nWhat is a tree in computer science?\n\nData structure made of nodes connected by edges\nOne node is the root (the top)\nAn empty tree root points to null\nIf a tree is not empty we have a “root” node\nEach node can have children (nodes below it)\nEvery node is connected to the root by exactly one path\nNodes with no children are leaves\nEach node (except the root) has exactly one parent\nNo cycles - no loops back to start\nA tree with n nodes has exactly n-1 edges"
   },
   {
     "objectID": "slides/slides-10-01.html#tree-nodes",
@@ -6493,7 +6493,7 @@
     "href": "slides/slides-10-01.html#tree-example-6",
     "title": "Trees",
     "section": "Tree – example",
-    "text": "Tree – example\nNodes H and N are only childnre (they have no siblings)\n\n\n\n\n\n\n\nTree\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA--B\n\n\n\n\nC\n\nC\n\n\n\nA--C\n\n\n\n\nD\n\nD\n\n\n\nA--D\n\n\n\n\nE\n\nE\n\n\n\nA--E\n\n\n\n\nF\n\nF\n\n\n\nA--F\n\n\n\n\nG\n\nG\n\n\n\nA--G\n\n\n\n\nH\n\nH\n\n\n\nD--H\n\n\n\n\nI\n\nI\n\n\n\nE--I\n\n\n\n\nJ\n\nJ\n\n\n\nE--J\n\n\n\n\nK\n\nK\n\n\n\nF--K\n\n\n\n\nL\n\nL\n\n\n\nF--L\n\n\n\n\nM\n\nM\n\n\n\nF--M\n\n\n\n\nN\n\nN\n\n\n\nG--N\n\n\n\n\nO\n\nO\n\n\n\nJ--O\n\n\n\n\nP\n\nP\n\n\n\nJ--P"
+    "text": "Tree – example\nNodes H and N are only children (they have no siblings)\n\n\n\n\n\n\n\nTree\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA--B\n\n\n\n\nC\n\nC\n\n\n\nA--C\n\n\n\n\nD\n\nD\n\n\n\nA--D\n\n\n\n\nE\n\nE\n\n\n\nA--E\n\n\n\n\nF\n\nF\n\n\n\nA--F\n\n\n\n\nG\n\nG\n\n\n\nA--G\n\n\n\n\nH\n\nH\n\n\n\nD--H\n\n\n\n\nI\n\nI\n\n\n\nE--I\n\n\n\n\nJ\n\nJ\n\n\n\nE--J\n\n\n\n\nK\n\nK\n\n\n\nF--K\n\n\n\n\nL\n\nL\n\n\n\nF--L\n\n\n\n\nM\n\nM\n\n\n\nF--M\n\n\n\n\nN\n\nN\n\n\n\nG--N\n\n\n\n\nO\n\nO\n\n\n\nJ--O\n\n\n\n\nP\n\nP\n\n\n\nJ--P"
   },
   {
     "objectID": "slides/slides-10-01.html#tree-example-7",
@@ -6535,7 +6535,7 @@
     "href": "slides/slides-10-01.html#implementation",
     "title": "Trees",
     "section": "Implementation",
-    "text": "Implementation\nOur tree data structure is made of nodes\n\nEach node has pointers to children – how many children?\n\nA Tree has a pointer to some “root” node\n\nBinary (2 children, left and right) tree is a common implementation.\nTypically, some type of ordering will be imposed on the elements in a binary tree."
+    "text": "Implementation\nOur tree data structure is made of nodes\n\nEach node has references to children – how many children?\n\nA Tree has a reference to a “root” node\n\nBinary (2 children, left and right) tree is a common implementation.\nTypically, some type of ordering will be imposed on the elements in a binary tree."
   },
   {
     "objectID": "slides/slides-10-01.html#binary-trees-another-higher-order-data-structure",

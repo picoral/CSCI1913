@@ -1004,31 +1004,19 @@ margin-right: 0; }
 <li>Trees store data in a hierarchy instead</li>
 </ul>
 </section>
-<section id="tree" class="slide level2">
+<section id="tree" class="slide level2 smaller">
 <h2>Tree</h2>
 <p>What is a tree in computer science?</p>
 <ul>
-<li>A tree is a collection of nodes, which can be empty.</li>
+<li>Data structure made of nodes connected by edges</li>
+<li>One node is the root (the top)</li>
 <li>An empty tree root points to null</li>
 <li>If a tree is not empty we have a “root” node</li>
-<li>Every node is connected to the root by exactly one path</li>
-</ul>
-</section>
-<section id="tree-nodes" class="slide level2">
-<h2>Tree Nodes</h2>
-<p>A tree is a data structure made of nodes connected by edges, where:</p>
-<ul>
-<li>One node is the root (the top)</li>
 <li>Each node can have children (nodes below it)</li>
+<li>Every node is connected to the root by exactly one path</li>
 <li>Nodes with no children are leaves</li>
 <li>Each node (except the root) has exactly one parent</li>
-</ul>
-</section>
-<section id="tree-key-properties" class="slide level2">
-<h2>Tree – key properties</h2>
-<ul>
 <li>No cycles - no loops back to start</li>
-<li>Connected - there’s a path from the root to every node</li>
 <li>A tree with <code>n</code> nodes has exactly <code>n-1</code> edges</li>
 </ul>
 </section>
@@ -2192,7 +2180,7 @@ margin-right: 0; }
 </section>
 <section id="tree-example-6" class="slide level2">
 <h2>Tree – example</h2>
-<p>Nodes H and N are only childnre (they have no siblings)</p>
+<p>Nodes H and N are only children (they have no siblings)</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -3153,9 +3141,9 @@ margin-right: 0; }
 <h2>Implementation</h2>
 <p>Our tree data structure is made of <strong>nodes</strong></p>
 <ul>
-<li>Each node has pointers to children – how many children?</li>
+<li>Each node has references to children – how many children?</li>
 </ul>
-<p>A <strong>Tree</strong> has a pointer to some “root” node</p>
+<p>A <strong>Tree</strong> has a reference to a “root” node</p>
 <ul>
 <li><strong>Binary</strong> (2 children, left and right) tree is a common implementation.</li>
 <li>Typically, some type of ordering will be imposed on the elements in a binary tree.</li>
