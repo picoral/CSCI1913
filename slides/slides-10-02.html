@@ -4980,7 +4980,7 @@ margin-right: 0; }
 <span id="cb12-42"><a></a>    // copy replacement data up</span>
 <span id="cb12-43"><a></a>    nodeToRemove.setData(replacement.getData());</span>
 <span id="cb12-44"><a></a>    // then unlink the replacement node</span>
-<span id="cb12-45"><a></a>    // node to right of node to remove migh have a right child</span>
+<span id="cb12-45"><a></a>    // replacement (node we are to remove) might have a right child</span>
 <span id="cb12-46"><a></a>    if (replacementParent == nodeToRemove) replacementParent.setRight(replacement.getRight());</span>
 <span id="cb12-47"><a></a>    else replacementParent.setLeft(replacement.getRight());</span>
 <span id="cb12-48"><a></a>  }</span>
@@ -5126,7 +5126,7 @@ margin-right: 0; }
 <span id="cb13-124"><a></a>        // copy replacement data up</span>
 <span id="cb13-125"><a></a>        nodeToRemove.setData(replacement.getData());</span>
 <span id="cb13-126"><a></a>        // then unlink the replacement node</span>
-<span id="cb13-127"><a></a>        // node to right of node to remove migh have a right child</span>
+<span id="cb13-127"><a></a>        // replacement (node we are to remove) might have a right child</span>
 <span id="cb13-128"><a></a>        if (replacementParent == nodeToRemove) replacementParent.setRight(replacement.getRight());</span>
 <span id="cb13-129"><a></a>        else replacementParent.setLeft(replacement.getRight());</span>
 <span id="cb13-130"><a></a>      }</span>
@@ -5135,20 +5135,17 @@ margin-right: 0; }
 </section>
 <section id="bst-operations-runtime" class="slide level2">
 <h2>BST operations runtime</h2>
-<p>Tree height <span class="math inline">\(h\)</span> is <span class="math inline">\(\log n\)</span> for balanced tree.</p>
-<p>Search, Insert, Delete:</p>
+<p>When tree height <span class="math inline">\(h\)</span> is <span class="math inline">\(\log n\)</span> for (near) balanced tree.</p>
 <ul>
-<li>Average case: O(log n) - when the tree is reasonably balanced</li>
+<li>Search, Insert, Delete: O(log n) - when the tree is reasonably balanced
+<ul>
 <li>Worst case: O(n) - when the tree degenerates into a linked list (all nodes in a single chain)</li>
-</ul>
-<p>Find Minimum/Maximum:</p>
+</ul></li>
+<li>Find Minimum/Maximum: O(log n) - when the tree is reasonably balanced
 <ul>
-<li>Average case: O(log n)</li>
 <li>Worst case: O(n)</li>
-</ul>
-<p>Traversal (inorder, preorder, postorder):</p>
-<ul>
-<li>Always O(n) - must visit every node</li>
+</ul></li>
+<li>Traversal (inorder, preorder, postorder): always O(n) - must visit every node</li>
 </ul>
 
 
