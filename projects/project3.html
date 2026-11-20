@@ -5336,7 +5336,7 @@ background-color: #5e0013;
 </tr>
 <tr class="even">
 <td><code>public DataPoint[] kNearest(double[] query, int k)</code></td>
-<td>The <code>k</code> stored points closest to <code>query</code>, <strong>sorted closest first</strong>. If the tree holds fewer than <code>k</code> points, returns all of them (still sorted). Throws <code>IllegalArgumentException</code> if <code>k &lt; 1</code>.</td>
+<td>The <code>k</code> stored points closest to <code>query</code>, <strong>sorted closest first</strong> (you should consider creating an array of size k that you insert the DataPoints – sorted by distance – as you traverse the tree). If the tree holds fewer than <code>k</code> points, returns all of them (still sorted). Throws <code>IllegalArgumentException</code> if <code>k &lt; 1</code>.</td>
 </tr>
 <tr class="odd">
 <td><code>public long getDistanceCount()</code></td>
