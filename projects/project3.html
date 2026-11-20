@@ -5386,11 +5386,11 @@ background-color: #5e0013;
 </tr>
 <tr class="odd">
 <td><code>public void train(DataPoint[] data)</code></td>
-<td>Builds the model from the training data. If standardizing, the <code>Scaler</code> is fit on this data and the tree stores <em>transformed</em> points. Calling <code>train</code> again replaces the old model. Throws <code>IllegalArgumentException</code> if <code>data</code> is empty.</td>
+<td>Builds the model from the training data. If standardizing, the <code>Scaler</code> is fit on this data and the tree stores <em>transformed</em> points. Calling <code>train</code> again replaces the old model. Throws <code>IllegalArgumentException</code> if <code>data</code> is empty. Add each DataPoint in data to the tree instance variable. Keep all unique labels in training data in an instance variable</td>
 </tr>
 <tr class="even">
 <td><code>public String[] getLabels()</code></td>
-<td>The distinct labels in the training data, in alphabetical order.</td>
+<td>The distinct labels in the training data, in alphabetical order. Should be created/updated in the train method. Just method should just return the labels instance variable</td>
 </tr>
 <tr class="odd">
 <td><code>public String predict(double[] features)</code></td>
@@ -5462,11 +5462,11 @@ background-color: #5e0013;
 <p>Submit <code>KDNode.java</code>, <code>KDTree.java</code>, <code>KNNClassifier.java</code>, and <code>analysis.txt</code> to Gradescope.</p>
 <p>A rough breakdown on points is as follows:</p>
 <ul>
+<li>27 points for the autograded tests (including the efficiency goals)</li>
 <li>10 points for code style</li>
-<li>20 points for the autograded tests (including the efficiency goals)</li>
-<li>30 points for <code>KDNode</code> and <code>KDTree</code> – including design of <code>KDNode</code>, the <code>kNearest</code> bookkeeping, and a <code>height</code></li>
-<li>15 points for <code>KNNClassifier</code></li>
-<li>15 points for the written analysis</li>
+<li>19 points for <code>KDNode</code> and <code>KDTree</code> – including design of <code>KDNode</code>, the <code>kNearest</code> bookkeeping</li>
+<li>24 points for <code>KNNClassifier</code></li>
+<li>20 points for the written analysis</li>
 </ul>
 <p><em>Data citation:</em> Gorman KB, Williams TD, Fraser WR (2014). Ecological sexual dimorphism and environmental variability within a community of Antarctic penguins (genus <em>Pygoscelis</em>). <em>PLoS ONE</em> 9(3): e90081. Data distributed in R’s <code>datasets</code> package as <code>penguins</code>.</p>
 
