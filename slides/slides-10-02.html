@@ -3565,8 +3565,8 @@ margin-right: 0; }
 <h1>Java implementation</h1>
 
 </section>
-<section id="tree-public-methods" class="slide level2">
-<h2>Tree – public methods</h2>
+<section id="tree-interface" class="slide level2 smaller">
+<h2>Tree – interface</h2>
 <p>The data type <code>T</code> must implement <code>Comparable</code> so we can decide whether to go left or right (we use <code>compareTo</code> from the data object – this is a bounded generic type)</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>public interface Tree&lt;T extends Comparable&lt;T&gt;&gt; {</span>
 <span id="cb1-2"><a></a>   Node&lt;T&gt; getRoot();</span>
@@ -3577,13 +3577,22 @@ margin-right: 0; }
 <span id="cb1-7"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>compareTo</code> convention used in all our methods: <code>value.compareTo(current.getData())</code></p>
 <ul>
-<li>negative – value is smaller, go <strong>left</strong></li>
-<li>positive – value is larger, go <strong>right</strong></li>
+<li>negative – value is smaller, go <strong>left</strong> (for BST)</li>
+<li>positive – value is larger, go <strong>right</strong> (for BST)</li>
 <li>zero – found it (or a duplicate)</li>
 </ul>
 </section>
-<section id="node-implementation" class="slide level2">
-<h2>Node implementation</h2>
+<section id="bst-node-implementation" class="slide level2">
+<h2>BST Node implementation</h2>
+<p>We are implementing our BST as a linked binary tree (that’s how it’s usually done). Implement a <code>Node.java</code> file for a Binary Search Tree.</p>
+<ul>
+<li>What are the instance variables?</li>
+<li>The constructor should set the data in the node</li>
+<li>Getter and setters for all instance variables.</li>
+</ul>
+</section>
+<section id="bst-node-implementation-1" class="slide level2">
+<h2>BST Node implementation</h2>
 <p>Here’s our generic Node class:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>public class Node&lt;T extends Comparable&lt;T&gt;&gt; {</span>
 <span id="cb2-2"><a></a>    private T data;</span>
@@ -3622,10 +3631,18 @@ margin-right: 0; }
 <span id="cb2-35"><a></a>    public void setRight(Node&lt;T&gt; node) {</span>
 <span id="cb2-36"><a></a>        right = node;</span>
 <span id="cb2-37"><a></a>    }</span>
-<span id="cb2-38"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-38"><a></a></span>
+<span id="cb2-39"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="tree-implementation-basics" class="slide level2">
-<h2>Tree implementation (basics)</h2>
+<section id="bst-implementation-basics" class="slide level2">
+<h2>BST implementation (basics)</h2>
+<ul>
+<li>We need a reference to the root as an instance variable</li>
+<li>Getter for root (<code>getRoot()</code>)</li>
+</ul>
+</section>
+<section id="bst-implementation-basics-1" class="slide level2">
+<h2>BST implementation (basics)</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>public class BST&lt;T extends Comparable&lt;T&gt;&gt; implements Tree&lt;T&gt;{</span>
 <span id="cb3-2"><a></a>    private Node&lt;T&gt; root;</span>
 <span id="cb3-3"><a></a></span>
@@ -3636,8 +3653,13 @@ margin-right: 0; }
 <span id="cb3-8"><a></a>    public Node&lt;T&gt; getRoot() {</span>
 <span id="cb3-9"><a></a>        return root;</span>
 <span id="cb3-10"><a></a>    }</span>
-<span id="cb3-11"><a></a>    </span>
-<span id="cb3-12"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-11"><a></a></span>
+<span id="cb3-12"><a></a>    public void addNode(Node&lt;T&gt; node) {}</span>
+<span id="cb3-13"><a></a>    public Node&lt;T&gt; findMin() {return null;}</span>
+<span id="cb3-14"><a></a>    public Node&lt;T&gt; findMax() {return null;}</span>
+<span id="cb3-15"><a></a>    public void remove(T value) {};</span>
+<span id="cb3-16"><a></a>    </span>
+<span id="cb3-17"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="add-strategy" class="slide level2">
 <h2>Add – strategy</h2>
