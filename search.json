@@ -6864,7 +6864,7 @@
     "href": "slides/slides-10-02.html#remove-3",
     "title": "Binary Search Trees",
     "section": "Remove",
-    "text": "Remove\nTwo children\n\nCannot be removed without breaking tree\nCannot be fixed with locally available pointers\nCosts an additional O(h) (h is the height of the tree) work to find a way to fix."
+    "text": "Remove\nTwo children\n\nCannot be removed without breaking tree\nCannot be fixed with locally available pointers\nCosts an additional O(h) (h is the height of the tree) work to find a way to fix.\n\nSubmit your solution to gradescope"
   },
   {
     "objectID": "slides/slides-10-02.html#remove-4",
