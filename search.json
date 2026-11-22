@@ -6864,7 +6864,7 @@
     "href": "slides/slides-10-02.html#remove-3",
     "title": "Binary Search Trees",
     "section": "Remove",
-    "text": "Remove\nTwo children\n\nCannot be removed without breaking tree\nCannot be fixed with locally available pointers\nCosts an additional O(h) (h is the height of the tree) work to find a way to fix.\n\nSubmit your solution to gradescope"
+    "text": "Remove\nTwo children\n\nCannot be removed without breaking tree\nCannot be fixed with locally available pointers\nCosts an additional O(h) (h is the height of the tree) work to find a way to fix."
   },
   {
     "objectID": "slides/slides-10-02.html#remove-4",
@@ -6920,7 +6920,7 @@
     "href": "slides/slides-10-02.html#remove-steps",
     "title": "Binary Search Trees",
     "section": "Remove – steps",
-    "text": "Remove – steps\n\nfind the node to remove and its parent\ncount how many children the node to remove has\n\n0 children – set parent.left/right to null\n1 child – set parent.left/right to the “orphan” child\n2 children – find the min of the right subtree (the replacement), copy its data into the node to remove, then remove the replacement node (it has at most one child, a right child)\n\nif the node to remove is the root, there is no parent – update root instead"
+    "text": "Remove – steps\n\nfind the node to remove and its parent\ncount how many children the node to remove has\n\n0 children – set parent.left/right to null\n1 child – set parent.left/right to the “orphan” child\n2 children – find the min of the right subtree (the replacement), copy its data into the node to remove, then remove the replacement node (it has at most one child, a right child)\n\nif the node to remove is the root, there is no parent – update root instead\n\nSubmit your solution to gradescope"
   },
   {
     "objectID": "slides/slides-10-02.html#remove-implementation",
