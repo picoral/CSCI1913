@@ -5328,7 +5328,7 @@ background-color: #5e0013;
 </tr>
 <tr class="even">
 <td><code>public boolean contains(double[] point)</code></td>
-<td><code>true</code> if some stored point equals <code>point</code> on every coordinate. Should only visit nodes along one root-to-leaf path.</td>
+<td><code>true</code> if some stored point equals <code>point</code> on every coordinate (you can use <code>Arrays.equals</code> method to compare two arrays. Calling <code>.equals</code> on an array is the same as doing <code>==</code> for two arrays – in other words, it doesnt’ work). Should only visit nodes along one root-to-leaf path. Remember that your while loop should account for the end of the tree</td>
 </tr>
 <tr class="odd">
 <td><code>public DataPoint nearest(double[] query)</code></td>
