@@ -6374,7 +6374,7 @@
     "href": "projects/project3.html#kdtree",
     "title": "CSC 1913 Project 3 – Which penguin is that?",
     "section": "KDTree",
-    "text": "KDTree\nA k-d tree of DataPoints, following the definition in the Background section exactly:\n\nA node at depth \\(t\\) splits on axis \\(t \\bmod d\\).\nPoints that are equal on the splitting axis go right.\nDuplicate points are allowed.\n\n\n\n\n\n\n\n\nMember\nContract\n\n\n\n\npublic KDTree(int dimensions)\nAn empty tree for points with that many features. Throws IllegalArgumentException if dimensions &lt; 1.\n\n\npublic int getDimensions()\nThe number of dimensions.\n\n\npublic void insert(DataPoint p)\nAdds p to the tree. Throws IllegalArgumentException if p has the wrong number of features (and the tree is unchanged).\n\n\npublic int size()\nNumber of points stored. \\(O(1)\\).\n\n\npublic int height()\nNumber of nodes on the longest root-to-leaf path. An empty tree has height 0 and a single node has height 1.\n\n\npublic boolean contains(double[] point)\ntrue if some stored point equals point on every coordinate (you can use Arrays.equals method to compare two arrays. Calling .equals on an array is the same as doing == for two arrays – in other words, it doesnt’ work). Should only visit nodes along one root-to-leaf path. Remember that your while loop should account for the end of the tree\n\n\npublic DataPoint nearest(double[] query)\nThe stored point closest to query, or null if the tree is empty. If several points are equally close, any of them is acceptable.\n\n\npublic DataPoint[] kNearest(double[] query, int k)\nThe k stored points closest to query, sorted closest first (you should consider creating an array of size k that you insert the DataPoints – sorted by distance – as you traverse the tree). If the tree holds fewer than k points, returns all of them (still sorted). Throws IllegalArgumentException if k &lt; 1.\n\n\npublic long getDistanceCount()\nThe total number of point-to-query distance computations performed by nearest and kNearest since the tree was created or last reset.\n\n\npublic void resetDistanceCount()\nSets the distance count back to 0.\n\n\n\ncontains, nearest, and kNearest throw IllegalArgumentException if the query array has the wrong length.\nAbout the distance count: every time your code computes the distance between a stored point and the query, the count must go up by one. The easy way to guarantee this is to put all distance computation in a single private helper method that increments the counter. insert and contains don’t compute distances. Graders will check that the counter is honest.\nHints and constraints:\n\nYou’ll never need the actual distance, only comparisons between distances. Is there a cheaper quantity that orders points the same way?\nkNearest needs to keep track of “the best \\(k\\) found so far” while it searches. Designing that bookkeeping (with arrays, no banned classes) is part of the assignment. Think about which operations it needs to support, and how often each one happens.\n\nEfficiency goals (checked by the autograder with getDistanceCount):\n\nnearest on 20,000 random 2-D points: fewer than 100 distance computations per query on average. A linear scan uses 20,000.\nkNearest with \\(k = 10\\) on 20,000 random 3-D points: fewer than 500 distance computations per query on average.\n\nA correct but un-pruned search will pass every correctness test and fail only these. So get a correct (even slow) version working first, then make it efficient."
+    "text": "KDTree\nA k-d tree of DataPoints, following the definition in the Background section exactly:\n\nA node at depth \\(t\\) splits on axis \\(t \\bmod d\\).\nPoints that are equal on the splitting axis go right.\nDuplicate points are allowed.\n\n\n\n\n\n\n\n\nMember\nContract\n\n\n\n\npublic KDTree(int dimensions)\nAn empty tree for points with that many features. Throws IllegalArgumentException if dimensions &lt; 1.\n\n\npublic int getDimensions()\nThe number of dimensions.\n\n\npublic void insert(DataPoint p)\nAdds p to the tree. Throws IllegalArgumentException if p has the wrong number of features (and the tree is unchanged).\n\n\npublic int size()\nNumber of points stored. \\(O(1)\\).\n\n\npublic int height()\nNumber of nodes on the longest root-to-leaf path. An empty tree has height 0 and a single node has height 1.\n\n\npublic boolean contains(double[] point)\ntrue if some stored point equals point on every coordinate. Should only visit nodes along one root-to-leaf path.\n\n\npublic DataPoint nearest(double[] query)\nThe stored point closest to query, or null if the tree is empty. If several points are equally close, any of them is acceptable.\n\n\npublic DataPoint[] kNearest(double[] query, int k)\nThe k stored points closest to query, sorted closest first (you should consider creating an array of size k that you insert the DataPoints – sorted by distance – as you traverse the tree). If the tree holds fewer than k points, returns all of them (still sorted). Throws IllegalArgumentException if k &lt; 1.\n\n\npublic long getDistanceCount()\nThe total number of point-to-query distance computations performed by nearest and kNearest since the tree was created or last reset.\n\n\npublic void resetDistanceCount()\nSets the distance count back to 0.\n\n\n\ncontains, nearest, and kNearest throw IllegalArgumentException if the query array has the wrong length.\nAbout the distance count: every time your code computes the distance between a stored point and the query, the count must go up by one. The easy way to guarantee this is to put all distance computation in a single private helper method that increments the counter. insert and contains don’t compute distances. Graders will check that the counter is honest.\nHints and constraints:\n\nYou’ll never need the actual distance, only comparisons between distances. Is there a cheaper quantity that orders points the same way?\nkNearest needs to keep track of “the best \\(k\\) found so far” while it searches. Designing that bookkeeping (with arrays, no banned classes) is part of the assignment. Think about which operations it needs to support, and how often each one happens.\n\nEfficiency goals (checked by the autograder with getDistanceCount):\n\nnearest on 20,000 random 2-D points: fewer than 100 distance computations per query on average. A linear scan uses 20,000.\nkNearest with \\(k = 10\\) on 20,000 random 3-D points: fewer than 500 distance computations per query on average.\n\nA correct but un-pruned search will pass every correctness test and fail only these. So get a correct (even slow) version working first, then make it efficient."
   },
   {
     "objectID": "projects/project3.html#knnclassifier",
@@ -7096,5 +7096,761 @@
     "title": "Lab 09",
     "section": "Javadoc",
     "text": "Javadoc\n   /**                                                                               \n   * Calculates the average of an array of test scores.\n   * Returns 0 if the array is null or empty.    \n   *              \n   * @param scores  an array of test scores, each in the range [0, 100]\n   * @param count   the number of scores in the array\n   * @return        the average of all scores, or 0 if the array is null or empty\n   * @throws        IllegalArgumentException if count is negative\n   *\n   * @author        Adriana Picoral\n   * @version       1.0\n   */\n  public double calculateAverage(double[] scores, int count) {\n      if (scores == null || scores.length == 0) return 0;\n      if (count &lt; 0) throw new IllegalArgumentException(\"Count cannot be negative\");\n\n      double sum = 0;\n      for (double score : scores) {\n          sum += score;\n      }\n      return sum / count;\n  }"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#binary-search-tree-bst",
+    "href": "slides/slides-11-01.html#binary-search-tree-bst",
+    "title": "Heap",
+    "section": "Binary Search Tree (BST)",
+    "text": "Binary Search Tree (BST)\n\nA BST has a rule about left vs. right children/subtree\nA BST gives you ordered data – which is great if you need sorted data\nBSTs are great if you need to search the data structure often (balanced would be better)\nWeakness: to find the minimum or maximum, you have to traverse all the way to a leaf \\(O(\\log n)\\) (for not balanced trees, \\(O(n)\\))\n\n\nWhat if that’s the only operation you care about — always getting the min (or max) quickly?"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap",
+    "href": "slides/slides-11-01.html#heap",
+    "title": "Heap",
+    "section": "Heap",
+    "text": "Heap\n\nWhat if that’s the only operation you care about — always getting the min (or max) quickly?\n\n\nFor example, a priority queue is a data structure where each element is associated with a priority, and elements with higher priority are served before those with lower priority.\n\nER triage: the most urgent patient is seen first, no matter who arrived first\nWith a min-heap, a lower number means higher priority (triage level 1 is seen before level 3)\n\n\nThat’s the problem a heap solves.\nNote: this heap data structure is unrelated to the heap memory in Java where objects are allocated – same word, different thing."
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap-1",
+    "href": "slides/slides-11-01.html#heap-1",
+    "title": "Heap",
+    "section": "Heap",
+    "text": "Heap\nThe heap property is simpler than BST:\n\nA BST has a rule about left vs. right children\nA heap has a simpler rule about parent vs. child:\n\nMin-heap: every parent is ≤ its children → the root is always the minimum\nMax-heap: every parent is ≥ its children → the root is always the maximum"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap-2",
+    "href": "slides/slides-11-01.html#heap-2",
+    "title": "Heap",
+    "section": "Heap",
+    "text": "Heap\n\nA heap has a simpler rule about parent vs. child:\n\nMin-heap: every parent is ≤ its children → the root is always the minimum\nMax-heap: every parent is ≥ its children → the root is always the maximum\n\n\nNo ordering between siblings, no left-vs-right rule. This makes heaps less “sorted” than a BST, but much faster for one specific job: always knowing the min/max in O(1)"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#min-heap",
+    "href": "slides/slides-11-01.html#min-heap",
+    "title": "Heap",
+    "section": "Min-heap",
+    "text": "Min-heap\nEvery parent is ≤ its children → the root is always the minimum\n\n\n\n\n\n\n\nheap\n\n\n\n10\n\n10\n\n\n\n15\n\n15\n\n\n\n10--15\n\n\n\n\n20\n\n20\n\n\n\n10--20\n\n\n\n\n30\n\n30\n\n\n\n15--30\n\n\n\n\n40\n\n40\n\n\n\n15--40"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#max-heap",
+    "href": "slides/slides-11-01.html#max-heap",
+    "title": "Heap",
+    "section": "Max-heap",
+    "text": "Max-heap\nEvery parent is ≥ its children → the root is always the maximum\n\n\n\n\n\n\n\nheap\n\n\n\n80\n\n80\n\n\n\n75\n\n75\n\n\n\n80--75\n\n\n\n\n62\n\n62\n\n\n\n80--62\n\n\n\n\n51\n\n51\n\n\n\n75--51\n\n\n\n\n42\n\n42\n\n\n\n75--42"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap-3",
+    "href": "slides/slides-11-01.html#heap-3",
+    "title": "Heap",
+    "section": "Heap",
+    "text": "Heap\nThe shape rule:\n\nA heap is always a complete binary tree — every level is full except possibly the last, which is filled left to right (no gaps).\nThis is stricter than a BST in terms of shape.\nWhy does this matter? Because a complete binary tree maps perfectly onto an array\n\nWe will be implementing an array-based complete binary tree"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#in-class-exercise",
+    "href": "slides/slides-11-01.html#in-class-exercise",
+    "title": "Heap",
+    "section": "In-class exercise",
+    "text": "In-class exercise\nGo to gradescope and answer the heap or not heap exercise"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap-array-implementation",
+    "href": "slides/slides-11-01.html#heap-array-implementation",
+    "title": "Heap",
+    "section": "Heap – array implementation",
+    "text": "Heap – array implementation\nA complete binary tree maps perfectly onto an array:\n      10                                            \n     /  \\                                           \n   15    20\n  /  \\                                              \n30   40       \nIndex:   0   1   2   3   4\nValue: [10, 15, 20, 30, 40]\nNo pointers needed. This is why heaps are almost always implemented as arrays, not as linked nodes — it’s faster and uses less memory."
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap-array-implementation-1",
+    "href": "slides/slides-11-01.html#heap-array-implementation-1",
+    "title": "Heap",
+    "section": "Heap – array implementation",
+    "text": "Heap – array implementation\nIndex:   0   1   2   3   4\nValue: [10, 15, 20, 30, 40]\nFor a node at index i:\n\nLeft child → 2i + 1\n\nRight child → 2i + 2\nParent → (i - 1) / 2 (integer division, so the result is rounded down)\n\nNote: in Java, (0 - 1) / 2 is 0, so the root would be its own “parent” – that’s why we need a hasParent check"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap-array-implementation-2",
+    "href": "slides/slides-11-01.html#heap-array-implementation-2",
+    "title": "Heap",
+    "section": "Heap – array implementation",
+    "text": "Heap – array implementation\nIndex:   0   1   2   3   4\nValue: [10, 15, 20, 30, 40]\n\n\n\n\n\n\n\nheap\n\n\n\n10\n\n10\n\n\n\n15\n\n15\n\n\n\n10--15\n\n\n\n\n20\n\n20\n\n\n\n10--20\n\n\n\n\n30\n\n30\n\n\n\n15--30\n\n\n\n\n40\n\n40\n\n\n\n15--40\n\n\n\n\n\n\n\n\n\n15 is at index 1:\n\nLeft child of 15 is at \\(2 * 1 + 1 = 3\\) (value 30)\nRight child of 15 is at \\(2 * 1 + 2 = 4\\) (value 40)\nParent of 15 is at \\((1 - 1) / 2 = 0\\) (value 10)"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap-operations",
+    "href": "slides/slides-11-01.html#heap-operations",
+    "title": "Heap",
+    "section": "Heap – operations",
+    "text": "Heap – operations\nCore operations:\n\npeek (get min/max without removing it) – \\(O(1)\\), it’s always at the root\ninsert – \\(O(\\log n)\\)\npop (remove min/max) – \\(O(\\log n)\\)\n\nInsert and pop are \\(O(\\log n)\\) because the tree is always complete — it never gets unbalanced like a BST can."
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap-insert",
+    "href": "slides/slides-11-01.html#heap-insert",
+    "title": "Heap",
+    "section": "Heap – insert",
+    "text": "Heap – insert\nAdd at the end, then “bubble up”:\n\nPlace the new value at the next open spot (end of array)\nCompare with its parent – if it violates the heap property, swap\nRepeat until the property is restored"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap-insert-1",
+    "href": "slides/slides-11-01.html#heap-insert-1",
+    "title": "Heap",
+    "section": "Heap – insert",
+    "text": "Heap – insert\nLet’s insert 2 in our min heap:\n\nPlace the new value at the next open spot (end of array)\n\nIndex:   0   1   2   3   4  5\nValue: [10, 15, 20, 30, 40, 2]"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap-insert-2",
+    "href": "slides/slides-11-01.html#heap-insert-2",
+    "title": "Heap",
+    "section": "Heap – insert",
+    "text": "Heap – insert\nLet’s insert 2 in our min heap:\n\nPlace the new value at the next open spot (end of array)\n\n\n\n\n\n\n\n\nheap\n\n\n\n10\n\n10\n\n\n\n15\n\n15\n\n\n\n10--15\n\n\n\n\n20\n\n20\n\n\n\n10--20\n\n\n\n\n30\n\n30\n\n\n\n15--30\n\n\n\n\n40\n\n40\n\n\n\n15--40\n\n\n\n\n2\n\n2\n\n\n\n20--2\n\n\n\n\nnull\n\n\n\n20--null"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap-insert-3",
+    "href": "slides/slides-11-01.html#heap-insert-3",
+    "title": "Heap",
+    "section": "Heap – insert",
+    "text": "Heap – insert\nLet’s insert 2 in our min heap:\n\nCompare with its parent – if it violates the heap property, swap\nRepeat until the property is restored\n\nIndex:   0   1   2   3   4  5\nValue: [10, 15, 20, 30, 40, 2]\n\n\nParent is at \\((i - 1) / 2\\):\n\nparent of index 5 is at index \\((5 - 1) / 2 = 2\\), swap\n\nIndex:   0   1  2   3   4  5\nValue: [10, 15, 2, 30, 40, 20]\n\n\n\n\n\n\n\n\nheap\n\n\n\n10\n\n10\n\n\n\n15\n\n15\n\n\n\n10--15\n\n\n\n\n2\n\n2\n\n\n\n10--2\n\n\n\n\n30\n\n30\n\n\n\n15--30\n\n\n\n\n40\n\n40\n\n\n\n15--40\n\n\n\n\n20\n\n20\n\n\n\n2--20\n\n\n\n\nnull\n\n\n\n2--null"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap-insert-4",
+    "href": "slides/slides-11-01.html#heap-insert-4",
+    "title": "Heap",
+    "section": "Heap – insert",
+    "text": "Heap – insert\n\nCompare with its parent – if it violates the heap property, swap\nRepeat until the property is restored\n\nIndex:   0   1  2   3   4  5\nValue: [10, 15, 2, 30, 40, 20]\n\n\nParent is at \\((i - 1) / 2\\):\n\nparent of index 2 is at index \\((2 - 1) / 2 = 0\\) (integer division), swap\n\nIndex:   0   1  2   3   4  5\nValue: [2, 15, 10, 30, 40, 20]\n\n\n\n\n\n\n\n\nheap\n\n\n\n2\n\n2\n\n\n\n15\n\n15\n\n\n\n2--15\n\n\n\n\n10\n\n10\n\n\n\n2--10\n\n\n\n\n30\n\n30\n\n\n\n15--30\n\n\n\n\n40\n\n40\n\n\n\n15--40\n\n\n\n\n20\n\n20\n\n\n\n10--20\n\n\n\n\nnull\n\n\n\n10--null"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#result",
+    "href": "slides/slides-11-01.html#result",
+    "title": "Heap",
+    "section": "Result",
+    "text": "Result\nIndex:   0   1  2   3   4  5\nValue: [2, 15, 10, 30, 40, 20]\n\n\n\n\n\n\n\nheap\n\n\n\n2\n\n2\n\n\n\n15\n\n15\n\n\n\n2--15\n\n\n\n\n10\n\n10\n\n\n\n2--10\n\n\n\n\n30\n\n30\n\n\n\n15--30\n\n\n\n\n40\n\n40\n\n\n\n15--40\n\n\n\n\n20\n\n20\n\n\n\n10--20\n\n\n\n\nnull\n\n\n\n10--null"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap-minmax-deletion",
+    "href": "slides/slides-11-01.html#heap-minmax-deletion",
+    "title": "Heap",
+    "section": "Heap – min/max (deletion)",
+    "text": "Heap – min/max (deletion)\nTake the root, then “bubble down”:\n\nGrab the root (that’s your min/max)\nMove the last element to the root position\nCompare with children – swap with the smaller child if needed (in a max-heap: the larger child)\nRepeat until the property is restored"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap-minmax-deletion-1",
+    "href": "slides/slides-11-01.html#heap-minmax-deletion-1",
+    "title": "Heap",
+    "section": "Heap – min/max (deletion)",
+    "text": "Heap – min/max (deletion)\nIndex:   0   1  2   3   4  5\nValue: [2, 15, 10, 30, 40, 20]\n\nGrab the root (that’s your min/max)\nMove the last element to the root position\n\nIndex:   0   1  2   3   4  \nValue: [20, 15, 10, 30, 40]"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap-minmax-deletion-2",
+    "href": "slides/slides-11-01.html#heap-minmax-deletion-2",
+    "title": "Heap",
+    "section": "Heap – min/max (deletion)",
+    "text": "Heap – min/max (deletion)\n\nGrab the root (that’s your min/max)\nMove the last element to the root position\n\nIndex:   0   1  2   3   4  \nValue: [20, 15, 10, 30, 40]\n\n\n\n\n\n\n\nheap\n\n\n\n20\n\n20\n\n\n\n15\n\n15\n\n\n\n20--15\n\n\n\n\n10\n\n10\n\n\n\n20--10\n\n\n\n\n30\n\n30\n\n\n\n15--30\n\n\n\n\n40\n\n40\n\n\n\n15--40"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap-minmax-deletion-3",
+    "href": "slides/slides-11-01.html#heap-minmax-deletion-3",
+    "title": "Heap",
+    "section": "Heap – min/max (deletion)",
+    "text": "Heap – min/max (deletion)\n\nCompare with children – swap with the smaller child if needed\nRepeat until the property is restored\n\nIndex:   0   1  2   3   4  \nValue: [20, 15, 10, 30, 40]\n\n\n\nChildren of root are at indices 1 and 2\nSmaller child is 10 (index 2): swap with root\n\nIndex:   0   1  2   3   4  \nValue: [10, 15, 20, 30, 40]\n\n\n\n\n\n\n\n\nheap\n\n\n\n10\n\n10\n\n\n\n15\n\n15\n\n\n\n10--15\n\n\n\n\n20\n\n20\n\n\n\n10--20\n\n\n\n\n30\n\n30\n\n\n\n15--30\n\n\n\n\n40\n\n40\n\n\n\n15--40"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap-minmax-deletion-4",
+    "href": "slides/slides-11-01.html#heap-minmax-deletion-4",
+    "title": "Heap",
+    "section": "Heap – min/max (deletion)",
+    "text": "Heap – min/max (deletion)\n\nCompare with children – swap with the smaller child if needed\nRepeat until the property is restored\n\nIndex:   0   1  2   3   4  \nValue: [10, 15, 20, 30, 40]\n\nChildren of index 2 are at indices 5 and 6 (nothing there)"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap-minmax-deletion-final-state",
+    "href": "slides/slides-11-01.html#heap-minmax-deletion-final-state",
+    "title": "Heap",
+    "section": "Heap – min/max (deletion) – final state",
+    "text": "Heap – min/max (deletion) – final state\nIndex:   0   1  2   3   4  \nValue: [10, 15, 20, 30, 40]\n\n\n\n\n\n\n\nheap\n\n\n\n10\n\n10\n\n\n\n15\n\n15\n\n\n\n10--15\n\n\n\n\n20\n\n20\n\n\n\n10--20\n\n\n\n\n30\n\n30\n\n\n\n15--30\n\n\n\n\n40\n\n40\n\n\n\n15--40"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap-vs.-bst-runtime",
+    "href": "slides/slides-11-01.html#heap-vs.-bst-runtime",
+    "title": "Heap",
+    "section": "Heap vs. BST runtime",
+    "text": "Heap vs. BST runtime\n  ┌────────────────────┬──────────────────────────────┬────────────────────┐\n  │                    │             BST              │        Heap        │\n  ├────────────────────┼──────────────────────────────┼────────────────────┤  \n  │ Find min/max       │ O(log n) average, O(n) worst │ O(1) always        │\n  ├────────────────────┼──────────────────────────────┼────────────────────┤\n  │ Insert             │ O(log n) average, O(n) worst │ O(log n) always    │\n  ├────────────────────┼──────────────────────────────┼────────────────────┤\n  │ Remove min/max     │ O(log n) average, O(n) worst │ O(log n) always    │\n  ├────────────────────┼──────────────────────────────┼────────────────────┤\n  │ Search for a value │ O(log n) average, O(n) worst │ O(n) — not its job │\n  ├────────────────────┼──────────────────────────────┼────────────────────┤ \n  │ Implementation     │ Linked nodes                 │ Array              │\n  ├────────────────────┼──────────────────────────────┼────────────────────┤ \n  │ Shape guarantee    │ None                         │ Always complete    │\n  └────────────────────┴──────────────────────────────┴────────────────────┘"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#heap-interface",
+    "href": "slides/slides-11-01.html#heap-interface",
+    "title": "Heap",
+    "section": "Heap – interface",
+    "text": "Heap – interface\npublic interface Heap&lt;T&gt; {\n  void insert(T value);\n  T pop();\n  T peek();\n  boolean isEmpty();\n  int length();\n}"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#minheap-implementation",
+    "href": "slides/slides-11-01.html#minheap-implementation",
+    "title": "Heap",
+    "section": "MinHeap – implementation",
+    "text": "MinHeap – implementation\npublic class MinHeap&lt;T extends Comparable&lt;T&gt;&gt; implements Heap&lt;T&gt; {\n    private T[] data;\n    private int length; // number of elements currently in the heap\n\n    @SuppressWarnings(\"unchecked\")\n    public MinHeap(int capacity) {\n        data = (T[]) new Comparable[capacity]; // Comparable, not Object\n        this.length = 0;\n    }\n    \n}"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#minheap-implementation-1",
+    "href": "slides/slides-11-01.html#minheap-implementation-1",
+    "title": "Heap",
+    "section": "MinHeap – implementation",
+    "text": "MinHeap – implementation\nHere are the extra methods we need to implement in MinHeap (besides all methods in the Heap interface):\nMethods to get indices of left and right child, and parent:\nprivate int parent(int i)     { return (i - 1) / 2; }\nprivate int leftChild(int i)  { return 2 * i + 1; }\nprivate int rightChild(int i) { return 2 * i + 2; }"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#minheap-implementation-2",
+    "href": "slides/slides-11-01.html#minheap-implementation-2",
+    "title": "Heap",
+    "section": "MinHeap – implementation",
+    "text": "MinHeap – implementation\nHere are the extra methods we need to implement in MinHeap (besides all methods in the Heap interface):\nMethods to check if there is a parent, a left or right child:\nprivate boolean hasParent(int i)     { return i &gt; 0; }\nprivate boolean hasLeftChild(int i)  { return leftChild(i) &lt; length; }\nprivate boolean hasRightChild(int i) { return rightChild(i) &lt; length; }"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#minheap-implementation-3",
+    "href": "slides/slides-11-01.html#minheap-implementation-3",
+    "title": "Heap",
+    "section": "MinHeap – implementation",
+    "text": "MinHeap – implementation\nHere are the extra methods we need to implement in MinHeap (besides all methods in the Heap interface):\nprivate void swap(int a, int b) {\n  T temp = data[a];\n  data[a] = data[b];\n  data[b] = temp;\n}"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#quiz-9",
+    "href": "slides/slides-11-01.html#quiz-9",
+    "title": "Heap",
+    "section": "Quiz 9",
+    "text": "Quiz 9\nYou have 10 minutes to complete the quiz.\nYour tree in (b) should be based on your tree in (a) – meaning, start with your tree in (a) then delete the specified node and then add the other specified node"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#minheap-implementation-4",
+    "href": "slides/slides-11-01.html#minheap-implementation-4",
+    "title": "Heap",
+    "section": "MinHeap – implementation",
+    "text": "MinHeap – implementation\nLet’s implement insert(T value)\n\nDo something about length reaching capacity, i.e., data.length (can throw error, or expand array)\nPlace value argument at the next open spot (length is the index for the next open spot)\nUpdate length variable (we have one more element in our heap)\nBubble up (compare inserted value with its parent, swapping if inserted value is smaller than parent)\n\nImplement toString() to check your insertion. Submit your Heap.java and MinHeap.java to gradescope"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#minheap-implementation-5",
+    "href": "slides/slides-11-01.html#minheap-implementation-5",
+    "title": "Heap",
+    "section": "MinHeap – implementation",
+    "text": "MinHeap – implementation\nImplement toString() to check your insertion. Submit your Heap.java and MinHeap.java to gradescope\npublic static void main(String[] args) {\n        MinHeap&lt;Integer&gt; heap = new MinHeap&lt;&gt;(10);\n\n        heap.insert(40);\n        heap.insert(15);\n        heap.insert(30);\n        heap.insert(5);\n        heap.insert(10);\n        heap.insert(20);\n        heap.insert(0);\n        heap.insert(2);\n\n        System.out.println(heap);\n    }\nExpected output: [ 0 2 5 10 15 30 20 40 ]"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#minheap-bubbleup",
+    "href": "slides/slides-11-01.html#minheap-bubbleup",
+    "title": "Heap",
+    "section": "MinHeap – bubbleUp",
+    "text": "MinHeap – bubbleUp\nprivate void bubbleUp(int i) {\n  while (hasParent(i) && data[i].compareTo(data[parent(i)]) &lt; 0) {\n    swap(i, parent(i));\n    i = parent(i);\n  }\n}"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#minheap-tostring",
+    "href": "slides/slides-11-01.html#minheap-tostring",
+    "title": "Heap",
+    "section": "MinHeap – toString",
+    "text": "MinHeap – toString\npublic String toString() {\n  String out = \"[ \";\n  for (int i = 0; i &lt; length; i++) out += data[i] + \" \";\n  return out + \"]\";\n}"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#minheap-insert",
+    "href": "slides/slides-11-01.html#minheap-insert",
+    "title": "Heap",
+    "section": "MinHeap – insert",
+    "text": "MinHeap – insert\npublic void insert(T value) {\n  if (length == data.length) throw new IllegalStateException(\"Heap is full\");\n  data[length] = value;   // place at the end\n  length++;\n  bubbleUp(length - 1);   // restore heap property\n}"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#minheap-implementation-6",
+    "href": "slides/slides-11-01.html#minheap-implementation-6",
+    "title": "Heap",
+    "section": "MinHeap – implementation",
+    "text": "MinHeap – implementation\nLet’s implement T pop()\n\nCheck if heap is empty (throw error if that’s the case)\nGrab root value (at index zero)\nMove last element in array to root (index zero)\nUpdate length variable (we have one fewer elements in the heap)\nBubble down (find the smaller of the two children, swap with smallest child)\n\nSubmit your Heap.java and MinHeap.java to gradescope"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#minheap-implementation-7",
+    "href": "slides/slides-11-01.html#minheap-implementation-7",
+    "title": "Heap",
+    "section": "MinHeap – implementation",
+    "text": "MinHeap – implementation\nSubmit your Heap.java and MinHeap.java to gradescope\npublic static void main(String[] args) {\n        MinHeap&lt;Integer&gt; heap = new MinHeap&lt;&gt;(10);\n\n        heap.insert(40);\n        heap.insert(15);\n        heap.insert(30);\n        heap.insert(5);\n        heap.insert(10);\n        heap.insert(20);\n        heap.insert(0);\n        heap.insert(2);\n\n        System.out.print(\"After inserts: \");\n        System.out.println(heap);\n\n        System.out.println(\"\\nRemoving in order:\");\n        while (!heap.isEmpty()) {\n            System.out.println(heap.pop());\n        }\n    }"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#minheap-bubbledown",
+    "href": "slides/slides-11-01.html#minheap-bubbledown",
+    "title": "Heap",
+    "section": "MinHeap – bubbleDown",
+    "text": "MinHeap – bubbleDown\nprivate void bubbleDown(int i) {\n  while (hasLeftChild(i)) {\n    int smallerChild = leftChild(i);\n    \n    // find the smaller of the two children\n    if (hasRightChild(i) && data[rightChild(i)].compareTo(data[leftChild(i)]) &lt; 0) {\n      smallerChild = rightChild(i);\n    }\n    \n    if (data[i].compareTo(data[smallerChild])  &lt;= 0) return;\n    \n    swap(i, smallerChild);\n    i = smallerChild;\n  }\n}"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#minheap-pop",
+    "href": "slides/slides-11-01.html#minheap-pop",
+    "title": "Heap",
+    "section": "MinHeap – pop",
+    "text": "MinHeap – pop\npublic T pop() {\n  if (isEmpty()) throw new IllegalStateException(\"Heap is empty\");\n  T min = data[0];\n  data[0] = data[length - 1];  // move last element to root\n  length--;\n  data[length] = null;         // remove stale reference to the old last element\n  bubbleDown(0);               // restore heap property\n  return min;\n}"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#looking-back",
+    "href": "slides/slides-11-01.html#looking-back",
+    "title": "Heap",
+    "section": "Looking back",
+    "text": "Looking back\n\nA BST is a Swiss Army knife — it can do many things decently.\nA heap is a scalpel — it does one thing (priority access) extremely well."
+  },
+  {
+    "objectID": "index.html#module-11",
+    "href": "index.html#module-11",
+    "title": "CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development",
+    "section": "Module 11",
+    "text": "Module 11\nBy the end of this module you will be able to:\n\nDefine the heap property and distinguish between a min-heap and a max-heap.\nExplain why a heap is used instead of a BST when the only required operation is repeated access to the minimum or maximum element.\nDescribe the complete binary tree shape invariant and explain why it enables array-based implementation without pointers.\nDerive the index formulas for a node’s parent, left child, and right child in an array-backed heap.\nTrace the insert operation (bubble up) and the remove-min/max operation (bubble down) step by step on a given heap, identifying each swap.\nAnalyze the time complexity of insert and remove operations as O(log n) by connecting the complete tree shape to guaranteed height bounds.\nCompare heaps and BSTs across the dimensions of supported operations, time complexity, shape guarantees, and typical implementation strategy.\nIdentify scenarios where a priority queue — and by extension a heap — is the appropriate data structure choice."
+  },
+  {
+    "objectID": "index.html#slides-10",
+    "href": "index.html#slides-10",
+    "title": "CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development",
+    "section": "Slides",
+    "text": "Slides\n\nHeap"
+  },
+  {
+    "objectID": "slides/slides-12-01.html",
+    "href": "slides/slides-12-01.html",
+    "title": "Map",
+    "section": "",
+    "text": "map, dictionary, associative array, or hash table\ndata structure that stores key-value pairs\nallows for efficient look up of a value by its associated key\n\nA map lets you use any type as the “index” - strings, objects, whatever you want. We call these keys instead of indices, and what you store are values."
+  },
+  {
+    "objectID": "slides/slides-12-01.html#map",
+    "href": "slides/slides-12-01.html#map",
+    "title": "Map",
+    "section": "Map",
+    "text": "Map\n\nmap, dictionary, associative array, or hash table\ndata structure that stores key-value pairs\nallows for efficient look up of a value by its associated key\n\nA map lets you use any type as the “index” - strings, objects, whatever you want. We call these keys instead of indices, and what you store are values."
+  },
+  {
+    "objectID": "slides/slides-12-01.html#why-maps-matter",
+    "href": "slides/slides-12-01.html#why-maps-matter",
+    "title": "Map",
+    "section": "Why Maps Matter",
+    "text": "Why Maps Matter\nMaps solve a really common problem: associating related data.\nPhone books, student records, caching web pages, counting word frequencies - these all need to link one piece of data to another."
+  },
+  {
+    "objectID": "slides/slides-12-01.html#limitations",
+    "href": "slides/slides-12-01.html#limitations",
+    "title": "Map",
+    "section": "Limitations",
+    "text": "Limitations\n\nMap keys must be immutable\nKeys should be evenly distributed to minimize collisions"
+  },
+  {
+    "objectID": "slides/slides-12-01.html#implementation",
+    "href": "slides/slides-12-01.html#implementation",
+    "title": "Map",
+    "section": "Implementation",
+    "text": "Implementation\n\nArray – map integer keys directly as an array index, \\(O(1)\\)\nTwo arrays of same size (sorted/unsorted) – one holds the keys, another the values\nBinary Search Trees – \\(O(\\log n)\\) – iterate through keys in order\n\nHash Tables are the most popular implementation of Map"
+  },
+  {
+    "objectID": "slides/slides-12-01.html#implementation-1",
+    "href": "slides/slides-12-01.html#implementation-1",
+    "title": "Map",
+    "section": "Implementation",
+    "text": "Implementation\n\nArrays are good at read/write given an index\nArrays are bad are “rearranging” (add/remove)\nArray search is slow when not sorted\nBST are good enough for all operations \\(O(\\log n)\\)"
+  },
+  {
+    "objectID": "slides/slides-12-01.html#runtime",
+    "href": "slides/slides-12-01.html#runtime",
+    "title": "Map",
+    "section": "Runtime",
+    "text": "Runtime\n\n\n\n\n\n\n\n\n\n\n\nadd\nget\nremove\nsearch\n\n\n\n\nunsorted array\n\\(O(n)\\)\n\\(O(1)\\)\n\\(O(n)\\)\n\\(O(n)\\)\n\n\nsorted array\n\\(O(n)\\)\n\\(O(1)\\)\n\\(O(n)\\)\n\\(O(\\log n)\\)\n\n\nbinary search tree\n\\(O(\\log n)\\)\n\\(O(\\log n)\\)\n\\(O(\\log n)\\)\n\\(O(\\log n)\\)\n\n\nhash tables\n\\(O(1)\\)\n\\(O(1)\\)\n\\(O(1)\\)\n\\(O(1)\\)"
+  },
+  {
+    "objectID": "slides/slides-12-02.html",
+    "href": "slides/slides-12-02.html",
+    "title": "Hash Table",
+    "section": "",
+    "text": "Map – maps a key to a value\nKey – unique, so that when retrieving a value with a key we get the same value\nKey Transformation – hash function\nHash function – maps N unique keys onto 0..M-1 (index)"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#hash-intro",
+    "href": "slides/slides-12-02.html#hash-intro",
+    "title": "Hash Table",
+    "section": "Hash – Intro",
+    "text": "Hash – Intro\n\nMap – maps a key to a value\nKey – unique, so that when retrieving a value with a key we get the same value\nKey Transformation – hash function\nHash function – maps N unique keys onto 0..M-1 (index)"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#hash-definition",
+    "href": "slides/slides-12-02.html#hash-definition",
+    "title": "Hash Table",
+    "section": "Hash – definition",
+    "text": "Hash – definition\n\nto “hash” something is to summarize it\na hash function calculates a key (which indicates where the value is)\nit always calculates the same key for the same value\nO(1) average-case performance"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#rules-of-hashing",
+    "href": "slides/slides-12-02.html#rules-of-hashing",
+    "title": "Hash Table",
+    "section": "Rules of hashing",
+    "text": "Rules of hashing\n\nHashing something should be pretty fast\nThe “hash” does not need to be reversible\nThe “hash” should be repeatable/reliable\nThe “hash” should avoid repeated keys (collisions)"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#types-of-hashes",
+    "href": "slides/slides-12-02.html#types-of-hashes",
+    "title": "Hash Table",
+    "section": "Types of hashes",
+    "text": "Types of hashes\n\nhasmaps\n\nnumbers should look like they were assigned randomly\n\ncryptography\n\nshould be really hard to use backwards\nshould be really hard to make collisions"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#the-hash-function",
+    "href": "slides/slides-12-02.html#the-hash-function",
+    "title": "Hash Table",
+    "section": "The hash function",
+    "text": "The hash function\n\nThe hash function is our “organizer” (it tells us where things go)\n\nSimple example:\n\nWrite a function to compute a hash code for lowercase alphabetic English caracters (a-z). The function returns integers from 0 to 25, with each char getting a different int. The function returns a wild card for not lowercase alphabetic English chars."
+  },
+  {
+    "objectID": "slides/slides-12-02.html#minimal-perfect-hash-function",
+    "href": "slides/slides-12-02.html#minimal-perfect-hash-function",
+    "title": "Hash Table",
+    "section": "Minimal Perfect Hash function",
+    "text": "Minimal Perfect Hash function\n\nhash function maps a specific set of \\(n\\) keys to exactly \\(n\\) consecutive integer values\ninteger values are typically 0 to n-1\nno collisions (perfect hash functions are collision free)\nno unused slots (no gaps, key can be used directly as index in array)"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#minimal-perfect-hash-function-1",
+    "href": "slides/slides-12-02.html#minimal-perfect-hash-function-1",
+    "title": "Hash Table",
+    "section": "Minimal Perfect Hash function",
+    "text": "Minimal Perfect Hash function\n\nhash – if \\(x == y\\) then \\(h(x) == h(y)\\)\nperfect – if \\(h(x) == h(y)\\) then \\(x == y\\)\nminimal – only uses numbers \\(0\\) to \\((n−1)\\)"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#minimal-perfect-hash-function-2",
+    "href": "slides/slides-12-02.html#minimal-perfect-hash-function-2",
+    "title": "Hash Table",
+    "section": "Minimal Perfect Hash function",
+    "text": "Minimal Perfect Hash function\n\nWrite a function to compute a hash code for lowercase alphabetic English caracters (a-z). The function returns integers from 0 to 25, with each char getting a different int. The function returns a wild card for not lowercase alphabetic English chars."
+  },
+  {
+    "objectID": "slides/slides-12-02.html#general-algorithm",
+    "href": "slides/slides-12-02.html#general-algorithm",
+    "title": "Hash Table",
+    "section": "General algorithm",
+    "text": "General algorithm\nMinimal Perfect Hash function \\(h(key)\\)\n\nData: store an array (of appropriate length) named values\nvoid put(key, value) – values[\\(h(key)\\)] = value\nboolean contains(key) – return values[\\(h(key)\\)] != null\nint get(key) – return values[\\(h(key)\\)]\nvoid remove(key) – values[\\(h(key)\\)] = null"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#hash-generic-interface",
+    "href": "slides/slides-12-02.html#hash-generic-interface",
+    "title": "Hash Table",
+    "section": "Hash Generic Interface",
+    "text": "Hash Generic Interface\npublic interface Hash&lt;K, V&gt; {\n    void put(K key, V value);\n    boolean contains(K key);\n    V get(K key);\n    void remove(K key);\n}"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#charhash",
+    "href": "slides/slides-12-02.html#charhash",
+    "title": "Hash Table",
+    "section": "CharHash",
+    "text": "CharHash\nHere’s the skeleton code for CharHash:\npublic class CharHash implements Hash&lt;Character, Integer&gt;{\n    public void put(Character key, Integer value) {}\n    public boolean contains(Character key) {return false;}\n    public Integer get(Character key) {return 0;}\n    public void remove(Character key){}\n} \nWhat instance variables and helper methods do we need?\n\nOur hash table is an array of integers, size of 25\nMethod to get an index from a character"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#the-hash-function-1",
+    "href": "slides/slides-12-02.html#the-hash-function-1",
+    "title": "Hash Table",
+    "section": "The hash function",
+    "text": "The hash function\npublic int getIndex(char c) {\n  c = Character.toLowerCase(c);\n  int hash = (int) c - 97;\n  if (hash &lt; 0 || hash &gt; 25) return -1;\n  return hash;\n}"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#gradescope-submission",
+    "href": "slides/slides-12-02.html#gradescope-submission",
+    "title": "Hash Table",
+    "section": "Gradescope Submission",
+    "text": "Gradescope Submission\nTest your code and submit Hash.java and CharHash.java to gradescope."
+  },
+  {
+    "objectID": "slides/slides-12-02.html#implementation",
+    "href": "slides/slides-12-02.html#implementation",
+    "title": "Hash Table",
+    "section": "Implementation",
+    "text": "Implementation\npublic class CharHash implements Hash&lt;Character, Integer&gt;{\n    private Integer[] table = new Integer[26]; // initial values are null\n\n    private int getIndex(char c) {\n        c = Character.toLowerCase(c);\n        int hash = (int) c - 97;\n        if (hash &lt; 0 || hash &gt; 25) return -1;\n        return hash;\n    }\n\n    public void put(Character key, Integer value) {\n        int index = getIndex(key);\n        if (index &gt;= 0) table[index] = value;\n    }\n\n    public boolean contains(Character key) {\n        int index = getIndex(key);\n        if (index &gt;= 0) return table[index] != null;\n        return false;\n    }\n\n    public Integer get(Character key) {\n        int index = getIndex(key);\n        if (index &gt;= 0) return table[index];\n        return null;\n    }\n\n    public void remove(Character key){\n        int index = getIndex(key);\n        if (index &gt;= 0) table[index] = null;\n    }\n\n    public String toString() {\n        String out = \"\";\n        for (int i=0;i&lt;26;i++)\n            if (table[i] != null) {\n                char c = (char) (97+i);\n                out += c + \" -- \" + table[i] + \"\\n\";\n            }\n        return out.trim();\n    }\n}"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#minimal-perfect-hash-function-3",
+    "href": "slides/slides-12-02.html#minimal-perfect-hash-function-3",
+    "title": "Hash Table",
+    "section": "Minimal Perfect Hash function",
+    "text": "Minimal Perfect Hash function\nAdvantages:\n\nsimple code\nfast\n\nDisadvantages:\n\nhard to find a set of values that works\ninflexible (item set is fixed)\nlarge item sets may be wasteful\n\nExample: As of Unicode version 18.0, there are 394,194 assigned characters"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#hash-functions",
+    "href": "slides/slides-12-02.html#hash-functions",
+    "title": "Hash Table",
+    "section": "Hash functions",
+    "text": "Hash functions\nConstraints:\n\nhash function needs to return same key for the same value\n\nif X.equals(y) then X.hashCode() == Y.hashCode()\nobject doesn’t change - hashCode doesn’t change\n\nto be fast, hash collisions need to be avoided (hard to mathematically formalize this in general case)\n(As much as possible) if !X.equals(y) then X.hashCode() != Y.hashCode()"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#imperfect-hash-functions",
+    "href": "slides/slides-12-02.html#imperfect-hash-functions",
+    "title": "Hash Table",
+    "section": "Imperfect hash functions",
+    "text": "Imperfect hash functions\nTwo main issues:\n\nnot minimal – hash values could be very-large or negative\nnot perfect – collisions are possible"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#simple-example",
+    "href": "slides/slides-12-02.html#simple-example",
+    "title": "Hash Table",
+    "section": "Simple example",
+    "text": "Simple example\nHere are the values that are to be stored in the hash table:\n37, 7, 73, 77, 11, 68, 50, 66, 19, 4, 1, 18, 76, 71, 31, 45, 12, 25, 49, 53,\n69, 87, 41, 2, 43, 23, 62, 38, 47, 51, 55, 65, 58, 91, 17, 63, 27, 88, 48\n\nWhat should the size of the table be?\nWhat would be a good hash function to store these numbers?"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#simple-example-1",
+    "href": "slides/slides-12-02.html#simple-example-1",
+    "title": "Hash Table",
+    "section": "Simple example",
+    "text": "Simple example\nHere’s a hash function in java:\npublic class Hash {\n    int tableSize;\n\n    public Hash(int size) {\n        tableSize = size;\n    }\n\n    public int getHash(int value) {\n        return Math.abs(value % tableSize);\n    }\n}\n\nHow many collisions would we get?\n\nTable size: 10\n0 - 1   1 - 7   2 - 3   3 - 5   4 - 1 \n5 - 4   6 - 2   7 - 7   8 - 6   9 - 3"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#simple-example-testing",
+    "href": "slides/slides-12-02.html#simple-example-testing",
+    "title": "Hash Table",
+    "section": "Simple example – testing",
+    "text": "Simple example – testing\nint[] values = new int[]{37, 7, 73, 77, 11, 68, 50, 66, 19, 4, 1, 18, 76, 71,\n  31, 45, 12, 25, 49, 53, 69, 87, 41, 2, 43, 23, 62, 38, 47, 51, 55, 65, 58, \n  91, 17, 63, 27, 88, 48};\n\nint size = 20;\nHash hash = new Hash(size);\n\nint[] indices = new int[size];\nfor (int v : values) {\n  indices[hash.getHash(v)] += 1;\n}\n\nfor (int i=0; i&lt;size; i++) {\n  System.out.println(i + \" - \" + indices[i] );\n}"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#what-does-claude-say",
+    "href": "slides/slides-12-02.html#what-does-claude-say",
+    "title": "Hash Table",
+    "section": "What does Claude say?",
+    "text": "What does Claude say?\nSimple and fast solution:\n\nh(k) = k mod m\nm = 53 (a prime number)\n\nPrime numbers reduce clustering and collisions\n53 is larger than 39 (your data size) but not excessively so\nGives a good load factor of about 0.74 (39/53)"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#what-does-claude-say-1",
+    "href": "slides/slides-12-02.html#what-does-claude-say-1",
+    "title": "Hash Table",
+    "section": "What does Claude say?",
+    "text": "What does Claude say?\nClaude claims this works well for any table size:\n\nh(k) = ⌊m × (k × A mod 1)⌋\nUsing A ≈ 0.6180339887 (golden ratio constant) with m = 64\n\n\nDoes this work well?"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#exercise",
+    "href": "slides/slides-12-02.html#exercise",
+    "title": "Hash Table",
+    "section": "Exercise",
+    "text": "Exercise\nConsider an initially empty hash table \\(H\\) of size 15, designed to store integer keys. The hash function is defined as:\nhash(k) = ⌊k mod length(\\(H\\))⌋\nInsert the following sequence of keys in the given order: -524, 16, 322, -15, 78, -212"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#exercise-1",
+    "href": "slides/slides-12-02.html#exercise-1",
+    "title": "Hash Table",
+    "section": "Exercise",
+    "text": "Exercise\nhash(k) = ⌊k mod length(\\(H\\))⌋\nInsert the following sequence of keys in the given order: -524, 16, 322, -15, 78, -212\n\n\n\n\n\n\n\n 0 \n\n\n 1 \n\n\n 2 \n\n\n 3 \n\n\n 4 \n\n\n 5 \n\n\n 6 \n\n\n 7 \n\n\n 8 \n\n\n 9 \n\n\n 10\n\n\n11\n\n\n 12\n\n\n13\n\n\n14"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#exercise-2",
+    "href": "slides/slides-12-02.html#exercise-2",
+    "title": "Hash Table",
+    "section": "Exercise",
+    "text": "Exercise\nhash(k) = ⌊k mod length(\\(H\\))⌋\nInsert the following sequence of keys in the given order: -524, 16, 322, -15, 78, -212\n\n-524 % 15 = -14 (Java doesn’t use the mathematical definition)\n⌊-14⌋ = 14\n\n\n\n\n\n 0 \n\n\n 1 \n\n\n 2 \n\n\n 3 \n\n\n 4 \n\n\n 5 \n\n\n 6 \n\n\n 7 \n\n\n 8 \n\n\n 9 \n\n\n 10\n\n\n11\n\n\n 12\n\n\n 13\n\n\n 14\n\n\n\n\n\n\n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n-524"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#exercise-3",
+    "href": "slides/slides-12-02.html#exercise-3",
+    "title": "Hash Table",
+    "section": "Exercise",
+    "text": "Exercise\nhash(k) = ⌊k mod length(\\(H\\))⌋\nInsert the following sequence of keys in the given order: 16, 322, -15, 78, -212\n\n16 % 15 = 1\n\n\n\n\n\n 0 \n\n\n 1 \n\n\n 2 \n\n\n 3 \n\n\n 4 \n\n\n 5 \n\n\n 6 \n\n\n 7 \n\n\n 8 \n\n\n 9 \n\n\n 10\n\n\n11\n\n\n 12\n\n\n 13\n\n\n 14\n\n\n\n\n\n\n\n\n    \n\n\n16\n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n-524"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#exercise-4",
+    "href": "slides/slides-12-02.html#exercise-4",
+    "title": "Hash Table",
+    "section": "Exercise",
+    "text": "Exercise\nhash(k) = ⌊k mod length(\\(H\\))⌋\nInsert the following sequence of keys in the given order: 322, -15, 78, -212\n\n322 % 15 = 7\n\n\n\n\n\n 0 \n\n\n 1 \n\n\n 2 \n\n\n 3 \n\n\n 4 \n\n\n 5 \n\n\n 6 \n\n\n  7 \n\n\n 8 \n\n\n 9 \n\n\n 10\n\n\n 11\n\n\n 12\n\n\n 13\n\n\n 14\n\n\n\n\n\n\n\n\n    \n\n\n16\n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n322\n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n-524"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#exercise-5",
+    "href": "slides/slides-12-02.html#exercise-5",
+    "title": "Hash Table",
+    "section": "Exercise",
+    "text": "Exercise\nhash(k) = ⌊k mod length(\\(H\\))⌋\nInsert the following sequence of keys in the given order: -15, 78, -212\n\n-15 % 15 = 0\n\n\n\n\n\n 0 \n\n\n 1 \n\n\n 2 \n\n\n 3 \n\n\n 4 \n\n\n 5 \n\n\n 6 \n\n\n   7 \n\n\n 8 \n\n\n 9 \n\n\n 10\n\n\n 11\n\n\n 12\n\n\n 13\n\n\n 14\n\n\n\n\n\n\n\n\n-15\n\n\n16\n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n322\n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n-524"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#exercise-6",
+    "href": "slides/slides-12-02.html#exercise-6",
+    "title": "Hash Table",
+    "section": "Exercise",
+    "text": "Exercise\nhash(k) = ⌊k mod length(\\(H\\))⌋\nInsert the following sequence of keys in the given order: 78, -212\n\n78 % 15 = 3\n\n\n\n\n\n 0 \n\n\n 1 \n\n\n 2 \n\n\n 3 \n\n\n 4 \n\n\n 5 \n\n\n 6 \n\n\n   7 \n\n\n 8 \n\n\n 9 \n\n\n 10\n\n\n 11\n\n\n 12\n\n\n 13\n\n\n 14\n\n\n\n\n\n\n\n\n-15\n\n\n16\n\n\n    \n\n\n78\n\n\n    \n\n\n    \n\n\n    \n\n\n322\n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n-524"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#exercise-7",
+    "href": "slides/slides-12-02.html#exercise-7",
+    "title": "Hash Table",
+    "section": "Exercise",
+    "text": "Exercise\nhash(k) = ⌊k mod length(\\(H\\))⌋\nInsert the following sequence of keys in the given order: -212\n\n⌊-212 % 15⌋ = 2\n\n\n\n\n\n 0 \n\n\n 1 \n\n\n   2 \n\n\n 3 \n\n\n 4 \n\n\n 5 \n\n\n 6 \n\n\n   7 \n\n\n 8 \n\n\n 9 \n\n\n 10\n\n\n 11\n\n\n 12\n\n\n 13\n\n\n 14\n\n\n\n\n\n\n\n\n-15\n\n\n16\n\n\n212\n\n\n78\n\n\n    \n\n\n    \n\n\n    \n\n\n322\n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n-524"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#exercise-8",
+    "href": "slides/slides-12-02.html#exercise-8",
+    "title": "Hash Table",
+    "section": "Exercise",
+    "text": "Exercise\nhash(k) = ⌊k mod length(\\(H\\))⌋\nInsert the following sequence of keys in the given order: -212\n\n⌊-212 % 15⌋ = 2\n\n\n\n\n\n 0 \n\n\n 1 \n\n\n   2 \n\n\n 3 \n\n\n 4 \n\n\n 5 \n\n\n 6 \n\n\n   7 \n\n\n 8 \n\n\n 9 \n\n\n 10\n\n\n 11\n\n\n 12\n\n\n 13\n\n\n 14\n\n\n\n\n\n\n\n\n-15\n\n\n16\n\n\n212\n\n\n78\n\n\n    \n\n\n    \n\n\n    \n\n\n322\n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n    \n\n\n-524\n\n\n\n\n\nWhat if the next value to be stored is 120?"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#imperfect-hash-functions-1",
+    "href": "slides/slides-12-02.html#imperfect-hash-functions-1",
+    "title": "Hash Table",
+    "section": "Imperfect hash functions",
+    "text": "Imperfect hash functions\nTwo main issues:\n\nnot minimal – hash values could be very-large or negative\nnot perfect – collisions are possible\n\nTwo problems to solve: hash code range, collisions"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#hash-code-range-problem",
+    "href": "slides/slides-12-02.html#hash-code-range-problem",
+    "title": "Hash Table",
+    "section": "Hash code range problem",
+    "text": "Hash code range problem\nWe compute index from hashcode as follows:\nint index = abs(hashCode % tableSize)\n\nmodulo will re-map the code to 0 to tableSize-1 range\nif hashCode is negative - modulo is negative - use absolute value to fix"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#hash-code-range-problem-1",
+    "href": "slides/slides-12-02.html#hash-code-range-problem-1",
+    "title": "Hash Table",
+    "section": "Hash code range problem",
+    "text": "Hash code range problem\nWe compute index from hashcode as follows:\nint index = abs(hashCode % tableSize)\nConsequences:\n\nIndex is based on table size and data:\n\nAny time we change table size, everything gets a new index\n\nThis may cause collisions in an otherwise perfect hash code"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#the-collision-problem",
+    "href": "slides/slides-12-02.html#the-collision-problem",
+    "title": "Hash Table",
+    "section": "The collision problem",
+    "text": "The collision problem\nThis one is hard. Two general approaches, both compromise efficiency:\n\nOpen Addressing: If a slot is taken, probe for the next empty one\nChaining: Each array slot holds a linked list of all items that hashed there. If there’s a collision, just add to the list."
+  },
+  {
+    "objectID": "slides/slides-12-02.html#open-addressing",
+    "href": "slides/slides-12-02.html#open-addressing",
+    "title": "Hash Table",
+    "section": "Open Addressing",
+    "text": "Open Addressing\nIf space is full put it somewhere else\n\nlinear probing - just go to next free space\nquadratic probing - use a more complicated strategy to pick next space\ndouble hashing - have “which try is this” be part of hash code computation\neasier to store to a disk (everything is in an array)"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#open-addressing-exercise",
+    "href": "slides/slides-12-02.html#open-addressing-exercise",
+    "title": "Hash Table",
+    "section": "Open Addressing exercise",
+    "text": "Open Addressing exercise\nConsider an initially empty hash table \\(H\\) of size 5, designed to store integer keys with linear probing. The hash function is defined as:\nhash(k) = k mod length(\\(H\\))\nInsert the following sequence of keys in the given order: 5, 7, 10"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#chaining",
+    "href": "slides/slides-12-02.html#chaining",
+    "title": "Hash Table",
+    "section": "Chaining",
+    "text": "Chaining\nKey compromise: hash table doesn’t actually “finish” the job - just sorts into buckets.\n\nput → find “bucket”, search bucket, add or set\nget → find “bucket”, search bucket\ncontains → find “bucket” search bucket\nremove → find “bucket” search bucket"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#chaining-1",
+    "href": "slides/slides-12-02.html#chaining-1",
+    "title": "Hash Table",
+    "section": "Chaining",
+    "text": "Chaining\n\nFinding bucket → O(1)\nBuckets are often O(bucketN)\nKeep buckets small and all is good."
+  },
+  {
+    "objectID": "slides/slides-12-02.html#bucket-choices",
+    "href": "slides/slides-12-02.html#bucket-choices",
+    "title": "Hash Table",
+    "section": "Bucket Choices",
+    "text": "Bucket Choices\n\nparallel array map - most buckets have 0 to 1 element - waste of space\nassociation list (linked chain) - great memory savings on empty buckets\nbinary search tree - faster search, more key requirements"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#writing-a-good-hash-function",
+    "href": "slides/slides-12-02.html#writing-a-good-hash-function",
+    "title": "Hash Table",
+    "section": "Writing a good hash function",
+    "text": "Writing a good hash function\n\nThe same value must always produce the same hash code\nHash codes should be spread evenly across the output space\nThe hash function should be fast to compute\nA good hash function makes collisions rare\n(cryptographic) Given a hash, it should be computationally infeasible to find any input that produces it"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#load-factor",
+    "href": "slides/slides-12-02.html#load-factor",
+    "title": "Hash Table",
+    "section": "Load Factor",
+    "text": "Load Factor\nλ – the “load factor”, n current size of key set, k current size of table\nλ = n / k\n\nλ &lt; 1 array is sparse\nλ == 1 array probably still sparse\nλ &gt; 1 more items than array – buckets are getting full"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#load-factor-exercise",
+    "href": "slides/slides-12-02.html#load-factor-exercise",
+    "title": "Hash Table",
+    "section": "Load Factor – exercise",
+    "text": "Load Factor – exercise\nFor one of our previous exercises, we had 39 values to store (n). What would be the load factor λ for different table sizes?"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#load-factor-exercise-1",
+    "href": "slides/slides-12-02.html#load-factor-exercise-1",
+    "title": "Hash Table",
+    "section": "Load Factor – exercise",
+    "text": "Load Factor – exercise\nFor one of our previous exercises, we had 39 values to store (n). What would be the load factor λ for different table sizes?\n\nλ = 39/10 = 3.9\nλ = 39/20 = 1.95\nλ = 39/50 = 0.78"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#rehashing-growing-the-table-size",
+    "href": "slides/slides-12-02.html#rehashing-growing-the-table-size",
+    "title": "Hash Table",
+    "section": "Rehashing – growing the table size",
+    "text": "Rehashing – growing the table size\nWhy?\n\nKeep load factor small\nKeep performance fast"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#rehashing-growing-the-table-size-1",
+    "href": "slides/slides-12-02.html#rehashing-growing-the-table-size-1",
+    "title": "Hash Table",
+    "section": "Rehashing – growing the table size",
+    "text": "Rehashing – growing the table size\nWhen?\n\ntrack load factor\nWhen too big – make array bigger\n(advanced feature) when too small make smaller"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#rehashing-growing-the-table-size-2",
+    "href": "slides/slides-12-02.html#rehashing-growing-the-table-size-2",
+    "title": "Hash Table",
+    "section": "Rehashing – growing the table size",
+    "text": "Rehashing – growing the table size\nHow?\n\nMake new bigger array\n\nDO NOT: copy position to position\nre-compute index for each element:\n\nindex = hash % tableSize\nhash doesn’t change\ntablesize does"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#hashing-load-factor-rehashing",
+    "href": "slides/slides-12-02.html#hashing-load-factor-rehashing",
+    "title": "Hash Table",
+    "section": "Hashing, load factor, rehashing",
+    "text": "Hashing, load factor, rehashing\nIn-class exercise on gradescope"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#student-rating-of-teaching",
+    "href": "slides/slides-12-02.html#student-rating-of-teaching",
+    "title": "Hash Table",
+    "section": "Student Rating of Teaching",
+    "text": "Student Rating of Teaching\nGo to canvas, on the menu on the left you will see a “Student Rating of Teaching” option.\nPlease complete the survey: it’s anonymous, I don’t get the results until summer break, results are used for improving my teaching (and providing feedback to my boss)"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#quiz-10",
+    "href": "slides/slides-12-02.html#quiz-10",
+    "title": "Hash Table",
+    "section": "Quiz 10",
+    "text": "Quiz 10\nYou have 10 minutes to complete the quiz.\nYou should provide both the array and the binary tree for each of the two questions."
+  },
+  {
+    "objectID": "slides/slides-12-02.html#practice",
+    "href": "slides/slides-12-02.html#practice",
+    "title": "Hash Table",
+    "section": "Practice",
+    "text": "Practice\nDesign a Simple Spell Checker.\nYou’re building a spell checker that needs to quickly determine if a word exists in a dictionary of 100,000 English words\nImplement a hash table to store the dictionary. Write a simple hash function for strings that takes a word as input and returns an integer index for an array."
+  },
+  {
+    "objectID": "slides/slides-12-02.html#analyze-your-hash-function",
+    "href": "slides/slides-12-02.html#analyze-your-hash-function",
+    "title": "Hash Table",
+    "section": "Analyze Your Hash Function",
+    "text": "Analyze Your Hash Function\nTest your hash function with a sample of words. Does it:\n\nDistribute words evenly across buckets?\nHandle similar words (like “cat” and “act”) differently?\nProduce many collisions?\n\nImplement .put(String key) and .contains(String key)"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#gradescope",
+    "href": "slides/slides-12-02.html#gradescope",
+    "title": "Hash Table",
+    "section": "Gradescope",
+    "text": "Gradescope\nSubmit your WordHash.java file to gradescope"
+  },
+  {
+    "objectID": "slides/slides-12-02.html#solution",
+    "href": "slides/slides-12-02.html#solution",
+    "title": "Hash Table",
+    "section": "Solution",
+    "text": "Solution\npublic class WordHash {\n    private String[] table;\n    private int tableSize = 70000;\n    private int count;\n\n    public WordHash() {\n        table = new String[tableSize];\n        count = 0;\n    }\n\n    /**\n     * Hash function\n     * @param word is a string, a word in English\n     * @return an index, which is an int between 0 and tableSize-1\n     */\n    private int getIndex(String word) {\n        int total = 0;\n        for (char c : word.toCharArray()) { // is this still O(1)?\n            total += (int) c;\n        }\n        return (total * 997) % tableSize;\n    }\n\n    public void put(String word) {\n        int index = getIndex(word);\n        while (table[index] != null) {\n            index++;\n            if (index == tableSize -1) index = 0;\n        }\n        table[index] = word;\n        count++;\n        if (load() &gt; 0.7) expandArray();\n    }\n\n    public boolean contains(String word) {\n        int index = getIndex(word);\n        while (table[index]!= null && !table[index].equals(word)) {\n            index++;\n            if (index == tableSize-1) index = 0;\n        }\n        if (table[index] == null) return false;\n        return true;\n    }\n\n    private int whereToPut(String word, String[] newTable) {\n        int index = getIndex(word);\n        while (newTable[index] != null) {\n            index++;\n            if (index == tableSize-1) index = 0;\n        }\n        return index;\n    }\n\n    private void expandArray() {\n        tableSize *= 2;\n        String[] newTable = new String[tableSize];\n        for (String word : table) {\n          newTable[whereToPut(word, newTable)] = word;\n        }\n        table = newTable;\n    }\n\n    public double load() {\n        return (double) count / (double) tableSize;\n    }\n\n    @Override\n    public String toString() {\n        String retVal = \"\";\n        for (int i=0; i &lt; tableSize; i++) {\n            if (table[i] != null) retVal += i + \" - \" + table[i] + \"\\n\";\n        }\n        return retVal.trim();\n    }\n}"
+  },
+  {
+    "objectID": "index.html#slides-11",
+    "href": "index.html#slides-11",
+    "title": "CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development",
+    "section": "Slides",
+    "text": "Slides\n\nMap\nHash Tables"
+  },
+  {
+    "objectID": "index.html#slides-12",
+    "href": "index.html#slides-12",
+    "title": "CSCI 1913 - Introduction to Algorithms, Data Structures, and Program Development",
+    "section": "Slides",
+    "text": "Slides\n\nStacks and Queues"
+  },
+  {
+    "objectID": "slides/slides-11-01.html#why-swap-with-the-smaller-child",
+    "href": "slides/slides-11-01.html#why-swap-with-the-smaller-child",
+    "title": "Heap",
+    "section": "Why swap with the smaller child?",
+    "text": "Why swap with the smaller child?\nWhat if we had swapped 20 with 15 (the larger child) instead?\n\n\nIndex:   0   1  2   3   4  \nValue: [15, 20, 10, 30, 40]\n\n15 is now the parent of 10, but 15 &gt; 10 → heap property broken\nThe root is no longer the minimum\nSwapping with the smaller child guarantees the new parent is ≤ both children\n\n\n\n\n\n\n\n\n\nheap\n\n\n\n15\n\n15\n\n\n\n20\n\n20\n\n\n\n15--20\n\n\n\n\n10\n\n10\n\n\n\n15--10\n\n\n\n\n30\n\n30\n\n\n\n20--30\n\n\n\n\n40\n\n40\n\n\n\n20--40"
   }
 ]

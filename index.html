@@ -202,6 +202,16 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#slides-9" id="toc-slides-9" class="nav-link" data-scroll-target="#slides-9">Slides</a></li>
   </ul></li>
+  <li><a href="#module-11" id="toc-module-11" class="nav-link" data-scroll-target="#module-11">Module 11</a></li>
+  <li><a href="#slides-10" id="toc-slides-10" class="nav-link" data-scroll-target="#slides-10">Slides</a></li>
+  </ul></li>
+  <li><a href="#module-12" id="toc-module-12" class="nav-link" data-scroll-target="#module-12">Module 12</a>
+  <ul class="collapse">
+  <li><a href="#slides-11" id="toc-slides-11" class="nav-link" data-scroll-target="#slides-11">Slides</a></li>
+  </ul></li>
+  <li><a href="#module-13" id="toc-module-13" class="nav-link" data-scroll-target="#module-13">Module 13</a>
+  <ul class="collapse">
+  <li><a href="#slides-12" id="toc-slides-12" class="nav-link" data-scroll-target="#slides-12">Slides</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -486,9 +496,83 @@ sequence of insertions and deletions.</li>
 <li><a href="slides/slides-10-01.html">Trees</a></li>
 <li><a href="slides/slides-10-02.html">Binary Search Trees</a></li>
 </ul>
-
-
 </section>
+</section>
+<section id="module-11" class="level2">
+<h2 class="anchored" data-anchor-id="module-11">Module 11</h2>
+<p>By the end of this module you will be able to:</p>
+<ul>
+<li>Define the heap property and distinguish between a min-heap and a max-heap.</li>
+<li>Explain why a heap is used instead of a BST when the only required operation is repeated access to the minimum or maximum element.</li>
+<li>Describe the complete binary tree shape invariant and explain why it enables array-based implementation without pointers.</li>
+<li>Derive the index formulas for a node’s parent, left child, and right child in an array-backed heap.</li>
+<li>Trace the insert operation (bubble up) and the remove-min/max operation (bubble down) step by step on a given heap, identifying each swap.</li>
+<li>Analyze the time complexity of insert and remove operations as O(log n) by connecting the complete tree shape to guaranteed height bounds.</li>
+<li>Compare heaps and BSTs across the dimensions of supported operations, time complexity, shape guarantees, and typical implementation strategy.</li>
+<li>Identify scenarios where a priority queue — and by extension a heap — is the appropriate data structure choice.</li>
+</ul>
+</section>
+<section id="slides-10" class="level2">
+<h2 class="anchored" data-anchor-id="slides-10">Slides</h2>
+<ul>
+<li><a href="slides/slides-11-01.html">Heap</a></li>
+</ul>
+</section>
+</section>
+<section id="module-12" class="level1">
+<h1>Module 12</h1>
+<p>By the end of this module you will be able to:</p>
+<ul>
+<li>Define the <strong>Map</strong> Abstract Data Type and describe its key-value pair semantics, distinguishing it from List ADTs.</li>
+<li>Explain what a hash function is and describe the properties of a good hash function (deterministic, uniform distribution, efficient to compute).<br>
+</li>
+<li>Identify and use core <strong>Map</strong> operations — put, get, remove, containsKey, size — and analyze their expected time complexity.<br>
+</li>
+<li>Explain why collisions are unavoidable and describe two strategies for handling them: chaining and open addressing (linear probing).</li>
+<li>Trace the state of a hash table after a sequence of insertions, lookups, and deletions under both collision strategies.</li>
+<li>Define load factor and explain how it affects performance; determine when resizing (rehashing) is necessary.</li>
+<li>Explain the reason time complexity for hash table operations is for average-case <span class="math inline">\(O(1)\)</span>, and worst-case <span class="math inline">\(O(n)\)</span></li>
+<li>Compare hash table performance against BST-based maps and articulate the tradeoffs between <span class="math inline">\(O(1)\)</span> average vs.&nbsp;<span class="math inline">\(O(\log n)\)</span> guaranteed.</li>
+<li>Recognize scenarios where a hash map is the appropriate data structure choice and justify that choice in terms of time and space tradeoffs.</li>
+</ul>
+<section id="slides-11" class="level2">
+<h2 class="anchored" data-anchor-id="slides-11">Slides</h2>
+<ul>
+<li><a href="slides/slides-12-01.html">Map</a></li>
+<li><a href="slides/slides-12-02.html">Hash Tables</a></li>
+</ul>
+</section>
+</section>
+<section id="module-13" class="level1">
+<h1>Module 13</h1>
+<p>By the end of this module you will be able to:</p>
+<ul>
+<li>Define a stack and a queue and describe the core principle governing each:
+<ul>
+<li>Stack: Last In First Out (LIFO)</li>
+<li>Queue: First In First Out (FIFO)</li>
+</ul></li>
+<li>Identify real-world examples that model stack and queue behavior</li>
+<li>Define and explain the purpose of each core stack operation: push, pop, peek, and isEmpty</li>
+<li>Explain the time complexity of each stack operation and justify why they are <span class="math inline">\(O(1)\)</span></li>
+<li>Identify and handle edge cases such as popping from an empty stack (stack underflow)</li>
+<li>Define and explain the purpose of each core queue operation: enqueue, dequeue, peek, and isEmpty</li>
+<li>Implement a queue in Java using either an array or a linked list as the underlying data structure</li>
+<li>Explain the time complexity of each queue operation and justify why they are <span class="math inline">\(O(1)\)</span></li>
+<li>Identify and handle edge cases such as dequeuing from an empty queue (queue underflow)</li>
+<li>Compare the implementation of stacks and queues using arrays versus linked lists, identifying trade-offs in each approach</li>
+<li>Explain how the choice of underlying data structure affects the efficiency and complexity of stack and queue operations</li>
+<li>Recognize that stacks and queues are abstract data types (ADTs) whose behavior is independent of their underlying implementation</li>
+<li>Determine the time complexity of stack and queue operations for both array-based and linked-list-based implementations</li>
+<li>Select the appropriate data structure (stack, queue, array, or linked list) for a given problem and justify the choice</li>
+</ul>
+<section id="slides-12" class="level2">
+<h2 class="anchored" data-anchor-id="slides-12">Slides</h2>
+<ul>
+<li><a href="slides/slides-13-01.html">Stacks and Queues</a></li>
+</ul>
+
+
 </section>
 </section>
 
